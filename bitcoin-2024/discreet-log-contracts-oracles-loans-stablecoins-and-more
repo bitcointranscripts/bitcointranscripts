@@ -1,0 +1,484 @@
+---
+title: Discreet Log Contracts, Oracles, Loans, Stablecoins, and More
+speakers:
+  - Aki Balogh
+  - Shehzan Maredia
+  - Daniel Hinton
+  - Tadge Dryja
+tags:
+  - dlc
+source_file: https://www.youtube.com/watch?v=9gdm6C_xnFI
+media: https://www.youtube.com/watch?v=9gdm6C_xnFI
+categories: []
+date: '2024-08-31'
+youtube:
+  description: "In this enlightening discussion, we explore the technical workings\
+    \ of DLCs, their advantages over traditional oracles, and how they compare to\
+    \ other blockchain ecosystems. Our experts also delve into the challenges and\
+    \ future potential of DLCs, making this a must-watch for anyone interested in\
+    \ the cutting edge of Bitcoin technology and decentralized finance.\n\nSpeakers:\
+    \ Aki Balogh - DLC.Link, Shehzan Maredia - Lava.xyz, Daniel Hinton - sFOX, Tadge\
+    \ Dryja - and Gwart   - Blockspace Media\n\nLower your time preference and lock-in\
+    \ your Bitcoin 2025 conference tickets today!!! Use promo code BM10 for 10% off\
+    \ your tickets today! \nClick Here: http://b.tc/conference/2025\n\nChapters:\n\
+    00:00:00 - Introduction to Street Law Contracts\n00:03:05 - Borrowing against\
+    \ Bitcoin with DLCs\n00:06:17 - Saving Transactions through Implementations\n\
+    00:09:11 - The Importance of Scalable Oracles in DLCs\n00:12:18 - Practical applications\
+    \ of DLCs\n00:15:23 - DLCs as a more scalable way to do smart contracts\n00:18:17\
+    \ - DLCs and Contested Outcomes\n00:21:15 - Decentralization and Oracles in Bitcoin\
+    \ Finance\n00:24:12 - Anonymity and Data Usage\n00:27:08 - Scaling the Bitcoin\
+    \ blockchain\n\n#Bitcoin #DiscreetLogContracts #DLCs #SmartContracts #Cryptocurrency\
+    \ #Blockchain #DecentralizedFinance #DeFi #Oracles #BitcoinLending #BitcoinDerivatives\
+    \ #BitcoinScaling #TrustlessFinance #BlockchainTechnology #BitcoinInnovation #CryptocurrencyLending\
+    \ #DecentralizedBetting #BitcoinSmartContracts #CryptoOracles #BlockchainFinance\
+    \ #CryptoInnovation #BitcoinDeFi #CryptoScaling #BlockchainOracles #BitcoinTechnology"
+  tags:
+    - bitcoin magazine
+    - Bitcoin News
+    - Bitcoin Price
+    - Bitcoin Journalism
+    - Bitcoin Culture
+    - Bitcoiners
+    - Bitcoin Talk
+    - Cryptocurrency
+    - Stacking Sats
+    - Satoshi
+    - Bitcoin History
+    - Bitcoin
+    - Discreet Log Contracts
+    - DLCs
+    - smart contracts
+    - cryptocurrency
+    - blockchain
+    - decentralized finance
+    - DeFi
+    - oracles
+    - Bitcoin lending
+    - Bitcoin derivatives
+    - Bitcoin scaling
+    - trustless finance
+    - Bitcoin innovation
+    - cryptocurrency lending
+    - Bitcoin smart contracts
+    - crypto oracles
+    - blockchain finance
+  categories:
+    - Entertainment
+transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+---
+
+## Introduction to Street Law Contracts
+
+Speaker 0: 00:00:02
+
+Good to go?
+
+Speaker 1: 00:00:03
+
+Yeah, I think so.
+
+Speaker 0: 00:00:05
+
+Alright, we're here today to talk about discrete log contracts.
+If anybody wants to go around and introduce yourself.
+
+Speaker 2: 00:00:10
+
+Hey everyone, Daniel Hinton from SFOX here, also co-developer of UTX Oracle.
+
+Speaker 3: 00:00:17
+
+Hey guys, my name is Shazan, founder of Lava.
+We let you borrow against native Bitcoin.
+
+Speaker 4: 00:00:24
+
+Hi I'm Todd Stryja, sort of last-minute addition.
+I wrote the discrete log contracts paper as well as the Lightning Network paper, so researcher on Bitcoin stuff.
+
+Speaker 1: 00:00:33
+
+Aki Balog, I founded DLCBTC, it's safe for a wrap Bitcoin.
+
+Speaker 0: 00:00:37
+
+Awesome, well we got a last second, very special guest, Taj, so maybe I'll give you a lay up and ask what are discrete log contracts and then talk about how they may be useful and everybody else can chime in.
+
+Speaker 4: 00:00:50
+
+Sure, so discrete log contracts, if you know what Lightning is, it gives you kind of an intuition.
+They were developed around the same time, you know, by the same group, me and Joseph.
+The idea is like, in Lightning, you sort of have this like sequential like Alice has this much, Bob has this much, and you sort of go back and forth and like send money between channels.
+With discrete log contracts, you have a third party.
+It's an oracle.
+And you sort of, Alice and Bob in the very beginning say okay Well depending on what this Oracle says later that determines the distribution of how much we get so we pre sign a whole bunch of transactions Where either Alice wins a lot or Bob wins a lot and depending on what this 30-party Oracle says?
+Alice wins or Bob wins and you can sort of vary how much they get And the nice part is the Oracle doesn't get to see that anything of this is happening.
+So the Oracle is like a one-way radio station, where they say, OK, the price of dollars is this, or the price of gold is this.
+And Alice and Bob take that data and can trustlessly among themselves, they're trusting the Oracle to not lie, can then take this and you know execute their contract that way.
+
+Speaker 3: 00:01:57
+
+And I think the real power of DLCs is the fact that you can today use them to build smart contracts with native Bitcoin.
+Attached that one that the Oracle doesn't have to know about the contracts, but that each individual contract can choose its own set of oracles.
+You can even have multi-oracle DLCs.
+
+Speaker 4: 00:02:15
+
+You want to go ahead?
+
+Speaker 0: 00:02:18
+
+Any input?
+
+Speaker 1: 00:02:19
+
+Yep, Back to you.
+
+Speaker 0: 00:02:20
+
+Yeah, okay, so let's talk about some of the practical use cases, right?
+So how can we use DLCs currently?
+
+Speaker 3: 00:02:26
+
+We've built this open source Oracle implementation that anyone can run to power just like a price oracle.
+We already have a few teams using that and we at Lava use DLCs to let you borrow against native Bitcoin.
+So it's a pretty simple use case.
+If you've been on Ethereum, you probably wrapped your Bitcoin and borrowed stable coins against it.
+We just let you do that without having to wrap your Bitcoin.
+So you can actually keep your Bitcoin on the layer one, you don't have to pay taxes to wrap your Bitcoin, fees to wrap your Bitcoin, take extra steps.
+
+## Borrowing against Bitcoin with DLCs
+
+Speaker 3: 00:02:56
+
+You can actually lock your Bitcoin in a layer one DLC and borrow Like a stable coin on any chain against it and you can actually trustlessly repay your loan So the only trust you're taking on is Oracle trust That you won't get unfairly liquidated or that the Oracle attests the right price during expiration And that's really powerful because right now as Bitcoin is maturing as a store of value, there's a lot of demand to borrow against it.
+And a lot of people don't want to borrow against their Bitcoin while giving up trust to a custodian or a bridge that in 2022 lost like 24 bills.
+
+Speaker 2: 00:03:34
+
+The ability to do this today.
+You know, so many people stake either their company or their personal reputation on changing Bitcoin in some way and I think that's a recipe for disaster for starters.
+But really, I mean we have a couple of great examples up here on the stage about things you can do today to really give you additional capabilities with your existing Bitcoin.
+But also just how the trade-offs work with this, right?
+So for instance, one of the things that we've done at UTX Oracle is develop basically an open source pricing mechanism using the Bitcoin blockchain to calculate the price of Bitcoin, which is a bit of a self-referential thing, but it actually works to calculate the price within about a percent at any given point in time.
+So, you know, doing these things with DLCs is going to be really great for the ecosystem and doing it today is even better.
+
+Speaker 1: 00:04:32
+
+Yeah, I can kind of jump in.
+We actually, same issue as what Shizan mentioned, lava solving, but we have a very different implementation.
+We went down a completely different direction two and a half years ago.
+We're like, okay, so DLCs, like we said, are A, in Bitcoin today, they were added with Taproot.
+B, they solve this problem to a bridge or, you know, Bitcoin L2 bridge because they could get hacked or something terrible can happen.
+So what we thought is, okay, what is, who is the oracle or what is the oracle?
+Because the oracle basically determines kind of everything in the DLC landscape and we're like well if you want to wrap your Bitcoin to another chain like Ethereum, Solana, Bitcoin, whatever chain you choose to trust, all we know about you is you have chosen to trust that chain.
+Therefore, the chain you want to wrap to should be your oracle.
+So for example, in DLCBTC, if you're wrapping to Ethereum, the entire Ethereum blockchain is your oracle and it's relayed through a set of relay nodes we call DLC attesters.
+
+Speaker 4: 00:05:37
+
+I just wanted to say one thing, kind of doesn't matter anymore, but DLC was usable with SegWit, right?
+So it uses, and that, It sort of doesn't matter anymore because we have Schnorr signatures and it was like always a question, will we have Schnorr signatures on-chain?
+DLC uses Schnorr signatures but not on-chain.
+Now, the implementations do because it actually saves a little bit of, saves one transaction.
+But it's the core cryptographic thing is like a weird modified Schnorr signature that you don't actually have to use on chain, but now that you can you save a little space, but like people I was so the first implementation was like 2017 so and it was it was like on mainnet and stuff.
+
+## Saving Transactions through Implementations
+
+Speaker 0: 00:06:17
+
+Yeah, okay.
+Let's dive in a little bit to oracles themselves.
+Is there a way to maybe decentralize an oracle?
+And then, well, actually, maybe we should start with an overview of what the oracle problem is and bringing data.
+And is there a way for an Oracle to be punished for an invalid attestation is there a way for users to have recourse if You know an invalid price feed or something is put on chain Okay,
+
+Speaker 3: 00:06:45
+
+so I can get started on the Oracle problem because I've thought about it a good bit.
+So, Oracles are needed, for example, in Lava, if you want to borrow against your Bitcoin, no lender will make a loan if they don't think that they can liquidate it if the price of Bitcoin goes down, right?
+And the only way to find the price of Bitcoin is off-chain cryptographic attestations.
+So I think DLCs have a lot of upsides to other ecosystems where oracles are used because one, on DLCs the oracles don't actually have to make attestations on-chain.
+So if you guys are familiar with Ethereum, they're literally posting price data onto Ethereum every block.
+In DLCs, they can just post it off-chain.
+That also gives a massive privacy benefit because if you're just using a price oracle, it can be used for multiple contracts.
+The oracle doesn't even have to know which contract it's influencing, so it has a lot less incentive to be malicious because it doesn't know which contract it can be malicious for.
+The other nice thing with oracles is you can try to remove their direct incentive for them to be malicious in DLCs, like in the Lava's case, the Bitcoin collateral can only move between the lender and the borrower.
+So even if the oracle is malicious, they would have to collude with one of the other two counterparties.
+They don't have a direct incentive but I think the best way to decentralise oracles is literally give users choice on which oracles they want to use for each contract.
+In Lava, you can literally just choose your oracles and you can even have multiple oracles per contract, so you could say like three of five.
+
+Speaker 4: 00:08:15
+
+Yeah, optimistic about like, let's decentralise all the oracles and it's real-world stuff And so I don't think there's as many cryptographic or blockchain techniques that are going to help you solve this problem, because it's like, how do we get real world data?
+How do we get real world data that we trust.
+There are a couple little tricks like if the Oracle equivocates, which means the Oracle is using this Oracle, the Oracle can't really say one thing, you know, to one party and a different thing to another.
+So if the Oracle's set up to say, OK, I'm going to report on the price of $1 on Friday night.
+And they say, OK, $1 is worth 300 sats.
+Or if they sign those two messages, it reveals their private key, which on its own, I guess everyone sort of knows they did this, but also they could sort of put a UTXO.
+It's like, well, here's my money and if I equivocate, if I sort of say two different things for the same price feed, then someone's gonna steal my money, probably a miner.
+
+## The Importance of Scalable Oracles in DLCs
+
+Speaker 4: 00:09:14
+
+I don't even know if anyone really cares about that part.
+
+Speaker 2: 00:09:17
+
+I think it's very important how well oracles can scale because all of the data is off-chain.
+So even if you're using a multi-oracle setup, you might have 5 or 10 or even 50 people that you're relying on and some subset of those need to produce an output for the particular thing that you're trying to prove.
+One of the bigger issues that I think could be an issue is this, you know, they just stopped producing attestations And the ability to use multiple oracles and not relying on any of that data scaling on-chain really should make it better.
+
+Speaker 3: 00:09:59
+
+With your DLC contracts, it's also important to have a failsafe built in where if all the oracles went bust or if your Counterparty went bust you should always have a way to recover the collateral so in lava We do that just in case you're for example your counterparty goes bust All the oracles go bust there's still a way to make sure that Bitcoin is never burned and I think that's super important as well because you always want to have that like fallback method.
+
+Speaker 1: 00:10:26
+
+Yeah on the oracle side we actually, I mean kind of chronologically I can describe, when we first started working on DLCs, we also got a grant from Chainlink to research quote-unquote Bitcoin oracles, which at the time it wasn't exactly clear what that is, but we knew that trading systems today use Chainlink price feeds because Chainlink has the most, you know, market share because they have the most publishers and data sources and so on, but Chainlink is on EVM, it's on Ethereum.
+So how do we get the Chainlink data?
+So our thought was, okay, why don't we get Chainlink price feed data in as the DLC Oracle input, and then we have all these like conditional outcomes corresponding to each different price and you know different actions at each but then we realized I mean just you know kind of long story short we realized that actually the the DLC structure it's better to keep it really simple and have Ethereum itself be the oracle and then once you've self-wrapped, once you've locked with yourself in our system, there's only one outcome, you lock with yourself or Alice locks with herself to mint the LCBTC on ETH.
+Once it's on ETH, then the DeFi protocol like Aave, which is the number one, you know, protocol where WBTC is used, Aave can then pull from the Chainlink price feed oracle.
+So there's actually two oracles.
+There's a price feed oracle and a DLC oracle in our implementation.
+
+Speaker 0: 00:11:48
+
+Yeah, okay.
+Let's talk a little bit about maybe what are some of the practical applications currently, right?
+So we have, you're building a stablecoin protocol, there's been discussions of betting markets, where do you see, either now or in the future, some of the more practical applications of DLCs?
+Whoever.
+
+Speaker 2: 00:12:08
+
+Well, first of all, just because we're in election season, I think there's been a lot of interest in betting markets around outcomes of real world events.
+
+## Practical applications of DLCs
+
+Speaker 2: 00:12:16
+
+So outside of pricing and derivatives around trading applications, I think political betting is a really great alternative to the polling mechanism that we currently use.
+
+Speaker 3: 00:12:33
+
+So yeah, there's a few other teams that aren't here that use DLCs to do applications with native Bitcoin.
+Lava does barring against Bitcoin.
+There's another team that maybe still works on it, but maybe doesn't, but was using DLCs to, 1071 was using them to lock Bitcoin and get a stable channel, so it's kind of like a derivative.
+You can't use the money in the stable channel but you get dollar exposure using a DLC.
+Betting markets are really cool as well.
+The only problem with DLCs is it's gonna be tough to let people early exit without forcing your counterparty to early exit, so I've been thinking about that.
+Maybe there's a way to do it.
+
+Speaker 4: 00:13:17
+
+Well yeah, we've got a paper about that.
+
+Speaker 3: 00:13:20
+
+I'll have to read that.
+
+Speaker 4: 00:13:22
+
+Yeah I mean I think a lot of the cases, you know the initial use case, this is sort of like looking at stable coins and stuff, I'm like oh this isn't stable coins and so it's like okay well if people want to trade but don't want to have, you know, want to stay in sort of crypto world, Bitcoin world, they can do that anonymously with stable channels, things like that.
+Or also, potentially stocks, you know, like any kind of derivatives trade, where you're like, okay, I want, you know, I have Bitcoin, but I don't have an identity or whatever I don't like exist according to like the legal structures of the world or I don't want to expose that But I want to buy, you know stocks.
+I want to do that Robinhood, but fully anonymous and no KYC.
+That's not legal, but it's possible.
+
+Speaker 3: 00:14:09
+
+Yeah, it's really cool that that's possible.
+
+Speaker 1: 00:14:13
+
+Not legal, but possible.
+My favorite category.
+
+Speaker 4: 00:14:16
+
+I mean, it's kind of funny, because I was working on this stuff at MIT and like Gary Gensler was there and like I was sort of friends with him and you know we'd work on stuff and he was like oh you shouldn't work on this you get like arrested I'm like what like I'm just working on open source software so but but there's a lot of real and like a lot of the the friction of working on this is because of all the sort of securities rules and like commodities trading future rules and stuff.
+I didn't really you know, you don't really think about that when you're working on it and like same with lightning, It's like money transmitter rules and all this stuff.
+It's like, well, we're just working on cool open source software that you can build companies.
+But I guess not being in a company, I don't worry about as much.
+But probably the people actually running companies have to talk to lawyers a lot.
+
+Speaker 0: 00:15:00
+
+Yeah, okay.
+Let's talk a little bit about using DLCs as scaling.
+Do you consider DLCs to be a scaling solution?
+You can sort of interpret this how you will and run with it.
+
+Speaker 3: 00:15:11
+
+So I wouldn't call them scaling for payments, but there are a more scalable way to do smart contracts in my ecosystem.
+You have like chain link price feeds literally going on-chain.
+
+## DLCs as a more scalable way to do smart contracts
+
+Speaker 3: 00:15:22
+
+That creates a lot of problems like Oracle MEV, where your blockchain validators or miners can actually censor the Oracle price feed and cause problems.
+This is a big problem in Ethereum for example, in Solana.
+So you're actually reducing a bunch of on-chain costs because the oracles don't have to put data on-chain.
+The nice thing about DLCs as well is kind of like all the execution is actually happening off-chain.
+You're only using the Bitcoin blockchain to just open, for example, or in our case, a loan and then close it.
+And in fact, in the Lava protocol, opening and closing a loan can look just like opening and closing a Lightning channel and with Taproot, just transactions.
+So there's really great scalability benefits and with scalability you also get privacy on-chain.
+
+Speaker 4: 00:16:15
+
+And I don't think we have any, but you can also, you can put them in lightning channels, kind of, it gets real complicated, but you can have a lightning channel, but I have this relationship, and then I can produce sort of sub-channels that are these contracts, like DLCs within it.
+You can't route them and there's been a lot of like, oh what if we could route them, that would be so cool, then I have like my position in a contract and I can like trade it with someone else.
+That is sort of out of reach for now.
+Maybe there's things in Bitcoin that would allow that, But you can have a bunch of contracts within a channel so that there's very minimal on-chain impact.
+You open your account with your broker on-chain and then you just trade for months before closing out.
+
+Speaker 2: 00:16:59
+
+Even in that simple case where you're not necessarily routing but you still want to have dollar exposure.
+
+Speaker 0: 00:17:06
+
+I want to go back to betting markets for a second.
+Did you, well maybe I'll pose this to Taj, did you envision DLCs being used for outcomes that may be contested.
+I don't know if you've been following any of these like poly market things right now, right?
+And so you have some outcomes that are better on that are more or less binary.
+Then we have some of these that get more of gray areas, right?
+Do you find DLCs to be useful for something like that or are we kind of erring back into, I don't know,
+
+Speaker 4: 00:17:38
+
+human input into contract state?
+So there's gray areas, like, you know, binary isn't actually like yes, no, and then there's also a whole spec of like decomposing the number, you know, So if it's a number, you want to decompose it.
+So maybe people want to round things off.
+There's also big off-chain scalability problems, and that if you have a pretty complex DLC, it's like, oh, shoot, okay, let's try to pare this down a little.
+So there's ways to make different numbers, different things like that, multi-dimensional, all this stuff.
+But then when it comes to feelings, or then it's like, okay, You got to take a poll, you got to sort of vote.
+
+## DLCs and Contested Outcomes
+
+Speaker 4: 00:18:17
+
+And you can compose multiple oracles.
+But yeah, like, what was the best movie of 2024?
+That's the oracle.
+OK, how about most box office receipts?
+Yeah, so you can do it, but it doesn't solve that problem of emotions.
+
+Speaker 2: 00:18:32
+
+To Tej's point, it's very difficult to write rules specific enough to account for every outcome.
+And there was one example in the fight that happened here recently.
+It was supposed to happen a little while ago, and one of the people got hurt.
+And people that had bet on that outcome of this guy or that guy winning, a lot of people that technically did win because it wasn't their fighter that got hurt lost their money because it wasn't the outcome they had determined.
+
+Speaker 0: 00:19:01
+
+Shazan, do you have any input?
+Have you seen any, what are your thoughts?
+Do you think that there's application in more of these sort of nuanced outcomes?
+
+Speaker 2: 00:19:11
+
+Well, I definitely think there is, but I guess Thinking about who are the best types of people to be oracles is also important for me.
+The example in my mind is like, do you want the New York Times to out basketball or hockey or whatever?
+So those are questions in my mind.
+
+Speaker 3: 00:19:31
+
+I'm really just focused on the Bitcoin secured loan use case right now, but I completely agree.
+Oracles need to be generic.
+We have a bunch of exchanges running oracles.
+We pull price feeds from exchanges.
+It's super important to decentralise it, but we keep talking about oracles, but the alternative to not using DLCs is literally using a custodian where they are basically a single oracle that can rug you, has rugged you before probably because they actually have your funds and they can steal them.
+So I think there's a lot of benefits to like, I'm very curious to see how this plays out over the next year but I think we're seeing this ecosystem progress and people using native Bitcoin for finance.
+
+Speaker 1: 00:20:13
+
+Yeah and that's, I mean just to kind of build on that, there's sort of the design space of what's possible in computer science, what sort of best practice, what's, you know, theoretically supported, blah, blah.
+And then there's the reality.
+The reality is that most of the Bitcoin finance, like whether you're taking a loan or whether you're investing it to earn a yield, like stuff you might want to do with Bitcoin is either custody or bridge.
+In fact, I would say 99% of it, you're either sending your Bitcoin to somebody who, you know, these custodians, I mean, some of them might be good.
+Some of them have not blown up.
+None of them have deposit insurance.
+You know, they might have some form of deposit insurance, but the policy is quite low.
+For example, you know, BitGo has 50 billion under management, and deposit insurance covering 100 million.
+And that's just like that's because that's what the policy covers.
+So if the Bitcoin goes there, it can be lost.
+I'm not saying it will be lost, but it can be lost.
+That's sort of the point of Bitcoin is not to have, you know, obviously, decentralization security.
+
+## Decentralization and Oracles in Bitcoin Finance
+
+Speaker 1: 00:21:15
+
+The other practical, like the other thing has 60 nodes, more than 20, less than 60, 000.
+So now you're not, but then you're not on the Bitcoin security layer anymore.
+You're on the TBTC 60 node security layer.
+And these are just a custodian somewhere or a bridge.
+And that's just not, you're just not on Bitcoin when you do those things.
+
+Speaker 0: 00:21:36
+
+Yeah, go ahead, Taj.
+Do you want to say something?
+
+Speaker 4: 00:21:39
+
+Oh yeah, I guess in general with Oracle stuff, very specific Oracles I think don't, what this is really useful for is something where everyone knows, so if you have Bloomberg saying, okay, the price of this stock is X, and everyone sort of looks at it and can use that.
+If you have something very specific where it's like, well, I want an oracle to say whether someone fixed my roof, right?
+Because I'm going to have like this super decentralized roof fixing Oracle and like anyone can anonymously come and fix my roof and then get this Bitcoin bounty.
+And like that sounds cool, but like, okay, but whoever's the Oracle, it's like for one thing and only one person cares.
+And so like part of the security model that's nice about this is when the Oracle is oblivious and the Oracle has no idea what transactions people are doing with their data, even after the fact you look on chain, you're like, I don't know, just sort of looks like a channel that closed.
+You know, that anonymity really helps.
+If it's something very specific where it's like, okay, I want an Oracle data feed for something only I care about, then at that point, maybe just use a custodian or multi-sig or something because you're not really getting it.
+Something else right now.
+
+Speaker 0: 00:22:50
+
+Okay, yeah so I mean like last cycle we saw a lot of people get burned with the CDFI side which was BlockFi and all these you know turned out to be under collateralized lenders and then we had a lot of people get burned with smart contracts elsewhere.
+When you're thinking of talking to Bitcoiners maybe, who are more on the conservative side of wanting to use their Bitcoin potentially but have seen a lot of the atrocities committed elsewhere, right?
+How do you, and I know we're still kind of in the early stages of DLCs and whatnot, but how are you talking to these people and explaining, this is safe and that's not safe?
+
+Speaker 3: 00:23:26
+
+So I'll use a Lava case.
+In Lava, you can actually verify on-chain that your collateral is not being re-hypothecated.
+That was one of the bigger problems with FTX or using BlockFi. The other nice benefit of DLCs at a high level from a smart contracting perspective is you know that It's basically just a bunch of pre-signed encrypted transactions.
+So you know your money can only move between your two counterparties.
+It's like formal verification in a way.
+Whereas with Ethereum, you're writing this smart contract, like Aave or whatever, where some of the most popular, prominent Ethereum smart contracts have gotten hacked before, like Curve for example.
+
+Speaker 0: 00:24:06
+
+Oh yeah, we know.
+
+## Anonymity and Data Usage
+
+Speaker 3: 00:24:07
+
+So there's a lot of like a bug risk that is eliminated when you use DLCs that actually exist in other ecosystems and at least from my conversations working with even more sophisticated lenders or borrowers, they seem to really appreciate that and the on-chain verification as well.
+
+Speaker 4: 00:24:25
+
+I mean if you actually, like the paper is pretty simple, like it's not that complicated, it's just sort of like, it's a brute force.
+It's sort of inspired by Bitcoin.
+Bitcoin's like yeah We're just gonna throw all these miners at it and like solve the problem with brute force and DLC sort of does that it's like What is every possible outcome that can happen here?
+And we're just gonna make a transaction for every one of them And so it's kind of you know takes up a ton of hard drive space but it's all on your computer so it's like, oh well.
+Yep, finish up.
+
+Speaker 3: 00:24:51
+
+I know our time is ending but I want to just appreciate Taj more because I don't think he's really underrated.
+He literally made the Lightning Network DLCs so he helps scale Bitcoin, build smart contracts to Bitcoin and is also working on UtrexO, which is a way to also scale Bitcoin blockchain.
+
+Speaker 0: 00:25:12
+
+Yeah, awesome.
+Thanks.
+
+Speaker 3: 00:25:45
+
+You
