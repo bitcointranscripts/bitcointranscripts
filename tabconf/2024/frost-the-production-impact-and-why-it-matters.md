@@ -7,6 +7,7 @@ tags: []
 speakers:
   - 'Stacie W'
   - 'Jurvis Tan'
+  - 'Jesse Posner'
 categories:
   - 'Education'
 source_file: 'https://www.youtube.com/watch?v=Z0F6AkGPby4'
