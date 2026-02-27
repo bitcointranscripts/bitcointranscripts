@@ -9,6 +9,7 @@ speakers:
   - 'Jurvis Tan'
   - 'Jesse Posner'
   - 'Jonas Nick'
+  - 'Armin Sabouri'
 categories:
   - 'Education'
 source_file: 'https://www.youtube.com/watch?v=Z0F6AkGPby4'
