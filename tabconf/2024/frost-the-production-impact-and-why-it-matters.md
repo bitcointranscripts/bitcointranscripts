@@ -6,6 +6,7 @@ date: '2024-11-26'
 tags: []
 speakers:
   - 'Stacie W'
+  - 'Jurvis Tan'
 categories:
   - 'Education'
 source_file: 'https://www.youtube.com/watch?v=Z0F6AkGPby4'
