@@ -8,6 +8,7 @@ speakers:
   - 'Stacie W'
   - 'Jurvis Tan'
   - 'Jesse Posner'
+  - 'Jonas Nick'
 categories:
   - 'Education'
 source_file: 'https://www.youtube.com/watch?v=Z0F6AkGPby4'
