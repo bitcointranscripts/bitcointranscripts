@@ -52,7 +52,7 @@ Aaron: 00:01:15
 
 Yes, thank you, CoinKite.
 Thanks for being our sponsor.
-Thanks for making the brilliant cold cart and all the other magical devices you put out there.
+Thanks for making the brilliant cold card and all the other magical devices you put out there.
 What's the, Serge help remind me, what's the little USB thing he called?
 
 Sjors: 00:01:31
@@ -70,7 +70,7 @@ The legend.
 
 Aaron: 00:01:40
 
-Yes, legendary coin kite.
+Yes, legendary CoinKite.
 Thanks for sponsoring us.
 Oh my god.
 
@@ -116,7 +116,7 @@ Aaron: 00:03:46
 
 Yeah, but that's a good sort of non-spoiler warning, maybe.
 We're not going to spend half an hour discussing this change because we made a whole episode about it.
-Anyone who wants to know how Sjor's thinks about that, or me, can go to the previous episodes.
+Anyone who wants to know how Sjors thinks about that, or me, can go to the previous episodes.
 Previous episodes, that's where we really discussed the OP_RETURN limit change.
 
 Sjors: 00:04:09
@@ -156,7 +156,7 @@ I would say that's mostly a simplification.
 
 Aaron: 00:06:07
 
-Well, it's important to note because in this entire shitstorm, it has been brought up as well as another supposedly bad thing that Bitcoin COre developers have done.
+Well, it's important to note because in this entire shitstorm, it has been brought up as well as another supposedly bad thing that Bitcoin Core developers have done.
 But as you point out, even if there are multiple OP_RETURNs in a transaction, the total size of these OP_RETURNs are still bound to whatever the limit is.
 And this limit, even in Bitcoin Core, is still configurable, right?
 
@@ -452,7 +452,7 @@ Sjors: 00:23:24
 
 Yeah, so we did a whole episode, 93, about the great consensus cleanup restoration software proposal, which deals with time warp attacks, and one of the attacks that proposed soft fork is preventing somebody from making a transaction that takes like an hour and a half on a Raspberry Pi...sorry, to create a block that takes an hour and a half on a Raspberry Pi to validate.
 And maybe several minutes on a modern computer.
-Because if a malicious miner produces such a block, they can stall their competition and maybe get a headstart out of that.
+Because if a malicious miner produces such a block, they can stall their competition and maybe get a head start out of that.
 But in the way that was fixed involves that particular rule.
 So this is 2,500 sigops limit per, I think it's per transaction.
 
@@ -859,7 +859,7 @@ But Brains does not, or at least not yet, allow individual miners to construct t
 Sjors: 00:43:32
 
 I don't believe so.
-And Demandpool does plan to do that, but I don't think they've actually launched this yet.
+And Demand pool does plan to do that, but I don't think they've actually launched this yet.
 So there was a bit of a chicken egg.
 
 Aaron: 00:43:40
