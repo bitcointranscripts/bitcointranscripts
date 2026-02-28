@@ -6,6 +6,7 @@ date: '2025-11-06'
 tags: []
 speakers:
   - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
 categories: []
 source_file: 'https://bitcoinexplainedpodcast.com/audio/@nado/99.mp3'
 episode: 99
