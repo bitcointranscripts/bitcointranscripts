@@ -38,6 +38,8 @@ So a little overview on BDK.
 We are a library with a set of crates for building `Layer 1` Bitcoin applications, mainly wallets, but you can build anything that touches on-chain.
 We care about blocks, transactions and how to retrieve them.
 
+## An overview of BDK
+
 We have a few crates on BDK.
 We have our main crate, the `bdk_wallet`, which is a fully-fledged wallet implementation, batteries included.
 We have `bdk_core`, which has the core types and structures that we build everything on top of.
@@ -47,11 +49,15 @@ We have the `testenv` crate, which is a set of utilities to make integrated test
 We have the Electrum client, which connects to an Electrum server, the Esplora client that connects to an Esplora server.
 And `Kyoto`, which is a chain-source crate that uses compact block filters for data retrieval.
 
+## The issue with not wallets that don't run a node
+
 The `bdk_wallet` crate implements the wallet structure.
 It tracks indexes and updates `scriptPubKeys` from the descriptor.
 These updates need to come from somewhere, either a Bitcoin node, Esplora or Electrum.
 This is an issue, because most people don't really want to run a server or don't know how to run a server, so they just have to trust whatever data they get and there's not much they can do about it.
 These servers are a big honeypot for malicious actors like states and ISPs, because they can correlate your IP with chain data such as transactions, addresses, balances and things like that.
+
+## Utreexo
 
 Now we get to the issue of the UTXO set.
 UTXO represents an unspent transaction output, a coin that can be spent.
@@ -62,7 +68,7 @@ We can see on this graph that the UTXO set is ever increasing.
 It has doubled since the last two years.
 It would be great if we could figure out a way to compress that.
 And we can with Utreexo.
-UTreexo is a scheme that manages to compress the UTXO set into a compact representation using a dynamic hash accumulator.
+Utreexo is a scheme that manages to compress the UTXO set into a compact representation using a dynamic hash accumulator.
 It does that by arranging all the UTXOs in the set as leaves in a Merkle tree, hashing them and storing only the roots.
 We can compress 11 gigabytes of the UTXO set into just a few hashes.
 Since we compressed the UTXO set, we're not aware of its entirety.
@@ -80,12 +86,15 @@ So that's a bit heavy, a few tens of kilobytes on `mainnet`.
 We have compact state nodes, which are nodes that only store the Merkle root hashes.
 And the bridges provide proofs to compact state nodes.
 
+## Floresta
+
 Floresta is a Rust implementation of a compact state node.
 It's a lightweight node that can run on a phone or even a Raspberry Pi.
 It has a reusable set of crates that can be used as dependencies for other projects such as `bdk_floresta`.
 So now we have Floresta as a chain source for BDK.
 Why?
-I think BDK has a lot of users, many users, many projects use BDK to implement wallets.
+I think BDK has a lot of users.
+Many users, many projects use BDK to implement wallets.
 So it would be great if they could have a drop-in replacement that has local, trustless on-device validation, because making API calls with financial information is bad for privacy.
 
 
@@ -98,6 +107,8 @@ Then you build a node with the configuration.
 And then you just have to get the updates from the node.
 So you get a lock on the the wallet, you create a subscriber from the node, you spawn a process that will listen to new events and then you match against the event type.
 Currently, we only have block events, so the wallet applies the event.
+
+## Demo of Floresta
 
 I made a demo on `signet`, so let's see if it's going to work on this network.
 So it spawns a node, fetches some peers from DNS.
@@ -122,21 +133,23 @@ Speaker 0: 00:11:19
 
 It seems that we're having a lack of bridges here.
 
+## First Q&A Session
+
 Speaker 1: 00:11:23
 
 And those bridges are developed where?
-Does `Floresta` develop a bridge as well or is that a completely separate piece of software?
+Does Floresta develop a bridge as well or is that a completely separate piece of software?
 
 Speaker 0: 00:11:33
 
-So `Floresta` is a compact-state node, so it only keeps the stubs from the roots.
-There is another project that's a bridge from Calvin Kim, which is `Utreexod`.
+Floresta is a compact-state node, so it only keeps the stubs from the roots.
+There is another project that's a bridge from Calvin Kim, which is Utreexod.
 So this is what people are running pretty much.
 
 Speaker 1: 00:11:49
 
 I see.
-And `Utreexod` is only the bridge?
+And Utreexod is only the bridge?
 Or they also have a compact node?
 
 Speaker 0: 00:11:58
@@ -152,9 +165,9 @@ But with this, are you going to be connecting to a very small set of these bridg
 
 Speaker 0: 00:13:00
 
-You only really need bridges during `IBD`.
-After `IBD` you can connect to other Compact State nodes, and they will have proof for new blocks and transactions.
-You only need a bridge for `IBD`.
+You only really need bridges during IBD.
+After IBD you can connect to other Compact State nodes, and they will have proof for new blocks and transactions.
+You only need a bridge for IBD.
 But you behave on the network like a normal node.
 
 Speaker 2: 00:13:24
@@ -190,6 +203,8 @@ So let's say I am a Compact State node, like Floresta, and I want to spend a UTX
 I need to have the inclusion proof of that with me.
 So I create a transaction, sign it normally, attach the proof and broadcast it.
 
+## Walkthrough of the code
+
 Since we're not going to have any demo work, I'm going to do a walkthrough on the code.
 This is the example I'm running.
 We have a descriptor, which I deposited some Bitcoin to it.
@@ -221,6 +236,8 @@ We still have a lot of work to do both on Floresta and on BDK, so I have one foo
 We want to couple the nodes better with the wallet so we can have a shard persistence layer.
 We have some stuff to change on `bdk_chain` as well.
 I think that's pretty much it if you guys have any questions.
+
+# Final Q&A
 
 Speaker 5: 00:19:24
 
@@ -257,7 +274,7 @@ Speaker 6: 00:20:34
 
 I have two questions.
 My first one is: how heavy are these bridge nodes?
-Could I just potentially run it alongside my Bitcoin node or could it ship on a `Start9`?
+Could I just potentially run it alongside my Bitcoin node or could it ship on a Start9?
 They're heavy.
 
 Speaker 0: 00:20:47
