@@ -190,7 +190,7 @@ Well, we have to, yeah, go ahead.
 [Audience 2]: *inaudible*
 
 [Mark Erhardt]:
-Right?
+Right.
 So we walk each cluster from the front, pick the highest fee rate chunk, and then just sort of remember which chunks we've picked.
 So our total order for those clusters would be the first chunk from the first cluster, the first chunk from the second cluster, or the first chunk from the third cluster.
 They have an equivalent fee rate.
