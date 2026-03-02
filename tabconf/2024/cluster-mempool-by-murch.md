@@ -178,12 +178,15 @@ So, by linearizing and chunking, we get a recipe in which order we should consum
 And because we considered the topological dependencies while building the linearization, as long as we pick from the front, we'll always get the highest fee rate first.
 And all the topological requirements will also be adhered to.
 All right, let's cluster all of the chunks.
-So we get a single chunk out of A and B, which has eight sets per V byte and a weight of two.
+So we get a single chunk out of A and B, which has eight sats per vBbyte and a weight of two.
 We get C and E as a chunk, D as a separate chunk.
 We get F, J, G, H, I, and K.
-So now our, what is it, 15, No, sorry.
-11 transactions become six chunks, right?
+So now our, what is it, 15, no, sorry, 11 transactions become six chunks, right?
 And now, if we were to build a block, does anyone have a good idea how we would go about that?
+
+[Audience]: *inaudible*
+
+[Mark Erhardt]:
 Well, we have to, yeah, go ahead.
 Right?
 So we walk each cluster from the front, pick the highest fee rate chunk, and then just sort of remember which chunks we've picked.
