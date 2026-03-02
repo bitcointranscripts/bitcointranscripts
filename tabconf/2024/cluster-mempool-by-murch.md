@@ -250,17 +250,15 @@ Thanks.
 Cool?
 All right, another question here?
 
-Speaker 2: 00:27:58
+[Audience]: 00:27:58
+So I was curious how this, I guess, CPFP carve-out, there's a wrench in this, and long-term adoption, if it becomes easier for miners to identify lightning channels on chain.
 
-So I was curious how this, I guess, CPFP carve out, there's a wrench in this, and long-term adoption, if it becomes easier for miners to identify lightning channels on chain.
-
-Speaker 0: 00:28:16
-
-Yes, okay, so cluster mempool is incompatible with the CPFP carve out because you basically would have to allow a transaction to attach to any ancestor in the cluster.
+[Mark Erhardt]: 00:28:16
+Yes, okay, so cluster mempool is incompatible with the CPFP carve-out because you basically would have to allow a transaction to attach to any ancestor in the cluster.
 And it wouldn't be clear what you would do if a second one came in or...
-So the answer to that is truck transactions actually.
+So the answer to that is track transactions actually.
 We will have hopefully the Lightning developers opt into restricting the topologies for the transaction to just packages of two, a parent and a child.
-And then you don't need a CPFP carve out because the package is limited to two.
+And then you don't need a CPFP carve-out because the package is limited to two.
 If you create another transaction that spends from the parent transaction, it'll sibling evict the first child and just keep the child with the higher fee rate.
 So either of the two parties will always be able to bump the parent, And the only way to bump the parent is by incentivizing the parent with a higher fee.
 So maybe lightning channels will look more obvious because they might use v3 transactions at that point.
