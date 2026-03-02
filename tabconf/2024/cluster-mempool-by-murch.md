@@ -131,7 +131,7 @@ The first cluster is gonna be mined in the order A and B.
 B has a much higher fee rate, but it depends on A, so A has to stand in front of B in the block.
 For CDE, E has the higher fee rate, and it bumps C, so it'll be C before E because C has to come first, but D will go last because it has the lowest fee rate.
 And I've also done the third cluster where we find that J bumps F, and together they have a package fee rate of six sats per vByte.
-Then we get G, H, and I picked into the block at thirteen-thirds, four point three sats per v-byte.
+Then we get G, H, and I picked into the block at thirteen-thirds, four point three sats per vByte.
 And last, we would pick K at one set per vByte.
 So, this is actually fairly computationally intensive if your clusters get more complicated and get big.
 This is actually one of the places where a ton of the research that Pieter and Suhas have been doing, has been going into.
