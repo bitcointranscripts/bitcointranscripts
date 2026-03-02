@@ -95,7 +95,7 @@ All right, so we have found out.
 Block building currently is expensive because we have to recalculate all the ancestor set scores whenever we pick any ancestors of another transaction into the block.
 Eviction is broken, it doesn't actually evict the last things we want to mine.
 And this one, I haven't motivated more yet, but actually the current replace by fee rules do not always give us the best block templates.
-So some, yes sir?
+Yes, sir?
 
 [Audience 1]: What do miners do right now? 
 Like, do they use any sort of block...?
@@ -103,7 +103,7 @@ Like, do they use any sort of block...?
 [Mark Erhardt]:
 Okay, so what do miners do right now?
 Actually, right now we do use this data structure with the multi-index.
-For each transaction, We have the ancestor set score on record, and we have the descendant set score on record.
+For each transaction, we have the ancestor set score on record, and we have the descendant set score on record.
 And we use those two indexes, one for the block building and one for the eviction.
 It is highly optimized, and it works fairly well.
 But there's a few issues with it.
