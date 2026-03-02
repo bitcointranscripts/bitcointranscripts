@@ -8,6 +8,7 @@ speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
   - 'Cory Fields'
+  - 'Antoine Poinsot'
 categories: null
 source_file: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 ---
