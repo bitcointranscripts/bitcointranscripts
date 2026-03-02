@@ -43,7 +43,7 @@ So, it gets a lot more interesting if you have two children because for C, C alo
 D does nothing to help with that because D itself would only be picked into a block at three sats per vByte.
 But E is also a CPFP here, so E will bump C to a fee rate of six sats per vByte in the package.
 The thing is, of course, you can't put E into the block before C is in there, otherwise the output doesn't exist that E spends, right?
-So, if we look at this table, the first thing that will get picked into the block out of those five transactions is A and B together.
+If we look at this table, the first thing that will get picked into the block out of those five transactions is A and B together.
 A first, because topologically A has to stand in front of B in the block.
 And then the next thing is C and E, and last, D will be picked into the block.
 So far, so simple.
@@ -52,7 +52,7 @@ So, the ancestor set fee rate of D, if we look at all the transactions it depend
 But actually, if that conflicts, or if the ancestor set fee rate is higher than the transaction's individual fee rate, obviously it's more attractive to just pick the parent, right?
 C gives us more fees per byte than D.
 So, actually D's fee rate in the end will only be three sats per vByte.
-So the ancestor set doesn't actually inform us here.
+The ancestor set doesn't actually inform us here.
 This is a fairly simple example.
 There's more complicated examples where this would have even more weight.
 The problem is after you pick C and E into the block, you have to recalculate all of their descendants' fee rates because now the set of ancestors that they were calculated with has changed, right?
