@@ -251,7 +251,7 @@ Cool?
 All right, another question here?
 
 [Audience 4]: 00:27:58
-So I was curious how this, I guess, CPFP carve-out, there's a wrench in this, and long-term adoption, if it becomes easier for miners to identify lightning channels on chain.
+So I was curious how this, I guess, CPFP carve-out, there's a wrench in this, and long-term adoption, if it becomes easier for miners to identify Lightning channels on-chain.
 
 [Mark Erhardt]: 00:28:16
 Yes, okay, so cluster mempool is incompatible with the CPFP carve-out because you basically would have to allow a transaction to attach to any ancestor in the cluster.
@@ -289,7 +289,7 @@ You said that linearization of clustering is computationally expensive.
 What makes this still worth it for that trade-off?
 
 [Mark Erhardt]: 00:32:20
-Uh-huh, right.
+Right.
 So, theoretically, it would be enough to just topologically sort transactions in a cluster.
 You'd already have a valid linearization, right?
 You just need any order in which you can validly pick transactions into the block.
@@ -311,45 +311,39 @@ Cool?
 All right.
 Another question here?
 
-Speaker 4: 00:34:16
-
+[Audience 6]: 00:34:16
 I had one as well.
-If you're not creating block templates as a miner and you're just a normal node on the network and say your mempool is getting full, would this algorithm also determine what transactions you're gonna purge from your mempool?
+If you're not creating block templates as a miner and you're just a normal node on the network and, say your mempool is getting full, would this algorithm also determine what transactions you're gonna purge from your mempool?
 
-Speaker 0: 00:34:32
-
+[Mark Erhardt]: 00:34:32
 Yes.
 So the big benefit of cluster mempool, one of the design goals really, is eviction becomes the opposite of block building.
 And as long as you have a reasonably good linearization, the things that you will evict from your mempool are either, if you had an optimal sort, really the last things that you would pick into the block out of all the things that you know about, or at least very far in the back.
 So generally it should do better on the outcomes of eviction than our current mempool.
 And if you have a less computationally powerful device, it'll probably have fewer optimal clusters, but it'll still have pretty decent clusters all around.
 So at least there will be ancestors that's sorted.
-And you still get this benefit where you look at the clusters from the, yeah, I think this was it, Where you can look at each cluster, and the candidate for the eviction is the last chunk in one of the clusters.
+And you still get this benefit where you can look at each cluster, and the candidate for the eviction is the last chunk in one of the clusters.
 And you just have to compare all the last chunks in all of the clusters and kick out the one.
-So You could have, for example, a heap on that, and you always know which transaction or which chunk is up for eviction next.
+So you could have, for example, a heap on that, and you always know which transaction or which chunk is up for eviction next.
 
-Speaker 5: 00:35:56
-
+[Audience 7]: 00:35:56
 Perhaps we're looking at it, but it's a little hard to tell.
-Can you come up with an example where the descendent set score gives a worse incentive compatible outcome than the linearization?
+Can you come up with an example where the descendant set score gives a worse incentive compatible outcome than the linearization?
 
-Speaker 0: 00:36:13
-
-Uh-huh, yes.
-So, here, let's look at this again, right?
+[Mark Erhardt]: 00:36:13
+Yes.
+Here, let's look at this again, right?
 If you look at this cluster, what ancestor set would you pick into the block first?
 
-Speaker 5: 00:36:29
+[Audience 7]: 00:36:29
+J and F.
 
-JNF.
-
-Speaker 0: 00:36:31
-
+[Mark Erhardt]: 00:36:31
 Correct, they have a ancestor set fee rate of six, and that's the highest here in this set, right?
-But if you look at each of the descendant set scores, so currently the mempool has these two indexes, right?
+But if you look at each of the descendant set scores, currently the mempool has these two indexes, right?
 It's a multi-index data structure.
-The ancestor set scores for each transaction, the descendent set score.
-And we look at the descendent set score, the lowest descendent set score, as the heuristic to kick out something, right?
+The ancestor set scores for each transaction, the descendant set score.
+And we look at the descendant set score, the lowest descendant set score, as the heuristic to kick out something, right?
 So what we found in the final slide was we'll kick out g, h, I first and keep f and j, right?
 And here, the lowest descendent set fee rate is the one of F.
 F has a descendent set fee rate of five.
