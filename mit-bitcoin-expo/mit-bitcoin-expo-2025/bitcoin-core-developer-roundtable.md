@@ -3,7 +3,8 @@ title: 'Bitcoin Core Developer Roundtable'
 transcript_by: 'garryk1612-cyber via review.btctranscripts.com'
 media: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 date: '2025-04-07'
-tags: null
+tags:
+  - 'career'
 speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
