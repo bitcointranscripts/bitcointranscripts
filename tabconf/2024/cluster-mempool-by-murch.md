@@ -183,34 +183,34 @@ We get C and E as a chunk, D as a separate chunk.
 We get F, J, G, H, I, and K.
 So now our, what is it, 15, no, sorry, 11 transactions become six chunks, right?
 And now, if we were to build a block, does anyone have a good idea how we would go about that?
+Well, we have to, yeah, go ahead.
 
 [Audience]: *inaudible*
 
 [Mark Erhardt]:
-Well, we have to, yeah, go ahead.
 Right?
 So we walk each cluster from the front, pick the highest fee rate chunk, and then just sort of remember which chunks we've picked.
 So our total order for those clusters would be the first chunk from the first cluster, the first chunk from the second cluster, or the first chunk from the third cluster.
-They have an equivalent feed rate.
+They have an equivalent fee rate.
 Sorry, I should have built a better example.
-And then the second cluster from the third, the second chunk from the second cluster, and finally the third chunk from the third cluster.
+And then the second cluster from the third, sorry, the second chunk from the second cluster, and finally the third chunk from the third cluster.
 So what do we have now?
 We have a total order on all transactions in the mempool.
 We'd get that by just finding what transactions are related and ordering those transactions independently in the context of their relatives.
 We can blazingly fast pick the block template because we basically are doing a merge sort.
 We're just looking at each cluster from the front and we pick from each cluster until we have a full block.
 And eviction is the opposite of mining.
-Because to evict, we look at our clusters and go from the back and kick out the chunk with the lowest free reign.
-So out of our mempool, we kick out k, then we kick out d, and then we would kick out ghi.
-But we no longer kick out the first thing that we wouldn't mind, which is f.
-Cool, So I'm maybe a little faster than I thought, so I have lots of time for your questions.
+Because to evict, we look at our clusters and go from the back and kick out the chunk with the lowest free rate.
+So out of our mempool, we kick out K, then we kick out D, and then we would kick out G, H, I.
+But we no longer kick out the first thing that we would mine, which is F.
+Cool, so I'm maybe a little faster than I thought, so I have lots of time for your questions.
 There are a couple caveats.
 First, we'll need a cluster limit that so far hasn't existed.
 The cluster limit will be a lot smaller than current cluster or than the worst-case clusters we've seen in our research.
 But it'll probably be reasonably big for anything reasonable people are doing on the network.
-We can probably not optimally sort all the clusters because big clusters, A linearization is basically a power set that grows exponentially.
+We can probably not optimally sort all the clusters because big clusters, a linearization is basically a power set that grows exponentially.
 The computational effort for sorting, it grows exponentially in the size of the cluster.
-So probably to 15 or maybe, yeah, about 15, we can ultimately sort maybe 20 transactions.
+So probably to fifteen or maybe, yeah, about fifteen, we can ultimately sort maybe twenty transactions.
 And above that, we'll use something simpler, like ancestor set sort on a cluster in order.
 We sort of run this mini mining algorithm on a cluster with ancestor sort, the same strategy that we have.
 And then we get a decent linearization that's at least as good as we would have been doing before.
