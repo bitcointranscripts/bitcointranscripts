@@ -9,7 +9,8 @@ speakers:
   - 'Gloria Zhao'
   - 'Cory Fields'
   - 'Antoine Poinsot'
-categories: null
+categories:
+  - 'podcast'
 source_file: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 ---
 
@@ -28,7 +29,7 @@ And since graduation I have worked on Bitcoin core full time for the past four o
 
 **Cory Fields:** 00:01:35
 
-I'm Corey who have a background in open source, C++ software development, and got tired of putting my credit card number to buy things online.That seems stupid to me.
+I'm Cory who have a background in open source, C++ software development, and got tired of putting my credit card number to buy things online.That seems stupid to me.
 I read about Bitcoin, the idea that you can push a payment as opposed to pull and that made more sense as it seemed like the way that things should be. And there's this idea that the code is the money.
 It took a long time for that to click.Like it's as simple as that.The code, the software is the money.It became a fascinating thing to think about to me.
 The number of technology challenges, that there are hard problems in Bitcoin and lot of fun.
@@ -40,7 +41,7 @@ And my job is just to work on Bitcoin and Bitcoin Core and keep it going.
 
 **Antoine Poinsot:** 00:03:02
 
-My name is Antoine Poinceur.I work at Chaincode Labs.
+My name is Antoine Poinsot.I work at Chaincode Labs.
 I got started working on Bitcoin for similar reasons to Gloria and the reason to work on Bitcoin core in particular is probably impact. The most frustrating project you could work at, but also the most impactful one in the space.
 
 **Adam Jonas:** 00:03:29
