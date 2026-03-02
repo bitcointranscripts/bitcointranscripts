@@ -375,9 +375,9 @@ It seems easy at first glance, you know?
 
 [Mark Erhardt]: 00:38:58
 Yes, so for small clusters, it's pretty easy.
-We will definitely be able to optimally order clusters of up to 15 transactions, maybe even 20.
-But if you look at a cluster with like 60 transactions, a bunch of diamond structures, tons of ancestors, descendants that are all interconnected in some ways, it can become fairly complicated.
-So Peter's been doing a ton of fuzz testing on this and he's found some very complicated examples where the number of calculations that you have to do just exceed the computation time that we want to allocate.
+We will definitely be able to optimally order clusters of up to fifteen transactions, maybe even twenty.
+But if you look at a cluster with like sixty transactions, a bunch of diamond structures, tons of ancestors, descendants that are all interconnected in some ways, it can become fairly complicated.
+So Pieter's been doing a ton of fuzz testing on this and he's found some very complicated examples where the number of calculations that you have to do just exceed the computation time that we want to allocate.
 And that start, like the worst clusters of like 25 are out of the range of what we want to initially allocate.
 But the cool thing is we can have sort of this, we can sort of have a lazy evaluation where we just keep a topological sort slash ancestor set sort of the cluster.
 And if we have time, we can optimally linearize it with just biting the bullet and calculating the complicated cluster.
