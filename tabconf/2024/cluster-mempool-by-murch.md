@@ -37,8 +37,8 @@ For example, transaction A doesn't have any ancestors and its ancestor fee rate 
 If there were no other transactions that were connected to it, it would be picked into a block at one sat per vByte.
 Transaction B though, makes this a CPFP constellation, the child pays for the parent.
 So together, these two transactions as a package are a lot more attractive than one sat per vByte.
-All my transactions here have the same size, so the package AB will have a fee rate of eight sats per V byte.
-15 plus one divided by two, very simple.
+All my transactions here have the same size, so the package AB will have a fee rate of eight sats per vByte.
+Fifteen plus one divided by two, very simple.
 So, it gets a lot more interesting if you have two children because for C, C alone would be picked into the block at five sats per vByte.
 D does nothing to help with that because D itself would only be picked into a block at three sats per vByte.
 But E is also a CPFP here, so E will bump C to a fee rate of six sats per vByte in the package.
