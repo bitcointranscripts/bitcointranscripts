@@ -18,20 +18,22 @@ I'm Murch, nice to meet you all.
 We're going to talk about Cluster Mempool today.
 Cluster Mempool is a work by primarily Suhas Daftwar and Pieter Wuille.
 So I'm reporting on other people's work.
-I've been a close by bystander, so I hope I'll be able to give you a good overview, but I might not be able to answer all your questions, but keep them coming anyway.
+I've been a close by bystander.
+I hope I'll be able to give you a good overview, but I might not be able to answer all your questions, but keep them coming anyway.
 So generally the idea with cluster mempool is to basically change how the mempool data structure inside of Bitcoin Core would work.
 The idea is to re-architect how the mempool works.
 The mempool is a data structure, of course, that we use to keep track of all of the unconfirmed transactions that your node knows about, right?
 So we use this, of course, to do several things.
-For example, to build block templates, to inform ourselves of our fee rates that we should be using when we're building transactions.
+For example, to build block templates.
+To inform ourselves of our fee rates that we should be using when we're building transactions.
 To manage our resources if the mempool overflows and we are, for example, running on a device that has limited memory, we can't keep everything that we ever learn about because sometimes there's just more transactions than fit into our memory so we'll have to know which ones we want to keep.
 And in case we have multiple transactions that we want to relay at the same time, we also use the information in the mempool to decide which ones we prioritize.
-So, I don't know how many of you have a good idea of how the mempool works today in Bitcoin Core, so I'm gonna talk a little bit about that.
+I don't know how many of you have a good idea of how the mempool works today in Bitcoin Core, so I'm gonna talk a little bit about that.
 The mempool currently uses something called an ancestor set to decide which transactions will be picked into the block next.
-So, for every single transaction, we look at what other transactions have to go into the block before them, their ancestors.
+Ffor every single transaction, we look at what other transactions have to go into the block before them, their ancestors.
 And this is the context by which we can decide how interesting it is to pick a transaction into the block next.
 So if we look at this very simple example with five transactions, we can think about what the dependencies for each transaction is.
-So for example, transaction A doesn't have any ancestors and its ancestor fee rate is one sat per vByte.
+For example, transaction A doesn't have any ancestors and its ancestor fee rate is one sat per vByte.
 If there were no other transactions that were connected to it, it would be picked into a block at one sat per vByte.
 Transaction B though, makes this a CPFP constellation, the child pays for the parent.
 So together, these two transactions as a package are a lot more attractive than one sat per vByte.
