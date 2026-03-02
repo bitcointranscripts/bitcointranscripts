@@ -6,6 +6,7 @@ date: '2025-04-07'
 tags: null
 speakers:
   - 'Adam Jonas'
+  - 'Gloria Zhao'
 categories: null
 source_file: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 ---
