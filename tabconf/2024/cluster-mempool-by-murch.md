@@ -1,37 +1,21 @@
 ---
-title: Cluster Mempool by Murch
-speakers: null
-source_file: https://www.youtube.com/watch?v=PeqE0Gqs9g4
-media: https://www.youtube.com/watch?v=PeqE0Gqs9g4
-date: "2024-12-20"
-summary:
-    "Cluster Mempool is an effort to rearchitect how Bitcoin Core stores\
-    \ unconfirmed transactions, builds blocks, and evaluates replacement candidates.\
-    \ It is expected to drastically simplify package relay with bigger packages than\
-    \ two transactions, speed up block building, and generalize CPFP to descendants-pay-for-ancestors.\n\
-    \n What would an attendee learn from this talk?\n\n- What issues exist in the\
-    \ current mempool design?\n- How does the Cluster Mempool approach address those\
-    \ issues?\n- How does Cluster Mempool work?\n- How does this change affect users\
-    \ and other network participants?\n\n Is there anything folks should read up on\
-    \ before they attend this talk?\n\n- Basic knowledge about unconfirmed transactions\
-    \ and mempool is useful\n\n Relevant Links\n\n- [Proposal for a new mempool design\
-    \ bitcoin/bitcoin#27677](https://github.com/bitcoin/bitcoin/issues/27677)\n- https://delvingbitcoin.org/t/cluster-mempool-definitions-theory/202\n\
-    - https://delvingbitcoin.org/t/cluster-mempool-rbf-thoughts/156\n- https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303\n\
-    \n About the Speaker\n\nMurch is an engineer at Chaincode Labs. He contributes\
-    \ to Bitcoin Core, Bitcoin Optech, and Bitcoin Stack Exchange. He is a co-host\
-    \ of NYC BitDevs and the Bitcoin Optech Recap.\n\n Social Links\n\n!https://github.githubassets.com/images/icons/emoji/octocat.png\n\
-    \nhttps://github.com/murchandamus/\n\n\U0001F426 https://twitter.com/murchandamus\n\
-    \n\nTABConf 6 GitHub link\nhttps://github.com/TABConf/6.tabconf.com/issues/45"
+title: 'Cluster Mempool by Murch'
+transcript_by: 'psychemist via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=PeqE0Gqs9g4'
+date: '2024-12-20'
 tags: []
+speakers:
+  - 'Mark Erhardt'
 categories:
-    - Education
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'Education'
+source_file: 'https://www.youtube.com/watch?v=PeqE0Gqs9g4'
+summary: "Cluster Mempool is an effort to rearchitect how Bitcoin Core stores unconfirmed transactions, builds blocks, and evaluates replacement candidates. It is expected to drastically simplify package relay with bigger packages than two transactions, speed up block building, and generalize CPFP to descendants-pay-for-ancestors.\n\n What would an attendee learn from this talk?\n\n- What issues exist in the current mempool design?\n- How does the Cluster Mempool approach address those issues?\n- How does Cluster Mempool work?\n- How does this change affect users and other network participants?\n\n Is there anything folks should read up on before they attend this talk?\n\n- Basic knowledge about unconfirmed transactions and mempool is useful\n\n Relevant Links\n\n- [Proposal for a new mempool design bitcoin/bitcoin#27677](https://github.com/bitcoin/bitcoin/issues/27677)\n- https://delvingbitcoin.org/t/cluster-mempool-definitions-theory/202\n- https://delvingbitcoin.org/t/cluster-mempool-rbf-thoughts/156\n- https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303\n\n About the Speaker\n\nMurch is an engineer at Chaincode Labs. He contributes to Bitcoin Core, Bitcoin Optech, and Bitcoin Stack Exchange. He is a co-host of NYC BitDevs and the Bitcoin Optech Recap.\n\n Social Links\n\n!https://github.githubassets.com/images/icons/emoji/octocat.png\n\nhttps://github.com/murchandamus/\n\n🐦 https://twitter.com/murchandamus\n\n\nTABConf 6 GitHub link\nhttps://github.com/TABConf/6.tabconf.com/issues/45"
 ---
 
 Speaker 0: 00:00:05
 
 Hi. Sorry for running a little late.
-We're going to talk, I'm Mert, nice to meet you all.
+I'm Murch, nice to meet you all.
 We're going to talk about Cluster Mempool today.
 Cluster Mempool is a work by primarily Suhas Daftwar and Peter Welle.
 So I'm reporting on other people's work.
