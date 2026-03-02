@@ -5,6 +5,7 @@ media: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 date: '2025-04-07'
 tags:
   - 'career'
+  - 'bitcoin-core'
 speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
