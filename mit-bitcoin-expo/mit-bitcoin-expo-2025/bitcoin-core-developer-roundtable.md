@@ -7,6 +7,7 @@ tags:
   - 'career'
   - 'bitcoin-core'
   - 'bitcoin-development'
+  - 'developer'
 speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
