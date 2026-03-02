@@ -143,9 +143,9 @@ We're thinking sixty-four transaction clusters will probably be fine.
 This is somewhat in line with the twenty-five descendant limit that we currently use.
 So currently, a transaction cannot have more than twenty-four descending transactions, or that's at least the standardness rules per which the Bitcoin core nodes are configured by default.
 All right, so, if you were in the Socratic village yesterday, we talked a little bit about modern mempool stuff, and Gloria actually had an example of a really complicated cluster with four hundred and ninety transactions.
-So my colleague Claire and I, we did some block building research a couple of years ago.
+My colleague Claire and I, we did some block building research a couple of years ago.
 And we found some really, really horrible clusters in that data.
-So sixty-four is a limit that will be hit, but probably not by most users.
+So, sixty-four is a limit that will be hit, but probably not by most users.
 Most users create a single transaction.
 Maybe they'll spend an unconfirmed output once or twice or do a CPFP, and then they'll have a cluster of two or maybe three transactions.
 If you get to four hundred and ninety something transactions in a cluster, you're probably doing something that you should rethink.
