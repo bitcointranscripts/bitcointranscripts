@@ -387,38 +387,31 @@ So the algorithm kind of has a timeout built in.
 When we hit the timeout, there's a fallback heuristic that will not yield the optimal solution, but it will get close.
 And so this is where cluster mempool falls short of computing the mining score.
 
-Speaker 0: 00:40:35
-
+[Mark Erhardt]: 00:40:35
 I think that matches my understanding.
-Again, I want to say I'm not one of the leaders on this project and I hope I'm not misrepresenting, but My understanding is everything is at least going to be as good as ancestor scores, which we currently use, and then hopefully a lot of the clusters.
-I think most, maybe over 90% of all transactions are single transaction clusters.
+Again, I want to say I'm not one of the leaders on this project and I hope I'm not misrepresenting, but my understanding is everything is at least going to be as good as ancestor scores, which we currently use, and then hopefully a lot of the clusters.
+I think most, maybe over ninety percent of all transactions are single transaction clusters.
 Most other clusters are pretty small, and it's only very occasional that we get these huge sprawling clusters.
 So for the most part, all of the mempool will be optimally sorted with the occasional cluster in there that is not.
 
-Speaker 6: 00:41:15
-
+[Audience 8]: 00:41:15
 Cool, thanks.
 
-Speaker 3: 00:41:18
-
+[Audience 9]: 00:41:18
 Do all your examples assume the same number of vBytes for the transaction and does this take into account the size of the cluster?
 
-Speaker 0: 00:41:31
-
+[Mark Erhardt]: 00:41:31
 That's a fair question.
 All my examples are simple and have transactions of the same weight.
-Peter, in his write-ups in Suhas, they both have more complicated examples in there.
+Pieter, in his write-ups, and Suhas, they both have more complicated examples in there.
 I would encourage you to take a look at delvingbitcoin.org.
-The Cluster Mempool Working Group tag will find you a few articles where they've laid out in a lot of detail their approach to linearization, terminology about cluster mempool, some of which I've introduced, and more complicated example where it becomes hard to find the optimal cluster, how they go about that.
+The Cluster Mempool Working Group tag will find you a few articles where they've laid out in a lot of detail their approach to linearization, terminology about cluster mempool, some of which I've introduced, and more complicated examples where it becomes hard to find the optimal cluster, how they go about that.
 Yeah, so, sorry, yes, I only have very simple examples.
 If you want, I can pull up some later from their blog posts, and we can talk about them offline.
 
-Speaker 1: 00:42:25
-
+[Speaker 1]: 00:42:25
 All right, big round of applause, everybody.
 
-Speaker 0: 00:42:27
-
-Thank you.
+[Mark Erhardt]: 00:42:27
 Thank you.
 Thank you.
