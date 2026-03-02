@@ -3,7 +3,8 @@ title: 'Cluster Mempool by Murch'
 transcript_by: 'psychemist via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=PeqE0Gqs9g4'
 date: '2024-12-20'
-tags: []
+tags:
+  - 'cluster-mempool'
 speakers:
   - 'Mark Erhardt'
 categories:
