@@ -1,12 +1,13 @@
 ---
-title: Bitcoin Core Developer Roundtable
-speakers: null
-tags: null
-source_file: https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc
-media: https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc
-categories: null
+title: 'Bitcoin Core Developer Roundtable'
+transcript_by: 'garryk1612-cyber via review.btctranscripts.com'
+media: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 date: '2025-04-07'
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+tags: null
+speakers:
+  - 'Adam Jonas'
+categories: null
+source_file: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 ---
 
 Speaker 0: 00:00:00
