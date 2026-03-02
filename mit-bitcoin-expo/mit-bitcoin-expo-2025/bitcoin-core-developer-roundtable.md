@@ -6,6 +6,7 @@ date: '2025-04-07'
 tags:
   - 'career'
   - 'bitcoin-core'
+  - 'bitcoin-development'
 speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
