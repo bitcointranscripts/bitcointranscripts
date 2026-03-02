@@ -362,21 +362,18 @@ And does cluster mempool compute it exactly, or does it fall short somewhere?
 Very good question.
 So, it will compute it exactly if you have the optimal order.
 If you have not optimally ordered some of the clusters, the mining scores, or sorry, the chunk fee rates might not exactly match the mining scores in the end.
-But Generally, they should be a lot closer because previously, we were looking at the ancestor set score for each transaction in that context.
+But generally, they should be a lot closer because previously, we were looking at the ancestor set score for each transaction in that context.
 And that changes all the time as more ancestors are picked into blocks.
 We always have to recalculate it.
-So we actually do not get any information on the final mining score.
-The fee rate that a transaction actually will get into the block with the old mempool.
+So we actually do not get any information on the final mining score, the fee rate that a transaction actually will get into the block at, with the old mempool.
 And here, we at least get a very close guess, even if the clusters are not optimally sorted.
 Does that cover your question?
 
-Speaker 6: 00:38:51
-
+[Audience 8]: 00:38:51
 Is it hard to optimally order the clusters?
 It seems easy at first glance, you know?
 
-Speaker 0: 00:38:58
-
+[Mark Erhardt]: 00:38:58
 Yes, so for small clusters, it's pretty easy.
 We will definitely be able to optimally order clusters of up to 15 transactions, maybe even 20.
 But if you look at a cluster with like 60 transactions, a bunch of diamond structures, tons of ancestors, descendants that are all interconnected in some ways, it can become fairly complicated.
