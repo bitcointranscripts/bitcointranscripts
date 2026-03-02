@@ -378,12 +378,11 @@ Yes, so for small clusters, it's pretty easy.
 We will definitely be able to optimally order clusters of up to fifteen transactions, maybe even twenty.
 But if you look at a cluster with like sixty transactions, a bunch of diamond structures, tons of ancestors, descendants that are all interconnected in some ways, it can become fairly complicated.
 So Pieter's been doing a ton of fuzz testing on this and he's found some very complicated examples where the number of calculations that you have to do just exceed the computation time that we want to allocate.
-And that start, like the worst clusters of like 25 are out of the range of what we want to initially allocate.
+And, like the worst clusters of like twenty-five are out of the range of what we want to initially allocate.
 But the cool thing is we can have sort of this, we can sort of have a lazy evaluation where we just keep a topological sort slash ancestor set sort of the cluster.
 And if we have time, we can optimally linearize it with just biting the bullet and calculating the complicated cluster.
 
-Speaker 6: 00:40:17
-
+[Audience 8]: 00:40:17
 So the algorithm kind of has a timeout built in.
 When we hit the timeout, there's a fallback heuristic that will not yield the optimal solution, but it will get close.
 And so this is where cluster mempool falls short of computing the mining score.
