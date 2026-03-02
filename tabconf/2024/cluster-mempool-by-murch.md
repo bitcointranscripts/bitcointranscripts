@@ -344,25 +344,22 @@ But if you look at each of the descendant set scores, currently the mempool has 
 It's a multi-index data structure.
 The ancestor set scores for each transaction, the descendant set score.
 And we look at the descendant set score, the lowest descendant set score, as the heuristic to kick out something, right?
-So what we found in the final slide was we'll kick out g, h, I first and keep f and j, right?
-And here, the lowest descendent set fee rate is the one of F.
-F has a descendent set fee rate of five.
-G, H, I, or sorry, I should say, I has 11, G and H each have six, which is higher than F.
+So what we found in the final slide was we'll kick out G, H, I first and keep F and J, right?
+And here, the lowest descendant set fee rate is the one of F.
+F has a descendant set fee rate of five.
+G, H, I, or sorry, I should say, I has eleven, G and H each have six, which is higher than F.
 J has nine.
 So the first thing you would evict is also the thing that you would mine out of this cluster.
 
-Speaker 5: 00:37:36
-
+[Audience 7]: 00:37:36
 Okay, thank you.
 
-Speaker 6: 00:37:40
-
+[Audience 8]: 00:37:40
 All right, so we're trying to compute the mining rate, the mining score, right?
 And does cluster mempool compute it exactly, or does it fall short somewhere?
 
-Speaker 0: 00:37:53
-
-Uh-huh, very good question.
+[Mark Erhardt]: 00:37:53
+Very good question.
 So, it will compute it exactly if you have the optimal order.
 If you have not optimally ordered some of the clusters, the mining scores, or sorry, the chunk fee rates might not exactly match the mining scores in the end.
 But Generally, they should be a lot closer because previously, we were looking at the ancestor set score for each transaction in that context.
