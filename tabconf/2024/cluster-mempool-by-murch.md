@@ -47,39 +47,39 @@ A first, because topologically A has to stand in front of B in the block.
 And then the next thing is C and E, and last, D will be picked into the block.
 So far, so simple.
 We see one of the first problems right here.
-So, the ancestor set fee rate of D, if we look at all the transactions it depends on, would calculate to be four sets per V byte.
+So, the ancestor set fee rate of D, if we look at all the transactions it depends on, would calculate to be four sats per vbyte.
 But actually, if that conflicts, or if the ancestor set fee rate is higher than the transaction's individual fee rate, obviously it's more attractive to just pick the parent, right?
 C gives us more fees per byte than D.
-So actually D's fee rate in the end will only be three sets per V byte.
+So, actually D's fee rate in the end will only be three sats per vbyte.
 So the ancestor set doesn't actually inform us here.
 This is a fairly simple example.
 There's more complicated examples where this would have even more weight.
 The problem is after you pick C and E into the block, you have to recalculate all of their descendants' fee rates because now the set of ancestors that they were calculated with has changed, right?
-So while we're building a block template, every time we pick any transactions with descendants into the block, we have to recalculate all of their ancestors at fee rates.
+So while we're building a block template, every time we pick any transactions with descendants into the block, we have to recalculate all of their ancestors set fee rates.
 That's kind of a drag.
-A, because we don't know what fee rate they'll eventually be picked into the block, and B, because, well, yeah, because we don't know what fee rate they'll eventually have, and we have to do that extra computation.
-Okay.
-So this becomes a little more obvious if we look at the other side.
-So let's say our mempool, someone is creating a staking protocol on Bitcoin, the mempool overflows, and we're starting to evict some transactions out of our mempool to reduce the memory footprint of that data structure.
+A, because we don't know what fee rate they'll eventually be picked into the block, and B, because we don't know what fee rate they'll eventually have, and we have to do that extra computation.
+This becomes a little more obvious if we look at the other side.
+Let's say our mempool, someone is creating a staking protocol on Bitcoin, the mempool overflows, and we're starting to evict some transactions out of our mempool to reduce the memory footprint of that data structure.
 If you look at this cluster, and we'll use that term more, a cluster refers to all the transactions that are related by parent-child relationships transitively, so like the biggest connected component in the mempool.
 So we are looking at a cluster right here, a single cluster.
 If you look at this cluster, does anyone want to hazard a guess which transaction we would kick out of the mempool first if we had to reduce the mempool footprint?
 K, yes, excellent.
-K has a fee rate of one set per rebuy, and clearly that's gonna get picked into the block last, per looking at this carefully.
+K has a fee rate of one sat per vbyte, and clearly that's gonna get picked into the block last, per looking at this carefully.
 And it also has the lowest descendant set fee rate.
 So descendant sets are exactly the same as ancestor sets except we look at it from the other side.
-So for a descendant set, we look at the transaction and all of its descendants, we sum up their views and sum up their sizes, and that gives us the descendant fee rate.
-So if we look at what's gonna get picked into a block here, maybe that's not completely obvious, but, sorry, Let me tell you a little more about the other descendant set phi rates here.
+For a descendant set, we look at the transaction and all of its descendants, we sum up their fees and sum up their sizes, and that gives us the descendant fee rate.
+So if we look at what's gonna get picked into a block here, maybe that's not completely obvious, but let me tell you a little more about the other descendant set fee rates here.
 So if you look at the descendants of I, I doesn't have any descendants.
-It has the highest descendant set phi rate.
-G and h both have a pretty decent descendant set phi rate of six because only I is a descendant of them.
+It has the highest descendant set fee rate.
+G and H both have a pretty decent descendant set fee rate of six because only I is a descendant of them.
 And J has a great descendant set fee rate, especially once K is gone.
 But F in this constellation after k is gone has the lowest fee rate.
-So we kicked out k because it was the lowest, and now the next thing that we would evict out of this whole mempool would be f.
-And once we kick out f, all of these other transactions are missing an ancestor, So we would literally kick out the transaction that we would mine next when we evict.
+So we kicked out K because it was the lowest, and now the next thing that we would evict out of this whole mempool would be F.
+And once we kick out F, all of these other transactions are missing an ancestor.
+So we would literally kick out the transaction that we would mine next when we evict.
 All right, maybe I jumped a little too far into this one.
 When we evict, we want to really get rid of the transactions that we would mine last.
-But in order to find out what we would mine last, the only way to really find out what their final fee rate would be would be to build a block of the size of the whole mempool.
+But in order to find out what we would mine last, the only way to really find out what their final fee rate would be, would be to build a block of the size of the whole mempool.
 We'd have to literally pick everything out of the mempool.
 And then the last thing that's left over is what we want to throw away.
 You might imagine if the mempool's 300 megabytes, our data structure is full because that's when we evict.
@@ -87,9 +87,9 @@ That's going to be a lot of computation.
 And we don't want to do that for every single transaction that we evict.
 So that's why we use this heuristic where we look at the descendent set fee rates and we just throw out what has the lowest descendent set fee rate.
 But yeah, it's broken.
-It doesn't give us the thing that we will mine last, but just the thing that has the lowest descendent set fewer.
+It doesn't give us the thing that we will mine last, but just the thing that has the lowest descendent set fee rate.
 All right, so far so good?
-You see, it's pretty low here, I hope you can see it, actually, but F has only five sets per V by, which is the lowest that's left after case call.
+You see, it's pretty low here, I hope you can see it, actually, but F has only five sets per V by, which is the lowest that's left after K is gone.
 All right, so we have found out.
 Block building currently is expensive because we have to recalculate all the ancestor set scores whenever we pick any ancestors of another transaction into the block.
 Eviction is broken, it doesn't actually evict the last things we want to mine.
