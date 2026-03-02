@@ -12,8 +12,7 @@ source_file: 'https://www.youtube.com/watch?v=PeqE0Gqs9g4'
 summary: "Cluster Mempool is an effort to rearchitect how Bitcoin Core stores unconfirmed transactions, builds blocks, and evaluates replacement candidates. It is expected to drastically simplify package relay with bigger packages than two transactions, speed up block building, and generalize CPFP to descendants-pay-for-ancestors.\n\n What would an attendee learn from this talk?\n\n- What issues exist in the current mempool design?\n- How does the Cluster Mempool approach address those issues?\n- How does Cluster Mempool work?\n- How does this change affect users and other network participants?\n\n Is there anything folks should read up on before they attend this talk?\n\n- Basic knowledge about unconfirmed transactions and mempool is useful\n\n Relevant Links\n\n- [Proposal for a new mempool design bitcoin/bitcoin#27677](https://github.com/bitcoin/bitcoin/issues/27677)\n- https://delvingbitcoin.org/t/cluster-mempool-definitions-theory/202\n- https://delvingbitcoin.org/t/cluster-mempool-rbf-thoughts/156\n- https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303\n\n About the Speaker\n\nMurch is an engineer at Chaincode Labs. He contributes to Bitcoin Core, Bitcoin Optech, and Bitcoin Stack Exchange. He is a co-host of NYC BitDevs and the Bitcoin Optech Recap.\n\n Social Links\n\n!https://github.githubassets.com/images/icons/emoji/octocat.png\n\nhttps://github.com/murchandamus/\n\n🐦 https://twitter.com/murchandamus\n\n\nTABConf 6 GitHub link\nhttps://github.com/TABConf/6.tabconf.com/issues/45"
 ---
 
-Speaker 0: 00:00:05
-
+[Mark Erhardt]: 
 Hi. Sorry for running a little late.
 I'm Murch, nice to meet you all.
 We're going to talk about Cluster Mempool today.
@@ -93,11 +92,13 @@ You see, it's pretty low here, I hope you can see it, actually, but F has only f
 All right, so we have found out.
 Block building currently is expensive because we have to recalculate all the ancestor set scores whenever we pick any ancestors of another transaction into the block.
 Eviction is broken, it doesn't actually evict the last things we want to mine.
-And this one I haven't motivated more yet, but actually the current replace by fee rules do not always give us the best block templates.
+And this one, I haven't motivated more yet, but actually the current replace by fee rules do not always give us the best block templates.
 So some, yes sir?
-What do miners do with their?
-Right.
-Like, do they use any sort of block?
+
+[Audience]: What do miners do right now? 
+Like, do they use any sort of block...?
+
+[Mark Erhardt]:
 Okay, so what do miners do right now?
 Actually, right now we do use this data structure with the multi-index.
 For each transaction, We have the ancestor set score on record, and we have the descendant set score on record.
@@ -106,7 +107,7 @@ It is highly optimized, and it works fairly well.
 But there's a few issues with it.
 And so this has motivated some people to put in quite the elbow grease to do a lot of research.
 If you're a consumer of delving Bitcoin, you might have seen several chapters in a book of research on how we could improve this process.
-All right, so what we really would, sorry, I was talking about the replace by fee stuff.
+All right, I was talking about the replace by fee stuff.
 It becomes really, really hard to see what exactly you have to add where in a transaction graph in order to bump a specific transaction to an intended fee rate, or if you have conflicts, what you want to evict and what you want to keep.
 I'll just leave it at that.
 If you want to know all the details, I'm sure Gloria's written a few things about this.
