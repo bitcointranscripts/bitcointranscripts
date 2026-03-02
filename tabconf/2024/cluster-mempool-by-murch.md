@@ -95,7 +95,7 @@ Eviction is broken, it doesn't actually evict the last things we want to mine.
 And this one, I haven't motivated more yet, but actually the current replace by fee rules do not always give us the best block templates.
 So some, yes sir?
 
-[Audience]: What do miners do right now? 
+[Audience 1]: What do miners do right now? 
 Like, do they use any sort of block...?
 
 [Mark Erhardt]:
@@ -185,7 +185,7 @@ So now our, what is it, 15, no, sorry, 11 transactions become six chunks, right?
 And now, if we were to build a block, does anyone have a good idea how we would go about that?
 Well, we have to, yeah, go ahead.
 
-[Audience]: *inaudible*
+[Audience 2]: *inaudible*
 
 [Mark Erhardt]:
 Right?
@@ -226,7 +226,7 @@ All right, here, question up front?
 [Speaker 1]: 00:25:27
 Here we go, raise your hand high if you have a question, I will bring a mic to you.
 
-[Audience]: 00:25:39
+[Audience 3]: 00:25:39
 Maybe I missed this part, but how do you figure out what goes in the chunks?
 
 [Mark Erhardt]:
@@ -250,7 +250,7 @@ Thanks.
 Cool?
 All right, another question here?
 
-[Audience]: 00:27:58
+[Audience 4]: 00:27:58
 So I was curious how this, I guess, CPFP carve-out, there's a wrench in this, and long-term adoption, if it becomes easier for miners to identify lightning channels on chain.
 
 [Mark Erhardt]: 00:28:16
@@ -261,9 +261,9 @@ We will have hopefully the Lightning developers opt into restricting the topolog
 And then you don't need a CPFP carve-out because the package is limited to two.
 If you create another transaction that spends from the parent transaction, it'll sibling evict the first child and just keep the child with the higher fee rate.
 So either of the two parties will always be able to bump the parent, And the only way to bump the parent is by incentivizing the parent with a higher fee.
-So maybe lightning channels will look more obvious because they might use v3 transactions at that point.
+So maybe Lightning channels will look more obvious because they might use v3 transactions at that point.
 But v3 transactions will also be useful for other things, for other L2 proposals maybe.
-I think ARC needs more than two transactions potentially, but there's several other contracting protocols, layer two protocols, where packages of two transactions would be feasible.
+I think Ark needs more than two transactions potentially, but there's several other contracting protocols, Layer-two protocols, where packages of two transactions would be feasible.
 Also, so earlier I said that RBF rules, as we have them right now, are not always gonna create the most incentive compatible outcome.
 So we might accept sometimes a replacement that actually doesn't lead to a better block template, or not accept a replacement that would lead to a better outcome.
 But with the fee rate diagram, actually, it becomes much easier to compare replacements.
@@ -284,13 +284,11 @@ Did I cover all of your questions?
 Cool.
 Next question, here.
 
-Speaker 3: 00:32:08
-
+[Audience 5]: 00:32:08
 You said that linearization of clustering is computationally expensive.
 What makes this still worth it for that trade-off?
 
-Speaker 0: 00:32:20
-
+[Mark Erhardt]: 00:32:20
 Uh-huh, right.
 So, theoretically, it would be enough to just topologically sort transactions in a cluster.
 You'd already have a valid linearization, right?
