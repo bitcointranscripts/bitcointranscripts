@@ -31,25 +31,25 @@ The mempool currently uses something called an ancestor set to decide which tran
 So, for every single transaction, we look at what other transactions have to go into the block before them, their ancestors.
 And this is the context by which we can decide how interesting it is to pick a transaction into the block next.
 So if we look at this very simple example with five transactions, we can think about what the dependencies for each transaction is.
-So for example, transaction A doesn't have any ancestors and its ancestor fee rate is one sat per vbyte.
-If there were no other transactions that were connected to it, it would be picked into a block at one sat per vbyte.
+So for example, transaction A doesn't have any ancestors and its ancestor fee rate is one sat per vByte.
+If there were no other transactions that were connected to it, it would be picked into a block at one sat per vByte.
 Transaction B though, makes this a CPFP constellation, the child pays for the parent.
-So together, these two transactions as a package are a lot more attractive than one sat per vbyte.
+So together, these two transactions as a package are a lot more attractive than one sat per vByte.
 All my transactions here have the same size, so the package AB will have a fee rate of eight sats per V byte.
 15 plus one divided by two, very simple.
-So, it gets a lot more interesting if you have two children because for C, C alone would be picked into the block at five sats per vbyte.
-D does nothing to help with that because D itself would only be picked into a block at three sats per vbyte.
-But E is also a CPFP here, so E will bump C to a fee rate of six sats per vbyte in the package.
+So, it gets a lot more interesting if you have two children because for C, C alone would be picked into the block at five sats per vByte.
+D does nothing to help with that because D itself would only be picked into a block at three sats per vByte.
+But E is also a CPFP here, so E will bump C to a fee rate of six sats per vByte in the package.
 The thing is, of course, you can't put E into the block before C is in there, otherwise the output doesn't exist that E spends, right?
 So, if we look at this table, the first thing that will get picked into the block out of those five transactions is A and B together.
 A first, because topologically A has to stand in front of B in the block.
 And then the next thing is C and E, and last, D will be picked into the block.
 So far, so simple.
 We see one of the first problems right here.
-So, the ancestor set fee rate of D, if we look at all the transactions it depends on, would calculate to be four sats per vbyte.
+So, the ancestor set fee rate of D, if we look at all the transactions it depends on, would calculate to be four sats per vByte.
 But actually, if that conflicts, or if the ancestor set fee rate is higher than the transaction's individual fee rate, obviously it's more attractive to just pick the parent, right?
 C gives us more fees per byte than D.
-So, actually D's fee rate in the end will only be three sats per vbyte.
+So, actually D's fee rate in the end will only be three sats per vByte.
 So the ancestor set doesn't actually inform us here.
 This is a fairly simple example.
 There's more complicated examples where this would have even more weight.
@@ -63,7 +63,7 @@ If you look at this cluster, and we'll use that term more, a cluster refers to a
 So we are looking at a cluster right here, a single cluster.
 If you look at this cluster, does anyone want to hazard a guess which transaction we would kick out of the mempool first if we had to reduce the mempool footprint?
 K, yes, excellent.
-K has a fee rate of one sat per vbyte, and clearly that's gonna get picked into the block last, per looking at this carefully.
+K has a fee rate of one sat per vByte, and clearly that's gonna get picked into the block last, per looking at this carefully.
 And it also has the lowest descendant set fee rate.
 So descendant sets are exactly the same as ancestor sets except we look at it from the other side.
 For a descendant set, we look at the transaction and all of its descendants, we sum up their fees and sum up their sizes, and that gives us the descendant fee rate.
@@ -118,9 +118,8 @@ Well, it turns out if we redesign how we keep all that data in the mempool, we c
 So let's look at clusters.
 What are clusters?
 As I said, clusters are all the transactions that are related in some manner.
-So in some manner.
 So right here we're looking at three clusters.
-There's A, B, C, D, and E, and the more complicated cluster that we saw for the descendants at fee rates.
+There's A, B, C, D, and E, and the more complicated cluster that we saw for the descendants set fee rates.
 Now, if you're thinking about what fee rate a transaction will finally have, or at what fee rate it'll effectively be mined into the block, you might realize that only transactions that are related to other transactions will affect their mining score.
 The transaction D will not change at what fee rate transaction A will be mined into a block.
 So what if we just pick apart the mempool, divide it into these clusters, and then we sort those clusters in the order in which the transactions would be picked into blocks.
@@ -129,52 +128,52 @@ And we look at the first cluster.
 The first cluster is gonna be mined in the order A and B.
 B has a much higher fee rate, but it depends on A, so A has to stand in front of B in the block.
 For CDE, E has the higher fee rate, and it bumps C, so it'll be C before E because C has to come first, but D will go last because it has the lowest fee rate.
-And I've also done the third cluster where we find that J bumps F, and together they have a package fee rate of six SATs per V byte.
-Then we get G, H, and I picked into the block at 13 thirds, 4.3 sets per V byte.
-And last, we would pick K at one set per V byte.
+And I've also done the third cluster where we find that J bumps F, and together they have a package fee rate of six sats per vByte.
+Then we get G, H, and I picked into the block at thirteen-thirds, four point three sats per v-byte.
+And last, we would pick K at one set per vByte.
 So, this is actually fairly computationally intensive if your clusters get more complicated and get big.
-This is actually one of the places where a ton of the research that Peter and Suhas have been doing, has been going into.
-Like how do you linearize clusters as fast as possible?
+This is actually one of the places where a ton of the research that Pieter and Suhas have been doing, has been going into.
+Like, how do you linearize clusters as fast as possible?
 What size clusters can you linearize effectively?
-My understanding is that they think that we can always optimally sort clusters of 15 to 20 transactions.
+My understanding is that they think that we can always optimally sort clusters of fifteen to twenty transactions.
 And we might want to generally limit to, we will have to generally limit how many transactions are allowed to be related at once, because it'll become too expensive otherwise to linearize them.
-We're thinking 64 transaction clusters will probably be fine.
-This is somewhat in line with the 25 descendant limit that we currently use.
-So currently, a transaction cannot have more than 24 descending transactions, and, or that's at least the standardness rules per which the Bitcoin core nodes are configured by default.
-All right, so, if you were in the Socratic village yesterday, we talked a little bit about modern mempool stuff, and Gloria actually had an example of a really complicated cluster with 490 transactions.
+We're thinking sixty-four transaction clusters will probably be fine.
+This is somewhat in line with the twenty-five descendant limit that we currently use.
+So currently, a transaction cannot have more than twenty-four descending transactions, or that's at least the standardness rules per which the Bitcoin core nodes are configured by default.
+All right, so, if you were in the Socratic village yesterday, we talked a little bit about modern mempool stuff, and Gloria actually had an example of a really complicated cluster with four hundred and ninety transactions.
 So my colleague Claire and I, we did some block building research a couple of years ago.
 And we found some really, really horrible clusters in that data.
-So 64 is a limit that will be hit, but probably not by most users.
+So sixty-four is a limit that will be hit, but probably not by most users.
 Most users create a single transaction.
 Maybe they'll spend an unconfirmed output once or twice or do a CPFP, and then they'll have a cluster of two or maybe three transactions.
-If you get to 490 something transactions in a cluster, you're probably doing something that you should rethink.
+If you get to four hundred and ninety something transactions in a cluster, you're probably doing something that you should rethink.
 All right, so we have linearized our clusters.
-We know in which order the transactions have been, will be picked into the block.
+We know in which order the transactions will be picked into the block.
 I'll not go into more detail on how we linearize them.
-Check out Delving, Peter's literally written a book on it.
-All right, Let's look at that third more complicated cluster, and I'll introduce some, a way of thinking about the cluster in terms of its size and fee rate.
-So we call this a fee rate diagram and where at the bottom you see the total weight, the transactions are all each weight one right here, so that's easy.
+Check out Delving, Pieter's literally written a book on it.
+All right, let's look at that third more complicated cluster, and I'll introduce a way of thinking about the cluster in terms of its size and fee rate.
+So we call this a fee rate diagram and at the bottom you see the total weight, the transactions are all each weight one right here, so that's easy.
 And on the y-axis you see the absolute fee, the sum of fees in the cluster up to that point.
-And now we found the order of the, here, cool.
+And now we found the order of the... here, cool.
 So I hope you believe that this is a good linearization for that cluster.
-But now if we draw it on the first transaction, f, we'll collect three sets on the first weight unit.
-And then we'll collect nine sets on J to the point where we have two weight units.
-So if we pick those two together, that'll be six sets per V byte, and We'll just have, we can represent this package as a single line together, which actually is nicer than just looking at the first transaction.
-The first transaction would indicate that we only get three sets per byte for each weight unit there, but now we get six, right?
+But now if we draw it on the first transaction, F, we'll collect three sats on the first weight unit.
+And then we'll collect nine sats on J to the point where we have two weight units.
+So if we pick those two together, that'll be six sats per vByte, and we'll just have, we can represent this package as a single line together, which actually is nicer than just looking at the first transaction.
+The first transaction would indicate that we only get three sats per byte for each weight unit there, but now we get six, right?
 We can do the same thing for the second segment here.
-We are basically creating this convex hull over this V-rate diagram.
+We are basically creating this convex hull over this fee rate diagram.
 And once we have done this, we end up seeing what we would like to pick into the block together.
-So we have chunked f and j together into a single package.
-We have chunked g, h, and I together in a single package, and k has a terrible fee rate and is all by itself in the last chunk, k, right?
+So we have chunked F and J together into a single package.
+We have chunked G, H, and I together in a single package, and K has a terrible fee rate and is all by itself in the last chunk, K, right?
 So even though we now had originally six transactions in our cluster, the way it will be picked into the block will actually only be three chunks.
 Cool?
 All right.
-So we've linearized our cluster, We've chunked the linearization into packages that will be picked into the block together and have calculated their fee rates.
-And you might notice now, If we pick f and j together into the block, they will be picked at a fee rate of six SATs per V byte.
-And the fee rate of gh and I will not change because it's already not the ancestor set that we're calculating, we're calculating with the chunk.
-GH and I, and the fee rate doesn't change.
+So we've linearized our cluster, we've chunked the linearization into packages that will be picked into the block together and have calculated their fee rates.
+And you might notice now, If we pick F and J together into the block, they will be picked at a fee rate of six SATs per vByte.
+And the fee rate of G, H, and, I will not change because it's already not the ancestor set that we're calculating, we're calculating with the chunk.
+G, H and I, and the fee rate doesn't change.
 It's exactly the fee rate that we have pre-computed that is left once we have picked F and J, right?
-It's still 4.3, well, 13 thirds that we'll get out of that package.
+It's still four point three, well, thirteen thirds, that we'll get out of that package.
 So, by linearizing and chunking, we get a recipe in which order we should consume a cluster, and we don't have to recalculate anything if we just consume it from the front to the back.
 And because we considered the topological dependencies while building the linearization, as long as we pick from the front, we'll always get the highest fee rate first.
 And all the topological requirements will also be adhered to.
@@ -416,7 +415,7 @@ Cool, thanks.
 
 Speaker 3: 00:41:18
 
-Do all your examples assume the same number of vbytes for the transaction and does this take into account the size of the cluster?
+Do all your examples assume the same number of vBytes for the transaction and does this take into account the size of the cluster?
 
 Speaker 0: 00:41:31
 
