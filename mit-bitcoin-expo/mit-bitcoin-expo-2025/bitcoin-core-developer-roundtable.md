@@ -7,6 +7,7 @@ tags: null
 speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
+  - 'Cory Fields'
 categories: null
 source_file: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 ---
