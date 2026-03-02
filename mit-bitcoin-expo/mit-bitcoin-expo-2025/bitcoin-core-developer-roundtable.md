@@ -8,6 +8,7 @@ tags:
   - 'bitcoin-core'
   - 'bitcoin-development'
   - 'developer'
+  - 'soft-fork'
 speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
