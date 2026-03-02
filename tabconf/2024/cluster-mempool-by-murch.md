@@ -86,11 +86,11 @@ And then the last thing that's left over is what we want to throw away.
 You might imagine if the mempool's 300 megabytes, our data structure is full because that's when we evict.
 That's going to be a lot of computation.
 And we don't want to do that for every single transaction that we evict.
-So that's why we use this heuristic where we look at the descendent set fee rates and we just throw out what has the lowest descendent set fee rate.
+So that's why we use this heuristic where we look at the descendant set fee rates and we just throw out what has the lowest descendant set fee rate.
 But yeah, it's broken.
-It doesn't give us the thing that we will mine last, but just the thing that has the lowest descendent set fee rate.
+It doesn't give us the thing that we will mine last, but just the thing that has the lowest descendant set fee rate.
 All right, so far so good?
-You see, it's pretty low here, I hope you can see it, actually, but F has only five sets per V by, which is the lowest that's left after K is gone.
+You see, it's pretty low here, I hope you can see it, actually, but F has only five sets per vByte, which is the lowest that's left after K is gone.
 All right, so we have found out.
 Block building currently is expensive because we have to recalculate all the ancestor set scores whenever we pick any ancestors of another transaction into the block.
 Eviction is broken, it doesn't actually evict the last things we want to mine.
