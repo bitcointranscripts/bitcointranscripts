@@ -17,43 +17,37 @@ Speaker 0: 00:00:05
 Hi. Sorry for running a little late.
 I'm Murch, nice to meet you all.
 We're going to talk about Cluster Mempool today.
-Cluster Mempool is a work by primarily Suhas Daftwar and Peter Welle.
+Cluster Mempool is a work by primarily Suhas Daftwar and Pieter Wuille.
 So I'm reporting on other people's work.
 I've been a close by bystander, so I hope I'll be able to give you a good overview, but I might not be able to answer all your questions, but keep them coming anyway.
-So generally the idea with cluster mempool is to basically change how the data structure, the mempool data structure inside of Bitcoin Core would work and we're, it's a little reverb-y up here, is that normal?
-Excuse me.
-It's pretty reverb-y up here.
-Yeah, thank you.
-Okay, yeah, much better, thank you.
-Yeah, okay, cool.
-So the idea is to re-architect how the mempool works.
+So generally the idea with cluster mempool is to basically change how the mempool data structure inside of Bitcoin Core would work.
+The idea is to re-architect how the mempool works.
 The mempool is a data structure, of course, that we use to keep track of all of the unconfirmed transactions that your node knows about, right?
-So We use this, of course, to do several things.
-For example, to build block templates, to inform ourselves of our fee rates that we should be using when we're building transactions, to manage our resources if the mempool overflows and we are, for example, running on a device that has limited memory, we can't keep everything that we ever learn about because sometimes there's just more transactions than fit into our memory.
-So we'll have to know which ones we want to keep.
+So we use this, of course, to do several things.
+For example, to build block templates, to inform ourselves of our fee rates that we should be using when we're building transactions.
+To manage our resources if the mempool overflows and we are, for example, running on a device that has limited memory, we can't keep everything that we ever learn about because sometimes there's just more transactions than fit into our memory so we'll have to know which ones we want to keep.
 And in case we have multiple transactions that we want to relay at the same time, we also use the information in the mempool to decide which ones we prioritize.
 So, I don't know how many of you have a good idea of how the mempool works today in Bitcoin Core, so I'm gonna talk a little bit about that.
 The mempool currently uses something called an ancestor set to decide which transactions will be picked into the block next.
-So for every single transaction, we look at what other transactions have to go into the block before them, their ancestors.
+So, for every single transaction, we look at what other transactions have to go into the block before them, their ancestors.
 And this is the context by which we can decide how interesting it is to pick a transaction into the block next.
 So if we look at this very simple example with five transactions, we can think about what the dependencies for each transaction is.
-So for example, let's talk about it a little first.
-So for example, transaction A doesn't have any ancestors and its ancestor fee rate is one sat per V byte.
-It would be, if there were no other transaction that were connected to it, it would be picked into a block at one sat per V byte.
+So for example, transaction A doesn't have any ancestors and its ancestor fee rate is one sat per vbyte.
+If there were no other transactions that were connected to it, it would be picked into a block at one sat per vbyte.
 Transaction B though, makes this a CPFP constellation, the child pays for the parent.
-So together, these two transactions as a package are a lot more attractive than one set per V byte.
-All my transactions here have the same size, so the package AB will have a fee rate of eight sets per V byte.
+So together, these two transactions as a package are a lot more attractive than one sat per vbyte.
+All my transactions here have the same size, so the package AB will have a fee rate of eight sats per V byte.
 15 plus one divided by two, very simple.
-So it gets a lot more interesting if you have two children because for C, C alone would be picked into the block at five sets per rebuy.
-D does nothing to help with that because D itself would only be picked into a block at three sets per rebind.
-But E is also a CPFP here, so E will bump C to a fee rate of six set per rebind in the package.
+So, it gets a lot more interesting if you have two children because for C, C alone would be picked into the block at five sats per vbyte.
+D does nothing to help with that because D itself would only be picked into a block at three sats per vbyte.
+But E is also a CPFP here, so E will bump C to a fee rate of six sats per vbyte in the package.
 The thing is, of course, you can't put E into the block before C is in there, otherwise the output doesn't exist that E spends, right?
-So, if we look at this table, The first thing that will get picked into the block out of those five transactions is A and B together.
+So, if we look at this table, the first thing that will get picked into the block out of those five transactions is A and B together.
 A first, because topologically A has to stand in front of B in the block.
 And then the next thing is C and E, and last, D will be picked into the block.
 So far, so simple.
 We see one of the first problems right here.
-So the ancestor set fee rate of D, if we look at all the transactions it depends on, would calculate to be four sets per V byte.
+So, the ancestor set fee rate of D, if we look at all the transactions it depends on, would calculate to be four sets per V byte.
 But actually, if that conflicts, or if the ancestor set fee rate is higher than the transaction's individual fee rate, obviously it's more attractive to just pick the parent, right?
 C gives us more fees per byte than D.
 So actually D's fee rate in the end will only be three sets per V byte.
