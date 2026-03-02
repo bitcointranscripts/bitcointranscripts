@@ -210,7 +210,7 @@ The cluster limit will be a lot smaller than current cluster or than the worst-c
 But it'll probably be reasonably big for anything reasonable people are doing on the network.
 We can probably not optimally sort all the clusters because big clusters, a linearization is basically a power set that grows exponentially.
 The computational effort for sorting, it grows exponentially in the size of the cluster.
-So probably to fifteen or maybe, yeah, about fifteen, we can ultimately sort maybe twenty transactions.
+So probably to about fifteen, we can ultimately sort maybe twenty transactions.
 And above that, we'll use something simpler, like ancestor set sort on a cluster in order.
 We sort of run this mini mining algorithm on a cluster with ancestor sort, the same strategy that we have.
 And then we get a decent linearization that's at least as good as we would have been doing before.
@@ -220,27 +220,27 @@ One thing that is a little annoying is it might be less obvious to end user wall
 But I think that will be fine because I think most end users just gauge it and then bump if it's not enough.
 So that will still work.
 Yeah.
-So I have 15 minutes for your questions.
+So I have fifteen minutes for your questions.
 All right, here, question up front?
 
-Speaker 1: 00:25:27
-
+[Speaker 1]: 00:25:27
 Here we go, raise your hand high if you have a question, I will bring a mic to you.
 
-Speaker 0: 00:25:39
-
+[Audience]: 00:25:39
 Maybe I missed this part, but how do you figure out what goes in the chunks?
+
+[Mark Erhardt]:
 Let me explain that better maybe.
 Okay, so we, I'm sort of mixing it a little bit, but if you first look at the cluster as being only topologically sorted, it might not be the order in which you would pick it into the block.
 So what you, on an abstract level, do is you run a mining, like a block template building algorithm, on just the cluster.
-Similar to the mini-miner in Bitcoin Core, if someone's followed the Bumfee calculation PRs from last year, how we calculate Bumfees for more complex packages.
+Similar to the mini-miner in Bitcoin Core, if someone's followed the bump fee calculation PRs from last year, how we calculate bump fees for more complex packages.
 And you basically, you just look at the whole cluster.
 Out of this cluster, what would I pick first into the block?
 What's left?
 What would I pick then?
 And so forth.
 And you basically, you make that your linearization.
-Now, Peter would probably make quite the face because he's spent a lot more time, so there's rules on how you can shift transactions against each other to improve the linearization, how you would calculate the linearization in the first place and all that.
+Now, Pieter would probably make quite the face because he's spent a lot more time, so there's rules on how you can shift transactions against each other to improve the linearization, how you would calculate the linearization in the first place and all that.
 But I don't want to get into all those details.
 But if you assume you get the optimal order of the transactions in the cluster, and then you draw them in the fee rate diagram like this, you can basically draw the convex hull over this fee rate diagram, And it will indicate what the chunks are.
 On a less abstract way, whenever you have transactions that have higher fee rates following transactions that have lower fee rates, they will form a chunk.
