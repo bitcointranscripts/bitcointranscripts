@@ -147,7 +147,7 @@ For example, it has some relatively novel approach to to backups, it works with 
 Satsie: 00:10:19
 
 Nice thank you for that. Yeah, check out ChillDKG when you have a moment.
-Okay, so we're gonna talk about the second part of FROST which is the signing.
+Okay, so we're going to talk about the second part of FROST which is the signing.
 So I have an easy question for you Jesse and a hard one.
 The first one is just please describe how the signing process works and then the follow-up to that is that given that FROST typically will have multiple participants, is there anything interesting that we can do with privacy?
 Like, do all signers need to see everything that is being signed?
