@@ -1,5 +1,5 @@
 ---
-title: 'Aaron and Sjors discuss what''s new in Bitcoin Core v30'
+title: 'Aaron and Sjors discuss what's new in Bitcoin Core v30'
 transcript_by: 'Gaelincho via review.btctranscripts.com'
 media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/99'
 date: '2025-11-06'
