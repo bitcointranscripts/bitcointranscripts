@@ -19,7 +19,7 @@ categories:
 source_file: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 ---
 
-> ## Introductions and motivations for working on Bitcoin Core
+## Introductions and motivations for working on Bitcoin Core
 
 **Adam Jonas:** 00:00:00
 
@@ -70,9 +70,7 @@ Yes there are a lot of different things in Bitcoin and I think just talking abou
 And Corey, you had a really good point earlier when we were chatting about how they're almost incompatible sometimes.
 So if you want to talk about that.
 
-
-> ## The "soft fork paradox" and consensus changesSoft
-
+## The "soft fork paradox" and consensus changesSoft
 
 **Cory Fields:** 00:05:31
 
@@ -111,9 +109,7 @@ Three things, I wrote a blog post about my opinion and all the soft folk proposa
 Thank you, I wanted to give more practical response to your initial questions. I think a lot of the soft fork proposals that we see today, not all of them, but a lot, because there are so many of them, kind of solutions to such a problem or it's not exactly clear what problem they're solving and it's even amplified by the fact that Bitcoin has become so big that we cannot be specialists in every single area.
 There is this area, especially with the covenant discussion, there is researchers specialized in this area. So it would be very useful because in addition to solutions in search of a problem, there is also not all of them agree on which solution without even defining clearly the problem in the first place. So I think what would be useful from a Bitcoin Core perspective would be some sort of a research report from this loosely defined researcher community of we set to solve this problem and we find that this solution is appropriate and it has this and that tradeoff and we bring it to the community. I know that there are a few people I see in the room that said to do exactly this work, in comparing different alternatives and I think that's very useful.
 
-
-> ## How to get yourself engaged in Bitcoin conversations? 
-
+## How to get yourself engaged in Bitcoin conversations? 
 
 **Adam Jonas:** 00:14:09
 
@@ -156,9 +152,7 @@ We've covered one topic, so You get last word.
 
 Just a third point I wanted to make earlier. Just a clarification for people that are maybe newer in the room to Bitcoin. Corey and Gloria talked about the merging scripts and we talked about soft forks. Merging a soft fork in Bitcoin Core is not how it gets activated in Bitcoin. It's what users choose to run, what software users choose to run. I would tend to agree that Bitcoin Core is probably the only reasonable software to run as a full node but still, merging it is not enough to activate the soft fork.
 
-
-> ## Beyond soft forks: The day-to-day work of Bitcoin Core development 
-
+## Beyond soft forks: The day-to-day work of Bitcoin Core development 
 
 **Adam Jonas:** 00:18:28
 
@@ -205,9 +199,7 @@ Yeah, Antoine? Can just do things.
 
 You can we just talked about how that's hard. You just had 20 full minutes of you can't just do things.
 
-
-> ## Some opportunities in Bitcoin
-
+## Some opportunities in Bitcoin
 
 **Antoine Poinsot:** 00:23:19
 
@@ -215,8 +207,7 @@ Well, actually you can. There is a lot of things that we just don't do yet that 
 There are many people, One recent news is that **Eugene Segal** joined Brank to work on Bitcoin Core full-time, little guy was working on LND full-time and he found a high severity vulnerability in Bitcoin Core. It didn't need to change Bitcoin Core to do this and it's big thing because it's high impact another one which needed small changes to Bitcoin Core is **DRX block** that Jonas mentioned earlier about peer-to-peer monitoring. This one guy that does it for this massive network that is Bitcoin. He introduced **TracePoint** into Bitcoin Core which was a small way to get metrics out of the software and then he built his own infrastructure entirely out of the software. That's how he monitored the whole network and he's crying for help. So if anybody is interested in doing high impact stuff for Bitcoin, you could help with network monitoring. You can just do stuff.
 
 
-> ## Roles and Responsibilities in Bitcoin Core developement
-
+## Roles and Responsibilities in Bitcoin Core developement
 
 **Adam Jonas:** 00:25:11
 
@@ -261,9 +252,7 @@ That was not a suggestion, by the way.
 okay, but I think that's something that is worth and I cannot pronounce this word, so I'm going to skip it. Just making importance of this is that we need accountability from maintainers but again, you can just do stuff and there is accountability that comes from non-maintainer contributors.
 For instance, I can think of Marker, who keeps reviewing every single request that gets merged and finds bugs after it's merged and say, before the release, he found a bug that was merged and we did not have CI, and he read the code and since he has a compiler in his head or something. He realized that's not valid C++ and he just said, well, you merged invalid C++. That's sort of a leadership, but just maybe leading by example more than trying to get people to do what he wants.
 
-
-> ## Open discussion on specific soft fork proposals (OpCat and CTV) 
-
+## Open discussion on specific soft fork proposals (OpCat and CTV) 
 
 **Adam Jonas:** 00:33:53
 
