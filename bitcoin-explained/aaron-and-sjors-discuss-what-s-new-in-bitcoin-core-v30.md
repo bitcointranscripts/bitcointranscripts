@@ -1000,7 +1000,6 @@ So that's why some people are saying, oh, the majority of Bitcoin notes is on to
 Well, that's not true.
 The majority of listening Bitcoin notes is on tor.
 But that might no longer be true eventually.
-Right, right.
 
 Aaron: 00:50:01
 
