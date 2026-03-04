@@ -10,10 +10,22 @@ speakers:
 categories:
   - 'Education'
 source_file: 'https://www.youtube.com/watch?v=PeqE0Gqs9g4'
-summary: "Cluster Mempool is an effort to rearchitect how Bitcoin Core stores unconfirmed transactions, builds blocks, and evaluates replacement candidates. It is expected to drastically simplify package relay with bigger packages than two transactions, speed up block building, and generalize CPFP to descendants-pay-for-ancestors.\n\n What would an attendee learn from this talk?\n\n- What issues exist in the current mempool design?\n- How does the Cluster Mempool approach address those issues?\n- How does Cluster Mempool work?\n- How does this change affect users and other network participants?\n\n Is there anything folks should read up on before they attend this talk?\n\n- Basic knowledge about unconfirmed transactions and mempool is useful\n\n Relevant Links\n\n- [Proposal for a new mempool design bitcoin/bitcoin#27677](https://github.com/bitcoin/bitcoin/issues/27677)\n- https://delvingbitcoin.org/t/cluster-mempool-definitions-theory/202\n- https://delvingbitcoin.org/t/cluster-mempool-rbf-thoughts/156\n- https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303\n\n About the Speaker\n\nMurch is an engineer at Chaincode Labs. He contributes to Bitcoin Core, Bitcoin Optech, and Bitcoin Stack Exchange. He is a co-host of NYC BitDevs and the Bitcoin Optech Recap.\n\n Social Links\n\n!https://github.githubassets.com/images/icons/emoji/octocat.png\n\nhttps://github.com/murchandamus/\n\n🐦 https://twitter.com/murchandamus\n\n\nTABConf 6 GitHub link\nhttps://github.com/TABConf/6.tabconf.com/issues/45"
+summary: "Cluster Mempool is an effort to rearchitect how Bitcoin Core stores unconfirmed transactions, builds blocks, and evaluates replacement candidates. It is expected to drastically simplify package relay with bigger packages than two transactions, speed up block building, and generalize CPFP to descendants-pay-for-ancestors.\n\n- What would an attendee learn from this talk?\n\n- What issues exist in the current mempool design?\n- How does the Cluster Mempool approach address those issues?\n- How does Cluster Mempool work?\n- How does this change affect users and other network participants?\n\n Is there anything folks should read up on before they attend this talk?\n\n- Basic knowledge about unconfirmed transactions and mempool is useful\n\nAbout the Speaker\n\nMurch is an engineer at Chaincode Labs. He contributes to Bitcoin Core, Bitcoin Optech, and Bitcoin Stack Exchange. He is a co-host of NYC BitDevs and the Bitcoin Optech Recap.\n\n Social Links\n\n!https://github.githubassets.com/images/icons/emoji/octocat.png\n\nhttps://github.com/murchandamus/\n\n🐦 https://twitter.com/murchandamus\n\n\nTABConf 6 GitHub link\nhttps://github.com/TABConf/6.tabconf.com/issues/45""
+relevant_links: 
+    - title: 'Proposal for a new mempool design'
+      url: 'https://github.com/bitcoin/bitcoin/issues/27677'
+    - title: 'Cluster Mempool Definitions & Theory'
+      url: 'https://delvingbitcoin.org/t/cluster-mempool-definitions-theory/202'
+    - title: 'Cluster Mempool RBF Thoughts'
+      url: 'https://delvingbitcoin.org/t/cluster-mempool-rbf-thoughts/156'
+    - title: 'How to Linearize your Cluster'
+      url: 'https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303'
 ---
 
-[Mark Erhardt]: 
+Mark Erhardt: 00:00:05
+
+## Introduction
+
 Hi. Sorry for running a little late.
 I'm Murch, nice to meet you all.
 We're going to talk about Cluster Mempool today.
@@ -21,6 +33,9 @@ Cluster Mempool is a work by primarily Suhas Daftwar and Pieter Wuille.
 So I'm reporting on other people's work.
 I've been a close by bystander.
 I hope I'll be able to give you a good overview, but I might not be able to answer all your questions, but keep them coming anyway.
+
+## Cluster Mempool
+
 So generally the idea with cluster mempool is to basically change how the mempool data structure inside of Bitcoin Core would work.
 The idea is to re-architect how the mempool works.
 The mempool is a data structure, of course, that we use to keep track of all of the unconfirmed transactions that your node knows about, right?
@@ -30,8 +45,11 @@ To inform ourselves of our fee rates that we should be using when we're building
 To manage our resources if the mempool overflows and we are, for example, running on a device that has limited memory, we can't keep everything that we ever learn about because sometimes there's just more transactions than fit into our memory so we'll have to know which ones we want to keep.
 And in case we have multiple transactions that we want to relay at the same time, we also use the information in the mempool to decide which ones we prioritize.
 I don't know how many of you have a good idea of how the mempool works today in Bitcoin Core, so I'm gonna talk a little bit about that.
+
+## Ancestor Sets
+
 The mempool currently uses something called an ancestor set to decide which transactions will be picked into the block next.
-Ffor every single transaction, we look at what other transactions have to go into the block before them, their ancestors.
+For every single transaction, we look at what other transactions have to go into the block before them, their ancestors.
 And this is the context by which we can decide how interesting it is to pick a transaction into the block next.
 So if we look at this very simple example with five transactions, we can think about what the dependencies for each transaction is.
 For example, transaction A doesn't have any ancestors and its ancestor fee rate is one sat per vByte.
@@ -60,8 +78,11 @@ The problem is after you pick C and E into the block, you have to recalculate al
 So while we're building a block template, every time we pick any transactions with descendants into the block, we have to recalculate all of their ancestors set fee rates.
 That's kind of a drag.
 A, because we don't know what fee rate they'll eventually be picked into the block, and B, because we don't know what fee rate they'll eventually have, and we have to do that extra computation.
-This becomes a little more obvious if we look at the other side.
-Let's say our mempool, someone is creating a staking protocol on Bitcoin, the mempool overflows, and we're starting to evict some transactions out of our mempool to reduce the memory footprint of that data structure.
+So, this becomes a little more obvious if we look at the other side.
+
+## Descendant Sets
+
+So, let's say our mempool, someone is creating a staking protocol on Bitcoin, the mempool overflows, and we're starting to evict some transactions out of our mempool to reduce the memory footprint of that data structure.
 If you look at this cluster, and we'll use that term more, a cluster refers to all the transactions that are related by parent-child relationships transitively, so like the biggest connected component in the mempool.
 So we are looking at a cluster right here, a single cluster.
 If you look at this cluster, does anyone want to hazard a guess which transaction we would kick out of the mempool first if we had to reduce the mempool footprint?
@@ -69,7 +90,7 @@ K, yes, excellent.
 K has a fee rate of one sat per vByte, and clearly that's gonna get picked into the block last, per looking at this carefully.
 And it also has the lowest descendant set fee rate.
 So descendant sets are exactly the same as ancestor sets except we look at it from the other side.
-For a descendant set, we look at the transaction and all of its descendants, we sum up their fees and sum up their sizes, and that gives us the descendant fee rate.
+So, for a descendant set, we look at the transaction and all of its descendants, we sum up their fees and sum up their sizes, and that gives us the descendant fee rate.
 So if we look at what's gonna get picked into a block here, maybe that's not completely obvious, but let me tell you a little more about the other descendant set fee rates here.
 So if you look at the descendants of I, I doesn't have any descendants.
 It has the highest descendant set fee rate.
@@ -92,16 +113,21 @@ But yeah, it's broken.
 It doesn't give us the thing that we will mine last, but just the thing that has the lowest descendant set fee rate.
 All right, so far so good?
 You see, it's pretty low here, I hope you can see it, actually, but F has only five sets per vByte, which is the lowest that's left after K is gone.
-All right, so we have found out.
-Block building currently is expensive because we have to recalculate all the ancestor set scores whenever we pick any ancestors of another transaction into the block.
+
+## Design Issues and Proposals
+
+All right, so we have found out block building currently is expensive because we have to recalculate all the ancestor set scores whenever we pick any ancestors of another transaction into the block.
 Eviction is broken, it doesn't actually evict the last things we want to mine.
 And this one, I haven't motivated more yet, but actually the current replace by fee rules do not always give us the best block templates.
 Yes, sir?
 
-[Audience 1]: What do miners do right now? 
+Audience 1: 00:10:34
+
+What do miners do right now? 
 Like, do they use any sort of block...?
 
-[Mark Erhardt]:
+Mark Erhardt: 00:10:38
+
 Okay, so what do miners do right now?
 Actually, right now we do use this data structure with the multi-index.
 For each transaction, we have the ancestor set score on record, and we have the descendant set score on record.
@@ -109,7 +135,7 @@ And we use those two indexes, one for the block building and one for the evictio
 It is highly optimized, and it works fairly well.
 But there's a few issues with it.
 And so this has motivated some people to put in quite the elbow grease to do a lot of research.
-If you're a consumer of delving Bitcoin, you might have seen several chapters in a book of research on how we could improve this process.
+If you're a consumer of Delving Bitcoin, you might have seen several chapters in a book of research on how we could improve this process.
 All right, I was talking about the replace by fee stuff.
 It becomes really, really hard to see what exactly you have to add where in a transaction graph in order to bump a specific transaction to an intended fee rate, or if you have conflicts, what you want to evict and what you want to keep.
 I'll just leave it at that.
@@ -118,6 +144,9 @@ All right, so what we would really love to have is something we have been callin
 A mining score that tells us at what fee rate a transaction will be mined into a block.
 And if we had that for every transaction, we would know how to sort those transactions across the mempool, and it would inform us both for block building, for eviction, and for other matters like RBF.
 Well, it turns out if we redesign how we keep all that data in the mempool, we can get pretty close to that.
+
+## Clusters
+
 So let's look at clusters.
 What are clusters?
 As I said, clusters are all the transactions that are related in some manner.
@@ -130,7 +159,7 @@ Let's say I did that.
 And we look at the first cluster.
 The first cluster is gonna be mined in the order A and B.
 B has a much higher fee rate, but it depends on A, so A has to stand in front of B in the block.
-For CDE, E has the higher fee rate, and it bumps C, so it'll be C before E because C has to come first, but D will go last because it has the lowest fee rate.
+For C, D, E, E has the higher fee rate, and it bumps C, so it'll be C before E because C has to come first, but D will go last because it has the lowest fee rate.
 And I've also done the third cluster where we find that J bumps F, and together they have a package fee rate of six sats per vByte.
 Then we get G, H, and I picked into the block at thirteen-thirds, four point three sats per vByte.
 And last, we would pick K at one set per vByte.
@@ -154,6 +183,9 @@ All right, so we have linearized our clusters.
 We know in which order the transactions will be picked into the block.
 I'll not go into more detail on how we linearize them.
 Check out Delving, Pieter's literally written a book on it.
+
+## Fee Rate Diagram
+
 All right, let's look at that third more complicated cluster, and I'll introduce a way of thinking about the cluster in terms of its size and fee rate.
 So we call this a fee rate diagram and at the bottom you see the total weight, the transactions are all each weight one right here, so that's easy.
 And on the y-axis you see the absolute fee, the sum of fees in the cluster up to that point.
@@ -184,13 +216,16 @@ All right, let's cluster all of the chunks.
 So we get a single chunk out of A and B, which has eight sats per vBbyte and a weight of two.
 We get C and E as a chunk, D as a separate chunk.
 We get F, J, G, H, I, and K.
-So now our, what is it, 15, no, sorry, 11 transactions become six chunks, right?
+So now our, what is it, fifteen, no, sorry, eleven transactions become six chunks, right?
 And now, if we were to build a block, does anyone have a good idea how we would go about that?
 Well, we have to, yeah, go ahead.
 
-[Audience 2]: *inaudible*
+Audience 2: 00:21:32
 
-[Mark Erhardt]:
+*inaudible*
+
+Mark Erhardt: 00:21:36
+
 Right.
 So we walk each cluster from the front, pick the highest fee rate chunk, and then just sort of remember which chunks we've picked.
 So our total order for those clusters would be the first chunk from the first cluster, the first chunk from the second cluster, or the first chunk from the third cluster.
@@ -206,6 +241,9 @@ And eviction is the opposite of mining.
 Because to evict, we look at our clusters and go from the back and kick out the chunk with the lowest free rate.
 So out of our mempool, we kick out K, then we kick out D, and then we would kick out G, H, I.
 But we no longer kick out the first thing that we would mine, which is F.
+
+## Caveats and Benefits
+
 Cool, so I'm maybe a little faster than I thought, so I have lots of time for your questions.
 There are a couple caveats.
 First, we'll need a cluster limit that so far hasn't existed.
@@ -223,25 +261,29 @@ One thing that is a little annoying is it might be less obvious to end user wall
 But I think that will be fine because I think most end users just gauge it and then bump if it's not enough.
 So that will still work.
 Yeah.
+
+## Audience Q/A
+
 So I have fifteen minutes for your questions.
 All right, here, question up front?
 
-[Speaker 1]: 00:25:27
+Speaker 1: 00:25:27
+
 Here we go, raise your hand high if you have a question, I will bring a mic to you.
 
-[Audience 3]: 00:25:39
+Audience 3: 00:25:39
+
 Maybe I missed this part, but how do you figure out what goes in the chunks?
 
-[Mark Erhardt]:
+Mark Erhardt:
+
 Let me explain that better maybe.
 Okay, so we, I'm sort of mixing it a little bit, but if you first look at the cluster as being only topologically sorted, it might not be the order in which you would pick it into the block.
 So what you, on an abstract level, do is you run a mining, like a block template building algorithm, on just the cluster.
 Similar to the mini-miner in Bitcoin Core, if someone's followed the bump fee calculation PRs from last year, how we calculate bump fees for more complex packages.
 And you basically, you just look at the whole cluster.
 Out of this cluster, what would I pick first into the block?
-What's left?
-What would I pick then?
-And so forth.
+What's left? What would I pick then? And so forth.
 And you basically, you make that your linearization.
 Now, Pieter would probably make quite the face because he's spent a lot more time, so there's rules on how you can shift transactions against each other to improve the linearization, how you would calculate the linearization in the first place and all that.
 But I don't want to get into all those details.
@@ -253,10 +295,12 @@ Thanks.
 Cool?
 All right, another question here?
 
-[Audience 4]: 00:27:58
+Audience 4: 00:27:58
+
 So I was curious how this, I guess, CPFP carve-out, there's a wrench in this, and long-term adoption, if it becomes easier for miners to identify Lightning channels on-chain.
 
-[Mark Erhardt]: 00:28:16
+Mark Erhardt: 00:28:16
+
 Yes, okay, so cluster mempool is incompatible with the CPFP carve-out because you basically would have to allow a transaction to attach to any ancestor in the cluster.
 And it wouldn't be clear what you would do if a second one came in or...
 So the answer to that is track transactions actually.
@@ -287,11 +331,13 @@ Did I cover all of your questions?
 Cool.
 Next question, here.
 
-[Audience 5]: 00:32:08
+Audience 5: 00:32:08
+
 You said that linearization of clustering is computationally expensive.
 What makes this still worth it for that trade-off?
 
-[Mark Erhardt]: 00:32:20
+Mark Erhardt: 00:32:20
+
 Right.
 So, theoretically, it would be enough to just topologically sort transactions in a cluster.
 You'd already have a valid linearization, right?
@@ -314,11 +360,13 @@ Cool?
 All right.
 Another question here?
 
-[Audience 6]: 00:34:16
+Audience 6: 00:34:16
+
 I had one as well.
 If you're not creating block templates as a miner and you're just a normal node on the network and, say your mempool is getting full, would this algorithm also determine what transactions you're gonna purge from your mempool?
 
-[Mark Erhardt]: 00:34:32
+Mark Erhardt: 00:34:32
+
 Yes.
 So the big benefit of cluster mempool, one of the design goals really, is eviction becomes the opposite of block building.
 And as long as you have a reasonably good linearization, the things that you will evict from your mempool are either, if you had an optimal sort, really the last things that you would pick into the block out of all the things that you know about, or at least very far in the back.
@@ -329,19 +377,23 @@ And you still get this benefit where you can look at each cluster, and the candi
 And you just have to compare all the last chunks in all of the clusters and kick out the one.
 So you could have, for example, a heap on that, and you always know which transaction or which chunk is up for eviction next.
 
-[Audience 7]: 00:35:56
+Audience 7: 00:35:56
+
 Perhaps we're looking at it, but it's a little hard to tell.
 Can you come up with an example where the descendant set score gives a worse incentive compatible outcome than the linearization?
 
-[Mark Erhardt]: 00:36:13
+Mark Erhardt: 00:36:13
+
 Yes.
 Here, let's look at this again, right?
 If you look at this cluster, what ancestor set would you pick into the block first?
 
-[Audience 7]: 00:36:29
+Audience 7: 00:36:29
+
 J and F.
 
-[Mark Erhardt]: 00:36:31
+Mark Erhardt: 00:36:31
+
 Correct, they have a ancestor set fee rate of six, and that's the highest here in this set, right?
 But if you look at each of the descendant set scores, currently the mempool has these two indexes, right?
 It's a multi-index data structure.
@@ -354,14 +406,17 @@ G, H, I, or sorry, I should say, I has eleven, G and H each have six, which is h
 J has nine.
 So the first thing you would evict is also the thing that you would mine out of this cluster.
 
-[Audience 7]: 00:37:36
+Audience 7: 00:37:36
+
 Okay, thank you.
 
-[Audience 8]: 00:37:40
+Audience 8: 00:37:40
+
 All right, so we're trying to compute the mining rate, the mining score, right?
 And does cluster mempool compute it exactly, or does it fall short somewhere?
 
-[Mark Erhardt]: 00:37:53
+Mark Erhardt: 00:37:53
+
 Very good question.
 So, it will compute it exactly if you have the optimal order.
 If you have not optimally ordered some of the clusters, the mining scores, or sorry, the chunk fee rates might not exactly match the mining scores in the end.
@@ -372,11 +427,13 @@ So we actually do not get any information on the final mining score, the fee rat
 And here, we at least get a very close guess, even if the clusters are not optimally sorted.
 Does that cover your question?
 
-[Audience 8]: 00:38:51
+Audience 8: 00:38:51
+
 Is it hard to optimally order the clusters?
 It seems easy at first glance, you know?
 
-[Mark Erhardt]: 00:38:58
+Mark Erhardt: 00:38:58
+
 Yes, so for small clusters, it's pretty easy.
 We will definitely be able to optimally order clusters of up to fifteen transactions, maybe even twenty.
 But if you look at a cluster with like sixty transactions, a bunch of diamond structures, tons of ancestors, descendants that are all interconnected in some ways, it can become fairly complicated.
@@ -385,25 +442,30 @@ And, like the worst clusters of like twenty-five are out of the range of what we
 But the cool thing is we can have sort of this, we can sort of have a lazy evaluation where we just keep a topological sort slash ancestor set sort of the cluster.
 And if we have time, we can optimally linearize it with just biting the bullet and calculating the complicated cluster.
 
-[Audience 8]: 00:40:17
+Audience 8: 00:40:17
+
 So the algorithm kind of has a timeout built in.
 When we hit the timeout, there's a fallback heuristic that will not yield the optimal solution, but it will get close.
 And so this is where cluster mempool falls short of computing the mining score.
 
-[Mark Erhardt]: 00:40:35
+Mark Erhardt: 00:40:35
+
 I think that matches my understanding.
 Again, I want to say I'm not one of the leaders on this project and I hope I'm not misrepresenting, but my understanding is everything is at least going to be as good as ancestor scores, which we currently use, and then hopefully a lot of the clusters.
 I think most, maybe over ninety percent of all transactions are single transaction clusters.
 Most other clusters are pretty small, and it's only very occasional that we get these huge sprawling clusters.
 So for the most part, all of the mempool will be optimally sorted with the occasional cluster in there that is not.
 
-[Audience 8]: 00:41:15
+Audience 8: 00:41:15
+
 Cool, thanks.
 
-[Audience 9]: 00:41:18
+Audience 9: 00:41:18
+
 Do all your examples assume the same number of vBytes for the transaction and does this take into account the size of the cluster?
 
-[Mark Erhardt]: 00:41:31
+Mark Erhardt: 00:41:31
+
 That's a fair question.
 All my examples are simple and have transactions of the same weight.
 Pieter, in his write-ups, and Suhas, they both have more complicated examples in there.
@@ -412,9 +474,11 @@ The Cluster Mempool Working Group tag will find you a few articles where they've
 Yeah, so, sorry, yes, I only have very simple examples.
 If you want, I can pull up some later from their blog posts, and we can talk about them offline.
 
-[Speaker 1]: 00:42:25
+Speaker 1: 00:42:25
+
 All right, big round of applause, everybody.
 
-[Mark Erhardt]: 00:42:27
+Mark Erhardt: 00:42:27
+
 Thank you.
 Thank you.
