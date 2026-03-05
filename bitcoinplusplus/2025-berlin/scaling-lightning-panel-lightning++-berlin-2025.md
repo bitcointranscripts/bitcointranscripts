@@ -887,7 +887,7 @@ And it's absolutely.
 
 `Tor` is the only thing we got as even remotely an antidote at this point that's being used widely in production.
 
-We should have better mix nets and improve on `Tor`.
+We should have better `mixnets` and improve on `Tor`.
 
 But yeah, you're going to challenge that.
 
@@ -915,7 +915,7 @@ Then there is something like `Nym` that tries to solve that with a shitcoin inst
 
 Which is also not an ideal solution obviously.
 
-There's `I2P` which is also getting more and more popular also supported by `bitcoind` and generally the interest for mixnets seems to be growing.
+There's `I2P` which is also getting more and more popular also supported by `bitcoind` and generally the interest for `mixnets` seems to be growing.
 
 We shouldn't forget that `Tor` was basically invented by the US secret military three-letter agencies and we're just their cover traffic at this point so they can hide in our masses.
 
