@@ -5,7 +5,6 @@ media: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
 date: '2026-01-21'
 tags:
   - 'btcplusplus'
-  - 'devconf'
   - 'bitcoineducation'
   - 'bitcoinconf'
   - 'bitcoindev'
