@@ -8,7 +8,6 @@ tags:
   - 'bitcoindev'
   - 'bitcoinconference'
   - 'bitcoin'
-  - 'cypherpunks'
   - 'lightning'
 speakers:
   - 'Evan Kaloudis'
