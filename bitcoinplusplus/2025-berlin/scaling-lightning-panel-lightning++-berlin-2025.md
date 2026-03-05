@@ -5,7 +5,6 @@ media: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
 date: '2025-10-02'
 tags:
   - 'btcplusplus'
-  - 'bitcoinconference'
   - 'lightning'
   - 'scalability'
 speakers:
