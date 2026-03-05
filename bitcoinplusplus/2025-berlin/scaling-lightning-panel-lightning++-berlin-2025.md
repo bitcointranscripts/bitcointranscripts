@@ -13,7 +13,8 @@ tags:
   - 'bitcoin'
   - 'cypherpunks'
   - 'niftynei'
-speakers: null
+speakers:
+  - 'Dusty Daemon'
 categories:
   - 'education'
 source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
