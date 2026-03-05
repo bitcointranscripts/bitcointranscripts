@@ -1,34 +1,23 @@
 ---
 title: 'Scaling Lightning Panel - Lightning++ Berlin 2025'
-speakers: null
-source_file: https://www.youtube.com/watch?v=oFDaC_2WjP0
-media: https://www.youtube.com/watch?v=oFDaC_2WjP0
+transcript_by: 'dillamondgoat via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
 date: '2026-01-21'
-summary: 'Sign up for one of our upcoming dev conf at https://btcpp.dev
-
-
-    Website: https://btcpp.dev/
-
-    X: https://x.com/btcplusplus
-
-    NOSTR: https://iris.to/npub1dwah6u025f2yy9dgwlsndntlfy85vf0t2eze5rdg2mxg99k4mucqxz7c52
-
-
-    #btcplusplus #devconf #bitcoineducation #bitcoinconf #bitcoindev #bitcoinconference
-    #bitcoin #cypherpunks'
 tags:
-    - btcplusplus
-    - devconf
-    - bitcoineducation
-    - bitcoinconf
-    - bitcoindev
-    - bitcoinconference
-    - bitcoin
-    - cypherpunks
-    - niftynei
+  - 'btcplusplus'
+  - 'devconf'
+  - 'bitcoineducation'
+  - 'bitcoinconf'
+  - 'bitcoindev'
+  - 'bitcoinconference'
+  - 'bitcoin'
+  - 'cypherpunks'
+  - 'niftynei'
+speakers: null
 categories:
-    - Entertainment
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'Entertainment'
+source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
+summary: "Sign up for one of our upcoming dev conf at https://btcpp.dev\n\nWebsite: https://btcpp.dev/\nX: https://x.com/btcplusplus\nNOSTR: https://iris.to/npub1dwah6u025f2yy9dgwlsndntlfy85vf0t2eze5rdg2mxg99k4mucqxz7c52\n\n#btcplusplus #devconf #bitcoineducation #bitcoinconf #bitcoindev #bitcoinconference #bitcoin #cypherpunks"
 ---
 
 Speaker 0: 00:00:01
@@ -344,7 +333,7 @@ What's the right way?
 Speaker 3: 00:15:46
 
 I want to answer...
-You graduated wallets like Evan is building.
+You graduated wallets like Evan is building.s
 
 Speaker 1: 00:15:49
 
