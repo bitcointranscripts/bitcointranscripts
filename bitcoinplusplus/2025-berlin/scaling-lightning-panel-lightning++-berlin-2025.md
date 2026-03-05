@@ -10,6 +10,7 @@ tags:
   - 'ux'
   - 'privacy'
   - 'ecash'
+  - 'ark'
 speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
