@@ -8,6 +8,7 @@ tags:
   - 'lightning'
   - 'scalability'
   - 'routing'
+  - 'ux'
 speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
