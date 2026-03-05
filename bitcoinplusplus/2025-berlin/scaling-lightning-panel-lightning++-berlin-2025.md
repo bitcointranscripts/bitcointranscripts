@@ -15,6 +15,7 @@ tags:
   - 'niftynei'
 speakers:
   - 'Dusty Daemon'
+  - 'Dusty Dettmer'
 categories:
   - 'education'
 source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
