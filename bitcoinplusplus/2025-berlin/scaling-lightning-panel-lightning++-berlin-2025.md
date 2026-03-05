@@ -9,7 +9,6 @@ tags:
   - 'bitcoinconference'
   - 'bitcoin'
   - 'cypherpunks'
-  - 'niftynei'
   - 'lightning'
 speakers:
   - 'Evan Kaloudis'
