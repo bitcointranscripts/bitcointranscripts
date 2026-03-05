@@ -2,7 +2,7 @@
 title: 'Scaling Lightning Panel - Lightning++ Berlin 2025'
 transcript_by: 'dillamondgoat via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
-date: '2026-01-21'
+date: '2025-01-21'
 tags:
   - 'btcplusplus'
   - 'bitcoinconference'
