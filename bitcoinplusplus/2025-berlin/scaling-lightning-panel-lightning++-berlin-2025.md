@@ -17,6 +17,7 @@ speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
   - 'Calle'
+  - 'Michael Boltz'
 categories:
   - 'education'
 source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
