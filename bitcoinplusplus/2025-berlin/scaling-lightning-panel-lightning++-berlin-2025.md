@@ -20,6 +20,7 @@ speakers:
   - 'Michael Boltz'
   - 'Alex Lewin'
   - 'Walton'
+  - 'Rita'
 categories:
   - 'education'
 source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
