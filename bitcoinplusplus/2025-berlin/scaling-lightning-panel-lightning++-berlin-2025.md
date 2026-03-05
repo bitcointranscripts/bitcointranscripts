@@ -15,6 +15,7 @@ tags:
   - 'niftynei'
 speakers:
   - 'Evan Kaloudis'
+  - 'Shinobi'
 categories:
   - 'education'
 source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
