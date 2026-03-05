@@ -8,6 +8,7 @@ tags:
   - 'lightning'
   - 'scalability'
   - 'ux'
+  - 'privacy'
 speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
