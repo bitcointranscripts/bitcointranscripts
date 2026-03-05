@@ -7,6 +7,7 @@ tags:
   - 'btcplusplus'
   - 'lightning'
   - 'scalability'
+  - 'routing'
 speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
