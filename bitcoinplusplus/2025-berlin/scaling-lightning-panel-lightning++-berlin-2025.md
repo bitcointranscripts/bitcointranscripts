@@ -7,7 +7,6 @@ tags:
   - 'btcplusplus'
   - 'lightning'
   - 'scalability'
-  - 'routing'
   - 'ux'
 speakers:
   - 'Evan Kaloudis'
