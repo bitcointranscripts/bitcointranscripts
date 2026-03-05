@@ -7,7 +7,6 @@ tags:
   - 'btcplusplus'
   - 'bitcoindev'
   - 'bitcoinconference'
-  - 'bitcoin'
   - 'lightning'
 speakers:
   - 'Evan Kaloudis'
