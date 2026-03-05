@@ -276,7 +276,7 @@ Audience 3: 00:25:39
 
 Maybe I missed this part, but how do you figure out what goes in the chunks?
 
-Mark Erhardt: 00:25:39
+Mark Erhardt: 00:25:46
 
 Let me explain that better maybe.
 Okay, so we, I'm sort of mixing it a little bit, but if you first look at the cluster as being only topologically sorted, it might not be the order in which you would pick it into the block.
