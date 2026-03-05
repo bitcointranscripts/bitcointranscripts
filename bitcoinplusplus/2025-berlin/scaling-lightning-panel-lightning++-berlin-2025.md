@@ -9,6 +9,7 @@ tags:
   - 'scalability'
   - 'ux'
   - 'privacy'
+  - 'ecash'
 speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
