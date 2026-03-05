@@ -18,6 +18,7 @@ speakers:
   - 'Shinobi'
   - 'Calle'
   - 'Michael Boltz'
+  - 'Alex Lewin'
 categories:
   - 'education'
 source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
