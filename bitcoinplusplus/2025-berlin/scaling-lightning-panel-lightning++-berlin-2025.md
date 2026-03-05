@@ -14,7 +14,8 @@ tags:
   - 'cypherpunks'
   - 'niftynei'
 speakers: null
-categories: []
+categories:
+  - 'education'
 source_file: 'https://www.youtube.com/watch?v=oFDaC_2WjP0'
 summary: "Sign up for one of our upcoming dev conf at https://btcpp.dev\n\nWebsite: https://btcpp.dev/\nX: https://x.com/btcplusplus\nNOSTR: https://iris.to/npub1dwah6u025f2yy9dgwlsndntlfy85vf0t2eze5rdg2mxg99k4mucqxz7c52\n\n#btcplusplus #devconf #bitcoineducation #bitcoinconf #bitcoindev #bitcoinconference #bitcoin #cypherpunks"
 ---
