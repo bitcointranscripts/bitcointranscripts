@@ -13,6 +13,7 @@ tags:
   - 'bitcoin'
   - 'cypherpunks'
   - 'niftynei'
+  - 'lightning'
 speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
