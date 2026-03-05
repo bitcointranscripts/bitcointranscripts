@@ -14,7 +14,6 @@ tags:
   - 'cypherpunks'
   - 'niftynei'
 speakers:
-  - 'Dusty Daemon'
   - 'Dusty Dettmer'
 categories:
   - 'education'
