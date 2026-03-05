@@ -7,6 +7,7 @@ tags:
   - 'btcplusplus'
   - 'bitcoinconference'
   - 'lightning'
+  - 'scalability'
 speakers:
   - 'Evan Kaloudis'
   - 'Shinobi'
