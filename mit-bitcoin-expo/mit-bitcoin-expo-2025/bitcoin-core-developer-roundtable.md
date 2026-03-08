@@ -101,10 +101,10 @@ So I'd quickly like to ask Jonas, because I've heard you give your spiel a coupl
 **Adam Jonas:** 00:10:17
 
 That's not bullshit, I am an outside observer. I think for some of these, the truth of the matter is that we, as a non-big brain, need to have some trust for the keepers of the flame and if they it should be verified clearly. I think a lot of my opinion of course is informed by people that I respect the opinion of and I try to understand the trade-offs and understand the use cases and the risks involved but I'll never be the one that runs the script. So it sort of absolves me from the ultimate load, and I think that makes me, again, a muggle and a waterboy like most of the ecosystem.
+Antoine, do you have opinions?
 
 **Antoine Poinsot:** 00:11:18
 
-Antoine, do you have opinions?
 Three things, I wrote a blog post about my opinion and all the soft folk proposals, for the longer version, you can refer to that. I'd like, first of all, to highlight what Corey said about consensus, I think people severely underestimate consensus. We have this global network and the set of rules that everyone agrees upon. If we got together and tried to decide the consensus rules today, with everybody with divergent incentives and opinion, it would just never happen and without consensus, there is no Bitcoin. I've heard the other day on Twitter, somebody referring as, "oh, the proof of work can just decide what the consensus is". The proof of work is part of the consensus. The consensus comes before anything else. Bitcoin is valuable today, **censorship-resistant money**, even if it does not come at a huge scale, solves real problems today. We must be very careful in risking it. 
 Thank you, I wanted to give more practical response to your initial questions. I think a lot of the soft fork proposals that we see today, not all of them, but a lot, because there are so many of them, kind of solutions to such a problem or it's not exactly clear what problem they're solving and it's even amplified by the fact that Bitcoin has become so big that we cannot be specialists in every single area. 
 There is this area, especially with the covenant discussion, there is researchers specialized in this area. So it would be very useful because in addition to solutions in search of a problem, there is also not all of them agree on which solution without even defining clearly the problem in the first place. So I think what would be useful from a Bitcoin Core perspective would be some sort of a research report from this loosely defined researcher community of we set to solve this problem and we find that this solution is appropriate and it has this and that tradeoff and we bring it to the community. I know that there are a few people I see in the room that said to do exactly this work, in comparing different alternatives and I think that's very useful.
@@ -204,7 +204,7 @@ You can we just talked about how that's hard. You just had 20 full minutes of yo
 **Antoine Poinsot:** 00:23:19
 
 Well, actually you can. There is a lot of things that we just don't do yet that was kind of Astonishing given the size of the network two years ago. We had a CVE Because there was too many transaction on the network we had never stress tested the transaction relay to this extent and it just cloaked the CPU so that's one thing you don't need to change Bitcoin Core to just help with testing in this area. 
-There are many people, One recent news is that **Eugene Segal** joined Brank to work on Bitcoin Core full-time, little guy was working on LND full-time and he found a high severity vulnerability in Bitcoin Core. It didn't need to change Bitcoin Core to do this and it's big thing because it's high impact another one which needed small changes to Bitcoin Core is **DRX block** that Jonas mentioned earlier about peer-to-peer monitoring. This one guy that does it for this massive network that is Bitcoin. He introduced **TracePoint** into Bitcoin Core which was a small way to get metrics out of the software and then he built his own infrastructure entirely out of the software. That's how he monitored the whole network and he's crying for help. So if anybody is interested in doing high impact stuff for Bitcoin, you could help with network monitoring. You can just do stuff.
+There are many people, One recent news is that **Eugene Siegel** joined Brink to work on Bitcoin Core full-time, little guy was working on LND full-time and he found a high severity vulnerability in Bitcoin Core. It didn't need to change Bitcoin Core to do this and it's big thing because it's high impact another one which needed small changes to Bitcoin Core is **DRX block** that Jonas mentioned earlier about peer-to-peer monitoring. This one guy that does it for this massive network that is Bitcoin. He introduced **TracePoint** into Bitcoin Core which was a small way to get metrics out of the software and then he built his own infrastructure entirely out of the software. That's how he monitored the whole network and he's crying for help. So if anybody is interested in doing high impact stuff for Bitcoin, you could help with network monitoring. You can just do stuff.
 
 
 ## Roles and Responsibilities in Bitcoin Core developement
@@ -251,7 +251,7 @@ That was not a suggestion, by the way.
 **Antoine Poinsot:** 00:32:40
 
 okay, but I think that's something that is worth and I cannot pronounce this word, so I'm going to skip it. Just making importance of this is that we need accountability from maintainers but again, you can just do stuff and there is accountability that comes from non-maintainer contributors. 
-For instance, I can think of Marker, who keeps reviewing every single request that gets merged and finds bugs after it's merged and say, before the release, he found a bug that was merged and we did not have CI, and he read the code and since he has a compiler in his head or something. He realized that's not valid C++ and he just said, well, you merged invalid C++. That's sort of a leadership, but just maybe leading by example more than trying to get people to do what he wants.
+For instance, I can think of Marko, who keeps reviewing every single request that gets merged and finds bugs after it's merged and say, before the release, he found a bug that was merged and we did not have CI, and he read the code and since he has a compiler in his head or something. He realized that's not valid C++ and he just said, well, you merged invalid C++. That's sort of a leadership, but just maybe leading by example more than trying to get people to do what he wants.
 
 ## Open discussion on specific soft fork proposals (OpCat and CTV) 
 
@@ -282,7 +282,7 @@ One, just kind of a quick take, you know, some of the big things that thinking a
 
 **Antoine Poinsot:** 00:35:07
 
-Maintain those decide soft folks, right?
+Maintainers decide soft forks, right?
 
 **Cory Fields:** 00:35:11
 
