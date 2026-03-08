@@ -259,7 +259,7 @@ For instance, I can think of Marko, who keeps reviewing every single request tha
 
 Cool. We've done a lot of talking. Do we want the audience to ask some very benign questions that we can be comfortable answering or not?
 
-**Audience:** 00:34:06
+**Audience 1:** 00:34:06
 
 Adam, I know you said you're less technical, so I'll ask you a less technical question. What was it like growing up a Jonas brother, and what do you think the contributions of boy bands from the Beatles forward have been to the music scene in general?
 
@@ -267,7 +267,7 @@ Adam, I know you said you're less technical, so I'll ask you a less technical qu
 
 Yeah, those are my cousins from New Jersey, and we're very proud of their success.
 
-**Audience:** 00:34:26
+**Audience 1:** 00:34:26
 
 Thank you, appreciate it.
 
@@ -275,7 +275,7 @@ Thank you, appreciate it.
 
 You're welcome. Any other really important questions? These are the kinds of questions that actually I like.
 
-**Audience:** 00:34:36
+**Audience 2:** 00:34:36
 
 Thanks a lot for giving us the color on a lot of what the day-to-day work is that you do, so thank you all. 
 One, just kind of a quick take, you know, some of the big things that thinking about **Op_Cat** and **OpCTV**, any kind of quick takes on are those going to happen and when? I don't want to derail the whole discussion, but just kind of your quick takes on that, given your perspective. Thank you.
@@ -292,7 +292,7 @@ I mean, are you going to roll it out at UASF? Is that you?
 
 One of those has a PR, but no acts, so there's nothing for me to do.
 
-**Audience**: 00:35:30
+**Audience 2:** 00:35:30
 
 Does your personal perspective, not in your place, do you think that it's going to happen if it's more than a city that you interact with?
 
@@ -306,7 +306,7 @@ Therefore there is no real role for Bitcoin Core at this point. It seems that yo
 So in some ways I think to not weigh in is kind of a punt, but at the same time, I personally don't see this as my job. I can say that I have reviewed both technically. I've looked at the code behind **Op_Cat** and **CTV**, they're both simple. I've kind of given both the thumbs up but I don't consider myself big brain enough to understand what the implications of them are. 
 So I think that, you know, like I called myself a code monkey earlier, the C++, sure, ship it but the activation parameters, you know, actually having it as a feature in the currency that I have zero opinion on because I don't feel like I should. 
 
-**Audience:** 00:37:11
+**Audience 2:** 00:37:11
 
 So with all that being said about the soft forks, do you think we could get a Boston agreement hashed out tonight or should we wait until next year? 
 Let's go. 
