@@ -4,11 +4,7 @@ transcript_by: 'garryk1612-cyber via review.btctranscripts.com'
 media: 'https://youtu.be/TEVJUjOGmOI?si=bRZxlnBp2toFykWc'
 date: '2025-04-07'
 tags:
-  - 'career'
-  - 'bitcoin-core'
-  - 'bitcoin-development'
-  - 'developer'
-  - 'soft-fork'
+  - 'soft-fork-activation'
 speakers:
   - 'Adam Jonas'
   - 'Gloria Zhao'
