@@ -1691,7 +1691,9 @@ Shinobi: 01:01:30
 
 Thank you very much.
 
-[Outro Video]: 01:01:45
+01:01:45
+
+[Outro Video]
 
 Alive, unstoppable, through rain and shadows we run.
 
