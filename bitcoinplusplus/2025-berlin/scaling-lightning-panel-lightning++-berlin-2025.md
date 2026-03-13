@@ -501,9 +501,11 @@ Okay, then you can receive more.
 
 Going step by step by forcing the user to not understand anything in the beginning and then forcing them to understand slowly more and more, do you think that creates a more stable Bitcoiner?
 
-Evan: 00:16:43
+Alex: 00:16:43
 
 God, you're a nerd.
+
+Evan: 00:16:43
 
 100% and listen, on the other side of the spectrum, the financial elites that are trying to take all the rights away and enrich themselves as much as possible use that very tactic.
 
