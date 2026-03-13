@@ -865,7 +865,7 @@ They're going to run into flakiness eventually and then you'll sit there rebooti
 
 Walton: 00:32:18
 
-My favorite lightning node doesn't like `Tor`. Right, Evan?
+My favorite lightning node doesn't like `Tor`, right, Evan?
 
 Evan: 00:32:20
 
@@ -903,17 +903,37 @@ But yeah, you're going to challenge that.
 
 Shinobi: 00:33:03
 
-`Nym` is a promising looking direction for something to really compete with `Tor` and bring a degree of robustness that's been hard.
+`NYM`(Nym Mixnet) is a promising looking direction for something to really compete with `Tor` and bring a degree of robustness that's been hard.
+
+Calle: 00:33:11
+
+Shitcoin
+
+Shinobi: 00:33:12
 
 Yes, it is.
 
-I have made many, many criticisms over that decision to the team over the years, but it has been a stereotype promoting these things.
+Evan: 00:33:12
 
-Calle: 00:33:26
+Doesn't it have a token associated with it?
+
+Calle: 00:33:16
+
+I think so.
+
+Shinobi: 00:33:16
+
+I have made many, many criticisms over that decision to the team over the years, but it has been a stereotype 
+
+Calle: 00:33:16
+
+I'm not surprised you're promoting these things.
+
+Walton: 00:33:25
 
 Calle, you seem to be disagreeing with Alex that `Tor` is all we've got.
 
-Michael: 00:33:31
+Calle: 00:33:31
 
 I don't know why everyone is so bearish on `Tor`.
 
