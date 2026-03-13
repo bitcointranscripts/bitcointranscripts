@@ -19,7 +19,6 @@ speakers:
   - 'Alex Lewin'
   - 'Walton'
   - 'Rita'
-  - 'Dusty'
   - 'Dusty Daemon'
 categories:
   - 'education'
@@ -1702,4 +1701,4 @@ Forged by fire, forged by freedom.
 
 Because now, the current is ours.
 
-Bitcoin++ Berlin.
+[Bitcoin++ Berlin](https://btcpp.dev/conf/berlin25)
