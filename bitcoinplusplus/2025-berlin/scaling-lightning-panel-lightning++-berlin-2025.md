@@ -1495,21 +1495,21 @@ Calle: 00:55:02
 
 People are speechless.
 
-Evan: 00:55:05
+Walton: 00:55:05
 
 They should have enough of Shinobi talking, maybe.
 
-[Audience]: 00:55:07
+Audience: 00:55:07
 
 So, comment and a question.
 
 First off, I'll say that report was not the Fidelity report.
 
-Evan: 00:55:11
+Walton: 00:55:11
 
 It was in partnership with Voltage, my bad.
 
-[Audience]: 00:55:14
+Audience: 00:55:14
 
 Fidelity Digital Assets in partnership with Voltage.
 
@@ -1531,21 +1531,23 @@ He was trying to think, could there be a company that you prepay for some kind o
 
 Not sure how it would work on a technical level, but I'd just be curious, any thoughts, is that the sort of thing an `LSP` could implement?
 
-Walton: 00:56:24
+Shinobi: 00:56:24
 
 I don't see any way you could do that without hedging and creating some kind of derivative product where you could actually find a counterparty willing to trade against your fee expectation.
 
-Shinobi: 00:56:37
+Alex: 00:56:37
 
 Can we hear from the guy that runs an `LSP`?
 
-Evan: 00:56:39
+Walton: 00:56:39
 
 Yeah that's literally my thought.
 
-The universe sent it like Evan come on.
+The universe sent it like Evan come on. The guy that actually runs a `LSP`
 
-There's some ways but I'm not sure people would want to accept all the trade-offs.
+Evan: 00:56:47
+
+There're some ways but I'm not sure people would want to accept all the trade-offs.
 
 Either you're shifting risk around, you don't necessarily have to turn into a derivative, even though that'd be the sexy way to do it.
 
@@ -1579,9 +1581,9 @@ I kind of assume that it's the same for everyone here.
 
 So maybe this is just a non-argument.
 
-Evan: 00:58:11
-
 Maybe this is something that really doesn't affect too many people.
+
+Evan: 00:58:16
 
 Honestly the bar is so low we don't have to be perfect.
 
@@ -1601,15 +1603,15 @@ Michael: 00:58:37
 
 In all fairness though, Steak 'n Shake was a receiver of `Lightning` payments and the sender pays the fees.
 
-So, er.
+So, ... (negative)
 
-Alex: 00:58:45
+Rita: 00:58:45
 
 In a wallet UI, in cases if `Lightning` fees are too high, it would be great if the UI can kind of detect it and maybe give you alternate ways how to send Bitcoin at this exact moment.
 
 Maybe use some other tool.
 
-Calle: 00:58:59
+Evan: 00:58:59
 
 Maybe you could use...
 
