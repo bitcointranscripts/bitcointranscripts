@@ -1295,9 +1295,11 @@ Calle: 00:47:57
 
 And pay your 30 cents.
 
+Shinobi: 00:48:00
+
 For now.
 
-Evan: 00:48:03
+Walton: 00:48:03
 
 These seemingly competing ideas are even published in the Fidelity report on the `Lightning` network in partnership with Voltage.
 
@@ -1309,7 +1311,7 @@ How can you have 0% fees and yield?
 
 You can't have both, right?
 
-Walton: 00:48:39
+Shinobi: 00:48:39
 
 You have to look at that from two directions.
 
