@@ -415,9 +415,9 @@ And this whole if you lose it then everything is gone and where do I export it, 
 
 All this is so much information for someone who just wants five dollars worth of Bitcoin.
 
-This is why `Wallet of Satoshi` became so popular for so long because it didn't have that fee for you tipping your waiter or there wasn't a cut being taken seemingly.
+Walton: 00:13:33
 
-Walton: 00:13:43
+This is why `Wallet of Satoshi` became so popular for so long because it didn't have that fee for you tipping your waiter or there wasn't a cut being taken seemingly.
 
 That's not proper `Lightning`.
 
