@@ -1429,7 +1429,11 @@ A stablecoin is centralized at the end of the day, it's worthless the instant th
 
 Whether it's on an SQL database like something like Solana or the Bitcoin blockchain it's utterly completely irrelevant.
 
+Michael: 00:52:37
+
 Exactly, why do we need a permissionless network to transfer around IOU tokens of someone's bank account?
+
+Shinobi: 00:52:45
 
 Charitably I think the only straw man you could make is if you look at things like `RGB` or taproot assets, you can make the argument that how those protocols are structured technologically, it would make it a lot more difficult to do things like have the selective ability to freeze or seize a specific users coins, because this is all client side data, none of it's explicitly recorded `on-chain`.
 
