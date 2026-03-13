@@ -865,31 +865,27 @@ They're going to run into flakiness eventually and then you'll sit there rebooti
 
 Walton: 00:32:18
 
-My favorite line.
+My favorite lightning node doesn't like `Tor`. Right, Evan?
 
-No, doesn't like `Tor`, right?
+Evan: 00:32:20
 
-Evan, your favorite `Lightning` wallet.
+Your favorite `Lightning` wallet.
 
-What did I say?
+Walton: 00:32:24
 
-Sorry.
+What did I say? Sorry.
 
-Node.
+Evan: 00:32:26
 
-No, my favorite `Lightning` wallet.
-
-Walton node management tool.
-
-Rita: 00:32:31
+My favorite `Lightning` wallet node management tool.
 
 Walton's had a lot of issues connecting to his node remotely using `Tor`.
 
-Oh boy.
-
-Thank God we got a lot of alternatives.
+Oh boy. Thank God we got a lot of alternatives.
 
 We got to talk about a couple of them.
+
+Shinobi: 00:32:40
 
 `Tailscale`.
 
