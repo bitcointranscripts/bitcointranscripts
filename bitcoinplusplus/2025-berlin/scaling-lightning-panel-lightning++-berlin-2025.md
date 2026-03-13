@@ -1197,25 +1197,25 @@ Rita: 00:44:05
 
 So then why would people prefer `Lightning` when it's more expensive than `on-chain`?
 
-Evan: 00:44:12
+Walton: 00:44:12
 
 The immediate finality is important UX in a payment.
 
-Alex: 00:44:16
+Rita: 00:44:16
 
 Well, sometimes it's double, triple, quadruple more expensive.
 
-Shinobi: 00:44:20
+Alex: 00:44:20
 
 Are you talking about when you hit a channel open or just a normal payment?
 
-Alex: 00:44:24
+Rita: 00:44:24
 
 Sometimes a normal payment.
 
 With a channel it's even more.
 
-Walton: 00:44:27
+Shinobi: 00:44:27
 
 When you have a really bad liquidity situation like some nodes.
 
@@ -1223,29 +1223,27 @@ Michael: 00:44:32
 
 Come on.
 
-Evan: 00:44:32
+Walton: 00:44:32
 
 You're sending a few million `sats` you mean on `Lightning` rather than `on-chain`.
 
-Shinobi: 00:44:36
+Alex: 00:44:36
 
 You're getting abused if you're paying more for a `Lightning` payment that's not opening a channel.
 
-Walton: 00:44:42
+Shinobi: 00:44:42
 
 It's the strategy incentive of a routing node operator to maximize their revenue.
 
 They are going to play games where they try to tactically arrange their channels or push fee rates in one direction or another to their benefit.
 
-Shinobi: 00:44:56
+Alex: 00:44:56
 
-Then you should use a different wallet.
+Then you should use a different wallet. That's not a good thing.
 
 Michael: 00:44:58
 
-That's not a good thing.
-
-Guys, seriously, an `on-chain` payment right now at 1 `sat` per `vB`(virtual byte) is how much?
+Guys, seriously, an `on-chain` payment right now at 1 `sat` per `vByte `(virtual byte) is how much?
 
 50 `sats` or something?
 
@@ -1255,11 +1253,11 @@ Easily.
 
 Like this happens all the time.
 
-Walton: 00:45:14
-
 This is not some outrageous node basically robbing you with crazy outrageous fees, that's just the way it is right now.
 
 Big `Lightning` payments you pay good money for them.
+
+Shinobi: 00:45:27
 
 I think this narrative of `Lightning` being super cheap to use is just a huge mistake as a narrative in the exact same way that that narrative was crafted about `on-chain` transactions 10 years ago.
 
@@ -1275,7 +1273,7 @@ We're doing the exact same thing we did 10 years ago when everybody just assumed
 
 We're creating the exact same problem of laying these false expectations down and then when reality goes no, you're wrong, you're going to have a bunch of people who've plugged into this system, gotten used to using it, assuming it's gonna work like this forever, and then reality kicks in.
 
-Shinobi: 00:47:01
+Alex: 00:47:01
 
 The whole point of `Lightning` is that you have fixed upfront capital costs for an indefinite number of payments through that capital.
 
@@ -1285,7 +1283,7 @@ I think the mature version of `Lightning` will adhere to that strength.
 
 If we're having to cover `on-chain` costs all the time and we're moving liquidity around, then that doesn't seem like a sustainable future state.
 
-Walton: 00:47:26
+Shinobi: 00:47:26
 
 Are we talking about the magical economy in the future where everybody receives exactly as much money as they pay constantly?
 
