@@ -1003,13 +1003,13 @@ Alex: 00:36:23
 
 Just fighting on the internet.
 
-Walton: 00:36:25
+Shinobi: 00:36:25
 
 Be a normal person and go buy drugs from someone on the street.
 
 Buying it on the internet is retarded.
 
-Michael: 00:36:32
+Calle: 00:36:32
 
 Not recommended.
 
