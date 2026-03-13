@@ -1547,7 +1547,7 @@ The universe sent it like Evan come on. The guy that actually runs a `LSP`
 
 Evan: 00:56:47
 
-There're some ways but I'm not sure people would want to accept all the trade-offs.
+There's some ways but I'm not sure people would want to accept all the trade-offs.
 
 Either you're shifting risk around, you don't necessarily have to turn into a derivative, even though that'd be the sexy way to do it.
 
