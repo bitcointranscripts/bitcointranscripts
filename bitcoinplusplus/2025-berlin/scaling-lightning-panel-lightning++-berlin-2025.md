@@ -73,10 +73,6 @@ And then Michael, of course, is going to help me get these gentlemen between lay
 
 Michael if you can just hold this structure with me and the three gentlemen are going to climb up the back one at a time please gentlemen.
 
-Alex: 00:01:50
-
-There isn't.
-
 Walton: 00:01:51
 
 Shinobi doesn't weigh very much, don't worry.
@@ -112,10 +108,6 @@ Thank you.
 Calle: 00:02:18
 
 Do you have a microphone or are you going to shout?
-
-Walton: 00:02:24
-
-Okay.
 
 ## Why Don't More People Run Nodes?
 
@@ -257,9 +249,7 @@ Walton: 00:07:38
 
 Someone helping with the UX and many more things.
 
-Evan.
-
-These guys sound kind of bearish on `Lightning`, huh?
+Evan, these guys sound kind of bearish on `Lightning`, huh?
 
 Evan: 00:07:47
 
