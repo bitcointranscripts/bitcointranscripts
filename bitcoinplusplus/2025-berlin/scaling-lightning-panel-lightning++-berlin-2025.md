@@ -317,7 +317,7 @@ That's the answer for it.
 
 Seriously, why aren't people running more lighting nodes when it has never been easier?
 
-It's because the alternatives that you don't have to run one have never been better with `Cashu`, `Fedi`, `Liquid Swaps`, `Spark`, `Ark`.
+It's because the alternatives that you don't have to run one have never been better with `Cashu`, `Fedimint`, `Liquid Swaps`, `Spark`, `Ark`.
 
 There are so many more things that connect you to `Lightning` for which you don't have to run your own node.
 
@@ -1039,7 +1039,7 @@ But with `Ark` is going to be a very centralized service.
 
 We should not build the `Tor` network using `Ark`, I think.
 
-Walton: 00:38:46
+Shinobi: 00:38:46
 
 I think there's a deeper problem to confront here and I think just ideologically most of the people who contribute to `Tor` are not fans of capitalism, they're not fans of interjecting monetary aspects and incentives into systems like this.
 
