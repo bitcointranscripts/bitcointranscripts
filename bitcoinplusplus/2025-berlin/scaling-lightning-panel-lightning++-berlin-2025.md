@@ -317,7 +317,7 @@ That's the answer for it.
 
 Seriously, why aren't people running more lighting nodes when it has never been easier?
 
-It's because the alternatives that you don't have to run one have never been better with `Cashu`, `Fedimint`, `Liquid Swaps`, `Spark`, `Ark`.
+It's because the alternatives that you don't have to run one have never been better with `Cashu`, `Fedi`, `Liquid Swaps`, `Spark`, `Ark`.
 
 There are so many more things that connect you to `Lightning` for which you don't have to run your own node.
 
@@ -727,13 +727,13 @@ Only a few people know where exactly to put themselves in that network to make i
 
 But once those spots are known, it's a fierce competition and driven to zero.
 
-Calle: 00:25:55
+Walton: 00:25:55
 
 So do these inbound, outbound liquidity requirements naturally drive centralization of the `Lightning` network over time?
 
 And will this institutional deployment of capital hyper-catalyze that process?
 
-Walton: 00:26:14
+Shinobi: 00:26:14
 
 I think there's just always going to be a natural drive towards centralization with something like `Lightning`.
 
@@ -755,17 +755,19 @@ Looking at the internet as an example, we've settled in a place where we've lean
 
 It's that balancing act.
 
-Alex: 00:27:38
+Walton: 00:27:38
 
 Even email?
 
-Walton: 00:27:40
+Shinobi: 00:27:40
 
 Email might be an example we just lost that one.
 
-Michael: 00:27:43
+Walton: 00:27:43
 
 My bad.
+
+Calle: 00:27:4
 
 I actually think `Lightning` is almost a bit better than the Internet.
 
@@ -801,33 +803,35 @@ The fact that we have onion routing makes it very hard for them to close off the
 
 If we keep pushing the privacy features, then that also means that we can make sure that `Lightning` can exist into the future as an equal system where everyone can participate.
 
-Rita: 00:30:33
+Evan: 00:30:33
 
 But I think the important thing is that the privacy features, they got to come first.
 
 You can't expect to bolt them on later.
 
+Calle: 00:30:39
+
 A hundred percent agree.
 
-Shinobi: 00:30:40
+Michael: 00:30:40
 
 You're kind of doing that now though with `blinded paths`.
 
 They are being bolted on as we speak.
 
-Walton: 00:30:45
+Shinobi: 00:30:45
 
-Let's poke a little fun at `t-bast`(Bastien Teinturier) here and I'll say I'm very happy that his proposal to not do onion routing at first and try to add it later is not what we did.
+Let's poke a little fun at Tadge Dryja here and I'll say I'm very happy that his proposal to not do onion routing at first and try to add it later is not what we did.
 
 Because given the current state of players in the network like Lightspark, all these big businesses getting on board, I don't think we would have been able to add that afterwards.
 
 ## Privacy and Tor
 
-Calle: 00:31:11
+Walton: 00:31:11
 
 Is the `Lightning` network over reliant on `Tor` for privacy?
 
-Walton: 00:31:18
+Shinobi: 00:31:18
 
 From a theoretical point of view yes but it's really hard to run a reliable node over `Tor`.
 
@@ -841,7 +845,7 @@ It's just really, really hard to get the reliability you need for high success p
 
 It's just too unstable of a system.
 
-Shinobi: 00:31:54
+Michael: 00:31:54
 
 `Tor` is fun and games for loading websites.
 
@@ -849,7 +853,7 @@ A little bit of HTML and CSS that's fun and games, but long-lived, high interact
 
 They're going to run into flakiness eventually and then you'll sit there rebooting everything and praying your next circuit is going to be better.
 
-Calle: 00:32:18
+Walton: 00:32:18
 
 My favorite line.
 
@@ -891,7 +895,7 @@ We should have better `mixnets` and improve on `Tor`.
 
 But yeah, you're going to challenge that.
 
-Walton: 00:33:03
+Shinobi: 00:33:03
 
 `Nym` is a promising looking direction for something to really compete with `Tor` and bring a degree of robustness that's been hard.
 
@@ -1039,7 +1043,7 @@ But with `Ark` is going to be a very centralized service.
 
 We should not build the `Tor` network using `Ark`, I think.
 
-Shinobi: 00:38:46
+Walton: 00:38:46
 
 I think there's a deeper problem to confront here and I think just ideologically most of the people who contribute to `Tor` are not fans of capitalism, they're not fans of interjecting monetary aspects and incentives into systems like this.
 
