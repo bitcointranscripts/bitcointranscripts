@@ -1323,19 +1323,19 @@ The fees can be very high from the user's perspective.
 
 But if most of that is the node operator just recouping their cost of interacting `on-chain`, they're not actually making that much yield and profit.
 
-Shinobi: 00:49:04
+Alex: 00:49:04
 
 Yeah, I don't think it's a fair characterization.
 
 I think the majority of the time that users are paying a lot is because they are using a wallet that has a `Lightning` node with one channel to somebody that's overcharging them because they can.
 
-Walton: 00:49:16
+Shinobi: 00:49:16
 
-I'm talking projecting out and higher people.
+I'm talking, projecting out higher fees—
 
 ## Stablecoins and Lightning Network Growth
 
-Evan: 00:49:19
+Walton: 00:49:19
 
 All right, guys, well, enough on fees for a minute.
 
@@ -1347,7 +1347,7 @@ How much of it is gonna be driven by things like `ecash` and `Ark` and other too
 
 Does the growth come from a base that is increasingly prone to regulatory attack?
 
-Walton: 00:50:25
+Shinobi: 00:50:25
 
 Either way.
 
@@ -1355,51 +1355,53 @@ But I think looking at the reality on the ground, that the transactional use of 
 
 If we actually do see deployment and issuance of stablecoins on Bitcoin and see that link into the `Lightning` network as a settlement mechanism, that probably will be the primary driver of any growth or revenue increases for node operators on `Lightning`.
 
-Alex: 00:51:01
+Rita: 00:51:01
 
 Like stable channels?
 
-Walton: 00:51:02
+Shinobi: 00:51:02
 
 I don't know.
 
-Evan: 00:51:03
+Walton: 00:51:03
 
-Shout out Tony, let's go.
+Shout out Tony (Klausing), let's go.
 
-Walton: 00:51:05
+Shinobi: 00:51:05
 
 Yes, I would prefer if it was stable channels, but I think the reality is it's going to be things like tether tokens issued and then just having the channel do the atomic swap between some service provider to forward the payment in Bitcoin.
 
-Shinobi: 00:51:22
+Alex: 00:51:22
 
 Everybody and their mother is starting a new stablecoin protocol for the record.
 
-Rita: 00:51:26
+Evan: 00:51:26
 
 Yeah.
 
-Shinobi: 00:51:26
+Alex: 00:51:26
 
 Seems like every week there's a new one.
 
-Evan: 00:51:27
+Walton: 00:51:27
 
 If you would like to start your own stablecoin thing, I think you should go to Tether for funding, right?
 
-Shinobi: 00:51:33
+Alex: 00:51:33
 
 I'm curious to hear from Calle.
 
-Michael: 00:51:35
-
 How much do you think about the regulatory burden that mint operators in the future will have to bear?
+
+Calle: 00:51:42
 
 No comment.
 
+Michael: 00:51:46
+
 The one thing I'm not exactly sold on yet is when you have these stable coins on Bitcoin, why would you want to have them and use them on Bitcoin in the first place?
 
-Alex: 00:51:56
+Rita: 00:51:56
 
 Tether is going to do an `RGB`.
 
@@ -1409,17 +1411,17 @@ Yeah but why wouldn't you use the tether chain, the plasma thing?
 
 What's the advantage of using it over `Lightning` with all its intrinsic downsides?
 
-Evan: 00:52:05
+Walton: 00:52:05
 
 My skin's crawling right now, I have no idea.
 
 I'm not the person to answer that.
 
-Alex: 00:52:09
+Rita: 00:52:09
 
 You're asking the wrong person.
 
-Walton: 00:52:12
+Shinobi: 00:52:12
 
 I think this is very much an example of a solution looking for a problem.
 
