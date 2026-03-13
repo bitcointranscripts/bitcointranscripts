@@ -1443,9 +1443,9 @@ Michael: 00:53:26
 
 Yeah, I'd love to be proven wrong.
 
-I'm just entirely sold on the concept of stablecoins driving `Lightning` that macro fiat.
+I'm just not entirely sold on the concept of stablecoins driving `Lightning network` growth yet.
 
-Shinobi: 00:53:33
+Alex: 00:53:33
 
 I mean, there's huge demand for dollars around the world.
 
@@ -1457,11 +1457,11 @@ Yeah but why `Lightning`?
 
 Sounds retarded.
 
-Alex: 00:53:43
+Rita: 00:53:43
 
 And a huge amount of people who don't want volatility.
 
-Shinobi: 00:53:47
+Alex: 00:53:47
 
 Yeah but it's not the dollars.
 
@@ -1479,13 +1479,13 @@ That's also one reason why people want to build on something like Bitcoin, but t
 
 But I agree that it's a huge larp because as long as you can freeze these assets with a click of a button, then it becomes a clown show.
 
-Shinobi: 00:54:43
+Alex: 00:54:43
 
-So that big dollars are cooler because you don't freeze them, you just get exposure to them.
+The synthetic dollars are cooler because you don't freeze them, you just get exposure to them.
 
 ## Audience Q&A
 
-Evan: 00:54:52
+Walton: 00:54:52
 
 Let's hear some questions from the audience.
 
