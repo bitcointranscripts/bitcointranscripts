@@ -1449,7 +1449,7 @@ Michael: 00:53:26
 
 Yeah, I'd love to be proven wrong.
 
-I'm just not entirely sold on the concept of stablecoins driving `Lightning network` growth yet.
+I'm just not entirely sold on the concept of stablecoins driving `Lightning` network growth yet.
 
 Alex: 00:53:33
 
