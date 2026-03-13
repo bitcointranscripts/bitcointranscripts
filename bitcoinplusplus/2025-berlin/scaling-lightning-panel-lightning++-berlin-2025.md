@@ -317,7 +317,7 @@ That's the answer for it.
 
 Seriously, why aren't people running more lighting nodes when it has never been easier?
 
-It's because the alternatives that you don't have to run one have never been better with `Cashu`, `Fedi`, `Liquid Swaps`, `Spark`, `Ark`.
+It's because the alternatives that you don't have to run one have never been better with `Cashu`, `Fedimint`, `Liquid Swaps`, `Spark`, `Ark`.
 
 There are so many more things that connect you to `Lightning` for which you don't have to run your own node.
 
@@ -1015,27 +1015,27 @@ For these systems you need something that just always works.
 
 You're downloading a video and it works for 10 minutes and then an `HTLC` gets stuck and now you have to wait for two weeks until it settles.
 
-Calle: 00:38:10
+Walton: 00:38:10
 
 So what you're saying is you need offline payments and that maybe there's something in this ecosystem that provides that, is that right Calle?
 
-Michael: 00:38:17
+Calle: 00:38:17
 
 Yeah I can think of a few things.
 
 Obviously an `ecash` payment will always work, but there are also other layered systems on top of Bitcoin that don't have this issue where you have timeouts basically, like `HTLCs` that need to timeout somehow in order to resolve a conflict.
 
-Walton: 00:38:32
+Shinobi: 00:38:32
 
 `Ark` could be an answer.
 
-Alex: 00:38:33
+Rita: 00:38:33
 
 Like `Ark`.
 
-Michael: 00:38:34
+Or `Fedimint`, yeah?
 
-Or `Fedi`, yeah.
+Calle: 00:38:34
 
 Yes.
 
@@ -1043,7 +1043,7 @@ But with `Ark` is going to be a very centralized service.
 
 We should not build the `Tor` network using `Ark`, I think.
 
-Walton: 00:38:46
+Shinobi: 00:38:46
 
 I think there's a deeper problem to confront here and I think just ideologically most of the people who contribute to `Tor` are not fans of capitalism, they're not fans of interjecting monetary aspects and incentives into systems like this.
 
@@ -1051,19 +1051,13 @@ Even if we can technologically figure out a way to deal with this problem, will 
 
 Or will they fight or resist that on ideological grounds?
 
-Michael: 00:39:19
+Calle: 00:39:19
 
 I wouldn't make a bad faith argument about that.
 
-I think it's fairly reasonable to assume that you have a system that is supposed to serve everyone and then now you want to make it...
+I think it's fairly reasonable to assume that you have a system that is supposed to serve everyone and then now you want to limit it to 40,000 people. That's the number of Bitcoiners in the world.
 
-Calle: 00:39:29
-
-Want to limit it to 40,000 people.
-
-That's the number of Bitcoiners in the world.
-
-Alex: 00:39:35
+Rita: 00:39:35
 
 Exact number.
 
@@ -1083,7 +1077,7 @@ That's actually the biggest problem.
 
 We could solve spam issues for so many systems out there using Bitcoin, but there are not enough Bitcoiners to make it worthwhile.
 
-Shinobi: 00:40:08
+Alex: 00:40:08
 
 Philosophically, it's also just a growing worry is that you have this paradox where the price has to be high enough to discourage spam traffic but it also has to be low enough that it really doesn't affect the user.
 
@@ -1091,11 +1085,11 @@ I'm terrified that those numbers are actually inverted where the price that's to
 
 I'm not so sure we really have a solution that will work at this scale.
 
-Evan: 00:40:39
+Walton: 00:40:39
 
 You're looking on the base layer?
 
-Shinobi: 00:40:42
+Alex: 00:40:42
 
 No, I mean anything.
 
@@ -1115,7 +1109,7 @@ Probably yes too.
 
 So that's a good price.
 
-Shinobi: 00:41:01
+Alex: 00:41:01
 
 I can take you down.
 
@@ -1125,11 +1119,11 @@ So yeah.
 
 ## Lightning Transaction Fees
 
-Evan: 00:41:06
+Walton: 00:41:06
 
 Is the current low fee environment evidence of little demand for Bitcoin transactions or is it evidence that `Lightning` is already scaling to meet the needs of its users?
 
-Walton: 00:41:15
+Shinobi: 00:41:15
 
 I think it's the latter.
 
@@ -1165,7 +1159,7 @@ I really think if we want to see that manifestation of Bitcoin as a means of exc
 
 There's not enough of us in the same place to actually bootstrap that means of exchange.
 
-Evan: 00:43:23
+Walton: 00:43:23
 
 Do you want to repeat the question because I do think you answered it but you also were a little bit off there.
 
@@ -1175,17 +1169,19 @@ Calle: 00:43:40
 
 Both.
 
+Alex: 00:43:41
+
 Can it be both?
 
-Evan: 00:43:42
+Walton: 00:43:42
 
 Sure.
 
-Shinobi: 00:43:43
+Alex: 00:43:43
 
 I think everybody not paying for their coffee `on-chain` is probably contributing to some degree.
 
-Alex: 00:43:51
+Rita: 00:43:51
 
 But did it happen to you that the `Lightning` transaction was costing a lot more than `on-chain` one?
 
@@ -1197,7 +1193,7 @@ It happens all the time.
 
 If the amount is high enough and you pay a percentage instead of a flat 30 cents, easy.
 
-Alex: 00:44:05
+Rita: 00:44:05
 
 So then why would people prefer `Lightning` when it's more expensive than `on-chain`?
 
