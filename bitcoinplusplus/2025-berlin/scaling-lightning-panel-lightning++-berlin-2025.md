@@ -595,7 +595,7 @@ But the `Lightning` itself, it's not the end.
 
 It's just a means to get to something more impactful.
 
-Shinobi: 00:20:47
+Michael: 00:20:47
 
 Completely agree that `Lightning` is not the end goal here.
 
@@ -603,7 +603,7 @@ It's the means to an end and it's the best tool we have at our disposal right no
 
 But if in ten years time we have something nicer or replace all of the parts with the next generation, that'd be fine too.
 
-Evan: 00:21:02
+Rita: 00:21:02
 
 Every tool exists of many components and if you upgrade each one of those components it doesn't mean that it's a different tool.
 
@@ -613,7 +613,7 @@ It's just going to be points instead of hash time-locks.
 
 ## Routing Nodes and Centralization
 
-Calle: 00:21:22
+Walton: 00:21:22
 
 To me, one of the reasons I love `Lightning` is because unlike `on-chain`, if you run a `Lightning` node, you get paid for spam.
 
@@ -625,13 +625,13 @@ Alex: 00:21:43
 
 Channel jamming is a problem, let's be real.
 
-Calle: 00:21:47
-
 You just don't see it.
+
+Walton: 00:21:48
 
 But jokes aside, routing nodes are able to earn real yield in Bitcoin terms, in self-custodied Bitcoin, and yet this yield increasingly comes from institutions deploying their capital with `Lightning` custodians.
 
-Walton: 00:22:07
+Shinobi: 00:22:07
 
 I'm actually very skeptical in the long term that that can be a material source of income.
 
@@ -657,7 +657,7 @@ I think that's not a viable revenue strategy in the long term, trying to earn mo
 
 I think services like what Michael does with `Boltz` and more direct monetized tooling like that, that is going to be where any substantial yield comes from in the network in the long term, I think.
 
-Shinobi: 00:23:48
+Michael: 00:23:48
 
 `Lightning` is not risk-free to run a routing node especially.
 
@@ -679,13 +679,17 @@ Shout out Lightning Fuzz.
 
 Shinobi: 00:24:35
 
+Risk-free.
+
+Michael: 00:24:35
+
 Compared to BlockFi maybe, but not in general.
 
-Evan: 00:24:39
+Rita: 00:24:39
 
 Nothing is risk-free.
 
-Shinobi: 00:24:41
+Michael: 00:24:41
 
 There is no such thing as risk-free interest in Bitcoin.
 
@@ -695,7 +699,7 @@ There's always risk.
 
 I wouldn't put my whole cold stack into a `Lightning` routing node.
 
-Michael: 00:24:54
+Calle: 00:24:54
 
 100% agree.
 
@@ -705,7 +709,7 @@ Just the fact that you can lose your database and you're wrecked is basically a 
 
 You can't just back up a seed phrase and be okay.
 
-Walton: 00:25:05
+Shinobi: 00:25:05
 
 We added scare quotes.
 
@@ -721,7 +725,7 @@ We can send payments anywhere in the world for free, basically.
 
 The only way to make money in routing is if your inbound's free.
 
-Shinobi: 00:25:27
+Michael: 00:25:27
 
 Which is the case for the crazy yield numbers that have been circling around.
 
