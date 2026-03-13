@@ -401,7 +401,11 @@ I want to say something controversial.
 
 I think it's a really bad idea to onboard someone onto Bitcoin with a non-custodial `Lightning` wallet.
 
+Shinobi: 00:13:01
+
 Yes.
+
+Calle: 00:13:04
 
 I've been using these tools myself for a very long time, don't get me wrong.
 
