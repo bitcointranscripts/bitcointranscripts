@@ -1613,97 +1613,92 @@ Maybe use some other tool.
 
 Evan: 00:58:59
 
-Maybe you could use...
+Maybe you could use `Cashu`.
 
-Walton: 00:58:59
-
-You could use `Cashu`.
-
-Alex: 00:59:01
+Rita: 00:59:01
 
 Or `Cashu` or some `RGB` coin conversion or whatever the hell else.
 
 Because this would help users to see that this is an unreasonably high amount right now to send, and if they don't want to send `on-chain` and wait 10 minutes they would have this this and that alternative.
 
-Walton: 00:59:18
+Evan: 00:59:18
 
 Right.
 
 Have a price breakdown across the different layers.
 
-Alex: 00:59:21
+Rita: 00:59:21
 
 Maybe.
 
-Shinobi: 00:59:22
+Calle: 00:59:22
 
 Unified QR codes help.
 
-Walton: 00:59:26
+Evan: 00:59:26
 
 Definitely.
 
-Shinobi: 00:59:26
+Calle: 00:59:26
 
 `On-chain` and `BOLT 12`.
 
-Evan: 00:59:31
+Walton: 00:59:31
 
 QR code.
 
-Shinobi: 00:59:34
+Calle: 00:59:34
 
 You need to be able to decide which payment rail you're going to use.
 
 You want to scan once and then have the best option to be chosen for you in the best case without having to have a PhD in Bitcoin.
 
-Alex: 00:59:47
+Rita: 00:59:47
 
 Yeah, or simplify it to bare minimum.
 
-Michael: 00:59:54
+Audience: 00:59:54
 
 I have a question.
 
 There's a really cool `Zeus` hackathon prize, which the goal is to enable discovering of trusted mints in `Zeus`.
 
-Evan knows about [cashumints.space](https://cashumints.space), but in [cashu.me](https://cashu.me), Calle, there's a very cool feature called Discover Mint.
+Evan knows about [cashumints.space](https://cashumints.space), but in [cashu.me](https://cashu.me), Calle, there's a very cool feature called Discover Mints.
 
-I've been told that there's something called Know Your Mint.
+I've been told that there's something called KYM - Know Your Mint.
 
 My question is, can you explain Know Your Mint to Evan?
 
 And how it searches `Nostr` for recommendations for `Cashu` mints?
 
-Shinobi: 01:00:48
+Alex: 01:00:48
+
+Roasted
+
+Calle: 01:00:48
 
 Well, I would run into the risk of repeating, not myself, but someone has actually done that after his talk.
 
 So, thank you for your question, but you should have watched his talk.
 
-Evan: 01:01:00
+Walton: 01:01:00
 
 Education happens incredibly fast here at Bitcoin++ and this was the scaling `Lightning` panel.
 
-I think the way we scale `Lightning` is by having more and more Bitcoin++'s.
+I think the way we scale `Lightning` is by having more and more Bitcoin pluses.
 
 So I'd like to firstly thank all of you audience that came to this panel.
 
-Bitcoin++ and panel discussions wouldn't be the same without all of you, but also please give a round of applause for my panel Alex, Calle, Shinobi, Evan, Michael from `Boltz` and Rita.
-
-Walton: 01:01:30
-
-I'm Walton.
-
-Shinobi: 01:01:30
+Bitcoin++ and panel discussions wouldn't be the same without all of you, but also please give a round of applause for my panel Alex, Calle, Shinobi, Evan, Michael from `Boltz` and Rita. I'm Walton.
 
 Thank you very much.
 
 01:01:45
 
 [Outro Video]
+The city where walls fell and freedom rose.
 
-Alive, unstoppable, through rain and shadows we run.
+The storm is more than thunder; it's code alive, unstoppable. Through rain and shadows, we run.
 
 Forged by fire, forged by freedom.
 
