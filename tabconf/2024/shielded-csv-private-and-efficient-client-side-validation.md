@@ -3,11 +3,12 @@ title: 'Shielded CSV Private & Efficient Client Side Validation'
 transcript_by: 'Garvit-77 via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=zpghEIWveJI'
 date: '2024-11-27'
-tags: []
+tags: 
+  - 'Shielded CSV'
 speakers:
   - 'Jonas Nick'
 categories:
-  - 'Shielded CSV'
+  - 'Education'
 source_file: 'https://www.youtube.com/watch?v=zpghEIWveJI'
 summary: "The client-side validation approach removes transaction verification from the consensus rules. Instead, transaction data posted to the blockchain is only interpreted on each individual node (\"client-side\"). This approach allows building protocols with very low on-chain size and verification cost, while providing strong privacy.\n\nThis talk proposes the client-side validation protocol \"zkCSV\" (working title) that, in contrast to existing client-side validation protocols, only requires 64 bytes of on-chain space regardless of the size of the transaction and is fully private. The protocol's communication cost between transaction sender and receiver is independent of the transaction history. Furthermore, zkCSV can be instantiated with existing cryptographic zk-SNARK primitives.\n\nWith a trust-minimized mechanism like BitVM2 to bridge between the blockchain and the client-side validation protocol, zkCSV adds strong privacy to Bitcoin and scales Bitcoin to 100 transactions per second. It has been described as \"the most useful thing you can do with BitVM2\".\n\nEven without a bridge, zkCSV can be used to create a private cryptocurrency pegged to bitcoin (for example via the one-way peg) that offers substantial advantage over existing private cryptocurrencies. These currencies require users to validate all transactions, which contain relatively large and computationally expensive Zero-Knowledge proofs. zkCSV, however, only requires the recipient of a transaction to download the full transaction data, which results in significant reductions in computational and bandwidth costs. Furthermore, zkCSV derives its resistance to double-spending from Bitcoin, eliminating the need for its own consensus mechanism. Moreover, private cryptocurrencies are not able to hide the transaction graph better than zkCSV.\n\n What would an attendee learn from this talk?\n\n- What client-side validation is and what its advantages and limitations are.\n- How it is possible to achieve only 64 bytes on-chain cost using sign-to-contract and signature half-aggregation.\n- How zk-SNARKs and in particular proof-carrying data schemes are applied to provide strong privacy.\n- That private & efficient client-side validation is a largely unexplored framework that has a vast design space and potential for innovation, in particular for designs that allow efficient layer 2's.\n\n Is there anything folks should read up on before they attend this talk?\n\nno\n\n About the Speaker\n\n Social Links\n\n- Github:\_https://github.com/jonasnick\n- Twitter:\_https://x.com/n1ckler\n- Website:\_[https://nickler.ninja](https://nickler.ninja/)\n\n\nTABCONF 6, GitHub link\nhttps://github.com/TABConf/6.tabconf.com/issues/90"
 ---
@@ -22,7 +23,7 @@ A layer, what I call layer 0.5, that governs the rules of the blockchain, such a
 `Shielded CSV` inherits the double spending security from the underlying blockchain, the amount of Data embedded into the blockchain approaches 64 bytes per shielded payment. Coins and coin proofs which prove validity of the coin are sent directly to the receiver through some one-way communication channel and coin proofs are succinct. In particular, that means that they are constant size regardless of the number of the overall transactions.
 `Shielded CSV` is fully private, which means that coin and coin proof reveal nothing except that the coin is valid.
 
-### Motivation for Sheilded csv
+### Motivation for Shielded csv
 
 Our motivation for this is twofold.
 First, we believe that Shielded is a more efficient design for private cryptocurrencies because zero knowledge proofs do not end up on the blockchain and they are not verified by all full nodes of the system. Also Shielded can use an existing blockchain and does not need to create its own. Our primary motivation is **improving Bitcoin's privacy**, in that case Shielded would use Bitcoin's blockchain.
