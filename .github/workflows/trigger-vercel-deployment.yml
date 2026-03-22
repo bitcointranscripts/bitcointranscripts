@@ -1,0 +1,15 @@
+name: Trigger Vercel Deployment on Merge
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  trigger-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        run: |
+          curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"
