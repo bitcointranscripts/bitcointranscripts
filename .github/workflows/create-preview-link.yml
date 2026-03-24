@@ -130,7 +130,8 @@ jobs:
         run: |
             git remote add upstream https://github.com/bitcointranscripts/bitcointranscripts.git
             git fetch upstream
-            top_level_folders=$(git diff --name-only upstream/master)
+            merge_base=$(git merge-base HEAD upstream/master)
+            top_level_folders=$(git diff --name-only $merge_base HEAD)
             echo $top_level_folders > ../top_level_folders.txt
   
       - name: Comment PR with Preview URL
