@@ -1,56 +1,23 @@
 ---
-title: "Post Quantum CISA: Signature Aggregation for Bitcoin\u2019s Future"
-source_file: https://www.youtube.com/watch?v=cqjo3rmd6hY
-media: https://www.youtube.com/watch?v=cqjo3rmd6hY
+title: 'Post Quantum CISA: Signature Aggregation for Bitcoin’s Future'
+transcript_by: 'Garvit-77 via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=cqjo3rmd6hY'
 date: '2025-10-30'
-summary: "This talk introduces a novel approach to cross-input signature aggregation\
-    \ (CISA) designed to work with post-quantum (hash-based) signature schemes, addressing\
-    \ one of Bitcoin's most pressing scalability concerns in a post-quantum world.\n\
-    \nThe speaker begins by explaining elliptic curve CISA: in a Bitcoin transaction\
-    \ with multiple inputs from the same wallet, each input currently requires its\
-    \ own signature. CISA allows these to be combined into a single aggregate signature,\
-    \ saving block space. However, with EC signatures at ~64 bytes and the 75% witness\
-    \ discount, the savings are only ~8% in vbytes - modest enough that CISA hasn't\
-    \ been prioritized for a soft fork.\n\nPost-quantum signatures change the calculus\
-    \ dramatically. Schemes like SPhInXs Plus produce signatures of ~4 kilobytes -\
-    \ roughly 50x larger than EC signatures. If Bitcoin ever needs to migrate to post-quantum\
-    \ cryptography, transaction throughput could drop to around 2% of current capacity.\
-    \ In this context, aggregation becomes critical: two inputs aggregated would yield\
-    \ ~50% space savings, three inputs ~60% or more.\n\nThe fundamental challenge\
-    \ is that all existing EC aggregation techniques (MuSig2, FROST, half-aggregation,\
-    \ etc.) rely on elliptic curve math that simply does not apply to hash-based or\
-    \ lattice-based signatures.\n\nThe speaker proposes a new opcode (informally called\
-    \ OpCSIV) that sidesteps this problem entirely. Instead of cryptographically combining\
-    \ signatures, inputs can point to other inputs. One input provides a full signature\
-    \ (covering the entire transaction via SIGHASH_ALL), while other inputs include\
-    \ a hash-based pointer - the outpoint (TXID + index) of the signing input - baked\
-    \ into their taproot tree at address creation time. The opcode verifies that the\
-    \ referenced outpoint is being spent in the same transaction, effectively delegating\
-    \ signing authority without any new cryptographic primitives.\n\nKey design details\
-    \ include: an input index field for O(n) rather than O(n\xB2) lookup complexity;\
-    \ a random nonce for privacy blinding to prevent chain analysis of uncommitted\
-    \ taproot branches; and the constraint that the \"lead\" UTXO must exist before\
-    \ the \"follower\" address is generated. No cycles are possible since outpoints\
-    \ are unique, and there are no replay attack vectors.\n\nWallet integration requires\
-    \ careful design: wallets should embed pointers to currently owned UTXOs in new\
-    \ address taproot trees (limited to ~10 for recovery feasibility), while always\
-    \ retaining a primary signing path so no UTXO becomes unspendable. The approach\
-    \ works best with sequential address generation rather than bulk address pre-generation,\
-    \ and is particularly beneficial for exchanges performing frequent UTXO consolidations.\n\
-    \nThe speaker notes that this opcode would be pointless today given small EC signatures,\
-    \ but would be highly valuable if Bitcoin ever transitions to post-quantum signatures."
 tags:
-    - cisa
-    - quantum-resistance
-    - taproot
-    - musig
-    - op-checktemplateverify
-    - schnorr-signatures
+  - 'cisa'
+  - 'quantum-resistance'
+  - 'taproot'
+  - 'musig'
+  - 'op-checktemplateverify'
+  - 'schnorr-signatures'
+speakers:
+  - 'Tadge Dryja'
 categories:
-    - Scripts and Addresses
-    - Soft Forks
-    - Security Enhancements
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'Scripts and Addresses'
+  - 'Soft Forks'
+  - 'Security Enhancements'
+source_file: 'https://www.youtube.com/watch?v=cqjo3rmd6hY'
+summary: "This talk introduces a novel approach to cross-input signature aggregation (CISA) designed to work with post-quantum (hash-based) signature schemes, addressing one of Bitcoin's most pressing scalability concerns in a post-quantum world.\n\nThe speaker begins by explaining elliptic curve CISA: in a Bitcoin transaction with multiple inputs from the same wallet, each input currently requires its own signature. CISA allows these to be combined into a single aggregate signature, saving block space. However, with EC signatures at ~64 bytes and the 75% witness discount, the savings are only ~8% in vbytes - modest enough that CISA hasn't been prioritized for a soft fork.\n\nPost-quantum signatures change the calculus dramatically. Schemes like SPhInXs Plus produce signatures of ~4 kilobytes - roughly 50x larger than EC signatures. If Bitcoin ever needs to migrate to post-quantum cryptography, transaction throughput could drop to around 2% of current capacity. In this context, aggregation becomes critical: two inputs aggregated would yield ~50% space savings, three inputs ~60% or more.\n\nThe fundamental challenge is that all existing EC aggregation techniques (MuSig2, FROST, half-aggregation, etc.) rely on elliptic curve math that simply does not apply to hash-based or lattice-based signatures.\n\nThe speaker proposes a new opcode (informally called OpCSIV) that sidesteps this problem entirely. Instead of cryptographically combining signatures, inputs can point to other inputs. One input provides a full signature (covering the entire transaction via SIGHASH_ALL), while other inputs include a hash-based pointer - the outpoint (TXID + index) of the signing input - baked into their taproot tree at address creation time. The opcode verifies that the referenced outpoint is being spent in the same transaction, effectively delegating signing authority without any new cryptographic primitives.\n\nKey design details include: an input index field for O(n) rather than O(n²) lookup complexity; a random nonce for privacy blinding to prevent chain analysis of uncommitted taproot branches; and the constraint that the \"lead\" UTXO must exist before the \"follower\" address is generated. No cycles are possible since outpoints are unique, and there are no replay attack vectors.\n\nWallet integration requires careful design: wallets should embed pointers to currently owned UTXOs in new address taproot trees (limited to ~10 for recovery feasibility), while always retaining a primary signing path so no UTXO becomes unspendable. The approach works best with sequential address generation rather than bulk address pre-generation, and is particularly beneficial for exchanges performing frequent UTXO consolidations.\n\nThe speaker notes that this opcode would be pointless today given small EC signatures, but would be highly valuable if Bitcoin ever transitions to post-quantum signatures."
 ---
 
 Speaker 0: 00:00:00
