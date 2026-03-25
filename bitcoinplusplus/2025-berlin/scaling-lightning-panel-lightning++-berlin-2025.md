@@ -1423,7 +1423,7 @@ Tether is going to do an `RGB`.
 
 Michael: 00:51:57
 
-Yeah but why wouldn't you use the tether chain, the plasma thing?
+Yeah but why wouldn't you use the Tether chain, the plasma thing?
 
 What's the advantage of using it over `Lightning` with all its intrinsic downsides?
 
