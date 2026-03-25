@@ -631,7 +631,7 @@ That is just going to be a hyper-competitive thing.
 
 Those yields, I think in the long term, will be driven down to absolutely nothing.
 
-Because these large players will look at this as I can just park my money here.
+Because these large players will look at this as "I can just park my money here".
 
 Some specialist like Lightspark who knows what they're doing, can deploy it on the network and earn some income, and it's going to be a race to the bottom very quickly.
 
