@@ -929,7 +929,7 @@ I don't know why everyone is so bearish on `Tor`.
 
 `Tor` is I think pretty cool.
 
-I have other critic about `Tor` not the reliability the fact that it has centralized registry basically and that's a problem.
+I have other critiques about `Tor` not the reliability the fact that it has centralized registry basically and that's a problem.
 
 Then there is something like `Nym` that tries to solve that with a shitcoin instead of a centralized registry.
 
