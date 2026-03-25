@@ -1451,7 +1451,7 @@ Exactly, why do we need a permissionless network to transfer around IOU tokens o
 
 Shinobi: 00:52:45
 
-Charitably I think the only straw man you could make is if you look at things like `RGB` or taproot assets, you can make the argument that how those protocols are structured technologically, it would make it a lot more difficult to do things like have the selective ability to freeze or seize a specific users coins, because this is all client side data, none of it's explicitly recorded `on-chain`.
+Charitably I think the only straw man you could make is if you look at things like `RGB` or Taproot Assets, you can make the argument that how those protocols are structured technologically, it would make it a lot more difficult to do things like have the selective ability to freeze or seize a specific users coins, because this is all client side data, none of it's explicitly recorded `on-chain`.
 
 But again, there's no reason you can't architect systems like that that provide privacy in a similar way that don't connect to Bitcoin at all.
 
