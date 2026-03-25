@@ -1055,7 +1055,7 @@ Calle: 00:38:34
 
 Yes.
 
-But with `Ark` is going to be a very centralized service.
+`Ark` is going to be a very centralized service.
 
 We should not build the `Tor` network using `Ark`, I think.
 
