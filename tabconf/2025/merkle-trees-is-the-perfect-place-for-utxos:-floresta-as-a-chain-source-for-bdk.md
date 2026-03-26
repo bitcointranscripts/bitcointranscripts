@@ -4,29 +4,26 @@ transcript_by: 'RazorBest via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=KHQFxNoRmpo'
 date: '2025-10-31'
 tags:
-  - 'tabconf'
-  - 'bitcoin'
-  - '2025'
-  - 'tabconf 7'
-  - 'technology'
-  - 'conference'
-  - 'atlanta'
-  - 'bdk-floresta'
-  - 'bdk'
-  - 'bitcoin development'
-  - 'bitcoin wallet'
-  - 'floresta'
-  - 'utreexo'
-  - 'trustless wallet'
-  - 'developer'
-  - 'merkle'
-  - 'compact-block-filters'
+  - 'Utreexo'
+  - 'Compact block filters'
+  - 'AssumeUTXO'
+  - 'Output script descriptors'
+  - 'Transaction bloom filtering'
+  - 'Transaction origin privacy'
 speakers:
   - 'Luis Schwab'
 categories:
-  - 'Science & Technology'
+  - 'P2P Network Protocol'
+  - 'Consensus Enforcement'
+  - 'Privacy Enhancements'
+  - 'Lightweight Client Support'
+  - 'Scripts and Addresses'
+  - 'Wallet Collaboration Tools'
+  - 'Privacy Problems'
+  - 'Security Problems'
+  - 'Transaction Relay Policy'
 source_file: 'https://www.youtube.com/watch?v=KHQFxNoRmpo'
-summary: "📌 Learn more about this talk on GitHub: ⭐️🐙\nhttps://github.com/TABConf/7.tabconf.com/issues/33\n\n🌱🧰 Explore bdk-floresta\nA work in progress BDK chain source crate that uses floresta-chain + floresta-wire to run a local, trustless node and wallet directly on your device 📲🧱\nPerfect for mobile and low spec setups ⚡️\n\n🧠 What this talk covers\n🌳 Utreexo 101\nMerkle proofs, validation, and bridge nodes\n🔍 How Floresta leverages Utreexo and how it differs from utreexod\n🏗️ A clear BDK architecture overview\n🎬 Live demo\nCreating and syncing a wallet using the crate ✅\n\n🎯 If you’re a dev or a Bitcoin enthusiast who wants lightweight, self contained wallets that can run anywhere, this one’s for you 🛠️🟠\n\n⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️⚡️🛠️\n\n🟠 TABConf is a technical Bitcoin conference built for builders. We bring protocol + application devs together to collaborate, debate, and push Bitcoin forward. 🧠🔧\n\n🎥 On this channel you’ll find:\n🗣️ Full talks • 🧑‍🏫 workshops • 🧩 panels\n🛠️ Builder Days sessions • 🔍 deep dives on:\n🧱 Bitcoin Core • ⚡️ Lightning • 🕵️ privacy • 🔐 security • 🧰 the tooling teams ship with\n\n🎟️ TABConf 8 tickets are on sale now!\n🗓️ Oct 12–15, 2026 • 📍 Atlanta, GA\n🏛️ Georgia Tech Exhibition Hall\n\n🎫 TABConf 8 Tickets\n🟠 Pay with Bitcoin: https://checkout.opennode.com/p/7d51f71f-f3e6-4159-bbfa-3a231d14e5b8\n\n💳 Pay with Stripe: https://buy.stripe.com/00w4gzapSf0o4ubg2mdQQ0b\n\n🌐 TABConf Website\nhttps://tabconf.com\n\n🔗 All links hub\nhttps://linktr.ee/tabconf\n\n🫂 TABConf Community\n💬 Discord: https://discord.gg/TRaX8M7amU\n\n🐦 Follow us on X\nhttps://x.com/tabconf\n\n🎧 Subscribe to the TABConf Podcast\n🍎 Apple Podcasts: https://podcasts.apple.com/us/podcast/tabconf-sessions/id1867836916\n\n🟢 Spotify: https://open.spotify.com/show/11Ram7ccTjBeiwhYoDVtF4?si=ec8bab9fdc2945cd\n\n⛲️ Fountain: https://fountain.fm/show/fqYiANm1II8INYOodXaj\n\n⭐️ Star us on GitHub\n🐙 https://github.com/TABConf"
+summary: "Luis Schwab, a Bitcoin Dev Kit grantee, presents bdk_floresta, a work-in-progress chain source crate that integrates Floresta — a Rust implementation of a Utreexo compact state node — directly into BDK wallets. The talk begins with an overview of BDK’s crate ecosystem (bdk_wallet, bdk_chain, Electrum, Esplora, Kyoto) and the privacy problem with relying on external servers: those servers can correlate a user’s IP address with their addresses, transactions, and balances. Utreexo is introduced as a solution to the ever-growing UTXO set problem: it compresses the ~11 GB UTXO set down to a few Merkle root hashes using a dynamic hash accumulator, requiring spending nodes to attach inclusion proofs when broadcasting transactions. The network topology includes full nodes, bridge nodes (which store the full Merkle forest and generate proofs, requiring tens of gigabytes of RAM), and compact state nodes like Floresta that only store the root hashes. bdk_floresta spawns a Floresta node in the background, exposing a subscriber that emits wallet update events applied directly by the BDK wallet. Current synchronization is block-by-block, with compact block filters planned for fast historical scanning after IBD. A live signet demo fails due to insufficient bridge node availability, so Luis walks through the code instead, showing node configuration, wallet attachment, the subscriber pattern, and the use of assumevalid to skip script validation for older blocks. Q&A covers the distinction between Floresta and Utreexod (Calvin Kim’s bridge implementation), the privacy improvement of behaving as a regular node versus querying an Esplora server, bridge node resource requirements (too heavy for consumer devices like Umbrel), and how compact block filters will enable historical wallet syncing post-IBD."
 ---
 
 ## Introduction
@@ -121,7 +118,7 @@ There are a few in Brazil, some in the US.
 We need more.
 That's a problem because there's so few bridges that the chance of finding a bridge via P2P discovery is very low.
 
-Speaker 1: 00:10:59
+Audience 1: 00:10:59
 
 So you need more people to run bridges and then we'll get the peer-to-peer discovery better.
 Do you do preferential peering?
@@ -136,7 +133,7 @@ It seems that we're having a lack of bridges here.
 
 ## First Q&A Session
 
-Speaker 1: 00:11:23
+Audience 1: 00:11:23
 
 And those bridges are developed where?
 Does Floresta develop a bridge as well or is that a completely separate piece of software?
@@ -147,7 +144,7 @@ Floresta is a compact-state node, so it only keeps the stubs from the roots.
 There is another project that's a bridge from Calvin Kim, which is Utreexod.
 So this is what people are running pretty much.
 
-Speaker 1: 00:11:49
+Audience 1: 00:11:49
 
 I see.
 And Utreexod is only the bridge?
@@ -158,7 +155,7 @@ Luis Schwab: 00:11:58
 I think they can run as a compact as well.
 I'm not sure.
 
-Speaker 1: 00:12:26
+Audience 1: 00:12:26
 
 I had a question about the privacy trade-offs point that you were making.
 So typically you might be connecting to some kind of external Esplora instance or something.
@@ -171,7 +168,7 @@ After IBD you can connect to other Compact State nodes, and they will have proof
 You only need a bridge for IBD.
 But you behave on the network like a normal node.
 
-Speaker 2: 00:13:24
+Audience 2: 00:13:24
 
 I'd just like to add that the difference here is that you are a regular node doing regular node stuff.
 You're just downloading blocks and transactions, address, like any node would already do.
@@ -190,7 +187,7 @@ You just relay the transaction.
 There's a big privacy gain there.
 Yeah, it seems we're not gonna have this demo working today.
 
-Speaker 4: 00:14:42
+Audience 4: 00:14:42
 
 Can I follow up on what you just said before?
 Did you say that you don't need the bridge?
@@ -240,7 +237,7 @@ I think that's pretty much it if you guys have any questions.
 
 # Final Q&A
 
-Speaker 5: 00:19:24
+Audience 5: 00:19:24
 
 I'd like to ask how an ordinary pleb who's not a coder might be able to run a Utreexo node?
 
@@ -248,7 +245,7 @@ Luis Schwab: 00:19:41
 
 You don't really need to know how to code, you can like just clone the repository and install the binary and that's it.
 
-Speaker 5: 00:19:52
+Audience 5: 00:19:52
 
 Actually I'm thinking about the bridge node.
 
@@ -256,7 +253,7 @@ Luis Schwab: 00:19:55
 
 Yeah.
 
-Speaker 5: 00:19:56
+Audience 5: 00:19:56
 
 Because it looks like we need to get a lot more of those out in the wild.
 
@@ -266,12 +263,12 @@ Yeah.
 You probably need a VPS to run the bridge.
 People need to be able to access it.
 
-Speaker 3: 00:20:16
+Audience 3: 00:20:16
 
 Okay.
 Thanks.
 
-Speaker 6: 00:20:34
+Audience 6: 00:20:34
 
 I have two questions.
 My first one is: how heavy are these bridge nodes?
@@ -283,7 +280,7 @@ Luis Schwab: 00:20:47
 They're kind of heavy.
 They use up a few tens of gigabytes of RAM because they need to keep the whole forest in RAM.
 
-Speaker 6: 00:20:59
+Audience 6: 00:20:59
 
 Interesting So that might be hard to just ship on an Umbrel or something, where people can just click play.
 
@@ -293,7 +290,7 @@ i don't know.
 I don't think that's very feasible.
 It's very hungry.
 
-Speaker 6: 00:21:11
+Audience 6: 00:21:11
 
 I saw the presentation yesterday on having it on mobile, or two days ago.
 So yeah, that was great.
@@ -307,12 +304,12 @@ Luis Schwab: 00:21:30
 There's like five people.
 Five, six people.
 
-Speaker 6: 00:21:39
+Audience 6: 00:21:39
 
 Awesome.
 Thank you.
 
-Speaker 7: 00:21:53
+Audience 7: 00:21:53
 
 Hi, can you explain how compact block filters integrate with that?
 Has it something to do that it can also fetch the relevant information from normal Bitcoin nodes and not only from Floresta nodes?
@@ -324,7 +321,7 @@ But the problem is, if I have a wallet that has transactions in the past, I cann
 So if you have compact block filters, compact block filters work with bloom filters.
 So we make requests to many peers with this filter and we get the transactions details that we care about.
 
-Speaker 7: 00:22:51
+Audience 7: 00:22:51
 
 So only during IBD you do compact block filter?
 
@@ -334,6 +331,6 @@ No, we do compact block filters after IBD.
 But Floresta can also skip IBD.
 So in this case, the only way to get updates from the past is to do compact block filters.
 
-Speaker 7: 00:23:10
+Audience 7: 00:23:10
 
 Thanks!
