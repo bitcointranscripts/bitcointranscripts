@@ -9,7 +9,6 @@ speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
   - 'Ruben Somsen'
-  - 'Josibake'
 summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments.'
 episode: 94
 additional_resources:
