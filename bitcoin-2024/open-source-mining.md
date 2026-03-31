@@ -73,7 +73,7 @@ Matt, why is it a big problem if there's only a few mining pools and why is that
 
 Yeah, so obviously the point of a mining pool is that it reduces variance. If you're solo mining and you're a small miner, you're going to find a block once a year and you're going to go out of business trying to pay your power bill before you get that far. So mining pools solve a very important problem in the mining ecosystem.
 They pay miners a consistent amount of money and allow bunch of miners to group together and build a pool and get consistent payouts. This naturally has a very strong centralizing effect because you have to be a large pool in order to pay consistent payouts. You have to be of a certain size, a certain percentage of network hash power, probably at least double digits, before miners get a really consistent payout that they want. That's your primary service offering. So there can only be 10-something traditional large mining pools.
-This is obviously really bad for Bitcoin. The whole point of Bitcoin mining is to be decentralized, to provide many different parties who can mine transactions so that there's no single party that can censor transactions. So this mining game is really problematic. In this pool game, there can only be so many pools, and at the same time the whole point of mining is to be decentralized, and so this centralized pool, this individual large company pool, is very much antithetical to Bitcoin but at the same time, we need it. Miners couldn't possibly operate without it. This is why things like `Braidpool`, hopefully reviving the P2P game, are really, really critical but also even in the short term.
+This is obviously really bad for Bitcoin. The whole point of Bitcoin mining is to be decentralized, to provide many different parties who can mine transactions so that there's no single party that can censor transactions. So this mining game is really problematic. In this pool game, there can only be so many pools, and at the same time the whole point of mining is to be decentralized, and so this centralized pool, this individual large company pool, is very much antithetical to Bitcoin but at the same time, we need it. Miners couldn't possibly operate without it. This is why things like `Braidpool`, hopefully reviving the `P2Pool` game, are really, really critical but also even in the short term.
 So, Kulpreet mentioned, obviously, `Braidpool` has a lot of complexity to it, `P2Pool` was itself already fairly complex, but died off because it didn't have answers to some very important problems and Fixing those is doable, but adds even more complexity.
 So `Braidpool`'s a little ways off, and having `Braidpool` not only exist, but then also have miners be comfortable running it, you know, some of these large public miners getting comfortable running it, is probably a ways off. In the short term, though, we can still do better, right? So this problem of pools being centralized is all about the Bitcoin side of the pool, right?
 The pool does all the share accounting and money handling and whatever, but the Bitcoin side of it, where they're running a Bitcoin node, selecting transactions, and selecting which block to mine on is what matters for centralization and what matters for Bitcoin. It's the mining part of Bitcoin mining and that part doesn't have to be done by the pool. There's nothing inherent about this desire to have a central party handling this reward distribution and flattening out the variance be, require that mining be done on the pool and so `Stratum V2` is about changing this and having the end miner actually run the full node, select the block, do all of that work, all of the stuff that matters for Bitcoin, but then also still pay the pool and have the centralized pool operate and manage that reward and then split it across all the constituent miners.
@@ -100,7 +100,7 @@ I heard that this week something very exciting happened and a bitaxe found a blo
 
 **Skot 9000:** 00:09:23
 
-That's more details I Cannot believe it happened. It was at the day before yesterday.
+I Cannot believe it happened. It was at the day before yesterday.
 I was sitting there someone just tapped me on the shoulder and showed me a tweet and I was like, no way. We have single digit peta hashes worth of Bitaxe hash rate out there.
 So it should be years before a Bitaxe would solve a block, but it happened. A solo miner on CKpool solved a block on a Bitaxe, right? Getting that full block reward for themselves and so it's incredibly exciting. It proves that it can work if you're extremely lucky, but it also kind of verified the whole tech stack that it can indeed submit a share of the highest difficulty.
 
@@ -135,7 +135,7 @@ Could you maybe say what CKpool is?
 
 CKpool is a very long-running solo mining pool, which is a strange concept, but basically they're just running the stratum server for you. In fact, I think a number of people would be mad at me for saying solo mining pool because that's like an oxymoron or something, but they run the stratum for you.
 You can connect to it, can get templates from them so you're not making your own templates. Kind of a bummer but you get templates from them.
-It's super easy to connect and start solar mining and for that service, they take 2% of your potential block award. What were we talking about before that?
+It's super easy to connect and start solo mining and for that service, they take 2% of your potential block award. What were we talking about before that?
 
 **Matt Corallo:** 00:12:20
 
@@ -159,7 +159,7 @@ Yeah, the `Bitcoind` interface for getting block templates is horrendously ineff
 
 **Mark Erhat:** 00:13:47
 
-I think we could also mention here that the stratum protocol is not specified anywhere there's no full write-up of the original stratum protocol I think there was a bit number reserved for it but it was never written up. So actually with `Stratum V2` which is way better documented, it's being developed. I think there's clients out there now that are done and you can just get your `Stratum V2` software and the protocol is fully specified. So that's also a big step up in just, well, mining infrastructure that is code in this case.
+I think we could also mention here that the stratum protocol is not specified anywhere there's no full write-up of the original stratum protocol I think there was a BIP number reserved for it but it was never written up. So actually with `Stratum V2` which is way better documented, it's being developed. I think there's clients out there now that are done and you can just get your `Stratum V2` software and the protocol is fully specified. So that's also a big step up in just, well, mining infrastructure that is code in this case.
 
 **Skot 9000:** 00:14:30
 
@@ -218,7 +218,7 @@ It starts slow, but it will be for the best.
 
 **Matt Corallo:** 00:18:25
 
-To again quote someone I often disagree with, go read Mark Zuckerberg's recent post when they announced the Lama open AI model. He wrote a long post, I guess it was last week or maybe even this week, talking about why they're doing it open, how much value they've gotten out of open sourcing their AI models and having an entire community build around their tooling and their software and contribute ideas that they've been able to take back and incorporate in the next generation of their models that's helped them get a ton of free development resources but to answer the question, yeah, if you're in the mining world, I get it there's a lot of competition, lot of stress on your business and taking the time to do things like open sourcing, taking the time to do things like experimenting with `Stratum V2`, or trying to give in your pool building out `Stratum V2` logic, taking the time to eventually when when `Braidpool` ships, experiment and try stuff like that, contribute, add feedback, and eventually use it is a big ask and is something you often don't have time for but it's also what matters to Bitcoin. Ultimately, Bitcoin will not succeed as long as we have all these centralized, closed, proprietary mining stack across the entire ecosystem. This is not a sustainable Bitcoin. This is something that we've gotten away with for now, but we've also become complacent about because it's the world we have and so we need to start making progress on these fronts.
+To again quote someone I often disagree with, go read Mark Zuckerberg's recent post when they announced the Llama open AI model. He wrote a long post, I guess it was last week or maybe even this week, talking about why they're doing it open, how much value they've gotten out of open sourcing their AI models and having an entire community build around their tooling and their software and contribute ideas that they've been able to take back and incorporate in the next generation of their models that's helped them get a ton of free development resources but to answer the question, yeah, if you're in the mining world, I get it there's a lot of competition, lot of stress on your business and taking the time to do things like open sourcing, taking the time to do things like experimenting with `Stratum V2`, or trying to give in your pool building out `Stratum V2` logic, taking the time to eventually when `Braidpool` ships, experiment and try stuff like that, contribute, add feedback, and eventually use it is a big ask and is something you often don't have time for but it's also what matters to Bitcoin. Ultimately, Bitcoin will not succeed as long as we have all these centralized, closed, proprietary mining stack across the entire ecosystem. This is not a sustainable Bitcoin. This is something that we've gotten away with for now, but we've also become complacent about because it's the world we have and so we need to start making progress on these fronts.
 We need to start opening up that stack, we need to start decentralizing that stack, and that requires everyone in that world to just spend a little bit of time doing it. Stratum, I didn't work on it, but the Stratum reference implementation, the `Stratum V2` implementation is now in beta, so people should be playing with it, providing feedback, reporting bugs, hopefully contributing and we have to get these things off zero and we have to start making progress so that we set ourselves up for a successful Bitcoin in a decade because that's not what we're doing right now.
 
 **Kulpreet Singh:** 00:20:30
@@ -229,7 +229,7 @@ That's a lot of optimism from these two guys here, but I've got a bit of pessimi
 
 I would like to reference something that came up in a panel yesterday that I attended that miners and mining industry is such a big shareholder in our ecosystem and it often feels that there is little participation in the broader discussions of the Bitcoin ecosystem It felt to me often that miners treated more as an operations research problem money in electricity in space and hardware in and profit out and some projections but we'd also love to have more conversations with you about what matters to you from the open source development side.
 Do you have opinions on development or soft fork proposals or stuff that ultimately will affect you or you'll perhaps be helping to signal activation readiness for?
-So if you all want to be more in this conversation, for example the Bitcoin Uptech group has for many years tried to sort of be a bridge between the open source development scene and the industry. I think it works to some degree with exchanges and brokerages and so on but also, I'd like to invite you miners to come join this conversation. I think from our side, I help contribute to the Uptech newsletter every week. We write about Bitcoin development but we'd love to have more mining-relevant content if we can find people that want to have that conversation with us.
+So if you all want to be more in this conversation, for example the Bitcoin Optech group has for many years tried to sort of be a bridge between the open source development scene and the industry. I think it works to some degree with exchanges and brokerages and so on but also, I'd like to invite you miners to come join this conversation. I think from our side, I help contribute to the Optech newsletter every week. We write about Bitcoin development but we'd love to have more mining-relevant content if we can find people that want to have that conversation with us.
 
 **Skot 9000:** 00:22:57
 
@@ -267,7 +267,7 @@ All right.
 
 **Matt Corallo:**
 
-And also to echo what Mark said, get involved in OpTec. It's an easy way to follow what's going on in the Bitcoin development scene, and they do a great job there too.
+And also to echo what Mark said, get involved in OpTech. It's an easy way to follow what's going on in the Bitcoin development scene, and they do a great job there too.
 
 **Kulpreet Singh:** 00:24:34
 
@@ -285,9 +285,3 @@ And hardware too.
 **Mark Erhat:** 00:24:40
 
 Thank you for taking your time here.
-
-**Announcer**: 00:25:05
-
-Next year, we are bringing the Bitcoin conference to the American West, Las Vegas.
-The brightest minds in the world will converge to deliver Bitcoin history.
-Buy your tickets now at b.tc slash conference slash 2025 You
