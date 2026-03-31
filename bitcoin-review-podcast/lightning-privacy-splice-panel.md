@@ -1,20 +1,20 @@
 ---
-title: Lightning Privacy & Splice Panel
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=SjLPbjs9LkI
+title: 'Lightning Privacy & Splice Panel'
+transcript_by: 'kenda-sketch via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=SjLPbjs9LkI'
+date: '2023-05-12'
 tags:
-  - splicing
-  - rv-routing
-  - offers
-  - privacy-enhancements
+  - 'splicing'
+  - 'rv-routing'
+  - 'offers'
+  - 'privacy-enhancements'
 speakers:
-  - NVK
-  - Bastien Teinturier
-  - Jeff Czyz
-  - Dusty Dettmer
-  - Tony Giorgio
-  - Vivek
-date: 2023-05-12
+  - 'NVK'
+  - 'Bastien Teinturier'
+  - 'Jeff Czyz'
+  - 'Dusty Dettmer'
+  - 'Tony Giorgio'
+  - 'Vivek'
 ---
 ## Housekeeping
 
