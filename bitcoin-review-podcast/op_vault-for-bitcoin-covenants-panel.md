@@ -14,7 +14,7 @@ speakers:
   - 'James O''Beirne'
   - 'Ben Carman'
 categories:
-  - 'podcast'
+  - 'security-problems'
 ---
 **NVK:** 00:00:45
 
