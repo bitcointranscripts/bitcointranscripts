@@ -267,7 +267,7 @@ All right.
 
 **Matt Corallo:**
 
-And also to echo what Mark said, get involved in OpTech. It's an easy way to follow what's going on in the Bitcoin development scene, and they do a great job there too.
+And also to echo what Mark said, get involved in Optech. It's an easy way to follow what's going on in the Bitcoin development scene, and they do a great job there too.
 
 **Kulpreet Singh:** 00:24:34
 
