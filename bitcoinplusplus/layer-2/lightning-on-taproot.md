@@ -8,6 +8,8 @@ tags:
   - 'taproot'
 speakers:
   - 'Arik Sosman'
+categories:
+  - 'privacy-enhancements'
 ---
 ## Introduction to `Taproot` Channls
 
