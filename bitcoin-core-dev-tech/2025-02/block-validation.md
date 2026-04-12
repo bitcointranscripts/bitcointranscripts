@@ -22,12 +22,12 @@ Three ways block validation gets triggered
 - In post-IBD, when a new block is announced, we got through 2) 3) sequentally (we don't first request the header separately)
 - In reindex, we only do 3)
 
-### 1) Header Received
+## 1) Header Received
 
 If something fails here (i.e. the header is invalid), it's like it never happened. We don't cache any failures.
 If header validation succeeds, we insert it into `m_block_index`, and set `nStatus` to `BLOCK_VALID_TREE`. `BLOCK_VALID_TREE` means that the header is valid on itself, and als that it points to a valid previous header (which in turn points to a valid header, etc). This also means that if a block (header) later gets invalidated (e.g. through RPC), we iterate over all the later header, and invalidate them. However, even though we don't store/cache invalid headers when received from peers, we do keep (now invalidated) headers in `m_block_index` when they were first valid but then later invalidated. `invalidateblock` should be a very rare occasion, so we won't focus on it too much more here.
 
-### 2) Receive full block
+## 2) Receive full block
 
 `ProcessNewBlock()` first calls `CheckBlock()`. `CheckBlock()` does quick, context-free checks. If it fails, it doesn't mark the block as invalid, but it just ignores it. We do this because we could have received a mutated block for an otherwise valid header.
 
@@ -35,7 +35,7 @@ If `CheckBlock()` succeeds, `AcceptBlock()` is called, which in turns calls `Acc
 
 Finally, we call `ActivateBestChain()`. It's a function that doesn't require any input, but takes an optional _hint_ to help it find the best chain more efficiently (but will ignore the hint if it's wrong). It just tries to get the chainstate to the place where it has the most-work chain.
 
-### 3) Connect block
+## 3) Connect block
 
 `ActivateBestChain()` calls `Chainstate::FindMostWorkChain()`, which gives the most-work block that we want to get to. In this process, we may call `DisconnectBlock()` if we need to re-org, and then call `ConnectBlock()` to make progress to the new tip. When the block is connected, `nStatus` is updated to `BLOCK_VALID_SCRIPTS`.
 

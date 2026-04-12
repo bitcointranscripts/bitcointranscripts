@@ -5,7 +5,7 @@ date: 2024-11-21
 
 We consider the following linear programming formulation for transaction selection:
 
-### Variables and Objective
+## Variables and Objective
 
 - Let $f_i$ represent the fee rate of transaction $i$ and $s_i$ represent its size.
 
@@ -17,7 +17,7 @@ $$
 \text{Maximize: } \sum f_i x_i
 $$
 
-### Constraints
+## Constraints
 
 1. **Size Constraint**: The sum of the sizes of selected transactions must equal the block size (normalized to 1 for simplicity):
 
@@ -37,13 +37,13 @@ $$
 x_i \geq x_j \quad \text{if transaction } j \text{ depends on transaction } i
 $$
 
-### Approximate Solutions
+## Approximate Solutions
 
 We solve this linear program approximately, allowing for a small tolerance $\epsilon$. Efficient algorithms exist with a complexity of $O((m + n)^3)$, where $m$ is the number of constraints and $n$ is the number of variables. For practical cases, such as 64 variables and 100 constraints, solutions can be computed in under 1 millisecond using modern solvers.
 
 An open-source library called **HiGHS** (available under a compatible license) can efficiently solve this formulation.
 
-### Handling Dynamic Updates
+## Handling Dynamic Updates
 
 To adapt to new transactions:
 
@@ -55,7 +55,7 @@ To adapt to new transactions:
 
 This approach seamlessly handles dynamic updates without the need for significant recomputation, making it highly applicable to real-time mempool management.
 
-### Advantages Over Current Rules
+## Advantages Over Current Rules
 
 1. **Simplifies RBF Rules**: Replaces the need for extensive rules like the "125% RBF" rule, which is complex and makes mempool behavior difficult to predict.
 
@@ -63,7 +63,7 @@ This approach seamlessly handles dynamic updates without the need for significan
 
 3. **Generalizability**: Linear programming is already a proven method for solving knapsack-style problems, making this approach well-suited for transaction selection.
 
-### Resources
+## Resources
 
 For further reading on linear programming techniques and theoretical foundations:
 
