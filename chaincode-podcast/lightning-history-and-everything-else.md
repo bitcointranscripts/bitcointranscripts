@@ -12,6 +12,7 @@ tags:
 speakers:
   - 'Tadge Dryja'
   - '0xB10C'
+  - 'Jonas Nick'
 categories:
   - 'podcast'
 summary: 'Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space.'
