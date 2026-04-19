@@ -2,7 +2,7 @@
 title: 'Lightning History and everything else'
 transcript_by: 'Hussman256 via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Tadge-Dryja-and-Lightning-History-and-everything-else---Episode-31-e20udtf'
-date: '2023-03-19'
+date: '2023-03-18'
 tags:
   - 'eltoo'
   - 'lightning'
@@ -11,6 +11,7 @@ tags:
   - 'trimmed-htlc'
 speakers:
   - 'Tadge Dryja'
+  - 'Jonas Nick'
 categories:
   - 'podcast'
 summary: 'Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space.'
@@ -44,7 +45,7 @@ Speaker 1: 00:00:18
 
 Jonas.
 
-Speaker 2: 00:00:19
+Jonas: 00:00:19
 
 We are back and we're going to have Taj joining us in the studio today.
 What should we chat about with him?
@@ -53,7 +54,7 @@ Speaker 1: 00:00:26
 
 I think maybe lightning stuff.
 
-Speaker 2: 00:00:28
+Jonas: 00:00:28
 
 Yeah, lightning stuff.
 It's lightning history.
@@ -64,7 +65,7 @@ Speaker 1: 00:00:34
 Oh, oh, you know what?
 Maybe we should ask him whether blocks should still be 130 megabytes.
 
-Speaker 2: 00:00:39
+Jonas: 00:00:39
 
 All right.
 We'll, we'll start with that.
@@ -73,14 +74,14 @@ So that's where we'll start.
 
 ## Could blocks be bigger?
 
-Speaker 2: 00:00:55
+Jonas: 00:00:55
 
 So we didn't have the mic on, but you started diving in directly into ancient, it's not even that much ancient history.
 It's just history at this point.
 So bigger blocks, smaller blocks?
 What do you think?
 
-Speaker 0: 00:01:08
+Tadge: 00:01:08
 
 I think we shouldn't be dogmatic in that, like, if it's a sort of religious, like Bitcoin only has 21 million bitcoins and Bitcoin has one well really four megabyte blocks like this is dogmatic It's like well, what are we trying to achieve is this the best way to achieve it and and I think programmable money, right?
 You can program it.
@@ -97,7 +98,7 @@ We never really tried that.
 That's the problem, because it started with Bitcoin Cash and BSV and stuff.
 And those aren't, I don't want to say, but they're not really serious.
 
-Speaker 2: 00:02:33
+Jonas: 00:02:33
 
 It's not just that, it's other variables have been played with over time with derivations, or even Ethereum, where faster blocks, bigger blocks, better blocks.
 
@@ -106,7 +107,7 @@ Speaker 1: 00:02:45
 It's interesting to watch what BSV and Bcache are doing, but the question is how indicative it is of whether we could do it.
 Because if you actually then look at the content of the BSV blocks with multiple gigabytes, and it's just millions of times the same dog picture in the block, that's not going to be what sort of block we would see on a network that actually gets used like Bitcoin.
 
-Speaker 0: 00:03:08
+Tadge: 00:03:08
 
 You would see a large UTXO set of billions of UTXOs, and that's to me a bigger bottleneck.
 That's scary, yes.
@@ -118,7 +119,7 @@ Speaker 1: 00:03:32
 
 I would be very shocked and surprised if it wound up 50 gigabytes per year.
 
-Speaker 0: 00:03:35
+Tadge: 00:03:35
 
 Worst case scenario, right?
 If you're just, you know, an attack, like that's the worst case.
@@ -127,7 +128,7 @@ Speaker 1: 00:03:38
 
 Yeah, if we just create outputs all year long, yes.
 
-Speaker 0: 00:03:41
+Tadge: 00:03:41
 
 But you could reasonably see 20 extra gigs a year, right?
 Like That could happen.
@@ -152,7 +153,7 @@ Right.
 In the long term, our block subsidy will be leveling off.
 We will need some other mechanism to...
 
-Speaker 2: 00:04:34
+Jonas: 00:04:34
 
 And quickly, I mean...
 Exponential! That's how exponential works.
@@ -163,7 +164,7 @@ Speaker 1: 00:04:41
 Yeah, and what is it?
 We just went past the halfway point of this block subsidy era, And so...
 
-Speaker 0: 00:04:50
+Tadge: 00:04:50
 
 No, wait, next year, 2024 is when it halves, I think.
 So we're well into...
@@ -173,7 +174,7 @@ Speaker 1: 00:04:56
 Yeah, end of 2022 was the point where we went over 105,000 blocks into the era.
 So yeah, end of 2024, I think, is the next halving.
 
-Speaker 0: 00:05:08
+Tadge: 00:05:08
 
 To me, those are very different concerns, right?
 Where it's like, OK, we need small blocks so that we incentivize, you know, have fees and keep the security of the system.
@@ -181,7 +182,7 @@ And then we need the small blocks because of, oh, I'm currently running an Intel
 And that seems very ephemeral.
 Computer chips, we're talking about a system we want to run for 100 years.
 
-Speaker 2: 00:05:29
+Jonas: 00:05:29
 
 Yes and no.
 We are talking about people running Bitcoin on Raspberry Pis and whatever else.
@@ -192,7 +193,7 @@ We're also talking about people running Bitcoin in areas where bandwidth is more
 I mean, clearly there's other ways to deliver the blockchain there, like get a satellite dish pointed at some specific point in the sky and it streams you the whole blockchain in a month.
 But yeah,
 
-Speaker 0: 00:06:01
+Tadge: 00:06:01
 
 but so it also is ephemeral in both directions.
 Like maybe, you know, because a lot of people on the Internet are like, hey, Bitcoin's great for like when the apocalypse comes or, you know, when the system falls apart or something.
@@ -206,7 +207,7 @@ Speaker 1: 00:06:39
 
 Sure.
 
-Speaker 0: 00:06:39
+Tadge: 00:06:39
 
 That could happen.
 
@@ -219,7 +220,7 @@ But anyone that runs a full archive node wants to have all that data.
 Anybody that wants to calculate the witness Tx IDs themselves, they need the data in order to, to calculate the witness Tx ID.
 So at that point, it, yeah, It's an economic design parameter, but also just like a question on how quick we can do IBD and how much bandwidth it'll take and how much disk space it'll take to the cost of node operation parameters, basically.
 
-Speaker 0: 00:07:46
+Tadge: 00:07:46
 
 But the cost of node operation you can think of as, okay, numerator and denominator.
 The numerator is, okay, how big is it?
@@ -230,12 +231,12 @@ And that can change.
 It can get worse, but it probably gets better.
 But that's where the variables go.
 
-Speaker 2: 00:08:01
+Jonas: 00:08:01
 
 It's changed a lot since this debate certainly began, but also ended.
 And so.
 
-Speaker 0: 00:08:08
+Tadge: 00:08:08
 
 I don't want to reignite it.
 
@@ -244,7 +245,7 @@ Speaker 1: 00:08:10
 And so.
 One terabyte SSD is now $80.
 
-Speaker 0: 00:08:14
+Tadge: 00:08:14
 
 I've seen them for $50 on Amazon.
 It's great.
@@ -258,42 +259,42 @@ Speaker 1: 00:08:31
 And then I mean, that's kind of nice.
 GPUs are cheap again since Ethereum stopped using all of them.
 
-Speaker 0: 00:08:36
+Tadge: 00:08:36
 
 Yeah, well, I'd hope to be cheaper.
 But yeah, so it is kind of cool.
 During 2020, 2021, I was like, oh, there's Significant progress in this whole microchips and technology and like that's great.
 I Benefit from that and yeah,
 
-Speaker 2: 00:08:51
+Jonas: 00:08:51
 
 and so what do you do with that?
 So the denominators change yeah,
 
-Speaker 0: 00:08:54
+Tadge: 00:08:54
 
 what does that mean it?
 So I think it doesn't it doesn't touch the economics of Bitcoin if it's hey We want fees and stuff It has nothing to do with that.
 But it does mean that if you have the same computer, it's easier to verify the current blocks.
 Or you could verify blocks that were 50% larger or something with the same spend of equipment.
 
-Speaker 2: 00:09:12
+Jonas: 00:09:12
 
 Yeah, that's not my question.
 My question is, The denominator has clearly changed in the last five years and the last 10 years.
 What do you do with that?
 What's the next step?
 
-Speaker 0: 00:09:23
+Tadge: 00:09:23
 
 Yeah.
 It gives you flexibility to change things without compromising the ability of people to verify.
 
-Speaker 2: 00:09:30
+Jonas: 00:09:30
 
 I understand, but this is a consensus system.
 
-Speaker 0: 00:09:32
+Tadge: 00:09:32
 
 Oh, I don't know.
 I'm not saying...
@@ -302,14 +303,14 @@ Speaker 1: 00:09:34
 
 Oh, you're not advocating for a block size control?
 
-Speaker 0: 00:09:36
+Tadge: 00:09:36
 
 No, I'm not going to.
 But I do think it's like people should talk about, like AJ talks, you know, like talks about, okay, mining rewards and like how this should incentivize, you know, late.
 
 ## Paper: On the instability of Bitcoin without the block reward
 
-Speaker 0: 00:09:48
+Tadge: 00:09:48
 
 And then there's a paper, Bitcoin is unstable without the block reward It's an interesting paper as interesting attacks It kind of doesn't get to the heart of it because they assume unlimited block size and like the beginning of the paper They're like, okay assuming there's no limit.
 Here's all these problems.
@@ -326,14 +327,14 @@ Speaker 1: 00:10:32
 
 But even hundreds of millions would be an interesting challenge.
 
-Speaker 2: 00:10:36
+Jonas: 00:10:36
 
 Let's go specifically.
 Why not the B number?
 
 ## Serving billions with Lightning
 
-Speaker 0: 00:10:39
+Tadge: 00:10:39
 
 Why are we in the millions?
 If you just look at the current limits, you've got about 50 gigabytes of new output space a year.
@@ -343,7 +344,7 @@ Speaker 1: 00:10:52
 
 Okay, until recently, the blockchain was roughly growing by some 54 gigabytes per year.
 
-Speaker 0: 00:11:00
+Tadge: 00:11:00
 
 Yeah, but I'm talking about UTXO space, right?
 So if you don't do any signatures and you just wanna, the non-discounted space, right, is around 50, like a little less,
@@ -352,7 +353,7 @@ Speaker 1: 00:11:09
 
 but yeah.
 
-Speaker 0: 00:11:09
+Tadge: 00:11:09
 
 Yes, yeah.
 So if you want lots.
