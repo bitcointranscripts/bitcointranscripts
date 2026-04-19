@@ -1,0 +1,1670 @@
+---
+title: Acumulator Based Cryptography & UTreexo
+speakers:
+  - Tadge Dryja
+tags:
+  - proof-systems
+  - utreexo
+source_file: https://www.youtube.com/watch?v=xlKQP9J88uA
+media: https://www.youtube.com/watch?v=xlKQP9J88uA
+categories: null
+date: '2019-09-09'
+youtube:
+  description: ''
+  tags: []
+  categories:
+    - Science & Technology
+transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+---
+
+## Intro
+
+Speaker 0: 00:00:02
+
+OK.
+
+Speaker 1: 00:00:12
+
+Hello, everyone.
+
+Speaker 0: 00:00:18
+
+I'm getting towards the end of the day, so I hope you're all still energetic.
+I know I am, because I've been up for 30-something hours.
+Just flew in.
+First time here.
+It's cool.
+
+Speaker 1: 00:00:29
+
+Okay.
+
+Speaker 0: 00:00:32
+
+There's some privacy leaks on this screen, aren't there?
+Different horizontal, OK, hold on.
+
+Speaker 1: 00:00:45
+
+OK, sorry.
+
+Speaker 0: 00:00:49
+
+There.
+
+Speaker 1: 00:00:52
+
+OK.
+OK.
+Sorry.
+So I'm going to talk about, I have sort of two talks in a row.
+They are distinct files as such.
+So you can't just concatenate and hash.
+I guess you have to make sort of an accumulator to prove that each of the individual talks are occurring.
+So first I'm going to talk about accumulators.
+And it's mostly about RSA accumulators.
+And then my next talk is about UtrexO, which is what I've been working on for a while.
+And I have a paper on ePrint, And we'll try to submit it to a conference soon about uTreeXO, which is a hash-based accumulator.
+And I'll try to talk about the differences and advantages and disadvantages of z2.
+OK.
+So intro, I'm Tad Schreger.
+I worked on authored Lightning Network, discrete log contracts, fun stuff.
+And the last year or so, I've been working on UtrexO, which I think is really cool.
+And hopefully, we'll get into Bitcoin, and everyone will use it, and it'll be great.
+I guess if you have questions, it seems like people just interrupt, which is cool.
+If we have too much of it and there's not enough time, come bug me after.
+
+## About accumulators
+
+Speaker 1: 00:02:03
+
+What's this about accumulators?
+I've heard of these things.
+Cryptography has lots of fun tools, not just encryption and signing.
+The idea of cryptography to increase the scalability of Bitcoin Sounds great.
+But oops, as with all engineering, lots of trade-offs here.
+
+## Tradeoffs
+
+Speaker 1: 00:02:22
+
+We want to keep track of billions of things.
+So right now in Bitcoin, there's, I guess If you've looked through the rest of this day, you know that bitcoins are split up into UTXOs, the unspent outputs of transactions.
+And those are what wallets keep track of.
+Those are what ends up as inputs in the next set of transactions.
+And so those are the coins.
+And right now, there's about 60 million of them, not too many.
+And it's sort of an interesting trade-off in that you want more, right?
+You want more people to use Bitcoin.
+And if you're using Bitcoin, you have to have your own UTXO.
+Otherwise, you're just sort of mushed in with a bunch of other people's coins on like Coinbase or something.
+That's not the whole point.
+You want your own wallet, your own node to verify things.
+You've got your own private keys, your own UTXOs. You want lots of people to use it.
+You want billions of people to use this.
+But you don't want it to be too big because everyone has to keep the UTXO set.
+But the desire would be, yeah, it'd be great if we had really good scalability so you could have billions of UTXOs. But also, we wanted to take up like 1 kilobyte.
+Sounds crazy, right?
+But I think it's doable.
+Also you can start with what you need.
+And I think Greg Maxwell said on IRC several times, I want a pony.
+But there are trade-offs, But they're not too bad.
+
+## Hash Functions
+
+Speaker 1: 00:03:46
+
+So hash functions seem to be like this, right?
+You've heard of them, I'm sure.
+You have the hash of x, and you call it y.
+And y looks unrelated to x.
+And the two main properties that we normally talk about are something's one way or pre-image resistance.
+Given y, you can't figure out what x was.
+And you also want it to be collision free so that you can't find two inputs that give you the same output.
+
+## Digest Message
+
+Speaker 1: 00:04:15
+
+But one thing we don't talk about as much, well, it's still important, is that sometimes you call this a digest, message digest.
+An important property is that x and y are not the same length.
+The output of a hash function is like 32 bytes, But the input can be huge.
+So you can have a hash of a gigabyte file, and you still have this 32-byte little hash.
+And this is really useful.
+So if you want to prove that something hasn't changed in your file, you don't have to keep track of the file.
+Let's say it's some big PDF document or some image.
+And you don't have to store it, but you take the image.
+It's a gigabyte or something, and then you just keep the hash of it and throw away the image.
+And then later, when someone presents you the image, you hash it again to make sure it hasn't been modified.
+This is super useful, and this is super easy with hash functions.
+And we want to do that, but for lots of things.
+
+## Saving Hashes
+
+Speaker 1: 00:05:09
+
+So what if we want more flexibility, like a set of n files instead of just one?
+Well, you could just save the hashes of each file, which works OK.
+But it is O of n space.
+So the number of files you have is the number of space, the amount of spaces you're going to take up is proportional to the number of files.
+So if you're saying, OK, I've got a bunch of JPEGs. I want to make sure no one's Photoshopping them.
+They're the real deal.
+So I'm just going to save the hash of every JPEG and then delete them all.
+And then next time I connect to Instagram or Google photos or whatever, they might be lying.
+They might be editing my photos and sending them back to me.
+I don't trust them, so I'm just going to keep all my hashes, and then I'm going to compare them.
+You could do that, and that would work.
+For something like images, it would probably be fine, because you probably don't have millions.
+You probably may have more like thousands.
+And 32 bytes times thousands, it's pretty small.
+But it is O of n, right?
+So in big O notation, it actually doesn't get you anywhere.
+In practice, the constants are great, but it's O of n.
+
+## What we want
+
+Speaker 1: 00:06:18
+
+So what we'd really like is O of 1.
+O of 1 is awesome.
+O of log n is still pretty good.
+It'd also be cool if you could add and remove from these sets later on, and maybe prove membership and non-membership as well.
+
+## accumulators
+
+Speaker 1: 00:06:34
+
+So what can do this?
+There are constructions that can do this.
+They're called accumulators.
+And the basic functions are generate.
+You make up some kind of setup parameters of the accumulator.
+Then you have an add function, which takes the accumulator and adds an element to it, and maybe spits out a proof.
+And then you want to be able to verify.
+So given an accumulator, an element, and a proof, it returns a yes or no, that yes, this element is in there, or no, it's not.
+A proof is not well defined.
+We haven't defined the implementation.
+But it's some data that allows you to verify that an element is contained within the accumulator, that has been previously added to the accumulator.
+Like the WP path?
+It could be.
+If you think of a Merkle path, it's sort of like a proof.
+And in RSA accumulators, I'll show what the proof is in there.
+But so in both cases, I'm going to talk about Merkle hash-based and also RSA-based.
+They all have these, but they're pretty different how they do these things.
+So if you just think of a straight up Merkle tree, yeah, You can think of it as a static accumulator.
+It sort of has these.
+The generate and add are kind of smooshed together.
+And then you only get one shot with a Merkle tree.
+You say, I've got 1, 000 elements.
+I want to put them all into a Merkle tree and take the Merkle root.
+And then I will also be able to later provide proofs for inclusion.
+But once I've discarded all the rest of the Merkle tree, all these elements, I can't add things to it.
+So if you have the block header in Bitcoin, it's 80 bytes long, and you've got that Merkle tree, Merkle root, you can't say, oh, I want to take this Merkle root and add another transaction on at the end.
+There's no operation to do that.
+Well, I will talk about it.
+
+Speaker 0: 00:08:30
+
+I will talk about it.
+
+Speaker 1: 00:08:34
+
+You can handle the amount of transactions, no?
+
+Speaker 0: 00:08:35
+
+If there are 1, 000 transactions, you can add another 1, 000 and make a Merkle tree of 2, 000?
+
+Speaker 1: 00:08:45
+
+So if you knew, well, so we're getting there.
+This will be part of what, well, that happens later.
+But yes, if you know one, you know how many elements are in the Merkle tree and, Well, and then you add, it gets messy, right?
+Also because Merkle trees, a lot of times, in Bitcoin anyway, they pad it out with zeros, I think.
+Or does it hash?
+No, it hashes the same thing on the left and right when there's nothing on the side to hash.
+It doubles the last one.
+Yeah, it doubles the last one and then goes up that way.
+So there are ways.
+I will get to that in the next half hour part.
+But yes, there are ways to extend Merkle trees to do a lot more.
+And that's what most of the research in Utrecht XO is.
+
+## RSA
+
+Speaker 1: 00:09:31
+
+But the RSA ones are sort of the more classically studied.
+I don't know, classically.
+It's not that long, the last 15 years, I guess.
+But there's a bit more research on RSA ones, because they do seem more promising, I guess.
+I don't.
+I should state my biases.
+I like the hash-based ones.
+That's what I've been working on for a year.
+So I'm going to be a proponent of those.
+There are other people that are working on RSA-style ones that I think are cool research.
+I don't think they're as practical.
+And so that's why I'm working on the hash-based ones.
+So I'm going to talk about the RSA-based stuff for the next 20 minutes.
+And I think it's cool.
+And I think it's great research.
+But I'm of the opinion that it's not actually going to be that applicable.
+And I'll show why.
+So the Merkle tree alone, you get the idea.
+It's like an accumulator, but you only have this one shot.
+So we call it static.
+
+## Dynamic
+
+Speaker 1: 00:10:28
+
+Other terms are dynamic, which also lets you remove and incrementally add, which is good.
+And universal, if an accumulator is universal, there's also a prove and verify for non-inclusion.
+So you'll be able to say, hey, this element is not in the set.
+There may be uses for that in Bitcoin.
+I think there's fraud proofs, things like that, like ideas where, hey, wouldn't it be cool if we could prove that this UTXO didn't exist or had already been spent?
+
+## RSA Intro
+
+Speaker 1: 00:11:00
+
+So different ideas.
+OK, so RSA-based accumulators.
+Wait, RSA?
+If people don't know what RSA is, I will try to give a real quick intro slash refresher.
+RSA is old.
+It's one of the original public key algorithms in cryptography.
+It is not used in Bitcoin.
+
+Speaker 0: 00:11:23
+
+It's too big,
+
+Speaker 1: 00:11:25
+
+I guess, too slow.
+I don't know.
+Elliptic curve signatures and stuff seem kind of newer and cooler, I guess.
+But RSA does have some properties that elliptic curve stuff does not.
+OK.
+Also, RSA is like a total minefield.
+I'm explaining stuff like super high level, and I will mention the things that will destroy the security of this.
+
+## RSA Basics
+
+Speaker 1: 00:11:47
+
+So the basic idea of RSA is you're multiplying two big prime numbers together, and you tell everyone the product, but you keep the factorization.
+And intuitively, I mean, even like kids in school, I think I learned about it when I was a little kid.
+I didn't know how it really worked.
+But it's like, yeah, if you multiply two big prime numbers and give the result, it's hard to figure out what those two original numbers were.
+So the public key is you come up with two prime numbers, p and q, and you multiply them together to get n, which is p times q.
+And n is essentially the public key.
+And your private key is Euler's totient, which is basically the easy way to do it if you know the factorization is p minus 1 times q minus 1.
+And this, I'm not explaining how you do it, but this lets you compute a sort of inverse of an exponent.
+So e is the public exponent, which can be 3, although I think it's safer to be like 6, 5, 5, 3, 7, which is just sort of a standard number they use as an exponent.
+And then m is some message you're trying to send, like sign or encrypt or whatever.
+And then d is your decryption exponent, which is computed given phi and d, or phi and e.
+So the property you have for this is that m to the e to the d is equal to m to the D is equal to m to the d.
+Wait, sorry.
+M to the e to the d is equal to m to the d to the e, which is equal to m again, mod n.
+So if you raise m to e, like cube it or 6, 5, 5, 3, 7 it, and then raise that result again to d, you end up back where you started.
+And this is really cool, because then you can do things like encryption and decryption and signing and verifying, which are like the same thing.
+And it's really cool.
+So if you want to encrypt a message to someone, you take your message m and raise it to the third power modulo that public key.
+And when the person wants to decrypt it, they take your ciphertext c, raise that to d, and they'll get m.
+Similarly, signing and verifying, the procedure for signing something is the exact same as decrypting.
+Just raise the message to the private exponent.
+And verifying is then the same as encrypting.
+You raise it to the public exponent, modulo the public n modulus.
+Cool.
+OK.
+So that's RSA as it's classically known.
+Some of the pitfalls.
+If either p or q are, sorry, if either p minus 1 or q minus 1 is smooth, which means it has a bunch of small factors, then you can break the security of this.
+There's all sorts of things where things go horribly wrong in RSA.
+So if you just implement textbook RSA, it won't be secure.
+There are ways to make it secure, but it's a lot of tacked on extra things.
+Also, it's a little tricky because your private key is like this group of primes.
+So you can't just have your own random number for a private key the way you can in elliptic curve stuff, like in Bitcoin.
+There's no direct way to say, oh, I have a hash, and that's my private key.
+
+## Acumulators
+
+Speaker 1: 00:15:09
+
+So how would you use this to make accumulators?
+So it's the same basic operations, But we don't have m as this arbitrary hash-like message.
+You can think of the base in this case as something more like e in the previous case.
+So you can start with like, We'll call it v.
+And it starts with like 3 or maybe 6, 5, 5, 3, 7, just some base that then will exponentiate enough that it way overflows the modulus and wraps around enough to make it all.
+You can't go backwards anymore.
+So the idea is you still have n equals p times q.
+There's no d and e anymore.
+Start with v, let's say 3.
+And then for every element in the set x, you exponentiate with that element.
+But the exponents have to be prime.
+So you need to be able to hash onto primes, which is also a somewhat costly operation.
+So if the only thing this accumulator can contain is primes, we're going to say, OK, I've got my UTXO, or I've got my JPEG, I've got my data, and I need a hash function that is basically a hash function.
+I throw whatever data in, something random looking comes out, but only prime numbers come out.
+And this is doable, but there's different ways to do it.
+There's like random oracle model way where you say, OK, I'm going to have a hash output, and then I'm going to extend it and check if it's prime.
+And if it's not prime, I'm going to tweak it and hash again and keep doing that until I find a prime number.
+And you'll find one eventually, but it takes longer.
+And then there's other more fancy math ways to do it that are, in theory, faster, but actually, in practice, slower.
+But anyway, so that's one downside.
+
+## Adding Elements
+
+Speaker 1: 00:16:52
+
+But you've got to do that.
+But then the way to add elements to this accumulated set is you raise to the power of that element.
+So if you've got your initial accumulator, sort of empty accumulator v, which is just like 3, then you say, OK, I'm going to take 3 to the x mod n.
+And x is your element that you're adding to the set that's been hashed onto a prime.
+And you keep doing that for x1, x2, x3.
+You exponentiate, and now you've got your new accumulator value.
+And then you raise it to the next power, and you've got your new accumulator value.
+So you can keep doing that basically as many times as you want, a billion times, sure.
+It's going to be slow, but you can do it.
+And then the proof.
+So an inclusion proof, P, is also an accumulator, V, but with every element except the element you want to prove in it.
+So if you want to, let's say, I just, for simplicity, do the three.
+I've got x1, x2, and x3.
+And the way I've computed my accumulator v is I took v, which initially was just the number 3, raised to x1 mod n, then raised that result to x2 mod n, then raised that result to x3 mod n, and everyone's got that new accumulator value v.
+If I want to prove to someone that x2 is in it, I give them v to the x1 to the x3 mod n.
+And then I give them x2.
+And then I give them both and they say, OK, well, is p to the x, the element that's being verified, equal to the value that I've already got as my accumulator.
+And if it is equal, then we're good.
+And this is secure under the strong RSA assumption.
+
+Speaker 0: 00:18:46
+
+So it's commutative?
+
+Speaker 1: 00:18:49
+
+Yeah.
+They call it quasi-commutative in the literature because the initial v part has its own starting point.
+But yeah, it's commutative.
+So the order doesn't matter.
+You should get the same result whether you do x1, x2, x3, or x3, x1, x2, or whatever.
+
+Speaker 0: 00:19:09
+
+Do you need to update your own proof all the time, or can other people update everybody else's proof?
+
+Speaker 1: 00:19:15
+
+Well, if everything's public, everyone can do everything.
+But yes, the proofs change when more elements are added to the accumulator.
+So if there's three elements and you say, hey, I've got a proof for x2, which is just v to the x1 to the x3, and then x4 comes along, well, now that proof, you just also exponentiate with x4.
+Yes?
+
+Speaker 0: 00:19:38
+
+When do you perform the mod n?
+After.
+You don't do mod n after this?
+
+Speaker 1: 00:19:46
+
+Wait.
+Did I forget a mod n some?
+No, I didn't.
+I don't know.
+Yeah, you basically do it.
+So mathematically, you can just omit it if you want.
+You're like, I'm just going to raise it three times.
+But don't, because it gets huge.
+
+Speaker 0: 00:20:00
+
+So basically, you do the mod n after every step.
+
+Speaker 1: 00:20:04
+
+So you need to do it after n p to the power of x?
+
+Speaker 0: 00:20:09
+
+I wouldn't say need.
+It's way faster to do that, yes.
+You don't mathematically need to, but you should because it's way faster.
+In fact, you actually do module exponentiation.
+So you're sort of mixing the exponentiation and the modulo part together to make it faster.
+If you sort of directly, You could in software.
+It'll still work, but it'll be slower.
+You could say, no, I'm actually doing whatever my v is to the whatever.
+And then afterward, I mean, this huge thing, which is, no, it's going to be too big to store on a computer, right?
+Yeah.
+Yeah.
+Yeah.
+
+Speaker 1: 00:20:45
+
+No, you have to do a module exponentiation.
+
+Speaker 0: 00:20:45
+
+Yeah.
+
+Speaker 1: 00:20:46
+
+I was asking about the last line.
+
+Speaker 0: 00:20:48
+
+This line?
+
+Speaker 1: 00:20:49
+
+Yeah.
+P to the power of x.
+I guess you're Why don't you do the mod n after this?
+And only do it.
+
+Speaker 0: 00:20:58
+
+Yeah, sorry.
+No, it is.
+It's like, Sorry, the whole thing, like p to the x mod n equal to v mod n.
+Like, well, v's already been mod n-ed, I guess.
+So yeah, like this p to the x star is a modular exponentiation.
+And so it's all, I think, at some point in the slides, I stopped writing mod n.
+I don't know.
+I have it here.
+I'm like, should I?
+Everything's mod n anyway.
+But yeah, just because I think in practice, you can't actually do this without mushing the modulo part into the explanation.
+It gets too big.
+Yeah.
+
+Speaker 1: 00:21:34
+
+You spoke about exclusion proofs.
+I wonder how this will work out.
+
+Speaker 0: 00:21:38
+
+There is, I did, yeah, I didn't put the slides in.
+There is a way.
+It's kind of complicated, and I didn't 100% understand it.
+Also I was reading a couple papers, because I wanted to put a slide in about it.
+You might need to know p and q to make the exclusion proofs.
+But then I think there's recent papers that say there's a way to do it without it that's pretty complex.
+If you know p and q, I'd have to look at the paper again.
+But there is a way to…
+
+Speaker 1: 00:22:11
+
+If you know p and q, can you calculate the inverse exponent?
+
+Speaker 0: 00:22:15
+
+Right.
+You get the inverse of the x, which involves phi, which is p minus 1 times q minus 1.
+Anyway, so there's a way to do it.
+But I'm not sure if it's practical for the use case here, which would be where hopefully no one knows p and q.
+But there's a bunch of different papers about how to do that.
+Also, I'm not sure it's that useful to have exclusion proofs in this case for Bitcoin.
+But anyway.
+
+## The Good
+
+Speaker 0: 00:22:45
+
+So this is cool.
+The good parts of this are everything's constant size.
+So v, the accumulator itself, p, the proof, which sort of looks like an accumulator, just minus one element, x, the elements themselves.
+Everything's sort of the same size as n, the modulus.
+Once you're in RSA world, everything is the same size.
+That's cool.
+You can also prove many inclusions at once if you wanted to.
+Again, the same size.
+So if you had a whole block of transactions you wanted to prove, or your whole wallet full of UTXOs you wanted to prove.
+An inclusion proof of many elements is just the accumulator with all of those elements removed.
+And then when they want to verify it, they just have a whole bunch of x's that they exponentiate to make their sort of accumulator with only these elements, and then compare it to taking the proof exponentiated with that.
+So that's kind of cool.
+You can prove 1, 000 things, and the proof size is the same size.
+So that's really nice.
+So there's a lot of cool things.
+And then there's more recent work by Bonet and Benedict and someone else on the paper, I forget, that they have really efficient ways to do these things and all sorts of cool like vector commitments.
+So you get order preserving, all these cool things.
+
+## The Bad
+
+Speaker 0: 00:24:06
+
+But there's downsides.
+The big one is p and q are trusted setup.
+So who's making up these p and q random numbers?
+If you know p and q, you can create false proofs.
+You can prove anything because you know the order.
+And while proofs are aggregatable, proof updates are not.
+
+## Proof Updates
+
+Speaker 0: 00:24:24
+
+So that's what I want to show.
+So if you want to update the proofs, which we just mentioned, someone pointed out, Let's say I've got a set big X.
+Then there's like, I think I'd say, let's say seven little x's in it.
+There's x1, x2, up to x7.
+And then I've got my proofs.
+So proof 1 is v to the set x without x1 in it.
+The notation is a little weird here.
+But p2 is then v to the big X without x2 in it.
+P3 is v to the x without x3 in it, and so on.
+Those are the proofs.
+Now I want to add element x8.
+So I've got these seven proofs.
+And now I actually have to modify all of them individually.
+I'm going to take p1 and raise it to x8, p2 to x8, p3 to x8.
+There's no nice way to make this into one operation.
+Because p1, p2, and p3, they're completely different numbers.
+There's no good way to do one opcode and get them all to happen at the same time.
+This includes adding multiple elements to each proof.
+So if I want to add x8 and x9 to the set, and I want to keep all my proofs, well, now I have to take p1 to the x8 to the x9, p2 to the x8 to the x9.
+And that's two modular exponentiations for each thing.
+So you can see how this gets sort of O of n squared-ish looking, where, wait, I've got all these proofs, and I've got all these extra elements I'm adding in.
+And if I'm maintaining a proof for everything, it can get expensive.
+So maybe there's a way to fix this.
+It feels like inherent because it's a group of unknown order, but I don't know.
+So how bad is this?
+What if we want to accumulate some bitcoins, which sort of has a double entendre?
+If there's only a few updates to the proofs and they're infrequent, then we're OK.
+But if we're looking at the UTXO set, which we probably want to use this for, Well, proof updates happen every 10 minutes, right?
+Every time a block comes in, your UTXO set changes.
+
+## Individual Proofs
+
+Speaker 0: 00:26:37
+
+So if you wanted, I'll get to why you might want this later.
+But if you wanted, in the best case, to say, OK, we've got 60 million UTXOs. That's what we have right now.
+And let's say there's around 6, 000 updates every 10 minutes, 600 seconds.
+I sort of made up the 6, 000 because you get a nice 10 per second.
+But it's somewhere around there.
+So if you had individual proofs, if you wanted to maintain an individual proof for every UTXO, so you've got 60 million of them, they're each going to be like what?
+RSA numbers like a couple hundred bytes, less than a kilobyte, right?
+You're going to have like 2k RSA, 4k RSA or something.
+So 4, 000 bits, 500 bytes, something like that.
+So it's not actually that big.
+You can fit it on a hard drive.
+The problem is the CPU.
+So you're going to have 600 million modular exponentiation per second.
+That's too much.
+So well, this laptop's really slow.
+But even on a good CPU, one millisecond's really pushing it.
+I don't think you can do a one millisecond RSA operation.
+So even if you can do one RSA operation in one millisecond, you're going to need 600, 000 CPU cores to keep up.
+In a cryptography theoretical sense, it's practical, because you can buy 600, 000 CPU cores.
+But yeah, it's too much.
+What if we had a different model, said, look, why do you need a proof for everything?
+What if people sort of only keep their own proofs?
+Your wallet keeps a proof for your own coins.
+Maybe that's more tractable, more reasonable.
+So let's say you have a lightly used wallet.
+You're not an exchange.
+You're not anything.
+You're just a little wallet.
+You have a couple of Bitcoins, or a couple of Satoshis, whatever.
+A couple of Bitcoins is kind of a lot now.
+You have 10 UTXOs. And so that's, again, the 6, 000 updates per block times 10 TXOs. So you're going to have 60, 000 exponentiation per block, even at 1 millisecond, which is a screaming fast operation.
+That's a minute of CPU time for one core per block.
+Doable, but that's a big ask.
+You're like, hey, your IBD is now, like you're adding an enormous amount of CPU load.
+It's doable.
+Once you're synced up, you can keep up.
+Every 10 minutes, your proofs are now going to be modified when a block comes in.
+And it's going to take, and you can parallelize that.
+You can parallelize this easily, right?
+So the fact that there's all these different proofs, you can independently do those operations.
+So if you have a quad core, yeah, your CPU spins up for 20 seconds or whatever when a block comes in.
+Not the end of the world, but still kind of not great.
+And if you have a lot of UTXOs, it's a big ask.
+
+Speaker 1: 00:29:29
+
+So I'm just saying, why do you need to make a proof so every time the block comes in.
+
+Speaker 0: 00:29:33
+
+The proofs change.
+So if you want to maintain a proof, so then it changes.
+
+Speaker 1: 00:29:37
+
+So you could just wait till all the block is downloaded and make the proof.
+You're still going to have to do all the work.
+
+Speaker 0: 00:29:43
+
+Well, I guess you have sort of cut through in that if a UTXO was added and then later removed, you could say, oh, well, I don't need to.
+I can sort of cut through.
+So yeah, I guess it's not that bad, but yeah.
+
+Speaker 1: 00:29:57
+
+Maybe I didn't understand something, but you don't need to do an exponential for each of these.
+You can multiply the exponents one time, and then do an exponentiation.
+
+Speaker 0: 00:30:07
+
+I don't think that's the case if you don't know the factorization of the modulus.
+
+Speaker 1: 00:30:15
+
+For example, a to the power of b times the power of c times the power of d, times a to the power of b times c times d.
+In any ring, you don't need to know anything.
+
+Speaker 0: 00:30:28
+
+You don't need the order of the group.
+Right.
+But can you?
+You do need.
+Sorry.
+
+Speaker 1: 00:30:35
+
+You can't.
+I don't think you can just.
+For example, in the multiple, you could just do 8 times 9.
+And then exponent.
+Exponent of x9 times x9.
+And you do the exponent once.
+And then the exponent once.
+
+Speaker 0: 00:30:48
+
+Can you just multiply?
+
+Speaker 1: 00:30:49
+
+No, you need the order.
+
+Speaker 0: 00:30:50
+
+I don't think you can just multiply them.
+
+Speaker 1: 00:30:52
+
+That's how exponentials work.
+You can multiply them if you know the order of the groups.
+If you know the order, right, right.
+If you have the private key, you can.
+No, you don't have to have the private key.
+You can press it.
+That's what you encrypt.
+Press and exactly.
+Is that right?
+You can multiply them.
+No, you encrypt by doing it once.
+On the other thing, you cannot multiply the exponents together before and then do it.
+You have to do it one by one.
+You don't know the order.
+
+Speaker 0: 00:31:14
+
+Right, Because the modulo step, ah.
+
+Speaker 1: 00:31:19
+
+Would you?
+OK.
+
+Speaker 0: 00:31:27
+
+I'm not an expert.
+I believe one of the papers.
+OK, hold on.
+There's.
+OK, here's a paper.
+There's a bunch of papers.
+I'm not an expert on the RSA part.
+I think this paper anyway, I don't know, says, computing the occlusion only publicly, therefore, requires computing g products of all the RAs mod n as g sequentially mod n doing modulation.
+So I can send you the link, or we can do after, but I should move on.
+I'm not saying I personally believe this, but I read it in the paper, so that's sort of a cop out.
+But anyway.
+
+Speaker 1: 00:32:22
+
+But you show how you remove an element of a finite element?
+Or do we use the same thing?
+Oh. Right.
+
+Speaker 0: 00:32:35
+
+Well, we could dip it in.
+Yeah, there's a way.
+Yeah, I didn't put that.
+Sorry.
+Yes, there is a way with knowledge of only the pub key to calculate that.
+But anyway.
+But So the big issue, I think, is one, there's the trusted setup, and two, there's the seemingly intractable way of aggregating all these things.
+
+## Class Groups
+
+Speaker 0: 00:32:58
+
+So There's some solutions to these things.
+So one is we have this trusted setup, but maybe we can get rid of this trusted setup.
+And this is going even further into things I cannot explain.
+Class groups of binary quadratic forms.
+And It was hard to find a paper about this.
+I guess Chia, which is Bram Cohen's working on this coin called Chia, and they're really into class groups.
+So they have a paper that's called Binary Quadratic Form.
+If you look like Chia class groups, you can find a PDF.
+And it's intense.
+A lot of LaTeX in that.
+And I don't really know how it works.
+It starts out OK.
+The first couple of pages are like, yeah, plus or minus 4ac.
+I remember that.
+And b squared, it's got all this quadratic formula stuff.
+And you're like, OK.
+And then it just gets harder and harder.
+Anyway, so this may be able to create a group of unknown order where you can do all these cool RSA operations without a trusted setup.
+And I think that's another promising thing.
+So I'm not saying this doesn't work.
+I'm saying there's ways to make it work and make it practical, but it's still a bit researchy, I think.
+
+## Merkle Trees
+
+Speaker 0: 00:34:08
+
+So what about those Merkle trees?
+We had hash-based tree-like accumulators.
+There's previous research about this, but many of them have this sort of manager or one entity that is not necessarily trusted, but keeps a list of all the elements that have already been accumulated.
+And I will talk about how you novel hash-based dynamic accumulator, which is really optimized for Bitcoin and Utrexl.
+OK, so that I don't really know why I'm doing this.
+But anyway, switch tabs.
+OK, so any general questions, comments?
+Accumulators, cool.
+OK, So now I will talk about.
+
+Speaker 1: 00:34:53
+
+I think I've asked this before.
+I forgot the answer.
+But what about e to the e to the a accumulator?
+
+Speaker 0: 00:34:58
+
+Are there any?
+Or there's like a bilinear, there's like a sort of.
+
+Speaker 1: 00:35:02
+
+Because you've got your prime field.
+I don't know if that helps.
+
+Speaker 0: 00:35:05
+
+So there is a construction with, what do you call it, bilinear pairing curves that I've read about, but didn't read enough about.
+But I don't think with regular secp, you can do one.
+There's that mu hash or set.
+Sipa was talking about an incremental or set hash thing.
+But you can't make proofs.
+I don't know.
+So I don't think there's anything where you can just take regular old secp and make an accumulator out of it.
+I think there are ways with pairing curves to do it.
+But That's another whole area that I haven't looked at as much.
+So I'll talk about UtrexO, which the goal anyway is full nodes in kilobytes.
+So I'm sure people, everyone here runs a full node, right?
+If you go into your full node folder, dot Bitcoin, which just as an aside, why do all the really important folders start with a period so you can't see them when you say ls?
+Because my Bitcoin folder is way more important than everything else.
+
+Speaker 1: 00:36:14
+
+I don't know.
+I've been doing RMS for a while.
+
+Speaker 0: 00:36:16
+
+I guess, yeah.
+OK.
+So if you go in there and you say du dash h, it says, I think this, I updated this today, it's around 253 for blocks and 3 and 1 half for chain state.
+So 253 is the history.
+That's the blockchain.
+That's from 2009 up to today, all the blocks, and some undo data, and a little extra stuff.
+But basically, the blocks.
+And then the current state, the UTXO set, is this 3 and 1 half gigs.
+So the history only goes up, right?
+Unless, I guess you could have a huge reorg that had empty blocks and the history could go down.
+But I think you still save them in the database, even if that happens.
+Anyway, and the UTXO set can decrease in size.
+
+## UTreexos
+
+Speaker 0: 00:37:04
+
+So UTXOs, they're pretty small.
+They're like, I don't know, 64 bytes.
+You have your PK script, your amount, the outpoint.
+They're not there.
+Yeah, they're tiny.
+But there's lots of them.
+There's about 60 million.
+I don't know if you can see this.
+Yeah, no.
+Anyway, this line is 60 million.
+It goes up and down.
+
+Speaker 1: 00:37:24
+
+90 million.
+
+Speaker 0: 00:37:24
+
+What?
+More like 90.
+No. So if you look on blockchain.info, they'll say you have like 90 million or something.
+I guess in their definition, you do.
+But according to Bitcoin Core, there's about $60 million.
+So some sites count op returns as UTXOs, which by the literal definition of an unspent transaction output, yeah, An op return is an unspent transaction output.
+But what's that?
+It's unspendable, right.
+So in Bitcoin Core, you have this is unspendable check.
+And if it's an op return, well, we just never put it in the database to start with.
+So you will see different numbers for this on different sites.
+I'm going with the Bitcoin core's definition, because if it's opportune, you don't have to worry about it.
+Which is good.
+And so opportune, you should encourage people to use opportune so you don't pollute the UTXO set.
+Did you have?
+
+Speaker 1: 00:38:18
+
+Does it include dust?
+Like dust in the UTXOs?
+
+Speaker 0: 00:38:20
+
+I believe it includes dust.
+It does not.
+What is it?
+It's spendable.
+If your pub key script is greater than 10 kilobytes, It doesn't include it, because that's considered unspendable.
+But like zero Satoshi, but has a regular pubkey script, still goes into the UTXO set.
+And is spendable.
+I think it's nonstandard, but yeah.
+And there's a lot of it.
+When I was doing this research and playing around, there's so many weird things in the UTXO set.
+There's all these op returns that are just op return and then no data afterwards.
+And it's like, what are you doing?
+And there's all sorts of unspendables that are obviously unspendable to me, like looking at it.
+But we don't have a algorithm in the code to recognize it as unspendable and refuse to put it in the database.
+But anyway, so you've got about $60 million in the current core database.
+I guess it wouldn't be a forking change to update the is spendable code if you did it right.
+Anyway, so $60 million.
+It mostly goes up.
+Sometimes it goes down.
+This is probably consolidation from exchanges after the big price run up.
+up almost two years ago.
+
+## Acumulator
+
+Speaker 0: 00:39:31
+
+Who knows?
+But the general trend is up.
+And you sort of want it to go up because you want more people to use this.
+So wouldn't it be cool if we could just smoosh it all with an accumulator?
+Well, I already said this.
+What's the problem?
+I mentioned before with the RSA1, what if wallets just kept track of their own accumulators, or their own proofs?
+So everyone, instead of having their UTXO 3.5 gig database, they just had their accumulator value.
+So every time a block came in, They would remove all the things that got spent and add all the things that got added in.
+And the way they remove is they've got these proofs from other people.
+So that when you now send a transaction and you've got two or three inputs, you say, hey, here's my inclusion proof for my three inputs in my transaction.
+And then everyone verifies that against their current accumulator and says, yep, those are in there.
+And now I'm going to accept this transaction and take them out.
+So this should be maintainable in the RSA model.
+
+## The Problem
+
+Speaker 0: 00:40:29
+
+The problem is, how do you transition to that?
+So if you're the first person to say, hey, I'm using this cool new accumulator-based Bitcoin node.
+I've got proofs for all my UTXOs in my wallet, and I'll give them to anyone and show that my transactions are valid.
+The problem is, no one's going to give me a proof or anything.
+I'm the first person using this.
+So no one has any idea what I'm doing.
+Everyone's running Bitcoin core 0.18 point whatever, and they don't know about this stuff.
+So I'm stuck.
+I can't validate transactions if I throw away my UTXO set and only have this little accumulator value, because I'm dependent on everyone else.
+The hope is everyone's wallet keeps proofs, and since no one's does, I can't validate.
+So it seems like a hard bootstrapping problem.
+I guess it's sort of a soft fork if you committed to the proofs.
+But you have to sort of, everyone at once says, OK, now everyone's going to switch to always having these proofs along with your transactions.
+And that's a hard thing to do in Bitcoin.
+
+## The Bridge Node
+
+Speaker 0: 00:41:30
+
+So you need a bridge node.
+And I didn't come up.
+This was sort of what led me into this research was a year and a half ago talking to Peter Wohl, I think, at Financial Crypto.
+And he was looking at different accumulators with lattices and RSA and all these things.
+And he's like, the problem is the bridge node.
+Whatever setup you're going to try to do to get it to get off the ground, you're going to need a node that has a proof for everything and keeps those proofs up to date.
+And that, in all these constructions, is just not feasible.
+You need data centers worth or something.
+But it is feasible with the hash-based ones.
+So that's the cool part.
+So bridge nodes need, they maintain a proof for every UTXO.
+And they sort of bridge the old network, which just has regular transactions, and the new network that's got everyone with this accumulator and say, yeah, I threw out my UTXO set.
+I need proofs.
+So this is problematic for RSA.
+You can't really run a bridge node on a reasonable computer.
+So Merkle trees.
+Let's make a hash-based accumulator for your TXOs. And a bridge node would just store the whole Merkle tree.
+And updates to the tree are sort of inherently aggregated.
+When you remove something from a tree and recompute the root, you've recomputed all the proofs, right?
+However, we're going to need to use a bunch of trees.
+So the accumulator itself is going to be log n instead of O of 1, which a bit disappointing, but we'll live.
+
+## Merkle Tree
+
+Speaker 0: 00:43:05
+
+So first I'll walk through how to make a Merkle tree.
+And I think it's kind of fun because people are like, wait, I think I know how to do this.
+A Merkle tree where you can Add leaves.
+And this was not novel for me.
+This was in a paper from people I talked to, BU, Sophia Nakhubov.
+I don't know.
+She helped.
+She had a paper.
+I actually talked to her about it.
+Really helped out.
+So let's say you have a Merkle tree, and you've got four leaves in it.
+And you only keep the root, right?
+So the only thing you know is this orange thing on the top.
+You've forgotten all the things below it.
+So now you add a leaf.
+You say, OK, all I know is the top.
+I want to add a new element.
+Now there's five elements.
+And what you do is you just keep both.
+So now you have a root with four underneath and a root with just itself, one underneath.
+And now if you added another, you get six elements.
+Now you've got one with four underneath, and you've got two that are sort of on their own.
+And you can combine the two into another tree with two underneath this root.
+And then as you add a seventh element, this stands on its own.
+And as you add to eight elements, you're like, oh, I can combine these two.
+And I can combine those two.
+And now I can combine those two.
+And now I've got a single root for all eight elements.
+The fun thing is the number of roots is the number of 1 bits in the number of leaves.
+So when you have 4, that's 1, 0, 0 in binary.
+When you have 5, that's 1, 0, 1.
+6 is 1, 1, 0.
+7 is 1, 1, 1.
+And then 8 is 1, 0, 0, 0.
+So it's kind of cool.
+If you know how many leaves you have, you know how many trees you need.
+I know this concept under the name of mountain range.
+That's the same thing, right?
+But the mountain range, didn't it have different lengths where you'd have different length paths to the bottom from the top?
+So I think in this one, it's not quite the same.
+So this is often work from a different paper.
+But yeah, there's similar ideas where you're sort of adding things together.
+But in this case, the trees are always perfect.
+So all the trees are always powers of 2.
+And there's always same descent.
+But you need to have a data proof.
+Yes.
+So if you have a proof for, say, if one of your proofs is in here, and then if you're proving element, let's say, element 0, the leftmost element on the bottom.
+For all of this activity, you don't have to change anything.
+New trees get added, and your proof's the same.
+But when this happens, now your proof, which used to be this and this, now gets this.
+So your proof gets bigger.
+So yes, the proofs still do need to be added.
+But you sort of get the proof updates for free, in that if you are maintaining an accumulator root, when you perform the hashing operations to compute the new root, the intermediate hashes are, you can just save them instead of discarding them, and those go into your proof.
+How would you remove them from the new element?
+
+## Removing
+
+Speaker 0: 00:46:26
+
+That's deleting.
+Yes.
+So removing, And I think this is novel.
+I'm still waiting.
+The paper's been on ePrint for a couple of months, and no one's been like, dude, this was in this other paper 10 years ago.
+So I think it's novel, but we'll see.
+Hopefully no one shows me that I am reinventing something.
+OK, so here's how you delete things.
+
+## Deleting
+
+Speaker 0: 00:46:46
+
+First example, I've got these three trees.
+I want to delete element 2.
+OK, well, the proof for 2 is 3 and 8, right?
+So I should say, when you want to delete something, you need the inclusion proof for that thing, which in Bitcoin is like matches perfectly.
+The only time you want to delete a UTXO is when it just got spent.
+And the only time you want to prove that a UTXO exists is when you're spending it.
+So it's like, cool, you can sort of smoosh them into a prove and delete combined operation.
+And you need the same data for both, which is great.
+So it lines up great for our use case.
+So someone's saying, hey, I'm spending UTXO 2.
+The proof for 2 is 3 and 8.
+So I can hash 2 and 3 to get 9, hash 9 and 8 to get 12, verify that 12 is equal to the root I'm storing.
+Now, how do I delete it?
+I need to rearrange things.
+So in this case, 6 exists.
+We have a root on the first floor, or 0th floor.
+So we just move 6 to where 2 was.
+We knew what 6 was, and we moved 6 to the space that 2 occupied.
+Now we can recompute 9, because we know 3.
+We were given 3 as the proof for 2.
+And we can recompute 12, because we also know 8.
+And we can discard everything under there.
+So now we've sort of moved what was at 6 to where the thing that was at 2 got deleted.
+Easy right?
+You have a lot of updates.
+Sorry?
+You have a lot of updates.
+Sorry?
+You have a lot of updates.
+OK.
+So wait.
+I'll incrementally.
+OK.
+So then another case.
+So it's in the paper.
+The algorithm for one at a time is actually simple.
+The algorithm for lots at a time is a bit more complex.
+So example 2.
+So let's say we've only got four leaves.
+We've got 0 through 3 down there.
+And you want to delete element 2.
+In this case, there's no root element down here on the first floor.
+So what happens?
+3 and 8 are still our proofs.
+What we do is we just say, OK, 3 is now a root.
+We delete 9.
+8 is now a root.
+Our new roots are the proof that we were just given.
+These are sort of extreme examples, where in this case, at the first level on the bottom, you had a root.
+And so you just immediately move it in, and then just rehash up to the top.
+And then in this case, there are no floors where something moves in.
+Everything, the entirety of the next accumulator state is the proof where I've completely broken the tree up.
+There can be mixtures of these things.
+But the basic intuition is at every height, if a root exists and I've got a gap, move the root in.
+If a root does not exist and I've got a gap, move its sibling and promote that to the next root, and then delete the parent.
+And then go recursively, but go up from bottom to top that way.
+And then you can do a little bit fancier.
+Let's say I want to delete three things at once.
+So what I can do is, if I've got any pairs of deletions, I can just ignore them and delete the parent.
+I can also swap things around, but that really saves a lot of time, because a lot of times you get clusters where all these things got added at the same time, and then they all get deleted at the same time.
+So in this example, 2 and 3, I just say, OK, sorry.
+So the proof for deleting 2, 3, and 4 is going to be just 5 and 8, which is kind of nice, because 2 and 3 sort of prove each other.
+Then you just have 8.
+And the proof for 4 is 5.
+OK, so now what do I do?
+2 and 3 are twins, so we're good.
+And now there's nothing to swap.
+And then we, Yeah, 6 moves to 4.
+OK, so now we have a new 10.
+And we delete 9 and go up to there.
+So now we know 10.
+Or wait, we only have one deletion.
+Oh, so we moved 10 to where 9 is.
+And we just computed what 10 was.
+So we move there.
+And we're good.
+We've got a new 12.
+So this is maybe not super convincing, because it's just sort of diagrams on a screen.
+But there is software, And there's a paper, and the algorithm seems to work.
+
+## Swapping
+
+Speaker 0: 00:51:19
+
+So that's cool.
+And I do think it's novel, so I don't know.
+That's fun.
+The downside is it does swap things around.
+Oh, why is that a downside?
+It's a downside because What you really do to make the proof smaller is you build all the new UTXOs in these little trees and all the old UTXOs you want in the big trees on the other side, because you've got really great locality with UTXO spending.
+Wait.
+How deterministic is this?
+Because if I delete a group or a person, I delete one of the elements and then the other two elements, you're going to get the same result?
+Yeah.
+So there's a lot of freedom in that you sometimes have a lot of choices.
+So in this case, I can swap things around.
+And I have tried different ways in the code to see which they don't make a ton of difference.
+But if I'm putting 6 here, well, I know 5 and 6.
+Maybe I should swap them so that 5's here and 6 is here so that they stay more in order.
+I can do that.
+There's a lot of leeway in terms of what algorithm.
+So you just have to make sure that everyone's running the exact same deterministic algorithm.
+But yeah, there's a lot of tweaks.
+It's like, well, what if I do this?
+What if I remove everything one by one and then add?
+You can get a lot of different ways to do it.
+But as long as we all agree on, hey, here's the official sanctioned by whoever uTreexo spec, and this is what we're going to do, then everyone's proofs will be compatible.
+And yeah, it needs to be deterministic.
+You can't have any sort of randomness in there.
+I'm running out of time, right?
+What is?
+When am I supposed to stop?
+What?
+I don't know.
+Soon?
+OK.
+So then the idea is you're talking about locality.
+Yeah, locality.
+
+## Bridge Nodes
+
+Speaker 0: 00:53:14
+
+OK, well, I have two slides and then locality.
+OK.
+So the general idea is you'd have this sort of topology where full nodes, regular Bitcoin 0.18, and they talk to a bridge node.
+And a bridge node looks like a full node to the full nodes, and it looks like a little mini uTreeXO node to the other mini uTreeXO nodes.
+And what it does is when it gets a transaction here, it sticks frousan and sends it over.
+And sticking frousan is easy, because it has the whole tree, which currently is big.
+It's like 10 gigs, but it's 10 gigs.
+Takes a few seconds, not even a few seconds, less than a second to update when a block comes in, because it's just a couple thousand hash operations, not that big of a deal.
+So it's a little annoying, but it's totally runnable on a decent laptop.
+And so I think people would run them.
+And you don't need too many of them.
+You want redundancy, but one bridge node can easily handle the rate of transactions in the Bitcoin network.
+There's a couple of transactions a second.
+It can maybe 20, 30 at most proofs added per second.
+Totally doable.
+Maybe you want to run on an SSD, but whatever.
+So these mini nodes, let's say they already updated to the latest state.
+Yes.
+Do they still need the bridge node from the NR?
+They still need it because some random wallet is just going to put a transaction in the mempool.
+And they're like, is this transaction, like is this input that it's spending, does it exist?
+The mini nodes did add that transact.
+They added that UTXO to their accumulator days ago, but they forgot about it.
+So now they need a proof again.
+And they can't provide it themselves.
+You mean like when it gets spent?
+Yeah, when it gets spent.
+So when a block comes out and all these new UTFs, all these new outputs get created, they add them to their accumulator.
+And then days later, those outputs get spent, and they forgot about them.
+So they need a proof.
+But the bridge node provides a proof.
+What are the best assumptions about the bridge node?
+So the bridge node, you are relying on for availability.
+The bridge node can't lie to you, because if the accumulator construction is correct and collision free, blah, blah, blah, then they can try to provide a false proof, but you'll immediately be like, the hashes don't line up.
+But if they disappear, you'll be stuck, because you're like, hey, here's this transaction.
+I don't know.
+Is it valid or not?
+Because no one's provided proofs for me.
+Similar to pruning.
+Yeah.
+No, it's a pruning.
+Yeah.
+You can think of this as like ultra pruned, where I didn't just prune out the history.
+I pruned out my UTXO set.
+And now you need to give me proofs for that.
+
+## Logging
+
+Speaker 0: 00:55:45
+
+OK.
+So how bad is the proof size?
+So one of the things, the accumulator is log n.
+The proofs are also log n, right?
+Because the trees get big, and then the proofs get big.
+That's bad.
+We let go of one, not log n.
+So one proof, worst case, is like 20 hashes, which is with 5, 000 inputs in a block.
+That's like 3.2 megabytes.
+So this is a 4x retroactive block size increase.
+Because all the old blocks from five years ago now get bigger because they've got these proofs on them.
+So this is bad.
+And we need ways to reduce this.
+And so most of the work with this is all these optimizations.
+Because it's not end of the world if you 3 or 4x the size on the network and on the disk.
+But it's bad, right?
+People are not going to be enthusiastic about that.
+
+## Histogram
+
+Speaker 0: 00:56:30
+
+So you want it to be better.
+So one of the good ways to optimize, this is like my favorite plot from this research.
+This is a plot of the lifespan of UTXOs. Yeah, this is a histogram, right?
+There's two charts.
+Anyway, yeah, so the idea is how many, and I can't put 0, so it starts at 1 because it's log scale.
+If 0 was there, it would be even higher.
+But the most common lifespan of UTXO is 0 blocks, where it is created and then consumed in the same block, which is great because it never touches the UTXO accumulator because it only exists within a block itself.
+And then the next most common lifetime is 1.
+So there is something like 70, 80 million UTXOs that are created in block n and then spent in block n plus 1.
+And then it goes down in sort of a power law from there.
+The fun part is these bumps.
+So there's a bump here, a bump there, and a bump there that are very distinct.
+This one is six, because everyone knows, Satoshi said that six blocks is how long you wait before you immediately spend your new coins.
+I don't know.
+So it's not that people are accepting payment after six blocks and sending the shoes they're selling, it's that.
+AUDIENCE MEMBER 2.
+They're doing it.
+Yeah, they've got program.
+Yeah, you've got a script.
+So as soon as you have six confirmations, spend it.
+Like, why not just spend it right away?
+I don't know.
+Anyway, then This one makes sense because it's 100, and miners have to wait 100 blocks.
+So they're all waiting to spend their mining reward, and that's the bump there.
+This one's 433 and 434, which I guess is like three days.
+So I don't know, but there's a distinct People wait exactly three days and then move their coins.
+How many can you get per week?
+Yeah, who knows?
+Oh, yeah, and then 1, 000 has a big bump, too.
+So anyway, these are just sort of fun.
+They don't really matter.
+But the clear trend is that a lot of activity is happening where UTXOs don't live very long.
+So you can get really good proof size decreases if you keep your new UTXOs in the little trees.
+And a lot of times, they're clustered together.
+So you'll have this little tree with 16 leaves in it, 16 utubexos, and the whole thing gets spent at once.
+And so you're like, oh, great.
+I basically don't have any proofs, because they're all proving that each other exists, and you just hash them all to get to the root.
+
+## Proofs
+
+Speaker 0: 00:58:57
+
+So that's really nice.
+So that's it.
+Thanks.
+So if you did it naively, and you aggregated within a block.
+Also, proofs aggregate within a block in that if I'm proving this element and this element, you don't have to give individual proofs up to the top.
+You just give a proof up to where it intersects.
+And then, you know what I mean?
+So if I need to prove 0 and 6, then the proof's 1 and 5.
+And I don't have to give either of 8 and 10, because that's computable.
+So things like that, where you end up saving on there.
+So if all you do is say, OK, I'm only going to do within, hopefully, UTXOs stay in the little trees when they're new.
+And I give within a single block aggregation.
+No, sorry.
+If you don't do within single block aggregation, 600 gigs of extra proof data for IBD, which is bad.
+If I do within block aggregation, IBD is 7.5 billion hashes, 250 gigs.
+So 2x.
+Still not great.
+There's even cooler things you can do.
+So the fun thing is when you're doing IBD, initially downloading the history of the Bitcoin blockchain, the server you're talking to knows the future.
+So you're like, hey, give me block 300.
+It's like, OK, here you go.
+
+Speaker 1: 01:00:20
+
+The server you're talking to knows the future.
+
+Speaker 0: 01:00:20
+
+So you're like, hey, give me block 300.
+It's like, OK, here you go.
+The server you're talking to knows what happens in block 301, 302.
+It knows all the way up to today.
+So it can give you hints.
+This is trusted, but you're just trusting them to help you go faster and use less memory.
+You're not trusting them for any security.
+So if they lie to you, you'll find out and be like, dude, why are you just making me download more, and you hang up on them?
+But what they can do is they can tell you how, they can tell you that lifespan.
+So they can say, hey, this output gets spent in the next block.
+Keep it in RAM.
+This output, still UTXO on my end.
+So I don't know when it gets spent.
+You can flush it.
+Get rid of it from your RAM.
+So you can tell the little U-tree XO nodes what they should keep in memory and that they won't need proofs for a few blocks later.
+So if you do this, you get this nice curve where this is how much memory the mini-UtrexO nodes dedicate to caching proofs.
+And this is how much data on the y-axis a initial block download will take.
+And it really should be like log scale, but it looks so much more impressive in linear scale.
+And also, it never gets to 0, because this is just runtime memory usage.
+So it never went below 70 megs of memory usage, because there's all this other database stuff going on.
+But if you only use, I don't know, a couple hundred megs of RAM, You get way down.
+And this is sort of the look ahead.
+So the idea is you tell the IBD server that's giving you data, tell like flag, just with a single bit, flag all UTX, all outputs that will be spent in less than 1, 000 blocks after they're created.
+And I will remember those and don't give me proofs for them.
+So then it's really simple because there's no back and forth, hey, what do you need to prove for?
+It's just I'm going to give you everything, and I'll tell you what to remember, and I won't give you proofs for that later.
+So if you look like 1, 000 blocks ahead, it only takes, I don't know, 200, 300 megabytes of RAM.
+And you get your total proof down to like 60, 70 gigabytes extra, which you're already downloading 250 gigs.
+An extra 60 or 70 gigs is something, but not a big deal, I think.
+And then, yeah, if you want to have no proofs ever, then you need like 12 gigs of RAM.
+But why not just run a regular full node at that point?
+And if you have no RAM at all to dedicate to this, then yeah, you're basically doubling the download size for IBD.
+And this is not super current.
+This is a couple of months ago, I think.
+But I imagine the trend will continue.
+
+Speaker 2: 01:03:01
+
+OK, so this is last slide.
+
+Speaker 0: 01:03:02
+
+I think I'm out of time.
+So the idea is this is not a consensus fork.
+If people don't like it, no problem.
+I can just write this code.
+I mean, no, I want people to like it, and I want this to get into Bitcoin Core and so on.
+But it's not a fork.
+It is a protocol level thing, somewhat like compact blocks, where you're going to need new network messages.
+You're going to need new state on the peer-to-peer layer and stuff like that.
+It's a fairly intense change if you really want to change a core node and rip out level DB.
+So it's a lot of work.
+I'm not saying this will totally be in version 0.19.
+It'll take a while.
+But we can start with a bridge node and archive nodes, which send block proofs and do all that stuff.
+And I think it's a cool way to optimize this.
+The end result is you could run a full node, and it's like a kilobyte or two.
+The other thing you can possibly do is it can link into a lot of other things people are working on, like assume UTXOs and parallel validation.
+So since the entire state of the system is like one kilobyte now, you can sort of say, I have a server rack with 10 computers.
+I give each of these 10 computers a not quite trusted, but we're going to assume valid snapshot of the UTXO set, because it's so tiny.
+And we just tell them, hey, download from block 100k to 200k, and tell me what result you get for your UTXO set after.
+And then you see at the end, do they all match up?
+And if they all matched up, you've verified everything.
+You're done with IBD.
+But you can sort of split it arbitrarily among different computers and cores, because the network message to transmit the entire UTXO set is in one TCP packet now.
+So it's really cool.
+There's lots of things.
+I need to keep working on it.
+Everything takes longer than you think.
+But yeah.
+It's on GitHub.
+There's some people who have been making PRs. And there's an IRC thing called uTrix, which sometimes people ask questions and I try to answer fairly quickly.
+But if you're interested in it, come ask or look on GitHub or use it.
+There may be other use cases for it, too.
+OK, do I have time for questions or am I over time?
+Five minutes?
+OK, so if there's any questions, we can do that.
+Oh, yeah.
+Yeah, actually, one of the initial things with this, we were looking at sparse Merkle trees.
+And most of the optimized, they work, but they're fairly heavy in terms of data and hashing.
+And it seemed like most of the things I was doing to optimize was making the tree less and less sparse.
+And so I was like, well, maybe I don't want sparse-spherical trees.
+But I-
+
+Speaker 1: 01:05:39
+
+But 2D xor set will never be as big as sparse-spherical.
+It's always going to be the same.
+
+Speaker 2: 01:05:43
+
+There's always-
+
+Speaker 1: 01:05:44
+
+2D xor set will never become as big as the sparse-spherical.
+
+Speaker 2: 01:05:47
+
+Sure.
+Yeah.
+So I looked at that.
+
+Speaker 0: 01:05:50
+
+It seemed like that was a possible direction.
+But this was about a year ago.
+And it seemed like, ah, possible, but seems like this will be more efficient.
+But I haven't really compared them in depth.
+
+Speaker 1: 01:06:01
+
+Scaling Bitcoin, you put it in the top plasma cache, which we'll cover just a little bit maybe.
+
+Speaker 0: 01:06:08
+
+OK.
+Yeah.
+I mean, I think there's similar research, like plasma or a lot of, oh, I didn't talk about Ethereum because this is like scaling Bitcoin.
+But this would solve all the problems in Ethereum because Ethereum's main problem is like disk IO, where they've got this huge state database that they have to keep looking up in level DB.
+If you had just proofs, it would be great.
+But in Ethereum, you don't know what proof you're going to need because your contract might call some other contract and it calls this.
+In an adversarial case, it can be a lot of call stack stuff, and you'd need proofs for all that.
+And so it doesn't quite apply.
+But I think Ethereum people are looking for this kind of thing in Plasma.
+So yeah, there's definitely overlap there.
+
+Speaker 2: 01:06:46
+
+Cool.
+I have a question.
+
+Speaker 1: 01:06:49
+
+Yeah.
+The future prediction stuff, can that be compressed somehow and then put in the source code?
+Like as in, just int saying, oh, maybe catch this, don't catch that.
+
+Speaker 0: 01:07:02
+
+It's kind of big.
+It ends up being hundreds of megabytes.
+So yeah, bitmaps or how do you represent it?
+If it's one bit for every TXO ever, there's something like 900 million ever.
+So it's kind of too big to put in, but probably OK to send over the wire as you're doing IBD.
+But you could.
+I don't know.
+So there's different ways to do it.
+There's different ways to encode it, compress it, things like that.
+Yeah.
+
+Speaker 2: 01:07:30
+
+But you need the full thing, right?
+For that to work.
+
+Speaker 0: 01:07:33
+
+I guess you could give up towards the end, because it doesn't matter as much.
+I don't know.
+These are all sort of optimizations.
+You want the full thing.
+You could just have a smaller, sparse set where you say, hey, I'm going to encode all of the outputs that live less than 10 blocks.
+And that might be pretty small.
+You might be able to get that into a couple of megs.
+I don't know.
+But yeah, I haven't.
+There's so many cool things to explore in set reconciliation, and how to compress these things, and how to send these things.
+It gets complicated.
+So right now, I'm doing a fairly straight, simple way.
+And I put little comments.
+I'm like, you can definitely do this better, but just get it working for now.
+
+Speaker 3: 01:08:12
+
+So it would be cryptographic security assumption or just hash resistance?
+
+Speaker 4: 01:08:17
+
+Like collision resistance?
+
+Speaker 0: 01:08:18
+
+Yeah.
+There's a sort of hand-wavy part at the end of the paper.
+I'm pretty sure you can not rely on collision resistance, and only rely on pre-image resistance, in which case you can reduce the output sizes of the hashes.
+But people are like, no, come on, don't do that.
+That's scary.
+But I might want to try to really make a good argument slash proof, if I have a minute.
+What you do is you take the block hash of the block that confirms an output, and you key the leaf that goes into the Merkle tree also has the block hash in it.
+And that's only 32 bytes, whatever, and you just add it to everything.
+And what that does is it makes it so collision attacks aren't really practical anymore, because to collide, you want to put an actual leaf in the tree and then have a fake leaf that matches that.
+And for normal, like, either cycle finding or just general collisions, you sort of have two lists.
+So here's the fake one, Here's the real one.
+If the real one is unknown before it's confirmed, you basically have to mine a block to find a real one to match against your fake ones.
+And it increases the difficulty of the collision attack enormously.
+Well, by like 2 to the, it ends up being 2 to the 35, not 2 to the 70 or so.
+But still enough, and you can make economic arguments that, well, any attacker that could perform this attack on the Utrex O accumulator wouldn't be a 51% attacker.
+It would be like a 99.999999% attacker.
+They need more hash power.
+They need a billion times more hash power than the entire network has to do it.
+In which case, you're so screwed anyway.
+So this is why I'm like, oh, I can't.
+Also, it would just be so much fun to have only 20-ish or 24-byte hashes, because then all the numbers just, you don't have to change the code.
+You just reduce all the proof sizes by that.
+It's a nice constant.
+It's a nice constant.
+It's a nice, like, hey, I just shaved 30% off everything.
+Yeah, yeah.
+But right now, I'm just sticking with 32 bytes, because that's safe even if you worry about collision attacks.
+But yeah, then otherwise, it's just the standard sort of Merkle tree assumption.
+
+Speaker 3: 01:10:33
+
+So that's also why you shouldn't use RSA, like not to introduce new assumptions.
+
+Speaker 0: 01:10:37
+
+Oh, yeah, this one's quantum secure or something.
+I don't know.
+Yeah, it's good for quantum computers.
+I mean, yeah, but mainly it's just that it has just feel safer, right, because it's just like SHA-2 or whatever.
+Yeah.
+
+Speaker 2: 01:10:53
+
+Is there anything you could commit to that would help this?
+
+Speaker 0: 01:10:57
+
+So we didn't talk about commit.
+So You could commit to the actual UTXO, the whole roots at the top and put that in the coinbase, but then you've got UTXO commitments.
+I'm not suggesting that because that's a different trust assumption.
+You could also commit to the proofs.
+
+Speaker 1: 01:11:18
+
+Why is there a trust assumption?
+
+Speaker 0: 01:11:20
+
+Well, I mean, there isn't, right?
+But then everyone's just going to start doing sort of SPV, where they're like, why do I IBD?
+I'll just download.
+
+Speaker 1: 01:11:26
+
+Because people get lazy.
+
+Speaker 2: 01:11:27
+
+Yeah, yeah.
+People are getting disappointed.
+Well, yeah.
+
+Speaker 0: 01:11:30
+
+So it's that can you convince people to make a soft work change, where, hey, now you've got to commit to this thing, which maybe someone will find a way better way to do this in a year or two.
+And now you've got this old way soft work in.
+Also, the main benefit is that it helps sort of lazy SPV people.
+I don't know.
+So I'm not pushing for that.
+
+Speaker 1: 01:11:50
+
+You're saying it's so good that everyone's just going to stop doing full nodes, power clusters.
+
+Speaker 0: 01:11:53
+
+No, I'm not advocating for any commitment.
+Another thing you could commit to is the proofs themselves.
+So sort of like how in SegWit, you've got this witness commitment to all the witnesses, you could have a little hash of all the proofs that are needed to verify this block.
+And that helps.
+Peter Wuil was saying that helps with some denial of service attacks.
+I don't think it's necessary, but it could prevent certain types of DOS attacks, I think.
+
+Speaker 3: 01:12:18
+
+What's the specific problem that you solve in Bitcoin core or in the size of chain state?
+
+Speaker 0: 01:12:25
+
+Yeah, size of chain state.
+So it grows unbounded.
+So eventually, it gets too big, and that's bad.
+Probably, it's fine for years.
+But long term, it's really nice to say, hey, we've got now a log n representation of chain state.
+In practice, what I think it'll do is it'll speed things up, especially of a spinning hard drive.
+Because right now, if you have a spinning hard drive and you're doing IBD, your CPU is at like 5%, 10%, and you're just waiting on the disk.
+
+Speaker 3: 01:12:47
+
+Do you want Bitcoin's consensus protocol, ultimately, to change?
+
+Speaker 0: 01:12:53
+
+It's not a consensus protocol change.
+It's like you don't commit to anything.
+And It's more like compact blocks.
+It's a network level change.
+But yeah, if that happens, then you can reduce the chain state size.
+And potentially, for older computers, it speeds it up a lot, because they can keep everything in RAM.
+Yeah?
+
+Speaker 1: 01:13:15
+
+So this question is about the common articles generally, not the future EXO.
+
+Speaker 5: 01:13:22
+
+Are there common articles that are not that the order doesn't matter, the order of insertion to the?
+
+Speaker 0: 01:13:32
+
+Yeah, so the RSA ones are you can put in x1, x2, x3, or x3, x1, x2.
+Not so in the hash.
+Well, yeah, in the hash one, you get a different proof if you put it in a different order, which is a downside.
+It would be really, because what you can't do with utrixo is say, hey, I've got my utrixo set on disk.
+It's not insertion ordered.
+It's like hash ordered in level DB, like just by hash.
+I can't build utrixo without knowing the order things happened in.
+And so I'd have to, if I want to build my uTreeXO root, I got to replay the whole thing.
+If I've got the blocks folder, and that's going to take, I don't know, an hour or something.
+So that's kind of slow.
+It would be cool if it was cumulative.
+
+Speaker 1: 01:14:16
+
+Just to add up on the what would it help, if I understand correctly, it would kind of also allow you to run a full on a phone as long as you've seen all of the network at least once, right?
+
+Speaker 0: 01:14:25
+
+Yeah.
+So for phone, OK, you like sync on your desktop at home, and then the entire chain state fits on a QR code, and you can copy it over your phone and then keep it up to date there.
+
+Speaker 2: 01:14:33
+
+Leave your whole phone and Wi-Fi on your phone.
+
+Speaker 0: 01:14:36
+
+Yeah, so it helps with state size.
+You still have the CPU and the network.
+And in fact, it makes network traffic a little bit worse.
+So I don't know how practical.
+Hopefully, it will be more practical on a phone, but you're still going to drain the battery and use a lot of network.
+So maybe when it's charging, you can do it.
+Yeah, Wi-Fi only or charging only.
+So I think it will be more practical, but I don't want to sell it as like, it'll totally work for everyone can run a full node on their phone.
+It gets better, But there's still limitations.
+OK, so thanks.
+And if there's more questions, let me know.
+
+Speaker 2: 01:16:45
+
+You you
