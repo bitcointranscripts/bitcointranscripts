@@ -2,7 +2,7 @@
 title: 'Lightning History and everything else'
 transcript_by: 'Hussman256 via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Tadge-Dryja-and-Lightning-History-and-everything-else---Episode-31-e20udtf'
-date: '2023-03-20'
+date: '2023-03-19'
 tags:
   - 'eltoo'
   - 'lightning'
@@ -11,6 +11,7 @@ tags:
   - 'trimmed-htlc'
 speakers:
   - 'Tadge Dryja'
+  - '0xB10C'
 categories:
   - 'podcast'
 summary: 'Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space.'
