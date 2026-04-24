@@ -11,7 +11,6 @@ tags:
   - 'trimmed-htlc'
 speakers:
   - 'Tadge Dryja'
-  - 'Jonas Nick'
 categories:
   - 'podcast'
 summary: 'Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space.'
