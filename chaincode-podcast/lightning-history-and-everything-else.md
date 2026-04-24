@@ -1,37 +1,39 @@
 ---
-title: Lightning History and everything else
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Tadge-Dryja-and-Lightning-History-and-everything-else---Episode-31-e20udtf
+title: 'Lightning History and everything else'
+transcript_by: 'Hussman256 via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Tadge-Dryja-and-Lightning-History-and-everything-else---Episode-31-e20udtf'
+date: '2023-03-21'
 tags:
-  - eltoo
-  - lightning
-  - segwit
-  - sighash-anyprevout
-  - trimmed-htlc
+  - 'eltoo'
+  - 'lightning'
+  - 'segwit'
+  - 'sighash-anyprevout'
+  - 'trimmed-htlc'
 speakers:
-  - Tadge Dryja
-summary: Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space.
+  - 'Tadge Dryja'
+categories:
+  - 'podcast'
+summary: 'Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space.'
 episode: 31
-date: 2023-03-22
 additional_resources:
-  - title: On the instability of Bitcoin without the block reward
-    url: https://www.cs.princeton.edu/~smattw/CKWN-CCS16.pdf
-  - title: Lightning Network White Paper
-    url: https://lightning.network/lightning-network-paper.pdf
-  - title: LN-Symmetry (Eltoo)
-    url: https://bitcoinops.org/en/topics/eltoo/
-  - title: SIGHASH_ANYPREVOUT
-    url: https://bitcoinops.org/en/topics/sighash_anyprevout/
-  - title: hardfork wishlist wiki
-    url: https://en.bitcoin.it/wiki/Hardfork_Wishlist#:~:text=The%20Hardfork%20Wishlist%20is%20to,them%20to%20be%20invalid%20blocks
-  - title: softfork wishilist wiki
-    url: https://en.bitcoin.it/wiki/Softfork_wishlist
-  - title: coinpools
-    url: https://coinpool.dev/v0.1.pdf
+  - title: 'On the instability of Bitcoin without the block reward'
+    url: 'https://www.cs.princeton.edu/~smattw/CKWN-CCS16.pdf'
+  - title: 'Lightning Network White Paper'
+    url: 'https://lightning.network/lightning-network-paper.pdf'
+  - title: 'LN-Symmetry (Eltoo)'
+    url: 'https://bitcoinops.org/en/topics/eltoo/'
+  - title: 'SIGHASH_ANYPREVOUT'
+    url: 'https://bitcoinops.org/en/topics/sighash_anyprevout/'
+  - title: 'hardfork wishlist wiki'
+    url: 'https://en.bitcoin.it/wiki/Hardfork_Wishlist#:~:text=The%20Hardfork%20Wishlist%20is%20to,them%20to%20be%20invalid%20blocks'
+  - title: 'softfork wishilist wiki'
+    url: 'https://en.bitcoin.it/wiki/Softfork_wishlist'
+  - title: 'coinpools'
+    url: 'https://coinpool.dev/v0.1.pdf'
   - title: 'MAS.S62: Cryptocurrency Engineering and Design'
-    url: https://dci.mit.edu/research/2019/8/6/take-the-free-mit-open-course-taught-by-dcis-neha-narula-and-tadge-dryja-mass62-cryptocurrency-engineering-and-design
+    url: 'https://dci.mit.edu/research/2019/8/6/take-the-free-mit-open-course-taught-by-dcis-neha-narula-and-tadge-dryja-mass62-cryptocurrency-engineering-and-design'
 aliases:
-  - /chaincode-labs/chaincode-podcast/lightning-history-and-everything-else/
+  - '/chaincode-labs/chaincode-podcast/lightning-history-and-everything-else/'
 ---
 Speaker 0: 00:00:00
 
