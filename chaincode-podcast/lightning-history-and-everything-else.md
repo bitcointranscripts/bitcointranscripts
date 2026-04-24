@@ -11,7 +11,6 @@ tags:
   - 'trimmed-htlc'
 speakers:
   - 'Tadge Dryja'
-  - '0xB10C'
   - 'Jonas Nick'
 categories:
   - 'podcast'
