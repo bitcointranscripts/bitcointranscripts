@@ -328,7 +328,7 @@ So right now, we're using the same payment hash across the whole route, which is
 PTLCs will fix that.
 That also means that the sender, for example, should not be able to infer who the recipient is based on only potentially an invoice.
 The issue right now is that in the Bolt11 invoice, that when it doesn't yet support SCID aliases, is that you are leaking both your node ID, which you don't actually really have to, but it's a bit inconvenient to hide it with Bolt11 currently, and exactly the channels that tell people how to reach you and who you are connected to.
-So this part is more about the intersection between `Lightning` and Unchain.
+So this part is more about the intersection between `Lightning` and Onchain.
 And that's where we really need to distinguish the privacy challenges once you are purely off-chain and the privacy challenges when intersecting between on-chain and off-chain, because the way we fix each of those are really different.
 They are completely orthogonal and operating at different layers of the stack and require very different solutions.
 And to be honest, I think that we have good ideas on how to somewhat easily fix at the protocol level.
@@ -350,7 +350,7 @@ I wrote that in like 2011.
 
 **Vivek:** 00:20:29
 
-2021.
+ 2021
 
 **Tony Giorgio:** 00:20:30
 
@@ -393,7 +393,7 @@ And if so, how would a mobile user choose a different introductory point?
 
 **Bastien Teinturier:** 00:23:02
 
-Either the mobile user just syncs a local neighborhood, for example, every node that is two hubs away from them, if they're only connected to one LSP, they cannot just sync it from that LSP if they don't trust that LSP because the LSP will just filter out everything else.
+Either the mobile user just syncs a local neighborhood, for example, every node that is two hops away from them, if they're only connected to one LSP, they cannot just sync it from that LSP if they don't trust that LSP because the LSP will just filter out everything else.
 But if they are connecting to a few LSPs, they could just sync their local neighborhood and make sure that they make payment bounce between LSPs because in your blinded path, you can force the payment to bounce from one LSP to the other if you're using PTLCs from a list of LSPs. Or you can just even assume that without even knowledge of a graph, you can assume that some big nodes have good connectivity and benefit from their user base.
 If I'm a Phoenix user, but I make all my payments go through the Breeze node, people will potentially assume that I'm a Breeze user, while I'm not.
 Maybe they will assume I'm a Phoenix user that is doing that trick, but maybe Breeze is doing the same thing with other nodes.
@@ -621,7 +621,7 @@ So, we had a different approach, right?
 So we saw a sort of gap in mobile wallet usages of `Lightning`.
 Or like there were many usages that were very custodial, you know, they might be relying on servers and not having an easy path for Bitcoin wallets to add `Lightning` was something we saw as a gap in the ecosystem.
 So that was the primary reason I believe that `LDK` was sort of pitched in that direction, I suppose.
-We do use Rust compared to other implementations like C and Go, and I guess Eclare is Scott's style, is it?
+We do use Rust compared to other implementations like C and Go, and I guess Eclair is Scott's style, is it?
 Might be off on that.
 Yeah, so Rust is a very secure language too.
 So having that aspect and allowing for language of app findings on top of that.
@@ -655,7 +655,7 @@ From the spec point of view, I'm really happy that there's a fourth implementati
 But when we only had three implementations and since people have different short term focus and everything we're doing takes a lot of time, so people cannot be working on all the things at the same time, we have a better chance at finding two implementations that work on the same stuff for almost each big feature that we are working on.
 And I really think this helps, for example, a very simple example is Taproot, because right now Taproot is not a priority for Eclair and Core `Lightning`.
 It is a huge priority for LND.
-So I think they're very thankful that `LDK` has found time to actually really work on it, give them feedback and make sure that they have two implementations working together on that specification because otherwise L&D would have been blocked because they were the only one working on that and it's a big chunk of work and Core `Lightning` and Eclair thought it was more important to start with things like splicing and dual funding before moving on to Taproot.
+So I think they're very thankful that `LDK` has found time to actually really work on it, give them feedback and make sure that they have two implementations working together on that specification because otherwise LND would have been blocked because they were the only one working on that and it's a big chunk of work and Core `Lightning` and Eclair thought it was more important to start with things like splicing and dual funding before moving on to Taproot.
 So I think four implementations that are really committed to working on `Lightning` and collaborating at the spec level is much better than three.
 Maybe five would be okay, but maybe it would be too much.
 I don't know.
