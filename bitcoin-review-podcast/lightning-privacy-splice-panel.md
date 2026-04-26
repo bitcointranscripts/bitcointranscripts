@@ -59,11 +59,11 @@ Yeah, I've been talking about lighting privacy for a while, so looking forward t
 **NVK:** 00:02:55
 
 Very cool.
-T-Bast.
+Tbast.
 
 **Bastien Teinturier:** 00:02:58
 
-Hey, I'm T-Bast.
+Hey, I'm Tbast.
 I've been working at Async on the lighting specification and our implementation Eclair and also our Phoenix wallet.
 And I've done a lot of things around lighting privacy as well, like blinded paths.
 So excited to be talking about that here.
@@ -83,12 +83,12 @@ Not that it matters.
 **NVK:** 00:03:30
 
 I know.
-I, you know, it's people haven't settled if it's like demon or Damon for, for the demons.
+I, you know, it's people haven't settled if it's like demon or Daemon for, for the demons.
 
 **Dusty Dettmer:** 00:03:37
 
 It's like proven work.
-If you can like, you know, pronounce Damon, then you can find me on Twitter and also spell it.
+If you can like, you know, pronounce Daemon, then you can find me on Twitter and also spell it.
 So good luck with that.
 
 **NVK:** 00:03:47
@@ -126,7 +126,7 @@ And Vivek, Seared Salmon, welcome back.
 **Vivek:** 00:04:12
 
 Thank you.
-Just, you know, VP of BD at CoinKite and recovering Greenlight and CLN shoe.
+Just, you know, VP of BD at CoinKite and recovering Greenlight and CLN show.
 
 **NVK:** 00:04:22
 
@@ -144,7 +144,7 @@ Like Where are we in `Lightning` in terms of like things that are privacy relate
 Let's not talk about things that are going to come in months from now still.
 Like what's going on right now?
 Who wants to take that?
-Go ahead, T-Best.
+Go ahead, Tbast,.
 
 **Bastien Teinturier:** 00:05:05
 
@@ -175,11 +175,11 @@ With Blended Path, you're finally getting good privacy with some trade-offs on p
 
 **NVK:** 00:06:59
 
-How do Blended Paths work?
+How do Blinded Paths work?
 
 **Bastien Teinturier:** 00:07:01
 
-Okay, so Blended Paths are if you, I guess everyone has a vague idea of how rendezvous routing works in Onion networks, where the receiver, when you want to receive a message, instead of directly giving your address or your Node ID, you find paths to yourself that take a few hops to reach you.
+Okay, so Blinded Paths are if you, I guess everyone has a vague idea of how rendezvous routing works in Onion networks, where the receiver, when you want to receive a message, instead of directly giving your address or your Node ID, you find paths to yourself that take a few hops to reach you.
 You encrypt those and you just tell people get to that introduction point and they will know how to reach me with this encrypted blob that I'm giving you.
 So people who are sending payments to you only learn the identity of a few introduction points that you chose on the network so you can choose them however you want to make sure that people cannot infer that then you are the recipient.
 So algorithmically speaking and in order to be able to receive, to make the most of your incoming liquidity.
@@ -191,7 +191,7 @@ You have no reason to advertise anything.
 
 **Tony Giorgio:** 00:08:32
 
-With raw network routing, you hinted at it, but who you select as your introductory nodes is important too.
+With rendezvous routing, you hinted at it, but who you select as your introductory nodes is important too.
 Like, if you're the only person that keeps selecting the same introductory nodes, you can do some analysis there and guess that's the same person.
 So yeah, I'm just like a `Lightning` protocol LARP.
 Like I never touch protocol code.
@@ -312,10 +312,10 @@ I don't know if it's much lower, but I'd say it's lower and there's definitely a
 I remember when Ellen Big showed up, everyone was like, oh, these guys are the feds or there's some other agency.
 But you know, you just kinda, you're happy to get that inbound liquidity at the end of the day.
 I actually want to go higher level and just get our principles first, fundamentals established for the `Lightning` Network, the challenges for the privacy.
-I think I've heard T-Best and Tony explain it for those who haven't checked out their contributions, You should definitely check it out.
-T-Best has an amazing chapter in the Mastering `Lightning` book, which I recommend nonstop.
+I think I've heard Tbast and Tony explain it for those who haven't checked out their contributions, You should definitely check it out.
+Tbast has an amazing chapter in the Mastering `Lightning` book, which I recommend nonstop.
 And then Tony just sprung onto the scene, I think in 2021 with a massive privacy article describing issues with payment hashes, hash correlation, long paths.
-So from a high level approach, T-Bass, can you explain how, is it Bolt1 or something, the init messages with noisexk, basically how the sender is always unknown and the receiver used to be known and the challenges with that in regards to `unannounced channels` which were mistakenly called private channels back in the day.
+So from a high level approach, Tbast, can you explain how, is it Bolt1 or something, the init messages with noisexk, basically how the sender is always unknown and the receiver used to be known and the challenges with that in regards to `unannounced channels` which were mistakenly called private channels back in the day.
 
 **Bastien Teinturier:** 00:17:51
 
@@ -362,7 +362,7 @@ Yeah.
 I wrote that and people sometimes ask me, okay, well, it's 2023 now.
 Can we get an update?
 I'm like, yeah, nothing changed, Except for SCID aliases.
-So the aspect of trying to de-link the on-chain UTXO that was used in the invoice, you know, and T-BAST described that earlier.
+So the aspect of trying to de-link the on-chain UTXO that was used in the invoice, you know, and Tbast described that earlier.
 Other than that, yes, we will get route blinding soon, like really soon, I'm super pumped for that.
 Yeah, there's still challenges to be made.
 But besides that, nothing's really changed in the last few years.
@@ -388,7 +388,7 @@ But I think there are ways to make it better, to at least make it not completely
 
 **Jeff Czyz:** 00:22:49
 
-T-BAST, would you say then that like for that scenario, the LSP wouldn't be the introduction point on the blinded route?
+Tbast, would you say then that like for that scenario, the LSP wouldn't be the introduction point on the blinded route?
 And if so, how would a mobile user choose a different introductory point?
 
 **Bastien Teinturier:** 00:23:02
@@ -463,7 +463,7 @@ I don't know if anyone else wants to jump in on that, probably a little more det
 
 **NVK:** 00:27:27
 
-T-BAST, you wanted to bring up something about the features that are sort of slow to?
+Tbast, you wanted to bring up something about the features that are sort of slow to?
 
 **Bastien Teinturier:** 00:27:33
 
@@ -647,7 +647,7 @@ Is it the right way or is it the wrong way?
 It's a big market and people are going to want different things.
 So it's kind of cool to see that like the implementations are getting less fighty and more sort of like finding their own niche.
 So they're not sort of like so much on top of each other because there's only so many customers too for now.
-Sorry, T-BAST.
+Sorry, Tbast.
 
 **Bastien Teinturier:** 00:36:38
 
@@ -721,7 +721,7 @@ I think it's sort of like a nice indicator there.
 Yeah, I think the skill too is being able to be, and I say this from the application to oversight because this is where I really shine.
 But knowing when you can do things at the application level and when you shouldn't, and them doing `LNURL` doesn't break interoperability with `Lightning`.
 This is a scenario where, I'm not going to use the word allowable, but it's incentivized to them to be able to do it and it doesn't break anything.
-I think another interesting example, T-BAST, you guys I believe had Trampoline and Phoenix since day one.
+I think another interesting example, Tbast, you guys I believe had Trampoline and Phoenix since day one.
 This is another scenario where yes, Phoenix and Eclair, another implementation of, Eclair is another implementation of `Lightning` Node, but them adding Trampoline to their node and then to their end-users wallet, that doesn't break interoperability anywhere on the `Lightning` Network.
 That's a place where you can add application-specific logic.
 And then, NVK, you brought up LNProxy.
@@ -866,8 +866,8 @@ How are you guys like sort of going about it?
 
 **Vivek:** 00:48:43
 
-That's probably a question for T-Bass, Tony, and maybe Jeff.
-I'd say T-Bass is also extremely well-rounded because Eclair ships Phoenix as well as their implementation and everything.
+That's probably a question for Tbast, Tony, and maybe Jeff.
+I'd say Tbast is also extremely well-rounded because Eclair ships Phoenix as well as their implementation and everything.
 So it's like one comprehensive thing.
 So he probably has great insight.
 Yeah, to be honest, I haven't had time to follow everything that's happening around Nuster.
@@ -1025,7 +1025,7 @@ Before we get into this, two weeks.
 
 Dusty shipped it for himself, right?
 I don't know if he's revealed like any of the script, but he did point to a mainnet transaction.
-And I believe T-Best also has done that.
+And I believe Tbast also has done that.
 
 **Bastien Teinturier:** 00:56:04
 
@@ -1384,7 +1384,7 @@ We got
 
 **Vivek:** 01:09:16
 
-to talk about that for sure, how you probed all of T-Bass' private channels
+to talk about that for sure, how you probed all of Tbast' private channels
 
 Speaker 2: 01:09:24
 
@@ -1531,7 +1531,7 @@ Tony, is this part of the Mutiny's solution?
 
 Well, not immediately, but it is something that we even written about.
 `Lightning`privacy.com, me, Ben Carman, Paul Miller, a few other people, Evan Kludis, we worked on this.
-We actually, both T-Bass and Dusty came and presented some of their concepts to our research group while we were going through it.
+We actually, both Tbast and Dusty came and presented some of their concepts to our research group while we were going through it.
 And this is one of the biggest things that we're interested in the most when we actually get splicing and we can use it, is the concept of being able to do coin joins from splicing rounds.
 I mean, not just for privacy standpoint, but also a scalability standpoint, too.
 I mean, I think some of the free rate stuff kind of shows that, you know, we sort of need collaborative transactions to be able to help scale Bitcoin on chain usage even more.
@@ -2308,7 +2308,7 @@ And I'm really excited about some of the scalable solutions that could very well
 
 **NVK:** 01:54:22
 
-T-Best.
+Tbast.
 
 **Bastien Teinturier:** 01:54:23
 
@@ -2376,7 +2376,7 @@ Look at that.
 
 **Vivek:** 01:56:05
 
-And then thank you to T-Best as well, who's tested the early interop for these sort of things with like V2 opens and whatnot.
+And then thank you to Tbast as well, who's tested the early interop for these sort of things with like V2 opens and whatnot.
 Really grateful for that.
 And I believe on the L&D side that someone named Eugene correct me if I'm mistaken but yeah I want to say thank you because there's just too much crap now like we talked about APO, LN symmetry with splices and with music too and then incorporating that into payjoins and then how does that tie in with like other routing pathfinding stuff for mobile with async payments and trampoline, you know?
 So there's just-
