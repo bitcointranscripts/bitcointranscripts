@@ -182,7 +182,7 @@ Then we would have the messages.
 ## Slot assignment.
 
 **TIm Ruffing:** 00:15:49
-<HERE>
+
 We could have the messages back, but the problem here is that this needs this, what I call magic now, this needs an anonymous slot assignment.
 So in order to make this work, we already need some protocol that provides anonymity in some sense and this is where most of these proposals to use slot reservation actually fail in practice, because it's a chicken and egg problem.
 You need, in order to get an anonymity here, you need another anonymous sub-protocol that gives you a slot assignment, because this is hard, those protocols in the literature do the various tricks that mostly are not great because they can fail in practice.
@@ -211,16 +211,16 @@ Sure, yeah,
 
 **Audience 1:** 00:18:08
 
-go ahead.
+Go ahead.
 So why wouldn't a slot assignment work in, since everyone knows about everyone, why wouldn't the slot assignment just be decided based on alphabetical ordering of each other of everyone's public keys right
 
 **Anchor:** 00:18:31
 
-you because the whole point is we don't want to know who is who is.
+You because the whole point is we don't want to know who is who is.
 
 **TIm Ruffing:** 00:18:35
 
-right, so I mean functionally yes but like The problem is we we also like the peers here want anonymity even against each other, right?
+Right, so I mean functionally yes but like The problem is we we also like the peers here want anonymity even against each other, right?
 So like if everybody in the shuffling knows that like if Alice knows that Bob has the first slot, then Bob can't get the anonymity because whatever message appears in the first slot it will be Bob's.
 
 **Audience 1:** 00:19:05
@@ -417,7 +417,7 @@ Yes
 
 **TIm Ruffing:** 00:34:41
 
-okay.
+Okay.
 So, he could selectively disrupt messages even though he doesn't know to which users those messages belong.
 
 **Audience 1:** 00:34:53
@@ -427,7 +427,7 @@ So he could swap Alice's address, Swap a random address to his own address
 
 **TIm Ruffing:** 00:35:02
 
-for example, yeah, What I was saying before is that the only thing Alice now at the end of the DZNet round, what she can do is she can look at the set of messages of the results of the protocol and see if her old message is there, right?
+For example, yeah, What I was saying before is that the only thing Alice now at the end of the DZNet round, what she can do is she can look at the set of messages of the results of the protocol and see if her old message is there, right?
 But she doesn't know if the other messages are all there.
 She will see some messages there, for example, if Kevil's message has been replaced or not.
 And the important thing at this step here is that, however, all the peers in the protocol need to agree whether disruption has happened or not because if it has not if there was no disruption then like this is the case we see now on the slides and then they will go ahead and create a contract transaction and hopefully sign it.
@@ -502,7 +502,7 @@ what the termination mean
 
 **TIm Ruffing:** 00:43:26
 
-termination means that the protocol terminates, even if there are malicious peers inside.
+Termination means that the protocol terminates, even if there are malicious peers inside.
 
 **Audience 1:** 00:43:34
 
@@ -691,7 +691,7 @@ So basically he observes all the messages of all the people and then she just he
 
 **Anchor:** 00:56:14
 
-this might be a dumb question but how practical is it to block someone from the protocol, mid protocol?
+This might be a dumb question but how practical is it to block someone from the protocol, mid protocol?
 
 **TIm Ruffing:** 00:56:23
 
@@ -1039,7 +1039,7 @@ I think like I think you could just assume that like if this transaction exists 
 
 **Anchor:** 01:26:16
 
-okay guys no one you stop the video in about five minutes.
+Okay guys no one you stop the video in about five minutes.
 Just a heads up.
 
 **Audience 1:** 01:26:22
