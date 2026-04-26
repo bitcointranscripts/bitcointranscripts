@@ -829,16 +829,17 @@ Okay, cool.
 That's all for me.
 Thank you so much.
 
-Speaker 4: 00:59:19
+**Max Hillebrand:** 00:59:19
 
 Hello, guys.
 
-**Max Hillebrand:** 00:59:23
+**Samir Menon:** 00:59:23
 
 Hello.
-Hey, Adam.
-Glad that you're here.
-Catch the recording.
+
+**Max Hillebrand:** 00:59:24
+
+Yeah I'm glad that you're here, catch the recording.
 It was very good.
 I do have another question.
 So I saw the client on GitHub and mentioned that this is free open source.
