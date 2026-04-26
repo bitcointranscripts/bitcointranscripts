@@ -1326,9 +1326,6 @@ Okay.
 
 This is for context or for a setup of the conversation?
 
-**Samir Menon:** 01:35:21
-
-
 **Max Hillebrand:** 01:35:23
 
 We use it as basically eCash token for access rights.
@@ -1558,7 +1555,7 @@ If I may ask Fabricio, is that implementable in lookup tables and FPGAs and stuf
 
 Yeah, it's not that amenable to hardware acceleration.
 
-Speaker 7: 01:45:44
+**Audience 3:** 01:45:44
 
 You preceded me with the question I was going to ask.
 If the implementation on FBAs or ASICs could constitute a significant improvement.
@@ -1613,7 +1610,7 @@ Have you looked into the open source hardware's beta log synthesis stuff like Ic
 Ah, sorry, project starts with that.
 I forgot.
 
-Speaker 7: 01:48:23
+**Audience 3:** 01:48:23
 
 But actually, these are crypto project guarding FPGA, because actually I'm dealing with FPGA for actually for genomic recognition.
 But actually regarding crypto, I actually I didn't look yet, let's say.
@@ -1627,7 +1624,7 @@ Has it been feasible, given that is it been in FPGAs, you are bound with a manuf
 And lately, there has been some developments regarding open source tooling for like uses and stuff.
 Have you used those tools before or is it still vendor locked?
 
-Speaker 7: 01:50:03
+**Audience 3:** 01:50:03
 
 Well at the moment we are using proper proprietary tools, for example Vivado, which is very famous, but actually, no, actually didn't yet look at the say open source opportune source development regarding that I will have a look
 
