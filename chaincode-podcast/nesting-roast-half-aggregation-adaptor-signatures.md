@@ -8,6 +8,7 @@ tags:
   - 'bip32'
   - 'cisa'
   - 'coinjoin'
+  - 'multisignature'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
