@@ -5,6 +5,7 @@ media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille
 date: '2022-12-27'
 tags:
   - 'adaptor-signatures'
+  - 'bip32'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
