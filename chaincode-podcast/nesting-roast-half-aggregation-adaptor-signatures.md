@@ -24,7 +24,7 @@ aliases:
 ---
 Speaker 1: 00:00:00
 
-Just as a warning, so don't do this at home.
+Just as a warning: don't do this at home.
 
 Speaker 0: 00:00:01
 
@@ -34,11 +34,11 @@ Still have your friendly neighborhood cryptographer have a look at it.
 Speaker 2: 00:00:16
 
 This is the second half of the conversation with Tim and Peter.
-If you have not listened to the first half, I'd suggest going back and listening to that episode.
-We cover all sorts of fun things, including when to roll your own cryptography, why we prefer Schnorr signatures over EdDSA, Schnorr efficiency improvements, Multi-Sig, MuSig, interactive versus non-interactive signing, FROST, and more.
+If you have not listened to the first half I'd suggest going back and listening to that episode.
+We cover all sorts of fun things, including when to roll your own cryptography, why we prefer Schnorr signatures over ECDSA, Schnorr efficiency improvements, Multi-Sig, MuSig, interactive versus non-interactive signing, FROST, and more.
 So, we're going to pick things back up talking about nesting.
 We'll cover ROAST, block-wide aggregation, adaptive signatures, atomic swaps.
-This is a great conversation, and I hope you enjoyed as much as I enjoyed recording it.
+This is a great conversation and I hope you enjoy it as much as I enjoyed recording it.
 
 ## Nesting
 
@@ -49,9 +49,10 @@ How could these ideas be combined?
 
 Speaker 1: 00:01:11
 
-Yeah, so again, like MuSig is an event setup and FROST is a T event setup, where you just require some subset, but now you can think of combining or nesting those in a three-style fashion.
+Yeah, so again, MuSig is an event setup and FROST is a t-event setup, where you just require some subset, but now you can think of combining or nesting those in a three-style fashion.
 For concreteness, again, maybe assume a Lightning Channel is my standard example.
-Let's say I have a Lightning channel with Peter, I'm one participant, like Peter is on the other side.
+Let's say I have a Lightning channel with Peter.
+I'm one participant, Peter is on the other side.
 And in this Lightning channel, we can have a 2-of-2 MuSig.
 
 Speaker 0: 00:01:41
@@ -64,7 +65,7 @@ But on the top, it's a 2-of-2 MuSig for the Lightning channel.
 I mean, it's not supported by Lightning yet, but hopefully will be soon.
 And then, but on my side, maybe for improved security, I could have a hardware wallet or three hardware wallets.
 And then just on my side for this part of the MuSig, for my key in the MuSig, I want to have another threshold set up.
-Like if two of my hardware wallets agree, then they can sign for just my part of the MuSig.
+If two of my hardware wallets agree, then they can sign for just my part of the MuSig.
 So it's basically a 2-of-2 MuSig at the top and on my side it's a 2-of-3 on that side of the tree.
 
 Speaker 0: 00:02:20
@@ -74,9 +75,9 @@ Yeah, it's like a 2-of-2 of a 2-of-3 and a single key.
 Speaker 1: 00:02:25
 
 Yeah, and you're on your side and now you can go a step further.
-Like you shouldn't be even aware of the fact that I use a 2-of-3 under the hood.
+You shouldn't be even aware of the fact that I use a 2-of-3 under the hood.
 First, because of privacy, maybe I just don't want to reveal it, but also just for simplicity, because the Lightning protocol spec shouldn't be concerned with what I do locally with my keys.
-So I don't want to reveal that I use a 2-of-3, not only for privacy reasons, but also to keep the specification simple because then whenever, like let's say in the future, I want to do something else with my keys for every new use case in a sense, or a key setup case, you would need to change the Lightning specification.
+So I don't want to reveal that I use a 2-of-3, not only for privacy reasons, but also to keep the specification simple because then whenever, let's say in the future, I want to do something else with my keys for every new use case in a sense, or a key setup case, you would need to change the Lightning specification.
 That's not what we want to do.
 So this is the rough application idea of nesting.
 In this example, it would be a FROST inside the MuSig, but you could also think of arbitrary combinations, like a MuSig inside the MuSig, MuSig inside the FROST, and arbitrary trees you can build.
@@ -99,24 +100,24 @@ We have very good reasons to assume that you can just combine the two, but...
 
 Speaker 1: 00:04:07
 
-Right, so this is like, there are a few open research questions here.
-So the first, like the thing you mentioned is just nesting that I talked about now.
+Right, there are a few open research questions here.
+So, the first thing you mentioned is just nesting that I talked about now.
 So in fact, when we came up with MuSig2, what we actually wanted to solve was this nesting thing, because we were thinking about nested MuSig.
 How can we have a MuSig inside a MuSig?
 And it turned out the first round of the protocol was really annoying.
-So I had this idea of, OK, how can we do nesting?
+So I had this idea of how can we do nesting?
 It involved getting rid of the first round of the protocol and this made it a two-round protocol.
 
 Speaker 0: 00:04:40
 
-It's kind of impressive that you kept thinking about it because you must have had the realization "oh no, this first round is the problem" and "we know the proofs break without it".
+It's kind of impressive that you kept thinking about it because you must have had the realization: "oh no, this first round is the problem" and "we know the proofs break without it".
 
 Speaker 1: 00:04:53
 
-I mean, I kept thinking about it for like every few months.
+I mean, I kept thinking about it for every few months.
 I spent a week on this and it was never successful until it was, so I was pretty happy about it.
 But anyway, this is how this idea of having two rounds started.
-And actually, like, MuSig2 is designed with this use case in mind.
+And actually, MuSig2 is designed with this use case in mind.
 Just we didn't include it in the MuSig2 paper because we first wanted to have the two-round scheme then, and nesting basically was out of scope of the paper.
 
 Speaker 2: 00:05:21
@@ -124,24 +125,24 @@ Speaker 2: 00:05:21
 I just want to double-click on that epiphany moment, because I've obviously never had one of those myself.
 But as an engineer, sometimes you have the, "I'm trying this thing, I'm trying this thing, I can't figure out an elegant way", and then it clicks.
 Does it feel like that?
-Or is it like, I'm throwing, like, sort of from a research perspective, like, I'm throwing a lot of different ideas at this thing, and trying to prove them out, and one of them clicks?
+Or is it, from a research perspective, like, I'm throwing a lot of different ideas at this thing, and trying to prove them out, and one of them clicks?
 
 Speaker 1: 00:05:48
 
 That's hard to say.
-I think, like, usually, the way you get ideas is that you have problems in your mind and then you think about them and you think about them and you don't get a solution.
+I think, usually the way you get ideas is that you have problems in your mind and then you think about them and you think about them and you don't get a solution.
 And then at some moment under the shower it suddenly makes click, right?
 But it's really because you put the problems in your mind and you thought about them earlier.
 
 Speaker 0: 00:06:09
 
-It's interesting that here, like the goal was solving the nested MuSig problem, maybe not even thinking about provable security, just wanting to make a scheme that could plausibly work with nesting.
+It's interesting that here the goal was solving the nested MuSig problem, maybe not even thinking about provable security, just wanting to make a scheme that could plausibly work with nesting.
 And it turns out, oh, as a side effect, they came up with a two-round multi-signature scheme, which was novel, and it was like, "whoa, wait, we should work on that first".
 And I think that's interesting because you, as you say, like you're researching a problem, you have a particular problem in mind you're trying to solve, but maybe the solution is applicable to other things.
 
 Speaker 1: 00:06:44
 
-Yeah, and it's really, it says something about like how research should be done, right?
+Yeah, really, it says something about how research should be done, right?
 It's not like you have this one problem and now you lock yourself in a room for a month and then you come out and solve it.
 No, it's like really you need to think about different problems, even if they're not exactly in your scope.
 And then maybe at some point you realize, okay, now I knew that idea from that area.
@@ -150,34 +151,34 @@ Maybe now I can put them together and suddenly...
 
 Speaker 2: 00:07:10
 
-And so how do you sort of think about that applicability of those eureka moments to, for example, like to FROST.
-So you sort of have something that's, you want to cut down on the interactivity of FROST.
+And so how do you sort of think about that applicability of those eureka moments to, for example, FROST.
+So you sort of have something that you want to cut down on the interactivity of FROST.
 You were sort of able to attack this kind of problem in MuSig world.
 Is it, is there a world where you can take those lessons and apply it to something that's totally novel?
 
 Speaker 1: 00:07:34
 
 I don't know.
-I think like research mostly is idea-driven in one sense.
-So you like you get some idea and then some neat trick maybe that you discover and then you try to find applications for that trick.
+I think research mostly is idea-driven in one sense.
+So you get some idea and then some neat trick maybe that you discover and then you try to find applications for that trick.
 And then if you already know about problems in the space, it's more likely that you find an application where it's actually relevant.
 That's basically how it works.
 
 Speaker 0: 00:07:59
 
-In a way, I think the same can be said about MuSig because its research was originally driven by this cross input signature aggregation thing but we sort of like wait no we have a really cool multi signature scheme and that's like well analyzed and much easier to think about and has like much more clear way to production than this other thing.
+In a way, I think the same can be said about MuSig because its research was originally driven by this cross input signature aggregation thing, but we sort of like wait, we have a really cool multi-signature scheme and that's well analyzed and much easier to think about and has a much more clear way to production than this other thing.
 Let's focus on that first.
 
 Speaker 1: 00:08:25
 
-MuSig2 was built with this nesting idea in mind in the sense that, but we like we didn't include it in the paper, but we think we have a way to do it, but like, or we thought we have a way to do it now, like a month ago, we discovered it doesn't really work.
-So it's still like an open research question.
+MuSig2 was built with this nesting idea in mind in the sense that, but we didn't include it in the paper, but we think we have a way to do it or we thought we have a way to do it now, like a month ago, we discovered it doesn't really work.
+So it's still an open research question.
 It's not like, if you look at the scheme, you could think you could do it today, but please, please don't do it because it's still an open problem.
 We have to think about it carefully, like maybe add some restrictions and then write a proper security proof for it.
 
 Speaker 0: 00:08:55
 
-When you say a way to do it that both encompasses like what the actual algorithm is but also how do we go about proving it?
+When you say a way to do it that both encompasses what the actual algorithm is but also how do we go about proving it?
 Because today...
 
 Speaker 1: 00:09:04
@@ -185,16 +186,16 @@ Security and functionality, yeah.
 
 Speaker 0: 00:09:06
 
-Right, because you like, MuSig2 is specifically designed to support nesting, originally designed to support nesting.
+Right, because you... MuSig2 is specifically designed to support nesting, originally designed to support nesting.
 So it, If you just look at the spec and do the naive thing...
 
 Speaker 1: 00:09:20
 
-It is a natural thing you could do to make nesting work in a sense that like you can create a signature and the signature would verify but it doesn't mean that this specific way is secure and this is the problem we still need to solve.
+It is a natural thing you could do to make nesting work in a sense that you can create a signature and the signature would verify, but it doesn't mean that this specific way is secure, and this is the problem we still need to solve.
 
 Speaker 0: 00:09:35
 
-While at the same time if you try to do the same thing with the three-round MuSig1 either you'll conclude that you just can't make it work or you're gonna change the scheme in a way that will obviously and completely break it.
+While at the same time if you try to do the same thing with the three-round MuSig1, either you'll conclude that you just can't make it work or you're gonna change the scheme in a way that will obviously and completely break it.
 
 Speaker 1: 00:09:49
 Yeah, yeah.
@@ -202,7 +203,7 @@ And this is what I was mentioning, this is really just only about the MuSig insi
 
 Speaker 0: 00:10:01
 
-Or with BEP32 on top or with Taproot on top or cross-input second iteration on top.
+Or with BEP32 on top, or with Taproot on top, or cross-input second iteration on top.
 
 Speaker 1: 00:10:06
 
@@ -218,14 +219,14 @@ It can be really subtle.
 
 Speaker 0: 00:10:58
 
-It's interesting that I think if we would have come up with a new digital signature scheme, didn't write a paper about it, just like wrote a BIP up like BIP 340, I would have expected you know, whoa whoa whoa guys you are deploying a new signature scheme let's analyze this first.
+It's interesting that I think if we would have come up with a new digital signature scheme, didn't write a paper about it, just wrote a BIP up like BIP 340, I would have expected you know, whoa whoa whoa guys you are deploying a new signature scheme let's analyze this first.
 Well at this somewhat higher level of combining things, it seems unnecessary to ask these questions.
-And I think that that's a bit the same of like the lower level and the higher level there's more of an expectation to have an academically rigorous look at the lower cryptography part and less at like you know this security of composition.
+And I think that that's a bit the same of the lower level and the higher level, there's more of an expectation to have an academically rigorous look at the lower cryptography part and less at this security of composition.
 I'm overgeneralizing obviously.
 
 Speaker 1: 00:11:49
 
-Yeah, I mean if you say it's it seems unnecessary it sounds like the famous last words of the applied cryptographer, it works until it doesn't work but yeah I mean I agree with you.
+Yeah, I mean if you say it seems unnecessary, it sounds like the famous last words of the applied cryptographer: it works until it doesn't work, but yeah, I agree with you.
 
 Speaker 0: 00:12:01
 
@@ -240,18 +241,18 @@ Yes.
 Speaker 2: 00:12:09
 
 So, go back to FROST and your shower thoughts about making FROST more robust.
-Like how did you approach that and what was the outcome?
+How did you approach that and what was the outcome?
 
 Speaker 1: 00:12:20
 
-Yeah, so you're obviously referring to ROAST, which is one of my recent academic works together with a lot of other people from, with Elliot who also works at Blockstream and with a few co-authors in Germany that I still know from university.
-So the problem in FROST is, so first of all, it's nice because it has this two rounds property but one of the problems really is that it's not what we call robust.
+Yeah, so you're obviously referring to ROAST, which is one of my recent academic works together with a lot of other people, from Elliot who also works at Blockstream and with a few co-authors in Germany that I still know from university.
+So the problem in FROST is... So first of all, it's nice because it has this two-rounds property but one of the problems really is that it's not what we call robust.
 And robustness is a very specific thing.
 And it means that, let's say we have a 2-of-3 setup and we start a protocol with like all three people, but only two of them are actually willing to sign, which is okay, right?
 Because we only need two to produce a signature.
-But maybe that other guy, the third guy, is actively trying to disrupt the protocol, maybe because it could be malicious, it could be just offline, just not actively, of course, but of course covered by also active.
+But maybe that other guy, the third guy, is actively trying to disrupt the protocol, maybe because it could be malicious, it could be just offline, just not actively, of course, but also active.
 So if you can prevent against active attacks, you can also prevent it against just being offline.
-So we start the protocol with maybe three people and at some point we need to commit to a specific subset.
+So, we start the protocol with maybe three people and at some point we need to commit to a specific subset.
 We need to say after the first round, okay, now let's finish the protocol with exactly those two signers.
 And now either we pick the right signers, and they are online, and they're actually willing to sign the message, then everything is right.
 But if you pick the wrong two signers, then basically the protocol gets stuck and there's nothing we can do except restarting and picking another group of signers.
