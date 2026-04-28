@@ -13,6 +13,7 @@ tags:
   - 'schnorr-signatures'
   - 'segwit'
   - 'signature-aggregation'
+  - 'taproot'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
