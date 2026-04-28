@@ -6,6 +6,7 @@ date: '2022-12-27'
 tags:
   - 'adaptor-signatures'
   - 'bip32'
+  - 'cisa'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
