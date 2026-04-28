@@ -10,6 +10,7 @@ tags:
   - 'coinjoin'
   - 'multisignature'
   - 'musig'
+  - 'schnorr-signatures'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
