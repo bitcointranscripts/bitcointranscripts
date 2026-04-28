@@ -504,7 +504,7 @@ Yeah, the scheme we have in mind is really closer to Bellare-Neven.
 
 Speaker 0: 00:33:08
 
-And I think that's an interesting discussion about trade-offs because clearly when we're talking about taking some cryptographic scheme and building it into Bitcoin's consensus rules, that is I think a higher bar to meet than we're going to introduce Schnorr verification in the consensus rule, knowing that there are lots of things that could be built on top, but they don't actually become part of the consensus rule.
+And I think that's an interesting discussion about trade-offs because clearly when we're talking about taking some cryptographic scheme and building it into Bitcoin's consensus rules, that is, I think, a higher bar to meet than we're going to introduce Schnorr verification in the consensus rule, knowing that there are lots of things that could be built on top, but they don't actually become part of the consensus rule.
 Like MuSig you can use today, consensus rules know nothing about it.
 That is not true for the signature aggregation.
 The consensus needs to know about it.
@@ -514,7 +514,7 @@ Speaker 1: 00:33:59
 
 Also when it comes to cryptographic assumptions, right?
 Like all provable security and cryptography is always relative to some hard problem.
-I mean I mentioned like we can prove Schnorr signature secure if you assume that discrete logarithm problem is hard and some other side-side conditions.
+I mean, I mentioned we can prove Schnorr signature secure if you assume that discrete logarithm problem is hard and some other side-side conditions.
 And also, for example, I mentioned, Bellare-Neven scheme differs from MuSig in terms of what do we actually need to assume as a hard problem.
 And this is another question that becomes much more relevant now that you try to bake this into Bitcoin consensus.
 
@@ -581,8 +581,8 @@ And so this means that at a transaction level, this is easier to do because the 
 It would still require a consensus change, to be clear.
 This doesn't affect any of that.
 It requires a soft fork to add cross-input half-aggregation as well.
-But at the signing side, it is simpler because say for a CoinJoin, the individual signers now don't need to interact with each other.
-They can just produce their individual signatures and whoever is coordinating the creation of the CoinJoin or really any participant at all can just take all the signatures, put them together, and have a signature that can go on-chain.
+But at the signing side, it is simpler because, say, for a CoinJoin, the individual signers now don't need to interact with each other.
+They can just produce their individual signatures and whoever is coordinating the creation of the CoinJoin or, really, any participant at all, can just take all the signatures, put them together, and have a signature that can go on-chain.
 But that's not everything.
 In fact, because it is non-interactive, there's no reason to stop at the transaction level.
 And this can be done at the block level too.
@@ -591,32 +591,32 @@ So that is a 32 bytes per signature over the whole block that disappears.
 
 Speaker 1: 00:38:08
 
-The savings would be huge and that's why it is a very interesting idea but because its crossing transaction borders like the issues it could create potentially are...
+The savings would be huge and that's why it is a very interesting idea but because its crossing transaction borders, the issues it could create potentially are...
 
 Speaker 0: 00:38:23
 
-So for example, what this would mean like pre-SegWit, this would have been a huge problem because it would mean the miner is changing the transaction IDs. That's thankfully no longer the case with SegWit, but it's still the case, like we have this WTX ID, which is the witness transaction ID, which is a hash of all the data in the transaction together with it witnesses, the version that ends up in a block would have a different WTXID than the version that's relayed on the network.
-So these aren't fundamental problems, but there are some engineering challenges for like caching and nodes will validate signatures as they come in individual transactions and cache the results.
+For example, pre-SegWit this would have been a huge problem because it would mean the miner is changing the transaction IDs. That's thankfully no longer the case with SegWit, but it's still the case: we have this WTXID, which is the witness transaction ID, which is a hash of all the data in the transaction together it witnesses, the version that ends up in a block would have a different WTXID than the version that's relayed on the network.
+So these aren't fundamental problems, but there are some engineering challenges for caching, and nodes will validate signatures as they come in individual transactions and cache the results.
 Now they see a different version of that transaction in the block because that half thing is stripped out.
 Is there a way to leverage the cache they have or do they need to recompute from scratch?
 
 Speaker 1: 00:39:21
 
-One maybe more fundamental problem which is still open or we should really look at it is how this interacts with adapter signatures.
+One more fundamental problem which is still open, or we should really look at, is how this interacts with adaptor signatures.
 
 ## Adaptor signatures and atomic swaps
 
 Speaker 0: 00:39:32
 
-So adapter signature is another advanced signature technology which for example allows you to do atomic swaps on the chain that just look like two normal transactions.
+So adaptor signature is another advanced signature technology which for example allows you to do atomic swaps on the chain that just look like two normal transactions.
 So if you look at the blockchain again you see only two Schnorr signatures and it looks like just two more normal transactions.
-What actually happened is an atomic swap and basically the way how they work is that we set up our keys in a special way and then I send you a coin and because I have to sign this transaction I have to publish my signature on the blockchain.
+What actually happened is an atomic swap and basically the way they work is that we set up our keys in a special way and then I send you a coin and because I have to sign this transaction I have to publish my signature on the blockchain.
 You look at the signature and take information out of it and this now allows you to...
 
-Speaker 0: 00:49:09
+Speaker 0: 00:40:09
 
 Yeah, so the idea is both parties lock up their coins in a 2-of-2 MuSig or any kind of aggregates.
-So both with a taproot path that after some time they can take their coins back because you don't wanna log them forever if one of them steps away.
+So both with a Taproot path that after some time they can take their coins back because you don't wanna log them forever if one of them steps away.
 And now one of them gives a signature to spend one of those to the other, but sort of in a damaged way.
 You don't give the real signature yet, you give a signature and you sort of add an error term to it, and you do that for both.
 So you say I produce two, the two transactions, one that takes my money and gives it to you, the other that takes your money and gives it to me.
@@ -642,14 +642,14 @@ So, I know Alex Bosworth has been talking about this, I don't know, for four or 
 
 Speaker 1: 00:41:27
 
-The idea of this atomic swap protocol is really that like we have two transactions and we want to make them atomic.
+The idea of this atomic swap protocol is really that we have two transactions and we want to make them atomic.
 Either both of them happen or none of them happens.
-The idea is really that we create our keys in such a way that if one of the transactions happens, then you're forced to publish the signature of this transaction on the blockchain and then this enables the other party to look at the signature, extract information from it and make the other transaction happen.
-And half aggregation, like if now this signature that's published on the blockchain would be half aggregated, then it's not the full signature that would be published there.
+The idea is that we create our keys in such a way that if one of the transactions happens, then you're forced to publish the signature of this transaction on the blockchain and then this enables the other party to look at the signature, extract information from it and make the other transaction happen.
+And half aggregation, if now this signature that's published on the blockchain would be half aggregated, then it's not the full signature that would be published there.
 We would exactly remove that part that you need to look at to make the second transaction happen.
 So this is how this would interfere.
 And now, as you say, it could actually be done with ECDSA.
-So one very simple, of course not very satisfactory solution would be, okay, like, if you want to run an adapter signature protocol, then resort to ECDSA signatures.
+So one very simple, of course not very satisfactory solution, would be, okay, if you want to run an adaptor signature protocol, then resort to ECDSA signatures.
 So one, maybe a little bit more clever approach would be, okay, you could do it with Schnorr signatures but maybe have a marker in your transaction that says okay this could be aggregated or this could not be aggregated.
 Of course this...
 
@@ -659,12 +659,12 @@ That's unfortunate because now you're revealing to the chain that this is really
 
 Speaker 1: 00:42:47
 
-This is not good for privacy obviously.
+This is not good for privacy, obviously.
 
 Speaker 0: 00:42:49
 
-And of course adapter signatures are an alternative to say, HTLCs, which are used for exactly the same purpose today, except they reveal hash per image, rather than using the signature itself as the data channel.
-So if we're going to, you know, oh, adapter signatures, yay, they're all indistinguishable now.
+And of course adaptor signatures are an alternative to say, HTLCs, which are used for exactly the same purpose today, except they reveal hash per image, rather than using the signature itself as the data channel.
+So if we're going to, you know, oh, adaptor signatures, yay, they're all indistinguishable now.
 And now with half aggregation, oh, wait, we need to add a marker to it to say it can be aggregated.
 We're again saying there's a data carrying here.
 Like how much is that better than just using the HTLCs?
@@ -677,11 +677,11 @@ And maybe this is enough to make sure that you can still run your...
 
 Speaker 0: 00:43:47
 
-Unfortunately, it isn't, because the whole point of an adapter signature is that you would use it for the internal, for the keypath spend.
+Unfortunately, it isn't, because the whole point of an adaptor signature is that you would use it for the internal, for the keypath spend.
 
 Speaker 1: 00:43:55
 
-Yes but I mean you could say like okay aggregate only the other ones and then I think...
+Yes, but I mean you could say, okay, aggregate only the other ones and then I think...
 
 Speaker 0: 00:44:02
 
@@ -690,7 +690,7 @@ Only aggregate the script ones?
 Speaker 1: 00:44:03
 
 No, no, only aggregate the keypath ones and... I looked at this with Jonas and I think we could normal just the atomic swap protocol, we could make it work with that restriction.
-And it's kind of an open question at the moment, like if this would cover all applications of adapter signatures, because like if this restriction is enough to not interfere with adapter signatures, then this would be one way to maybe to move forward in the future, but it's kind of an open problem.
+And it's kind of an open question at the moment, like if this would cover all applications of adaptor signatures, because if this restriction is enough to not interfere with adaptor signatures, then this would be one way to maybe move forward in the future, but it's kind of an open problem.
 
 Speaker 2: 00:44:33
 
@@ -716,15 +716,15 @@ So in that sense, it's not a block size increase, but it's a block verification 
 Speaker 0: 00:45:48
 
 Yeah, it's just like today there will be at least 64 bytes for every signature check being done.
-And with half aggregation, maybe that's the same cost can be per 32 bytes.
-The way that taproot rules already work, they actually require 50 bytes of witness data for every signature check being done.
+And with half aggregation, maybe that's the same cost as can be per 32 bytes.
+The way that Taproot rules already work, they actually require 50 bytes of witness data for every signature check being done.
 So if that rule is maintained, but maybe that rule shouldn't, that rule doesn't really make much sense.
 And yeah, I mean...
 
 Speaker 1: 00:46:18
 
 No, but I tend to agree.
-Like usually bandwidth constraints are much more important than verification time constraints.
+Usually bandwidth constraints are much more important than verification time constraints.
 Spending a little bit more verification time, I'm guessing you're right, but I guess it's more acceptable than maybe increasing the actual block size, the actual data that you need to send around.
 
 Speaker 2: 00:46:35
@@ -736,9 +736,9 @@ How do you see these things starting to gel and combine together?
 Speaker 0: 00:46:43
 
 We've been talking a lot about the provable security of these schemes.
-And that is obviously one impediment for some combinations we have more confidence about than others.
-I'd say like the nesting question is much harder than some other questions and so forth.
-But there is another question too, and that is standardizing all these things and integration in parts of the ecosystem because just having the consensus rules that are compatible with it and a spec or a scheme or a paper that says you can do half aggregated adapter signatures, blah, blah, blah, isn't enough.
+And that is obviously one impediment, for some combinations we have more confidence about than others.
+I'd say the nesting question is much harder than some other questions and so forth.
+But there is another question too, and that is standardizing all these things and integration in parts of the ecosystem because just having the consensus rules that are compatible with it and a spec or a scheme or a paper that says you can do half aggregated adaptor signatures, blah, blah, blah, isn't enough.
 There's a need for how do we make things use them and interact with using them.
 And so, MuSig2 for that now, which is making great progress, that's not the end of the story, right?
 We will need probably how to integrate it in descriptors, how to integrate it in PSBT.
@@ -764,31 +764,30 @@ And these are all very hard questions of a very different nature that also matte
 Speaker 1: 00:49:07
 
 I agree, yeah, and we haven't really touched upon the status of the specifications.
-I think like the MuSig2 pip, as you're saying, It's in a good shape, I think.
-But of course, like we need implementations there.
-Like for FROST, it's a little bit further away.
+I think the MuSig2 pip, as you're saying, is in a good shape, I think.
+But of course, we need implementations there.
+For FROST, it's a little bit further away.
 And yeah, I agree.
 Basically, just basically I'm summarizing, right?
 So the rest is really further down the road.
-And maybe like you're talking about this now, maybe in two years we realize, okay, like there's a much better way to introduce aggregation to the ecosystem or it's a stupid idea or I don't know.
+And maybe you're talking about this now, maybe in two years we realize, okay, there's a much better way to introduce aggregation to the ecosystem or it's a stupid idea or I don't know.
 
 Speaker 0: 00:49:38
 
-You're like, adapter signatures are everywhere today and I'd love that.
+You're like, adaptor signatures are everywhere today and I'd love that.
 
 Speaker 2: 00:49:46
 
 So that's a world we all want to be living in.
 Anything else on your mind?
 So, we've had a somewhat scoped discussion about, I wouldn't say it's particularly well scoped, but it's been scoped somewhat, talking about Schnorr, and then multi-signatures, and threshold signatures, and FROST.
-But like, let's imagine we had another two hours to sit down.
+But, let's imagine we had another two hours to sit down.
 What would be other things that are on your mind that you're thinking about, that you're excited about?
 
 Speaker 1: 00:50:12
 
-I mean, in terms of, I'm not really thinking about it, but like, one thing that always comes up, and I really would need another two hours, and I have to be careful not to go deep here, but it's really the question, okay, can we do anything at all about post-quantum security, like if there's a quantum attacker maybe.
+I mean, in terms of, I'm not really thinking about it, but one thing that always comes up, and I really would need another two hours, and I have to be careful not to go deep here, but it's really the question, okay, can we do anything at all about post-quantum security, if there's a quantum attacker maybe.
 To be honest, I don't even think there's a lot we can do, but we should at least...
-Today.
 Today, but we should at least keep thinking about this.
 This is a question that I often get.
 
@@ -817,7 +816,6 @@ Speaker 3: 00:51:43
 
 Right.
 What you mentioned now was that you also thought it was interesting to see how the sausages made it a little more.
-Yeah.
 About when to roll crypto.
 
 Speaker 2: 00:51:53
@@ -836,5 +834,4 @@ I don't know, I don't know if we're gonna make it before our New Year's, but if 
 
 Speaker 0: 00:52:27
 
-Bye.
 Bye.
