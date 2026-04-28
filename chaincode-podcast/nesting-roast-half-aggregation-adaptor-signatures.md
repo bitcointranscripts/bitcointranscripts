@@ -7,6 +7,7 @@ tags:
   - 'adaptor-signatures'
   - 'bip32'
   - 'cisa'
+  - 'coinjoin'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
