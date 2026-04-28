@@ -11,6 +11,7 @@ tags:
   - 'multisignature'
   - 'musig'
   - 'schnorr-signatures'
+  - 'segwit'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
