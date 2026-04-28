@@ -256,12 +256,12 @@ So, we start the protocol with maybe three people and at some point we need to c
 We need to say after the first round, okay, now let's finish the protocol with exactly those two signers.
 And now either we pick the right signers, and they are online, and they're actually willing to sign the message, then everything is right.
 But if you pick the wrong two signers, then basically the protocol gets stuck and there's nothing we can do except restarting and picking another group of signers.
-And this is a fundamental trade-off that FROST made in a sense, because if you look at cryptographic literature, the academic literature, there have been papers, like decades old, that essentially solved this problem of robustness but the signature schemes or the signing schemes are pretty complicated.
+And this is a fundamental trade-off that FROST made in a sense, because if you look at cryptographic literature, the academic literature, there have been papers, like decades old, that essentially solved this problem of robustness, but the signature schemes or the signing schemes are pretty complicated.
 So as I said, FROST has two rounds, and this makes it very, very nice.
 And I think the best known scheme in the literature that we have known so far requires seven rounds, even in the best case.
 So even if there's no attack at all, you would require seven rounds of communication.
-And now, okay, this is, like, if you look at the paper, like with my academic head on, that's, yeah, you could do it.
-Like if you ask Peter as an engineer, it's like, I know you.
+And now, okay, this is, if you look at the paper, with my academic head on, that's, yeah, you could do it.
+If you ask Peter as an engineer, it's like, I know you...
 
 Speaker 0: 00:14:51
 What, seven rounds?
@@ -271,14 +271,14 @@ Seven rounds, it's crazy, right?
 They wouldn't do this.
 Yeah.
 ROAST kind of is, so yeah, what the FROST people did is they realized that the reason why those old protocols are so complicated is that they have robustness built in.
-So basically the main idea of, I shouldn't say this because like I also had this nice idea of having a two-round scheme, but one of the main design decisions in FROST was basically, okay, just get rid of this robustness property, and then suddenly everything becomes much simpler.
+So basically the main idea of, I shouldn't say this because I also had this nice idea of having a two-round scheme, but one of the main design decisions in FROST was basically, okay, just get rid of this robustness property, and then suddenly everything becomes much simpler.
 And ROAST is now an idea to add robustness again to FROST, but in a really different manner.
 The idea of ROAST is really like it starts FROST sessions in a clever way.
 So I mentioned that when you run a FROST session, it might happen that you pick the wrong subset of signers and then the protocol will get stuck.
-And ROAST doesn't actually fix this directly, but ROAST now is a clever way of starting a new session of the protocol, such that in the end, you know that you only start at most like a linear number of sessions.
-I think you need, like if N and T are the parameters, you need like N minus T plus one sessions at most.
-And this is a way where you can, in some sense, get the best of both worlds in the sense that if everyone is online and willing to sign, then like your first first session that you would start would complete and you get this nice two-round property.
-But if you are under attack or maybe some of the signers is offline or some of the signers are offline, then you spend a few more rounds, but you can still run the, like get the signature within a reasonable amount of time.
+And ROAST doesn't actually fix this directly, but ROAST now is a clever way of starting a new session of the protocol, such that in the end, you know that you only start at most a linear number of sessions.
+I think you need, if N and T are the parameters, you need N minus T plus one sessions at most.
+And this is a way where you can, in some sense, get the best of both worlds, in the sense that if everyone is online and willing to sign, then the first first session that you would start would complete, and you get this nice two-round property.
+But if you are under attack or maybe some of the signers is offline or some of the signers are offline, then you spend a few more rounds, but you can still run the... like get the signature within a reasonable amount of time.
 This is the main idea of ROAST, or the main thing it achieves.
 
 Speaker 2: 00:16:38
@@ -289,14 +289,14 @@ What are the applications you imagine?
 
 Speaker 1: 00:16:48
 
-Peter has already mentioned that FROST already is maybe more like a niche thing than MuSig because it's really only helpful when you really specifically need the threshold property.
-And then if you add ROAST on top of it, I think like ROAST is really helpful in settings where you not only need specifically the threshold property, but where you also need a large threshold setup.
-Like, at Blockstream, we have this liquid sidechain, which is run by a federation and currently has an 11-of-15 setup.
+Peter has already mentioned that FROST already is maybe more a niche thing than MuSig because it's really only helpful when you really specifically need the threshold property.
+And then if you add ROAST on top of it, I think ROAST is really helpful in settings where you not only need specifically the threshold property, but where you also need a large threshold setup.
+At Blockstream we have this liquid sidechain which is run by a federation and currently has an 11-of-15 setup.
 This is already a little bit larger than what you probably do at home, I guess.
 And ROAST really makes sense, and also FROST really makes sense if you scale up to larger parameters.
 If you have large N and large T and 11-of-15 is maybe, yeah, it's larger than 2-of-3, but it could be maybe like 50-of-100 or 60-of-100.
 And this is doable with FROST and ROAST with this specific combination.
-So, and I think this is where it's going to be used.
+And I think this is where it's going to be used.
 It's probably ROAST is nothing that you would use in your 2-of-3 at home, or even like a 3-of-5 at home or something like that.
 
 Speaker 0: 00:17:56
@@ -306,14 +306,14 @@ But maybe because for your 2-of-3, you really just don't want to use a threshold
 Speaker 1: 00:18:02
 
 That's why I mentioned also 3-of-5.
-Like even let's say you have a 3-of-5 at home, I guess you wouldn't need ROAST because it's like, okay, like I picked those three hardware wallets to make a signature or some of it failed, what like, yeah, replace the one that failed with another one and try again.
+Like even, let's say you have a 3-of-5 at home, I guess you wouldn't need ROAST because it's like, okay, I picked those three hardware wallets to make a signature or some of it failed, replace the one that failed with another one and try again.
 You could do this restarting of FROST sessions basically manually.
-So ROAST really I think is helpful when you have some federation of nodes around the world that are running automatically.
+So ROAST really, I think, is helpful when you have some federation of nodes around the world that are running automatically.
 They're supposed to produce a signature every one minute or every ten minutes, and then you need the automatic way of making sure that they really can produce a signature.
 I think this is where ROAST is strong.
 But it's good for these federation use cases, but I think this is really like a niche case in a sense.
 
-## CISA
+## Cross-input Signature Aggregation
 
 Speaker 2: 00:18:49
 
@@ -328,7 +328,7 @@ But the difference is really, think of a multi-signature with multiple participa
 Now signature aggregation can be done interactively or non-interactively, which refers to the rounds of interaction at signing time.
 Is it possible for them to just create their partial signature now once, their individual one, and can a third party aggregate them, or do they really need to collaborate in order to produce that signature?
 Now if we're restricting ourselves to interactive ones, which is certainly the easier thing to build, there is a trivial way of turning any multi-signature scheme into an aggregated signature scheme, namely, everyone just signs everybody's message.
-Because it's interactive, they're talking anyway, like effectively the message could be like, here are all the messages and all the signers.
+Because it's interactive, they're talking anyway, like effectively the message could be: here are all the messages and all the signers.
 
 Speaker 1: 00:20:27
 
@@ -336,14 +336,14 @@ Yeah, you just take all the individual messages, concatenate them, this forms th
 
 Speaker 0: 00:20:32
 
-Or you say the message is key one signs message this, key two signs message that, key three signs message that, and everybody signs that.
+Or you say the message is: key one signs message this, key two signs message that, key three signs message that, and everybody signs that.
 That makes an interactive aggregate signature scheme, like just take a multi-signature scheme and turn into that and you're there.
 
 Speaker 1: 00:20:49
 
 Modulo some subtle details.
 But, yeah, let's not go into that.
-But just as a warning, so don't do this at home.
+But just as a warning, don't do this at home.
 
 Speaker 0: 00:20:56
 
@@ -352,7 +352,7 @@ Still have your friendly neighborhood cryptographer have a look at it.
 
 Speaker 2: 00:21:04
 
-Before you move on, that's just because of being able to actually tease out like private keys based on reused nonces or like what's the, what is the actual issue that you'd be most concerned.
+Before you move on, that's just because of being able to actually tease out private keys based on reused nonces or what's the actual issue that you'd be most concerned.
 If I did that, what would be the first mistake I would make?
 
 Speaker 0: 00:21:21
@@ -361,7 +361,7 @@ In the MuSig paper, I remember Russell O'Connor came up with this fairly far-fet
 
 Speaker 1: 00: 21:41
 
-There could be a problem if you're a single party and you have like you have multiple messages that you want to sign.
+There could be a problem if you're a single party and you have multiple messages that you want to sign.
 You can be tricked into, and you participate multiple times, you can be tricked into signing the same one instead of different ones.
 
 Speaker 1: 00:21:58
@@ -379,20 +379,20 @@ And that paper was like, maybe don't do just that, because...
 
 Speaker 1: 00:22:30
 
-Apparently, like if you have a simple idea and it looks obviously correct and you try to secure and you try to really prove it secure, it can turn out that there are actually some subtle problems with it.
+Apparently, if you have a simple idea and it looks obviously correct and you try to secure and you try to really prove it secure, it can turn out that there are actually some subtle problems with it.
 
 Speaker 0: 00:22:43
 
 Interactive aggregate signature scheme, we now know how to do that.
 So we can take MuSig1, MuSig2, those can be turned into an aggregate signature scheme if needed.
-And so that is something that could be used for say cross-input aggregation, but only under the condition that all the input signers are collaborating.
-And usually that is the case, usually there's just one party involved, but say in a CoinJoin transaction there are multiple participants, so if such a scheme were to be deployed and you have a CoinJoin then of course CoinJoins are at the same time the strongest motivation for wanting something like cross-input signature aggregation, I think.
-Because think about it this way, every input in a Bitcoin transaction today has one signature.
+And so that is something that could be used for, say, cross-input aggregation, but only under the condition that all the input signers are collaborating.
+And usually that is the case, usually there's just one party involved, but, say, in a CoinJoin transaction, there are multiple participants, so if such a scheme were to be deployed, and you have a CoinJoin, then of course CoinJoins are at the same time the strongest motivation for wanting something like cross-input signature aggregation, I think.
+Because think about it this way: every input in a Bitcoin transaction today has one signature.
 In sort of a MuSig, Taproot world, they will in fact all have exactly one signature.
 That signature takes up some block space.
 But if we were to be using a cross-input signature aggregation scheme, there would just be one signature for the whole transaction.
 So those are cost savings.
-And it is a cost saving that, I shouldn't call it a CoinJoin, but like a PayJoin, where like, A wants to pay B and C wants to pay D, they can join these two transactions into A and C pay B and D.
+And it is a cost saving that, I shouldn't call it a CoinJoin, but like a PayJoin, where A wants to pay B and C wants to pay D, they can join these two transactions into A and C pay B and D.
 And interestingly, in a cross-input signature aggregation world, this aggregate transaction would be smaller than the sum of the individual ones because there's only one signature rather than two.
 
 Speaker 2: 00:24:31
@@ -404,9 +404,9 @@ Speaker 0: 00:24:33
 No, that economic motivation is small.
 It's partially due to the fact that SegWit introduced a discount for witnesses, so those signatures are already relatively inexpensive.
 They also have a relatively low cost on the ecosystem, but this makes the differential between the two fairly small.
-So it isn't a like, wow, this is going to incentivize everyone to start merging their transactions.
-But it is a nice thing in the sense of like it gives a potential justification, like, hi, I regulator, why are you merging your transactions?
-Being able to say, well, it's cheaper is a much better justification than like, wohoo.
+So it isn't like, wow, this is going to incentivize everyone to start merging their transactions.
+But it is a nice thing in the sense it gives a potential justification, like, hi, I regulator, why are you merging your transactions?
+Being able to say, well, it's cheaper, is a much better justification than like, wohoo.
 
 Speaker 2: 00:25:23
 
@@ -416,24 +416,24 @@ Speaker 0: 00:25:23
 
 So that's interactive aggregation.
 It has complications.
-All aggregate signature schemes that we want to do across more than individual inputs, like need consensus rules to work with them.
-In the same sense that like, you know, as explained, like in a way there's a relation with batch validation, where in batch validation we're thinking of, well, you first run all the scripts, pretend all the signatures succeed, but keep a list of all signature checks that have to be done, and now we do all those signature checks at the end.
+All aggregate signature schemes that we want to do across more than individual inputs need consensus rules to work with them.
+In the same sense that, you know, as explained, in a way there's a relation with batch validation, where in batch validation we're thinking of, well, you first run all the scripts, pretend all the signatures succeed, but keep a list of all signature checks that have to be done, and now we do all those signature checks at the end.
 In a cross-input signature aggregation world, it would be exactly the same, except there is now just a single signature provided rather than multiple signatures.
 And even technically, these schemes are very similar, so that the math that's used for both is comparable except of course in one case you have multiple signatures that need to be merged together versus just one.
 
 Speaker 1: 00:26:29
 
-So, another reason to see why this requires a consensus change is really like what consensus supports now is strong signature verification.
+So, another reason to see why this requires a consensus change is really what consensus supports now is strong signature verification.
 This is really like an algorithm that takes a single public key, a single message transaction and a single signature.
-And really the primitive we are talking about here, the verification side of it would take multiple public keys, multiple messages, where they all could be the same transaction but like a little bit different, okay?
+And really the primitive we are talking about here, the verification side of it would take multiple public keys, multiple messages, where they all could be the same transaction but a little bit different, okay?
 But only one signature.
 So really this is a different interface already.
-Like, you couldn't just do this with the current Schnorr verification algorithm that we have in consensus code right now.
+You couldn't just do this with the current Schnorr verification algorithm that we have in consensus code right now.
 
 Speaker 0: 00:27:07
 
 And I think a more fundamental reason, like today you cannot spend any input without a signature, assume it has a public key.
-Like that would be a problem if you could spend an input without a signature.
+That would be a problem if you could spend an input without a signature.
 Yet, if we go to a cross input signature aggregation world, a transaction with two inputs, well, there's only going to be one signature.
 That means there's at least one input without a signature.
 Of course, the idea is that signature will cover all of them simultaneously, but the rules cannot think about that.
@@ -441,18 +441,18 @@ Any kind of cross-input aggregation scheme is going to require an additional con
 
 Speaker 2: 00:27:49
 
-The community didn't feel like it was worth waiting to more fully bake cross input?
+The community didn't feel like it was worth waiting to more fully baked cross-input?
 
 Speaker 0: 00:27:54
 
-Yeah, I think, so when the discussions around Taproot, which North Signature started, there were a whole lot of ideas and many of them were actively being discussed because there were like improvements to Taproot, there was Graftroot, there was Groot, and so forth.
+Yeah, I think, so when the discussions around Taproot, which North Signature started, there were a whole lot of ideas and many of them were actively being discussed because there were improvements to Taproot: there was Graftroot, there was Groot, and so forth.
 And how those would interact with signature aggregation is kind of unclear because there is a complication here, which is soft fork compatibility.
 So we want the property obviously that a change that introduces cross-input aggregation is a soft fork, and also that things that could be built on top, extensions to the script language later, are a soft fork with respect to signature aggregation already existing.
 And so this isn't a fundamental problem, but it's kind of annoying.
 Say, imagine there's an opcode change that introduces something like an opif, just something that changes the execution path through a single script.
 You need to make sure that old nodes and new nodes agree on what signatures are being aggregated, even though some of them may execute the checksig that's being skipped and others that don't.
 So if you think about it, it's non-trivial.
-Like one possibility is doing like, well, whenever a soft fork is introduced that changes which codes are executed, you create a new separate batch for aggregated signatures, you just do the aggregated signatures that are according to the pre-soft fork nodes and then everything that's added or changed with respect to that, they go into a new bucket and you end up with two signatures, one for all the signatures, or one aggregated signature for all the things visible to old nodes and then another one for the additional ones that are visible to new nodes.
+One possibility is doing, well, whenever a soft fork is introduced that changes which codes are executed, you create a new separate batch for aggregated signatures, you just do the aggregated signatures that are according to the pre-soft fork nodes and then everything that's added or changed with respect to that, they go into a new bucket and you end up with two signatures: one for all the signatures, or one aggregated signature for all the things visible to old nodes, and then another one for the additional ones that are visible to new nodes.
 That's one idea.
 Another one, one that I'm I think more in favor of, is, so, Taproot has this internal key, which is like the special elevated key which we believe to be the everyone agrees situation.
 
@@ -463,7 +463,7 @@ Right, the common path.
 Speaker 0: 00:30:20
 
 And that one involves no scripts at all.
-Like the Taproot consensus rules say you can spend a Taproot output by just giving a signature on the, not the internal key, but on the tweaked key, and there are no scripts involved.
+The Taproot consensus rules say you can spend a Taproot output by just giving a signature on the, not the internal key, but on the tweaked key, and there are no scripts involved.
 So all the complexities about compatibility in script just don't exist.
 We could work on a system with cross-input aggregation that just does aggregation of signatures on the key path spends.
 And this disappears, it means it isn't as efficient as it could be because you don't get the aggregation for signatures occurring in scripts.
@@ -476,7 +476,7 @@ Speaker 1: 00:31:17
 
 But also on the cryptography side still.
 So, you said like you gave this trivial way or a naive way of creating a signature aggregation scheme from a multi-signature scheme.
-And now we have multi-signature schemes and you said like the math will be pretty similar but it's actually, if you look at the specifics of this, you probably wouldn't want to use something based on, let's say, MuSig, or MuSig1, or MuSig2, and any of these.
+And now we have multi-signature schemes, and you said like the math will be pretty similar but it's actually, if you look at the specifics of this, you probably wouldn't want to use something based on, let's say, MuSig, or MuSig1, or MuSig2, and any of these.
 
 Speaker 0: 00:31:45
 
@@ -487,11 +487,11 @@ Speaker 1: 00:31:49
 Kind of overkill, yeah.
 What you actually need is a little bit weaker.
 And also there are other issues when it comes to compatibility with batch verification or with batch validation.
-One way to think about this is really like in a signature aggregation scheme, it's a little bit like a multi-signature scheme, but as you said, like the verifier will do the key aggregation because the verifier gets all the individual public keys and somehow would need to aggregate those keys.
+One way to think about this is, in a signature aggregation scheme, it's a little bit like a multi-signature scheme, but as you said, the verifier will do the key aggregation because the verifier gets all the individual public keys and somehow would need to aggregate those keys.
 And if we do this in a MuSig style, this key aggregation, then this key aggregation again is an elliptic curve computation, but we couldn't add this to the batch for doing batch validation.
 So we couldn't batch it together with a signature validation or with a Taproot commitment openings.
-So probably there are other signature aggregation schemes that more different from MuSig that would actually allow for fetch validation.
-So yeah, really, it's like, as you say, like you could construct it basically from MuSig, but MuSig is overkill.
+So probably there are other signature aggregation schemes more different from MuSig that would actually allow for fetch validation.
+So yeah, really, it's like, as you say, you could construct it basically from MuSig, but MuSig is overkill.
 And that's the reason not to do that.
 
 Speaker 0: 00:33:01
@@ -515,7 +515,7 @@ Speaker 1: 00:33:59
 Also when it comes to cryptographic assumptions, right?
 Like all provable security and cryptography is always relative to some hard problem.
 I mean I mentioned like we can prove Schnorr signature secure if you assume that discrete logarithm problem is hard and some other side-side conditions.
-And also like for example I mentioned, Bellare-Neven scheme differs from MuSig in terms of what do we actually need to assume as a hard problem.
+And also, for example, I mentioned, Bellare-Neven scheme differs from MuSig in terms of what do we actually need to assume as a hard problem.
 And this is another question that becomes much more relevant now that you try to bake this into Bitcoin consensus.
 
 ## Half-aggregation
@@ -527,8 +527,8 @@ How so?
 
 Speaker 1: 00:34:37
 
-Like what we talked about so far is what we also call full aggregation.
-And it's, we call it full aggregation because if you have ends, in a sense, like you have N parties, they all have their public keys, they all have their messages or their transactions, and the resulting signature you aggregate is really just, it looks like one, or it has the size of one signature.
+What we talked about so far is what we also call full aggregation.
+We call it full aggregation because if you have ends, in a sense, like you have N parties, they all have their public keys, they all have their messages or their transactions, and the resulting signature you aggregate is really just... it looks like one, or it has the size of one signature.
 So it's really like you compress it to, like you have N parties involved, N messages involved.
 
 Speaker 0: 00:35:05
@@ -541,7 +541,7 @@ So literally half of the signature becomes independent of N and half of it remai
 
 Speaker 1: 00:35:30
 
-Or in other words, like if N grows, like the savings will tend to a half of the size.
+Or in other words, if N grows, the savings will tend to a half of the size.
 
 Speaker 0: 00:35:38
 
@@ -551,7 +551,7 @@ Speaker 1: 00:35:48
 
 And so you get less savings, but the advantage really now is that half aggregation is non-interactive.
 And it's actually a public operation.
-It really means like I have two Schnorr signatures or ten or whatever, I know nothing about the secret keys of those Schnorr signatures.
+It really means: I have two Schnorr signatures or ten or whatever, I know nothing about the secret keys of those Schnorr signatures.
 So these are not signatures that I have generated.
 
 Speaker 0: 00:36:10
@@ -591,7 +591,7 @@ So that is a 32 bytes per signature over the whole block that disappears.
 
 Speaker 1: 00:38:08
 
-The savings would be huge and that's why it is a very interesting idea but because it's really like not it's crossing transaction borders like the issues it could create potentially are...
+The savings would be huge and that's why it is a very interesting idea but because its crossing transaction borders like the issues it could create potentially are...
 
 Speaker 0: 00:38:23
 
