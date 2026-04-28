@@ -9,6 +9,7 @@ tags:
   - 'cisa'
   - 'coinjoin'
   - 'multisignature'
+  - 'musig'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
