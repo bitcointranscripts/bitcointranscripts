@@ -34,7 +34,7 @@ Yeah, that was a great introduction.
 That's kind of what got me into this field is that it does sound like magic and it does sound like you probably shouldn't be able to do something like that, but you can.
 I'll talk a little bit about the internals of how Spiral works at the end, but I'll kind of first just like, let's just try to situate, the security model of a server that doesn't learn what you query is kind of complicated and so let's just first try to compare it to all the other ways you can check a Bitcoin balance.
 And let's just like situate it amongst the many, many alternative ways, one could look up the balance of a Bitcoin address.
-A little background on me, I was a graduate student at Stanford and this PAR project was kind of my senior project for my master's and it was advised by Dan Bonet but I went and got a real job, and so I stopped working on it for a little bit.
+A little background on me, I was a graduate student at Stanford and this PIR project was kind of my senior project for my master's and it was advised by Dan Bonet but I went and got a real job, and so I stopped working on it for a little bit.
 Then the itch came back and I worked on this again and published this paper, I believe, I guess I presented it in May of this year.
 So we're starting a company around this technology, I'm quitting my job soon.
 All right, so today, I think you guys and me probably have a very similar goal, which is what we want our private-like clients.
@@ -125,7 +125,7 @@ We need to think a little bit about the pay or incentivization structure for ser
 This is a kind of class in computation.
 So how can we make it feasible or practical for them?
 And long term, I think I would like to see an open standard for PIR for this data.
-So what we want is something that's not tied to a company or a person or an organization, but just kind of ideally, like maybe a BIP or something that allows us to not tie ourselves to any particular scheme and do this PAR thing as an extension of our current way doing a get block RPC or whatever.
+So what we want is something that's not tied to a company or a person or an organization, but just kind of ideally, like maybe a BIP or something that allows us to not tie ourselves to any particular scheme and do this PIR thing as an extension of our current way doing a get block RPC or whatever.
 Would you like me to just go through the homomorphic encryption step?
 Because I got the idea.
 
@@ -478,7 +478,7 @@ You know, computation is just money, as we know from proof of work, right?
 So A question is, if clients were willing to pay for it, if I was willing to pay for six CPU seconds for my query, maybe that would be okay.
 I might not be willing to pay 10,000 times six CPU seconds.
 So we'd have to see what clients are kind of, you know, quote unquote willing to pay.
-And then also, I guess the last thing I would say is it would be very feasible to use PAR just for blocks.
+And then also, I guess the last thing I would say is it would be very feasible to use PIR just for blocks.
 So if you think that the privacy leakage is an issue or you're interested in that kind of angle on it, I think just doing PIR, just in that block retrieval phase of the standard client block header thing, if you want to do PIR, I think that is very feasible.
 One other thing, I think that there's a, there's also a kind of narrow use case for just onboarding or just set up.
 I think if you're like a client is setting up and it's taking weeks to sync your wallet, I think it's really powerful that in the meantime you can make queries for addresses.
