@@ -14,6 +14,7 @@ categories:
 ## Introduction to `Taproot` Channls
 
 **Arik Sosman:**  00:00:04
+
 My name is Arik, I work at Spiral and most recently I've been working on adding support for `Taproot` channels.
 At least I try to work on that, but I'm getting pulled back into Swift bindings.
 And this presentation is supposed to be about why the `Taproot` spec is laid out the way it is.
@@ -73,9 +74,9 @@ So not great, and really highlights how trivial it is to attack and to extract a
 It's really, like I wish this equation were written out more frequently because I think people understate quite how trivial of an attack this is.
 I mean you can write Python code in like two minutes.
 
-** Audience:** 00:08:11
+** Audience:**  00:08:11
 
-So Sony got pwned, they were reusing nonces on all of their ECBSA signatures.
+So Sony got pwned, they were reusing nonces on all of their `ECDSA` signatures.
 It was the same nonce for all the signatures for all the Playstations.
 
 ## Issues with MUSIG & Lightning
@@ -357,6 +358,7 @@ what would happen if it were to be ?
 What scenario are we trying to avoid?
 
 **Audience:** 00:47:29
+
 A payment being redeemed without it having gone through.
 
 **Arik Sasman:** 00:47:32
