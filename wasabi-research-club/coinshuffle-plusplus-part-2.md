@@ -76,12 +76,12 @@ This will be very useful.
 
 **TIm Ruffing:** 00:04:19
 
-Okay, this is a coin join seminar.
+Okay, this is a CoinJoin seminar.
 So again, we can quickly go over the slide because I don't need to explain you how mixing works.
-We do it via a multi-input, multi-output transaction that you all know as a coin join.
+We do it via a multi-input, multi-output transaction that you all know as a CoinJoin.
 Now the interesting thing here is, if you want to do this transaction, here Alice, Bob and Carol need to come up with a new list of, with a fresh list of output addresses, C prime, A prime, B prime, in a way that should, nobody can tell which of these new addresses belongs to which user.
 And the way we're going to do this is a peer-to-peer mixing protocol.
-And in this talk, our peer-to-peer mixing protocol is CoinShop++.
+And in this talk, our peer-to-peer mixing protocol is CoinShuffle++.
 
 ## Peer-to-peer mixing.
 
@@ -130,7 +130,7 @@ However, no matter how malicious the server is, the server can't break anonymity
 **TIm Ruffing:** 00:09:00
 
 So how does `CoinShuffle++` actually work?
-It's based on a DC mode which basically stands for Dining Cryptographers Network.
+It's based on a DC-net which basically stands for Dining Cryptographers Network.
 And Dining Cryptographers network is a weird name, actually rather simple concept.
 Say we have again three users now and Assume these three users have pairwise shared keys and the keys are the numbers on the triangle here.
 So, for example, Alice has a shared key with Carol.
@@ -161,7 +161,7 @@ This is a form of anonymity, basically.
 This was kind of a very simple and awkward example because if you want to do this in practice, we need to obtain shared symmetric keys.
 This is not hard because we can just do a cryptographic key exchange.
 This is kind of standard.
-We can do the key addition, for example.
+We can do the Diffie-Hellman key exchange, for example.
 But functionality-wise, What we want to do in practice is we don't want to send just one bit message, we want to send longer messages, for example, with common choices.
 This is also not too hard to do.
 Now I've shown you an example with the bit field, which is the field which is 0 and 1 basically as a mathematical field.
@@ -188,7 +188,7 @@ So in order to make this work, we already need some protocol that provides anony
 You need, in order to get an anonymity here, you need another anonymous sub-protocol that gives you a slot assignment, because this is hard, those protocols in the literature do the various tricks that mostly are not great because they can fail in practice.
 So for example, what they often do is that you guess a slot randomly.
 Say we have a thousand slots available and there are users, and then every user guesses a random slot.
-And this kind of works in practice, but it's pretty annoying because now instead of running 3 ADC nets, we need to run a thousand 3C nets.
+And this kind of works in practice, but it's pretty annoying because now instead of running 3 DC-nets, we need to run a thousand DC-nets.
 So we need a lot more communication.
 And Moreover, even like with a thousand, it could be that Alice and Bob both select the same slot and then, let's say they both select slot N, then in slot N we would have not m1 or m2, but we actually would have m1 plus m2.
 And this is just not the result that we want.
@@ -199,7 +199,7 @@ So this is not great.
 **TIm Ruffing:** 00:17:46
 
 What we do instead is based on an idea that's pretty old already.
-It appeared shortly after the CEMENTS.
+It appeared shortly after the DC-nets.
 
 **Audience 1:** 00:18:05
 
@@ -355,7 +355,7 @@ Well, in case of disruption, break anonymity.
 
 And, well, this may sound like a bad idea, but let me explain why this actually works.
 And to understand why this makes sense, we need to have a look at the flowchart of the coin shuffle run.
-So the first thing we do, like everybody generates the fresh Bitcoin interest, this is gonna be the output in the coin transaction on the right side and it will be our message in the peer-to-peer mixing protocol.
+So the first thing we do, like everybody generates the fresh Bitcoin address, this is gonna be the output in the coin transaction on the right side and it will be our message in the peer-to-peer mixing protocol.
 Then, peers do key exchanges.
 They run the Hellman key exchanger.
 I don't need to explain you how it works.
@@ -430,7 +430,7 @@ So he could swap Alice's address, Swap a random address to his own address
 For example, yeah, What I was saying before is that the only thing Alice now at the end of the DZNet round, what she can do is she can look at the set of messages of the results of the protocol and see if her old message is there, right?
 But she doesn't know if the other messages are all there.
 She will see some messages there, for example, if Kevil's message has been replaced or not.
-And the important thing at this step here is that, however, all the peers in the protocol need to agree whether disruption has happened or not because if it has not if there was no disruption then like this is the case we see now on the slides and then they will go ahead and create a contract transaction and hopefully sign it.
+And the important thing at this step here is that, however, all the peers in the protocol need to agree whether disruption has happened or not because if it has not if there was no disruption then like this is the case we see now on the slides and then they will go ahead and create a CoinJoin transaction and hopefully sign it.
 However, if one of them was disrupted, then what they want to do is They want to reveal the key exchange sequence, which is basically a standard de-anonymization step.
 Basically, it means that we all agree, like all the peers in the protocol agree that we give up this round, we give up anonymity in this round.
 And we discard the addresses that we generated at the beginning.
@@ -628,9 +628,9 @@ I think this is all I wanted to say here.
 
 **TIm Ruffing:** 00:50:39
 
-I can actually show you how this anonymity attack on this end works.
+I can actually show you how this anonymity attack on Dissent works.
 I don't need to tell you a lot about this end but I think it can still be instructive.
-The only thing I think you need to know is that like the three points on top here, this end proceeds in broadcast rounds and the outcome of the protocol is revealed to all the users in the last broadcast and also a network attacker sees the outcome of the protocol in the last broadcast.
+The only thing I think you need to know is that like the three points on top here, Dissent proceeds in broadcast rounds and the outcome of the protocol is revealed to all the users in the last broadcast and also a network attacker sees the outcome of the protocol in the last broadcast.
 An outcome is to remind you what is the output over, what is the outcome over P2P mixing protocols, just a list of shuffled messages.
 Now let's say we have Alice, Bob and Carol, and they all have their fixed messages, their documents, and Bob is the honest guy here, and we are the network attacker.
 Now, what we do is, We just let the users run the protocol.
@@ -677,9 +677,9 @@ So How is it that you can figure out Bob's message?
 **TIm Ruffing:** 00:54:43
 
 Okay, I think there are multiple things here.
-So, yes, I didn't explain to you how this works.
-It works differently from a DCnet.
-So basically, it's a little bit like or it's pretty similar to the contra of the one that you also discussed.
+So, yes, I didn't explain to you how Dissent works.
+It works differently from a DC-net.
+So basically, it's a little bit like or it's pretty similar to the CoinJoin of the one that you also discussed.
 But my point here is that it doesn't really matter, right?
 So the attack that I show here would equally be true if we would try to use fixed messages in CoinShuffle itself and this would be exactly the same issue.
 So it doesn't depend on really how the protocol looks like.
@@ -706,7 +706,7 @@ And Now it's getting interesting.
 So because we didn't want to trust this bulletin board in the middle of the server in the middle for anonymity.
 But if you think of the server in the middle being the malicious network attacker, Then suddenly it's very, very easy to block messages, right?
 You just don't forward them.
-Like think of, I think last week I mentioned the simple example of my RST server, just as an example of a server that broadcasts your messages to everybody else.
+Like think of, I think last week I mentioned the simple example of my IRC server, just as an example of a server that broadcasts your messages to everybody else.
 So basically in this setting, if you have the server, you can always claim more.
 Look, Bob didn't send the message.
 He's offline.
@@ -967,7 +967,7 @@ Sorry but isn't a double spend the same as not signing the CoinJoin at the end r
 
 The problem is just that you don't figure it out so quickly, right?
 So and you don't know, right?
-As I've shown you on the slides, basically, the protocol is finished as soon as you get the signatures on the CoinJoin message, the content of the action from everybody else, then you have a signed CoinJoin.
+As I've shown you on the slides, basically, the protocol is finished as soon as you get the signatures on the CoinJoin message, the CoinJoin transaction from everybody else, then you have a signed CoinJoin.
 Then if naively then you think like the protocol is finished, I just need to broadcast the transaction to the network now and then it runs through.
 But yeah, like in reality, people could double spend maybe a minute later or so.
 Not sure how realistic a minute is.
