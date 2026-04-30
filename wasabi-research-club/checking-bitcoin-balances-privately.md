@@ -205,8 +205,8 @@ Wasabi is `SegWit` only, so we don't have to create filters `pre-SegWit`, August
 
 **Audience 1:** 00:19:57
 
-The filters are all essentially a compact representation of all `BECH-32` addresses in a block?
-Single public key `BECH-32` addresses.
+The filters are all essentially a compact representation of all `bech32` addresses in a block?
+Single public key `bech32` addresses.
 So they're very compact, three years ago, because it was a minority of people use those addresses more and more they become larger and larger but they're they're they're very space efficient I don't know the exact details maybe Max can answer but the exact
 
 **Max Hillebrand:** 00:20:31
@@ -278,7 +278,7 @@ So the total size of our database is roughly one gig right now.
 We translate every, all UTXOs kind of reduced down to about a gig of data.
 If we instead made the set all UTXOs and we didn't just take the five most recent ones for every address, the database would not be much larger.
 It would be like a small multiple, like maybe three or four times larger, that would be kind of feasible.
-I guess when I'm thinking about it, I suppose it helps that you guys only support the `BECH-32` addresses, because That means there's kind of a limited set of addresses that are on chain that have transactions for that.
+I guess when I'm thinking about it, I suppose it helps that you guys only support the `bech32` addresses, because That means there's kind of a limited set of addresses that are on chain that have transactions for that.
 But yeah, we need to think about how big would it be to include all transaction history?
 Because UTXOs are very different than every transaction.
 So, the problem that you guys face with block filters is mostly that you have to download this gigabyte of things to get started, is that the issue?
@@ -459,7 +459,7 @@ So it's like very, I mean, like if the database was 100 times bigger, it would b
 
 **Max Hillebrand:** 00:34:17
 
-Yeah, like, I mean, just general, like, it's a very broad question, but is it, so if we want to have the full TX outset of all, like, of, but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all `SegWit` and `Taproot` outputs yep and let's say we have I don't know 10,000 users or so and each of them has let's say, a thousand addresses or so.
+Yeah, like, I mean, just general, like, it's a very broad question, but is it, so if we want to have the full TXO outset of all, like, of, but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all `SegWit` and `Taproot` outputs yep and let's say we have I don't know 10,000 users or so and each of them has let's say, a thousand addresses or so.
 And this is still rather small scale, but is this completely crazy?
 
 **Samir Menon:** 00:35:03
@@ -536,7 +536,7 @@ You know that it's less than or equal to, but you don't know what gap was left f
 
 **Max Hillebrand:** 00:40:08
 
-Exactly and then you can't do child pays for parent fee calculations.
+Exactly and then you can do child pays for parent fee calculations.
 
 **Max Hillebrand:** 00:40:17
 
@@ -864,7 +864,7 @@ But obviously for an open standard, we're going to need open source clients and 
 
 Cool, thank you.
 
-Speaker 4: 01:00:36
+**Audience 5:** 01:00:36
 
 So I just arrived.
 Is there a way to summarize whole Spiral work in a, like, like on five?
@@ -874,7 +874,7 @@ Is there a way to summarize whole Spiral work in a, like, like on five?
 That's magic.
 Yeah, I think the summary, the best summary is honestly Max's at the beginning, which was just like, basically Spiral is a way to retrieve an item from a database without letting it ever learn what item you retrieved.
 
-Speaker 4: 01:01:14
+**Audience 5:** 01:01:14
 
 What does that mean?
 
@@ -889,7 +889,7 @@ And the point is the server never learned, you know, what the encrypted bits wer
 It never learns what the sum of everything was.
 It just kind of does the computation and sends the encrypted result back to the client.
 
-Speaker 4: 01:02:12
+**Audience 5:** 01:02:12
 
 Oh, okay.
 Okay, it's like a cryptographic challenge protocol that's like the server is sending bytes, but those bytes are not the address, but somehow be the client server challenge, you can establish the address or the information that the server is sending on the client.
@@ -906,7 +906,7 @@ The catch is that it's expensive for the server to do the computation.
 So you know the server has to invest a lot of effort to kind of answer your query.
 So you might need to eventually pay them or like in some way incentivize their their behavior
 
-Speaker 4: 01:03:23
+**Audience 5:** 01:03:23
 
 How expensive is it so expensive as?
 For the entire Bitcoin transaction history Blockchain wouldn't be able to run on a single server no matter how big you are trying to buy?
@@ -930,7 +930,7 @@ Then we'll have to think of a better way to kind of batch your queries.
 Yeah, so Adam, there's multiple layers of why this might be very difficult for us to use.
 One is we might want the transaction history, so this is the whole TX outset instead of the UTXO set.
 
-Speaker 4: 01:04:49
+**Audience 5:** 01:04:49
 
 We definitely want that, so we cannot get that?
 
@@ -939,7 +939,7 @@ We definitely want that, so we cannot get that?
 We could, but then the size of the database gets larger because you need to store all outputs, not just the unspent ones.
 And so that's the first issue.
 
-Speaker 4: 01:05:05
+**Audience 5:** 01:05:05
 
 But how large?
 Like so large that we cannot run on a server or we can buy that big server for it?
@@ -960,7 +960,7 @@ And so we have I don't know 10,000 users with each 10,000 addresses making queri
 You would have to only do it once.
 Well, next time you open the wallet, you might have received a coin to one of those many addresses.
 
-Speaker 4: 01:06:49
+**Audience 5:** 01:06:49
 
 Oh, yeah, you're right.
 Yes.
@@ -989,7 +989,7 @@ It seems massively big as a concept.
 And we can use it in many different areas.
 One, for example, might be to query the mempool of someone else, which you boot up your client and you have unconfirmed transactions and this way you could be able to get them.
 
-Speaker 4: 01:08:45
+**Audience 5:** 01:08:45
 
 So I did that in hidden wallet.
 I was querying the entire `mempool` of all the nodes I'm connected to, but it got expensive pretty fast.
@@ -1001,7 +1001,7 @@ I don't know if that's interesting.
 But I think that today your options are pretty bad.
 So I think at least on that front, yeah, we're kind of clearly better than the best way you have today to kind of look up the address of a balance that you don't already have in your wallet, of an address.
 
-Speaker 4: 01:09:35
+**Audience 5:** 01:09:35
 
 So that is a super important point.
 So what are people looking in block explorers?
@@ -1051,7 +1051,7 @@ Yeah, I think another way to think about it would be, if you want to just kind o
 If you run Spiral in AWS, you know, like you can be very confident that they don't learn anything about what you query.
 But you also don't have to take it with you when you move and figure out your ISPs, like static IP situations so you can use it on your phone when you're going somewhere or something like that.
 
-Speaker 4: 01:13:35
+**Audience 5:** 01:13:35
 
 So if I understand it correctly, the reason why we cannot use it is because There are two problems here.
 First, if we want to have the entire transaction history of an address, then we would have to run a server that might be too big for us.
@@ -1111,12 +1111,12 @@ Certainly, I mean, spent.
 So something cool about spent coins is that once they're spent, they can't come back.
 So yeah, we can exploit that.
 
-Speaker 4: 01:17:56
+**Audience 5:** 01:17:56
 
 Lucas, what's your take about all this?
 Can we use Spiral somehow we use it to make Wasabi like really light?
 Or even should we, even if we could work it out?
-Mike, you are the one who wrote the Columbus Rites Theater stuff, so you put a lot of thoughts into around here.
+Mike, you are the one who wrote the `Golomb-Rice filter` stuff, so you put a lot of thoughts into around here.
 
 **Lucas Ontivero:** 01:18:37
 
@@ -1183,7 +1183,7 @@ But what are you thinking of that is global that these explorers would show?
 
 Well, of course we don't know, right?
 
-Speaker 4: 01:25:31
+**Audience 5:** 01:25:31
 
 IP address, Bitcoin address.
 
@@ -1231,7 +1231,7 @@ So we found ways to exploit the fact that with fully homomorphic encryption, you
 So we kind of, we encrypt a function that expands the query.
 So we can send a very small query and then the server can do work to expand it into a vector.
 
-Speaker 4: 01:29:00
+**Audience 5:** 01:29:00
 
 That's pretty cool.
 Yeah, okay,
@@ -1340,21 +1340,21 @@ Okay.
 The token gets created during input registration and you can only register an output if you present such a token and it's anonymous e-cash so to say.
 Very rough explanation.
 
-Speaker 4: 01:35:43
+**Audience 5:** 01:35:43
 
 Cool.
-Are you familiar with the Chowmian blind signatures?
+Are you familiar with the chaumian blind signatures?
 
 **Samir Menon:** 01:35:49
 
-Chowmian blind signatures?
+chaumian blind signatures?
 Yes.
-I'm familiar with the name Chowmian, but no, I haven't heard of Chowmian blind signatures.
-Blind signatures probably did a piece set about that, but I could not off the top of my head say what exactly it is.
+I'm familiar with the name chaumian, but no, I haven't heard of chaumian blind signatures.
+Blind signatures probably did a p-set about that, but I could not off the top of my head say what exactly it is.
 It's for voting, right?
 I think.
 
-Speaker 4: 01:36:09
+**Audience 5:** 01:36:09
 
 Yeah.
 So key verified anonymous credentials are a generalization of the blind signatures.
@@ -1372,7 +1372,7 @@ Yeah, they're connected.
 
 **Max Hillebrand:** 01:37:06
 
-As far as I remember we do use peterson commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
+As far as I remember we do use pedersen commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
 
 **Samir Menon:** 01:37:15
 
@@ -1442,7 +1442,7 @@ It's true.
 I suppose academic cryptographers are less dangerous.
 You know, I think we mostly write papers and that's it.
 
-Speaker 4: 01:40:05
+**Audience 5:** 01:40:05
 
 So to be fair, we hired a cryptographer for this, so that's okay.
 But he's not here.
@@ -1458,7 +1458,7 @@ That's what a cryptographer would do, right?
 That's that's exactly they would say, we're not going to roll around, we're going to get a library, right?
 So you did the right thing.
 
-Speaker 4: 01:40:34
+**Audience 5:** 01:40:34
 
 We kind of did it all, right?
 Like we wrote a lot of cryptography code.
@@ -1495,7 +1495,7 @@ Cool.
 Well, most important questions first.
 Guys, what do you have for Samir for the next 15?
 
-Speaker 4: 01:42:46
+**Audience 5:** 01:42:46
 
 How about a big one?
 All right, go ahead, Jumar.
@@ -1559,7 +1559,7 @@ Yeah, it's not that amenable to hardware acceleration.
 **Audience 3:** 01:45:44
 
 You preceded me with the question I was going to ask.
-If the implementation on FBAs or ASICs could constitute a significant improvement.
+If the implementation on FPGAs or ASICs could constitute a significant improvement.
 
 **Samir Menon:** 01:45:58
 
@@ -1607,7 +1607,7 @@ So it's a limit, but it's not crazy.
 Out of topic question for Fabricio.
 I've been quite interested in FPGA development.
 What's this?
-Have you looked into the open source hardware's beta log synthesis stuff like Ice Storm or something?
+Have you looked into the open source hardware's verilog synthesis stuff like Ice Storm or something?
 Ah, sorry, project starts with that.
 I forgot.
 
@@ -1622,7 +1622,7 @@ But actually if you, let's say regarding, for example, the primitive function to
 Cool.
 Last question for you.
 Has it been feasible, given that is it been in FPGAs, you are bound with a manufacturer's tooling?
-And lately, there has been some developments regarding open source tooling for like uses and stuff.
+And lately, there has been some developments regarding open source tooling for like Yosys and stuff.
 Have you used those tools before or is it still vendor locked?
 
 **Audience 3:** 01:50:03
