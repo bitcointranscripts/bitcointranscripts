@@ -17,6 +17,7 @@ tags:
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
+  - 'Adam Jonas'
 categories:
   - 'podcast'
 aliases:
