@@ -1607,7 +1607,7 @@ So it's a limit, but it's not crazy.
 Out of topic question for Fabricio.
 I've been quite interested in FPGA development.
 What's this?
-Have you looked into the open source hardware's verilog synthesis stuff like Ice Storm or something?
+Have you looked into the open source hardware's Verilog synthesis stuff like IceStorm or something?
 Ah, sorry, project starts with that.
 I forgot.
 
