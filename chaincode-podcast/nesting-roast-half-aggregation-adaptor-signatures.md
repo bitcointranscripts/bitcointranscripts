@@ -824,7 +824,7 @@ About when to roll crypto.
 Adam Jonas: 00:51:53
 
 Well, I just like the conversation about them referring to MuSig1 as broken and just like being very upfront and public about the fact that it's broken and the upgrades that they made and sort of like the shower thoughts that Tim had to make MuSig2 work and all those things.
-It's, I think it's, it's fun.
+It's, I think it's fun.
 So yeah, I hope you enjoyed listening to the episode as much as I enjoyed it.
 
 Mark Erhart: 00:52:15
@@ -835,6 +835,6 @@ Adam Jonas: 00:52:18
 
 I don't know, I don't know if we're gonna make it before our New Year's, but if not, hope you enjoy the holidays and Happy New Year's, and if so, we'll talk to you before then.
 
-Speaker ?: 00:52:27
+Mark Erhart: 00:52:27
 
 Bye.
