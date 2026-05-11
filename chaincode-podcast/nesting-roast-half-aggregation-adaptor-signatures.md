@@ -18,7 +18,6 @@ speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
   - 'Adam Jonas'
-  - 'Mark Erhart'
   - 'Mark Erhardt'
 categories:
   - 'podcast'
