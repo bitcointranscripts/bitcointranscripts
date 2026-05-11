@@ -805,7 +805,7 @@ Adam Jonas: 00:50:47
 Well, thank you both for giving us almost two hours and I will say it's been a pleasure to watch you both escape to different rooms and draw indecipherable things on whiteboards.
 So thanks for coming in Tim, spending the week with us.
 
-Mark Erhart: 00:51:05
+Mark Erhardt: 00:51:05
 
 All right, what did you think about that conversation?
 
@@ -817,7 +817,7 @@ And I think the conversation about diving into the advanced signing protocols an
 But thinking about taking advantage of batch verification and signature aggregation and its future, I thought was really quite great.
 We talked about signature aggregation and the interest in that with Josie a couple episodes ago, but it gave me a chance to actually better understand it.
 
-Mark Erhart: 00:51:43
+Mark Erhardt: 00:51:43
 
 Right.
 What you mentioned now was that you also thought it was interesting to see how the sausage is made a little more.
@@ -829,7 +829,7 @@ Well, I just like the conversation about them referring to MuSig1 as broken and 
 It's, I think it's fun.
 So yeah, I hope you enjoyed listening to the episode as much as I enjoyed it.
 
-Mark Erhart: 00:52:15
+Mark Erhardt: 00:52:15
 
 Yeah, well, we hope to have one soon for you again.
 
@@ -837,6 +837,6 @@ Adam Jonas: 00:52:18
 
 I don't know, I don't know if we're gonna make it before our New Year's, but if not, hope you enjoy the holidays and Happy New Year's, and if so, we'll talk to you before then.
 
-Mark Erhart: 00:52:27
+Mark Erhardt: 00:52:27
 
 Bye.
