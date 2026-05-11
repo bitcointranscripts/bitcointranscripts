@@ -19,6 +19,7 @@ speakers:
   - 'Tim Ruffing'
   - 'Adam Jonas'
   - 'Mark Erhart'
+  - 'Mark Erhardt'
 categories:
   - 'podcast'
 aliases:
@@ -26,7 +27,7 @@ aliases:
 ---
 Tim Ruffing: 00:00:00
 
-Just as a warning: don't do this at home.
+Just as a warning, don't do this at home.
 
 Pieter Wuille: 00:00:01
 
@@ -36,11 +37,11 @@ Still have your friendly neighborhood cryptographer have a look at it.
 Adam Jonas: 00:00:16
 
 This is the second half of the conversation with Tim and Pieter.
-If you have not listened to the first half I'd suggest going back and listening to that episode.
+If you have not listened to the first half, I'd suggest going back and listening to that episode.
 We cover all sorts of fun things, including when to roll your own cryptography, why we prefer Schnorr signatures over ECDSA, Schnorr efficiency improvements, Multi-Sig, MuSig, interactive versus non-interactive signing, FROST, and more.
 So, we're going to pick things back up talking about nesting.
 We'll cover ROAST, block-wide aggregation, adaptive signatures, atomic swaps.
-This is a great conversation and I hope you enjoy it as much as I enjoyed recording it.
+This is a great conversation, and I hope you enjoy it as much as I enjoyed recording it.
 
 ## Nesting
 
@@ -189,7 +190,7 @@ Security and functionality, yeah.
 Pieter Wuille: 00:09:06
 
 Right, because you... MuSig2 is specifically designed to support nesting, originally designed to support nesting.
-So it, If you just look at the spec and do the naive thing...
+So if you just look at the spec and do the naive thing...
 
 Tim Ruffing: 00:09:20
 
@@ -206,7 +207,7 @@ And this is what I was mentioning, this is really just only about the MuSig insi
 
 Pieter Wuille: 00:10:01
 
-Or with BIP32 on top, or with Taproot on top, or cross-input second iteration on top.
+Or with BIP32 on top, or with Taproot on top, or cross-input signature aggregation on top.
 
 Tim Ruffing: 00:10:06
 
@@ -320,7 +321,7 @@ But it's good for these federation use cases, but I think this is really like a 
 
 Adam Jonas: 00:18:49
 
-So Peter, you have mentioned cross-input aggregation as the inspiration for a lot of the work that actually has been done to date.
+So Pieter, you have mentioned cross-input aggregation as the inspiration for a lot of the work that actually has been done to date.
 Let's talk about signature aggregation, maybe start with interactive floor aggregation and sort of the cross-input aggregation history, and then we'll explore some other ways.
 
 Pieter Wuille: 00:19:11
@@ -362,9 +363,11 @@ Pieter Wuille: 00:21:21
 
 In the MuSig paper, I remember Russell O'Connor came up with this fairly far-fetched attack of, if you just do that, what I just said, and try to use that specifically in the context of Bitcoin transactions with one signature... there was a problem but I don't remember.
 
-Tim Ruffing: 00: 21:41
+Tim Ruffing: 00:21:41
 
 There could be a problem if you're a single party and you have multiple messages that you want to sign.
+
+Pieter Wuille: 00:21:50
 You can be tricked into, and you participate multiple times, you can be tricked into signing the same one instead of different ones.
 
 Tim Ruffing: 00:21:58
@@ -448,14 +451,14 @@ The community didn't feel like it was worth waiting to more fully baked cross-in
 
 Pieter Wuille: 00:27:54
 
-Yeah, I think, so when the discussions around Taproot, which Schnorr signatures started, there were a whole lot of ideas and many of them were actively being discussed because there were improvements to Taproot: there was Graftroot, there was Groot, and so forth.
+Yeah, I think, so when the discussions around Taproot, which Schnorr signatures started, there were a whole lot of ideas and many of them were actively being discussed because there were improvements to Taproot: there was Graftroot, there was g'root, and so forth.
 And how those would interact with signature aggregation is kind of unclear because there is a complication here, which is soft fork compatibility.
 So we want the property obviously that a change that introduces cross-input aggregation is a soft fork, and also that things that could be built on top, extensions to the script language later, are a soft fork with respect to signature aggregation already existing.
 And so this isn't a fundamental problem, but it's kind of annoying.
-Say, imagine there's an opcode change that introduces something like an opif, just something that changes the execution path through a single script.
+Say, imagine there's an opcode change that introduces something like an OP_IF, just something that changes the execution path through a single script.
 You need to make sure that old nodes and new nodes agree on what signatures are being aggregated, even though some of them may execute the checksig that's being skipped and others that don't.
 So if you think about it, it's non-trivial.
-One possibility is doing, well, whenever a soft fork is introduced that changes which codes are executed, you create a new separate batch for aggregated signatures, you just do the aggregated signatures that are according to the pre-soft fork nodes and then everything that's added or changed with respect to that, they go into a new bucket and you end up with two signatures: one for all the signatures, or one aggregated signature for all the things visible to old nodes, and then another one for the additional ones that are visible to new nodes.
+One possibility is doing, well, whenever a soft fork is introduced that changes which opcodes are executed, you create a new separate batch for aggregated signatures, you just do the aggregated signatures that are according to the pre-soft fork nodes and then everything that's added or changed with respect to that, they go into a new bucket and you end up with two signatures: one for all the signatures, or one aggregated signature for all the things visible to old nodes, and then another one for the additional ones that are visible to new nodes.
 That's one idea.
 Another one, one that I'm I think more in favor of, is, so, Taproot has this internal key, which is like the special elevated key which we believe to be the everyone agrees situation.
 
@@ -493,7 +496,7 @@ And also there are other issues when it comes to compatibility with batch verifi
 One way to think about this is, in a signature aggregation scheme, it's a little bit like a multi-signature scheme, but as you said, the verifier will do the key aggregation because the verifier gets all the individual public keys and somehow would need to aggregate those keys.
 And if we do this in a MuSig style, this key aggregation, then this key aggregation again is an elliptic curve computation, but we couldn't add this to the batch for doing batch validation.
 So we couldn't batch it together with a signature validation or with a Taproot commitment openings.
-So probably there are other signature aggregation schemes more different from MuSig that would actually allow for fetch validation.
+So probably there are other signature aggregation schemes more different from MuSig that would actually allow for batch validation.
 So yeah, really, it's like, as you say, you could construct it basically from MuSig, but MuSig is overkill.
 And that's the reason not to do that.
 
@@ -818,7 +821,7 @@ We talked about signature aggregation and the interest in that with Josie a coup
 Mark Erhart: 00:51:43
 
 Right.
-What you mentioned now was that you also thought it was interesting to see how the sausages made it a little more.
+What you mentioned now was that you also thought it was interesting to see how the sausage is made a little more.
 About when to roll crypto.
 
 Adam Jonas: 00:51:53
