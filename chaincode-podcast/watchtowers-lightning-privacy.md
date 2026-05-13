@@ -10,6 +10,7 @@ tags:
   - 'security'
   - 'channel-jamming-attacks'
   - 'htlc'
+  - 'eltoo'
 speakers:
   - 'Sergi Delgado'
 categories:
