@@ -7,6 +7,7 @@ tags:
   - 'lightning'
   - 'privacy'
   - 'watchtowers'
+  - 'security'
 speakers:
   - 'Sergi Delgado'
 categories:
@@ -365,7 +366,7 @@ And therefore it's hard to mitigate because you have to distinguish between the 
 Speaker 0: 00:16:10
 
 And normally you cannot because there's the privacy bidding where it's built in the way that you shouldn't be able to do it.
-And I mean, There are applications which use HCC hodling for that.
+And I mean, There are applications which use TSC huddling for that.
 And it's like, there's applications being built with that, but that's a problem.
 That's taking some of your opportunity cost for that to be used for routing or for whatever you're supposed to.
 
@@ -410,9 +411,9 @@ Speaker 1: 00:18:00
 Let's transition a little bit.
 We've been talking about your research and your prior work and haven't delved too much into what you're doing these days.
 But I find Watchtowers, which is your current project and has been really your focus for the last three or so years.
-It's one of those projects where Bitcoin talk forums you can dig up early comments about this It's been around forever kind of thing and yet no one's done it So you have essentially locked yourself in a room for three years to actually do it.
+It's one of those projects where Bitcoin talk forums you can dig up early comments about this It's been around forever kind of thing and yet no one's done it, so you have essentially locked yourself in a room for three years to actually do it.
 You're saying and and so Yeah, what is it?
-I guess, you know, you have prior experience doing this collab, sort of collaborative research kind of thing.
+I guess, you know, you have prior experience doing this sort of collaborative research kind of thing.
 And then you went off and embarked in this particular project.
 Like why stick with this so long?
 Like why?
@@ -435,7 +436,7 @@ Speaker 0: 00:19:29
 Lightning was doing it, Lightning Labs was doing it at the time I started doing research on this.
 So I think their release came like a couple of months or maybe three months after we started working on this.
 And I picked a lot up from their work.
-The first one I know of was Bitcoin Lightning Wallet, which was an Android-only Bitcoin Lightning Wallet, which was using a custom implementation of Watchtowers for their users, only for them, and using like, Xiaomi tokens or Bury tokens to do the whole registration, like how do you pay for the tower and so on and so forth.
+The first one I know of was Bitcoin Lightning Wallet, which was an Android-only Bitcoin Lightning Wallet, which was using a custom implementation of Watchtowers for their users, only for them, and using like, Xiaomi tokens or burning tokens to do the whole registration, like how do you pay for the tower and so on and so forth.
 So that's the same debt for simple Bitcoin wallet and the same for the Obi-Wan thingy and the same.
 It's That guy, I don't know his name, but he was working also with the ZBD guys.
 I think he's either Russian or Ukrainian.
@@ -446,16 +447,16 @@ And Lightning was the second.
 Electrum was also working on that.
 When I started working on this, I didn't try to be, okay, I'm going to just make another implementation.
 My goal with this was, let's not make 15 implementations of this, let's try to get together, agree on something that, agree on how watch hours should be, you know?
-We have like the explanation from Tadge about how they could work.
+We have like the explanation from Taj about how they could work.
 We are building the exact same thing, like replicated three or four times.
 Why don't we get together, write a bolt or what could have been a bleep later or whatever kind of like standardization of this and make it work for any implementation, you know?
 It's like if Lightning Labs builds it and CLion can use it, that's great.
-If you want to use it with this beacon lining wallet or Electrum wants to use it, or Eclair wants to use it, whatever.
+If you want to use it with this __beacon lining wallet__ or Electrum wants to use it, or Eclair wants to use it, whatever.
 That's how it's supposed to be.
-It's part of the infrastructure of lining.
+It's part of the infrastructure of lightning.
 It shouldn't be implementation specific.
 So that was my main goal.
-Actually, my main goal was going beyond lining.
+Actually, my main goal was going beyond lightning.
 This works for any layer two solution.
 So vaults also work, channel backups also work, ephemeral data backup, like any kind of two-step protocol works for WhatsApp.
 So, it was a cool research project and a cool way of like getting also involved with with lightning, I guess.
@@ -468,8 +469,8 @@ I mean, I came from research, right?
 So my timing or my way of assessing how long something would take was not the best in terms of implementation.
 So what was supposed to be a six-month project ended up being a six-month POC.
 And then I tried to pursue it.
-So I got in touch with the Spiral guys, Square, Crypto at the time, now Spiral.
-I got a grant to work on watch hours from research to implementation and we ended up building the client for C-Lining around 2020.
+So I got in touch with the Spiral guys, Square Crypto at the time, now Spiral.
+I got a grant to work on watch hours from research to implementation and we ended up building the client for C-Lightning around 2020.
 All that was Python so at that time it was like okay we are reinventing a lot of the stuff.
 The support for Bitcoin in Python could be better.
 I mean, the only mature and good project, let's say, or robust project I know that builds on Python in Bitcoin is Electrum.
@@ -504,7 +505,7 @@ And for me, when I started thinking about adding lightning functionality to the 
 Like the best thing you could get was the testing and kind of developing libraries from C-Lightning, which had some functionality, but not all the functionality, right?
 So it came to the thing of either doing it myself, so like implementing part of the bolts myself, which I started doing.
 I saw that that was going to take years, so it was definitely worth it, not just because of the time, but also because of the maintaining, right?
-Just like if I'm building something that is getting updated frequently, then at some point I'm going to have to like update all the dependencies I'm supporting, and it's not going to work.
+Just like if I'm building something that is getting updated frequently, then at some point I'm gonna to have to like update all the dependencies I'm supporting, and it's not going to work.
 Like This is going to grow way too much, and I'm not going to have time for everything, right?
 
 ## Building on LDK
@@ -557,13 +558,13 @@ So the librarian was supposed to deal with history, you know, blocks and reorgs 
 And I built that myself and then he was like, there's no need for this anymore.
 Like, let's get rid of this thing.
 Like, it's way too complex.
-And like BitcoinD and LDK already do that for you.
+And like `bitcoind` and LDK already do that for you.
 So like, why would you be doing that too?
 I realized that there was a lot of, what's the word for this?
 Like, bad inheritance, I'd say.
 Or things that came from like the Python mindset that then were way simplified.
-For example, one of the things we recently introduced to the IOS Satoshi after talking to many people about it, like including Antoine, Dribbble Antoine, and Simon Ruth, was transaction indexing within the tower.
-We used to build the IOS Satoshi on top of Bitcoin D with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
+For example, one of the things we recently introduced to the eye of Satoshi after talking to many people about it, like including Antoine, Dribbble Antoine, and Simon Ruth, was transaction indexing within the tower.
+We used to build the IOS Satoshi on top of `bitcoind` with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
 Now we need 5.5, because we only care about the last 100 blocks.
 That was something that initially, that's how things change.
 We assume that there's order and storage in the tower because we don't have L2.
@@ -574,7 +575,7 @@ So, I guess you learn things.
 
 Speaker 1: 00:28:08
 
-Yeah, tell me more about your current status in terms of having users actually use the software and Have you actually caught any breaches?
+Yeah, tell me more about your current status in terms of having users actually use the software and have you actually caught any breaches?
 Is it doing its job?
 
 Speaker 0: 00:28:18
@@ -582,7 +583,7 @@ Speaker 0: 00:28:18
 Well, I mean, mine is.
 It hasn't caught any breaches.
 That doesn't mean it's not doing its job.
-So MyTower specifically hasn't caught any.
+So My tower specifically hasn't caught any.
 I think it right now has something around 20 users, 20 clients.
 I think the pivoting point from people running it or not running it was actually doing the no transaction indexing thing.
 Because that meant that people could run this on a Raspberry Pi that they already had without having to have any additional disk requirements, storage requirements.
@@ -595,9 +596,9 @@ And then minimizing the or reducing the entry barrier for what you need really h
 So right now that I know of, there's at least eight or nine people running this because we have like a list of altruistic towers in the repo that people can connect to.
 There were some users before, so I knew at least about two tower operators.
 I don't know what they were doing.
-There's the guys at Embassy these days, which is a Node in a Box project, that are integrating the EOS Satoshi.
+There's the guys at Embassy these days, which is a Node in a Box project, that are integrating the eye of Satoshi.
 I got in touch with them during BTC++ in Mexico last year, like in December last year.
-They were at the presentation for the iOS Satoshi.
+They were at the presentation for the eye of Satoshi.
 They were like, we love this, we're going to integrate it.
 And actually they pinged me a couple of days ago because of this.
 There's also the guys at Voltage, which pinged me about it, I think it was like mid last year or something like that, about offering this as a service for their users.
