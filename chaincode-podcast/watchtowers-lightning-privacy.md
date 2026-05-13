@@ -8,6 +8,7 @@ tags:
   - 'privacy'
   - 'watchtowers'
   - 'security'
+  - 'channel-jamming-attacks'
 speakers:
   - 'Sergi Delgado'
 categories:
@@ -130,7 +131,7 @@ The interesting things were happening in the peer-to-peer.
 Not like recently.
 Research-wise.
 
-## TxProbe paper  - Andrew Miller  - Coinscope  - Episode on Address Relay with Martin
+## TxProbe paper: Disclosure and Mitigations
 
 Speaker 0: 00:04:28
 
@@ -229,7 +230,7 @@ Speaker 0: 00:08:58
 But I use that as a way of learning how things work.
 So for me, being able to work on TxProbe was kind of like a result of learning how a lot of the things on Bitcoin work, from transaction building to propagation to networking to the in-message, the get-out-of-message, everything that goes in between, right?
 
-## An Empirical Analysis of Privacy in the Lightning Network
+## Pivoting to Lightning: Privacy Research at UCL
 
 Speaker 0: 00:09:18
 
@@ -237,8 +238,6 @@ At some point, when I finished the PhD, I got the opportunity to go to work at U
 They are pretty well known for some of the chain analysis stuff.
 So like some chain analysis actually was built based on one of the papers from Sarah back in 2014, 2015, or I don't even remember anymore.
 But they are like quite privacy focused, right?
-
-## Lightning white paper, 2016
 
 Speaker 0: 00:09:45
 
@@ -352,7 +351,7 @@ There are other things that also apply to this.
 And again, they are fundamental from Lightning that can be exploited and doesn't look like there has been much fix on it.
 And correct me if I'm wrong, if I am and someone listens to it, and I'm being me and say, hey, you're super wrong about it.
 
-## HTLC withholding vs. HTLC hodling
+## HTLC Withholding and Resource Abuse
 
 Speaker 0: 00:15:48
 
@@ -370,7 +369,7 @@ And I mean, There are applications which use TSC huddling for that.
 And it's like, there's applications being built with that, but that's a problem.
 That's taking some of your opportunity cost for that to be used for routing or for whatever you're supposed to.
 
-## Is Lightning flawed when it comes to privacy?
+## Is Lightning Fundamentally Flawed on Privacy?
 
 Speaker 1: 00:16:31
 
@@ -461,7 +460,7 @@ This works for any layer two solution.
 So vaults also work, channel backups also work, ephemeral data backup, like any kind of two-step protocol works for WhatsApp.
 So, it was a cool research project and a cool way of like getting also involved with with lightning, I guess.
 
-## Python PoC
+## From Python Proof-of-Concept to Rust Implementation
 
 Speaker 0: 00:21:49
 
@@ -508,8 +507,6 @@ I saw that that was going to take years, so it was definitely worth it, not just
 Just like if I'm building something that is getting updated frequently, then at some point I'm gonna to have to like update all the dependencies I'm supporting, and it's not going to work.
 Like This is going to grow way too much, and I'm not going to have time for everything, right?
 
-## Building on LDK
-
 Speaker 0: 00:24:19
 
 So my second thought was, okay, there's LDK, and they are working on bindings.
@@ -521,8 +518,6 @@ I think that was like a three, four month period.
 One of the worst periods of my life.
 I'm not kidding.
 I knew nothing about Rust at the time.
-
-## Transition to rust
 
 Speaker 0: 00:24:44
 
@@ -685,7 +680,7 @@ As long as I have the encryption key, I have a free backup system.
 So the eye of Satoshi allows this by design because it's not meant only to be used for lightning.
 It was kind of like a general-purpose watchtower that ended up being implemented first for lightning because it was like the best fit.
 
-## More privacy considerations in Lightning
+## Privacy Design of the Eye of Satoshi
 
 Speaker 1: 00:34:11
 
@@ -721,6 +716,8 @@ Speaker 2: 00:37:02
 So you're saying that the watchtowers are going to be bona fide members of the Lightning Network communication?
 And they could.
 Going to speak to Lightning Protocol?
+
+## Professional tower revenue models - subscription vs. bounties
 
 Speaker 0: 00:37:12
 
@@ -965,7 +962,7 @@ Speaker 1: 00:50:01
 Another thing you've mentioned a couple times is storage.
 And one of the things on the horizon, of course, is L2.
 
-## Storage and Eltoo
+## Storage, Privacy, and Eltoo
 
 Speaker 1: 00:50:06
 
@@ -1020,8 +1017,6 @@ Of your channel updates.
 Speaker 1: 00:52:53
 
 And a delete request doesn't mean it's actually deleted, it just means you could maybe open up slots or something on your account.
-
-## Professional tower revenue models - subscription vs. bounties
 
 Speaker 2: 00:53:00
 
