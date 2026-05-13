@@ -29,7 +29,7 @@ Sorry, filling time.
 
 Speaker 1: 00:00:12
 
-We're going to make sure our editor takes out The love word.
+We're going to make sure our editor takes out the love word.
 We are back in the studio.
 
 Speaker 2: 00:00:24
