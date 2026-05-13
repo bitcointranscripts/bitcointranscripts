@@ -11,6 +11,7 @@ tags:
   - 'channel-jamming-attacks'
   - 'htlc'
   - 'eltoo'
+  - 'bitcoin-core'
 speakers:
   - 'Sergi Delgado'
 categories:
