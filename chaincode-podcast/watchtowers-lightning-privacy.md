@@ -15,6 +15,7 @@ tags:
 speakers:
   - 'Sergi Delgado'
   - 'Mark Erhardt'
+  - 'Pieter Wuille'
 categories:
   - 'podcast'
 aliases:
