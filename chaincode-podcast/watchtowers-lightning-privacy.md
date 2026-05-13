@@ -1,5 +1,5 @@
 ---
-title: 'Watchtowers, Lightning Privacy'
+title: 'From Network Topology to Watchtowers: Sergi Delgado on Adversarial Research in Bitcoin and Lightning'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergi-Delgado-and-Watchtowers--Lightning-Privacy---Episode-28-e1uce42'
 date: '2023-02-02'
