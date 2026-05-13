@@ -9,6 +9,8 @@ tags:
   - 'watchtowers'
 speakers:
   - 'Sergi Delgado'
+categories:
+  - 'podcast'
 aliases:
   - '/chaincode-labs/chaincode-podcast/watchtowers-lightning-privacy/'
 ---
@@ -121,7 +123,7 @@ Yeah.
 Yeah, I think at the time the two better known groups for peer-to-peer in terms of research were Andrews and them.
 Ethan Hillman too, but I think Ethan was not doing peer-to-peer anymore.
 I mean he's like super well known for Glypse attacks, of course.
-Well, and also Julia for dandelion and stuff.
+Well, and also Julia for dandelion stuff.
 But it was around that time, you know?
 The interesting things were happening in the peer-to-peer.
 Not like recently.
@@ -155,7 +157,7 @@ Interesting.
 
 Speaker 1: 00:05:09
 
-You did that project, and I thought it was pretty clever in terms of how you used Orvin transactions to fingerprint nodes.
+You did that project, and I thought it was pretty clever in terms of how you used __Orvin__ transactions to fingerprint nodes.
 And so you get to the other side of that, the results were pretty striking.
 And what happens?
 You deliver that.
@@ -224,13 +226,13 @@ We'll make sure our editor takes out the love word.
 Speaker 0: 00:08:58
 
 But I use that as a way of learning how things work.
-So for me, being able to work on TXPROBE was kind of like a result of learning how a lot of the things on Bitcoin work, from transaction building to propagation to networking to the in-message, the get-out-of-message, everything that goes in between, right?
+So for me, being able to work on TxProbe was kind of like a result of learning how a lot of the things on Bitcoin work, from transaction building to propagation to networking to the in-message, the get-out-of-message, everything that goes in between, right?
 
 ## An Empirical Analysis of Privacy in the Lightning Network
 
 Speaker 0: 00:09:18
 
-At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah McGill-John, and they were doing, they were quite focused on privacy, right?
+At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah McGill, and they were doing, they were quite focused on privacy, right?
 They are pretty well known for some of the chain analysis stuff.
 So like some chain analysis actually was built based on one of the papers from Sarah back in 2014, 2015, or I don't even remember anymore.
 But they are like quite privacy focused, right?
@@ -247,7 +249,7 @@ Yeah.
 So I dig into the balls, I try to like get an understanding of like how everything worked, try to see, okay, is there anything that can be exploited, is there not, like what are the privacy aspects and so on and so forth.
 And I think I reach, like give or take the same conclusion that many researchers reach at the time because there were like two or three papers talking give or take about the same stuff in that year.
 One from Sergey actually with Rene Auers.
-There was one from Jordi, my ex-advisor at Inversona talking about similar stuff.
+There was one from Jordi, my ex-advisor at Barcelona talking about similar stuff.
 Mainly like we shouldn't be using Lightning as a privacy layer because it's not.
 It's adding some nice privacy features but it's not supposed to provide privacy, right?
 It provides some level of privacy, but it shouldn't be seen as a privacy feature.
@@ -274,15 +276,15 @@ They got in touch with some of the implementations.
 They disclosed some of this information.
 They actually gather a lot of data from merchants or big nodes because there's plenty of stuff being done in that paper.
 It's not just like routing.
-It's not just using routing information to try to disclose stuff or probing, which My main part was probing, right?
-But there was also analysis on invoice data or on chain data to see if, like, you could use the chain addresses, or you could build, like, a Peel chain of public channels and private channels to link a private channel to a public channel, or to know something that looks like a channel, maybe an actual channel.
+It's not just using routing information to try to disclose stuff or probing, which my main part was probing, right?
+But there was also analysis on invoice data or on chain data to see if, like, you could use the chain addresses, or you could build, like, a peel chain of public channels and private channels to link a private channel to a public channel, or to know something that looks like a channel, maybe an actual channel.
 So again, it was called empirical analysis on privacy in the Lightning Network.
 It was not just about probing.
-But They did most of the disclosure instead of me.
+But they did most of the disclosure instead of me.
 
 Speaker 1: 00:12:47
 
-And just for our listeners, so that they have a better understanding, there's sort of the balanced discovery piece, which is, if you're interested in that, you should listen to Sergei's episode because we talk about it in a fair bit of detail.
+And just for our listeners, so that they have a better understanding, there's sort of the balanced discovery piece, which is, if you're interested in that, you should listen to Sergey's episode because we talk about it in a fair bit of detail.
 There's payment discovery and there's path discovery.
 So of those three, have you kept up with what's fixed, what's not fixed, like what's the state of things?
 What's your general attitude towards where lightning is compared to when you looked at it more deeply?
@@ -316,7 +318,7 @@ It gets back to the point where all the debate about should we be paying for dat
 What do you think?
 I think we should.
 I really think we should, because otherwise, if we don't, then anyone can exploit it.
-It's all about waiting until someone coming around and saying, oh, I've built this data transmitting protocol built on top of Lightning that it's using failed HCLCs to send data from H2B in a peer-to-peer way, peer-to-peer encrypted way.
+It's all about waiting until someone coming around and saying, oh, I've built this data transmitting protocol built on top of Lightning that it's using failed HCLCs to send data from A to B in a peer-to-peer way, peer-to-peer encrypted way.
 No one is using it?
 Well, some of them are using it,
 
@@ -341,12 +343,12 @@ Well, you just need something that incentivizes people to make money out of it a
 
 Speaker 2: 00:15:17
 
-Paul Friedman Or, I don't know, if someone put Nostr on the Lightning Network or something, another relay, like some application that gets a ton of adoption very quickly, Then very quickly I think we would see...
+Or, I don't know, if someone put Nostr on the Lightning Network or something, another relay, like some application that gets a ton of adoption very quickly, Then very quickly I think we would see...
 
 Speaker 0: 00:15:31
 
 There are other things that also apply to this.
-And again, they are fundamental from Lightning that can be exploited and doesn't look like there has been much fixed on it.
+And again, they are fundamental from Lightning that can be exploited and doesn't look like there has been much fix on it.
 And correct me if I'm wrong, if I am and someone listens to it, and I'm being me and say, hey, you're super wrong about it.
 
 ## HTLC withholding vs. HTLC hodling
