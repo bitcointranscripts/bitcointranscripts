@@ -26,14 +26,14 @@ Speaker 1: 00:00:12
 
 We're going to make sure our editor takes out The love word.
 We are back in the studio.
-We are.
 
 Speaker 2: 00:00:24
 
+We are.
+
+Speaker 1: 00:00:27 
+
 And today we're going to be joined by Sergi Delgado.
-
-Speaker 1: 00:00:27
-
 Yeah, we're going to talk about Watchtowers.
 We're going to talk about some of his prior work.
 
@@ -59,7 +59,7 @@ It's been amazing, but we don't talk about feelings here.
 Speaker 1: 00:01:10
 
 You're clearly a dedicated listener if you know that.
-Yeah, we're gonna to talk about TXProbe because I think I saw you speak at Scaling in Tel Aviv.
+Yeah, we're gonna to talk about TxProbe because I think I saw you speak at Scaling in Tel Aviv.
 And I was like, who is this guy?
 He's talking about lightning stuff and some really interesting things.
 And I looked it up and you had also done the transaction probing for network topology using orphan transactions, which I thought was pretty tricky.
@@ -91,8 +91,8 @@ It's all about what your PhD candidates are interested in, right?
 He was doing all the stuff too, apart from only peer-to-peer.
 And I guess in the end, you know, if none of the applicants are interested in peer-to-peer, then you stop doing that.
 He's been interested in that.
-Like, I just feel like either he doesn't have the time to do it himself, which I'm sure he doesn't, or he hasn't found any PhD applicant here to do it.
-Which is kind of like the vibe going on for some years.
+I just feel like either he doesn't have the time to do it himself, which I'm sure he doesn't, or he hasn't found any PhD applicant here to do it.
+Which is kind of the vibe going on for some years.
 I think it was somewhere around 2017, I think, summer 2017, when they were working on the peer-to-peer at that time.
 
 ## Mapping Network Topology Research
@@ -108,7 +108,7 @@ I hear about it.
 I loved it.
 There was some experiment to do, there was some implementation to do.
 So it was put there, theoretically, so it has to be tested.
-And I spent, I think, the next four months battling with the testnet, getting results, like getting interference by other researchers that were also doing peer-to-peer stuff, which was like, at the time I didn't know what was going on.
+And I spent, I think, the next four months battling with the testnet, getting results, getting interference by other researchers that were also doing peer-to-peer stuff, which was like, at the time I didn't know what was going on.
 Later on it was like super fun, and we actually had like nice conversations about it.
 That's where I met the KIT people from Germany.
 That merge came from there, kind of.
@@ -123,7 +123,7 @@ Not the same group, but the same unit, right?
 Yeah.
 Yeah, I think at the time the two better known groups for peer-to-peer in terms of research were Andrews and them.
 Ethan Hillman too, but I think Ethan was not doing peer-to-peer anymore.
-I mean he's like super well known for Glypse attacks, of course.
+I mean he's like super well known for gypse attacks, of course.
 Well, and also Julia for dandelion stuff.
 But it was around that time, you know?
 The interesting things were happening in the peer-to-peer.
@@ -148,7 +148,7 @@ No. I've also been like quite driven out of the whole peer-to-peer.
 
 Speaker 2: 00:04:44
 
-Yeah, We recorded a podcast with Martin a while back and looked into, there was an attack that used fake addresses of nodes to see how that information propagated and it probably could allow you to learn about the node degree.
+Yeah, we recorded a podcast with Martin a while back and looked into, there was an attack that used fake addresses of nodes to see how that information propagated and it probably could allow you to learn about the node degree.
 
 Speaker 0: 00:05:02
 
@@ -158,7 +158,7 @@ Interesting.
 
 Speaker 1: 00:05:09
 
-You did that project, and I thought it was pretty clever in terms of how you used __Orvin__ transactions to fingerprint nodes.
+You did that project, and I thought it was pretty clever in terms of how you used orphan transactions to fingerprint nodes.
 And so you get to the other side of that, the results were pretty striking.
 And what happens?
 You deliver that.
