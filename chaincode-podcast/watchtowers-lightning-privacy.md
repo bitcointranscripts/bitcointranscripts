@@ -9,6 +9,7 @@ tags:
   - 'watchtowers'
   - 'security'
   - 'channel-jamming-attacks'
+  - 'htlc'
 speakers:
   - 'Sergi Delgado'
 categories:
