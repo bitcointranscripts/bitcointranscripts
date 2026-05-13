@@ -20,7 +20,7 @@ categories:
 aliases:
   - '/chaincode-labs/chaincode-podcast/watchtowers-lightning-privacy/'
 ---
-Speaker 0: 00:00:00
+Sergi Delgado: 00:00:00
 
 I came into Bitcoin because I like peer-to-peer.
 I discover more things that I love by doing so.
@@ -29,10 +29,10 @@ Sorry, filling time.
 
 Speaker 1: 00:00:12
 
-We're going to make sure our editor takes out The love word.
+We're going to make sure our editor takes out the love word.
 We are back in the studio.
 
-Speaker 2: 00:00:24
+Mark Erhardt: 00:00:24
 
 We are.
 
@@ -42,7 +42,7 @@ And today we're going to be joined by Sergi Delgado.
 Yeah, we're going to talk about watchtowers.
 We're going to talk about some of his prior work.
 
-Speaker 2: 00:00:31
+Mark Erhardt: 00:00:31
 
 Sergi is a former academic researcher.
 He did his PhD and worked as a postdoc for a while, and now he's a Spiral grantee and works on the Eye of Satoshi.
@@ -56,7 +56,7 @@ Hope you enjoy the episode.
 So we're going to talk about things you worked on in the past a little bit.
 First of all, welcome to the Chaincode office.
 
-Speaker 0: 00:01:06
+Sergi Delgado: 00:01:06
 
 Thank you.
 It's been amazing, but we don't talk about feelings here.
@@ -64,13 +64,13 @@ It's been amazing, but we don't talk about feelings here.
 Speaker 1: 00:01:10
 
 You're clearly a dedicated listener if you know that.
-Yeah, we're gonna to talk about TxProbe because I think I saw you speak at Scaling in Tel Aviv.
+Yeah, we're gonna to talk about `TxProbe` because I think I saw you speak at Scaling in Tel Aviv.
 And I was like, who is this guy?
 He's talking about lightning stuff and some really interesting things.
 And I looked it up and you had also done the transaction probing for network topology using orphan transactions, which I thought was pretty tricky.
 And so,
 
-Speaker 0: 00:01:35
+Sergi Delgado: 00:01:35
 
 That was interesting.
 
@@ -78,7 +78,7 @@ Speaker 1: 00:01:36
 
 Tell us about that project.
 
-Speaker 0: 00:01:38
+Sergi Delgado: 00:01:38
 
 So it started back in 2017, if I remember correctly.
 That was the last year of my PhD.
@@ -89,7 +89,7 @@ Speaker 1: 00:01:58
 But now doing mostly other stuff.
 We've lost him to other kinds of projects.
 
-Speaker 0: 00:02:03
+Sergi Delgado: 00:02:03
 
 I don't think he has been doing research on peer-to-peer for a long time, but not because he's not interested in it.
 It's all about what your PhD candidates are interested in, right?
@@ -102,12 +102,12 @@ I think it was somewhere around 2017, I think, summer 2017, when they were worki
 
 ## Mapping Network Topology Research
 
-Speaker 0: 00:02:49
+Sergi Delgado: 00:02:49
 
 They were known, pretty well known for the Coinscope paper, which was topology inferring using address messages and timing analysis and so on.
 And I joined hoping we could do like some network research.
-They were working on the TxProbe paper, I think.
-So the whole TxProbe general idea was already mentioned in the Coinscope paper.
+They were working on the `TxProbe` paper, I think.
+So the whole `TxProbe` general idea was already mentioned in the Coinscope paper.
 So they already had an idea of how to work on this.
 I hear about it.
 I loved it.
@@ -118,11 +118,11 @@ Later on it was like super fun, and we actually had like nice conversations abou
 That's where I met the KIT people from Germany.
 That merge came from there, kind of.
 
-Speaker 2: 00:03:55
+Mark Erhardt: 00:03:55
 
 Yeah, they were a different group.
 
-Speaker 0: 00:03:57
+Sergi Delgado: 00:03:57
 
 Not the same group, but the same unit, right?
 Yeah.
@@ -137,25 +137,25 @@ Research-wise.
 
 ## TxProbe paper: Disclosure and Mitigations
 
-Speaker 0: 00:04:28
+Sergi Delgado: 00:04:28
 
 Don't get me wrong.
 Now we have aligning and that stuff, you know, and that have like overtaken all the interest of.
 
-Speaker 2: 00:04:35
+Mark Erhardt: 00:04:35
 
 There was an attempt to map topology last year.
 
-Speaker 0: 00:04:38
+Sergi Delgado: 00:04:38
 
 Did you see that?
 No. I've also been like quite driven out of the whole peer-to-peer.
 
-Speaker 2: 00:04:44
+Mark Erhardt: 00:04:44
 
 Yeah, we recorded a podcast with Martin a while back and looked into, there was an attack that used fake addresses of nodes to see how that information propagated and it probably could allow you to learn about the node degree.
 
-Speaker 0: 00:05:02
+Sergi Delgado: 00:05:02
 
 Peter told me about that.
 They were like flooding the network with thousands of IP addresses.
@@ -169,7 +169,7 @@ And what happens?
 You deliver that.
 Maybe talk a little bit about how you let the Bitcoin Core team know a little bit about what was happening, and then mitigation steps, and how the sausage was made there.
 
-Speaker 0: 00:05:35
+Sergi Delgado: 00:05:35
 
 So, all right, four months passed, right?
 We were writing this paper.
@@ -194,13 +194,13 @@ Those two things were almost immediately patched by Peter before we got a chance
 Years after, or months after, I don't, I'm like completely lost on the timing here.
 I've learned some of that actually today, because I remember like seeing a PR later on about adding additional connections to Bitcoin Core, the ones that some of the audience may now know, the two additional ones, the ninth and the tenth outgoing connections.
 
-Speaker 2: 00:07:31
+Mark Erhardt: 00:07:31
 
 The blocks only connections.
 
 ## Block-only connections PR by Suhas
 
-Speaker 0: 00:07:32
+Sergi Delgado: 00:07:32
 
 Blocks only connections, yeah.
 And that was proposed by Suhas, which I knew that someone proposed that, I didn't know it was Suhas.
@@ -217,7 +217,7 @@ From there you went on to work on payment probing on Lightning, which is, first 
 Like it's a whole new domain.
 Like how did you get into that kind of world?
 
-Speaker 0: 00:08:33
+Sergi Delgado: 00:08:33
 
 I think it was kind of the same approach I used for Bitcoin.
 So I came into Bitcoin because I liked peer-to-peer.
@@ -229,21 +229,21 @@ Speaker 1: 00:08:54
 
 We'll make sure our editor takes out the love word.
 
-Speaker 0: 00:08:58
+Sergi Delgado: 00:08:58
 
 But I use that as a way of learning how things work.
-So for me, being able to work on TxProbe was kind of like a result of learning how a lot of the things on Bitcoin work, from transaction building to propagation to networking to the in-message, the get-out-of-message, everything that goes in between, right?
+So for me, being able to work on `TxProbe` was kind of like a result of learning how a lot of the things on Bitcoin work, from transaction building to propagation to networking to the in-message, the get-out-of-message, everything that goes in between, right?
 
 ## Pivoting to Lightning: Privacy Research at UCL
 
-Speaker 0: 00:09:18
+Sergi Delgado: 00:09:18
 
 At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah McGill, and they were doing, they were quite focused on privacy, right?
 They are pretty well known for some of the chain analysis stuff.
 So like some chain analysis actually was built based on one of the papers from Sarah back in 2014, 2015, or I don't even remember anymore.
 But they are like quite privacy focused, right?
 
-Speaker 0: 00:09:45
+Sergi Delgado: 00:09:45
 
 So for me it was kind of a way of focusing more on privacy, but also about learning how the Lightning Network worked.
 I knew generally how it worked.
@@ -268,7 +268,7 @@ Like, how did you, did you feel like you needed to disclose this before it was p
 Did you get in touch with the early implementations to have a discussion about it?
 Well, how is it the same or different than working with Bitcoin?
 
-Speaker 0: 00:11:30
+Sergi Delgado: 00:11:30
 
 This was different, right?
 Not because it was Lightning or Bitcoin, but because I was the postdoc at that time and there were like PhD students also working on this, right?
@@ -293,21 +293,21 @@ There's payment discovery and there's path discovery.
 So of those three, have you kept up with what's fixed, what's not fixed, like what's the state of things?
 What's your general attitude towards where lightning is compared to when you looked at it more deeply?
 
-Speaker 0: 00:13:15
+Sergi Delgado: 00:13:15
 
 I think it hasn't changed much, but because we were building on the fundamentals of how Lightning is built, right?
 The whole balance, the whole trying to infer the balances on channels is built on top of channel probing, which it's something that you can do by default in Lightning because you don't pay for sending payments, right?
 
 ## Security and Privacy of Lightning Network Payments with Uncertain Channel Balances
 
-Speaker 0: 00:13:38
+Sergi Delgado: 00:13:38
 
 So like failed payments doesn't pay anything.
 And there's been some research done on that, like Clara and Sergey has done some research into how to mitigate that.
 
 ## Channel Jamming paper
 
-Speaker 0: 00:13:50
+Sergi Delgado: 00:13:50
 
 That also relates to channel jamming.
 I mean, it's like, feels like every single problem related to how to abuse the resources in the Lightning Network relate to the same thing, which is, I can route a payment from A to B without having to pay anything from routing the payment from A to B, as long as B doesn't get paid.
@@ -316,7 +316,7 @@ You can use this for multiple things.
 
 ## Should we pay for failed payments?
 
-Speaker 0: 00:14:18
+Sergi Delgado: 00:14:18
 
 It gets back to the point where all the debate about should we be paying for data relay inside the Lightning Network even if a payment hasn't succeeded or not.
 What do you think?
@@ -326,11 +326,11 @@ It's all about waiting until someone coming around and saying, oh, I've built th
 No one is using it?
 Well, some of them are using it,
 
-Speaker 2: 00:14:57
+Mark Erhardt: 00:14:57
 
 because Sphinx works in that way, right?
 
-Speaker 0: 00:15:00
+Sergi Delgado: 00:15:00
 
 So there are already applications that work in that way.
 It just feels like no one has bloated the network with it.
@@ -341,15 +341,15 @@ Speaker 1: 00:15:08
 
 We just need a Satoshi's dice to make it useful.
 
-Speaker 0: 00:15:13
+Sergi Delgado: 00:15:13
 
 Well, you just need something that incentivizes people to make money out of it and then you're screwed.
 
-Speaker 2: 00:15:17
+Mark Erhardt: 00:15:17
 
 Or, I don't know, if someone put Nostr on the Lightning Network or something, another relay, like some application that gets a ton of adoption very quickly, Then very quickly I think we would see...
 
-Speaker 0: 00:15:31
+Sergi Delgado: 00:15:31
 
 There are other things that also apply to this.
 And again, they are fundamental from Lightning that can be exploited and doesn't look like there has been much fix on it.
@@ -357,16 +357,16 @@ And correct me if I'm wrong, if I am and someone listens to it, and I'm being me
 
 ## HTLC Withholding and Resource Abuse
 
-Speaker 0: 00:15:48
+Sergi Delgado: 00:15:48
 
 But HCLC withholding, it's another thing that can make a huge disruption.
 
-Speaker 2: 00:15:53
+Mark Erhardt: 00:15:53
 
 We're exploiting something that is a basic function of the Lightning Network and maybe considered a strength in other regards for, well, dosing or spamming.
 And therefore it's hard to mitigate because you have to distinguish between the two ways of how it's getting used.
 
-Speaker 0: 00:16:10
+Sergi Delgado: 00:16:10
 
 And normally you cannot because there's the privacy bidding where it's built in the way that you shouldn't be able to do it.
 And I mean, There are applications which use TSC huddling for that.
@@ -380,7 +380,7 @@ Speaker 1: 00:16:31
 And so is just, is Lightning just fundamentally flawed and we should give up?
 Like what's the?
 
-Speaker 0: 00:16:35
+Sergi Delgado: 00:16:35
 
 No, I don't think so.
 I don't think so.
@@ -396,7 +396,7 @@ So as long as I'm exploiting the normal behavior of the network, there's not muc
 
 ## Watchtowers
 
-Speaker 0: 00:17:43
+Sergi Delgado: 00:17:43
 
 If you do, then it means that you have to like start front-charging or making the user do something.
 
@@ -404,7 +404,7 @@ Speaker 1: 00:17:51
 
 Reputation-based stuff, too.
 
-Speaker 0: 00:17:53
+Sergi Delgado: 00:17:53
 
 For example.
 That's something that already exists in Lightning, for fail payments in some implementation, at least.
@@ -422,7 +422,7 @@ Like why stick with this so long?
 Like why?
 I guess we can talk about usage soon, but is it the time even right for watchtowers in terms of the maturity of lightning and its needs?
 
-Speaker 0: 00:18:58
+Sergi Delgado: 00:18:58
 
 So my train of thought at the time, when we're going back to 2019, was that I would rather be soon than late with this, because it's something that it's fundamental for Lightning.
 It's like literally described in the Lightning paper, and it was discussed in 2016.
@@ -434,7 +434,7 @@ Speaker 1: 00:19:28
 
 Who else has done it before you?
 
-Speaker 0: 00:19:29
+Sergi Delgado: 00:19:29
 
 Lightning was doing it, Lightning Labs was doing it at the time I started doing research on this.
 So I think their release came like a couple of months or maybe three months after we started working on this.
@@ -466,7 +466,7 @@ So, it was a cool research project and a cool way of like getting also involved 
 
 ## From Python Proof-of-Concept to Rust Implementation
 
-Speaker 0: 00:21:49
+Sergi Delgado: 00:21:49
 
 I mean, I came from research, right?
 So my timing or my way of assessing how long something would take was not the best in terms of implementation.
@@ -483,7 +483,7 @@ Speaker 1: 00:22:48
 
 Not that they don't have their own problems though.
 
-Speaker 0: 00:22:51
+Sergi Delgado: 00:22:51
 
 It makes sense.
 After spending more than one year building on that, I can definitely know why.
@@ -498,7 +498,7 @@ And why?
 It's not that you don't have a good community.
 I mean, everybody writes Python.
 
-Speaker 0: 00:23:16
+Sergi Delgado: 00:23:16
 
 Yeah, but not good Python.
 I mean, don't get me wrong, it's like, you build something for one specific reason, you just don't maintain it, you don't update it.
@@ -511,7 +511,7 @@ I saw that that was going to take years, so it was definitely worth it, not just
 Just like if I'm building something that is getting updated frequently, then at some point I'm gonna to have to like update all the dependencies I'm supporting, and it's not going to work.
 Like This is going to grow way too much, and I'm not going to have time for everything, right?
 
-Speaker 0: 00:24:19
+Sergi Delgado: 00:24:19
 
 So my second thought was, okay, there's LDK, and they are working on bindings.
 It was like the beginning of them working on bindings.
@@ -523,7 +523,7 @@ One of the worst periods of my life.
 I'm not kidding.
 I knew nothing about Rust at the time.
 
-Speaker 0: 00:24:44
+Sergi Delgado: 00:24:44
 
 So I thought, you know what, let's stick to Python but let's use something that it has a good chunk of devs behind it and they can like update it and so on and so forth.
 Issue, there's no automatic proper automatic way of building bindings for Python to rust.
@@ -546,11 +546,11 @@ I mean, I started like calling everything in the tower funny names, you know, li
 I had to have fun too, you know, like building this stuff.
 So...
 
-Speaker 2: 00:26:30
+Mark Erhardt: 00:26:30
 
 Too much feelings, sorry.
 
-Speaker 0: 00:26:32
+Sergi Delgado: 00:26:32
 
 No, they didn't actually get along, but anyway.
 So the librarian was supposed to deal with history, you know, blocks and reorgs and stuff like that.
@@ -566,7 +566,7 @@ For example, one of the things we recently introduced to the eye of Satoshi afte
 We used to build the IOS Satoshi on top of `bitcoind` with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
 Now we need 5.5, because we only care about the last 100 blocks.
 That was something that initially, that's how things change.
-We assume that there's order and storage in the tower because we don't have Eltoo.
+We assume that there's order and storage in the tower because we don't have eltoo.
 So it was like, if you have order and storage, have an archival node, that's not going to be an issue.
 And it's not, in the end you're going to probably have more than that, but you don't have to start with that.
 I've been running a tower for months now, and I didn't even have a gig of like tower data with multiple users connected.
@@ -577,7 +577,7 @@ Speaker 1: 00:28:08
 Yeah, tell me more about your current status in terms of having users actually use the software and have you actually caught any breaches?
 Is it doing its job?
 
-Speaker 0: 00:28:18
+Sergi Delgado: 00:28:18
 
 Well, I mean, mine is.
 It hasn't caught any breaches.
@@ -605,36 +605,36 @@ They haven't yet, I know that they've been swamped with work, but they really wa
 
 ## Altruistic towers vs professional services
 
-Speaker 2: 00:30:20
+Mark Erhardt: 00:30:20
 
 So, so far, this is all altruistic towers.
 So people running it without any expectation of profit.
 You said that your tower implementation currently needs like 5.5 gigabytes, And then of course, for each new commitment transaction in the channel, you need to have a new appointment, a new backup package that you keep and that just keeps growing,
 
-Speaker 0: 00:30:46
+Sergi Delgado: 00:30:46
 
 right?
 So. That's around 720 bytes per payment, if I remember correctly.
 And I'm saying I'm saying this from the top of my mind, it may be a little bit less.
 Let's say around.
 
-Speaker 2: 00:30:58
+Mark Erhardt: 00:30:58
 
 Yeah.
 Okay.
 So a little less than a kilobyte per channel update, I should say, so either an HTLC or a fee update in the channel.
 
-Speaker 0: 00:31:08
+Sergi Delgado: 00:31:08
 
 So if you think about payments, by the way, and that's something that is quite misunderstood generally, there's two appointments per payment.
 Because normally you add an HCLC and you fulfill that HCLC, meaning that for every single payment you do, you're going to have to update the tower twice.
 So yeah, it's for every single channel update.
 
-Speaker 2: 00:31:26
+Mark Erhardt: 00:31:26
 
 So even all these people that you just talked about, embassy, voltage, and so forth, they're looking into the altruistic tower or are they trying to make a product from this?
 
-Speaker 0: 00:31:37
+Sergi Delgado: 00:31:37
 
 I really don't know.
 That's the cool thing about open source, you know?
@@ -651,19 +651,19 @@ I think there's a lot to be talked about, the incentives and the revenue expecta
 I'm building it so you can pick how you want to do it, and I think there's people who are way more into the economical aspect than me that can do a way better job than I could do.
 But it's compatible.
 
-Speaker 2: 00:32:44
+Mark Erhardt: 00:32:44
 
 Also, probably just a question of the volume as more and more people look to have their channels back up to watchtowers or employ a watchtower to watch their channels for them eventually the freemium model will go away because there will be just too much data to keep in store that people will not want to provide that for free, right?
 
-Speaker 0: 00:33:05
+Sergi Delgado: 00:33:05
 
 Yeah, it would make sense.
 
-Speaker 2: 00:33:07
+Mark Erhardt: 00:33:07
 
 So basically all the paths are laid already for people to transition just to professional services.
 
-Speaker 0: 00:33:15
+Sergi Delgado: 00:33:15
 
 And the DOS protection things are also in place because there's a lot of things that can go wrong, especially when you are offering this for free.
 I mean, if you're offering it for free, you know that you have DOS at vector open.
@@ -676,7 +676,7 @@ Yeah, it's just a file.
 You can also just make it like a file sharing service.
 You just have you store all my stuff.
 
-Speaker 0: 00:33:38
+Sergi Delgado: 00:33:38
 
 You could actually, it's built in a way where you can do that because not all the watch hour implementations allow for this, but you can retrieve the data that you have sent to the eye of Satoshi.
 So I can send you encrypted backups of something and then I can retrieve them later on.
@@ -690,7 +690,7 @@ Speaker 1: 00:34:11
 
 And what kind of privacy considerations did you think about as you were building this out and sort of thinking about the trade-offs?
 
-Speaker 0: 00:34:17
+Sergi Delgado: 00:34:17
 
 So the design has user privacy in mind, to the highest extent I think it could.
 As I was mentioning, there's some registration and some subscription model built in, but that's being built using a few more keys for the user.
@@ -715,7 +715,7 @@ We went for HTTP first because it felt like an easier way for people to integrat
 But there's a PR building on top of LDK too.
 That's one of the reasons why we switched to Rust.
 
-Speaker 2: 00:37:02
+Mark Erhardt: 00:37:02
 
 So you're saying that the watchtowers are going to be bona fide members of the Lightning Network communication?
 And they could.
@@ -723,7 +723,7 @@ Going to speak to Lightning Protocol?
 
 ## Professional tower revenue models - subscription vs. bounties
 
-Speaker 0: 00:37:12
+Sergi Delgado: 00:37:12
 
 They are.
 They have been for years because LND has been doing it in that way.
@@ -736,7 +736,7 @@ Maybe we cut this bit, but if you're constantly getting fed data and you're also
 I mean, are there serious concerns about these watchtowers becoming all seeing?
 Like It's in your logo, so.
 
-Speaker 0: 00:37:51
+Sergi Delgado: 00:37:51
 
 Non-negligible, let's say.
 Yeah.
@@ -756,7 +756,7 @@ Speaker 1: 00:38:45
 Hey, I might roll the dice.
 But beyond that, I'm also identifying myself with how related transactions, aren't I?
 
-Speaker 0: 00:38:52
+Sergi Delgado: 00:38:52
 
 Well, but if I'm already connected to you, I already, oh, you mean from other channels, not for the ones, yeah.
 Yeah, well, you may be telling the tower how often you're receiving payments.
@@ -764,21 +764,21 @@ I can roll out the frequency of my own channel.
 I may know other channels you have open because I know your node ID.
 I may not know about your private channels.
 
-Speaker 2: 00:39:12
+Mark Erhardt: 00:39:12
 
 So I would still not be able to tie the commitment transaction IDs to the other channels.
 
-Speaker 0: 00:39:17
+Sergi Delgado: 00:39:17
 
 You may not be able to know where they come from.
 You may be able to know the frequency that nodes are receiving payments, not from where.
 
-Speaker 2: 00:39:23
+Mark Erhardt: 00:39:23
 
 You wouldn't even be able to know whether it's the same node or another node, right?
 It could be a second node that your channel partner's running.
 
-Speaker 0: 00:39:30
+Sergi Delgado: 00:39:30
 
 We could be sharing the same subscription.
 I mean, theoretically, a lot of those things can happen.
@@ -789,7 +789,7 @@ Speaker 1: 00:39:40
 Yeah, I understand there's probably some, you know, there's maybe not certainty in a lot of these things, but there's probably some useful heuristics you'd be picking up.
 And for the Umbrella user running on a Raspberry Pi in their home, you can make some pretty solid assumptions.
 
-Speaker 0: 00:39:57
+Sergi Delgado: 00:39:57
 
 I do agree.
 I think, I'm not going to be wrong, this is an under-researched area.
@@ -801,12 +801,12 @@ That data is encrypted, and I may not be able to know anything about the data, b
 I can use that with other lightning or on-chain data to try to triangulate stuff.
 I think the minute you start sharing something with someone else, you open yourself to metadata analysis for sure.
 
-Speaker 2: 00:40:56
+Mark Erhardt: 00:40:56
 
 So you're saying you're not going to be surprised if the eye of Satoshi is going to get run by blockchain analytics companies and offered as a service.
 Probably that's where the free watchtowers will come from.
 
-Speaker 0: 00:41:09
+Sergi Delgado: 00:41:09
 
 No, no, I thought about that, of course.
 In the same way that routing nodes could be run by chain analytic companies and like offer low fee channels so you end up running through them and they may end up like learning or potentially learning something about you.
@@ -815,11 +815,11 @@ Speaker 1: 00:41:25
 
 Well if Async and LNBig you know spin up theirs then It gives them a pretty nice competitive advantage.
 
-Speaker 2: 00:41:32
+Mark Erhardt: 00:41:32
 
 That's assuming that LNBig is not chain analysis.
 
-Speaker 0: 00:41:37
+Sergi Delgado: 00:41:37
 
 Or it's not selling your data.
 Just kidding.
@@ -831,7 +831,7 @@ Speaker 1: 00:41:50
 
 It becomes very interesting in this hub-and-spoke topology that's continuing to cement itself.
 
-Speaker 0: 00:41:56
+Sergi Delgado: 00:41:56
 
 That's why I think the protocol itself has to maximize for privacy.
 That's what we've tried to do with towers.
@@ -848,45 +848,44 @@ One is through the subscription models and you pay a SAT through every state upd
 But it becomes very interesting as someone who doesn't run a tower.
 Like as a user, it becomes very interesting if you are sending data to multiple bounty hunters and then something happens and they have to fight over who claims the bounty, you would imagine there would be some pretty weird network behavior of those towers trying to one-up each other to claim that.
 
-Speaker 0: 00:43:06
+Sergi Delgado: 00:43:06
 
 Yeah, you start getting to CPFBs fights.
 
-Speaker 2: 00:43:10
+Mark Erhardt: 00:43:10
 
-Paul-
 So does this get better with RBF?
 
-Speaker 0: 00:43:12
+Sergi Delgado: 00:43:12
 
 You cannot do RBF.
 I mean, the tower cannot do RBF.
 
-Speaker 2: 00:43:16
+Mark Erhardt: 00:43:16
 
 With full RBF.
 So in order to have multiple watchtowers that watch for you that each could collect a bounty they must have different penalty transactions which I think penalty transactions should always be marked with RBF enabled but...
 
-Speaker 0: 00:43:34
+Sergi Delgado: 00:43:34
 
 Yes, but the tower can spend from it, it cannot...
 
-Speaker 2: 00:43:38
+Mark Erhardt: 00:43:38
 
 It cannot update the penalty transaction itself but a child inherits the RBF quality from its parent and I think that a second package would be able to replace the first.
 Okay, maybe not.
 
-Speaker 0: 00:43:54
+Sergi Delgado: 00:43:54
 
 I don't know that much about that.
 
-Speaker 2: 00:43:58
+Mark Erhardt: 00:43:58
 
 Anyway, so unaffected basically, never mind.
 
 ## Monitoring and reacting paradigm
 
-Speaker 0: 00:44:01
+Sergi Delgado: 00:44:01
 
 But what I've learned to, what I've grown to learn with this is that even though we've all ended up designing the same approach for towers, which is non-custodial, third party, not trusted, watchtower, right?
 So like try to minimize all of that stuff and try to react on behalf of the user, I've learned to realize that that may not be the best solution in terms of storage, in terms of mempool, in terms of...
@@ -913,11 +912,11 @@ Normally there's like in the order of days, if not weeks, for you to react.
 And that's a range and we can talk about it and we can see like how this could be like maybe optimized.
 But we know that we are never going to go below a threshold because if we do then like statically we are putting the node in danger, right?
 
-Speaker 2: 00:46:55
+Mark Erhardt: 00:46:55
 
 So you're saying just watch and send an email?
 
-Speaker 0: 00:46:58
+Sergi Delgado: 00:46:58
 
 For example, I mean that could be a solution but yeah that's mainly what I'm saying.
 You could watch and notify either the tower, the node admin or the application or whatever about, hey, you know, your channel is in danger.
@@ -928,7 +927,7 @@ Speaker 1: 00:47:19
 Maybe send a letter because there are probably already offline, right?
 Like,
 
-Speaker 0: 00:47:23
+Sergi Delgado: 00:47:23
 
 well, it's not like that, honestly, because the placing where watchtowers makes more sense is for mobile wallets, Because those are the ones that are normally not online all the time.
 But they are not online all the time, not because the phone is not online all the time, which it is, but because the app is offline.
@@ -940,11 +939,11 @@ You know, they are on your pocket.
 You can open it up and react about that easily.
 But they don't allow chain monitoring or blockchain monitoring because you cannot have a background.
 
-Speaker 2: 00:48:19
+Mark Erhardt: 00:48:19
 
 They don't run in the background.
 
-Speaker 0: 00:48:21
+Sergi Delgado: 00:48:21
 
 What I wanted to go into by the way with this approach is that normally what makes towers different from different protocols is the reacting part, not the notification part.
 So if you split that, you can use this.
@@ -964,17 +963,17 @@ I've never worked on it, but I think that that could be a better solution or a m
 Speaker 1: 00:50:01
 
 Another thing you've mentioned a couple times is storage.
-And one of the things on the horizon, of course, is Eltoo.
+And one of the things on the horizon, of course, is eltoo.
 
 ## Storage, Privacy and Eltoo
 
 Speaker 1: 00:50:06
 
 So how does that, is that something you're really hoping for in terms of helping with adoption?
-I mean, I've seen that cited as one of the more useful gains from doing Eltoo is the storage component.
+I mean, I've seen that cited as one of the more useful gains from doing eltoo is the storage component.
 So what do you take?
 
-Speaker 2: 00:50:23
+Mark Erhardt: 00:50:23
 
 Not just for watchtowers, but...
 
@@ -984,7 +983,7 @@ Of course, for the nodes themselves.
 But I mean, obviously with the amount of data that you're going to have to be plugging somewhere.
 This helps.
 
-Speaker 0: 00:50:33
+Sergi Delgado: 00:50:33
 
 For towers, it's tricky, actually.
 Because people tend to think that the storage will be O(1), because the only thing you have to store is the last update.
@@ -997,7 +996,7 @@ He has also been thinking about watchtowers, apart from privacy.
 I think he actually has a few mails in the mailing list dating back from 2016, maybe 2017, talking about watchtowers, talking about how to...
 I'm going to refer to the presentation I was doing before, but how the whole like identifier overriding attack works, all those things that like I ended up like learning by doing this stuff, Then I learned that he had done that way before me.
 So at some point, we started a really nice conversation about Towers on how he thinks things should be done with privacy really in mind, because he's always a privacy-aware guy.
-Well, anyway, Eltoo specifics.
+Well, anyway, eltoo specifics.
 So it turns out that if you send the watchtower only the last update and you keep updating the last update, that's O(1) of course, but you're telling the watchtower what your node ID is and not your channel ID is.
 Because if you don't, then it cannot update the last update.
 So it's like, if you need an endpoint, if your trigger is consuming this transaction ID, and what I have to use for consuming that transaction ID is this last update.
@@ -1006,15 +1005,15 @@ If I don't want it to be like that, I want it to be in the same way that it is r
 So it's going to be ordered in storage anyway.
 Again, it's not going to grow as fast.
 
-Speaker 2: 00:52:40
+Mark Erhardt: 00:52:40
 
 I mean, you could still send a delete request, just not exactly at the same time when you send a new storage request?
 
-Speaker 0: 00:52:47
+Sergi Delgado: 00:52:47
 
 You could, but then the tower knows the frequency of your payments.
 
-Speaker 2: 00:52:52
+Mark Erhardt: 00:52:52
 
 Of your channel updates.
 
@@ -1022,13 +1021,13 @@ Speaker 1: 00:52:53
 
 And a delete request doesn't mean it's actually deleted, it just means you could maybe open up slots or something on your account.
 
-Speaker 2: 00:53:00
+Mark Erhardt: 00:53:00
 
 Yeah, talking about the subscription model, where I think we haven't actually mentioned this in the podcast yet, but you would purchase a number of slots and for some amount of time, By deleting some of your appointments, the backups of channel state, you would open up slots again.
 Sure, whether or not watchtower actually deletes the stuff is their business, but you would notice if they don't give you back your slots.
 So you could still have five new updates and then delete three an hour later or something and basically have them on random delays, all of the things.
 
-Speaker 0: 00:53:45
+Sergi Delgado: 00:53:45
 
 It will reduce significantly the amount of storage that the watchtower needs.
 Again, like two dozens of bytes per update instead of like hundreds of bytes per update.
@@ -1036,21 +1035,21 @@ Because it's like last update number, let's say, with the ID.
 Either that ID is reused or not.
 So it could be O(1), if with a little privacy leak, it could be O(n) for small updates.
 
-Speaker 2: 00:54:07
+Mark Erhardt: 00:54:07
 
 I mean they would still not know your channel until there is a breach.
 They would just know that they belong to the same package.
 
-Speaker 0: 00:54:15
+Sergi Delgado: 00:54:15
 
 They may know your payment frequency though.
 Even if you're like delaying that, they may know like how many payments you have received because you're sending them and opted for a while.
 
-Speaker 2: 00:54:23
+Mark Erhardt: 00:54:23
 
 Or at least the number of times that you request an appointment.
 
-Speaker 0: 00:54:27
+Sergi Delgado: 00:54:27
 
 Yeah.
 That's also true because that's something that we haven't mentioned right?
@@ -1058,34 +1057,34 @@ But you could always add junk here from the user side.
 It's like, okay, I want to obfuscate this a little bit more.
 Since the tower doesn't know anything about this, if you're not overwriting the data you're sending, you can just every now and then pop up some random junk that it's going to consume some of your slots, but it's going to make the tower potential analysis be screwed.
 
-Speaker 2: 00:54:54
+Mark Erhardt: 00:54:54
 
 And also, so the new appointment should happen every time the commitment transaction in the channel is updated, which also happens when the fee rates are updated.
 When you add an HTLC, when you remove an HTLC, you can batch that, you can add multiple HTLCs at the same time in parallel.
 For example, if there's an EMP payment.
 
-Speaker 0: 00:55:15
+Sergi Delgado: 00:55:15
 
 That's trade-off though, because if you queue kind of like your updates to the tower, which you can, it means that if your node breaks at some point before you send those to the tower, then you're not covered for that.
 
-Speaker 2: 00:55:27
+Mark Erhardt: 00:55:27
 
-Sure, but with Eltoo especially,
+Sure, but with eltoo especially,
 grouping it would be much cleaner, because for the LM penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
-But with Eltoo you only, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
+But with eltoo you only, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
 That's also true.
-So Eltoo would make privacy and storage much better.
+So eltoo would make privacy and storage much better.
 
 Speaker 1: 00:55:57
 
 Ooh, but that becomes very interesting when there's a breach and they all try to grab it.
 
-Speaker 2: 00:56:02
+Mark Erhardt: 00:56:02
 
 Oh, that's fine.
 They can overwrite each other.
 
-Speaker 0: 00:56:04
+Sergi Delgado: 00:56:04
 
 They actually cannot overwrite.
 Well, that's what I wanted to say.
@@ -1094,15 +1093,15 @@ Speaker 1: 00:56:07
 
 They can't overwrite each other.
 
-Speaker 2: 00:56:07
+Mark Erhardt: 00:56:07
 
 They can't.
 
-Speaker 0: 00:56:08
+Sergi Delgado: 00:56:08
 
 Well, they will overwrite each other, but up to a point in where one wins, right?
 
-Speaker 2: 00:56:12
+Mark Erhardt: 00:56:12
 
 If you do it roulette style, it's whoever.
 Only one of them can overwrite the others.
@@ -1112,60 +1111,60 @@ Speaker 1: 00:56:19
 
 Some very angry towers out there.
 
-Speaker 2: 00:56:22
+Mark Erhardt: 00:56:22
 
 Wait, they would still get the bounty, because their transaction gets into the blockchain, and then the output of the transaction is spent.
 So you would pay three bounties.
 
-Speaker 0: 00:56:32
+Sergi Delgado: 00:56:32
 
 Would you?
 
-Speaker 2: 00:56:32
+Mark Erhardt: 00:56:32
 
 I think so.
 
-Speaker 0: 00:56:34
+Sergi Delgado: 00:56:34
 
 It's it's replaced, isn't it?
 
-Speaker 2: 00:56:35
+Mark Erhardt: 00:56:35
 
 No, it's not replaced, you can spend a previous.
 So there's a trigger transaction.
 
-Speaker 0: 00:56:41
+Sergi Delgado: 00:56:41
 
-But as long as it is a mempool, not in blockchain.
+But as long as it is a `mempool`, not in blockchain.
 
-Speaker 2: 00:56:43
+Mark Erhardt: 00:56:43
 
-Oh, in the mempool, yes, in the mempool, it would get replaced.
+Oh, in the `mempool`, yes, in the `mempool`, it would get replaced.
 But I guess a miner would not necessarily need to include the newest or the one with the highest.
 
-Speaker 0: 00:56:52
+Sergi Delgado: 00:56:52
 
 That's true, of course.
 
-Speaker 2: 00:56:53
+Mark Erhardt: 00:56:53
 
 They could even include all three of them in the correct order.
 
-Speaker 0: 00:56:56
+Sergi Delgado: 00:56:56
 
 Does that work though?
-Because I mean, my understanding of Eltoo is not that wide, but I thought only the later one would be included.
+Because I mean, my understanding of eltoo is not that wide, but I thought only the later one would be included.
 So like, they are spending from the same point.
 
-Speaker 2: 00:57:09
+Mark Erhardt: 00:57:09
 
 No, so any `PrevOu`t links to any `UTXO` that has the same `ScriptPubKey` and the same amount.
 
-Speaker 0: 00:57:17
+Sergi Delgado: 00:57:17
 
 Oh, you mean that they will be linking one to the previous?
 
-Speaker 2: 00:57:20
+Mark Erhardt: 00:57:20
 
 So the miner could actually collect all three transactions, as long as they order them in the right order.
 
@@ -1173,18 +1172,18 @@ Speaker 1: 00:57:24
 
 It's any of the `PrevOuts`.
 
-Speaker 0: 00:57:27
+Sergi Delgado: 00:57:27
 
 Yeah, yeah, yeah, of course, of course.
 I've never thought about that.
 
-Speaker 2: 00:57:30
+Mark Erhardt: 00:57:30
 
 So actually, using multiple towers in parallel would help your privacy, but suck for you because you pay three bounties.
 
-Speaker 0: 00:57:39
+Sergi Delgado: 00:57:39
 
-Yeah, being honest, I haven't put that much thought into Eltoo mainly because, you know, if towers were early, imagine building on Eltoo towers, which have no release date.
+Yeah, being honest, I haven't put that much thought into eltoo mainly because, you know, if towers were early, imagine building on eltoo towers, which have no release date.
 
 Speaker 1: 00:57:53
 
@@ -1192,11 +1191,11 @@ Well, enjoyed the conversation about watchtowers and...
 Enjoyed?
 Enjoyed.
 
-Speaker 0: 00:57:59
+Sergi Delgado: 00:57:59
 
 That sounds like like a feeling, you know?
 
-Speaker 2: 00:58:01
+Mark Erhardt: 00:58:01
 
 It's over.
 
@@ -1206,7 +1205,7 @@ Feeling time is over.
 Thanks for joining us.
 It's great to have you in the office this week.
 
-Speaker 0: 00:58:09
+Sergi Delgado: 00:58:09
 
 Thank you for inviting me.
 
@@ -1214,7 +1213,7 @@ Speaker 1: 00:58:20
 
 OK, Murch, what did you think of that?
 
-Speaker 2: 00:58:22
+Mark Erhardt: 00:58:22
 
 I think we covered all of it.
 Eight years worth of Bitcoining.
@@ -1224,7 +1223,7 @@ Speaker 1: 00:58:26
 That's a lot of going back to the original idea of watchtowers and the incentives of the network.
 It's interesting to think about how watchtowers factor into how Lightning functions properly.
 
-Speaker 2: 00:58:42
+Mark Erhardt: 00:58:42
 
 I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on huddling invoices.
 And I think it sounds pretty much sure watchtower implementation will make a mobile lightning wallet environment a lot more doable.
