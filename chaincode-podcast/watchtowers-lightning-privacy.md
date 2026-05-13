@@ -627,13 +627,13 @@ So a little less than a kilobyte per channel update, I should say, so either an 
 
 Speaker 0: 00:31:08
 
-Carlos Bustamante So if you think about payments, by the way, and that's something that is quite misunderstood generally, there's two appointments per payment.
+So if you think about payments, by the way, and that's something that is quite misunderstood generally, there's two appointments per payment.
 Because normally you add an HCLC and you fulfill that HCLC, meaning that for every single payment you do, you're going to have to update the tower twice.
 So yeah, it's for every single channel update.
 
 Speaker 2: 00:31:26
 
-Rimas So even all these people that you just talked about, embassy, voltage, and so forth, they're looking into the altruistic tower or are they trying to make a product from this?
+So even all these people that you just talked about, embassy, voltage, and so forth, they're looking into the altruistic tower or are they trying to make a product from this?
 
 Speaker 0: 00:31:37
 
@@ -644,7 +644,7 @@ The design allows for paying for the service.
 So every single user registers with the tower and is given a time period, a subscription period, and some slots within that period.
 And that's given for free in the current implementation.
 But the only thing you have to do in order to make people pay for that is building a paywall between that endpoint.
-You know, it's like, in order to like register to a tower, you have to like pay this HLC or this invoice or this whatever, right?
+You know, it's like, in order to like register to a tower, you have to like pay this HCLC or this invoice or this whatever, right?
 So the design is completely compatible with making you pay for what you're using.
 Whether people are gonna pay for it, if there's people offering also for free.
 At this stage, I don't know.
@@ -673,17 +673,17 @@ I mean, if you don't, you know now.
 
 Speaker 1: 00:33:31
 
-Jeff Deist Yeah, it's just a file.
+Yeah, it's just a file.
 You can also just make it like a file sharing service.
 You just have you store all my stuff.
 
 Speaker 0: 00:33:38
 
-Carlos Gonzalez-Ramon You could actually, it's built in a way where you can do that because not all the watch hour implementations allow for this, but you can retrieve the data that you have sent to the AOS Satoshi.
+You could actually, it's built in a way where you can do that because not all the watch hour implementations allow for this, but you can retrieve the data that you have sent to the eye of Satoshi.
 So I can send you encrypted backups of something and then I can retrieve them later on.
 As long as I have the encryption key, I have a free backup system.
-So the AOS Satoshi allows this by design because it's not meant only to be used for lining.
-It was kind of like a general-purpose watchtower that ended up being implemented first for lining because it was like the best fit.
+So the eye of Satoshi allows this by design because it's not meant only to be used for lightning.
+It was kind of like a general-purpose watchtower that ended up being implemented first for lightning because it was like the best fit.
 
 ## More privacy considerations in Lightning
 
@@ -693,7 +693,7 @@ And what kind of privacy considerations did you think about as you were building
 
 Speaker 0: 00:34:17
 
-Ruiz So the design has user privacy in mind, to the highest extent I think it could.
+So the design has user privacy in mind, to the highest extent I think it could.
 As I was mentioning, there's some registration and some subscription model built in, but that's being built using a few more keys for the user.
 So the user mainly creates a key pair for Sec6AP256K1, so like the Bitcoin curb, and uses the private key of that, sorry, the public key of that as an identifier with the tower, and the private key to sign messages with the tower.
 So it's like I identify, so I send you like signed messages so you can like identify me and I use the public part to say it's me to register for you to be able to like verify my signatures, right?
@@ -707,24 +707,24 @@ On the other place, the Tower doesn't know anything about node IDs. Again, first
 It doesn't know anything about channel IDs. So all the information being shared between clients and towers is done under this subscription umbrella with ephemeral IDs and there's no distinction between different channels so like all the data goes in the same direction.
 If you're reusing the exact same key for different nodes you can just like you dump that and you import it in another node.
 The tower doesn't have any way of telling.
-Well, it may if you're using ClearNet, because it may be able to see that you're sending that using two different IPs, but if you're using Tor, then there's no way.
-There's also a PR in there for using lining as a communication channel.
-Lining peer-to-peer, not lining as in what we were referring to before.
+Well, it may if you're using clearnet, because it may be able to see that you're sending that using two different IPs, but if you're using Tor, then there's no way.
+There's also a PR in there for using lightning as a communication channel.
+Lightning peer-to-peer, not lightning as in what we were referring to before.
 I'm using Lightning for this, but like connecting at the Lightning Peer-to-Peer level using ephemeral IDs and then sending that kind of information.
 That's what LND does, for example.
 We went for HTTP first because it felt like an easier way for people to integrate instead of having to implement the noise protocol and so on.
 But there's a PR building on top of LDK too.
-That's one of the reasons why we switched to trust.
+That's one of the reasons why we switched to Rust.
 
 Speaker 2: 00:37:02
 
-Paul Audio So you're saying that the watchtowers are going to be bona fide members of the Lightning Network communication?
+So you're saying that the watchtowers are going to be bona fide members of the Lightning Network communication?
 And they could.
 Going to speak to Lightning Protocol?
 
 Speaker 0: 00:37:12
 
-Carlos Ancelo They are.
+They are.
 They have been for years because LND has been doing it in that way.
 I'm just saying that you choose your communication channel.
 You can use whatever you want at the end of the day.
@@ -744,7 +744,7 @@ They could be different actors in the network.
 So you could be offering this and also be a node.
 And that may give you a stronger position than other nodes.
 I'm just going to highlight something that I think is quite viable, but people may not know.
-So I could have a channel open with my node and I could be offering a watch hour service, like those are the couples, you don't know about them.
+So I could have a channel open with my node and I could be offering a watchtower service, like those are the couples, you don't know about them.
 And I may know that you're actually the one sending me the information because you're using the identifiers that relate to the commitment transactions that are being revoked in the same channel that I am.
 So I may know that you are actually backing up the information with me.
 I don't know if you're using any other watchtower.
@@ -761,7 +761,7 @@ Well, but if I'm already connected to you, I already, oh, you mean from other ch
 Yeah, well, you may be telling the tower how often you're receiving payments.
 I can roll out the frequency of my own channel.
 I may know other channels you have open because I know your node ID.
-I may know about your private channels.
+I may not know about your private channels.
 
 Speaker 2: 00:39:12
 
@@ -792,31 +792,31 @@ Speaker 0: 00:39:57
 
 I do agree.
 I think, I'm not going to be wrong, this is an under-researched area.
-Not many people have put the time to invest the years into researching what's ours.
+Not many people have put the time to invest the years into researching watchtowers.
 It's complicated, and it's complicated I think for the good reasons.
 You're trying to build something that is super privacy aware for the user, meaning that you open yourself to a ton of DOS attack vectors, and then you're providing a service for the user to not be online.
 You're like, okay, you're here, you have all the information, I may help you, but you're giving me some data, right?
 That data is encrypted, and I may not be able to know anything about the data, but I can know everything about the metadata of the data you're sending me, like frequency, where it comes from.
-I can use that with other lining or on-chain data to try to triangulate stuff.
+I can use that with other lightning or on-chain data to try to triangulate stuff.
 I think the minute you start sharing something with someone else, you open yourself to metadata analysis for sure.
 
 Speaker 2: 00:40:56
 
-Paul Audio So you're saying you're not going to be surprised if the IOP Satoshi is going to get run by blockchain analytics companies and offered as a service.
+So you're saying you're not going to be surprised if the eye of Satoshi is going to get run by blockchain analytics companies and offered as a service.
 Probably that's where the free watchtowers will come from.
 
 Speaker 0: 00:41:09
 
-Carlos Bustamante No, no, I thought about that, of course.
+No, no, I thought about that, of course.
 In the same way that routing nodes could be run by chain analytic companies and like offer low fee channels so you end up running through them and they may end up like learning or potentially learning something about you.
 
 Speaker 1: 00:41:25
 
-Well if Async and LN Big you know spin up theirs then It gives them a pretty nice competitive advantage.
+Well if Async and LNBig you know spin up theirs then It gives them a pretty nice competitive advantage.
 
 Speaker 2: 00:41:32
 
-That's assuming that LN Big is not chain analysis.
+That's assuming that LNBig is not chain analysis.
 
 Speaker 0: 00:41:37
 
@@ -834,7 +834,7 @@ Speaker 0: 00:41:56
 
 That's why I think the protocol itself has to maximize for privacy.
 That's what we've tried to do with towers.
-If I cannot do it, it's not like I'm not going to do it.
+If I cannot do it, it's not like I'm not gonna to do it.
 It's like I should not be able to do it.
 And as long as I'm not able to do it, then I minimize the attack surface of what I can do.
 That's why all the information is encrypted, that's why we don't keep like much information about users, or we use like ephemeral IDs. That's where all that came from.
@@ -849,7 +849,6 @@ Like as a user, it becomes very interesting if you are sending data to multiple 
 
 Speaker 0: 00:43:06
 
-Raul-
 Yeah, you start getting to CPFBs fights.
 
 Speaker 2: 00:43:10
@@ -859,12 +858,11 @@ So does this get better with RBF?
 
 Speaker 0: 00:43:12
 
-Raul- You cannot do RBF.
+You cannot do RBF.
 I mean, the tower cannot do RBF.
 
 Speaker 2: 00:43:16
 
-Paul-
 With full RBF.
 So in order to have multiple watchtowers that watch for you that each could collect a bounty they must have different penalty transactions which I think penalty transactions should always be marked with RBF enabled but...
 
@@ -889,12 +887,12 @@ Anyway, so unaffected basically, nevermind.
 
 Speaker 0: 00:44:01
 
-But what I've learned to, what I've grown to learn with this is that even though we've all ended up designing the same approach for towers, which is non-custodial, third party, not trusted, watch hour, right?
-So like try to minimize all of that stuff and try to react in our switch or in no no no no instead of the user in either to work for that I don't remember well when I when I act on your own behalf of the user on behalf of the user sorry it didn't come up I've learned to realize that that may not be the best solution in terms of storage, in terms of mempool, in terms of...
+But what I've learned to, what I've grown to learn with this is that even though we've all ended up designing the same approach for towers, which is non-custodial, third party, not trusted, watchtower, right?
+So like try to minimize all of that stuff and try to react on behalf of the user, I've learned to realize that that may not be the best solution in terms of storage, in terms of mempool, in terms of...
 Reliability is fine, but you don't want people to fight over this kind of stuff.
 So some time ago, I thought about designing this in a different way.
 So I had weighing up my plate with the current approach to just start something different.
-But I like to describe this in a way that A watchtower is doing two things, and that's why the bounty plus the subscription approach makes sense.
+But I like to describe this in a way that a watchtower is doing two things, and that's why the bounty plus the subscription approach makes sense.
 A tower can fail in doing two things.
 One is the tower cannot be watching for whatever it's supposed to be watching, and then if it's not watching for what it's supposed to be watching, then there's nothing further, right?
 Or a tower could be watching for channel breaches and something like that, but do nothing with them, right?
@@ -903,7 +901,7 @@ One is the watching part and the other one is the reaction part.
 And the whole heavy lifting, the whole issue, everything that makes towers complicated is on the reacting part and not on the watching part.
 The watching part is pretty easy.
 The watching part doesn't require, it does require order and storage potentially, but it's at a way lower, so it's still linear, but smaller in the linear size.
-You can just be storing identified instead of identifies plus penalty transactions if you're not going to react.
+You can just be storing identifying set of identifies plus penalty transactions if you're not gonna to react.
 So if you split this into two, like the watching and the reaction part.
 You can actually design simpler towers that are not as powerful in this sense, so like may require the user to do stuff, but you're not like super replicating the data that the user already has.
 So like the best place for the replication data to be at is at the node's control, right?
@@ -931,7 +929,7 @@ Like,
 
 Speaker 0: 00:47:23
 
-well, it's not like that, honestly, because the placing where WhatsApp makes more sense is for mobile wallets, Because those are the ones that are normally not online all the time.
+well, it's not like that, honestly, because the placing where watchtowers makes more sense is for mobile wallets, Because those are the ones that are normally not online all the time.
 But they are not online all the time, not because the phone is not online all the time, which it is, but because the app is offline.
 Like, if your node is always online, if you have like a beefy setup, if you have like the most robust fail-safe setup, A tower is not useful for you, not much useful for you.
 It's useful when you're actually on the other side of the spectrum, you know, you're using something that is not connected all the time, or because of like OS limitations, your app is not on all the time, or cannot like be checking this kind of stuff all the time.
@@ -987,8 +985,8 @@ This helps.
 
 Speaker 0: 00:50:33
 
-Jorge Carrasco For towers, it's tricky, actually.
-Because people tend to think that the storage will be 01, because the only thing you have to store is the last update.
+For towers, it's tricky, actually.
+Because people tend to think that the storage will be O(1), because the only thing you have to store is the last update.
 And that's not true.
 So it could be true, but then you have privacy leaks.
 And that's something I used to think too, because that's what it's normally known, let's say, across the community.
@@ -999,7 +997,7 @@ I think he actually has a few mails in the mailing list dating back from 2016, m
 I'm going to refer to the presentation I was doing before, but how the whole like identifier overriding attack works, all those things that like I ended up like learning by doing this stuff, Then I learned that he had done that way before me.
 So at some point, we started a really nice conversation about Towers on how he thinks things should be done with privacy really in mind, because he's always a privacy-aware guy.
 Well, anyway, L2 specifics.
-So it turns out that if you send the WhatsApp hour only the last update and you keep updating the last update, that's all one of course, but you're telling the WhatsApp hour what your node ID is and not your channel ID is.
+So it turns out that if you send the watchtower only the last update and you keep updating the last update, that's O(1) of course, but you're telling the watchtower what your node ID is and not your channel ID is.
 Because if you don't, then it cannot update the last update.
 So it's like, if you need an endpoint, if your trigger is consuming this transaction ID, and what I have to use for consuming that transaction ID is this last update.
 I have to identify the transaction ID, the funding transaction ID.
@@ -1028,7 +1026,7 @@ And a delete request doesn't mean it's actually deleted, it just means you could
 Speaker 2: 00:53:00
 
 Yeah, talking about the subscription model, where I think we haven't actually mentioned this in the podcast yet, but you would purchase a number of slots and for some amount of time, By deleting some of your appointments, the backups of channel state, you would open up slots again.
-Sure, whether or not Watchtower actually deletes the stuff is their business, but you would notice if they don't give you back your slots.
+Sure, whether or not watchtower actually deletes the stuff is their business, but you would notice if they don't give you back your slots.
 So you could still have five new updates and then delete three an hour later or something and basically have them on random delays, all of the things.
 
 Speaker 0: 00:53:45
@@ -1037,7 +1035,7 @@ It will reduce significantly the amount of storage that the watchtower needs.
 Again, like two dozens of bytes per update instead of like hundreds of bytes per update.
 Because it's like last update number, let's say, with the ID.
 Either that ID is reused or not.
-So it could be O1, if with a little privacy leak, it could be ONN for small updates.
+So it could be O(1), if with a little privacy leak, it could be O(n) for small updates.
 
 Speaker 2: 00:54:07
 
@@ -1047,7 +1045,7 @@ They would just know that they belong to the same package.
 Speaker 0: 00:54:15
 
 They may know your payment frequency though.
-Even if you're like delaying that, they may know like how many payments you have received because you're sending them unopted for everyone.
+Even if you're like delaying that, they may know like how many payments you have received because you're sending them and opted for a while.
 
 Speaker 2: 00:54:23
 
@@ -1056,7 +1054,7 @@ Or at least the number of times that you request an appointment.
 Speaker 0: 00:54:27
 
 Yeah.
-That's also true because that's something that we haven't mentioned.
+That's also true because that's something that we haven't mentioned right?
 But you could always add junk here from the user side.
 It's like, okay, I want to obfuscate this a little bit more.
 Since the tower doesn't know anything about this, if you're not overwriting the data you're sending, you can just every now and then pop up some random junk that it's going to consume some of your slots, but it's going to make the tower potential analysis be screwed.
@@ -1081,7 +1079,7 @@ So L2 would make privacy and storage much better.
 
 Speaker 1: 00:55:57
 
-Ooh, but that becomes very interesting when there's a breach and They all try to grab it.
+Ooh, but that becomes very interesting when there's a breach and they all try to grab it.
 
 Speaker 2: 00:56:02
 
@@ -1134,7 +1132,7 @@ It's it's replaced, isn't it?
 
 Speaker 2: 00:56:35
 
-I think it's not replaced, you can spend a previous.
+No, it's not replaced, you can spend a previous.
 So there's a trigger transaction.
 
 Speaker 0: 00:56:41
@@ -1162,7 +1160,7 @@ So like, they are spending from the same point.
 
 Speaker 2: 00:57:09
 
-No, so any PrevOut links to any UTXO that has the same script pubkey and the same amount.
+No, so any PrevOut links to any UTXO that has the same ScriptPubKey and the same amount.
 
 Speaker 0: 00:57:17
 
@@ -1174,7 +1172,7 @@ So the miner could actually collect all three transactions, as long as they orde
 
 Speaker 1: 00:57:24
 
-It's any of the PrevAs.
+It's any of the PrevOuts.
 
 Speaker 0: 00:57:27
 
@@ -1229,8 +1227,8 @@ It's interesting to think about how watchtowers factor into how Lightning functi
 
 Speaker 2: 00:58:42
 
-I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on HODL invoices.
-And I think it sounds pretty much sure Watchtower implementation will make a mobile lightning wallet environment a lot more doable.
+I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on huddling invoices.
+And I think it sounds pretty much sure watchtower implementation will make a mobile lightning wallet environment a lot more doable.
 
 Speaker 1: 00:59:02
 
