@@ -566,7 +566,7 @@ For example, one of the things we recently introduced to the eye of Satoshi afte
 We used to build the IOS Satoshi on top of `bitcoind` with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
 Now we need 5.5, because we only care about the last 100 blocks.
 That was something that initially, that's how things change.
-We assume that there's order and storage in the tower because we don't have L2.
+We assume that there's order and storage in the tower because we don't have eltoo.
 So it was like, if you have order and storage, have an archival node, that's not going to be an issue.
 And it's not, in the end you're going to probably have more than that, but you don't have to start with that.
 I've been running a tower for months now, and I didn't even have a gig of like tower data with multiple users connected.
@@ -964,14 +964,14 @@ I've never worked on it, but I think that that could be a better solution or a m
 Speaker 1: 00:50:01
 
 Another thing you've mentioned a couple times is storage.
-And one of the things on the horizon, of course, is L2.
+And one of the things on the horizon, of course, is eltoo.
 
-## Storage, Privacy and L2
+## Storage, Privacy and eltoo
 
 Speaker 1: 00:50:06
 
 So how does that, is that something you're really hoping for in terms of helping with adoption?
-I mean, I've seen that cited as one of the more useful gains from doing L2 is the storage component.
+I mean, I've seen that cited as one of the more useful gains from doing eltoo is the storage component.
 So what do you take?
 
 Speaker 2: 00:50:23
@@ -997,7 +997,7 @@ He has also been thinking about watchtowers, apart from privacy.
 I think he actually has a few mails in the mailing list dating back from 2016, maybe 2017, talking about watchtowers, talking about how to...
 I'm going to refer to the presentation I was doing before, but how the whole like identifier overriding attack works, all those things that like I ended up like learning by doing this stuff, Then I learned that he had done that way before me.
 So at some point, we started a really nice conversation about Towers on how he thinks things should be done with privacy really in mind, because he's always a privacy-aware guy.
-Well, anyway, L2 specifics.
+Well, anyway, eltoo specifics.
 So it turns out that if you send the watchtower only the last update and you keep updating the last update, that's O(1) of course, but you're telling the watchtower what your node ID is and not your channel ID is.
 Because if you don't, then it cannot update the last update.
 So it's like, if you need an endpoint, if your trigger is consuming this transaction ID, and what I have to use for consuming that transaction ID is this last update.
@@ -1070,11 +1070,11 @@ That's trade-off though, because if you queue kind of like your updates to the t
 
 Speaker 2: 00:55:27
 
-Sure, but with L2 especially,
+Sure, but with eltoo especially,
 grouping it would be much cleaner, because for the LM penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
-But with L2 you only, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
+But with eltoo you only, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
 That's also true.
-So L2 would make privacy and storage much better.
+So eltoo would make privacy and storage much better.
 
 Speaker 1: 00:55:57
 
@@ -1154,7 +1154,7 @@ They could even include all three of them in the correct order.
 Speaker 0: 00:56:56
 
 Does that work though?
-Because I mean, my understanding of L2 is not that wide, but I thought only the later one would be included.
+Because I mean, my understanding of eltoo is not that wide, but I thought only the later one would be included.
 So like, they are spending from the same point.
 
 Speaker 2: 00:57:09
@@ -1184,7 +1184,7 @@ So actually, using multiple towers in parallel would help your privacy, but suck
 
 Speaker 0: 00:57:39
 
-Yeah, being honest, I haven't put that much thought into L2 mainly because, you know, if towers were early, imagine building on L2 towers, which have no release date.
+Yeah, being honest, I haven't put that much thought into eltoo mainly because, you know, if towers were early, imagine building on eltoo towers, which have no release date.
 
 Speaker 1: 00:57:53
 
