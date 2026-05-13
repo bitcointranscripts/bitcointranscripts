@@ -1,23 +1,23 @@
 ---
-title: Watchtowers, Lightning Privacy
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergi-Delgado-and-Watchtowers--Lightning-Privacy---Episode-28-e1uce42
+title: 'Watchtowers, Lightning Privacy'
+transcript_by: 'muchai254 via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergi-Delgado-and-Watchtowers--Lightning-Privacy---Episode-28-e1uce42'
+date: '2023-02-02'
 tags:
-  - lightning
-  - privacy
-  - watchtowers
+  - 'lightning'
+  - 'privacy'
+  - 'watchtowers'
 speakers:
-  - Sergi Delgado
-date: 2023-02-02
+  - 'Sergi Delgado'
 aliases:
-  - /chaincode-labs/chaincode-podcast/watchtowers-lightning-privacy/
+  - '/chaincode-labs/chaincode-podcast/watchtowers-lightning-privacy/'
 ---
 Speaker 0: 00:00:00
 
 I came into Bitcoin because I like peer-to-peer.
 I discover more things that I love by doing so.
 And again, these are not feelings, but they are feelings related to research.
-Sorry, failing time.
+Sorry, filling time.
 
 Speaker 1: 00:00:12
 
@@ -56,7 +56,7 @@ It's been amazing, but we don't talk about feelings here.
 Speaker 1: 00:01:10
 
 You're clearly a dedicated listener if you know that.
-Yeah, we're going to talk about TXProbe because I think I saw you speak at Scaling in Tel Aviv.
+Yeah, we're gonna to talk about TXProbe because I think I saw you speak at Scaling in Tel Aviv.
 And I was like, who is this guy?
 He's talking about lightning stuff and some really interesting things.
 And I looked it up and you had also done the transaction probing for network topology using orphan transactions, which I thought was pretty tricky.
@@ -64,7 +64,7 @@ And so,
 
 Speaker 0: 00:01:35
 
-Gaby, that was interesting.
+That was interesting.
 
 Speaker 1: 00:01:36
 
@@ -72,7 +72,7 @@ Tell us about that project.
 
 Speaker 0: 00:01:38
 
-Gaby, So it started back in 2017, if I remember correctly.
+So it started back in 2017, if I remember correctly.
 That was the last year of my PhD.
 I came to the States for the first time, those are not feelings, those are facts, to work with Andrew Miller, which is a quite renowned researcher for peer-to-peer in Bitcoin.
 
@@ -86,7 +86,7 @@ Speaker 0: 00:02:03
 I don't think he has been doing research on peer-to-peer for a long time, but not because he's not interested in it.
 It's all about what your PhD candidates are interested in, right?
 He was doing all the stuff too, apart from only peer-to-peer.
-And I guess in the end, you know, if none of the appliants are interested in peer-to-peer, then you stop doing that.
+And I guess in the end, you know, if none of the applicants are interested in peer-to-peer, then you stop doing that.
 He's been interested in that.
 Like, I just feel like either he doesn't have the time to do it himself, which I'm sure he doesn't, or he hasn't found any PhD applicant here to do it.
 Which is kind of like the vibe going on for some years.
@@ -98,8 +98,8 @@ Speaker 0: 00:02:49
 
 They were known, pretty well known for the Coinscope paper, which was topology inferring using address messages and timing analysis and so on.
 And I joined hoping we could do like some network research.
-They were working on the TXPROPE paper, I think.
-So the whole TXPROPE general idea was already mentioned in the Coinscope paper.
+They were working on the TxProbe paper, I think.
+So the whole TxProbe general idea was already mentioned in the Coinscope paper.
 So they already had an idea of how to work on this.
 I hear about it.
 I loved it.
