@@ -965,7 +965,7 @@ Speaker 1: 00:50:01
 Another thing you've mentioned a couple times is storage.
 And one of the things on the horizon, of course, is L2.
 
-## Storage, Privacy, and Eltoo
+## Storage, Privacy and Eltoo
 
 Speaker 1: 00:50:06
 
