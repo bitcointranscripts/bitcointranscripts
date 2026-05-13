@@ -15,6 +15,7 @@ tags:
 speakers:
   - 'Sergi Delgado'
   - 'Mark Erhardt'
+  - 'Jonas Nick'
 categories:
   - 'podcast'
 aliases:
