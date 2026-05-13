@@ -14,6 +14,7 @@ tags:
   - 'bitcoin-core'
 speakers:
   - 'Sergi Delgado'
+  - 'Mark Erhardt'
 categories:
   - 'podcast'
 aliases:
@@ -38,7 +39,7 @@ We are.
 Speaker 1: 00:00:27 
 
 And today we're going to be joined by Sergi Delgado.
-Yeah, we're going to talk about Watchtowers.
+Yeah, we're going to talk about watchtowers.
 We're going to talk about some of his prior work.
 
 Speaker 2: 00:00:31
@@ -251,7 +252,7 @@ I mean, I think that's like well-known, you know, that like the paper was...
 Yeah.
 So I dig into the balls, I try to like get an understanding of like how everything worked, try to see, okay, is there anything that can be exploited, is there not, like what are the privacy aspects and so on and so forth.
 And I think I reach, like give or take the same conclusion that many researchers reach at the time because there were like two or three papers talking give or take about the same stuff in that year.
-One from Sergey actually with Rene Auers.
+One from Sergi actually with Rene Auers.
 There was one from Jordi, my ex-advisor at Barcelona talking about similar stuff.
 Mainly like we shouldn't be using Lightning as a privacy layer because it's not.
 It's adding some nice privacy features but it's not supposed to provide privacy, right?
@@ -287,7 +288,7 @@ But they did most of the disclosure instead of me.
 
 Speaker 1: 00:12:47
 
-And just for our listeners, so that they have a better understanding, there's sort of the balanced discovery piece, which is, if you're interested in that, you should listen to Sergey's episode because we talk about it in a fair bit of detail.
+And just for our listeners, so that they have a better understanding, there's sort of the balanced discovery piece, which is, if you're interested in that, you should listen to Sergi's episode because we talk about it in a fair bit of detail.
 There's payment discovery and there's path discovery.
 So of those three, have you kept up with what's fixed, what's not fixed, like what's the state of things?
 What's your general attitude towards where lightning is compared to when you looked at it more deeply?
@@ -453,7 +454,7 @@ We have like the explanation from Taj about how they could work.
 We are building the exact same thing, like replicated three or four times.
 Why don't we get together, write a bolt or what could have been a bleep later or whatever kind of like standardization of this and make it work for any implementation, you know?
 It's like if Lightning Labs builds it and CLion can use it, that's great.
-If you want to use it with this __beacon lining wallet__ or Electrum wants to use it, or Eclair wants to use it, whatever.
+If you want to use it with this bitcoin lightning wallet or Electrum wants to use it, or Eclair wants to use it, whatever.
 That's how it's supposed to be.
 It's part of the infrastructure of lightning.
 It shouldn't be implementation specific.
@@ -561,7 +562,7 @@ So like, why would you be doing that too?
 I realized that there was a lot of, what's the word for this?
 Like, bad inheritance, I'd say.
 Or things that came from like the Python mindset that then were way simplified.
-For example, one of the things we recently introduced to the eye of Satoshi after talking to many people about it, like including Antoine, Dribbble Antoine, and Simon Ruth, was transaction indexing within the tower.
+For example, one of the things we recently introduced to the eye of Satoshi after talking to many people about it, like including Antoine, Dribble Antoine, and Simon Ruth, was transaction indexing within the tower.
 We used to build the IOS Satoshi on top of `bitcoind` with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
 Now we need 5.5, because we only care about the last 100 blocks.
 That was something that initially, that's how things change.
@@ -881,7 +882,7 @@ I don't know that much about that.
 
 Speaker 2: 00:43:58
 
-Anyway, so unaffected basically, nevermind.
+Anyway, so unaffected basically, never mind.
 
 ## Monitoring and reacting paradigm
 
@@ -965,7 +966,7 @@ Speaker 1: 00:50:01
 Another thing you've mentioned a couple times is storage.
 And one of the things on the horizon, of course, is L2.
 
-## Storage, Privacy and Eltoo
+## Storage, Privacy and L2
 
 Speaker 1: 00:50:06
 
@@ -1158,7 +1159,7 @@ So like, they are spending from the same point.
 
 Speaker 2: 00:57:09
 
-No, so any PrevOut links to any UTXO that has the same ScriptPubKey and the same amount.
+No, so any `PrevOu`t links to any `UTXO` that has the same `ScriptPubKey` and the same amount.
 
 Speaker 0: 00:57:17
 
@@ -1170,7 +1171,7 @@ So the miner could actually collect all three transactions, as long as they orde
 
 Speaker 1: 00:57:24
 
-It's any of the PrevOuts.
+It's any of the `PrevOuts`.
 
 Speaker 0: 00:57:27
 
