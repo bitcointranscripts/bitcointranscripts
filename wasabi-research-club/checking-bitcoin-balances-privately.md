@@ -11,6 +11,8 @@ speakers:
   - 'Samir Menon'
   - 'Lucas Ontivero'
   - 'Max Hillebrand'
+  - 'Adam Ficsor'
+  - 'Jumar Macato'
 summary: 'In this video, the Wasabi Research Club delves into the topic of checking Bitcoin balances privately. They discuss the use of homomorphic encryption and private information retrieval to protect users'' privacy when querying data from a server. They explore different solutions and strategies to address challenges such as address linkability, block retrieval, and the scalability and cost of checking balances. The team also emphasizes the need for an open standard for private information retrieval to ensure decentralization. They discuss the use of Tor and homomorphic encryption together, as well as the possibility of batching requests to improve efficiency. The video concludes by highlighting the ongoing research and exploration of potential solutions to ensure private querying of Bitcoin balances and more...'
 aliases:
   - '/wasabi/research-club/checking-bitcoin-balances-privately/'
@@ -247,7 +249,7 @@ Lucas is in the call, so maybe he knows.
 
 Happy to take any other questions, Elsa.
 
-**Audience 2:** 00:21:38
+**Jumar Macato:** 00:21:38
 
 Hello, guys.
 It's quite nice to be here.
@@ -261,7 +263,7 @@ Yeah, I have a slide.
 Let's talk a little bit more about Wasabi Wallet and privacy, but then I can give that explanation.
 Does that sound good?
 
-**Audience 2:** 00:22:28
+**Jumar Macato:** 00:22:28
 
 Yes, thank you very much.
 Thank you.
@@ -459,7 +461,7 @@ So it's like very, I mean, like if the database was 100 times bigger, it would b
 
 **Max Hillebrand:** 00:34:17
 
-Yeah, like, I mean, just general, like, it's a very broad question, but is it, so if we want to have the full TXO outset of all, like, of, but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all `SegWit` and `Taproot` outputs yep and let's say we have I don't know 10,000 users or so and each of them has let's say, a thousand addresses or so.
+Yeah, like, I mean, just general, like, it's a very broad question, but is it, so if we want to have the full TXO set of all, like, of, but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all `SegWit` and `Taproot` outputs yep and let's say we have I don't know 10,000 users or so and each of them has let's say, a thousand addresses or so.
 And this is still rather small scale, but is this completely crazy?
 
 **Samir Menon:** 00:35:03
@@ -749,9 +751,9 @@ So what that means is the query is now much smaller and you perform this arbitra
 
 **Max Hillebrand:** 00:53:39
 
-Let's go to more.
+What's up, Jumar?
 
-**Audience 2:** 00:53:42
+**Jumar Macato:** 00:53:42
 
 OK, this is where I saw this illustration, because I sent maybe the link to it before.
 My question is what is the mathematical principle that enables this?
@@ -768,7 +770,7 @@ But the key insight, the algebraic insight that enables this is that, Well, if I
 It's very hard to figure out S from A S plus E.
 The post has further down kind of a discussion of like learning with errors and stuff.
 
-**Audience 2:** 00:55:23
+**Jumar Macato:** 00:55:23
 
 In programming we have this concept of you know in IEEE floating numbers there's epsilon.
 Was that related to that `e`?
@@ -796,7 +798,7 @@ The noise is growing.
 You can't do it an unlimited number of times.
 Otherwise, the ciphertext will kind of become garbage.
 
-**Audience 2:** 00:57:19
+**Jumar Macato:** 00:57:19
 
 Okay, that's the way you explained it in the terms of matrices.
 Yeah, I think it clicks something on me.
@@ -805,7 +807,7 @@ Yeah, I think it clicks something on me.
 
 Yeah, feel free to reach out if you have other questions.
 
-**Audience 2:** 00:57:33
+**Jumar Macato:** 00:57:33
 
 Another thing is that how do you get this kind of noise?
 Does it, when you deal with the floating numbers, just a little bit of noise can throw off calculations like in physics and stuff.
@@ -823,7 +825,7 @@ And we make sure that the noise distribution is not so wide as to make the ciphe
 So basically what we do is we bound the standard deviation of the output noise.
 And by doing that, we can say the noise will always be within six standard deviations of the mean and we know the standard deviation is going to be x and so we know that we will decrypt correctly.
 
-**Audience 2:** 00:59:11
+**Jumar Macato:** 00:59:11
 
 Okay, cool.
 That's all for me.
@@ -864,17 +866,17 @@ But obviously for an open standard, we're going to need open source clients and 
 
 Cool, thank you.
 
-**Audience 5:** 01:00:36
+**Adam Ficsor:** 01:00:36
 
 So I just arrived.
-Is there a way to summarize whole Spiral work in a, like, like on five?
+Is there a way to summarize whole Spiral work in a, like, like I'm five?
 
 **Samir Menon:** 01:00:54
 
 That's magic.
 Yeah, I think the summary, the best summary is honestly Max's at the beginning, which was just like, basically Spiral is a way to retrieve an item from a database without letting it ever learn what item you retrieved.
 
-**Audience 5:** 01:01:14
+**Adam Ficsor:** 01:01:14
 
 What does that mean?
 
@@ -889,7 +891,7 @@ And the point is the server never learned, you know, what the encrypted bits wer
 It never learns what the sum of everything was.
 It just kind of does the computation and sends the encrypted result back to the client.
 
-**Audience 5:** 01:02:12
+**Adam Ficsor:** 01:02:12
 
 Oh, okay.
 Okay, it's like a cryptographic challenge protocol that's like the server is sending bytes, but those bytes are not the address, but somehow be the client server challenge, you can establish the address or the information that the server is sending on the client.
@@ -906,7 +908,7 @@ The catch is that it's expensive for the server to do the computation.
 So you know the server has to invest a lot of effort to kind of answer your query.
 So you might need to eventually pay them or like in some way incentivize their their behavior
 
-**Audience 5:** 01:03:23
+**Adam Ficsor:** 01:03:23
 
 How expensive is it so expensive as?
 For the entire Bitcoin transaction history Blockchain wouldn't be able to run on a single server no matter how big you are trying to buy?
@@ -930,7 +932,7 @@ Then we'll have to think of a better way to kind of batch your queries.
 Yeah, so Adam, there's multiple layers of why this might be very difficult for us to use.
 One is we might want the transaction history, so this is the whole TX outset instead of the UTXO set.
 
-**Audience 5:** 01:04:49
+**Adam Ficsor:** 01:04:49
 
 We definitely want that, so we cannot get that?
 
@@ -939,7 +941,7 @@ We definitely want that, so we cannot get that?
 We could, but then the size of the database gets larger because you need to store all outputs, not just the unspent ones.
 And so that's the first issue.
 
-**Audience 5:** 01:05:05
+**Adam Ficsor:** 01:05:05
 
 But how large?
 Like so large that we cannot run on a server or we can buy that big server for it?
@@ -960,7 +962,7 @@ And so we have I don't know 10,000 users with each 10,000 addresses making queri
 You would have to only do it once.
 Well, next time you open the wallet, you might have received a coin to one of those many addresses.
 
-**Audience 5:** 01:06:49
+**Adam Ficsor:** 01:06:49
 
 Oh, yeah, you're right.
 Yes.
@@ -989,7 +991,7 @@ It seems massively big as a concept.
 And we can use it in many different areas.
 One, for example, might be to query the mempool of someone else, which you boot up your client and you have unconfirmed transactions and this way you could be able to get them.
 
-**Audience 5:** 01:08:45
+**Adam Ficsor:** 01:08:45
 
 So I did that in hidden wallet.
 I was querying the entire `mempool` of all the nodes I'm connected to, but it got expensive pretty fast.
@@ -1001,7 +1003,7 @@ I don't know if that's interesting.
 But I think that today your options are pretty bad.
 So I think at least on that front, yeah, we're kind of clearly better than the best way you have today to kind of look up the address of a balance that you don't already have in your wallet, of an address.
 
-**Audience 5:** 01:09:35
+**Adam Ficsor:** 01:09:35
 
 So that is a super important point.
 So what are people looking in block explorers?
@@ -1051,7 +1053,7 @@ Yeah, I think another way to think about it would be, if you want to just kind o
 If you run Spiral in AWS, you know, like you can be very confident that they don't learn anything about what you query.
 But you also don't have to take it with you when you move and figure out your ISPs, like static IP situations so you can use it on your phone when you're going somewhere or something like that.
 
-**Audience 5:** 01:13:35
+**Adam Ficsor:** 01:13:35
 
 So if I understand it correctly, the reason why we cannot use it is because There are two problems here.
 First, if we want to have the entire transaction history of an address, then we would have to run a server that might be too big for us.
@@ -1111,7 +1113,7 @@ Certainly, I mean, spent.
 So something cool about spent coins is that once they're spent, they can't come back.
 So yeah, we can exploit that.
 
-**Audience 5:** 01:17:56
+**Adam Ficsor:** 01:17:56
 
 Lucas, what's your take about all this?
 Can we use Spiral somehow we use it to make Wasabi like really light?
@@ -1183,7 +1185,7 @@ But what are you thinking of that is global that these explorers would show?
 
 Well, of course we don't know, right?
 
-**Audience 5:** 01:25:31
+**Adam Ficsor:** 01:25:31
 
 IP address, Bitcoin address.
 
@@ -1231,7 +1233,7 @@ So we found ways to exploit the fact that with fully homomorphic encryption, you
 So we kind of, we encrypt a function that expands the query.
 So we can send a very small query and then the server can do work to expand it into a vector.
 
-**Audience 5:** 01:29:00
+**Adam Ficsor:** 01:29:00
 
 That's pretty cool.
 Yeah, okay,
@@ -1340,7 +1342,7 @@ Okay.
 The token gets created during input registration and you can only register an output if you present such a token and it's anonymous e-cash so to say.
 Very rough explanation.
 
-**Audience 5:** 01:35:43
+**Adam Ficsor:** 01:35:43
 
 Cool.
 Are you familiar with the chaumian blind signatures?
@@ -1354,7 +1356,7 @@ Blind signatures probably did a p-set about that, but I could not off the top of
 It's for voting, right?
 I think.
 
-**Audience 5:** 01:36:09
+**Adam Ficsor:** 01:36:09
 
 Yeah.
 So key verified anonymous credentials are a generalization of the blind signatures.
@@ -1411,7 +1413,7 @@ Whereas lattices it's matrices and it's noise.
 And I understand that a lot better.
 It's like a lot easier for me.
 So it's funny, you should you guys are real crypto people.
-If you guys are just sitting around thinking about Pedersen commitments and homo.
+If you guys are just sitting around thinking about Pedersen commitments and homomorphisms.
 I promise homomorphic encryption is is it's also is in some ways much easier to understand.
 
 **Lucas Ontivero:** 01:39:32
@@ -1442,7 +1444,7 @@ It's true.
 I suppose academic cryptographers are less dangerous.
 You know, I think we mostly write papers and that's it.
 
-**Audience 5:** 01:40:05
+**Adam Ficsor:** 01:40:05
 
 So to be fair, we hired a cryptographer for this, so that's okay.
 But he's not here.
@@ -1458,7 +1460,7 @@ That's what a cryptographer would do, right?
 That's that's exactly they would say, we're not going to roll around, we're going to get a library, right?
 So you did the right thing.
 
-**Audience 5:** 01:40:34
+**Adam Ficsor:** 01:40:34
 
 We kind of did it all, right?
 Like we wrote a lot of cryptography code.
@@ -1495,7 +1497,7 @@ Cool.
 Well, most important questions first.
 Guys, what do you have for Samir for the next 15?
 
-**Audience 5:** 01:42:46
+**Adam Ficsor:** 01:42:46
 
 How about a big one?
 All right, go ahead, Jumar.
@@ -1504,7 +1506,7 @@ All right, go ahead, Jumar.
 
 You have to bring a big not now.
 
-**Audience 2:** 01:42:59
+**Jumar Macato:** 01:42:59
 
 Sorry about that.
 This is one question that I've been meaning to ask, is that given that the homomorphic encryption has addition and multiplication, as far as I know about abstract algebra, does that enable Turing-complete machines or computations?
@@ -1516,7 +1518,7 @@ That's what the, sometimes you see this abbreviated as fully homomorphic encrypt
 So yeah, you can do arbitrary computation, encrypted.
 Anything you can compute on regular data, it's possible to compute on encrypted data,
 
-**Audience 2:** 01:43:39
+**Jumar Macato:** 01:43:39
 
 I see.
 So you can, In a hypothetical scenario, how does one implement, for example, say, in Boolean logic, they say the NAND gate is...
@@ -1538,7 +1540,7 @@ We don't use that part of it because it's quite slow.
 But it does exist.
 It is possible.
 
-**Audience 2:** 01:45:15
+**Jumar Macato:** 01:45:15
 
 I don't suppose you can make a mini computer out of a fully homomorphic interface.
 
@@ -1548,7 +1550,7 @@ No, you absolutely can.
 In fact, people are working on it for roll-ups and stuff.
 Yeah, it's possible.
 
-**Audience 2:** 01:45:30
+**Jumar Macato:** 01:45:30
 
 If I may ask Fabricio, is that implementable in lookup tables and FPGAs and stuff?
 
@@ -1602,7 +1604,7 @@ So I mean, making everything fit in memory is, I mean, hundreds of gigs of memor
 And once you have everything fitting in memory, you can throw as many compute cores as you want at it.
 So it's a limit, but it's not crazy.
 
-**Audience 2:** 01:47:55
+**Jumar Macato:** 01:47:55
 
 Out of topic question for Fabricio.
 I've been quite interested in FPGA development.
@@ -1617,7 +1619,7 @@ But actually, these are crypto project guarding FPGA, because actually I'm deali
 But actually regarding crypto, I actually I didn't look yet, let's say.
 But actually if you, let's say regarding, for example, the primitive function to, for example, do hashing stuff or cryptographic primitives, I think you can improve probably one order of magnitude if you implement some cryptographic computation and hashing on FPGAs. This is something that I think is worth looking at, definitely.
 
-**Audience 2:** 01:49:28
+**Jumar Macato:** 01:49:28
 
 Cool.
 Last question for you.
@@ -1629,7 +1631,7 @@ Have you used those tools before or is it still vendor locked?
 
 Well at the moment we are using proper proprietary tools, for example Vivado, which is very famous, but actually, no, actually didn't yet look at the say open source opportune source development regarding that I will have a look
 
-**Audience 2:** 01:50:33
+**Jumar Macato:** 01:50:33
 
 so much thank you so much
 
