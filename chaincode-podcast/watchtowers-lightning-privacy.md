@@ -130,7 +130,7 @@ Yeah.
 Yeah, I think at the time the two better known groups for peer-to-peer in terms of research were Andrews and them.
 Ethan Heilman too, but I think Ethan was not doing peer-to-peer anymore.
 I mean he's like super well known for eclipse attacks, of course.
-Well, and also Julia for dandelion stuff.
+Well, and also Giulia [Fanti] for dandelion stuff.
 But it was around that time, you know?
 The interesting things were happening in the peer-to-peer.
 Not like recently.
@@ -141,7 +141,7 @@ Research-wise.
 Sergi Delgado: 00:04:28
 
 Don't get me wrong.
-Now we have aligning and that stuff, you know, and that have like overtaken all the interest of.
+Now we have lightning and that stuff, you know, and that have like overtaken all the interest of.
 
 Mark Erhardt: 00:04:35
 
@@ -253,7 +253,7 @@ I mean, I think that's like well-known, you know, that like the paper was...
 Yeah.
 So I dig into the bowels, I try to like get an understanding of like how everything worked, try to see, okay, is there anything that can be exploited, is there not, like what are the privacy aspects and so on and so forth.
 And I think I reach, like give or take the same conclusion that many researchers reach at the time because there were like two or three papers talking give or take about the same stuff in that year.
-One from Sergi actually with Rene Auers.
+One from Sergey [Tikhomirov] actually with Rene Pickhardt.
 There was one from Jordi, my ex-advisor at Barcelona talking about similar stuff.
 Mainly like we shouldn't be using Lightning as a privacy layer because it's not.
 It's adding some nice privacy features but it's not supposed to provide privacy, right?
@@ -323,7 +323,7 @@ It gets back to the point where all the debate about should we be paying for dat
 What do you think?
 I think we should.
 I really think we should, because otherwise, if we don't, then anyone can exploit it.
-It's all about waiting until someone coming around and saying, oh, I've built this data transmitting protocol built on top of Lightning that it's using failed HCLCs to send data from A to B in a peer-to-peer way, peer-to-peer encrypted way.
+It's all about waiting until someone coming around and saying, oh, I've built this data transmitting protocol built on top of Lightning that it's using failed HTLCs to send data from A to B in a peer-to-peer way, peer-to-peer encrypted way.
 No one is using it?
 Well, some of them are using it,
 
@@ -360,7 +360,7 @@ And correct me if I'm wrong, if I am and someone listens to it, and I'm being me
 
 Sergi Delgado: 00:15:48
 
-But HCLC withholding, it's another thing that can make a huge disruption.
+But HTLC withholding, it's another thing that can make a huge disruption.
 
 Mark Erhardt: 00:15:53
 
@@ -370,7 +370,7 @@ And therefore it's hard to mitigate because you have to distinguish between the 
 Sergi Delgado: 00:16:10
 
 And normally you cannot because there's the privacy bidding where it's built in the way that you shouldn't be able to do it.
-And I mean, There are applications which use TSC huddling for that.
+And I mean, There are applications which use HTLC hodling for that.
 And it's like, there's applications being built with that, but that's a problem.
 That's taking some of your opportunity cost for that to be used for routing or for whatever you're supposed to.
 
@@ -440,8 +440,8 @@ Sergi Delgado: 00:19:29
 Lightning was doing it, Lightning Labs was doing it at the time I started doing research on this.
 So I think their release came like a couple of months or maybe three months after we started working on this.
 And I picked a lot up from their work.
-The first one I know of was Bitcoin Lightning Wallet, which was an Android-only Bitcoin Lightning Wallet, which was using a custom implementation of Watchtowers for their users, only for them, and using like, Xiaomi tokens or burning tokens to do the whole registration, like how do you pay for the tower and so on and so forth.
-So that's the same debt for simple Bitcoin wallet and the same for the Obi-Wan thingy and the same.
+The first one I know of was Bitcoin Lightning Wallet, which was an Android-only Bitcoin Lightning Wallet, which was using a custom implementation of Watchtowers for their users, only for them, and using like, chaumian tokens or bearer tokens to do the whole registration, like how do you pay for the tower and so on and so forth.
+So that's the same dev for simple Bitcoin wallet and the same for the Obi-Wan thingy and the same.
 It's That guy, I don't know his name, but he was working also with the ZBD guys.
 I think he's either Russian or Ukrainian.
 He was also like kind of like hit by the war thing, so kind of like that and stuff.
@@ -454,7 +454,7 @@ My goal with this was, let's not make 15 implementations of this, let's try to g
 We have like the explanation from Taj about how they could work.
 We are building the exact same thing, like replicated three or four times.
 Why don't we get together, write a bolt or what could have been a bleep later or whatever kind of like standardization of this and make it work for any implementation, you know?
-It's like if Lightning Labs builds it and CLion can use it, that's great.
+It's like if Lightning Labs builds it and c-lightning can use it, that's great.
 If you want to use it with this bitcoin lightning wallet or Electrum wants to use it, or Eclair wants to use it, whatever.
 That's how it's supposed to be.
 It's part of the infrastructure of lightning.
@@ -462,7 +462,7 @@ It shouldn't be implementation specific.
 So that was my main goal.
 Actually, my main goal was going beyond lightning.
 This works for any layer two solution.
-So vaults also work, channel backups also work, ephemeral data backup, like any kind of two-step protocol works for WhatsApp.
+So BOLTs also work, channel backups also work, ephemeral data backup, like any kind of two-step protocol works for watchtowers.
 So, it was a cool research project and a cool way of like getting also involved with with lightning, I guess.
 
 ## From Python Proof-of-Concept to Rust Implementation
@@ -563,8 +563,8 @@ So like, why would you be doing that too?
 I realized that there was a lot of, what's the word for this?
 Like, bad inheritance, I'd say.
 Or things that came from like the Python mindset that then were way simplified.
-For example, one of the things we recently introduced to the eye of Satoshi after talking to many people about it, like including Antoine, Dribble Antoine, and Simon Ruth, was transaction indexing within the tower.
-We used to build the IOS Satoshi on top of `bitcoind` with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
+For example, one of the things we recently introduced to the eye of Satoshi after talking to many people about it, like including Antoine, darosior Antoine, and Simon Ruth, was transaction indexing within the tower.
+We used to build the Eye of Satoshi on top of `bitcoind` with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
 Now we need 5.5, because we only care about the last 100 blocks.
 That was something that initially, that's how things change.
 We assume that there's order and storage in the tower because we don't have eltoo.
@@ -596,9 +596,9 @@ And then minimizing the or reducing the entry barrier for what you need really h
 So right now that I know of, there's at least eight or nine people running this because we have like a list of altruistic towers in the repo that people can connect to.
 There were some users before, so I knew at least about two tower operators.
 I don't know what they were doing.
-There's the guys at Embassy these days, which is a Node in a Box project, that are integrating the eye of Satoshi.
+There's the guys at Embassy these days, which is a Node in a Box project, that are integrating the Eye of Satoshi.
 I got in touch with them during BTC++ in Mexico last year, like in December last year.
-They were at the presentation for the eye of Satoshi.
+They were at the presentation for the Eye of Satoshi.
 They were like, we love this, we're going to integrate it.
 And actually they pinged me a couple of days ago because of this.
 There's also the guys at Voltage, which pinged me about it, I think it was like mid last year or something like that, about offering this as a service for their users.
@@ -628,7 +628,7 @@ So a little less than a kilobyte per channel update, I should say, so either an 
 Sergi Delgado: 00:31:08
 
 So if you think about payments, by the way, and that's something that is quite misunderstood generally, there's two appointments per payment.
-Because normally you add an HCLC and you fulfill that HCLC, meaning that for every single payment you do, you're going to have to update the tower twice.
+Because normally you add an HTLC and you fulfill that HTLC, meaning that for every single payment you do, you're going to have to update the tower twice.
 So yeah, it's for every single channel update.
 
 Mark Erhardt: 00:31:26
@@ -679,10 +679,10 @@ You just have you store all my stuff.
 
 Sergi Delgado: 00:33:38
 
-You could actually, it's built in a way where you can do that because not all the watch hour implementations allow for this, but you can retrieve the data that you have sent to the eye of Satoshi.
+You could actually, it's built in a way where you can do that because not all the watch hour implementations allow for this, but you can retrieve the data that you have sent to the Eye of Satoshi.
 So I can send you encrypted backups of something and then I can retrieve them later on.
 As long as I have the encryption key, I have a free backup system.
-So the eye of Satoshi allows this by design because it's not meant only to be used for lightning.
+So the Eye of Satoshi allows this by design because it's not meant only to be used for lightning.
 It was kind of like a general-purpose watchtower that ended up being implemented first for lightning because it was like the best fit.
 
 ## Privacy Design of the Eye of Satoshi
@@ -695,12 +695,12 @@ Sergi Delgado: 00:34:17
 
 So the design has user privacy in mind, to the highest extent I think it could.
 As I was mentioning, there's some registration and some subscription model built in, but that's being built using a few more keys for the user.
-So the user mainly creates a key pair for Sec6AP256K1, so like the Bitcoin curb, and uses the private key of that, sorry, the public key of that as an identifier with the tower, and the private key to sign messages with the tower.
+So the user mainly creates a key pair for secp256k1, so like the Bitcoin curb, and uses the private key of that, sorry, the public key of that as an identifier with the tower, and the private key to sign messages with the tower.
 So it's like I identify, so I send you like signed messages so you can like identify me and I use the public part to say it's me to register for you to be able to like verify my signatures, right?
 But that doesn't have to do anything with the node ID, the channel ID, whoever is sending you data.
 It's just something you create in the same way you may create a Bitcoin address and use that as an identifier.
 Right now the tower is being offered using two different endpoints.
-One is a HTTP slash HTTPS interface, so that's kind of like if you want to use GlueNet, but we also offer a Tor interface.
+One is a HTTP slash HTTPS interface, so that's kind of like if you want to use clearnet, but we also offer a Tor interface.
 So By using Tor and not linking your ID to anything related to you, you could decouple your node and your channels from your Tower client identifier.
 That's on one place.
 On the other place, the Tower doesn't know anything about node IDs. Again, first because the user is identified using a different identifier.
@@ -804,7 +804,7 @@ I think the minute you start sharing something with someone else, you open yours
 
 Mark Erhardt: 00:40:56
 
-So you're saying you're not going to be surprised if the eye of Satoshi is going to get run by blockchain analytics companies and offered as a service.
+So you're saying you're not going to be surprised if the Eye of Satoshi is going to get run by blockchain analytics companies and offered as a service.
 Probably that's where the free watchtowers will come from.
 
 Sergi Delgado: 00:41:09
@@ -1226,7 +1226,7 @@ It's interesting to think about how watchtowers factor into how Lightning functi
 
 Mark Erhardt: 00:58:42
 
-I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on huddling invoices.
+I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on __huddling__ invoices.
 And I think it sounds pretty much sure watchtower implementation will make a mobile lightning wallet environment a lot more doable.
 
 Jonas Nick: 00:59:02
