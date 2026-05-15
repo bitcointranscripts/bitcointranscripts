@@ -128,8 +128,8 @@ Sergi Delgado: 00:03:57
 Not the same group, but the same unit, right?
 Yeah.
 Yeah, I think at the time the two better known groups for peer-to-peer in terms of research were Andrews and them.
-Ethan Hillman too, but I think Ethan was not doing peer-to-peer anymore.
-I mean he's like super well known for gypse attacks, of course.
+Ethan Heilman too, but I think Ethan was not doing peer-to-peer anymore.
+I mean he's like super well known for eclipse attacks, of course.
 Well, and also Julia for dandelion stuff.
 But it was around that time, you know?
 The interesting things were happening in the peer-to-peer.
@@ -239,7 +239,7 @@ So for me, being able to work on `TxProbe` was kind of like a result of learning
 
 Sergi Delgado: 00:09:18
 
-At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah McGill, and they were doing, they were quite focused on privacy, right?
+At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah Meiklejohn, and they were doing, they were quite focused on privacy, right?
 They are pretty well known for some of the chain analysis stuff.
 So like some chain analysis actually was built based on one of the papers from Sarah back in 2014, 2015, or I don't even remember anymore.
 But they are like quite privacy focused, right?
@@ -251,7 +251,7 @@ I knew generally how it worked.
 You know, I've read the paper, I've tried to read the Lightning Network paper, which was kind of a challenge.
 I mean, I think that's like well-known, you know, that like the paper was...
 Yeah.
-So I dig into the balls, I try to like get an understanding of like how everything worked, try to see, okay, is there anything that can be exploited, is there not, like what are the privacy aspects and so on and so forth.
+So I dig into the bowels, I try to like get an understanding of like how everything worked, try to see, okay, is there anything that can be exploited, is there not, like what are the privacy aspects and so on and so forth.
 And I think I reach, like give or take the same conclusion that many researchers reach at the time because there were like two or three papers talking give or take about the same stuff in that year.
 One from Sergi actually with Rene Auers.
 There was one from Jordi, my ex-advisor at Barcelona talking about similar stuff.
