@@ -19,8 +19,8 @@ aliases:
 
 So hello and welcome to the Wasabi Wallet Research Club.
 Today we are speaking with Samir from Spiral, which is the title of a fancy cryptography paper of homomorphic value encryption or homomorphic encryption and private information retrieval.
-The gist of this `cryptomagic` is that a client can request data from a server, but the server does not know which data was requested.
-And there are different variants of the `cryptomagic` for different use cases.
+The gist of this cryptomagic is that a client can request data from a server, but the server does not know which data was requested.
+And there are different variants of the cryptomagic for different use cases.
 And there are currently two proof of concept apps.
 One is a Wikipedia, so where I think six gigabytes of text entries, no pictures, can be queried so that the server doesn't know which article you're interested in.
 And the second, more pressing and important for us, is an anonymous block explorer so that you can query the UTXO set and request an address and the server will give you the balance of that address.
@@ -34,7 +34,7 @@ Yeah, that was a great introduction.
 That's kind of what got me into this field is that it does sound like magic and it does sound like you probably shouldn't be able to do something like that, but you can.
 I'll talk a little bit about the internals of how Spiral works at the end, but I'll kind of first just like, let's just try to situate, the security model of a server that doesn't learn what you query is kind of complicated and so let's just first try to compare it to all the other ways you can check a Bitcoin balance.
 And let's just like situate it amongst the many, many alternative ways, one could look up the balance of a Bitcoin address.
-A little background on me, I was a graduate student at Stanford and this PIR project was kind of my senior project for my master's and it was advised by Dan Bonet but I went and got a real job, and so I stopped working on it for a little bit.
+A little background on me, I was a graduate student at Stanford and this PIR project was kind of my senior project for my master's and it was advised by Dan Boneh but I went and got a real job, and so I stopped working on it for a little bit.
 Then the itch came back and I worked on this again and published this paper, I believe, I guess I presented it in May of this year.
 So we're starting a company around this technology, I'm quitting my job soon.
 All right, so today, I think you guys and me probably have a very similar goal, which is what we want our private-like clients.
@@ -1411,7 +1411,7 @@ Whereas lattices it's matrices and it's noise.
 And I understand that a lot better.
 It's like a lot easier for me.
 So it's funny, you should you guys are real crypto people.
-If you guys are just sitting around thinking about Henderson commitments and homo.
+If you guys are just sitting around thinking about Pedersen commitments and homo.
 I promise homomorphic encryption is is it's also is in some ways much easier to understand.
 
 **Lucas Ontivero:** 01:39:32
