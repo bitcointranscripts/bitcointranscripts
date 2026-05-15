@@ -15,6 +15,7 @@ tags:
 speakers:
   - 'Sergi Delgado'
   - 'Mark Erhardt'
+  - 'Adam Jonas'
 categories:
   - 'podcast'
 aliases:
