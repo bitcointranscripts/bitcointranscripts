@@ -15,7 +15,6 @@ tags:
 speakers:
   - 'Sergi Delgado'
   - 'Mark Erhardt'
-  - 'Jonas Nick'
 categories:
   - 'podcast'
 aliases:
@@ -450,7 +449,7 @@ But he was the first, at least the first I know.
 And Lightning was the second.
 Electrum was also working on that.
 When I started working on this, I didn't try to be, okay, I'm going to just make another implementation.
-My goal with this was, let's not make 15 implementations of this, let's try to get together, agree on something that, agree on how watch hours should be, you know?
+My goal with this was, let's not make 15 implementations of this, let's try to get together, agree on something that, agree on how watchtowers should be, you know?
 We have like the explanation from Taj about how they could work.
 We are building the exact same thing, like replicated three or four times.
 Why don't we get together, write a bolt or what could have been a bleep later or whatever kind of like standardization of this and make it work for any implementation, you know?
@@ -644,7 +643,7 @@ The design allows for paying for the service.
 So every single user registers with the tower and is given a time period, a subscription period, and some slots within that period.
 And that's given for free in the current implementation.
 But the only thing you have to do in order to make people pay for that is building a paywall between that endpoint.
-You know, it's like, in order to like register to a tower, you have to like pay this HCLC or this invoice or this whatever, right?
+You know, it's like, in order to like register to a tower, you have to like pay this HTLC or this invoice or this whatever, right?
 So the design is completely compatible with making you pay for what you're using.
 Whether people are gonna pay for it, if there's people offering also for free.
 At this stage, I don't know.
@@ -695,7 +694,7 @@ Sergi Delgado: 00:34:17
 
 So the design has user privacy in mind, to the highest extent I think it could.
 As I was mentioning, there's some registration and some subscription model built in, but that's being built using a few more keys for the user.
-So the user mainly creates a key pair for secp256k1, so like the Bitcoin curb, and uses the private key of that, sorry, the public key of that as an identifier with the tower, and the private key to sign messages with the tower.
+So the user mainly creates a key pair for secp256k1, so like the Bitcoin curve, and uses the private key of that, sorry, the public key of that as an identifier with the tower, and the private key to sign messages with the tower.
 So it's like I identify, so I send you like signed messages so you can like identify me and I use the public part to say it's me to register for you to be able to like verify my signatures, right?
 But that doesn't have to do anything with the node ID, the channel ID, whoever is sending you data.
 It's just something you create in the same way you may create a Bitcoin address and use that as an identifier.
@@ -851,7 +850,7 @@ Like as a user, it becomes very interesting if you are sending data to multiple 
 
 Sergi Delgado: 00:43:06
 
-Yeah, you start getting to CPFBs fights.
+Yeah, you start getting to CPFB fights.
 
 Mark Erhardt: 00:43:10
 
@@ -954,8 +953,8 @@ And that logic is better built in nodes because they can resign, they can re-agr
 Even with this kind of approach you can build something like I share some of the keys with the tower because I'm only running that tower for myself And then now the tower doesn't have to notify me.
 Now the tower actually has sign potential.
 So I'm splitting like the watching with this part.
-And for me, the tower has like propagation key material so it can like sign some of the stuff.
-It could be an email, it could be a telegram message, it could be an Oster message, it could be whatever.
+And for me, the tower has like revocation key material so it can like sign some of the stuff.
+It could be an email, it could be a telegram message, it could be an Nostr message, it could be whatever.
 So, again, it's not as powerful, but towers are crippled anyway.
 It's like the true power is in the node side, and we are assuming that the node is not going to be there but if we find like a proper compromise with the to self delay to make it long enough so you can like come back but not too long as it is right now so if you get a non cooperative node then you have to wait for two weeks to recover your funds.
 I know that's something that has been around my mind for more than a year.
@@ -1062,7 +1061,7 @@ Mark Erhardt: 00:54:54
 
 And also, so the new appointment should happen every time the commitment transaction in the channel is updated, which also happens when the fee rates are updated.
 When you add an HTLC, when you remove an HTLC, you can batch that, you can add multiple HTLCs at the same time in parallel.
-For example, if there's an EMP payment.
+For example, if there's an AMP payment.
 
 Sergi Delgado: 00:55:15
 
@@ -1071,7 +1070,7 @@ That's trade-off though, because if you queue kind of like your updates to the t
 Mark Erhardt: 00:55:27
 
 Sure, but with eltoo especially,
-grouping it would be much cleaner, because for the LM penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
+grouping it would be much cleaner, because for the LNF penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
 But with eltoo you only, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
 That's also true.
 So eltoo would make privacy and storage much better.
@@ -1226,7 +1225,7 @@ It's interesting to think about how watchtowers factor into how Lightning functi
 
 Mark Erhardt: 00:58:42
 
-I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on __huddling__ invoices.
+I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on hodl invoices.
 And I think it sounds pretty much sure watchtower implementation will make a mobile lightning wallet environment a lot more doable.
 
 Jonas Nick: 00:59:02
