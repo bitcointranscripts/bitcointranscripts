@@ -19,7 +19,7 @@ My name is Arik, I work at Spiral and most recently I've been working on adding 
 At least I try to work on that, but I'm getting pulled back into Swift bindings.
 And this presentation is supposed to be about why the `Taproot` spec is laid out the way it is.
 What are some of the motivations, the constraints, limitations that are driving the design and I wanna really dig deep into the math that some of the vulnerabilities that we're trying to avoid as well as how we're solving those issues.
-So first of all, obviously we know that `Taproot` has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on half-route.
+So first of all, obviously we know that `Taproot` has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on Taproot.
 I guess I should have asked this question before showing this slide, but let me just go back and see if the audience has any suggestions they want to know here.
 
 ## Privacy & Security
@@ -32,10 +32,10 @@ Is there privacy?
 
 Great.
 Yeah, so the biggest reason, of course, is that we have privacy improvements.
-At least, assuming that eventually everybody is going to be using patriot `taproot` addresses.
+At least, assuming that eventually everybody is going to be using hatred `taproot` addresses.
 As you know, `taproot` is segwit v1.
 Segwit was segwit v0, that was our new software mechanism.
-If at some point we decide that we need segwit v2, then all of the old lightening `Taproot` channels that aren't human support yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
+If at some point we decide that we need segwit v2, then all of the old lightening `Taproot` channels that don't even support yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
 So that is one of the benefits.
 We are also able to improve privacy by decorrelating payments.
 That is `PTLC`s. and that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because there the primary issue that we have with `HTLC`s right now is that if we were to have multiple channels that have the same inflight `HTLC` go on-chain, then that hash would be correlatable and we would be able to link the payment chain, link one channel to the other.
