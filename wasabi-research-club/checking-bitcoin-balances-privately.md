@@ -783,7 +783,7 @@ I mean, when I say small, I don't mean like infinitesimally small like epsilon.
 I just mean that it's small relative to the size of the of the of the data.
 Yeah, so it's small enough that when the client decrypts, it can kind of round away the error.
 So you can think of it, it's less like epsilon, more like error.
-Like that floating point error where you add 1.00001 and 1.00001 and you get 2, because of that floating pointer, it's analogous to that.
+Like that floating point error where you add 1.00001 and 1.00001 and you get 2, because of that floating point error, it's analogous to that.
 It's more like there's the small error that you can ignore at the end.
 Also to Max's point, I remember I forgot to mention something which is interesting, which is you asked whether this left and right thing are different.
 And they are, to the attacker, they're indistinguishable.
