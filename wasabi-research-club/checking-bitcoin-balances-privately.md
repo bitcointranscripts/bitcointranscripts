@@ -165,7 +165,7 @@ So how practical would it be to actually get some kind of proofs on top of the b
 Yeah, that's a great question.
 So, I'm sure the exact name of this is so, so what we want is a `Merkle inclusion proof`, right?
 
-## Miracle Inclusion Proof
+## Merkle Inclusion Proof
 
 **Samir Menon:** 00:16:45
 
@@ -378,7 +378,7 @@ So they can be empty output addresses.
 **Max Hillebrand:** 00:29:22
 
 Exactly.
-Those are addresses that never were on the blockchain in an output with any amount of stats.
+Those are addresses that never were on the blockchain in an output with any amount of sats.
 It's just unused addresses, so to speak.
 
 **Samir Menon:** 00:29:32
@@ -930,7 +930,7 @@ Then we'll have to think of a better way to kind of batch your queries.
 **Max Hillebrand:** 01:04:38
 
 Yeah, so Adam, there's multiple layers of why this might be very difficult for us to use.
-One is we might want the transaction history, so this is the whole TX outset instead of the UTXO set.
+One is we might want the transaction history, so this is the whole TXO set instead of the UTXO set.
 
 **Adam Ficsor:** 01:04:49
 
@@ -993,7 +993,7 @@ One, for example, might be to query the mempool of someone else, which you boot 
 
 **Adam Ficsor:** 01:08:45
 
-So I did that in hidden wallet.
+So I did that in hiddenWallet.
 I was querying the entire `mempool` of all the nodes I'm connected to, but it got expensive pretty fast.
 
 **Samir Menon:** 01:09:02
@@ -1042,8 +1042,8 @@ You know, even when you connect to your own node, which is the scenario you brou
 But the problem with this is you still put your sensitive information on another computer.
 And sure, you're the one mainly in control of that computer, but maybe you get hacked, or maybe you are already hacked.
 And So the less information you store on someone or on another computer, the better.
-Like an existing example is ElectrumX versus ElectrumPersonalServer.
-ElectrumPersonalServer stores your extended public key on the server versus ElectrumX only receives an address and then forgets it later.
+Like an existing example is ElectrumX versus Electrum Personal Server.
+Electrum Personal Server stores your extended public key on the server versus ElectrumX only receives an address and then forgets it later.
 Right, so if someone walks into your house and takes your Electrum personal server, he knows your `X-PUB`, versus if he takes your ElectrumX, he knows nothing.
 So this is better in the sense like I would want to run a Spiral block explorer on top of my own node, just so that if someone gets hold of my computer, he still doesn't know anything.
 
@@ -1654,7 +1654,7 @@ So yeah, if that sounds good, I would love to keep in touch.
 **Max Hillebrand:** 01:51:21
 
 Yeah, definitely.
-I mean, especially if you run the server and we don't have to, and we can use it for small niche things, like finding out the amount of the input of a payment transaction so that we can pre-bump it.
+I mean, especially if you run the server and we don't have to, and we can use it for small niche things, like finding out the amount of the input of a payment transaction so that we can fee-bump it.
 These types of small things where it doesn't really make sense for us to make huge infrastructure changes for those very, very niche case things.
 
 **Samir Menon:** 01:51:46
