@@ -442,7 +442,7 @@ So I think their release came like a couple of months or maybe three months afte
 And I picked a lot up from their work.
 The first one I know of was Bitcoin Lightning Wallet, which was an Android-only Bitcoin Lightning Wallet, which was using a custom implementation of Watchtowers for their users, only for them, and using like, chaumian tokens or bearer tokens to do the whole registration, like how do you pay for the tower and so on and so forth.
 So that's the same dev for simple Bitcoin wallet and the same for the Obi-Wan thingy and the same.
-It's That guy, I don't know his name, but he was working also with the ZBD guys.
+It's that guy, I don't know his name, but he was working also with the ZBD guys.
 I think he's either Russian or Ukrainian.
 He was also like kind of like hit by the war thing, so kind of like that and stuff.
 I haven't heard from him in quite a long time.
@@ -453,7 +453,7 @@ When I started working on this, I didn't try to be, okay, I'm going to just make
 My goal with this was, let's not make 15 implementations of this, let's try to get together, agree on something that, agree on how watchtowers should be, you know?
 We have like the explanation from Taj about how they could work.
 We are building the exact same thing, like replicated three or four times.
-Why don't we get together, write a bolt or what could have been a bleep later or whatever kind of like standardization of this and make it work for any implementation, you know?
+Why don't we get together, write a bolt or what could have been a BLIP later or whatever kind of like standardization of this and make it work for any implementation, you know?
 It's like if Lightning Labs builds it and c-lightning can use it, that's great.
 If you want to use it with this bitcoin lightning wallet or Electrum wants to use it, or Eclair wants to use it, whatever.
 That's how it's supposed to be.
@@ -505,7 +505,7 @@ Yeah, but not good Python.
 I mean, don't get me wrong, it's like, you build something for one specific reason, you just don't maintain it, you don't update it.
 It may not even be generally enough for someone else to use it.
 It's a toy project.
-And for me, when I started thinking about adding lightning functionality to the watchtower, then I realized that it was an existence.
+And for me, when I started thinking about adding lightning functionality to the watchtower, then I realized that it was unexistent.
 Like the best thing you could get was the testing and kind of developing libraries from C-Lightning, which had some functionality, but not all the functionality, right?
 So it came to the thing of either doing it myself, so like implementing part of the bolts myself, which I started doing.
 I saw that that was going to take years, so it was definitely worth it, not just because of the time, but also because of the maintaining, right?
@@ -537,7 +537,7 @@ It was like, If I can learn Rust and do it, then, I mean, it may take me the sam
 So I went for the Rust route, and that's why the code base was reimplemented in Rust, was actually improved.
 A lot of the design was simplified because I didn't have to do everything myself.
 So LDK was already doing a lot of the heavy lifting.
-So real logic was already covered.
+So reorg logic was already covered.
 Part of the components were completely gone.
 There's components I don't even remember.
 Now there's three or four components in the code.
@@ -851,7 +851,7 @@ Like as a user, it becomes very interesting if you are sending data to multiple 
 
 Sergi Delgado: 00:43:06
 
-Yeah, you start getting to CPFB fights.
+Yeah, you start getting to CPFP fights.
 
 Mark Erhardt: 00:43:10
 
@@ -1071,7 +1071,7 @@ That's trade-off though, because if you queue kind of like your updates to the t
 Mark Erhardt: 00:55:27
 
 Sure, but with eltoo especially,
-grouping it would be much cleaner, because for the LNF penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
+grouping it would be much cleaner, because for the LN penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
 But with eltoo you only, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
 That's also true.
 So eltoo would make privacy and storage much better.
