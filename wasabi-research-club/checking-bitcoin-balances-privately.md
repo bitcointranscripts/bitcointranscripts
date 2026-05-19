@@ -993,7 +993,7 @@ One, for example, might be to query the mempool of someone else, which you boot 
 
 **Adam Ficsor:** 01:08:45
 
-So I did that in hiddenWallet.
+So I did that in HiddenWallet.
 I was querying the entire `mempool` of all the nodes I'm connected to, but it got expensive pretty fast.
 
 **Samir Menon:** 01:09:02
@@ -1270,7 +1270,7 @@ yeah if you have ideas for other ones let me know I want to do Ethereum and I wa
 **Samir Menon:** 01:30:54
 
 So I know, I don't know if you guys have seen, have I been pwned, but they have like a site where you put in a password to see if it's been leaked but you know of course you're just giving them your password.
-They do some hashing and stuff they say it's okay but you know you could do much better with PiR.
+They do some hashing and stuff they say it's okay but you know you could do much better with PIR.
 So I think DNS is also something we're interested in, although there are complications there, but yeah, DNS is also exciting.
 
 **Lucas Ontivero:** 01:31:24
@@ -1345,13 +1345,13 @@ Very rough explanation.
 **Adam Ficsor:** 01:35:43
 
 Cool.
-Are you familiar with the chaumian blind signatures?
+Are you familiar with the Chaumian blind signatures?
 
 **Samir Menon:** 01:35:49
 
-chaumian blind signatures?
+Chaumian blind signatures?
 Yes.
-I'm familiar with the name chaumian, but no, I haven't heard of chaumian blind signatures.
+I'm familiar with the name Chaumian, but no, I haven't heard of Chaumian blind signatures.
 Blind signatures probably did a p-set about that, but I could not off the top of my head say what exactly it is.
 It's for voting, right?
 I think.
@@ -1374,7 +1374,7 @@ Yeah, they're connected.
 
 **Max Hillebrand:** 01:37:06
 
-As far as I remember we do use pedersen commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
+As far as I remember we do use Pedersen commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
 
 **Samir Menon:** 01:37:15
 
