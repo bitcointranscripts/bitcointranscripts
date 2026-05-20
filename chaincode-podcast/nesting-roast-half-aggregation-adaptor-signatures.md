@@ -39,7 +39,7 @@ This is the second half of the conversation with Tim and Pieter.
 If you have not listened to the first half, I'd suggest going back and listening to that episode.
 We cover all sorts of fun things, including when to roll your own cryptography, why we prefer Schnorr signatures over ECDSA, Schnorr efficiency improvements, Multi-Sig, MuSig, interactive versus non-interactive signing, FROST, and more.
 So, we're going to pick things back up talking about nesting.
-We'll cover ROAST, block-wide aggregation, adaptive signatures, atomic swaps.
+We'll cover ROAST, block-wide aggregation, adaptor signatures, atomic swaps.
 This is a great conversation, and I hope you enjoy it as much as I enjoyed recording it.
 
 ## Nesting
