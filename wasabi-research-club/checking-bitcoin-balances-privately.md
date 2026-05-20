@@ -1629,7 +1629,7 @@ Have you used those tools before or is it still vendor locked?
 
 **Audience 3:** 01:50:03
 
-Well at the moment we are using proper proprietary tools, for example Vivado, which is very famous, but actually, no, actually didn't yet look at the say open source opportune source development regarding that I will have a look
+Well at the moment we are using proper proprietary tools, for example Vivado, which is very famous, but actually, no, actually didn't yet look at the say open source development regarding that I will have a look
 
 **Jumar Macato:** 01:50:33
 
