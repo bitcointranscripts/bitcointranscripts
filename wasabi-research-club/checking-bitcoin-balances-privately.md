@@ -1319,7 +1319,7 @@ It's a key, what is key?
 
 **Max Hillebrand:** 01:35:14
 
-Key verified anonymous credentials.
+Key verified anonymous credentials. (Keyed-Verification Anonymous Credentials)
 
 **Samir Menon:** 01:35:19
 
@@ -1361,7 +1361,7 @@ I think.
 Yeah.
 So key verified anonymous credentials are a generalization of the blind signatures.
 In Wasabi, at 1.0, we used blind signatures.
-In 2.0, we used key verified anonymous credentials.
+In 2.0, we used Key verified anonymous credentials. (Keyed-Verification Anonymous Credentials)
 
 **Samir Menon:** 01:36:27
 
