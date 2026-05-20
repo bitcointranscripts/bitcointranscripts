@@ -190,7 +190,7 @@ So yeah, we let them know.
 Peter said that some of that was partially known, that they were aware of it, and that they will implement some countermeasures because of it.
 Some of the ones that were literally specified in the paper, so For example, how orphan pool eviction was completely broken.
 That was like patched straight away.
-That and also in-blogging, which was one of the techniques we used.
+That and also inv logging, which was one of the techniques we used.
 Those two things were almost immediately patched by Peter before we got a chance of presenting that publicly, which happened like maybe four or five months later.
 Years after, or months after, I don't, I'm like completely lost on the timing here.
 I've learned some of that actually today, because I remember like seeing a PR later on about adding additional connections to Bitcoin Core, the ones that some of the audience may now know, the two additional ones, the ninth and the tenth outgoing connections.
@@ -340,7 +340,7 @@ It's there to be used.
 
 Adam Jonas: 00:15:08
 
-We just need a Satoshi's dice to make it useful.
+We just need a Satoshi Dice to make it useful.
 
 Sergi Delgado: 00:15:13
 
@@ -441,7 +441,7 @@ Lightning was doing it, Lightning Labs was doing it at the time I started doing 
 So I think their release came like a couple of months or maybe three months after we started working on this.
 And I picked a lot up from their work.
 The first one I know of was Bitcoin Lightning Wallet, which was an Android-only Bitcoin Lightning Wallet, which was using a custom implementation of Watchtowers for their users, only for them, and using like, chaumian tokens or bearer tokens to do the whole registration, like how do you pay for the tower and so on and so forth.
-So that's the same dev for simple Bitcoin wallet and the same for the Obi-Wan thingy and the same.
+So that's the same dev for Simple Bitcoin Wallet and the same for the OBW thingy and the same.
 It's that guy, I don't know his name, but he was working also with the ZBD guys.
 I think he's either Russian or Ukrainian.
 He was also like kind of like hit by the war thing, so kind of like that and stuff.
@@ -596,7 +596,7 @@ And then minimizing the or reducing the entry barrier for what you need really h
 So right now that I know of, there's at least eight or nine people running this because we have like a list of altruistic towers in the repo that people can connect to.
 There were some users before, so I knew at least about two tower operators.
 I don't know what they were doing.
-There's the guys at Embassy these days, which is a Node in a Box project, that are integrating the Eye of Satoshi.
+There's the guys at Embassy, Start9, which is a Node in a Box project, that are integrating the Eye of Satoshi.
 I got in touch with them during BTC++ in Mexico last year, like in December last year.
 They were at the presentation for the Eye of Satoshi.
 They were like, we love this, we're going to integrate it.
@@ -783,12 +783,12 @@ Sergi Delgado: 00:39:30
 
 We could be sharing the same subscription.
 I mean, theoretically, a lot of those things can happen.
-So like Merge and Me can just like pay for one subscription and use the same key to sign and send that information to the tower.
+So like Murch and Me can just like pay for one subscription and use the same key to sign and send that information to the tower.
 
 Adam Jonas: 00:39:40
 
 Yeah, I understand there's probably some, you know, there's maybe not certainty in a lot of these things, but there's probably some useful heuristics you'd be picking up.
-And for the Umbrella user running on a Raspberry Pi in their home, you can make some pretty solid assumptions.
+And for the Umbrel user running on a Raspberry Pi in their home, you can make some pretty solid assumptions.
 
 Sergi Delgado: 00:39:57
 
@@ -814,7 +814,7 @@ In the same way that routing nodes could be run by chain analytic companies and 
 
 Adam Jonas: 00:41:25
 
-Well if Async and LNBig you know spin up theirs then It gives them a pretty nice competitive advantage.
+Well if ACINQ and LNBIG you know spin up theirs then It gives them a pretty nice competitive advantage.
 
 Mark Erhardt: 00:41:32
 
@@ -991,7 +991,7 @@ Because people tend to think that the storage will be O(1), because the only thi
 And that's not true.
 So it could be true, but then you have privacy leaks.
 And that's something I used to think too, because that's what it's normally known, let's say, across the community.
-But ZMN actually taught me better.
+But ZmnSCPxj actually taught me better.
 He's like the privacy guy for this kind of stuff.
 He has also been thinking about watchtowers, apart from privacy.
 I think he actually has a few mails in the mailing list dating back from 2016, maybe 2017, talking about watchtowers, talking about how to...
