@@ -321,7 +321,7 @@ But it's good for these federation use cases, but I think this is really like a 
 Adam Jonas: 00:18:49
 
 So Pieter, you have mentioned cross-input aggregation as the inspiration for a lot of the work that actually has been done to date.
-Let's talk about signature aggregation, maybe start with interactive floor aggregation and sort of the cross-input aggregation history, and then we'll explore some other ways.
+Let's talk about signature aggregation, maybe start with interactive full aggregation and sort of the cross-input aggregation history, and then we'll explore some other ways.
 
 Pieter Wuille: 00:19:11
 
