@@ -819,7 +819,7 @@ But you're probably aware that handling unequal inputs is a very naive form, is 
 Because if you do a transaction like it's on the slide here, then everybody could just, every external observer even could just tell that Bob, like the one point.
 Yeah, so if everybody who looks at this transaction can just tell that B and B prime belong together, there's no privacy if you do a naive CoinJoin with unequal inputs.
 And we all know Adam has much better suggestions to do this.
-But this is still an obvious limitation of coin drawings.
+But this is still an obvious limitation of CoinJoin.
 Okay and also this is more subtle what we what we also can't do in CoinShuffle++ is the following.
 So actually you don't want to mix your money, right?
 You want to also to pay with your money.
@@ -939,7 +939,7 @@ Then suddenly those amounts, because they are in commitments, These are not fixe
 This can be re-randomized basically.
 So you can take a commitment and like you can commit to the same amount twice and those commitments look totally independent of each other.
 Then this problem with the fixed message goes away and then you suddenly can mix and pay simultaneously.
-And also like an attentive protocol you need for this is value shuffle, which is full of work.
+And also like an attentive protocol you need for this is ValueShuffle, which is full of work.
 And also you, of course, get rid of the previous problem that you can't mix unequal amounts, then you can also mix equal amounts and suddenly mixing is so much nicer and better.
 If you could hide the amounts, but I think this is also not used in this seminar here.
 
