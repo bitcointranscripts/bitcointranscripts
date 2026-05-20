@@ -294,7 +294,7 @@ Tim Ruffing: 00:16:48
 
 Pieter has already mentioned that FROST already is maybe more a niche thing than MuSig because it's really only helpful when you really specifically need the threshold property.
 And then if you add ROAST on top of it, I think ROAST is really helpful in settings where you not only need specifically the threshold property, but where you also need a large threshold setup.
-At Blockstream we have this liquid sidechain which is run by a federation and currently has an 11-of-15 setup.
+At Blockstream we have this Liquid sidechain which is run by a federation and currently has an 11-of-15 setup.
 This is already a little bit larger than what you probably do at home, I guess.
 And ROAST really makes sense, and also FROST really makes sense if you scale up to larger parameters.
 If you have large N and large T and 11-of-15 is maybe, yeah, it's larger than 2-of-3, but it could be maybe like 50-of-100 or 60-of-100.
