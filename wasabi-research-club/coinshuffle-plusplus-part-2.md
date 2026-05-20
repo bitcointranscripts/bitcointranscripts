@@ -21,7 +21,7 @@ aliases:
 All right guys, we're here with Tim Ruffing, one of the authors of the `CoinShuffle++` paper to talk about privacy.
 So this PowerPoint and the presentation, Tim will do that himself and I'll just sit back.
 
-**TIm Ruffing:** 00:00:22
+**Tim Ruffing:** 00:00:22
 
 Yeah, hey.
 I'm sorry if this will look weird now, but I had to send my slides to Arif to share the screen, so I can't click through the slides he needs to do it, so It could be a little bit weird.
@@ -30,7 +30,7 @@ Maybe maybe like actually the entire slide until we are the next thing.
 
 ## How Bitcoin transactions work.
 
-**TIm Ruffing:** 00:01:00
+**Tim Ruffing:** 00:01:00
 
 Yeah, you all know how Bitcoin works, but this is just to show you a little bit how I throw things here.
 So we have a transaction right and Alice on the left and she has a key and you have maybe some pizza dealer on the right and and again Alice's change address which is address C here and then this transaction is valid if A signs it and this checkmark thing is basically the signature very well and then we send it to the Bitcoin network and the transaction is validated and so on.
@@ -38,7 +38,7 @@ So I think this is all the things that we need here.
 
 ## Main privacy issues.
 
-**TIm Ruffing:** 00:01:39
+**Tim Ruffing:** 00:01:39
 
 And also here I included those slides because I had them anyway, but I don't need to tell you that privacy is important, right?
 And that we have a lot of privacy issues, for example, the amounts are public just by looking at the blockchain.
@@ -49,7 +49,7 @@ You know that stuff.
 
 ## Transaction graph analysis.
 
-**TIm Ruffing:** 00:02:23
+**Tim Ruffing:** 00:02:23
 
 Then you can continue with larger tools and you'll know that stuff.
 And it's huge.
@@ -58,7 +58,7 @@ That de-anonymize you for profit actually.
 
 ## Big picture of privacy technologies.
 
-**TIm Ruffing:** 00:02:45
+**Tim Ruffing:** 00:02:45
 
 So, improving privacy.
 And here I have some picture with some privacy technologies.
@@ -66,15 +66,15 @@ This is just to show you where where CoinShuffle stands in this big picture.
 In this big picture.
 So, actually I could basically put CoinJoin instead here probably and it would still be a valid picture.
 The basic idea here is that with CoinJoin or CoinShuffle or CoinMixing in general, also TumbleBit is in the same category, we can't do so much in terms of privacy, but we are pretty compatible with Bitcoin because it works currently in Bitcoin.
-Of course, if you want more privacy, you can have fancy zero-knowledge proofs and other technologies like zero-cash or whatever.
+Of course, if you want more privacy, you can have fancy zero-knowledge proofs and other technologies like Zerocash or whatever.
 But this will never be integrated in Bitcoin, I guess.
-And then there's something in the middle, maybe, that I can briefly mention in the end here, which is value shuffle.
+And then there's something in the middle, maybe, that I can briefly mention in the end here, which is ValueShuffle.
 If you can have amount of privacy in Bitcoin by adding something like confidential transactions, then mixing suddenly gets better and you can have better privacy even with mixing.
 This will be very useful.
 
 ## Coin mixing.
 
-**TIm Ruffing:** 00:04:19
+**Tim Ruffing:** 00:04:19
 
 Okay, this is a CoinJoin seminar.
 So again, we can quickly go over the slide because I don't need to explain you how mixing works.
@@ -85,7 +85,7 @@ And in this talk, our peer-to-peer mixing protocol is CoinShuffle++.
 
 ## Peer-to-peer mixing.
 
-**TIm Ruffing:** 00:05:15
+**Tim Ruffing:** 00:05:15
 
 So, what's peer-to-peer mixing?
 If you look at it as a primitive, it's a protocol where you have a number of participants.
@@ -98,7 +98,7 @@ But the messages will all be public.
 
 ## P2P trust model. / Anonymity Set in the presence of adversaries.
 
-**TIm Ruffing:** 00:06:16
+**Tim Ruffing:** 00:06:16
 
 Right, and the trust model we want to have here is really a peer-to-peer trust model, which means that there's no mutual trust, so the peers don't trust each other, it is a random strangers on the internet, or it should be the case for CoinJoin and there are no third-party routers.
 What I mean by that is we don't rely on anything like Tor to provide anonymity.
@@ -113,11 +113,11 @@ But as I said, like Bob and Carol still get an anonymity set of two in this exam
 
 ## Termination in the presence of malicious users.
 
-**TIm Ruffing:** 00:07:44
+**Tim Ruffing:** 00:07:44
 
 Another property that we want to have next to anonymity is termination.
 This simply means the protocol terminates in the presence of malicious users, which means that there shouldn't be users that can stop honest users from finishing the protocol.
-The only thing we assume here is what I mentioned last week in the informal discussion about Crunchyroll++ already.
+The only thing we assume here is what I mentioned last week in the informal discussion about CoinShuffle++ already.
 For termination, we assume that there is a bonded board.
 What do we mean by that?
 It's basically a server in the middle where we all connect to, and the server handles the broadcast for us and because we are in this peer-to-peer trust model, we don't really trust the server for anonymity, but we trust it for termination.
@@ -127,7 +127,7 @@ However, no matter how malicious the server is, the server can't break anonymity
 
 ## How does `CoinShuffle++` work? / DC-net (Chaum, CRYPTO '88).
 
-**TIm Ruffing:** 00:09:00
+**Tim Ruffing:** 00:09:00
 
 So how does `CoinShuffle++` actually work?
 It's based on a DC-net which basically stands for Dining Cryptographers Network.
@@ -153,7 +153,7 @@ So If we add those together, we get 0 and 0 is indeed the sum of the messages th
 
 ## DC-nets in practice.
 
-**TIm Ruffing:** 00:12:08
+**Tim Ruffing:** 00:12:08
 
 So the interesting thing here is now that this gives the users some form of anonymity in this very simple setting.
 So, now we know what the sum of the input messages is, but we don't know who contributed what part to this sum.
@@ -162,7 +162,7 @@ This was kind of a very simple and awkward example because if you want to do thi
 This is not hard because we can just do a cryptographic key exchange.
 This is kind of standard.
 We can do the Diffie-Hellman key exchange, for example.
-But functionality-wise, What we want to do in practice is we don't want to send just one bit message, we want to send longer messages, for example, with common choices.
+But functionality-wise, What we want to do in practice is we don't want to send just one bit message, we want to send longer messages, for example, with Bitcoin addresses.
 This is also not too hard to do.
 Now I've shown you an example with the bit field, which is the field which is 0 and 1 basically as a mathematical field.
 What we can also do if you want to send larger messages is encode them as larger integers and use larger finite fields to transmute them.
@@ -181,7 +181,7 @@ Then we would have the messages.
 
 ## Slot assignment.
 
-**TIm Ruffing:** 00:15:49
+**Tim Ruffing:** 00:15:49
 
 We could have the messages back, but the problem here is that this needs this, what I call magic now, this needs an anonymous slot assignment.
 So in order to make this work, we already need some protocol that provides anonymity in some sense and this is where most of these proposals to use slot reservation actually fail in practice, because it's a chicken and egg problem.
@@ -196,7 +196,7 @@ So this is not great.
 
 ## Alphabetic ordering of public keys for slot assignment.
 
-**TIm Ruffing:** 00:17:46
+**Tim Ruffing:** 00:17:46
 
 What we do instead is based on an idea that's pretty old already.
 It appeared shortly after the DC-nets.
@@ -205,7 +205,7 @@ It appeared shortly after the DC-nets.
 
 Before you go into, can I have a question?
 
-**TIm Ruffing:** 00:18:07
+**Tim Ruffing:** 00:18:07
 
 Sure, yeah,
 
@@ -218,7 +218,7 @@ So why wouldn't a slot assignment work in, since everyone knows about everyone, 
 
 You because the whole point is we don't want to know who is who is.
 
-**TIm Ruffing:** 00:18:35
+**Tim Ruffing:** 00:18:35
 
 Right, so I mean functionally yes but like The problem is we we also like the peers here want anonymity even against each other, right?
 So like if everybody in the shuffling knows that like if Alice knows that Bob has the first slot, then Bob can't get the anonymity because whatever message appears in the first slot it will be Bob's.
@@ -237,7 +237,7 @@ Why are finite fields needed?
 If you can do a DC net for one bit, can't you do it for 10 bits or any arbitrary number of bits?
 Just have shared keys that are M bits long.
 
-**TIm Ruffing:** 00:19:25
+**Tim Ruffing:** 00:19:25
 
 You mean just by using XOR instead of finite fields?
 
@@ -245,7 +245,7 @@ You mean just by using XOR instead of finite fields?
 
 That's right.
 
-**TIm Ruffing:** 00:19:36
+**Tim Ruffing:** 00:19:36
 
 In general, you can do this with these DNETs and this is what people usually do.
 The reason why you need finite fields is exactly on the slide I'm talking about now.
@@ -253,7 +253,7 @@ So this will be clear in a minute, I hope.
 
 ## Slot reservation. / Multiple messages (BB, EC'89).
 
-**TIm Ruffing:** 00:19:57
+**Tim Ruffing:** 00:19:57
 
 So what we do instead of this slot reservation thing is actually it's abusing a method that has been proposed to the slot reservation but we have been using it to send the messages directly So what we do is we have something we could call slots.
 It's not really slots, something like slots.
@@ -268,7 +268,7 @@ She will send m1^3 in the third slot and so on up to M1^n.
 
 Tim, could you explain why she doesn't lose anonymity when she, in the first slot, when she broadcasts M1?
 
-**TIm Ruffing:** 00:21:14
+**Tim Ruffing:** 00:21:14
 
 Because everybody will do the same.
 So also Bob will send M2 in the first slot and M2^2 in the second slot and so on.
@@ -279,7 +279,7 @@ Does this make sense?
 
 So if Bob hears M1 and M3, can't he know that M1 comes from user 1 and M3 comes from user 3?
 
-**TIm Ruffing:** 00:21:51
+**Tim Ruffing:** 00:21:51
 
 Ah, yeah I think the thing that you're missing here is that we are still doing a DC net in all of those slots.
 So we still have the shared keys in here.
@@ -295,13 +295,13 @@ Does this make sense?
 Yes, so sorry follow-up question.
 So doesn't M1 interfere with M2 when they're canceling out?
 
-**TIm Ruffing:** 00:23:28
+**Tim Ruffing:** 00:23:28
 
 Yes and I will come to that now.
 
 ## Sum of messages over finite-fields. / Power sums.
 
-**TIm Ruffing:** 00:23:41
+**Tim Ruffing:** 00:23:41
 
 Yes, so you said m1 will interfere with m2 here and that's kind of true.
 What we will have if we have all those messages in the first slot.
@@ -315,7 +315,7 @@ Does this make sense so far?
 
 When we're doing sums, are we doing sums over a finite field or XOR sums?
 
-**TIm Ruffing:** 00:24:37
+**Tim Ruffing:** 00:24:37
 
 Yes, we're doing sums over finite fields.
 
@@ -323,7 +323,7 @@ Yes, we're doing sums over finite fields.
 
 I'm very curious what you do with those sums.
 
-**TIm Ruffing:** 00:25:08
+**Tim Ruffing:** 00:25:08
 
 So, okay, now we have those power sums.
 And now I think we could go into that in detail, maybe later, if you're really interested.
@@ -337,7 +337,7 @@ This wouldn't work if you used XOR.
 
 ## Disruption.
 
-**TIm Ruffing:** 00:27:15
+**Tim Ruffing:** 00:27:15
 
 Now the big problem in DCNets is that they can be disrupted, which basically means if there's one malicious user, let's say your Bob is malicious, what Bob could do is instead of sending m2 and m2^2 and so on and following this nice algebraic structure that you're supposed to follow, Bob could just send bullshit in every slot, for example, like random values or anything else that he wants, right?
 And now the problem is if we now want to sum up in the slots, of course we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DCNets here, or a DCNet in every of the n slots.
@@ -351,17 +351,17 @@ Well, in case of disruption, break anonymity.
 
 ## Why `CoinShuffle++` works. / Flowchart of CoinShuffle
 
-**TIm Ruffing:** 00:29:07
+**Tim Ruffing:** 00:29:07
 
 And, well, this may sound like a bad idea, but let me explain why this actually works.
 And to understand why this makes sense, we need to have a look at the flowchart of the coin shuffle run.
 So the first thing we do, like everybody generates the fresh Bitcoin address, this is gonna be the output in the coin transaction on the right side and it will be our message in the peer-to-peer mixing protocol.
 Then, peers do key exchanges.
-They run the Hellman key exchanger.
+They run the Diffie-Hellman key exchanger.
 I don't need to explain you how it works.
 Just it makes sure that every pair of users will have a shared key that they need for the DCnet.
 Okay, then we run the actual DC net and then we would run it in slots as I've just shown you.
-And then now If we would proceed like I've shown you previously, and actually this will not be the final flowchart of CronShuffle++, We will come to that later, but bear with me for the moment.
+And then now If we would proceed like I've shown you previously, and actually this will not be the final flowchart of CoinShuffle++, We will come to that later, but bear with me for the moment.
 If we would do what we've seen on the last slide, we need to somehow, we need to check if our run has been disrupted.
 And so, if you get the output, the only thing you can do now is to see if your own message is there, right?
 Like If you're Alice, you get those power sums in the end, or if you hope that they are power sums, you try to decode the list of messages, and then you have a candidate result for the protocol.
@@ -373,7 +373,7 @@ The only thing you can do now is you can look at if your own message is there, w
 
 Can you, instead of looking at your message, although it doesn't matter, that's good, But instead of looking at your message, can you just check if these are Bitcoin addresses or bullshit?
 
-**TIm Ruffing:** 00:32:13
+**Tim Ruffing:** 00:32:13
 
 You could have some redundancy in there.
 
@@ -381,7 +381,7 @@ You could have some redundancy in there.
 
 Yeah, but it doesn't matter because checking if your message is there is just as easy as anything else.
 
-**TIm Ruffing:** 00:32:29
+**Tim Ruffing:** 00:32:29
 
 Yeah, let me think about this for a moment.
 
@@ -389,7 +389,7 @@ Yeah, let me think about this for a moment.
 
 The question if bullshit can be constructed in a way that still valid Bitcoin addresses.
 
-**TIm Ruffing:** 00:32:47
+**Tim Ruffing:** 00:32:47
 
 Yes, yeah this is the problem so I can't, I don't have this on the slides, but what could happen is that, like in the example Bob was the malicious guy, right?
 So let's say Bob sends his messages last.
@@ -404,7 +404,7 @@ Okay?
 
 No, not okay, because then everyone would be able to check if Alice's message is a Bitcoin address, valid Bitcoin address or not.
 
-**TIm Ruffing:** 00:34:08
+**Tim Ruffing:** 00:34:08
 
 So, what Bob sees is, Bob sees just a list of the other messages.
 He doesn't know which message belongs to which user.
@@ -415,7 +415,7 @@ But now, because he knows M1, he could send bullshit such that m1 is disrupted, 
 
 Yes
 
-**TIm Ruffing:** 00:34:41
+**Tim Ruffing:** 00:34:41
 
 Okay.
 So, he could selectively disrupt messages even though he doesn't know to which users those messages belong.
@@ -425,9 +425,9 @@ So, he could selectively disrupt messages even though he doesn't know to which u
 Makes sense thank you.
 So he could swap Alice's address, Swap a random address to his own address
 
-**TIm Ruffing:** 00:35:02
+**Tim Ruffing:** 00:35:02
 
-For example, yeah, What I was saying before is that the only thing Alice now at the end of the DZNet round, what she can do is she can look at the set of messages of the results of the protocol and see if her old message is there, right?
+For example, yeah, What I was saying before is that the only thing Alice now at the end of the DC-net round, what she can do is she can look at the set of messages of the results of the protocol and see if her old message is there, right?
 But she doesn't know if the other messages are all there.
 She will see some messages there, for example, if Kevil's message has been replaced or not.
 And the important thing at this step here is that, however, all the peers in the protocol need to agree whether disruption has happened or not because if it has not if there was no disruption then like this is the case we see now on the slides and then they will go ahead and create a CoinJoin transaction and hopefully sign it.
@@ -457,7 +457,7 @@ Yes, it's clear for me.
 
 And then if no one signs a particular transaction, that's pretty trivial to find who is the missing signature.
 
-**TIm Ruffing:** 00:39:03
+**Tim Ruffing:** 00:39:03
 
 Exactly, that's the case now.
 Then , if everybody decides great, success.
@@ -475,7 +475,7 @@ Then we can, because then we gave up anonymity for the single run, we can figure
 
 ## "Fresh" vs. "Fixed" input messages.
 
-**TIm Ruffing:** 00:41:30
+**Tim Ruffing:** 00:41:30
 
 So what I told you now is basically the entire idea of the protocol is this.
 Why this works with giving up anonymity is because we have those kind of fresh Bitcoin keys, right?
@@ -487,7 +487,7 @@ And it turns out that this is not possible.
 
 ## Features of P2P mixing protocols.
 
-**TIm Ruffing:** 00:42:41
+**Tim Ruffing:** 00:42:41
 
 So if we look at features of peer-to-peer mixing protocols, I've already told you they should provide anonymity, they should provide termination.
 And now if we add support for fixed messages as a third property, and CoinShuffle++ provides anonymity and termination, great.
@@ -500,7 +500,7 @@ Then we can ask is there a protocol in the intersection of all these circuits in
 
 what the termination mean
 
-**TIm Ruffing:** 00:43:26
+**Tim Ruffing:** 00:43:26
 
 Termination means that the protocol terminates, even if there are malicious peers inside.
 
@@ -508,7 +508,7 @@ Termination means that the protocol terminates, even if there are malicious peer
 
 So not termination would mean if there are malicious peers then the protocol just doesn't.
 
-**TIm Ruffing:** 00:43:46
+**Tim Ruffing:** 00:43:46
 
 It doesn't finish.
 So, or it aborts.
@@ -517,7 +517,7 @@ So, or it aborts.
 
 So it's like termination is?
 
-**TIm Ruffing:** 00:43:59
+**Tim Ruffing:** 00:43:59
 
 Maybe it should have been called successful termination, right?
 So you can imagine that a protocol that doesn't provide termination basically, for example, it tries to start mixing with the DCnet and then it notices, oh, there was disruption and then, well, it fails, just aborts.
@@ -526,7 +526,7 @@ So you can imagine that a protocol that doesn't provide termination basically, f
 
 Okay, so if it aborts, if it notices that there was disruption, then that would mean termination is not ensured.
 
-**TIm Ruffing:** 00:44:31
+**Tim Ruffing:** 00:44:31
 
 Right.
 
@@ -538,7 +538,7 @@ Yeah, so I think Adam, like currently Wasabi does not guarantee termination, rig
 Because if a `CoinJoin` doesn't happen, wasabi bans a coin and then reopens the round and more malicious people could enter the round.
 But one way to make it guaranteed to terminate is to only allow the same participants and then exclude them so that it converges to a smaller and smaller number.
 
-**TIm Ruffing:** 00:45:08
+**Tim Ruffing:** 00:45:08
 
 I see.
 
@@ -553,7 +553,7 @@ In this case I'm saying specifically given F malicious peers, can you tell me wh
 And in the case of `CoinShuffle++` the answer is 4 + 2 F rounds.
 And in the case of Wasabi, it's just when we've banned enough people and there are no more malicious peers and we don't know when that will be.
 
-**TIm Ruffing:** 00:45:44
+**Tim Ruffing:** 00:45:44
 
 So There's half a pound of the number of UTXOs in the chain.
 But it's pretty large.
@@ -567,12 +567,12 @@ You just said that if the round aborts, then that means that it aborts in a way 
 
 I think termination in this case means that it's successful, that eventually there's a CoinJoin.
 
-**TIm Ruffing:** 00:46:24
+**Tim Ruffing:** 00:46:24
 
 Yeah, I think, Adam, what you're mixing up here is when I say anonymity and termination here, in particular termination, I look at the entire protocol.
 So like the entire protocol provides termination and it does so by like the inner working is that it tries to run once and if it sees that this run doesn't work then it restarts.
 
-**TIm Ruffing:** 00:47:01
+**Tim Ruffing:** 00:47:01
 
 But like when I say termination I look at the like the entire protocol in the black box as a black box.
 It doesn't matter what it does internally.
@@ -585,7 +585,7 @@ Yeah, sorry for hanging on it, but I think it's important.
 So does that mean it could still be possible to provide anonymity with fixed messages if successful termination of the entire protocol is not a requirement?
 But what is the requirement is actually to being able to identify the malicious peer.
 
-**TIm Ruffing:** 00:47:43
+**Tim Ruffing:** 00:47:43
 
 So Maybe let's finish the slide and come back to this question.
 Maybe it's answered, then maybe not.
@@ -598,7 +598,7 @@ Does this answer your question or not?
 
 No, my point was that if you can identify the malicious peer, then it doesn't really matter if termination happens or not of this protocol rounds.
 
-**TIm Ruffing:** 00:49:11
+**Tim Ruffing:** 00:49:11
 
 Okay, again, when I say termination, I don't mean termination of a protocol run, of a run that can be aborted.
 I mean termination of the entire thing, like the entire thing with a big loop.
@@ -608,7 +608,7 @@ I mean termination of the entire thing, like the entire thing with a big loop.
 So, if you can identify the malicious peer, but you don't exclude it, but you have to create a completely new protocol and from that you exclude it that would mean that it is a terminating protocol.
 Okay fine, let's go.
 
-**TIm Ruffing:** 00:50:00
+**Tim Ruffing:** 00:50:00
 
 Okay.
 
@@ -619,14 +619,14 @@ Okay.
 Just to clarify, `CoinShuffle++` is a circular protocol.
 It has six steps, and then four of them are repeated every time someone disrupts, right?
 
-**TIm Ruffing:** 00:50:19
+**Tim Ruffing:** 00:50:19
 
 And that's why I look at the entire thing, like with the circular thing in It provides termination.
 I think this is all I wanted to say here.
 
 ## Anonymity attack on Dissent Protocol.
 
-**TIm Ruffing:** 00:50:39
+**Tim Ruffing:** 00:50:39
 
 I can actually show you how this anonymity attack on Dissent works.
 I don't need to tell you a lot about this end but I think it can still be instructive.
@@ -670,11 +670,11 @@ It was really a good explanation.
 **Anchor:** 00:54:14
 
 Okay.
-So, I guess I just don't understand how descent works well enough, like why there would be multiple rounds.
+So, I guess I just don't understand how dissent works well enough, like why there would be multiple rounds.
 But isn't it the case that Bob's message is XOR with the two adjacent Diffie-Hellman shared secrets?
 So How is it that you can figure out Bob's message?
 
-**TIm Ruffing:** 00:54:43
+**Tim Ruffing:** 00:54:43
 
 Okay, I think there are multiple things here.
 So, yes, I didn't explain to you how Dissent works.
@@ -693,7 +693,7 @@ So basically he observes all the messages of all the people and then she just he
 
 This might be a dumb question but how practical is it to block someone from the protocol, mid protocol?
 
-**TIm Ruffing:** 00:56:23
+**Tim Ruffing:** 00:56:23
 
 I think this really depends on the network setting.
 Like usually if you write protocols, you want them to be secure against network attackers and we actually assume that network attackers can do much more.
@@ -715,7 +715,7 @@ If you're the server in the middle.
 
 ## Broadcast rounds.
 
-**TIm Ruffing:** 00:58:38
+**Tim Ruffing:** 00:58:38
 
 Okay, now this is the flowchart again that we've seen And now the title of the slide says naïve.
 Why naïve?
@@ -731,7 +731,7 @@ I told you this example where you can selectively disrupt messages from peers.
 So to avoid this, in a naive way, we would need another broadcast here just to check that we all agree on whether there was disruption or not because as I explained to you earlier the only thing you can do is you can look at this on the output of the protocol and see if his own message is there but he doesn't know if the messages of the others are there.
 So to make sure that we all agree whether there was disruption or not, we would need another broadcast from here.
 And this is the broadcast that basically belongs to the disruption box.
-And then once we all know whether there has been disruption or not, we need one more broadcast either to broadcast the signatures on the contract transaction or to reveal the key exchange secrets depending on which way we go now.
+And then once we all know whether there has been disruption or not, we need one more broadcast either to broadcast the signatures on the CoinJoin transaction or to reveal the key exchange secrets depending on which way we go now.
 So, if you look at this now, if you count the broadcasts, these are basically four broadcasts in every run, right?
 No matter which way we go.
 Now what we do instead in CoinShuffle++ is we want to avoid this broadcast at the disrupted box here.
@@ -758,7 +758,7 @@ So now let's look at an example.
 
 ## Example execution.
 
-**TIm Ruffing:** 01:04:17
+**Tim Ruffing:** 01:04:17
 
 So if we would now have a protocol with runs, let's say we have a first run of the protocol and now every box is a broadcast.
 So we have four broadcasts.
@@ -789,7 +789,7 @@ Please ask if this is unclear.
 
 Makes sense to me.
 
-**TIm Ruffing:** 01:07:45
+**Tim Ruffing:** 01:07:45
 
 Great.
 And this is the reason why we wanted to push the DCNET round to the third broadcast instead of the second.
@@ -798,12 +798,12 @@ In the naive version, we run key exchange, then already DCNET, and then we need 
 Then the DCnet round would be in the, the DCnet message would be in the second round.
 But here what we act, what we here do is to this commitments to the DCnet And then sending the DCnet only in the third round, we move the DCnet to the third round and we make this interleaving of two here possible.
 Yeah, and now if you count the number of rounds, if you have F malicious users, then we need 4 plus 2 F broadcast rounds.
-And this is better than previous work, which was the original cold travel, which was just all of NF rounds.
+And this is better than previous work, which was the original CoinShuffle, which was just all of NF rounds.
 So much slower.
 
 ## Practical evaluation of `CoinShuffle++`.
 
-**TIm Ruffing:** 01:09:04
+**Tim Ruffing:** 01:09:04
 
 Yeah, and now we can evaluate this and practice with the with the basically the setup that I mentioned here on the slide and compare this to the to the previous protocol coin shuffle And at least in this setting, `CoinShuffle++` is much, much better than Coinshuffle, as you can see on the graph.
 So Yeah, for example, for usually a number of you point out on the paper is 50 notes there.
@@ -812,7 +812,7 @@ And then coin shuffle, the original coin shuffle was like almost three minutes i
 
 ## Handling unequal inputs.
 
-**TIm Ruffing:** 01:10:00
+**Tim Ruffing:** 01:10:00
 
 And then just, I think this is maybe should have been called limitations of CoinJoin actually for this audience here.
 But you're probably aware that handling unequal inputs is a very naive form, is a very bad idea, right?
@@ -829,7 +829,7 @@ So, I hope you could have the idea to do a payment.
 
 You can or cannot do this?
 
-**TIm Ruffing:** 01:11:39
+**Tim Ruffing:** 01:11:39
 
 You cannot.
 And I will tell you why.
@@ -855,7 +855,7 @@ So it's like the message is not the 0.1.
 The message is or 0.1.
 If you next you message or to 0.1 because Robert gave you many addresses.
 
-**TIm Ruffing:** 01:14:27
+**Tim Ruffing:** 01:14:27
 
 Yeah, but I think like I had this we had this side topic, right?
 Is a fresh message is actually necessary?
@@ -869,17 +869,17 @@ I'm sorry, can you repeat that?
 
 ## Mixing and paying simultaneously.
 
-**TIm Ruffing:** 01:15:22
+**Tim Ruffing:** 01:15:22
 
 I had a few slides under the title, side topic are fresh messages necessary, right?
-Where I showed the attack on this end, for example.
+Where I showed the attack on dissent, for example.
 
 **Audience 1:** 01:15:38
 
 But the message is fresh.
 It's just one component of the message is fixed.
 
-**TIm Ruffing:** 01:15:44
+**Tim Ruffing:** 01:15:44
 
 Okay.
 But the attack basically applies to also messages where one component is fixed.
@@ -889,7 +889,7 @@ You really lose anonymity in this setting.
 
 Also how would you pay someone, like typically you only have one address?
 
-**TIm Ruffing:** 01:16:08
+**Tim Ruffing:** 01:16:08
 
 Can you repeat?
 
@@ -897,7 +897,7 @@ Can you repeat?
 
 Typically you only get one address when you have to pay someone.
 
-**TIm Ruffing:** 01:16:17
+**Tim Ruffing:** 01:16:17
 
 Yeah, this is what I like.
 If I write a paper, I would call this an engineering challenge and put it aside.
@@ -912,7 +912,7 @@ And what you have something like `BIP32` and public derivation and so on, where 
 
 So just to reiterate on the problem here is that when you expose your messages, then of course you don't expose the Bitcoin addresses, but what you expose is that you want to send 0.1 and 0.9 and then what you could do with that is that well I guess this send failed because the peers were very malicious so I'm just going to send one Bitcoin in in the failing round but you could assume honesty and and if honesty then I mean it's not very robust.
 
-**TIm Ruffing:** 01:18:13
+**Tim Ruffing:** 01:18:13
 
 Yeah, no but I see what you're saying.
 Let me repeat to make sure I get the right thing.
@@ -922,7 +922,7 @@ So what you're saying is basically you be optimistic, try to like the first run,
 
 Yes.
 
-**TIm Ruffing:** 01:18:40
+**Tim Ruffing:** 01:18:40
 
 Yeah, this, you're right, this principle would work.
 It's a good question how robust this is in practice, but in principle you could do this.
@@ -931,7 +931,7 @@ It's a good question how robust this is in practice, but in principle you could 
 
 All right, thank you.
 
-**TIm Ruffing:** 01:18:56
+**Tim Ruffing:** 01:18:56
 
 Okay, and now this is the final word here on the slides, I think.
 So, I hinted that this already, Like if we are in a system where we have confidential transactions, which is a cryptographic technique to hide the amounts on the transactions, like the amounts are not in plain, stored in plain, but are in homomorphic commitments and cryptographic commitments.
@@ -939,7 +939,7 @@ Then suddenly those amounts, because they are in commitments, These are not fixe
 This can be re-randomized basically.
 So you can take a commitment and like you can commit to the same amount twice and those commitments look totally independent of each other.
 Then this problem with the fixed message goes away and then you suddenly can mix and pay simultaneously.
-And also like an attentive protocol you need for this is value shuffle, which is full `OP_fork`.
+And also like an attentive protocol you need for this is value shuffle, which is full of work.
 And also you, of course, get rid of the previous problem that you can't mix unequal amounts, then you can also mix equal amounts and suddenly mixing is so much nicer and better.
 If you could hide the amounts, but I think this is also not used in this seminar here.
 
@@ -950,7 +950,7 @@ Termination means that everyone signs, but that's not really what termination is
 Termination is that successful broadcast happens.
 So now there is the issue with double spends.
 
-**TIm Ruffing:** 01:21:01
+**Tim Ruffing:** 01:21:01
 
 Yeah, right.
 
@@ -963,7 +963,7 @@ What if you are a miner then everyone has to be online until confirmation.
 
 Sorry but isn't a double spend the same as not signing the CoinJoin at the end round?
 
-**TIm Ruffing:** 01:21:25
+**Tim Ruffing:** 01:21:25
 
 The problem is just that you don't figure it out so quickly, right?
 So and you don't know, right?
@@ -980,7 +980,7 @@ If you're a miner, yes.
 The smartest way to be double spend here would be that you divide the network, like one half of it knows about the correct transaction, the other half of it doesn't know about the correct transaction.
 So The peers cannot really agree if the protocol was disrupted or not.
 
-**TIm Ruffing:** 01:22:38
+**Tim Ruffing:** 01:22:38
 
 Have you seen this in Wasabi?
 Has this happened?
@@ -990,7 +990,7 @@ I mean, I think it's a problem with every CoinJoin thing, right?
 
 So, I mean, if I broadcast two transactions, like to six and six peers at the exact same time, then they are propagating on the network in a way that the mempool splits and then a miner has to come to decide which one was actually the real transaction.
 
-**TIm Ruffing:** 01:23:16
+**Tim Ruffing:** 01:23:16
 
 Right, no, I mean my question was if you have seen this attack in Wasabi or somewhere else.
 
@@ -999,7 +999,7 @@ Right, no, I mean my question was if you have seen this attack in Wasabi or some
 I did see double-spent Wasabi CoinJoins like maybe a year ago.
 I could not figure out what was that.
 
-**TIm Ruffing:** 01:23:36
+**Tim Ruffing:** 01:23:36
 
 Okay.
 I always wondered how relevant that is in practice.
@@ -1012,7 +1012,7 @@ It's just super annoying.
 Yeah, it's like, other schemes those are working in practice don't even ensure denial of service protection right and this is like a new level of theoretical attacks.
 So it's an engineering challenge, as you would put it.
 
-**TIm Ruffing:** 01:24:23
+**Tim Ruffing:** 01:24:23
 
 Yeah, I mean, I would at least say it's not the end of the world.
 But like, Even if people do this attack actively, what you can do is wait for another minute or so.
@@ -1024,7 +1024,7 @@ Like if one of the peers on the protocol sees a conflicting transaction, you cou
 
 My point would be, but you wouldn't see because the nodes don't broadcast to you, but yeah, you can relay to the others.
 
-**TIm Ruffing:** 01:25:13
+**Tim Ruffing:** 01:25:13
 
 But it's kind of, from a running time perspective, kind of annoying.
 Right now I told you, okay, like in a nice network setting, this protocol takes below 10 seconds, and then I tell you, no, you need to wait another 20 seconds just to make sure there's no double spam.
@@ -1033,7 +1033,7 @@ Right now I told you, okay, like in a nice network setting, this protocol takes 
 
 I mean if others relay a transaction like that, a conflicting transaction, then would that, I mean you would have to trust the other peers that they are not lying about the conflict in terms oh no because they can only the transaction those are theirs so they would be the the the the guys who are disrupting around so yeah never mind.
 
-**TIm Ruffing:** 01:26:01
+**Tim Ruffing:** 01:26:01
 
 I think like I think you could just assume that like if this transaction exists and it's signed that's already bad enough right.
 
@@ -1047,7 +1047,7 @@ Just a heads up.
 Okay.
 All right.
 
-**TIm Ruffing:** 01:26:26
+**Tim Ruffing:** 01:26:26
 
 Yeah, it took long.
 
@@ -1061,7 +1061,7 @@ So maybe I'll ask a question if that's okay.
 
 So can you talk a bit more about how this would look like depending on how many malicious peers there are?
 
-**TIm Ruffing:** 01:27:05
+**Tim Ruffing:** 01:27:05
 
 That's a good question.
 So this basically assumes no malicious users, which basically means four rounds, right?
