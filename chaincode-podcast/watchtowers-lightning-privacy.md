@@ -474,7 +474,7 @@ So my timing or my way of assessing how long something would take was not the be
 So what was supposed to be a six-month project ended up being a six-month POC.
 And then I tried to pursue it.
 So I got in touch with the Spiral guys, Square Crypto at the time, now Spiral.
-I got a grant to work on watch hours from research to implementation and we ended up building the client for C-Lightning around 2020.
+I got a grant to work on watchtowers from research to implementation and we ended up building the client for C-Lightning around 2020.
 All that was Python so at that time it was like okay we are reinventing a lot of the stuff.
 The support for Bitcoin in Python could be better.
 I mean, the only mature and good project, let's say, or robust project I know that builds on Python in Bitcoin is Electrum.
@@ -679,7 +679,7 @@ You just have you store all my stuff.
 
 Sergi Delgado: 00:33:38
 
-You could actually, it's built in a way where you can do that because not all the watch hour implementations allow for this, but you can retrieve the data that you have sent to the Eye of Satoshi.
+You could actually, it's built in a way where you can do that because not all the watchtower implementations allow for this, but you can retrieve the data that you have sent to the Eye of Satoshi.
 So I can send you encrypted backups of something and then I can retrieve them later on.
 As long as I have the encryption key, I have a free backup system.
 So the Eye of Satoshi allows this by design because it's not meant only to be used for lightning.
