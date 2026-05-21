@@ -451,7 +451,7 @@ And Lightning was the second.
 Electrum was also working on that.
 When I started working on this, I didn't try to be, okay, I'm going to just make another implementation.
 My goal with this was, let's not make 15 implementations of this, let's try to get together, agree on something that, agree on how watchtowers should be, you know?
-We have like the explanation from Taj about how they could work.
+We have like the explanation from Tadge about how they could work.
 We are building the exact same thing, like replicated three or four times.
 Why don't we get together, write a bolt or what could have been a BLIP later or whatever kind of like standardization of this and make it work for any implementation, you know?
 It's like if Lightning Labs builds it and c-lightning can use it, that's great.
@@ -818,7 +818,7 @@ Well if ACINQ and LNBIG you know spin up theirs then It gives them a pretty nice
 
 Mark Erhardt: 00:41:32
 
-That's assuming that LNBig is not chain analysis.
+That's assuming that LNBIG is not chain analysis.
 
 Sergi Delgado: 00:41:37
 
