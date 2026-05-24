@@ -1,23 +1,34 @@
 ---
-title: "The Great Consensus Cleanup Revival (And an Update on the Tornado Cash and Samourai Wallet Arrests)"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-93-the-great-consensus-cleanup-revival-and-an-update-on-the-tornado-cash-and-samourai-wallet-arrests-5bbxi
-tags: ['wallet', 'consensus-cleanup']
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss the Great Consensus Cleanup Revival soft fork(s). This proposal would fix some known bugs in the Bitcoin protocol, specifically the timewarp vulnerability, large block validation times, 64 byte transactions and BIP 30 verification."
+title: 'The Great Consensus Cleanup Revival (And an Update on the Tornado Cash and Samourai Wallet Arrests)'
+transcript_by: 'muchai254 via review.btctranscripts.com'
+media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-93-the-great-consensus-cleanup-revival-and-an-update-on-the-tornado-cash-and-samourai-wallet-arrests-5bbxi'
+date: '2024-05-29'
+tags:
+  - 'wallet'
+  - 'consensus-cleanup'
+speakers:
+  - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
+summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors discuss the Great Consensus Cleanup Revival soft fork(s). This proposal would fix some known bugs in the Bitcoin protocol, specifically the timewarp vulnerability, large block validation times, 64 byte transactions and BIP 30 verification.'
 episode: 93
-date: 2024-05-29
 additional_resources:
-  - title: CoinKite
-    url: https://store.coinkite.com/promo/BITCOINEXPLAINED
-  - title: https://bitcoinexplainedpodcast.com/
-    url: https://bitcoinexplainedpodcast.com/
+  - title: 'CoinKite'
+    url: 'https://store.coinkite.com/promo/BITCOINEXPLAINED'
+  - title: 'https://bitcoinexplainedpodcast.com/'
+    url: 'https://bitcoinexplainedpodcast.com/'
 ---
 Speaker 0: 00:00:19
 
-Life from Utrecht, this is Bitcoin Explained.
-Sjoerds, it's been a month.
-That means you had a whole month to think about this pun that you told me you're going to tell our dear listeners for this episode.
+Life from **Utrecht**, this is Bitcoin 
+
+Speaker 1: 00:00:22
+
+Explained.
+
+Speaker 0: 00:00:23
+
+Sjors, it's been a month.
+That means you had a whole month to think about this pun that you told me you're gonna tell our dear listeners for this episode.
 Let's hear it.
 Let's hear it.
 
@@ -26,20 +37,33 @@ Speaker 1: 00:00:35
 That's right.
 So it's cold outside.
 The government is cold.
-
-Speaker 0: 00:00:39
-
 You know what else is cold?
-Sure.
-Our sponsor.
+
+Speaker 0: 00:00:42
+
+Sjors, our sponsor.
+
+Speaker 1: 00:00:44
+
 That's right.
-The cold cart.
-The cold cart.
+
+Speaker 0: 00:00:45
+
+The Coldcard.
+The Coldcard.
 If you have coins, you want to store them.
-Cold car is the place for that It's the audio.
-Okay, are we too loud?
-It's too much echo too much echo Okay, cold card cold card cold card cold card cold card cold card.
-I think that was like our 20 seconds that we're obligated to talk about the coldcard.
+Coldcard is the place for that 
+Is the audio okay? Are we too loud?
+
+Speaker 1: 00:00:54
+
+It's too much echo 
+
+Speaker 0: 00:00:55
+
+Too much echo, okay
+Coldcard Coldcard Coldcard Coldcard Coldcard Coldcard.
+I think that was like our 20 seconds that we're obligated to talk about the Coldcard.
 What do you think?
 
 Speaker 1: 00:01:09
@@ -64,15 +88,25 @@ First, you've been following it pretty closely.
 Let's start with...
 Where do we start?
 
-Speaker 1: 00:01:52
+Speaker 0: 00:01:52
 
-Let's start with what happened with tornado cash in the netherlands yeah in case anybody was living under a rock the tornado cash we talked about that in episode 69 but he got convicted.
+Let's start with what happened with Tornado Cash in the Netherlands 
+
+Speaker 1: 00:01:55
+
+Yeah in case anybody was living under a rock the Tornado Cash we talked about that in episode 69, but he got convicted.
 So that's bad.
 
 Speaker 0: 00:02:08
 
 Yeah, Alexey Pertsev, one of the Tornado Cash developers got convicted for 64 months in prison.
+
+Speaker 1: 00:02:10
+
 Yep.
+
+Speaker 0: 00:02:11
+
 Which does seem to have a lot of relevance for Bitcoin because really he was just writing codes.
 You know, he was writing privacy code, but he was never, maybe you should give the context.
 Why do you think it's relevant for Bitcoin?
@@ -82,7 +116,7 @@ Speaker 1: 00:02:30
 Well, the main point of relevance for us, I think, is the fact that he was building a non-custodial system.
 So a system that does not hold the coins yourself.
 I mean, there is a website and those kind of tools.
-So That's a very dangerous precedent, I think, because it's not very clear where that line is.
+So that's a very dangerous precedent, I think, because it's not very clear where that line is.
 
 Speaker 0: 00:02:49
 
@@ -93,7 +127,13 @@ If you're doing that, that's basically money laundering and that is illegal.
 Speaker 1: 00:03:05
 
 Well I think you can narrow it down slightly it's not illegal to mix the coins but it is when you don't do KYC I guess that's maybe a different interpretation.
+
+Speaker 0: 00:03:14
+
 Right.
+
+Speaker 1: 00:03:15
+
 But for the you know if for all practical purposes you can't build a mixer with KYC in an ethical way anyway.
 So effectively, mixes are illegal, but technically, I think the non-KYC part of the mixer is what makes it illegal.
 
@@ -106,21 +146,40 @@ However, the Dutch court just struck that down, and now it looks like, nope, jus
 
 Speaker 1: 00:03:58
 
-Well, probably, but We don't really know because this verdict was extremely unclear about that.
+Well, probably, but we don't really know because this verdict was extremely unclear about that.
 So we don't know if it's simply the act of writing code or it is the, you know, making that code available on your own website or, you know, making that code available on some automatic website-like system or whether it's about maintaining this code after you've written it once, or if it's about promoting the code or making money from the code, it's very unclear.
 And in fact, the prosecutor seemed to emphasize making money from the code, but the judge much less so.
 
 Speaker 0: 00:04:34
 
 Yeah, the prosecutor really hones down on it essentially being a business.
-And that's why you say the making money part was important, but the judge didn't even really seem to focus on that.
-The judge just said, look, if you write this code, knowing that it can be used for this purpose and you don't do anything to stop that then you're responsible if it's really used for that purpose right yeah pretty much and what was the purpose especially of course being money laundering yeah what was especially interesting though not clear entirely how that's going to apply to Bitcoin, was the argument that he made the whole thing unstoppable.
+And that's why you say the making money part was important, but the judge didn't even really seem focal on that.
+The judge just said, look, if you write this code, knowing that it can be used for this purpose and you don't do anything to stop that then you're responsible if it's really used for that purpose, right? 
 
-Speaker 1: 00:05:10
+Speaker 1: 00:04:57
 
+Yeah, pretty much and what was...
+
+Speaker 0: 00:04:59
+
+The purpose here of course being money laundering.
+
+Speaker 1: 00:05:01
+
+Yeah, what was especially interesting though not clear entirely how that's gonna to apply to Bitcoin, was the argument that he made the whole thing unstoppable.
 So in Ethereum, part of the system at least is unstoppable.
 It's a smart contract, unless you stop Ethereum itself, of course.
-And the fact that he did that where the prosecutor just tried to argue well it's not all decentralized some of it is is fake decentralization others is real the judge completely ignored that and basically said well the fact that you even tried to make it decentralized that is actually making it worse so that that argument of course can apply extremely broadly because you could say well if you just publish source and you know that other people are using that source and you just keep updating that source code, well, that's also kind of unstoppable in a way.
+And the fact that he did that where the prosecutor just tried to argue well it's not all decentralized. 
+Some of it is is fake decentralization others is real 
+The judge completely ignored that and basically said well the fact that you even tried to make it decentralized that is actually making it worse 
+So that that argument of course can apply extremely broadly because you could say well if you just publish source and you know that other people are using that source and you just keep updating that source code, well, that's also kind of unstoppable in a way.
+
+Speaker 0: 00:05:46
+
+Yeah
+
+Speaker 1: 00:05:47
+
 So that might also be a problem.
 And of course, we all know somebody, or we don't know them, somebody who created an unstoppable system a long time ago and kept working on it.
 
@@ -140,29 +199,49 @@ And now it's kind of a all bets are off type of situation.
 
 Speaker 1: 00:06:24
 
-Yeah, and this creates a bit of a problem because we assumed that this line existed, we did not do much to defend people who built custodial mixtures.
-And in retrospect, that was probably a mistake, because as soon as you lose that line of defense, now, you know, I guess the only way to win now is to go all the way back and say, no, all mixtures should be legal, including custodial ones.
+Yeah, and this creates a bit of a problem because we assumed that this line existed, we did not do much to defend people who built custodial mixers.
+And in retrospect, that was probably a mistake, because as soon as you lose that line of defense, now, you know, I guess the only way to win now is to go all the way back and say, no, all mixers should be legal, including custodial ones.
 But now you have all this precedent that wasn't stopped.
 So that's a problem.
 
 Speaker 0: 00:06:51
 
 Right.
-OK, let's move on to the actual Bitcoin case, which is the Samurai devs.
+OK, let's move on to actual Bitcoin case, which is the Samourai devs.
 
 Speaker 1: 00:07:00
 
-Just to add one little detail, as far as I know he is going to Appeal, so we'll see what happens.
-And Appeals can quite dramatically change things.
+And just to add one little detail, as far as I know he is going to appeal, so we'll see what happens.
+And appeals can quite dramatically change things.
 
 Speaker 0: 00:07:09
 
 Yeah, is there any timeline for that?
+
+Speaker 1: 00:07:12
+
 I don't know.
-No. Okay, so let's move to the more Bitcoin relevant case or I mean...
+
+Speaker 0: 00:07:13
+
+Okay, so let's move to the more Bitcoin relevant case or I mean...
+
+Speaker 1: 00:07:17
+
 The more direct Bitcoin case.
+
+Speaker 0: 00:07:18
+
 Yeah, exactly.
-So the Samurai wallet developers Keone Rodriguez and Bill Hill William Hill both of them you know right yep yeah I used to work with them when I was at blockchain.com, so back in time, blockchain.info.
+So the Samourai Wallet developers Keonne Rodriguez and Bill Hill, William Hill 
+Both of them you know, right? 
+
+Speaker 1: 00:07:30
+
+yep yeah I used to work with them when I was at blockchain.com, so back in time, blockchain.info.
+
+Speaker 0: 00:07:35
+
 Right, so they were arrested as well, one of them in Portugal, one of them in the United States, but both on behalf of the Department of Justice, DOJ.
 So what do you want to say about that, if anything?
 
@@ -170,21 +249,22 @@ Speaker 1: 00:07:53
 
 Well, I'm not surprised that this happened, because the fact that they were going after Tornado Cash made it clear that they would go after non-custodial systems, after non-custodial mixes.
 So it seemed like a matter of time before they would go after it and then obviously they always go after the biggest or at least a big one.
-So the only question was, were they going to go after Wasabi or were they going to go after Samurai?
-Samurai has some interesting marketing that maybe made them more interesting to prosecute, but I don't know if the difference, you know, and of course we know that Wasabi was doing some proactive compliance-ish things, But I don't know why they picked one and the other.
+So the only question was, were they going to go after Wasabi or were they going to go after Samourai?
+Samourai has some interesting marketing that maybe made them more interesting to prosecute, but I don't know if the difference, you know, and of course we know that Wasabi was doing some proactive compliance-ish things 
+But I don't know why they picked one and the other.
 Ultimately, we'll find out.
 What else was I going to say about it?
 
 Speaker 0: 00:08:40
 
-Well, it was my suggestion to just sort of explain how the Samurai Mixing actually works.
+Well, it was my suggestion to just sort of explain how the Samourai mixing actually works.
 But at this point, should we just move on to the main topic of the episode?
 
 Speaker 1: 00:08:52
 
 No, I think it may make sense to briefly explain a little bit.
-So there's three aspects to Samurai Wallet, I think, that are relevant.
-One is It's not just a mixer, definitely not.
+So there's three aspects to Samourai Wallet, I think, that are relevant.
+One is it's not just a mixer, definitely not.
 It's a wallet, right?
 It's a non-custodial wallet.
 And so far it seems that that wallet was taken down mostly as a side effect of taking the mixer down, not as a direct target.
@@ -192,15 +272,15 @@ But it is down.
 But fortunately it was a non-custodial wallet and people wrote down their 12 words, hopefully.
 And so they should be fine because they can just import it into another wallet.
 But there was also a mixer component.
-And I think the two most important parts of that are something called the Whirlpool, which is a 5 input, 5 output mixer that you can use multiple times.
+And I think the two most important parts of that are something called the `Whirlpool`, which is a 5 input, 5 output mixer that you can use multiple times.
 
 Speaker 0: 00:09:37
 
-Yeah it's just a coin join which uses equal amounts.
+Yeah it's just a `CoinJoin` which uses equal amounts.
 
 Speaker 1: 00:09:41
 
-Yeah and then there is something called Ricochet which basically just as far as I understand it just forwards your coins a couple of times.
+Yeah and then there is something called `Ricochet` which basically just as far as I understand it just forwards your coins a couple of times.
 So you're making a couple of unnecessary transactions and then you send the email that you want to send and that might help when you're dealing with an exchange that only looks at say five hops ago or two hops ago and then maybe you can get around that.
 I don't know how effective any of these things are.
 
@@ -216,7 +296,8 @@ So that's something to keep in mind.
 
 Speaker 0: 00:10:27
 
-Yeah, I would say the Ricochet one, The fact that that one is even mentioned is blatantly absurd.
+Yeah, I would say the `Ricochet` one 
+The fact that that one is even mentioned is blatantly absurd.
 Like every wallet, with every wallet you can send coins to yourself.
 There's just a button that just sort of automates that you do that a couple of times.
 
@@ -226,12 +307,12 @@ Exactly.
 
 Speaker 0: 00:10:43
 
-That this is even, Like the other, the Whirlpool, I can sort of at least understand why it's seen as some, I mean, I don't agree with the rest of the course.
+That this is even, like the other, the `Whirlpool`, I can sort of at least understand why it's seen as some, I mean, I don't agree with the rest of the course.
 
 Speaker 1: 00:10:52
 
-Well, the Whirlpool requires coordinating with other users, right?
-Whereas the Ricochet thing does not.
+Well, the `Whirlpool` requires coordinating with other users, right?
+Whereas the `Ricochet` thing does not.
 It's just your wallet sending a transaction to itself, essentially five times in a row.
 
 Speaker 0: 00:11:01
@@ -253,7 +334,7 @@ Speaker 1: 00:11:32
 
 Yeah, and I think we could briefly do a recap of the differences, how these cases relate to each other.
 So we brought up most of the things.
-So the interesting thing about Samurai is that it's only happening in the US, whereas The Tornado Cash trial is happening in the US and the Netherlands in parallel, which is interesting.
+So the interesting thing about Samourai is that it's only happening in the US, whereas the Tornado Cash trial is happening in the US and the Netherlands in parallel, which is interesting.
 
 Speaker 0: 00:11:50
 
