@@ -280,7 +280,7 @@ But it is down.
 But fortunately it was a non-custodial wallet and people wrote down their 12 words, hopefully.
 And so they should be fine because they can just import it into another wallet.
 But there was also a mixer component.
-And I think the two most important parts of that are something called the `Whirlpool`, which is a 5 input, 5 output mixer that you can use multiple times.
+And I think the two most important parts of that are something called the `Whirlpool`, which is a 5 input 5 output mixer that you can use multiple times.
 
 Speaker 0: 00:09:37
 
@@ -384,7 +384,7 @@ So, yeah, bad news.
 Let's move on to our actual topic for the podcast.
 What do you think?
 
-## Introducing the Great Consensus Cleanup Revival
+## The Great Consensus Cleanup Revival
 
 Speaker 1: 00:13:45
 
@@ -600,7 +600,7 @@ Yeah and then you might think...
 
 Speaker 0: 00:20:07
 
-Like a whole **period/block** mined within the same minute 
+Like a whole period mined within the same minute 
 
 Speaker 1: 00:20:08
 
@@ -696,7 +696,7 @@ And so the difficulty goes to one very, very quickly in a matter of about 40 day
 Speaker 0: 00:22:44
 
 Right.
-So yeah, miners, like you said, it's basically 51% stack where miners can drive the difficulty down to one.
+So yeah, miners, like you said, it's basically 51% attack where miners can drive the difficulty down to one.
 And then they can mine all remaining coins that are still to be mined over the next century.
 
 Speaker 1: 00:22:59
@@ -713,18 +713,18 @@ And then on top of that, that would mess up probably a bunch of like smart contr
 
 Speaker 1: 00:23:23
 
-No, well, `timelocks` are, well, they might be affected, but because time is moving more slowly, your timelocks would indeed not expire, but that's probably not a big deal.
+No, well, `timelocks` are, well, they might be affected, but because time is moving more slowly, your `timelocks` would indeed not expire, but that's probably not a big deal.
 Like during this attack, because the attack takes five weeks plus a little bit to suck all the coins out.
 
 Speaker 0: 00:23:39
 
-Well, it could definitely, the timelocks that are locked on a certain block in the future.
+Well, it could definitely, the `timelocks` that are locked on a certain block in the future.
 
 Speaker 1: 00:23:43
 
 Yeah, so if you're looking at `height locks`, I guess you'd call them, `height locks` are definitely affected because if you have a contract that expires in block one million, well, guess what?
 That happens immediately.
-But a `timelock` would be, kind of during the attack, it would be affected because your time lock is never happening because they keep the time behind.
+But a `timelock` would be, kind of during the attack, it would be affected because your `timelock` is never happening because they keep the time behind.
 But once they stop the attack, it'll be fine.
 So you might be unlucky if your Lightning thing is in the wrong place yeah it could be bad 
 But the the worst aspect of this attack other than the five-week disruption is simply that they have now exhausted the full subsidy.
@@ -859,7 +859,7 @@ But you can make more complex transactions that include, like you say, hashing o
 Speaker 1: 00:28:08
 
 Yeah.
-So **stochastic**, for example.
+So stochastic, for example.
 
 Speaker 0: 00:28:09
 
@@ -899,10 +899,10 @@ Right, that's one shenanigan, but I think there might be other things you can do
 Speaker 0: 00:29:12
 
 Yeah, it would be a disruptive thing for the network if blocks take minutes or even longer than that to validate.
-Yeah,
 
 Speaker 1: 00:29:17
 
+Yeah,
 And so the question is, how do we prevent those blocks from being created?
 Now, for now...
 
@@ -989,7 +989,7 @@ Speaker 1: 00:32:49
 
 Yep, we are.
 
-## Banning 64-byte transactions 
+## Banning 64 byte transactions 
 
 Speaker 0: 00:32:50
 
@@ -1008,7 +1008,7 @@ Speaker 0: 00:32:58
 
 Well, we mentioned this a few times in other episodes, I don't think we've done an actual episode about it, but in our episode 81 we talked about a change to Bitcoin Core 25 that makes transactions that are 65 bytes or greater, I think they make them illegal again or something weird about that.
 I forgot what exactly we discussed.
-The point is 64 byte transactions are bad and the reason they're bad is because they look the same as 232 byte transactions next to each other in the block.
+The point is 64 byte transactions are bad and the reason they're bad is because they look the same as two 32 byte transactions next to each other in the block.
 Because of the way the Merkle trees are made.
 
 Speaker 0: 00:33:36
@@ -1032,7 +1032,7 @@ Yeah, but I don't think you can make a 16 byte transaction because simply it wou
 
 Speaker 0: 00:34:15
 
-Okay, and a 128 byte transaction would look like 4, 32 bytes.
+Okay, and a 128 byte transaction would look like four 32 bytes.
 Why is 64 singled out is my question.
 
 Speaker 1: 00:34:23
@@ -1103,7 +1103,7 @@ And all the leaves of the tree are 32 bytes, these transactions.
 And then you go one level up and it's 32 bytes again, it's 32 bytes again.
 And now what you can do is you can give somebody a block and say, here's a block and here's all the transactions in this block.
 And then you verify it and you see these 32 transactions.
-Sorry, you see these two times 32s and you combine them and it looks all good, but somebody could leave out the actual transactions and just pretend that it's only a 64 byte transaction instead of two separate ones.
+Sorry, you see these two times 32s and you can mine them and it looks all good, but somebody could leave out the actual transactions and just pretend that it's only a 64 byte transaction instead of two separate ones.
 But then you validate the 64 byte transaction and you say hey this is an invalid transaction so the whole block is invalid and now you think this block is invalid and the next time you see this block because somebody gives you the same block hash you're like I don't you know I'm not gonna check this block it's invalid but actually it's not invalid because somebody sent you because now you got the real one where you actually have the two separate transactions in it.
 
 Speaker 0: 00:36:55
@@ -1165,13 +1165,13 @@ One person sees a 64-byte transaction.
 
 Speaker 0: 00:38:57
 
-One person sees one invalid 64-byte transaction.
+One person sees one invalid 64 byte transaction.
 
 Speaker 1: 00:39:00
 
 Or valid.
-One person sees one 64-byte transaction.
-The other person sees two other transactions doesn't matter what size they are yeah and right if these two transactions are invalid but the 64-byte one is valid yeah then you come to a different conclusion at the block.
+One person sees one 64 byte transaction.
+The other person sees two other transactions doesn't matter what size they are yeah and right if these two transactions are invalid but the 64 byte one is valid yeah then you come to a different conclusion at the block.
 
 Speaker 0: 00:39:19
 
@@ -1221,6 +1221,13 @@ Yeah.
 Speaker 0: 00:40:03
 
 Now some joker sends us a transaction, sends us a block that has this one 64 byte transaction in it.
+
+Speaker 1: 00:40:12
+
+Yes
+
+Speaker 0: 00:40:13
+
 Why would my nodes look at this like two 32 byte transactions while your node is looking at it like a one 64 byte transaction.
 
 Speaker 1: 00:40:21
@@ -1264,7 +1271,7 @@ And because you say it's invalid.
 Speaker 0: 00:41:14
 
 Yeah, because it is invalid.
-The one you sent me is invalid, of course.
+The one you sent me is invalid, Sjors.
 
 Speaker 1: 00:41:17
 
@@ -1289,7 +1296,7 @@ And so the next time somebody sends you the correct one, you're fine.
 So that attack is fixed.
 But then there was other ways that you can fool Light clients like SPV wallets using the same trick because they are asking just for an SPV proof.
 So they just want proof that a transaction was included and you could now give them a transaction that they think is included because you gave the SPV proof, but it wasn't included because the real block had two separate transactions that happened to combine to this one fake transaction.
-And this could be used to steal Light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg ins and peg outs.
+And this could be used to steal Light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg-ins and peg-outs.
 And that problem, I think was solved by telling Light clients to be careful.
 I don't think it was actually solved.
 
@@ -1300,7 +1307,7 @@ What's the solution here?
 
 Speaker 1: 00:42:24
 
-Don't allow 64-byte transactions.
+Don't allow 64 0byte transactions.
 
 Speaker 0: 00:42:25
 
@@ -1320,7 +1327,7 @@ Speaker 1: 00:42:49
 Yeah, I think the actual examples would be burning coins.
 So you can make an `OP_RETURN` transaction that burns your coins, doesn't send it anywhere.
 And that can be shorter than 64 bytes, but it could also be 64 bytes.
-So if you want to burn your money using a operator that is exactly 64 bytes in total, then yeah, you can do that.
+So if you want to burn your money using a `OP_RETURN` that is exactly 64 bytes in total, then yeah, you can do that.
 
 Speaker 0: 00:43:10
 
@@ -1338,7 +1345,7 @@ Okay.
 
 Speaker 1: 00:43:21
 
-Ans so I think that was the change in version 25 so I think there was a rule that says nothing under 64 bytes, or sorry, nothing under 65 bytes.
+Ans so I think that was the change in version 25 so I think there was a rule that says nothing under 64 bytes, oh sorry, nothing under 65 bytes.
 That was the mempool rule.
 And then people were like, well, but it could be useful to have a 63 byte or 62 byte transaction to burn your coins.
 And so I think the rule was changed to no 64 bytes.
@@ -1361,7 +1368,7 @@ Okay, right.
 And now the great consensus cleanup says let's just get rid of that altogether.
 However, 63 or 62 that's still okay.
 If you really do like if you're not attacking but you're burning coins that that should work.
-But yeah, so basically if people make 64-byte transactions in the future and the soft work happens, then their transaction wouldn't be confirmed.
+But yeah, so basically if people make 64 byte transactions in the future and the soft fork happens, then their transaction wouldn't be confirmed.
 Then they have to make a new transaction that's either 63 or 65 or something else.
 As long as it's not 64.
 
