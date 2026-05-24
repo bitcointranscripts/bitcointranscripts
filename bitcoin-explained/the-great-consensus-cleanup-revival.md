@@ -17,6 +17,8 @@ additional_resources:
   - title: 'https://bitcoinexplainedpodcast.com/'
     url: 'https://bitcoinexplainedpodcast.com/'
 ---
+## Into & Sponsor Segment
+
 Speaker 0: 00:00:19
 
 Life from **Utrecht**, this is Bitcoin 
@@ -87,6 +89,8 @@ So you want to touch on that a little bit.
 First, you've been following it pretty closely.
 Let's start with...
 Where do we start?
+
+## Tornado Cash conviction: what it means for Bitcoin developers
 
 Speaker 0: 00:01:52
 
@@ -207,6 +211,10 @@ So that's a problem.
 Speaker 0: 00:06:51
 
 Right.
+
+## Samourai Wallet arrests and how the mixer worked
+
+Speaker 0: 00:06:52
 OK, let's move on to actual Bitcoin case, which is the Samourai devs.
 
 Speaker 1: 00:07:00
@@ -376,6 +384,8 @@ So, yeah, bad news.
 Let's move on to our actual topic for the podcast.
 What do you think?
 
+## Introducing the Great Consensus Cleanup Revival
+
 Speaker 1: 00:13:45
 
 Yeah, also some bad news in a way.
@@ -439,6 +449,8 @@ There's no one that says, no, these are actually features, right?
 These are just real problems, bugs that exist in the Bitcoin protocol.
 
 Speaker 1: 00:15:45
+
+## Bug #1: The Timewarp attack
 
 I think when it comes to the Timewarp attack, there might have been someone who could think of some interesting schemes that you can do using a Timewarp attack.
 
@@ -845,7 +857,7 @@ But you can make more complex transactions that include, like you say, hashing o
 Speaker 1: 00:28:08
 
 Yeah.
-So stochastic, for example.
+So **stochastic**, for example.
 
 Speaker 0: 00:28:09
 
@@ -853,7 +865,7 @@ And if you would intentionally want to design a transaction or maybe even a bloc
 
 Speaker 1: 00:28:25
 
-Yeah, and so, you know, people have been, Antoine, I believe, has been doing some math on seeing what is the absolute worst you can do?
+Yeah, and so, you know, people have been, Antoine, I believe, has been doing some math on seeing what is the absolute worst you can do.
 And he came up with something that took more than one hour to validate on a Raspberry Pi 4.
 
 Speaker 0: 00:28:37
@@ -890,7 +902,7 @@ Yeah,
 Speaker 1: 00:29:17
 
 And so the question is, how do we prevent those blocks from being created?
-Now, for now,
+Now, for now...
 
 Speaker 0: 00:29:24
 
@@ -903,25 +915,31 @@ I think on a good laptop a fraction of a second.
 Speaker 0: 00:29:33
 
 Yeah and on like a Raspberry Pi?
+
+Speaker 1: 00:29:36
+
 Probably one second.
+
+Speaker 0: 00:29:37
+
 Yeah okay just to sort of paint the context there.
 Okay so the solution?
 
 Speaker 1: 00:29:45
 
-Well the solution is in the original proposal by Bluemat, there was a solution which was just changing a few rules.
+Well the solution is in the original proposal by BlueMatt, there was a solution which was just changing a few rules.
 I think now there's discussion about a slightly different solution.
 So that's actually still ongoing research, what is the actual best solution.
-But the gist of it is that there are certain extra rules in SegWit and in Taproot that make the script safer.
-This was why the block size could be increased with SegWit because any of these extra SegWit transactions would not be as expensive and as slow.
+But the gist of it is that there are certain extra rules in `SegWit` and in `Taproot` that make the script safer.
+This was why the block size could be increased with `SegWit` because any of these extra `SegWit` transactions would not be as expensive and as slow.
 These worst case couldn't happen.
 But it looks like some of these rules should also be applied to legacy scripts, to legacy transactions.
-And then the problem is you can't just apply all of SegWit's rules to legacy transactions, so you have to be very careful which ones you'd want to apply.
+And then the problem is you can't just apply all of `SegWit`'s rules to legacy transactions, so you have to be very careful which ones you'd want to apply.
 Main problem there is, you know, somebody might have a transaction that they put in a cold wallet and or like offline wallet, right?
 So we don't see it on the blockchain and now they want to broadcast it, but we changed the rules and now they can't spend it anymore.
 Now the changes that people have in mind would only impact the most bizarre, unrealistic transactions that you can possibly imagine, but still that could still be controversial.
 So the key is to find the absolute minimum extra rules that you need in order to fix the problem and no more.
-Because the simplest solution would just be to say, hey, you know what, you can only make TAPO transactions.
+Because the simplest solution would just be to say, hey, you know what, you can only make `Taproot` transactions.
 That would fix the problem, but it would make a lot of people very angry.
 
 Speaker 0: 00:31:20
@@ -936,8 +954,14 @@ But the trade-off there is complexity.
 So a rule that says only do this after this block, or only when the coins you're spending is from this block.
 That's extra complexity that you'd prefer not to have.
 Plus, you know, if the attack, this is one of the problems, once you publish the exact fix somebody might come up with what it is fixing and then do the attack before the soft fork is activated.
-That's probably inevitable anyway, just like the time warp attack, everybody knows what to do there.
+That's probably inevitable anyway, just like the Timewarp attack, everybody knows what to do there.
+
+Speaker 0: 00:32:09
+
 Yeah.
+
+Speaker 1: 00:32:11
+
 So there's that.
 
 Speaker 0: 00:32:13
@@ -948,7 +972,7 @@ That's kind of a non-negotiable, I would say.
 
 Speaker 1: 00:32:17
 
-Yeah, so realistically, even the original proposal by Bluemet, I think it was changed a bit by him because there were several things that he wanted to change for this problem.
+Yeah, so realistically, even the original proposal by BlueMatt, I think it was changed a bit by him because there were several things that he wanted to change for this problem.
 And I think they ended up dropping one of these things.
 So hopefully there's a way to make sure that you can like there's nothing gets unspendable.
 It might just take more fees for example.
@@ -956,7 +980,7 @@ It might just take more fees for example.
 Speaker 0: 00:32:42
 
 Right.
-Okay So that was slow scripts.
+Okay so that was slow scripts.
 Are we done with slow scripts?
 
 Speaker 1: 00:32:49
@@ -971,15 +995,21 @@ Is that right?
 Speaker 1: 00:32:55
 
 Yes, 64 bytes, bad.
+
+Speaker 0: 00:32:57
+
 Why?
-Well, We mentioned this a few times in other episodes, I don't think we've done an actual episode about it, but in our episode 81 we talked about a change to Bitcoin Core 25 that makes transactions that are 65 bytes or greater, I think they make them illegal again or something weird about that.
+
+Speaker 0: 00:32:58
+
+Well, we mentioned this a few times in other episodes, I don't think we've done an actual episode about it, but in our episode 81 we talked about a change to Bitcoin Core 25 that makes transactions that are 65 bytes or greater, I think they make them illegal again or something weird about that.
 I forgot what exactly we discussed.
 The point is 64 byte transactions are bad and the reason they're bad is because they look the same as 232 byte transactions next to each other in the block.
 Because of the way the Merkle trees are made.
 
 Speaker 0: 00:33:36
 
-Sorry, we have to take a step back here, Sjoerd.
+Sorry, we have to take a step back here, Sjors.
 What does it mean?
 Why is there such a thing as a 64 byte transaction and also such a thing as a 32 byte transaction?
 Why aren't all transactions the same number of bytes?
@@ -1003,16 +1033,28 @@ Why is 64 singled out is my question.
 
 Speaker 1: 00:34:23
 
-Okay, so the Merkle tree that the Bitcoin transactions are stored in takes the SHA256 hash of every transaction and then puts that next to the shot to 56 hash of the next transaction.
-So you take all the transactions and you take their shot to 56 hashes and then in pairs you put those hashes next to each other.
+Okay, so the Merkle tree that the Bitcoin transactions are stored in takes the SHA256 hash of every transaction and then puts that next to the SHA256 hash of the next transaction.
+So you take all the transactions and you take their SHA256 hashes and then in pairs you put those hashes next to each other.
 And the size of a hash is 32 bytes.
 
 Speaker 0: 00:34:49
 
 Right, that's always 32 bytes.
+
+Speaker 1: 00:34:52
+
 Yes.
+
+Speaker 0: 00:34:53
+
 Yeah.
-So two hashes next to each other.
+
+Speaker 1: 00:34:54
+
+So two hashes next to each other...
+
+Speaker 0: 00:34:56
+
 I vaguely remember this problem.
 We discussed it.
 
@@ -1030,15 +1072,27 @@ And so...
 Speaker 0: 00:35:36
 
 64.
+
+Speaker 1: 00:35:37
+
 64, yeah.
+
+Speaker 0: 00:35:38
+
 But that would look like two hashes that are both 32 bytes.
 And why is that a problem?
+
+Speaker 1: 00:35:45
+
 Because...
-Where are these hashes in the blockchain?
+
+Speaker 0: 00:35:46
+
+Like where are these hashes in the blockchain?
+
+Speaker 1: 00:35:47
+
 It's caused multiple problems in the past.
-
-Speaker 1: 00:35:48
-
 Exactly.
 So there is a in each block is a Merkle tree of all the transactions in that block.
 And all the leaves of the tree are 32 bytes, these transactions.
@@ -1056,12 +1110,12 @@ What's the problem and who are we targeting?
 
 Speaker 1: 00:37:02
 
-Well, there are different targets.
+There are different targets.
 So this example, I think, could be used to make a network split where you would make a real block with two 32-byte transactions in it, but that when you combine those two 32-byte transactions, it would also make a real 64-byte transaction.
-So the hash of those two transactions, not 32-byte transactions, but the hashes of those two transactions, if you add them together, look like a real transaction, but it's an invalid transaction.
+So the hashes of those two transactions, not 32-byte transactions, but the hashes of those two transactions, if you add them together, look like a real transaction, but it's an invalid transaction.
 So now you are, or the other way around, the 64 byte thing is valid, but the two individual transactions are invalid.
 So if you give somebody a block, it will have the same hash at the top because the Merkle tree is the same at the top and that's the only thing you're communicating when you're communicating a block hash.
-So I'm giving you a block hash and I'm giving somebody else the same block hash but I'm going to give you the two transactions And I'm going to give this other person the one 64 byte transaction.
+So I'm giving you a block hash and I'm giving somebody else the same block hash but I'm gonna give you the two transactions and I'm gonna give this other person the one 64 byte transaction.
 And now one of you is going to say this block is invalid, and the other is going to say this block is valid.
 Now you have a network split.
 
@@ -1074,14 +1128,21 @@ Why would they check for different things?
 
 Speaker 1: 00:38:20
 
-Because I've given you the the block hash the root of the Merkle tree I've also given you all the transactions individually okay so you're actually putting those back in a tree But I'm giving you a different set of transactions than I'm giving the other person.
+Because I've given you the the block hash the root of the Merkle tree I've also given you all the transactions individually okay so you're actually putting those back in a tree 
+But I'm giving you a different set of transactions than I'm giving the other person.
 They get the same root of the tree, but one of them will say, hey, this transaction is invalid, because I don't know, it's spending more money than it's earning some other rule that's violated.
 
 Speaker 0: 00:38:43
 
 Right.
-And that's Because it's not really a transaction, it's really two 32-byte hashes.
+And that's because it's not really a transaction, it's really two 32-byte hashes.
+
+Speaker 1: 00:38:50
+
 Yeah.
+
+Speaker 0: 00:38:51
+
 Am I saying that right?
 
 Speaker 1: 00:38:51
@@ -1126,20 +1187,37 @@ Speaker 1: 00:39:37
 
 That has nothing to do with what you've seen before.
 You're basically just giving two versions of the same block that you know think is the same block because it only remembers the hash and it's not.
-So that bug has been fixed by simply not storing the block if it's invalid.
+So that bug has been fixed by simply not storing the block if it's invalid, so...
 
 Speaker 0: 00:39:53
 
-So-
 No, hang on.
+
+Speaker 1: 00:39:54
+
 Okay.
+
+Speaker 0: 00:39:54
+
 I have a question.
 I still have one question.
+
+Speaker 1: 00:39:58
+
 All right.
+
+Speaker 0: 00:39:59
+
 You and I are both running a node, okay?
+
+Speaker 1: 00:40:02
+
 Yeah.
-Now some Joker sends us a transaction, sends us a block that has this 164 byte transaction in it.
-Why would my nodes look at this like 232 byte transactions while your node is looking at it like a 164 byte transaction.
+
+Speaker 0: 00:40:03
+
+Now some joker sends us a transaction, sends us a block that has this one 64 byte transaction in it.
+Why would my nodes look at this like two 32 byte transactions while your node is looking at it like a one 64 byte transaction.
 
 Speaker 1: 00:40:21
 
@@ -1152,7 +1230,7 @@ Speaker 0: 00:40:40
 Isn't that just in the block?
 Isn't that just the block that he's sending?
 That's the block, right?
-The In the block is the transaction.
+The in the block is the transaction.
 
 Speaker 1: 00:40:48
 
@@ -1166,7 +1244,13 @@ Speaker 0: 00:41:07
 
 We got a different block.
 It just has the same hash.
+
+Speaker 1: 00:41:10
+
 Yes.
+
+Speaker 0: 00:41:11
+
 It hashes to the same hash.
 
 Speaker 1: 00:41:12
@@ -1199,10 +1283,10 @@ Speaker 1: 00:41:30
 Right now this attack would be expensive but the attack was fixed because basically when this happens to you, you say hey this block is invalid, you just forget it.
 And so the next time somebody sends you the correct one, you're fine.
 So that attack is fixed.
-But then there was other ways that you can fool light clients like SPV wallets using the same trick because they are asking just for an SPV proof.
+But then there was other ways that you can fool Light clients like SPV wallets using the same trick because they are asking just for an SPV proof.
 So they just want proof that a transaction was included and you could now give them a transaction that they think is included because you gave the SPV proof, but it wasn't included because the real block had two separate transactions that happened to combine to this one fake transaction.
-And this could be used to steal Lite wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg ins and peg outs.
-And that problem, I think was solved by telling Lite clients to be careful.
+And this could be used to steal Light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg ins and peg outs.
+And that problem, I think was solved by telling Light clients to be careful.
 I don't think it was actually solved.
 
 Speaker 0: 00:42:19
@@ -1230,7 +1314,7 @@ So, if I create a transaction that consists of 64 bytes, because I want to pay e
 Speaker 1: 00:42:49
 
 Yeah, I think the actual examples would be burning coins.
-So you can make an OPRETURN transaction that burns your coins, doesn't send it anywhere.
+So you can make an `OP_RETURN` transaction that burns your coins, doesn't send it anywhere.
 And that can be shorter than 64 bytes, but it could also be 64 bytes.
 So if you want to burn your money using a operator that is exactly 64 bytes in total, then yeah, you can do that.
 
@@ -1241,7 +1325,7 @@ Are there no normal transactions that are exactly 64 bytes?
 Speaker 1: 00:43:13
 
 I believe not.
-So You can already not send those in the mempool today.
+So you can already not send those in the mempool today.
 It won't be relayed.
 
 Speaker 0: 00:43:20
@@ -1250,8 +1334,7 @@ Okay.
 
 Speaker 1: 00:43:21
 
-I think that was the change in version 25.
-I think there was a rule that says nothing under 64 bytes, or sorry, nothing under 65 bytes.
+Ans so I think that was the change in version 25 so I think there was a rule that says nothing under 64 bytes, or sorry, nothing under 65 bytes.
 That was the mempool rule.
 And then people were like, well, but it could be useful to have a 63 byte or 62 byte transaction to burn your coins.
 And so I think the rule was changed to no 64 bytes.
@@ -1286,7 +1369,8 @@ So you might, even if you lost the original coin that you used to make this thin
 
 Speaker 0: 00:44:48
 
-Right okay got it sounds like.
+Right 
+Okay got it sounds like...
 
 Speaker 1: 00:44:52
 
@@ -1294,7 +1378,7 @@ But this is another case of like yes it would be you know you could just ban eve
 
 Speaker 0: 00:45:04
 
-Okay last one BIP 3034.
+Okay last one BIP 30, 34.
 
 Speaker 1: 00:45:08
 
@@ -1309,15 +1393,15 @@ It was about two transactions that look similar, right?
 
 Speaker 1: 00:45:23
 
-Yeah, so the TLDR of this one is that there was a BIP30 that prevents duplicate transactions.
+Yeah, so the TLDR of this one is that there was a BIP 30 that prevents duplicate transactions.
 Because having duplicate transactions, transactions with the same hash, it causes problems.
-You can override coinbases, do all sorts of weird things.
+You can override `coinbases`, do all sorts of weird things.
 It happened a few times in the beginning of Bitcoin.
 It was fixed.
 The problem of this fix is that it was a slow fix.
 So every time there's a new block coming in, you have to check every transaction to make sure that it doesn't already exist and this check is expensive, requires a lot of disk reading.
-Unfortunately and so there was a way to speed it up, the way to speed it up was to make, to force the Coinbase transaction to have the block height in it.
-So that makes every Coinbase transaction unique, and since every transaction eventually descends from a Coinbase transaction, every descendant is unique.
+Unfortunately and so there was a way to speed it up, the way to speed it up was to make, to force the `Coinbase` transaction to have the block height in it.
+So that makes every `Coinbase` transaction unique, and since every transaction eventually descends from a `Coinbase` transaction, every descendant is unique.
 
 Speaker 0: 00:46:12
 
@@ -1331,7 +1415,13 @@ But it turns out you can't, because there are some very old transactions before 
 Speaker 0: 00:46:36
 
 Yeah.
-And-
+
+Speaker 1: 00:46:37
+
+And...
+
+Speaker 0: 00:46:37
+
 So there's something in these old transactions, in these old UTXOs, I guess we should say.
 
 Speaker 1: 00:46:41
@@ -1348,18 +1438,30 @@ And so these ones are gonna start, we're gonna start encountering these and we'v
 So we got lucky.
 And so as of the first one we're going to encounter again is block 1, 983, 702.
 So there is an old transaction out there that looks like it's at that height.
-So in theory somebody could then make a could make a coinbase transaction that's a duplicate of that old one and we don't want that so the pip 30 check the slow check is re-enabled from that hide on.
+So in theory somebody could then make a could make a `coinbase transaction` that's a duplicate of that old one and we don't want that so the BIP 30 check, the slow check, is re-enabled from that height on.
 That's annoying because that check as we said is slow, so the proposal here is to do something else that makes sure that this duplication cannot happen.
-So not just putting the height in the Coinbase but also putting something else in it.
+So not just putting the height in the `Coinbase` but also putting something else in it.
 What that something else is we don't know.
-My favorite is to make SegWit mandatory as in the SegWit commitment because every SegWit block has an OP return and followed by the hash of the witness data.
-And right now, if there is no transactions in a block, including if there's no segwit transactions, even in the Coinbase, well then there's no witness commitment.
+My favorite is to make `SegWit` mandatory as in the SegWit commitment because every `SegWit` block has an `OP_RETURN` and followed by the hash of the witness data.
+And right now, if there is no transactions in a block, including if there's no `SegWit` transactions, even in the `Coinbase`, well then there's no witness commitment.
 And so that opportunity is not present, but you could make it mandatory from off.
 Basically you could make it mandatory starting at block 1, 983, 000.
 And so people will have 20 years to upgrade.
+
+Speaker 0: 00:48:08
+
 Yeah.
+
+Speaker 1: 00:48:09
+
 But if they don't, they could accidentally mine an invalid block at that height.
+
+Speaker 0: 00:48:12
+
 Right.
+
+Speaker 1: 00:48:15
+
 There's different ways to do it.
 
 Speaker 0: 00:48:16
@@ -1389,7 +1491,7 @@ Well, that is kind of one of the side goals of this proposal, I would say, is fi
 Speaker 1: 00:49:02
 
 Exactly.
-This was proposed long before Taproot as a way to sort of get over the SegWit trauma.
+This was proposed long before `Taproot` as a way to sort of get over the `SegWit` trauma.
 
 Speaker 0: 00:49:07
 
@@ -1398,42 +1500,69 @@ Like we're still, it's still not clear how we're supposed to do these kinds of t
 So then the idea was let's do something that's very uncontroversial, that everyone should or does or will agree on.
 There's nothing, like it's just very obvious bugs that we're going to fix.
 And then we can figure out how we're actually supposed to do these soft forks.
-And then, you know, it's sort of a good trial run for, you know, future software, I guess.
+And then, you know, it's sort of a good trial run for, you know, future soft forks, I guess.
 
 Speaker 1: 00:49:37
 
-Yeah, now we've already done Taproot, but of course there was still discussion about how that software was activated.
+Yeah, now we've already done `Taproot`, but of course there was still discussion about how that soft fork was activated.
 So I don't know if we really now have a, you know, have broad consensus on how to do this.
 
 Speaker 0: 00:49:46
 
-Oh, we definitely don't, sure.
+Oh, we definitely don't, Sjors.
 
 Speaker 1: 00:49:47
 
 But this may be another case of like, nobody cares what the activation mechanism is, just activate it.
-The main thing is, of course, this takes away the options of miners to do a time warp attack.
+The main thing is, of course, this takes away the options of miners to do a Timewarp attack.
 So if they actually like to keep that option, they might veto it, and then you get into more difficult territory.
 
 Speaker 0: 00:50:07
 
-Well, I don't know if we want to get into the whole activation discussion in this podcast episode.
+Well, I don't know if we want to get, we don't want to get into the whole activation discussion in this podcast episode.
 
 Speaker 1: 00:50:14
 
 We do not.
-I'm just saying like it might be straightforward, it might not be and we'll have to we may have to I'm telling you it will not be okay I'm more bullish and of course we keep in mind that you can deploy multiple soft forks in parallel so This doesn't have to be before or after your favorite feature X.
-You can activate 10 soft forks at the same time.
+I'm just saying like it might be straightforward, it might not be and we'll have to we may have to 
+
+Speaker 0: 00:50:19
+
+No, I'm telling you it will not be 
+
+Speaker 1: 00:50:21
+
+Okay 
+
+Speaker 0: 00:50:22
+
+For sure
+
+Speaker 1: 00:50:23
+
+I'm more bullish 
+
+Speaker 0: 00:50:24
+
+Okay 
+
+Speaker 1: 00:50:25
+
+And of course we keep in mind that you can deploy multiple soft forks in parallel so this doesn't have to be before or after your favorite feature X.
+You can activate, I don't know,  10 soft forks at the same time.
 
 Speaker 0: 00:50:38
 
 Yeah, remember when people thought that would actually happen?
-Good times.
-Good times,
+Good times
+Good times
 
 Speaker 1: 00:50:44
 
-indeed.
+Good times indeed.
 I'm just saying, don't worry about that aspect.
 Okay, I think that's all we've got.
-Thank you
+Thank you for listening to Bitcoin
+
+Speaker 0: 00:50:51
+Explained
