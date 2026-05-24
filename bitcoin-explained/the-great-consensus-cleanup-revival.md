@@ -6,6 +6,7 @@ date: '2024-05-29'
 tags:
   - 'wallet'
   - 'consensus-cleanup'
+  - 'bip32'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
@@ -1383,11 +1384,11 @@ Speaker 0: 00:44:48
 Right 
 Okay got it sounds like...
 
-## BIP 30/34 and the block 1,983,702 problem
-
 Speaker 1: 00:44:52
 
 But this is another case of like yes it would be you know you could just ban everything anything under 64 but or anything under 65 but you want to make the minimum change possible to reduce controversy that's not too complicated.
+
+## BIP 30/34 and the block 1,983,702 problem
 
 Speaker 0: 00:45:04
 
@@ -1413,8 +1414,8 @@ It happened a few times in the beginning of Bitcoin.
 It was fixed.
 The problem of this fix is that it was a slow fix.
 So every time there's a new block coming in, you have to check every transaction to make sure that it doesn't already exist and this check is expensive, requires a lot of disk reading.
-Unfortunately and so there was a way to speed it up, the way to speed it up was to make, to force the `Coinbase` transaction to have the block height in it.
-So that makes every `Coinbase` transaction unique, and since every transaction eventually descends from a `Coinbase` transaction, every descendant is unique.
+Unfortunately and so there was a way to speed it up, the way to speed it up was to make, to force the `Coinbase transaction` to have the block height in it.
+So that makes every `Coinbase transaction` unique, and since every transaction eventually descends from a `Coinbase transaction`, every descendant is unique.
 
 Speaker 0: 00:46:12
 
@@ -1455,8 +1456,8 @@ So in theory somebody could then make a could make a `coinbase transaction` that
 That's annoying because that check as we said is slow, so the proposal here is to do something else that makes sure that this duplication cannot happen.
 So not just putting the height in the `Coinbase` but also putting something else in it.
 What that something else is we don't know.
-My favorite is to make `SegWit` mandatory as in the SegWit commitment because every `SegWit` block has an `OP_RETURN` and followed by the hash of the witness data.
-And right now, if there is no transactions in a block, including if there's no `SegWit` transactions, even in the `Coinbase`, well then there's no witness commitment.
+My favorite is to make `SegWit` mandatory as in the `SegWit` commitment because every `SegWit` block has an `OP_RETURN` and followed by the hash of the witness data.
+And right now, if there is no transactions in a block, including, if there's no `SegWit` transactions, even in the `Coinbase`, well then there's no witness commitment.
 And so that opportunity is not present, but you could make it mandatory from off.
 Basically you could make it mandatory starting at block 1, 983, 000.
 And so people will have 20 years to upgrade.
