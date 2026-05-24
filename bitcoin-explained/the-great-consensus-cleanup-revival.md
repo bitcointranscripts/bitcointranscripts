@@ -1,5 +1,5 @@
 ---
-title: 'The Great Consensus Cleanup Revival (And an Update on the Tornado Cash and Samourai Wallet Arrests)'
+title: 'Bitcoin and Privacy Under Attack: Tornado Cash, Samourai Wallet and Fixing the Great Consensus Cleanup'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-93-the-great-consensus-cleanup-revival-and-an-update-on-the-tornado-cash-and-samourai-wallet-arrests-5bbxi'
 date: '2024-05-29'
