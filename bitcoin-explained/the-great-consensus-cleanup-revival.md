@@ -7,6 +7,7 @@ tags:
   - 'wallet'
   - 'consensus-cleanup'
   - 'bip32'
+  - 'lightning'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
