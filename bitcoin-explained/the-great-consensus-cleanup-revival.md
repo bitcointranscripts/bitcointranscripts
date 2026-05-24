@@ -10,6 +10,7 @@ tags:
   - 'lightning'
   - 'merkle-tree-vulnerabilities'
   - 'security'
+  - 'soft-fork'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
