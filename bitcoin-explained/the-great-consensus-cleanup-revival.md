@@ -11,6 +11,7 @@ tags:
   - 'merkle-tree-vulnerabilities'
   - 'security'
   - 'soft-fork'
+  - 'soft-fork-activation'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
