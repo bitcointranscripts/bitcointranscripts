@@ -346,22 +346,22 @@ Yeah, and this is interesting because the Dutch court system is not very transpa
 You can go to the court hearings but you don't get to see any of the dossier.
 Whereas in the US it's much more transparent so we'll probably learn much more about the Dutch case through the US case.
 Both of them are non-custodial.
-Both of them use a, well no, so the samurai uses a central coordinator, so that might be a service, whereas in Tornado Cash it's a smart contract, so that's not really a service, although the prosecutor argued that it's a service anyway.
+Both of them use a, well no, so the Samourai uses a central coordinator, so that might be a service, whereas in Tornado Cash it's a smart contract, so that's not really a service, although the prosecutor argued that it's a service anyway.
 
 Speaker 0: 00:12:36
 
-You mean the main smart contract?
+You mean the main smart contract or?
 
 Speaker 1: 00:12:39
 
 Yeah, the main smart contract and everything around it.
 You could argue like it's an autonomous system, so it's not really a service, but that's what they're arguing, I think, in both the Netherlands and the US, against or for, depending on which side you're at.
-I'd say Samurai used fees, fairly pretty direct fee system, whereas The Tornado Cash system did not charge fees directly, at least the fees don't go directly to the developers or operators.
+I'd say Samourai used fees, fairly pretty direct fee system, whereas the Tornado Cash system did not charge fees directly, at least the fees don't go directly to the developers or operators.
 They have a more convoluted tokenomics system where at least the prosecutor argued that these tokenomics are, you know, how it is, how the business works.
 
 Speaker 0: 00:13:21
 
-I think the short summary I would give is if the Tornado Cash developer is guilty in the Netherlands, which he is, then the Samurai developers have to be as well.
+I think the short summary I would give is if the Tornado Cash developer is guilty in the Netherlands, which he is, then the Samourai developers have to be as well.
 So it's sort of even more straightforward.
 
 Speaker 1: 00:13:34
@@ -382,7 +382,7 @@ Yeah, also some bad news in a way.
 
 Speaker 0: 00:13:48
 
-Yeah, but bad news that we're going to fix, right Sjoerd?
+Yeah, but bad news that we're going to fix, right Sjors?
 
 Speaker 1: 00:13:50
 
@@ -395,10 +395,22 @@ So we're going to talk main topic of the podcast.
 Finally, we're here.
 We're here, ladies and gentlemen.
 We're going to talk about the Great Consensus Cleanup, or maybe more specifically the Great Consensus Cleanup Revival.
+
+Speaker 1: 00:14:10
+
 That's right.
-Because the Great Consensus Cleanup was proposed by Matt Corello a couple of years ago, and it was recently revived by Antoine Ponssois.
+
+Speaker 0: 00:14:11
+
+Because the Great Consensus Cleanup was proposed by Matt Corallo a couple of years ago, and it was recently revived by Antoine Poinsot.
 Am I saying that right?
+
+Speaker 1: 00:14:21
+
 Probably.
+
+Speaker 0: 00:14:22
+
 It was him, right?
 I got the person right at least.
 Whether I got the name pronunciation right or not sure about that one.
@@ -412,23 +424,23 @@ So the revival adds something and I guess I'll let you know when we get to that 
 
 Speaker 0: 00:14:46
 
-Okay, And as far as I understand, the great consensus cleanup would be, well, it would basically be one soft fork that bundles several soft forks and these soft forks sort of fix existing bugs in the protocol.
+Okay, and as far as I understand, the great consensus cleanup would be, well, it would basically be one soft fork that bundles several soft forks and these soft forks sort of fix existing bugs in the protocol.
 
 Speaker 1: 00:15:01
 
-Yeah, that could be individual softworks and you know in the worst case maybe out of the four components people really like three of them and are kind of arguing about the fourth one then you can simply do three and not do the other one.
+Yeah, that could be individual soft forks and you know in the worst case maybe out of the four components people really like three of them and are kind of arguing about the fourth one then you can simply do three and not do the other one.
 
 Speaker 0: 00:15:14
 
 Okay and if I understand correctly basically everyone and when I say everyone I mean everyone that's you know has enough expertise to have an opinion in the first place, agrees that at least the bugs are problems.
 There's maybe at most like some conversation about the best way to solve these problems, whether these are the best ways.
 But the problems are real.
-There's no one that says, no, these are actually futures, right?
+There's no one that says, no, these are actually features, right?
 These are just real problems, bugs that exist in the Bitcoin protocol.
 
 Speaker 1: 00:15:45
 
-I think when it comes to the Time Warp attack, there might have been someone who could think of some interesting schemes that you can do using a Time Warp attack.
+I think when it comes to the Timewarp attack, there might have been someone who could think of some interesting schemes that you can do using a Timewarp attack.
 
 Speaker 0: 00:15:53
 
