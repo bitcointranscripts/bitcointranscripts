@@ -8,6 +8,7 @@ tags:
   - 'consensus-cleanup'
   - 'bip32'
   - 'lightning'
+  - 'merkle-tree-vulnerabilities'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
