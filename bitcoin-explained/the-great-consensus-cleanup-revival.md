@@ -9,6 +9,7 @@ tags:
   - 'bip32'
   - 'lightning'
   - 'merkle-tree-vulnerabilities'
+  - 'security'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
