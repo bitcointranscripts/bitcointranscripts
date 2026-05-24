@@ -446,7 +446,13 @@ Speaker 0: 00:15:53
 
 That's right.
 You're thinking of Mark Friedenbach, who had some sort of proposal years ago to sort of increase the block size.
+
+Speaker 1: 00:16:01
+
 Yes.
+
+Speaker 0: 00:16:01
+
 Yeah, You're right.
 But let's...
 
@@ -462,7 +468,7 @@ But...
 
 Speaker 1: 00:16:09
 
-Well, I mean, that won't work if somebody exploits the time warp maliciously before the legitimate use case happens, I think.
+Well, I mean, that won't work if somebody exploits the `Timewarp` maliciously before the legitimate use case happens, I think.
 
 Speaker 0: 00:16:20
 
@@ -479,7 +485,8 @@ Probably not, right?
 Speaker 1: 00:16:27
 
 We'll shelve that.
-So there may be a, you know, As always, there may be some ways that you could use this to your advantage.
+So there may be a, you know
+As always, there may be some ways that you could use this to your advantage.
 I think it's better to fix them.
 
 Speaker 0: 00:16:35
@@ -496,21 +503,21 @@ Speaker 0: 00:16:48
 
 Okay, so four.
 Let's start with the first one.
-So the first one, you already mentioned it, the time warp attack, the time warp problem, what do we call this?
+So the first one, you already mentioned it, the Timewarp attack, the Timewarp problem, what do we call this?
 
 Speaker 1: 00:16:58
 
-Yeah, the time warp attack.
+Yeah, the Timewarp attack.
 
 Speaker 0: 00:17:00
 
-Yeah, and so it's about the time warp attack is possible now, and we're talking about fixing that, that it's possible.
+Yeah, and so it's about the Timewarp attack is possible now, and we're talking about fixing that, that is possible.
 Like that shouldn't be possible, essentially, right?
 
 Speaker 1: 00:17:10
 
 That's right.
-And we did an earlier episode about the time warp attack.
+And we did an earlier episode about the Timewarp attack.
 It's episode number five.
 So scroll all the way back.
 
@@ -522,7 +529,7 @@ Speaker 1: 00:17:18
 
 Where we explain how it works, I think.
 I didn't listen back to it.
-But basically, I mean, the deal there is that you can mess with the timestamps in every block so miners can, you know, Bitcoin is not a clock, contrary to popular belief, but blocks do have a timestamp in it.
+But basically, I mean, the TLDR is that you can mess with the timestamps in every block so miners can, you know, Bitcoin is not a clock, contrary to popular belief, but blocks do have a timestamp in it.
 And this timestamp cannot...
 I mean, the miner can pick this timestamp however they want, but there are a few restrictions on it based on earlier possible attacks.
 One of the restrictions is that it cannot be more than two hours in the future, as determined when you receive the block.
@@ -560,17 +567,34 @@ Yeah and well to be clear this would require a majority of miners to collaborate
 
 Speaker 1: 00:19:34
 
-Yeah, the time warp attack is a 51% attack, basically, or requires a 51% attack.
+Yeah, the Timewarp attack is a 51% attack, basically, or requires a 51% attack.
 
 Speaker 0: 00:19:39
 
 So miners, a majority of miners is faking the timestamps, and all nodes on the network will accept this, because it's not breaking the rules.
 The nodes are just looking is this block mined in the future and is it mined at least one second previously later than like the 11 blocks before it's offline.
+
+Speaker 1: 00:19:58
+
 Exactly.
 
-Speaker 1: 00:19:59
+Speaker 0: 00:19:59
 
-So then you can mine, you can fake the timestamps to make every blocks look like it was all mined within the same minute basically yeah and then you might think it's mined within the same minute why would you want to do that well there's another part of this attack which is where you take the last block of the difficulty adjustment period and there you don't lie You just put it two hours in the future or right now, it doesn't really matter.
+So then you can mine, you can fake the timestamps to make every blocks look like it was all mined within the same minute basically 
+
+Speaker 1: 00:20:07
+
+Yeah and then you might think...
+
+Speaker 0: 00:20:07
+
+Like a whole **period/block** mined within the same minute 
+
+Speaker 1: 00:20:08
+
+Why would you want to do that 
+Well, there's another part of this attack which is where you take the last block of the difficulty adjustment period and there you don't lie 
+You just put it two hours in the future or right now, it doesn't really matter.
 If you do that in just one difficulty adjustment period, it really has almost no effect, right?
 Because the first block in that period had a real time because you weren't lying.
 The last block in the period has a real time because you weren't lying.
@@ -585,7 +609,7 @@ You just keep that original clock going.
 Speaker 0: 00:20:59
 
 Right.
-So now you're back in the original minute, so to say.
+Now you're back in the original minute, so to say.
 
 Speaker 1: 00:21:04
 
@@ -599,9 +623,21 @@ Right.
 Speaker 1: 00:21:23
 
 Because we've only increased that timer very slowly.
+
+Speaker 0: 00:21:26
+
 Yeah.
+
+Speaker 1: 00:21:27
+
 And so that means the difficulty can be cut in half now.
+
+Speaker 0: 00:21:30
+
 Yeah.
+
+Speaker 1: 00:21:31
+
 And then you repeat this little trick.
 
 Speaker 0: 00:21:32
@@ -609,7 +645,13 @@ Speaker 0: 00:21:32
 Yeah, the rest of the network, all nodes are looking at these two blocks and they're thinking, wow, it took a whole month to mine 2016 blocks.
 It's way too long.
 We got to decrease the difficulty by half.
+
+Speaker 1: 00:21:43
+
 Exactly.
+
+Speaker 0: 00:21:44
+
 So now the difficulty is divided by half.
 Even though that was not really necessary, it's just the timestamps were all being faked.
 
@@ -620,10 +662,21 @@ So now you can make two weeks worth of blocks in just one week.
 
 Speaker 0: 00:21:57
 
-Assuming that all the hash power is still the same, now you can mine two weeks of blocks in one week yep yeah and because again and then at the end of that one week you're still faking the timestamps so we're still sort of back mining in the first minute or you know yeah so at the end of that of that week which you know for the blockchain is two weeks you're like okay this was five weeks This took five weeks to produce this block, so I'm gonna decrease the difficulty even more.
+Assuming that all the hash power is still the same, now you can mine two weeks of blocks in one week 
+Yep 
 
-Speaker 1: 00:22:23
+Speaker 1: 00:22:03
 
+Yeah and because again and then at the end of that one week 
+
+Speaker 0: 00:22:07
+
+You're still faking the timestamps so we're still sort of back mining in the first minute or you know 
+
+Speaker 1: 00:22:11
+
+yeah so at the end of that of that week which you know for the blockchain is two weeks you're like okay this was five weeks 
+This took five weeks to produce this block, so I'm gonna decrease the difficulty even more.
 And then, so it gets cut in half again, so now you can mine in about two and a half days, the equivalent of two weeks, and the blockchain is like, whoa, that took five weeks and two days.
 I got to reduce the difficulty again.
 And so the difficulty goes to one very, very quickly in a matter of about 40 days according to Antoine's calculation.
