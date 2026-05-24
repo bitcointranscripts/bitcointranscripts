@@ -690,31 +690,32 @@ And then they can mine all remaining coins that are still to be mined over the n
 Speaker 1: 00:22:59
 
 They mine the equivalent of until the year 2106.
-We've got every last set.
+And they've got every last set.
 We've got millions of blocks in a very short period of time.
 And then they probably stop the attack, because there's no need to do it anymore.
 
 Speaker 0: 00:23:13
 
 Yeah.
-And then on top of that, that would mess up probably a bunch of like smart contract things, time lock types of things.
+And then on top of that, that would mess up probably a bunch of like smart contract things, `timelock` types of things.
 
 Speaker 1: 00:23:23
 
-No, well, time locks are, well, they might be affected, but because time is moving more slowly, your time locks would indeed not expire, but that's probably not a big deal.
+No, well, `timelocks` are, well, they might be affected, but because time is moving more slowly, your timelocks would indeed not expire, but that's probably not a big deal.
 Like during this attack, because the attack takes five weeks plus a little bit to suck all the coins out.
 
 Speaker 0: 00:23:39
 
-Well, it could definitely, the time locks that are locked on a certain block in the future.
+Well, it could definitely, the timelocks that are locked on a certain block in the future.
 
 Speaker 1: 00:23:43
 
-Yeah, so if you're looking at hide locks, I guess you'd call them, hide locks are definitely affected because if you have a contract that expires in block one million, well, guess what?
+Yeah, so if you're looking at `height locks`, I guess you'd call them, `height locks` are definitely affected because if you have a contract that expires in block one million, well, guess what?
 That happens immediately.
-But a time lock would be, kind of during the attack, it would be affected because your time lock is never happening because they keep the time behind.
+But a `timelock` would be, kind of during the attack, it would be affected because your time lock is never happening because they keep the time behind.
 But once they stop the attack, it'll be fine.
-So you might be unlucky if your lightning thing is in the wrong place yeah it could be bad but the the worst aspect of this attack other than the five-week disruption is simply that they have now exhausted the full subsidy.
+So you might be unlucky if your Lightning thing is in the wrong place yeah it could be bad 
+But the the worst aspect of this attack other than the five-week disruption is simply that they have now exhausted the full subsidy.
 And so we were hoping to not have to deal with a no subsidy world only 20, 30 years from now, but we have to deal with it in, well, 40 days, worst case, if this happens.
 
 Speaker 0: 00:24:31
@@ -759,7 +760,13 @@ So instead...
 Speaker 0: 00:25:07
 
 So by that you mean instead of comparing the first to the last block within the same period, you know, and checking if that's two weeks, you should really just check the first block to the next first block.
+
+Speaker 1: 00:25:19
+
 Yeah.
+
+Speaker 0: 00:25:20
+
 But that's not possible, right?
 
 Speaker 1: 00:25:22
@@ -794,16 +801,16 @@ Every first block has to be?
 Speaker 1: 00:26:16
 
 Yes.
-Right.
 
 Speaker 0: 00:26:18
 
+Right.
 Okay, yeah, that sounds like a pretty simple fix.
 
 Speaker 1: 00:26:20
 
 Yeah, because remember the attack involved comparing the last block to the first block, and really messing with the first block.
-That's the part of the messing that you weren't messing with the last block already, But you were messing with the first block and this fix basically makes that impossible and therefore the difficulty adjustment will be correct and solved.
+That's the part of the messing that you weren't messing with the last block already, but you were messing with the first block and this fix basically makes that impossible and therefore the difficulty adjustment will be correct and solved.
 
 Speaker 0: 00:26:39
 
@@ -815,12 +822,12 @@ Yeah and as far as I know that's still the going, the proposed fix that hasn't c
 
 Speaker 0: 00:26:47
 
-Okay, that was a time warp attack fix, what's the next one?
+Okay, that was a Timewarp attack fix, what's the next one?
 
 Speaker 1: 00:26:52
 
 Slow scripts.
-So as you know it takes a while to validate the whole blockchain and Some blocks take a bit longer than others.
+So as you know it takes a while to validate the whole blockchain and some blocks take a bit longer than others.
 That can be because there's tons of tons of transactions in them, but there's certain, you know, at least we have a limit on the block size.
 A block can be more than four megabyte.
 So there's some limit to how much you can do in a block, but it turns out you can make some special transactions that are really quite slow to verify.
@@ -828,17 +835,17 @@ And that's usually a combination of lots of signature checks, because signature 
 So we talked about this signature checking speed problem back in episode...
 Let me see...
 I think episode 32 and episode 76.
+Yeah.
 
 Speaker 0: 00:27:44
 
-Yeah.
 Yeah, so from what I understand, the problem here essentially is like every transaction includes scripts and for many transactions that's just a straightforward, you know, check that the signature is valid type of thing.
 But you can make more complex transactions that include, like you say, hashing or more signature validation.
-Yeah.
 
 Speaker 1: 00:28:08
 
-So Stoichi, for example.
+Yeah.
+So stochastic, for example.
 
 Speaker 0: 00:28:09
 
