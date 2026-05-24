@@ -6,7 +6,6 @@ date: '2024-05-29'
 tags:
   - 'wallet'
   - 'consensus-cleanup'
-  - 'bip32'
   - 'lightning'
   - 'merkle-tree-vulnerabilities'
   - 'security'
@@ -29,7 +28,7 @@ additional_resources:
 
 Aaron van Wirdum: 00:00:19
 
-Life from Utrecht, this is Bitcoin 
+Live from Utrecht, this is Bitcoin 
 
 Sjors Provoost: 00:00:22
 
@@ -119,7 +118,7 @@ Yep.
 
 Aaron van Wirdum: 00:02:11
 
-Which does seem to have a lot of relevance for Bitcoin because really he was just writing codes.
+Which does seem to have a lot of relevance for Bitcoin because really he was just writing code.
 You know, he was writing privacy code, but he was never, maybe you should give the context.
 Why do you think it's relevant for Bitcoin?
 
@@ -1125,9 +1124,9 @@ Sjors Provoost: 00:37:02
 There are different targets.
 So this example, I think, could be used to make a network split where you would make a real block with two 32-byte transactions in it, but that when you combine those two 32-byte transactions, it would also make a real 64-byte transaction.
 So the hashes of those two transactions, not 32-byte transactions, but the hashes of those two transactions, if you add them together, look like a real transaction, but it's an invalid transaction.
-So now you are, or the other way around, the 64 byte thing is valid, but the two individual transactions are invalid.
+So now you are, or the other way around, the 64-byte thing is valid, but the two individual transactions are invalid.
 So if you give somebody a block, it will have the same hash at the top because the Merkle tree is the same at the top and that's the only thing you're communicating when you're communicating a block hash.
-So I'm giving you a block hash and I'm giving somebody else the same block hash but I'm gonna give you the two transactions and I'm gonna give this other person the one 64 byte transaction.
+So I'm giving you a block hash and I'm giving somebody else the same block hash but I'm gonna give you the two transactions and I'm gonna give this other person the one 64-byte transaction.
 And now one of you is going to say this block is invalid, and the other is going to say this block is valid.
 Now you have a network split.
 
@@ -1173,13 +1172,13 @@ One person sees a 64-byte transaction.
 
 Aaron van Wirdum: 00:38:57
 
-One person sees one invalid 64 byte transaction.
+One person sees one invalid 64-byte transaction.
 
 Sjors Provoost: 00:39:00
 
 Or valid.
-One person sees one 64 byte transaction.
-The other person sees two other transactions doesn't matter what size they are yeah and right if these two transactions are invalid but the 64 byte one is valid yeah then you come to a different conclusion at the block.
+One person sees one 64-byte transaction.
+The other person sees two other transactions doesn't matter what size they are yeah and right if these two transactions are invalid but the 64-byte one is valid yeah then you come to a different conclusion at the block.
 
 Aaron van Wirdum: 00:39:19
 
@@ -1189,7 +1188,7 @@ Sjors Provoost: 00:39:25
 
 Well the rest of the block is the same, right?
 So It's just that one of these transactions is actually invalid.
-So the 64 byte transaction might be invalid or it might be valid.
+So the 64-byte transaction might be invalid or it might be valid.
 
 Aaron van Wirdum: 00:39:37
 
@@ -1228,7 +1227,7 @@ Yeah.
 
 Aaron van Wirdum: 00:40:03
 
-Now some joker sends us a transaction, sends us a block that has this one 64 byte transaction in it.
+Now some joker sends us a transaction, sends us a block that has this one 64-byte transaction in it.
 
 Sjors Provoost: 00:40:12
 
@@ -1236,7 +1235,7 @@ Yes
 
 Aaron van Wirdum: 00:40:13
 
-Why would my nodes look at this like two 32 byte transactions while your node is looking at it like a one 64 byte transaction.
+Why would my nodes look at this like two 32-byte transactions while your node is looking at it like a one 64-byte transaction.
 
 Sjors Provoost: 00:40:21
 
@@ -1315,7 +1314,7 @@ What's the solution here?
 
 Sjors Provoost: 00:42:24
 
-Don't allow 64 0byte transactions.
+Don't allow 64-byte transactions.
 
 Aaron van Wirdum: 00:42:25
 
@@ -1355,7 +1354,7 @@ Sjors Provoost: 00:43:21
 
 Ans so I think that was the change in version 25 so I think there was a rule that says nothing under 64 bytes, oh sorry, nothing under 65 bytes.
 That was the mempool rule.
-And then people were like, well, but it could be useful to have a 63 byte or 62 byte transaction to burn your coins.
+And then people were like, well, but it could be useful to have a 63-byte or 62-byte transaction to burn your coins.
 And so I think the rule was changed to no 64 bytes.
 So the difference is make this consensus rather than policy.
 
@@ -1364,7 +1363,7 @@ Aaron van Wirdum: 00:43:46
 Okay.
 So most transactions are well over 64 bytes or at least more than 64 bytes.
 That's normal for a transaction to be more than 64 bytes.
-If you see a 64 byte transaction, it's kind of something special.
+If you see a 64-byte transaction, it's kind of something special.
 
 Sjors Provoost: 00:43:59
 
@@ -1376,7 +1375,7 @@ Okay, right.
 And now the great consensus cleanup says let's just get rid of that altogether.
 However, 63 or 62 that's still okay.
 If you really do like if you're not attacking but you're burning coins that that should work.
-But yeah, so basically if people make 64 byte transactions in the future and the soft fork happens, then their transaction wouldn't be confirmed.
+But yeah, so basically if people make 64-byte transactions in the future and the soft fork happens, then their transaction wouldn't be confirmed.
 Then they have to make a new transaction that's either 63 or 65 or something else.
 As long as it's not 64.
 
