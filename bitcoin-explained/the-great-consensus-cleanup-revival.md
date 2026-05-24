@@ -25,7 +25,7 @@ additional_resources:
 ---
 ## Into & Sponsor Segment
 
-Speaker 0: 00:00:19
+Aaron van Wirdum: 00:00:19
 
 Life from Utrecht, this is Bitcoin 
 
@@ -33,7 +33,7 @@ Speaker 1: 00:00:22
 
 Explained.
 
-Speaker 0: 00:00:23
+Aaron van Wirdum: 00:00:23
 
 Sjors, it's been a month.
 That means you had a whole month to think about this pun that you told me you're gonna tell our dear listeners for this episode.
@@ -47,7 +47,7 @@ So it's cold outside.
 The government is cold.
 You know what else is cold?
 
-Speaker 0: 00:00:42
+Aaron van Wirdum: 00:00:42
 
 Sjors, our sponsor.
 
@@ -55,7 +55,7 @@ Speaker 1: 00:00:44
 
 That's right.
 
-Speaker 0: 00:00:45
+Aaron van Wirdum: 00:00:45
 
 The Coldcard.
 The Coldcard.
@@ -67,7 +67,7 @@ Speaker 1: 00:00:54
 
 It's too much echo 
 
-Speaker 0: 00:00:55
+Aaron van Wirdum: 00:00:55
 
 Too much echo, okay
 Coldcard Coldcard Coldcard Coldcard Coldcard Coldcard.
@@ -78,7 +78,7 @@ Speaker 1: 00:01:09
 
 I think it's great, but it's a hardware wallet for people who don't know.
 
-Speaker 0: 00:01:12
+Aaron van Wirdum: 00:01:12
 
 Yes, why did you say the government is cold?
 
@@ -86,7 +86,7 @@ Speaker 1: 00:01:15
 
 Well, that's a segue to our next section.
 
-Speaker 0: 00:01:19
+Aaron van Wirdum: 00:01:19
 
 So this episode we're gonna talk about the Great Consensus Cleanup Revival, which is a proposed soft fork, which sort of includes several soft forks into one, you could kind of argue, right?
 Basically, that's what it comes down to.
@@ -98,7 +98,7 @@ Where do we start?
 
 ## Tornado Cash conviction: what it means for Bitcoin developers
 
-Speaker 0: 00:01:52
+Aaron van Wirdum: 00:01:52
 
 Let's start with what happened with Tornado Cash in the Netherlands 
 
@@ -107,7 +107,7 @@ Speaker 1: 00:01:55
 Yeah in case anybody was living under a rock the Tornado Cash we talked about that in episode 69, but he got convicted.
 So that's bad.
 
-Speaker 0: 00:02:08
+Aaron van Wirdum: 00:02:08
 
 Yeah, Alexey Pertsev, one of the Tornado Cash developers got convicted for 64 months in prison.
 
@@ -115,7 +115,7 @@ Speaker 1: 00:02:10
 
 Yep.
 
-Speaker 0: 00:02:11
+Aaron van Wirdum: 00:02:11
 
 Which does seem to have a lot of relevance for Bitcoin because really he was just writing codes.
 You know, he was writing privacy code, but he was never, maybe you should give the context.
@@ -128,7 +128,7 @@ So a system that does not hold the coins yourself.
 I mean, there is a website and those kind of tools.
 So that's a very dangerous precedent, I think, because it's not very clear where that line is.
 
-Speaker 0: 00:02:49
+Aaron van Wirdum: 00:02:49
 
 Yeah, we already knew that running a custodial mixer, which a lot of other mixers were, where you just send coins to someone and that someone sends different coins back, that was always illegal.
 And everyone knew that was illegal.
@@ -138,7 +138,7 @@ Speaker 1: 00:03:05
 
 Well I think you can narrow it down slightly it's not illegal to mix the coins but it is when you don't do KYC I guess that's maybe a different interpretation.
 
-Speaker 0: 00:03:14
+Aaron van Wirdum: 00:03:14
 
 Right.
 
@@ -147,7 +147,7 @@ Speaker 1: 00:03:15
 But for the you know if for all practical purposes you can't build a mixer with KYC in an ethical way anyway.
 So effectively, mixes are illegal, but technically, I think the non-KYC part of the mixer is what makes it illegal.
 
-Speaker 0: 00:03:30
+Aaron van Wirdum: 00:03:30
 
 Fair enough.
 In either case, so far it was generally assumed that yeah, if you're taking coins and they're sending other coins, then you're at risk.
@@ -160,7 +160,7 @@ Well, probably, but we don't really know because this verdict was extremely uncl
 So we don't know if it's simply the act of writing code or it is the, you know, making that code available on your own website or, you know, making that code available on some automatic website-like system or whether it's about maintaining this code after you've written it once, or if it's about promoting the code or making money from the code, it's very unclear.
 And in fact, the prosecutor seemed to emphasize making money from the code, but the judge much less so.
 
-Speaker 0: 00:04:34
+Aaron van Wirdum: 00:04:34
 
 Yeah, the prosecutor really hones down on it essentially being a business.
 And that's why you say the making money part was important, but the judge didn't even really seem focal on that.
@@ -170,7 +170,7 @@ Speaker 1: 00:04:57
 
 Yeah, pretty much and what was...
 
-Speaker 0: 00:04:59
+Aaron van Wirdum: 00:04:59
 
 The purpose here of course being money laundering.
 
@@ -184,7 +184,7 @@ Some of it is is fake decentralization others is real
 The judge completely ignored that and basically said well the fact that you even tried to make it decentralized that is actually making it worse 
 So that that argument of course can apply extremely broadly because you could say well if you just publish source and you know that other people are using that source and you just keep updating that source code, well, that's also kind of unstoppable in a way.
 
-Speaker 0: 00:05:46
+Aaron van Wirdum: 00:05:46
 
 Yeah
 
