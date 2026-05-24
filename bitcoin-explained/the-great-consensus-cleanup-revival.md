@@ -96,12 +96,9 @@ So you want to touch on that a little bit.
 First, you've been following it pretty closely.
 Let's start with...
 Where do we start?
+Let's start with what happened with Tornado Cash in the Netherlands 
 
 ## Tornado Cash conviction: what it means for Bitcoin developers
-
-Aaron van Wirdum: 00:01:52
-
-Let's start with what happened with Tornado Cash in the Netherlands 
 
 Sjors Provoost: 00:01:55
 
@@ -163,7 +160,7 @@ And in fact, the prosecutor seemed to emphasize making money from the code, but 
 
 Aaron van Wirdum: 00:04:34
 
-Yeah, the prosecutor really hones down on it essentially being a business.
+Yeah, the prosecutor really honed down on it essentially being a business.
 And that's why you say the making money part was important, but the judge didn't even really seem focal on that.
 The judge just said, look, if you write this code, knowing that it can be used for this purpose and you don't do anything to stop that then you're responsible if it's really used for that purpose, right? 
 
@@ -218,11 +215,9 @@ So that's a problem.
 Aaron van Wirdum: 00:06:51
 
 Right.
+OK, let's move on to actual Bitcoin case, which is the Samourai devs.
 
 ## Samourai Wallet arrests and how the mixer worked
-
-Aaron van Wirdum: 00:06:52
-OK, let's move on to actual Bitcoin case, which is the Samourai devs.
 
 Sjors Provoost: 00:07:00
 
@@ -296,7 +291,7 @@ Yeah it's just a `CoinJoin` which uses equal amounts.
 Sjors Provoost: 00:09:41
 
 Yeah and then there is something called `Ricochet` which basically just as far as I understand it just forwards your coins a couple of times.
-So you're making a couple of unnecessary transactions and then you send the email that you want to send and that might help when you're dealing with an exchange that only looks at say five hops ago or two hops ago and then maybe you can get around that.
+So you're making a couple of unnecessary transactions and then you send the amount that you want to send and that might help when you're dealing with an exchange that only looks at say five hops ago or two hops ago and then maybe you can get around that.
 I don't know how effective any of these things are.
 
 Aaron van Wirdum: 00:10:06
@@ -322,7 +317,7 @@ Exactly.
 
 Aaron van Wirdum: 00:10:43
 
-That this is even, like the other, the `Whirlpool`, I can sort of at least understand why it's seen as some, I mean, I don't agree with the rest of the course.
+That this is even, like the other, the `Whirlpool`, I can sort of at least understand why it's seen as some, I mean, I don't agree with the rest of course.
 
 Sjors Provoost: 00:10:52
 
@@ -455,9 +450,9 @@ But the problems are real.
 There's no one that says, no, these are actually features, right?
 These are just real problems, bugs that exist in the Bitcoin protocol.
 
-Sjors Provoost: 00:15:45
-
 ## The Timewarp attack
+
+Sjors Provoost: 00:15:45
 
 I think when it comes to the Timewarp attack, there might have been someone who could think of some interesting schemes that you can do using a Timewarp attack.
 
@@ -591,7 +586,7 @@ Yeah, the Timewarp attack is a 51% attack, basically, or requires a 51% attack.
 Aaron van Wirdum: 00:19:39
 
 So miners, a majority of miners is faking the timestamps, and all nodes on the network will accept this, because it's not breaking the rules.
-The nodes are just looking is this block mined in the future and is it mined at least one second previously later than like the 11 blocks before it's offline.
+The nodes are just looking is this block mined in the future and is it mined at least one second previously later than like the 11 blocks before or something like that.
 
 Sjors Provoost: 00:19:58
 
@@ -866,7 +861,7 @@ But you can make more complex transactions that include, like you say, hashing o
 Sjors Provoost: 00:28:08
 
 Yeah.
-So stochastic, for example.
+So, for example.
 
 Aaron van Wirdum: 00:28:09
 
@@ -1011,7 +1006,7 @@ Aaron van Wirdum: 00:32:57
 
 Why?
 
-Aaron van Wirdum: 00:32:58
+Sjors Provoost: 00:32:58
 
 Well, we mentioned this a few times in other episodes, I don't think we've done an actual episode about it, but in our episode 81 we talked about a change to Bitcoin Core 25 that makes transactions that are 65 bytes or greater, I think they make them illegal again or something weird about that.
 I forgot what exactly we discussed.
@@ -1178,7 +1173,31 @@ Sjors Provoost: 00:39:00
 
 Or valid.
 One person sees one 64-byte transaction.
-The other person sees two other transactions doesn't matter what size they are yeah and right if these two transactions are invalid but the 64-byte one is valid yeah then you come to a different conclusion at the block.
+The other person sees two other transactions doesn't matter what size they are 
+
+Aaron van Wirdum: 00:39:09
+
+Yeah 
+
+Sjors Provoost: 00:39:09
+
+And...
+
+Aaron van Wirdum: 00:39:09
+
+Right 
+
+Sjors Provoost: 00:39:10
+
+If these two transactions are invalid but the 64-byte one is valid 
+
+Aaron van Wirdum: 00:39:14
+
+Yeah 
+
+Sjors Provoost: 00:39:15
+
+Then you come to a different conclusion at the block.
 
 Aaron van Wirdum: 00:39:19
 
@@ -1301,10 +1320,10 @@ Sjors Provoost: 00:41:30
 Right now this attack would be expensive but the attack was fixed because basically when this happens to you, you say hey this block is invalid, you just forget it.
 And so the next time somebody sends you the correct one, you're fine.
 So that attack is fixed.
-But then there was other ways that you can fool Light clients like SPV wallets using the same trick because they are asking just for an SPV proof.
+But then there was other ways that you can fool light clients like SPV wallets using the same trick because they are asking just for an SPV proof.
 So they just want proof that a transaction was included and you could now give them a transaction that they think is included because you gave the SPV proof, but it wasn't included because the real block had two separate transactions that happened to combine to this one fake transaction.
 And this could be used to steal Light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg-ins and peg-outs.
-And that problem, I think was solved by telling Light clients to be careful.
+And that problem, I think was solved by telling light clients to be careful.
 I don't think it was actually solved.
 
 Aaron van Wirdum: 00:42:19
