@@ -21,7 +21,7 @@ additional_resources:
 
 Speaker 0: 00:00:19
 
-Life from **Utrecht**, this is Bitcoin 
+Life from Utrecht, this is Bitcoin 
 
 Speaker 1: 00:00:22
 
@@ -82,7 +82,7 @@ Well, that's a segue to our next section.
 
 Speaker 0: 00:01:19
 
-So this episode we're going to talk about the Great Consensus Cleanup Revival, which is a proposed soft fork, which sort of includes several soft forks into one, you could kind of argue, right?
+So this episode we're gonna talk about the Great Consensus Cleanup Revival, which is a proposed soft fork, which sort of includes several soft forks into one, you could kind of argue, right?
 Basically, that's what it comes down to.
 But before that, a lot has happened in the Bitcoin and Ethereum space in a way that's relevant to Bitcoin as well.
 So you want to touch on that a little bit.
@@ -246,7 +246,7 @@ Both of them you know, right?
 
 Speaker 1: 00:07:30
 
-yep yeah I used to work with them when I was at blockchain.com, so back in time, blockchain.info.
+Yep yeah I used to work with them when I was at blockchain.com, so back in time, blockchain.info.
 
 Speaker 0: 00:07:35
 
@@ -450,7 +450,7 @@ These are just real problems, bugs that exist in the Bitcoin protocol.
 
 Speaker 1: 00:15:45
 
-## Bug #1: The Timewarp attack
+## The Timewarp attack
 
 I think when it comes to the Timewarp attack, there might have been someone who could think of some interesting schemes that you can do using a Timewarp attack.
 
@@ -836,6 +836,8 @@ Speaker 0: 00:26:47
 
 Okay, that was a Timewarp attack fix, what's the next one?
 
+## Slow scripts
+
 Speaker 1: 00:26:52
 
 Slow scripts.
@@ -986,6 +988,8 @@ Are we done with slow scripts?
 Speaker 1: 00:32:49
 
 Yep, we are.
+
+## Banning 64-byte transactions 
 
 Speaker 0: 00:32:50
 
@@ -1372,13 +1376,15 @@ Speaker 0: 00:44:48
 Right 
 Okay got it sounds like...
 
+## BIP 30/34 and the block 1,983,702 problem
+
 Speaker 1: 00:44:52
 
 But this is another case of like yes it would be you know you could just ban everything anything under 64 but or anything under 65 but you want to make the minimum change possible to reduce controversy that's not too complicated.
 
 Speaker 0: 00:45:04
 
-Okay last one BIP 30, 34.
+Okay last one BIP 30/34.
 
 Speaker 1: 00:45:08
 
@@ -1475,6 +1481,8 @@ So that's roughly the...
 Speaker 0: 00:48:24
 
 And then also the potential fix, 87.
+
+## Soft fork activation
 
 Speaker 1: 00:48:27
 
