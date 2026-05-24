@@ -1588,4 +1588,5 @@ Okay, I think that's all we've got.
 Thank you for listening to Bitcoin
 
 Aaron van Wirdum: 00:50:51
+
 Explained
