@@ -165,7 +165,7 @@ We can do the Diffie-Hellman key exchange, for example.
 But functionality-wise, What we want to do in practice is we don't want to send just one bit message, we want to send longer messages, for example, with Bitcoin addresses.
 This is also not too hard to do.
 Now I've shown you an example with the bit field, which is the field which is 0 and 1 basically as a mathematical field.
-What we can also do if you want to send larger messages is encode them as larger integers and use larger finite fields to transmute them.
+What we can also do if you want to send larger messages is encode them as larger integers and use larger finite fields to transmit them.
 But most importantly, I think what we've seen in the example is that people compute the sum of their messages, but if you want to do peer-to-peer mixing, we don't want the sum of the messages of the people, but we want the entire set, right?
 So We want a list of the messages, not a sum.
 Now what a lot of these proposals and practice do, and I think you've looked into that two weeks ago in the seminar here, is try to use some slots reservation.
@@ -173,7 +173,7 @@ For example, in this picture here we would have three slots because we have thre
 So Alice here, the first user, she has the middle slot, the second slot.
 Bob has the first slot and Cavill has the third slot.
 And now, for example, Bob will transmit his message in the first slot and two.
-And now basically what we could do here is we could run a dcnet in every of those three slots and next.
+And now basically what we could do here is we could run a DC-net in every of those three slots and next.
 Three slots and next.
 And then Alice in the slots where people don't have assignments, they just send zeros, right?
 So if you look at the first slot, we add the zeros which are basically just some form of padding, I could say, and Bob's message.
@@ -234,7 +234,7 @@ Thank you.
 
 Can I ask one question?
 Why are finite fields needed?
-If you can do a DC net for one bit, can't you do it for 10 bits or any arbitrary number of bits?
+If you can do a DC-net for one bit, can't you do it for 10 bits or any arbitrary number of bits?
 Just have shared keys that are M bits long.
 
 **Tim Ruffing:** 00:19:25
@@ -247,7 +247,7 @@ That's right.
 
 **Tim Ruffing:** 00:19:36
 
-In general, you can do this with these DNETs and this is what people usually do.
+In general, you can do this with these DC-nets and this is what people usually do.
 The reason why you need finite fields is exactly on the slide I'm talking about now.
 So this will be clear in a minute, I hope.
 
@@ -281,10 +281,10 @@ So if Bob hears M1 and M3, can't he know that M1 comes from user 1 and M3 comes 
 
 **Tim Ruffing:** 00:21:51
 
-Ah, yeah I think the thing that you're missing here is that we are still doing a DC net in all of those slots.
+Ah, yeah I think the thing that you're missing here is that we are still doing a DC-net in all of those slots.
 So we still have the shared keys in here.
-They're not in this picture, because here on the slide, I wrote just what the, basically what the input messages to the DC net will be in every slot.
-But just as the example we've seen in the beginning with single bits, in every of those slots we run a DC net with the shared keys added.
+They're not in this picture, because here on the slide, I wrote just what the, basically what the input messages to the DC-net will be in every slot.
+But just as the example we've seen in the beginning with single bits, in every of those slots we run a DC-net with the shared keys added.
 So Alice will not broadcast M1 in the first slot, but she will send M1 plus shared key with Bob, plus shared key with Carol, and so on, plus shared key with user N.
 So only after we have obtained all the rows in the first slot in the first column here, these keys will cancel out.
 So just by looking at Alice's broadcast on the network, you can't tell that M1 is in there.
@@ -339,10 +339,10 @@ This wouldn't work if you used XOR.
 
 **Tim Ruffing:** 00:27:15
 
-Now the big problem in DCNets is that they can be disrupted, which basically means if there's one malicious user, let's say your Bob is malicious, what Bob could do is instead of sending m2 and m2^2 and so on and following this nice algebraic structure that you're supposed to follow, Bob could just send bullshit in every slot, for example, like random values or anything else that he wants, right?
-And now the problem is if we now want to sum up in the slots, offcourse we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DCNets here, or a DCNet in every of the n slots.
+Now the big problem in DC-net is that they can be disrupted, which basically means if there's one malicious user, let's say your Bob is malicious, what Bob could do is instead of sending m2 and m2^2 and so on and following this nice algebraic structure that you're supposed to follow, Bob could just send bullshit in every slot, for example, like random values or anything else that he wants, right?
+And now the problem is if we now want to sum up in the slots, offcourse we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DC-net here, or a DC-net in every of the n slots.
 Bob here says fully anonymous, right?
-Because this was the core property of the DCnet that we can compute the sum of the messages and we can do this here in every slot, but we don't know who contributed what part to that sum.
+Because this was the core property of the DC-net that we can compute the sum of the messages and we can do this here in every slot, but we don't know who contributed what part to that sum.
 So we can't tell who contributed bullshit.
 We just see in the end that, okay, we don't get any messages back, like our decoding procedure doesn't work.
 But then we don't know what to do.
@@ -359,8 +359,8 @@ So the first thing we do, like everybody generates the fresh Bitcoin address, th
 Then, peers do key exchanges.
 They run the Diffie-Hellman key exchanger.
 I don't need to explain you how it works.
-Just it makes sure that every pair of users will have a shared key that they need for the DCnet.
-Okay, then we run the actual DC net and then we would run it in slots as I've just shown you.
+Just it makes sure that every pair of users will have a shared key that they need for the DC-net.
+Okay, then we run the actual DC-net and then we would run it in slots as I've just shown you.
 And then now If we would proceed like I've shown you previously, and actually this will not be the final flowchart of CoinShuffle++, We will come to that later, but bear with me for the moment.
 If we would do what we've seen on the last slide, we need to somehow, we need to check if our run has been disrupted.
 And so, if you get the output, the only thing you can do now is to see if your own message is there, right?
@@ -431,7 +431,7 @@ For example, yeah, What I was saying before is that the only thing Alice now at 
 But she doesn't know if the other messages are all there.
 She will see some messages there, for example, if Kevil's message has been replaced or not.
 And the important thing at this step here is that, however, all the peers in the protocol need to agree whether disruption has happened or not because if it has not if there was no disruption then like this is the case we see now on the slides and then they will go ahead and create a CoinJoin transaction and hopefully sign it.
-However, if one of them was disrupted, then what they want to do is They want to reveal the key exchange sequence, which is basically a standard de-anonymization step.
+However, if one of them was disrupted, then what they want to do is They want to reveal the key exchange secrets, which is basically a standard de-anonymization step.
 Basically, it means that we all agree, like all the peers in the protocol agree that we give up this round, we give up anonymity in this round.
 And we discard the addresses that we generated at the beginning.
 We need to give me a moment to convince you that this is not a bad idea.
@@ -520,7 +520,7 @@ So it's like termination is?
 **Tim Ruffing:** 00:43:59
 
 Maybe it should have been called successful termination, right?
-So you can imagine that a protocol that doesn't provide termination basically, for example, it tries to start mixing with the DCnet and then it notices, oh, there was disruption and then, well, it fails, just aborts.
+So you can imagine that a protocol that doesn't provide termination basically, for example, it tries to start mixing with the DC-net and then it notices, oh, there was disruption and then, well, it fails, just aborts.
 
 **Audience 1:** 00:44:21
 
@@ -555,7 +555,7 @@ And in the case of Wasabi, it's just when we've banned enough people and there a
 
 **Tim Ruffing:** 00:45:44
 
-So There's half a pound of the number of UTXOs in the chain.
+So there's an upper bound of the number of UTXOs in the chain.
 But it's pretty large.
 
 **Audience 1:** 00:45:55
@@ -629,7 +629,7 @@ I think this is all I wanted to say here.
 **Tim Ruffing:** 00:50:39
 
 I can actually show you how this anonymity attack on Dissent works.
-I don't need to tell you a lot about this end but I think it can still be instructive.
+I don't need to tell you a lot about Dissent but I think it can still be instructive.
 The only thing I think you need to know is that like the three points on top here, Dissent proceeds in broadcast rounds and the outcome of the protocol is revealed to all the users in the last broadcast and also a network attacker sees the outcome of the protocol in the last broadcast.
 An outcome is to remind you what is the output over, what is the outcome over P2P mixing protocols, just a list of shuffled messages.
 Now let's say we have Alice, Bob and Carol, and they all have their fixed messages, their documents, and Bob is the honest guy here, and we are the network attacker.
@@ -725,7 +725,7 @@ And actually, because I was confused on the slides, which slide we are.
 Okay, let's count communication rounds.
 And communication rounds are here, broadcasts.
 So we need one broadcast for the key exchange.
-Then we need one broadcast to run the actual DCNets.
+Then we need one broadcast to run the actual DC-net.
 And now, because now is the crucial part, because we all need to, like all the peers now need to agree on whether the protocol has been disrupted or not.
 I told you this example where you can selectively disrupt messages from peers.
 So to avoid this, in a naive way, we would need another broadcast here just to check that we all agree on whether there was disruption or not because as I explained to you earlier the only thing you can do is you can look at this on the output of the protocol and see if his own message is there but he doesn't know if the messages of the others are there.
@@ -742,10 +742,10 @@ Because we still have four broadcasts per run.
 We replace one broadcast by another broadcast.
 But let me explain to you why this makes sense.
 Let me first tell you what we actually do.
-So what we do here is like this first broadcast that we introduced now is basically a commitment, cryptographic commitment to the DCnet vector.
-By vector I mean just the rows that the peers send in the DCnet.
+So what we do here is like this first broadcast that we introduced now is basically a commitment, cryptographic commitment to the DC-net vector.
+By vector I mean just the rows that the peers send in the DC-net.
 So we first send the commitment, next.
-And then we send the actual DCnet contents, the actual rows.
+And then we send the actual DC-net contents, the actual rows.
 So Why do we do this?
 The idea is, basic idea is that now we get this following relationship.
 Now by doing this, we get the guarantee that if there is one honest user whose message is disrupted, then all of the messages are disrupted.
@@ -762,14 +762,14 @@ So now let's look at an example.
 
 So if we would now have a protocol with runs, let's say we have a first run of the protocol and now every box is a broadcast.
 So we have four broadcasts.
-And remember that the DCnet round is now in the third position.
-Because we first send the key exchange, then the second thing is we commit to the DCnet vectors, to the DCnet messages, Then we send the actual DCNET message, the third round.
+And remember that the DC-net round is now in the third position.
+Because we first send the key exchange, then the second thing is we commit to the DC-net vectors, to the DC-net messages, Then we send the actual DC-net message, the third round.
 This is what I mean when I write DC.
 And then in the end, we either send the signatures around or we reveal the key exchange messages.
 And now let's assume like okay this first run is disrupted.
 Next.
-And remember disruption happens in the DCNet round.
-So somebody sent bullshit in the DCnet round, this round is disrupted, the run is disrupted, then we would start the second run and would need another four rounds.
+And remember disruption happens in the DC-net round.
+So somebody sent bullshit in the DC-net round, this round is disrupted, the run is disrupted, then we would start the second run and would need another four rounds.
 And now, what we do in CoinShuffle++ is we actually want to pipeline these runs and to reduce the number of overall rounds.
 So now the idea is basically, we run two rounds of the first one, and then we already start a second run.
 It's not clear yet if you will need it or not.
@@ -792,11 +792,11 @@ Makes sense to me.
 **Tim Ruffing:** 01:07:45
 
 Great.
-And this is the reason why we wanted to push the DCNET round to the third broadcast instead of the second.
+And this is the reason why we wanted to push the DC-net round to the third broadcast instead of the second.
 So This was the thing I've shown you on the previous slides, right?
-In the naive version, we run key exchange, then already DCNET, and then we need to check with the others if disruption happened.
-Then the DCnet round would be in the, the DCnet message would be in the second round.
-But here what we act, what we here do is to this commitments to the DCnet And then sending the DCnet only in the third round, we move the DCnet to the third round and we make this interleaving of two here possible.
+In the naive version, we run key exchange, then already DC-net, and then we need to check with the others if disruption happened.
+Then the DC-net round would be in the, the DC-net message would be in the second round.
+But here what we act, what we here do is to this commitments to the DC-net And then sending the DC-net only in the third round, we move the DC-net to the third round and we make this interleaving of two here possible.
 Yeah, and now if you count the number of rounds, if you have F malicious users, then we need 4 plus 2 F broadcast rounds.
 And this is better than previous work, which was the original CoinShuffle, which was just all of NF rounds.
 So much slower.
@@ -1018,7 +1018,7 @@ Yeah, I mean, I would at least say it's not the end of the world.
 But like, Even if people do this attack actively, what you can do is wait for another minute or so.
 If you haven't seen a conflicting transaction for a minute, well, okay.
 And actually, the peers can also then relay the transactions, right?
-Like if one of the peers on the protocol sees a conflicting transaction, you could relay it to the others and basically have proof that there's a double-span.
+Like if one of the peers on the protocol sees a conflicting transaction, you could relay it to the others and basically have proof that there's a double-spend.
 
 **Audience 1:** 01:25:05
 
@@ -1027,11 +1027,11 @@ My point would be, but you wouldn't see because the nodes don't broadcast to you
 **Tim Ruffing:** 01:25:13
 
 But it's kind of, from a running time perspective, kind of annoying.
-Right now I told you, okay, like in a nice network setting, this protocol takes below 10 seconds, and then I tell you, no, you need to wait another 20 seconds just to make sure there's no double spam.
+Right now I told you, okay, like in a nice network setting, this protocol takes below 10 seconds, and then I tell you, no, you need to wait another 20 seconds just to make sure there's no double spend.
 
 **Audience 1:** 01:25:33
 
-I mean if others relay a transaction like that, a conflicting transaction, then would that, I mean you would have to trust the other peers that they are not lying about the conflict in terms oh no because they can only the transaction those are theirs so they would be the the the the guys who are disrupting around so yeah never mind.
+I mean if others relay a transaction like that, a conflicting transaction, then would that, I mean you would have to trust the other peers that they are not lying about the conflicting transaction oh no because they can only the transaction those are theirs so they would be the the the the guys who are disrupting around so yeah never mind.
 
 **Tim Ruffing:** 01:26:01
 
