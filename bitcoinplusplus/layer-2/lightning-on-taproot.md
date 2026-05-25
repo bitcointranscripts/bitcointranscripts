@@ -32,16 +32,16 @@ Is there privacy?
 
 Great.
 Yeah, so the biggest reason, of course, is that we have privacy improvements.
-At least, assuming that eventually everybody is going to be using hatred `taproot` addresses.
+At least, assuming that eventually everybody is going to be using  `Pay-to-Taproot` addresses.
 As you know, `taproot` is segwit v1.
 Segwit was segwit v0, that was our new software mechanism.
 If at some point we decide that we need segwit v2, then all of the old lightening `Taproot` channels that don't even support yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
 So that is one of the benefits.
 We are also able to improve privacy by decorrelating payments.
 That is `PTLC`s. and that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because there the primary issue that we have with `HTLC`s right now is that if we were to have multiple channels that have the same inflight `HTLC` go on-chain, then that hash would be correlatable and we would be able to link the payment chain, link one channel to the other.
-There are hopefully also some security improvements such as directional signatures, but it's still very much a research phase.
+There are hopefully also some security improvements such as `threshold signatures`, but it's still very much a research phase.
 So you know, mostly I think the greatest benefit really is privacy.
-There is also something to be said about the fact that with the way that `Taproot` works and the way that Lightning requires a bunch of different spend paths, with `Taproot` Taptrees we are able to make a bunch of those pen paths much cheaper, and we are also able to not reveal the ones that are being unused.
+There is also something to be said about the fact that with the way that `Taproot` works and the way that Lightning requires a bunch of different spend paths, with `Taproot` Taptrees we are able to make a bunch of those spend paths much cheaper, and we are also able to not reveal the ones that are being unused.
 So it's also a bit of a cost reduction there, which will save us some fees.
 But first of all, why do we have better privacy?
 The primary reason that we have better privacy is because right now, Lightning channels on chain have a signature of a 2 of 2 multisig.
@@ -89,7 +89,7 @@ Although for `ECDSA signatures`, so the thing about Schnorr is the math is so si
 You don't have any of the `ECDSA` complications, so here you don't even have to think that long about why this attack is trivial.
 However, obviously we need to mitigate these attacks, so `MuSIG2` comes to the rescue.
 I'm sure all of you have heard about `MuSIG2` many times.
-And essentially, the main thing that `MuSIG2` does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the non-tree views, is it introduces coefficients.
+And essentially, the main thing that `MuSIG2` does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
 And those coefficients are deterministic.
 They are based on just hashing some of the data, and each participant hashes slightly different data and that results in not being able to execute such targeted hacks, because if you were to try to execute a hack where you feed Alice an adversarial pub key, that would actually completely modify all the coefficients, and then you would be back to square one.
 So that's what music does.
@@ -127,12 +127,12 @@ So it's really pretty much the same thing.
 And with `nonce`, the protocol is a little more complicated.
 But I really still want to go through it, because one of the innovations with `MuSIG2` is how this protocol can work with just one round trip as opposed to multiple round trips that we had with regular MuSIG.
 So the way this works is as follows.
-Each participant generates not one lowercase r that we had here, but they generate two So a music two knots is actually not one knots, but it is two knots.
+Each participant generates not one lowercase r that we had here, but they generate two So a MuSIG2 nonce is actually not one nonce, but it is two nonces.
 Let me get back here so then both of these knots are then sent to the other participants, and what then happens is that we calculate a hash that we then use as a coefficient, and that coefficient is applied only to the second nonce.
 So what happens is that we have one of the nonces being used at least once, and the other one being used some deterministic number of times.
 But we have this linear combination which guarantees that we cannot really adversarially target either one of those nonces.
 Specifically, how the coefficient is calculated is not super complicated because what we do is we add all the nonces with index 1 across all the participants, that is going to be our aggregate first nonce, and we add all the nonces with index 2, also from all the participants, and then we apply the coefficients just to the second one of the two.
-So we have these aggregate partial balances.
+So we have these aggregate partial nonces.
 And we add them up.
 We have a linear combination that is the same as doing the same linear combination individually.
 But it just makes our mathematics a little simpler, because we don't have to repeat addition.
@@ -157,18 +157,18 @@ So now that we know that these are the steps that we need to do in order to avoi
 We need to use MuSIG.
 How then do we transcript to actually creating and signing Lightning commitments?
 And before we'll dig into that, we need to first consider what the properties of Lightning commitments are.
-First of all, without SIGHASH, any Prevout, or Covenants, or anything of the sort, we are going to have to rely on asymmetrical commitment transactions, which means that when Alice and Bob open a channel with one another, their commitment transactions are not going to look identical because we have the read-sharmony branch and the to-self delay is going to apply to different outputs depending on whether you're looking at the commitment transaction from Alice's or from Bob's perspective.
+First of all, without SIGHASH_ANYPREVOUT or Covenants, or anything of the sort, we are going to have to rely on asymmetrical commitment transactions, which means that when Alice and Bob open a channel with one another, their commitment transactions are not going to look identical because we have the revocation branch and the to-self delay is going to apply to different outputs depending on whether you're looking at the commitment transaction from Alice's or from Bob's perspective.
 So right out of the gate, we already have two different messages that we need to sign.
 Second, we have the same aggregate key.
 Because our aggregate key is our funding key and it doesn't change across each new commitment, it means that we have to be extremely careful not to reuse nonces.
-And because we have to sign multiple commitments, it really means that we have to have two non-spares as opposed to one non-spare that we send out with each exchange.
+And because we have to sign multiple commitments, it really means that we have to have two nonce pairs as opposed to one non-spare that we send out with each exchange.
 So let's look at how it would work in practice with, say, a channel opening.
 So what you want to get to is you want Alice to have a signed commitment transaction with Bob's private key, such that she can later append her own partial signature where she is in a need to broadcast unilaterally.
 We need the same for Bob, too.
 If Alice opens a channel to Bob, then of course what she needs is eventually for Bob to provide her with a partial signature in order for Bob to be able to do that, Alice, right out of the gate, needs to send Bob her local nonce and That local nonce, which is the public nonce there, is the one that Bob is going to need in his partial signature, because the commitment incorporates an aggregation of those nonces.
 So Bob, in order to be able to calculate the music two-step, needs to know what Alice's local nonce later down the line is going to be.
 So, if we just follow the flow, Alice sends Bob her local nonce, as well as the remote nonce such that Bob can create a partial signature for himself.
-We then have Bob respond with the same step where Bob generates the nonce pairs and sends those in the accept channel message and then in Funding Creative, Alice can now provide a partial signature to Bob because what Bob needs is a partial signature that uses Alice's remote nonce, because the conventional transaction that Bob has, from his perspective it is his local, and from Alice's perspective it's Alice's remote.
+We then have Bob respond with the same step where Bob generates the nonce pairs and sends those in the accept channel message and then in funding_created, Alice can now provide a partial signature to Bob because what Bob needs is a partial signature that uses Alice's remote nonce, because the conventional transaction that Bob has, from his perspective it is his local, and from Alice's perspective it's Alice's remote.
 So we have on Bob's side, Alice's remote nonce and Bob's local nonce, and on Alice's side, we have Alice's local and Bob's remote.
 It is impossible to keep track of, and as a matter of fact, reading the spec and trying to implement it's really messing with my mind.
 So that is why we have been proposing a little simplification of the protocol, where we don't send the nonces until they're actually strictly necessary.
@@ -181,32 +181,32 @@ And she can just trivially create a partial signature.
 And the nice thing is that now, because she has pre-committed her remote nonce, she can generate that partial signature and the nonce all in one step.
 So she needn't ever store her own remote nonce.
 In fact, you can just toss it out.
-She'll send it with Funding Creative and never, ever worry about it again.
-The other thing that she's gonna send with a Funding Creative message is also her own local nonce, such that Bob can later create a partial signature and then it's gonna be signed with Bob's own remote nonce and Alice's local one.
+She'll send it with funding_created and never, ever worry about it again.
+The other thing that she's gonna send with a funding_created message is also her own local nonce, such that Bob can later create a partial signature and then it's gonna be signed with Bob's own remote nonce and Alice's local one.
 And this scenario, once again, because Bob has not pre-committed to his own remote nonce, he can very trivially generate it randomly as he's doing the signature and then as soon as he has a signature he can toss it out because he will never ever need it again.
 With the channel operation we have pretty much the same thing.
-You know we have the commitment sign and remote and act messages where we do pretty much the same nonce exchanges.
+You know we have the commitment_signed and revoke_and_ack messages where we do pretty much the same nonce exchanges.
 When we send a commitment sign, we just need to send the remote nonce, such that Bob can then use a partial signature and revoke an act, as well as any revoke an act, he will send one for the next step.
 He'll send the local nonce for the following iteration of the channel exchange.
 But really, there isn't much of a difference between channel opening and channel operation.
 Really the most important thing is that you have to have separate nonces for your own local commitment transaction and for the remote commitment transaction and it's something that can be a bit of a pain to keep track of.
-One thing I will note is if you think that your node setup is such that you will never ever possibly have to sign a local commitment transaction with your own private key multiple times, then in principle, you don't even need to update your own local nonce, because there would never be a nonce freeze.
+One thing I will note is if you think that your node setup is such that you will never ever possibly have to sign a local commitment transaction with your own private key multiple times, then in principle, you don't even need to update your own local nonce, because there would never be a nonce reuse.
 However, it is something that is very hard to guarantee, so for the purpose of safety, please ignore I said that.
 Well, we have pretty much covered the thing that `Taproot` enables with the nonce communication.
 Even though on-chain the footprint is smaller, with the nonces we do have this additional headache that all of you who are implementing Lightning protocols are going to have to be cognizant of.
 But that is not the only thing that `Taproot` does.
-`Taproot` also, as I have alluded to earlier, allows us to have Tap trees, where instead of having just one massive, dare I say, inscrutable script, especially with all this up-if, up-else nesting, we can very cleanly divide the spend paths into their separate tab branches.
+`Taproot` also, as I have alluded to earlier, allows us to have Tap trees, where instead of having just one massive, dare I say, inscrutable script, especially with all this OP_IF, OP_ELSE nesting, we can very cleanly divide the spend paths into their separate tab branches.
 And one of them just happens to be so trivial that we don't even need a script spend for it.
 We can just use the keyspend path.
-So with our vacation pubkey or vacation key, we can sign and spend a transaction lightning immediately.
+So with our revocation pubkey or revocation key, we can sign and spend a transaction lightning immediately.
 Because it's unencumbered by any sort of `OP_CSV`, delays, whatever, that is the obvious candidate that is going to end up as the key spend path.
 So In `Taproot`, the cheapest way to spend a commitment transaction is going to be using their vacation fee.
 With the ScriptSend path, for the regular local output, it just has a self-delay.
 We don't really need any other scripts that has other than the one that has this to self delay.
 There is some discussion as to whether we want to prepend one or something to `OP_CSV`, but I don't think the discussion is quite done yet.
 The idea is that we're gonna beat the scripts into a manuscript parsers and generators and then see what the optimal script output is.
-But just reading this, people might be confused because they'll say, oh, if check safe passed, but say to circulate is 0, will it go through?
-To solve the layout, this should never be 0.
+But just reading this, people might be confused because they'll say, oh, if check safe passed, but say to_self_delay is 0, will it go through?
+to_self_delay, this should never be 0.
 But there's going to be a follow-up case where there's going to be a bigger question.
 So for `HTLC` offers, and I don't really want to go into accepted `HTLC`s because they're so similar to offered `HTLC`s. We still have the same situation that the revocation key is the unencumbered spend path and for that reason, it becomes the key spend.
 For script spend paths, We now have two situations.
@@ -224,7 +224,7 @@ So nothing really all that complicated to get big into there.
 And yeah, I really think that the script path spend are not the difficult part of `Taproot`.
 It's really going to be understanding and making sure that the cryptography is sound and safe.
 Now if you have a `Taproot` channel open and there are some other nodes in the network, then in principle What do you think?
-Are those other nodes able to send a payment if they don't support `Taproot` through a channel somewhere in the middle of the route that is a Haproot channel, or should they not be?
+Are those other nodes able to send a payment if they don't support `Taproot` through a channel somewhere in the middle of the route that is a Taproot channel, or should they not be?
 
 **Audience:** 00:31:00
 
@@ -239,7 +239,7 @@ In fact, cryptographically speaking, there isn't really anything preventing them
 Well, here's the thing about `Taproot`, though.
 The way that gossip works today, you have signatures that match on-chain outputs, and those on-chain outputs are signed using ECDSA, with `Taproot` channels that wouldn't work because we now have Schnorr signatures, which means that even nodes that don't support `Taproot`, in order to so much as be aware of the fact that there are `Taproot` channels out there available for routing, they will need to understand `Taproot` gossip before they even support actual `Taproot` channels themselves.
 So this is one of the issues that has to be discussed.
-Now, El has a proposal up which says that for captured gossip, you have the possibility of combining and aggregating a signature across both the on-chain Bitcoin keys and the off-chain node public keys into one.
+Now, El has a proposal up which says that for Taproot gossip, you have the possibility of combining and aggregating a signature across both the on-chain Bitcoin keys and the off-chain node public keys into one.
 So you reduce the footprint of the gossip signature by a considerable amount.
 It's just, you have to actually do that aggregation, so it will add a little extra communication that is going to be necessary between nodes just as they are opening the channel.
 And you also need to make sure that nodes understand what this gossip is supposed to look like even before they necessarily support `Taproot`.
@@ -260,7 +260,7 @@ So if you're monitoring the gossip from lightning, then you would know the parti
 And that is a privacy consideration that you're facing right now already.
 That is why there's talk about Gossip 2, which would essentially be only committing to a fraction of the money that you have put up.
 But that is its own can of worms.
-So honestly, I can certainly recommend watching Matt Corralo's talk from TapConf last year, where it was titled, Lightning Has Broken the Stock.
+So honestly, I can certainly recommend watching Matt Corralo's talk from TapConf last year, where it was titled, Lightning is broken as f***.
 And One of the major breakages is privacy.
 Lightning has atrocious privacy today.
 Even though with Tampered we improve on-chain privacy, if, say, Chain analysis and therefore the IRS not of course that they're bad guys, but you know what I mean.
@@ -269,7 +269,7 @@ So, Yeah, it's actually a big subject of research.
 I don't think there is consensus quite yet, but I guess that v2 is the way to move forward, although I think it's slowly building.
 I'm extremely curious to see how it's going to go, because it's definitely cause for concern.
 if you want to extend—as long as you have privacy considerations, you also have censorship considerations.
-Because as long as anybody knows who payment initiators or secants are, they can be censored.
+Because as long as anybody knows who payment initiators or recipents are, they can be censored.
 So I think it's a major issue for the full kind of research and investigation on Lightning.
 But That being said, another aspect where we can somewhat improve the `HTLCs`, because of the issue that I mentioned earlier, where payments in hops could not be correlated.
 Even though, to be quite frank, today already the odds of multiple hop All right.
@@ -286,7 +286,7 @@ What Emily does is she generates some random number z, some number of which is w
 So that uppercase Z is now the invoice.
 So the invoice, instead of being a hash, is and will be curve point.
 What Alice does is the following.
-So Alice sees that there are a bunch of intermediate moms, namely Bob, Carol, and Faith.
+So Alice sees that there are a bunch of intermediate hops, namely Bob, Carol, and Dave.
 And Alice generates four random numbers, one for herself and one for each of the intermediate moms.
 Those random numbers are A, B, C, and D, quite easy to keep track of.
 And she sends her first `PTLC` message to Bob.
@@ -390,7 +390,7 @@ It's an extra round trip.
 
 It's an extra round trip.
 So now an `HTLC` round trip is 1.5 round trips.
-Here, that will become 2.5. So it's because you also have to have the commitment sign and then rebook an act, and you can also combine multiple messages in one TCP message.
+Here, that will become 2.5. So it's because you also have to have the commitment sign and then revoke_and_ack, and you can also combine multiple messages in one TCP message.
 But it's an initial complication.
 We're going to have to see whether it significantly delays, slows down multi-hop payments.
 We are going to have to see whether it adversely affects scalability, but we'll find out.
@@ -421,7 +421,7 @@ But I hope it was actually elucidating to some degree.
 
 **Audience:** 00:52:16
 So just in terms of, you're working on it in LDK.
-I know that Rose Creek's doing it on the site.
+I know that Roasbeef is doing it on his side.
 Is every implementation sort of on board and getting all these things, or is it sort of one set of people's going?
 
 **Arik Sasman:** 00:52:30
@@ -435,7 +435,7 @@ But there has been some back and forth on that, and moving when messages are sup
 Is it remote for the person sending it or is it remote for the recipient?
 It's a pain to read and understand this protocol because MuSIG 2 is kind of annoying.
 If we could make the stipulation that a local nonce is ever going to be used for a signature once, then of course the local nonce would only ever need to be exchanged once because we wouldn't have to worry about signature use, but that is not a stipulation that you can safely make.
-There's a ton of back and forth on the spec, and I just hope that one day soon, hopefully Q2, We will have an interrupt for the simple half of channels Honestly, I don't even know whether it makes sense to work on that first and not on the gossip because as I was just saying earlier Gossip is actually more important But with the gossip you have this nested stuff and you have to do the aggregation where you are going to have extra round trips.
+There's a ton of back and forth on the spec, and I just hope that one day soon, hopefully Q2, We will have an interrupt for the simple Taproot channels Honestly, I don't even know whether it makes sense to work on that first and not on the gossip because as I was just saying earlier Gossip is actually more important But with the gossip you have this nested stuff and you have to do the aggregation where you are going to have extra round trips.
 It's a lot of work and maybe honestly I should be asking you to not contribute to the spec because the fewer people are applying changes to it, the sooner we are able to get it merged.
 Anything else?
 Thanks for everything.
