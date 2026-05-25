@@ -340,7 +340,7 @@ This wouldn't work if you used XOR.
 **Tim Ruffing:** 00:27:15
 
 Now the big problem in DCNets is that they can be disrupted, which basically means if there's one malicious user, let's say your Bob is malicious, what Bob could do is instead of sending m2 and m2^2 and so on and following this nice algebraic structure that you're supposed to follow, Bob could just send bullshit in every slot, for example, like random values or anything else that he wants, right?
-And now the problem is if we now want to sum up in the slots, of course we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DCNets here, or a DCNet in every of the n slots.
+And now the problem is if we now want to sum up in the slots, offcourse we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DCNets here, or a DCNet in every of the n slots.
 Bob here says fully anonymous, right?
 Because this was the core property of the DCnet that we can compute the sum of the messages and we can do this here in every slot, but we don't know who contributed what part to that sum.
 So we can't tell who contributed bullshit.
@@ -535,7 +535,7 @@ Right.
 **Anchor:** 00:44:35
 
 Yeah, so I think Adam, like currently Wasabi does not guarantee termination, right?
-Because if a `CoinJoin` doesn't happen, wasabi bans a coin and then reopens the round and more malicious people could enter the round.
+Because if a `CoinJoin` doesn't happen, Wasabi bans a coin and then reopens the round and more malicious people could enter the round.
 But one way to make it guaranteed to terminate is to only allow the same participants and then exclude them so that it converges to a smaller and smaller number.
 
 **Tim Ruffing:** 00:45:08
@@ -670,7 +670,7 @@ It was really a good explanation.
 **Anchor:** 00:54:14
 
 Okay.
-So, I guess I just don't understand how dissent works well enough, like why there would be multiple rounds.
+So, I guess I just don't understand how Dissent works well enough, like why there would be multiple rounds.
 But isn't it the case that Bob's message is XOR with the two adjacent Diffie-Hellman shared secrets?
 So How is it that you can figure out Bob's message?
 
@@ -700,7 +700,7 @@ Like usually if you write protocols, you want them to be secure against network 
 They can not only block messages, they can also replace them, duplicate them and all the stuff.
 Of course you can ask how realistic that in practice is.
 Usually we abstract away from this question, just say like look the attacker is super powerful because we don't know how powerful he actually is.
-Now, if you look at `CoinShuffle` or descent specifically, I told you in the beginning that we assume that we have this bulletin board in the middle that handles all broadcasts.
+Now, if you look at `CoinShuffle` or Dissent specifically, I told you in the beginning that we assume that we have this bulletin board in the middle that handles all broadcasts.
 And the reason why we do this actually is to have better efficiency.
 And Now it's getting interesting.
 So because we didn't want to trust this bulletin board in the middle of the server in the middle for anonymity.
@@ -805,10 +805,10 @@ So much slower.
 
 **Tim Ruffing:** 01:09:04
 
-Yeah, and now we can evaluate this and practice with the with the basically the setup that I mentioned here on the slide and compare this to the to the previous protocol coin shuffle And at least in this setting, `CoinShuffle++` is much, much better than Coinshuffle, as you can see on the graph.
+Yeah, and now we can evaluate this and practice with the with the basically the setup that I mentioned here on the slide and compare this to the to the previous protocol CoinShuffle and at least in this setting, `CoinShuffle++` is much, much better than CoinShuffle, as you can see on the graph.
 So Yeah, for example, for usually a number of you point out on the paper is 50 notes there.
 We are still below 10 seconds in this setting.
-And then coin shuffle, the original coin shuffle was like almost three minutes in the setting.
+And then CoinShuffle, the original CoinShuffle was like almost three minutes in the setting.
 
 ## Handling unequal inputs.
 
@@ -834,7 +834,7 @@ You can or cannot do this?
 You cannot.
 And I will tell you why.
 So Bob could have the nice idea to have a payment in the CoinJoin here, like there's a pizza restaurant with address R and he sends 0.1 Bitcoin to the pizza restaurant and then he sends the remaining 0.9 Bitcoin back to E-Prime, which is his change address.
-And now like if you're just an external server you you look at this transaction I mean of course you can that 0.1 and 0.9 belong together But you couldn't tell whether they both belong to A, B or C.
+And now like if you're just an external server you you look at this transaction I mean offcourse you can that 0.1 and 0.9 belong together But you couldn't tell whether they both belong to A, B or C.
 However, the reason why it doesn't work is more subtle.
 Now look at what would be the messages that we have to send to the peer-to-peer mixing protocol.
 Like in the normal `CoinShuffle++` run, we would just send the output address, which is r and b prime here.
@@ -905,12 +905,12 @@ But you're right.
 And so what I'm saying is you're right.
 In practice, you need to solve the problem.
 It's just that it's kind of doable, but you need recipient support and this would be another drawback, even if it would be possible.
-Either, like if you do a coinjoin with 50 parties, then either you ask the pizza restaurant to give you 49 addresses, which is ugly but works.
+Either, like if you do a CoinJoin with 50 parties, then either you ask the pizza restaurant to give you 49 addresses, which is ugly but works.
 And what you have something like `BIP32` and public derivation and so on, where like the restaurant would give you one master public key and you can just derive an arbitrary number of actual addresses from it.
 
 **Audience 1:** 01:17:21
 
-So just to reiterate on the problem here is that when you expose your messages, then of course you don't expose the Bitcoin addresses, but what you expose is that you want to send 0.1 and 0.9 and then what you could do with that is that well I guess this send failed because the peers were very malicious so I'm just going to send one Bitcoin in in the failing round but you could assume honesty and and if honesty then I mean it's not very robust.
+So just to reiterate on the problem here is that when you expose your messages, then offcourse you don't expose the Bitcoin addresses, but what you expose is that you want to send 0.1 and 0.9 and then what you could do with that is that well I guess this send failed because the peers were very malicious so I'm just going to send one Bitcoin in in the failing round but you could assume honesty and and if honesty then I mean it's not very robust.
 
 **Tim Ruffing:** 01:18:13
 
@@ -934,13 +934,13 @@ All right, thank you.
 **Tim Ruffing:** 01:18:56
 
 Okay, and now this is the final word here on the slides, I think.
-So, I hinted that this already, Like if we are in a system where we have confidential transactions, which is a cryptographic technique to hide the amounts on the transactions, like the amounts are not in plain, stored in plain, but are in homomorphic commitments and cryptographic commitments.
+So, I hinted that already, Like if we are in a system where we have confidential transactions, which is a cryptographic technique to hide the amounts on the transactions, like the amounts are not in plain, stored in plain, but are in homomorphic commitments and cryptographic commitments.
 Then suddenly those amounts, because they are in commitments, These are not fixed messages anymore.
 This can be re-randomized basically.
 So you can take a commitment and like you can commit to the same amount twice and those commitments look totally independent of each other.
 Then this problem with the fixed message goes away and then you suddenly can mix and pay simultaneously.
 And also like an attentive protocol you need for this is ValueShuffle, which is full of work.
-And also you, of course, get rid of the previous problem that you can't mix unequal amounts, then you can also mix equal amounts and suddenly mixing is so much nicer and better.
+And also you, offcourse, get rid of the previous problem that you can't mix unequal amounts, then you can also mix equal amounts and suddenly mixing is so much nicer and better.
 If you could hide the amounts, but I think this is also not used in this seminar here.
 
 **Audience 1:** 01:20:32
