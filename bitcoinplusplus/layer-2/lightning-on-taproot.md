@@ -35,7 +35,7 @@ Yeah, so the biggest reason, of course, is that we have privacy improvements.
 At least, assuming that eventually everybody is going to be using  `Pay-to-Taproot` addresses.
 As you know, `taproot` is segwit v1.
 Segwit was segwit v0, that was our new software mechanism.
-If at some point we decide that we need segwit v2, then all of the old lightening `Taproot` channels that don't even support yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
+If at some point we decide that we need segwit v2, then all of the old lightning `Taproot` channels that don't even support yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
 So that is one of the benefits.
 We are also able to improve privacy by decorrelating payments.
 That is `PTLC`s. and that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because there the primary issue that we have with `HTLC`s right now is that if we were to have multiple channels that have the same inflight `HTLC` go on-chain, then that hash would be correlatable and we would be able to link the payment chain, link one channel to the other.
