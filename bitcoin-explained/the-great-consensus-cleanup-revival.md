@@ -1322,7 +1322,7 @@ And so the next time somebody sends you the correct one, you're fine.
 So that attack is fixed.
 But then there was other ways that you can fool light clients like SPV wallets using the same trick because they are asking just for an SPV proof.
 So they just want proof that a transaction was included and you could now give them a transaction that they think is included because you gave the SPV proof, but it wasn't included because the real block had two separate transactions that happened to combine to this one fake transaction.
-And this could be used to steal Light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg-ins and peg-outs.
+And this could be used to steal light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg-ins and peg-outs.
 And that problem, I think was solved by telling light clients to be careful.
 I don't think it was actually solved.
 
