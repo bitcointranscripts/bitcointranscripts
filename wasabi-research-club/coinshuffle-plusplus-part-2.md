@@ -104,7 +104,7 @@ Right, and the trust model we want to have here is really a peer-to-peer trust m
 What I mean by that is we don't rely on anything like Tor to provide anonymity.
 So in this example here now, look at the left-hand side.
 Alice and Dave could be malicious and this means for anonymity that the anonymity set remains the set of honest users.
-So Bob and Carol still have an anonymity among each other, Off course now they only have an anonymity set of two because they can't have anonymity together with the attacker, right?
+So Bob and Carol still have an anonymity among each other, of course now they only have an anonymity set of two because they can't have anonymity together with the attacker, right?
 Just not possible.
 Because exactly, we have those links here.
 So if the attacker controls Alice, then the attacker knows that A' is Alice's address and the attacker controls Dave, then he knows that D' is Dave's address.
@@ -340,7 +340,7 @@ This wouldn't work if you used XOR.
 **Tim Ruffing:** 00:27:15
 
 Now the big problem in DC-net is that they can be disrupted, which basically means if there's one malicious user, let's say your Bob is malicious, what Bob could do is instead of sending m2 and m2^2 and so on and following this nice algebraic structure that you're supposed to follow, Bob could just send bullshit in every slot, for example, like random values or anything else that he wants, right?
-And now the problem is if we now want to sum up in the slots, offcourse we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DC-net here, or a DC-net in every of the n slots.
+And now the problem is if we now want to sum up in the slots, of course we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DC-net here, or a DC-net in every of the n slots.
 Bob here says fully anonymous, right?
 Because this was the core property of the DC-net that we can compute the sum of the messages and we can do this here in every slot, but we don't know who contributed what part to that sum.
 So we can't tell who contributed bullshit.
@@ -834,7 +834,7 @@ You can or cannot do this?
 You cannot.
 And I will tell you why.
 So Bob could have the nice idea to have a payment in the CoinJoin here, like there's a pizza restaurant with address R and he sends 0.1 Bitcoin to the pizza restaurant and then he sends the remaining 0.9 Bitcoin back to E-Prime, which is his change address.
-And now like if you're just an external server you you look at this transaction I mean offcourse you can that 0.1 and 0.9 belong together But you couldn't tell whether they both belong to A, B or C.
+And now like if you're just an external server you you look at this transaction I mean of course you can that 0.1 and 0.9 belong together But you couldn't tell whether they both belong to A, B or C.
 However, the reason why it doesn't work is more subtle.
 Now look at what would be the messages that we have to send to the peer-to-peer mixing protocol.
 Like in the normal `CoinShuffle++` run, we would just send the output address, which is r and b prime here.
@@ -910,7 +910,7 @@ And what you have something like `BIP32` and public derivation and so on, where 
 
 **Audience 1:** 01:17:21
 
-So just to reiterate on the problem here is that when you expose your messages, then offcourse you don't expose the Bitcoin addresses, but what you expose is that you want to send 0.1 and 0.9 and then what you could do with that is that well I guess this send failed because the peers were very malicious so I'm just going to send one Bitcoin in in the failing round but you could assume honesty and and if honesty then I mean it's not very robust.
+So just to reiterate on the problem here is that when you expose your messages, then of course you don't expose the Bitcoin addresses, but what you expose is that you want to send 0.1 and 0.9 and then what you could do with that is that well I guess this send failed because the peers were very malicious so I'm just going to send one Bitcoin in in the failing round but you could assume honesty and and if honesty then I mean it's not very robust.
 
 **Tim Ruffing:** 01:18:13
 
@@ -940,7 +940,7 @@ This can be re-randomized basically.
 So you can take a commitment and like you can commit to the same amount twice and those commitments look totally independent of each other.
 Then this problem with the fixed message goes away and then you suddenly can mix and pay simultaneously.
 And also like an attentive protocol you need for this is ValueShuffle, which is full of work.
-And also you, offcourse, get rid of the previous problem that you can't mix unequal amounts, then you can also mix equal amounts and suddenly mixing is so much nicer and better.
+And also you, of course, get rid of the previous problem that you can't mix unequal amounts, then you can also mix equal amounts and suddenly mixing is so much nicer and better.
 If you could hide the amounts, but I think this is also not used in this seminar here.
 
 **Audience 1:** 01:20:32
