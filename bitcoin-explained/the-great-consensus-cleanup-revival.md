@@ -1413,11 +1413,11 @@ Sjors Provoost: 00:44:52
 
 But this is another case of like yes it would be you know you could just ban everything anything under 64 but or anything under 65 but you want to make the minimum change possible to reduce controversy that's not too complicated.
 
-## BIP 30/34 and the block 1,983,702 problem
+## BIP 30, BIP 34 and the block 1,983,702 problem
 
 Aaron van Wirdum: 00:45:04
 
-Okay last one BIP 30/34.
+Okay last one BIP 30, BIP 34.
 
 Sjors Provoost: 00:45:08
 
