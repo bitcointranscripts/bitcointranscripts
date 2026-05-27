@@ -1,25 +1,38 @@
 ---
-title: Bitcoin Core 26.0 (And F2Pool's OFAC Compliant Mining Policy)
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-85-bitcoin-core-26-0-and-f2pool-s-ofac-compliant-mining-policy-ainlt
+title: 'Bitcoin Core 26.0 (And F2Pool''s OFAC Compliant Mining Policy)'
+transcript_by: 'muchai254 via review.btctranscripts.com'
+media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-85-bitcoin-core-26-0-and-f2pool-s-ofac-compliant-mining-policy-ainlt'
+date: '2023-11-23'
 tags:
-  - bitcoin-core
+  - 'bitcoin-core'
 speakers:
-  - Sjors Provoost
-  - Aaron van Wirdum
-date: 2023-11-23
+  - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
 episode: 85
-summary: In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 0.26 release. They also briefly discuss recent developments concerning the transaction inclusion policy of mining pool F2Pool, which appears to have been compliant with the OFAC sanctions list.
+summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 0.26 release. They also briefly discuss recent developments concerning the transaction inclusion policy of mining pool F2Pool, which appears to have been compliant with the OFAC sanctions list.'
 ---
 Speaker 0: 00:00:20
 
-Live from Utrecht, this is Bitcoin Explained.
-Hello Sjoerd.
+Live from Utrecht, this is Bitcoin 
+
+Speaker 1: 00:00:22
+
+Explained.
+
+Speaker 0: 00:00:24
+
+Hello Sjors.
 
 Speaker 1: 00:00:25
 
 What's up?
+
+Speaker 0: 00:00:26
+
 Welcome back.
+
+Speaker 1: 00:00:26
+
 Thank you.
 
 Speaker 0: 00:00:28
@@ -47,7 +60,7 @@ Where did you go?
 Speaker 1: 00:00:40
 
 Too many conferences.
-In fact, Bitcoin Indonesia, Nastrasia in Tokyo.
+In fact, Bitcoin Indonesia, Nostrasia in Tokyo.
 
 Speaker 0: 00:00:45
 
@@ -69,9 +82,15 @@ That's right.
 Speaker 0: 00:00:56
 
 Bitcoin Core 26.
-But before we get into it, so that's what this episode is going to be about.
-George, we're going to discuss Bitcoin Core 26.
+But before we get into, so that's what this episode is gonna be about.
+Sjors, we're going to discuss Bitcoin Core 26.
+
+Speaker 1: 00:01:03
+
 Cool.
+
+Speaker 0: 00:01:04
+
 But there's been some recent developments that you suggest that we briefly touch on before we get there.
 
 Speaker 1: 00:01:10
@@ -82,7 +101,7 @@ As far as we know they did not actually do any filtering but this triggered a de
 
 Speaker 0: 00:01:46
 
-Yeah, So just to reiterate what this all means, there is an OFAC list and this, and this means there are entities on there that you're not allowed to act with.
+Yeah, So just to reiterate what this all means, there is an OFAC list and this, and this means there are entities on there that you're not allowed to transact with.
 And that's the US government sanctioned list.
 Is that the right way to think about it?
 
@@ -104,7 +123,7 @@ Right, and there are Bitcoin addresses on this list?
 
 Speaker 1: 00:02:14
 
-Yeah, so I think the general idea is that they say, Hey, this guy and this guy, you should not do business with them.
+Yeah, so I think the general idea is that they say, hey, this guy and this guy, you should not do business with them.
 And this is how you recognize them.
 And they'll spell out their name in like five different ways.
 And give maybe some known addresses.
@@ -114,7 +133,7 @@ Speaker 0: 00:02:31
 
 Right.
 So there are Bitcoin address on this list.
-And if you want to send Bitcoin to or from these addresses, then so what MarathonPool was doing was they would essentially filter these transactions and not include these transactions into a block.
+And if you want to send Bitcoin to or from these addresses, then so what MarathonPool (MaraPool) was doing was they would essentially filter these transactions and not include these transactions into a block.
 That's how they would comply with this list, right?
 
 Speaker 1: 00:02:49
@@ -127,7 +146,7 @@ Because as far as I know, they didn't actually do any filtering.
 But it cost quite a lot of consternations and they backed out of that idea.
 I think they even replaced their CEO, though that may have been completely unrelated.
 But anyway, it was enough motivation for him to write this tool.
-And what this tool does is it basically runs a Bitcoin Core Fullnode and a Bitcoin Core Fullnode will propose a block.
+And what this tool does is it basically runs a `Bitcoin Core full node` and a `Bitcoin Core full node` will propose a block.
 Basically, it just every 10 seconds creates what it thinks would be a correct block.
 It doesn't do the proof of work, it just constructs the block.
 And then when a real block appears, it compares it.
@@ -146,7 +165,13 @@ Why are we discussing this?
 Speaker 1: 00:04:35
 
 Well what seems to be going on here is that there are four transactions by F2Pool which...
+
+Speaker 0: 00:04:41
+
 Transactions by F2Pool?
+
+Speaker 1: 00:04:43
+
 Well transactions not by F2Pool.
 
 Speaker 0: 00:04:45
@@ -190,11 +215,11 @@ We could just do the analysis, but then there was a tweet by, I guess, the perso
 
 Speaker 0: 00:05:36
 
-Wangchun?
+Wang Chun?
 
 Speaker 1: 00:05:37
 
-Yes, who says, will disable the TX filtering patch for now until the community reaches a more comprehensive consensus on this topic.
+Yes, who says, will disable the tx filtering patch for now until the community reaches a more comprehensive consensus on this topic.
 So basically…
 
 Speaker 0: 00:05:46
@@ -209,11 +234,11 @@ Speaker 0: 00:06:01
 
 But where does this patch even come from?
 Like is this a patch?
+Can I download this patch?
 
 Speaker 1: 00:06:04
 
 Presumably just self-written.
-Can I download this patch?
 
 Speaker 0: 00:06:06
 
@@ -230,22 +255,29 @@ Bitcoin Core does not offer this patch.
 
 Speaker 1: 00:06:14
 
-No, But I guess you can write a patch that keeps things from going into your mempool.
-I don't know if we have a way to get things out of your mempool once it's in there.
+No, but I guess you can write a patch that keeps things from going into your `mempool`.
+I don't know if we have a way to get things out of your `mempool` once it's in there.
 
 Speaker 0: 00:06:24
 
-Anyways so Wangchun F2Pool was using a patch, maybe self-written, maybe not, to filter these transactions out of blocks to comply with the OFAC list.
+Anyways so Wang Chun F2Pool was using a patch, maybe self-written, maybe not, to filter these transactions out of blocks
+
+Speaker 1: 00:06:35
+
+Yes
+
+Speaker 0: 00:06:36
+
+To comply with the OFAC list.
 And now he's…
-Well,
 
 Speaker 1: 00:06:39
 
-we don't know if it was to comply with the OFAC list.
+Well, we don't know if it was to comply with the OFAC list.
 
 Speaker 0: 00:06:41
 
-Josh, why are you hedging everything so much?
+Sjors, why are you hedging everything so much?
 It's pretty obvious at this point, right?
 You did the analysis.
 
@@ -259,7 +291,7 @@ And he confirms it on Twitter.
 
 Speaker 1: 00:06:50
 
-Yeah, but there are some other unconfirmed screenshots of tweets that suggest that Motiv may have been slightly different.
+Yeah, but there are some other unconfirmed screenshots of tweets that suggest that motive may have been slightly different.
 But in any case, we know that these transactions were deliberately filtered.
 
 Speaker 0: 00:06:58
@@ -306,7 +338,7 @@ I'm just saying either is possible.
 
 Speaker 0: 00:07:26
 
-Sure, sure.
+Sjors, should we...
 
 Speaker 1: 00:07:27
 
@@ -327,16 +359,23 @@ Speaker 0: 00:07:46
 
 Yeah, maybe it's a bit much to go over this whole thing again.
 Again, we discussed this in episode 37, you said?
+
+Speaker 1: 00:07:53
+
 Yes.
+
+Speaker 0: 00:07:54
+
 Yeah, so that's what we discussed, I guess, in depth.
 How worried we are about it anyways.
-Short term, So now it's turned off.
+Short term, so now it's turned off.
 I guess the other thing maybe worth mentioning is, so this is something that…
 
 Speaker 1: 00:08:07
 
-So the fact that we were able to detect this at all is because of all this tooling, it's not that obvious normally because transactions, sometimes they appear in a block, sometimes they don't.
+So the fact that we were able to detect this at all is because of all this tooling, it's not that obvious normally because transactions, you know, sometimes they appear in a block, sometimes they don't.
 So that's pretty cool that we have the tech to detect it.
+The imprint is pretty minor.
 
 Speaker 0: 00:08:22
 
@@ -360,13 +399,13 @@ So there's actually a reason now for…
 
 Speaker 1: 00:09:22
 
-If you go through, you know, this, if you just assume a slippery slope, which is always a problematic type of argument, but if you do, then The ultimate outcome of this is you're back to PayPal because all transactions have to be KYC'd in permission before they go into a block.
+If you go through, you know, this, if you just assume a slippery slope, which is always a problematic type of argument, but if you do, then the ultimate outcome of this is you're back to PayPal because all transactions have to be KYC'd in permission before they go into a block.
 Now we're nowhere near that, but does this make sense to worry about this?
 
 Speaker 0: 00:09:39
 
 Right, it is sort of a first step in that direction and it's interesting to see how things will play out, I guess.
-So the first step we now saw is that Wankyun disabled his patch.
+So the first step we now saw is that Wang Chun disabled his patch.
 But yeah, it's an event in that sense.
 Like it's a beginning of something that could go in a very wrong direction, even though it's only a very small step right now.
 Right?
@@ -374,7 +413,13 @@ Is this, are we done with this?
 This was the intro to our Bitcoin Core 27, wait, where are we?
 26th episode.
 Okay, let's talk about Bitcoin Core 26 then.
+
+Speaker 1: 00:10:13
+
 Yes.
+
+Speaker 0: 00:10:14
+
 First of all, I think everyone knows this by now.
 Actually, I'm not even going to ask you about this anymore.
 I'll just preface this.
@@ -409,7 +454,13 @@ Right, so potentially the new Bitcoin Core release could be announced, released 
 Speaker 1: 00:11:13
 
 Exactly.
+
+Speaker 0: 00:11:13
+
 Okay.
+
+Speaker 1: 00:11:14
+
 Or maybe a few weeks.
 What's interesting perhaps is that there is a testing guide.
 Now every release there is always a testing guide but this one apparently has had some extra love and attention.
@@ -448,7 +499,13 @@ Speaker 0: 00:12:12
 
 Okay, sure.
 Do you want to get into the actual changes?
+
+Speaker 1: 00:12:15
+
 Sure.
+
+Speaker 0: 00:12:16
+
 Okay, so the actual change.
 So what we did, well, mostly short to be honest, is you picked out a couple of features in this new release that are noteworthy.
 Even more, like you picked out the most noteworthy of the most noteworthy changes.
@@ -462,7 +519,8 @@ Speaker 0: 00:12:38
 
 Okay.
 So the first one, oh yeah.
-And we mentioned some of them in our previous episode, actually, because in the previous episode, which I guess by now is two months ago, We did mention some new inclusions in Bitcoin Core, or you did already.
+And we mentioned some of them in our previous episode, actually, because in the previous episode, which I guess by now is two months ago
+We did mention some new inclusions in Bitcoin Core, or you did already.
 So we'll sort of repeat these for whoever missed that episode or just to give a complete picture.
 So the first one is peer-to-peer transport encryption.
 
@@ -475,7 +533,14 @@ Speaker 0: 00:13:02
 What's the BIP number for that again?
 Do you remember?
 Do you know?
-No. It's not BIP 151, right?
+
+Speaker 1: 00:13:05
+
+No. 
+
+Speaker 0: 00:13:06
+
+It's not BIP 151, right?
 That one was replaced?
 
 Speaker 1: 00:13:09
@@ -487,7 +552,7 @@ That really explains why you want to do this.
 But the short version is that nodes will encrypt their traffic between each other so that the especially internet providers cannot simply just listen to what you're doing.
 This is actually very easy to test.
 It's also something that's not on by default but as part of testing you might want to turn that on.
-So roughly the way you would test this is you download Bitcoin Core, the new version, you turn this feature on by changing the configuration setting And then your friend also downloads Bitcoin Core, also turns this feature on, and now you try to connect to them.
+So roughly the way you would test this is you download Bitcoin Core, the new version, you turn this feature on by changing the configuration setting and then your friend also downloads Bitcoin Core, also turns this feature on, and now you try to connect to them.
 So in Bitcoin Core normally it automatically finds peers, but you can manually say, hey, please connect to this IP address.
 And then you can actually get something called a session ID.
 It should be in the instructions, but basically you'll be able to see a number just like with Signal, a long number, and if you compare that long number with what your friend sees as a long number, then you know that you are directly connected to them.
@@ -550,13 +615,13 @@ No, they will only try if they think the other side can use it.
 Speaker 0: 00:16:03
 
 Oh, so how do that?
-So how would my notes think that your note is using encryption?
+So how would my nodes think that your node is using encryption?
 
 Speaker 1: 00:16:08
 
-So we talked about, I think in episode two or three, we talked about, how nodes bootstrap and, and learn about other notes.
+So we talked about, I think in episode two or three, we talked about, how nodes bootstrap and, and learn about other nodes.
 So they learn about nodes by having a list of IP addresses to connect to, but in addition to those IP addresses there's also some metadata of which features these nodes support.
-So in your long address book of potential nodes to connect to is information like is this a prune node or a full node, does it have specific bloom filters or whatever filters you want.
+So in your long address book of potential nodes to connect to is information like is this a `pruned node` or a `full node`, does it have specific `Bloom filters` or whatever filters you want.
 And as of now, it also tracks whether the node supports v2 transport.
 So if your address book says that this other node supports that new feature, which could be a lie, but at least that information would be there, then he'll try that first and if it fails, just tries the v1 connection.
 Now I guess in the future we might turn that around and just always try the v2 and then fall back to v1 if it doesn't work.
@@ -573,19 +638,33 @@ Speaker 1: 00:17:10
 Because if you first try encrypted and it, and the other side does not support it, the other side will hang up on you.
 So you have to connect again.
 Which is not the end of the world but right now the majority of the network doesn't support it so that means all of your connections would fail and you'd retry.
+
+Speaker 0: 00:17:25
+
+I see 
+
+Speaker 1: 00:17:26
+
 But I don't know if that's a big enough deal in the long run so it might be turned around just try it.
 
 Speaker 0: 00:17:31
 
 Yeah I would assume eventually the goal is that everyone would use this right?
+
+Speaker 1: 00:17:35
+
+Yes
+
+Speaker 0: 00:17:36
+
 Are there any downsides to using this?
 
 Speaker 1: 00:17:38
 
-Well there is now because it's too new so if something goes wrong your note might simply fail to connect or get hung up on by all of its peers and you don't get the latest blocks, right?
+Well there is now because it's too new so if something goes wrong your node might simply fail to connect or get hung up on by all of its peers and you don't get the latest blocks, right?
 So right now it's not safe yet, but in the long run I don't think there's any downside.
 It was designed to not have downsides, in the sense that it's actually even a little bit faster than the original protocol.
-You'd think it'd be slower because it's encrypted, but the original protocol uses checksums to make sure that the messages are correct, and those checksums use SHA-256, which is very slow, and the new algorithm uses a quicker checksum.
+You'd think it'd be slower because it's encrypted, but the original protocol uses `checksums` to make sure that the messages are correct, and those checksums use `SHA-256`, which is very slow, and the new algorithm uses a quicker `checksum`.
 So it's better in, hopefully in every way, if it's not broken.
 
 Speaker 0: 00:18:17
@@ -595,13 +674,13 @@ So how, if I download Bitcoin Core 26, how do I switch this on?
 
 Speaker 1: 00:18:22
 
-You go into your Bitcoin.conf settings file and then you turn on, I think you enter v2 transport equals one, but it'll be in there, either the release notes or the testing guide.
+You go into your bitcoin.conf settings file and then you turn on, I think you enter `v2transport = one`, but it'll be in there, either the release notes or the testing guide.
 
 Speaker 0: 00:18:33
 
 Right.
 Alright, moving on to the next point.
-Assume UTXO was implemented for Cignas testnet?
+`Assume UTXO` was implemented for signet, testnet?
 Not mainnet, right?
 
 Speaker 1: 00:18:42
@@ -610,12 +689,15 @@ That's right.
 
 Speaker 0: 00:18:43
 
-Okay, so what is Assume UTXO again?
+Okay, so what is `Assume UTXO` again?
 
 Speaker 1: 00:18:46
 
 We covered that in episode 14, so that's quite a while ago.
-It's basically the short version of it is that instead of starting at the genesis block when you start your node and going all the way to the most recent block, which takes a long time, you start at a snapshot and you assume that it's valid and then you go from this snapshot which might be a few months ago to the present to the tip and then once you've done that you you start from the genesis block and in the background you check all the blocks and you make sure that you indeed arrive at this snapshot that you assumed initially.
+It's basically the short version of it is that instead of starting at the genesis block when you start your node and going all the way to the most recent block, which takes a long time
+You start at a snapshot and you assume that it's valid 
+And then you go from this snapshot which might be a few months ago to the present, to the tip
+And then once you've done that you you start from the genesis block and in the background you check all the blocks And you make sure that you indeed arrive at this snapshot that you assumed initially
 
 Speaker 0: 00:19:20
 
@@ -636,15 +718,15 @@ Plus you need to, plus the developers need to be corrupt, obviously.
 
 Speaker 1: 00:20:12
 
-Yeah, so this depends on the distribution mechanism.
+Yes, so this depends on the distribution mechanism.
 Right now the idea is that the correct block is hard-coded into the source code, so you would indeed have to compromise the developers.
 You could, we could still change that approach.
 I don't know if it'll be changed, but the approach could be that, no, you can just use any block and the developers do not bless any of the blocks.
 Because it's the downside of the developers blessing the blocks is that, well, now if you compromise the developers, you're screwed.
+The upside is that...
 
 Speaker 0: 00:20:41
 
-The upside is that...
 How would you use any block?
 
 Speaker 1: 00:20:44
@@ -678,13 +760,19 @@ The blessed one.
 Speaker 0: 00:21:17
 
 Okay, the developers have blessed it.
+
+Speaker 1: 00:21:18
+
 Yeah.
+
+Speaker 0: 00:21:19
+
 Okay.
 So yeah, you mentioned...
 
 Speaker 1: 00:21:22
 
-And for testnet and Cygnet, obviously, that's fine.
+And for testnet and signet, obviously, that's fine.
 
 Speaker 0: 00:21:25
 
@@ -697,32 +785,48 @@ But it's also not, there's also no theft risk there.
 Speaker 0: 00:21:28
 
 Right.
-It's only on testnet now, and Cygnet, which is a version of testnet.
+It's only on testnet now, and signet, which is a version of testnet.
 So yeah, so you mentioned, even if it would be on mainnet, the attack would be expensive because you need to create a fake block and you need to, at least in the current version, corrupt the developers.
-Plus it would only work temporarily because it's kind of a stopgap until you've actually synced from yeah basically once you've synced from the genesis block the note would crash it's kind of a yeah right it's sort of a solution until in the meantime yeah and therefore it's obviously also optional you can just opt to actually wait until it's fully synced before you receive any transaction.
+Plus it would only work temporarily because it's kind of a stopgap until you've actually synced from..
+
+Speaker 1: 00:21:51
+
+Yeah basically once you've synced from the genesis block the node would crash 
+
+Speaker 0: 00:21:54
+
+It's kind of a yeah right it's sort of a solution until in the meantime 
+
+Speaker 1: 00:21:58
+
+Yeah 
+
+Speaker 0: 00:21:59
+
+And therefore it's obviously also optional you can just opt to actually wait until it's fully synced before you receive any transaction.
 
 Speaker 1: 00:22:05
 
-Although in that case you should just not use the feature.
+Yeah although in that case you should just not use the feature.
 
 Speaker 0: 00:22:08
 
-Yes well that's what I'm saying the future is basically optional.
+Yes well that's what I'm saying the feature is basically optional.
 
 Speaker 1: 00:22:12
 
 That's true in general yes.
-So if you wanted to test this, again you download BitConcord, then you obtain the SIGNET or the TestNet snapshot.
-There's some links to Torrents I believe.
+So if you wanted to test this, again you download Bitcoin Core, then you obtain the signet or the testnet snapshot.
+There's some links to torrents I believe.
 And then you just run one command and you'll see it in action.
 
 Speaker 0: 00:22:28
 
-Okay, so that's also new in BitConcord 26.
+Okay, so that's also new in Bitcoin Core 26.
 On to the third point.
-The third handpicked selection by Shortz is network diversity.
+The third handpicked selection by Sjors is network diversity.
 There's a new upgrade in updated network diversity tools.
-What's going on Shortz?
+What's going on Sjors?
 
 Speaker 1: 00:22:47
 
@@ -756,21 +860,42 @@ Okay, go on.
 
 Speaker 1: 00:23:49
 
-But once you have turned it on and you, but you let the VidCon core node automatically handle what it connects to, you may or may not have a connection to another Tor node.
+But once you have turned it on and you, but you let the Bitcoin Core node automatically handle what it connects to, you may or may not have a connection to another Tor node.
 And if you have a connection to another Tor node and you hang up on that one, or they hang up on you, maybe you won't have it again.
 
 Speaker 0: 00:24:03
 
 Right, so what you're saying is I'm connected to eight nodes, one of them is a Tor node because I switched the thing on that allows me to connect to Tor nodes.
-Now this guy's internet, Wi-Fi fails, whatever, I'm disconnected with him, So now I'm going to reconnect randomly to another node, which may or may not be a Tor node.
+Now this guy's internet Wi-Fi fails, whatever, I'm disconnected with him, so now I'm going to reconnect randomly to another node, which may or may not be a Tor node.
 So it's possible that I'm connecting to not a Tor node, and now I'm not connecting to any Tor node.
 
 Speaker 1: 00:24:25
 
 Yeah.
 So basically the Tor feature so far just does not guarantee that you actually connect to a Tor node.
+
+Speaker 0: 00:24:31
+
+Right
+
+Speaker 1: 00:24:31
+
 You may or may not.
+
+Speaker 0: 00:24:32
+
+Yap
+
+Speaker 1: 00:24:32
+
 And so this new change makes sure that you do.
+
+Speaker 0: 00:24:35
+
+Right
+
+Speaker 1: 00:21:35
+
 It makes sure that at least, I don't know what the percentage is, but let's say at least one connection will go to Tor if you have Tor on.
 And it will basically, if that connection disappears it will make another one.
 
@@ -781,10 +906,10 @@ And so the way I would do this again is I go into the config file and I say...
 Speaker 1: 00:24:49
 
 No, this just works.
-This just works.
 
 Speaker 0: 00:24:51
 
+This just works.
 Out of the box.
 
 Speaker 1: 00:24:52
@@ -796,14 +921,29 @@ Speaker 0: 00:24:57
 
 Sure.
 Okay, so what's the...
-So This will basically guarantee that I'm going to connect to a TOR node if I want that.
+So this will basically guarantee that I'm going to connect to a Tor node if I want that.
 
 Speaker 1: 00:25:04
 
 Well, assuming there is one that you can connect to at all, but it will try.
-And now, what's the benefit?
-This solves a problem known as eclipse attacks.
-And we have done previous episodes, too, about eclipse attacks.
+Yeah
+
+Speaker 0: 00:25:07
+
+Yeah
+
+Speaker 1: 00:25:08
+
+And now...
+
+Speaker 0: 00:25:09
+
+What's the benefit?
+
+Speaker 1: 00:25:10
+
+This solves a problem known as `Eclipse attacks`.
+And we have done previous episodes, too, about `Eclipse attacks`.
 
 Speaker 0: 00:25:15
 
@@ -812,57 +952,84 @@ Also probably very early on, I think.
 Speaker 1: 00:25:17
 
 Yes, I forgot to write down the numbers, but you'll find them.
-Basically in Eclipse Attack the idea is that some evil person makes sure that your node only connects to them.
+Basically in `Eclipse attack` the idea is that some evil person makes sure that your node only connects to them.
 So you think you're connected to 8 different peers, but you're not, you're connected to the same person because they have eight different IP addresses and tricked you into connecting to them.
-I'll explain all that.
+We explained all that.
 Now if you also connect through Tor, this attack becomes more difficult because they might be able to trick you into connecting to them through normal IP addresses but they may not be able to trick you into connecting to them through Tor.
 Or if they're making the connections to you, they might not know your Onion address that they're connecting to.
 They only know your normal IP address.
+
+Speaker 0: 00:25:56
+
 Yeah.
+
+Speaker 1: 00:25:57
+
 So that's why this helps.
 
 Speaker 0: 00:25:59
 
-It's kind of a safeguard.
-Like Eclipse attacks themselves are kind of unlikely to happen.
+That's kind of a safeguard.
+Like `Eclipse attacks` themselves are kind of unlikely to happen.
 There are more tools against that, right, in Bitcoin Core?
 
 Speaker 1: 00:26:08
 
-Yeah, I would also say Eclipse attacks, you know, again, in order of Eclipse attacks are getting more and more difficult.
-And if you want to do them, You probably want to have a motive, like you want to be able to scam somebody into accepting your payment and then double spending them and working with miners and all that stuff.
+Yeah, I would also say `Eclipse attacks`, you know, again, Eclipse attacks are getting more and more difficult.
+And if you want to do them, you probably want to have a motive, like you want to be able to scam somebody into accepting your payment and then double spending them and working with miners and all that stuff.
 They're not easy attacks, but we like to make them impossible or harder.
 
 Speaker 0: 00:26:27
 
 So Tor is kind of a lifeline to still get the latest blocks in case they're being censored in some sort of eclipse attack scheme.
+
+Speaker 1: 00:26:36
+
 Yeah, exactly.
-Okay, so this is also new in Bitcoin Core.
+Okay, so...
+
+Speaker 0: 00:26:38
+
+So this is also new in Bitcoin Core.
 You'll…
-so network diversity is embedded more and more thoroughly.
-Then I'm seeing you selected, there's a Taproot Miniscript upgrade.
+The network diversity is embedded more and more thoroughly.
+Then I'm seeing you selected, there's a `Taproot Miniscript` upgrade.
 
 Speaker 1: 00:26:52
 
-Yes, so we covered Miniscript in episode 4.
+Yes, so we covered `Miniscript` in episode 4.
 A very long time ago.
 
 Speaker 0: 00:26:56
 
 Really?
-Yep.
 
-Speaker 1: 00:26:58
+Speaker 1: 00:26:57
 
+Yep
 One of the first things we did.
 So what's the TLDR of Miniscript?
 It is a subset of script, you could say.
-So not all of Bitcoin script, but a part of Bitcoin script that has been handpicked by super wizards like Andrew Polstra and SIPA to make sure that you don't shoot yourself in the foot.
+So not all of Bitcoin script, but a part of Bitcoin script that has been handpicked by super wizards like Andrew Poelstra and sipa (Pieter Wuille) to make sure that you don't shoot yourself in the foot.
+
+Speaker 0: 00:27:16
+
+Yeah
+
+Speaker 1: 00:27:17
+
 And that you can combine pieces of script.
-Like two pieces of script and you put and in between it etc.
+Like two pieces of script and you put AND in between it etc.
+
+Speaker 0: 00:27:22
+
+Yeah
+
+Speaker 1: 00:27:23
+
 So these allow you to do complicated fancy wallets with like okay I want two signatures but after one year I only want one signature etc.
-And this worked, This has been added to Bitcoin Core a year ago or so in various steps, which we've covered in earlier episodes.
-And the latest step is that you can now also use Miniscript with Taproot.
+And this worked, this has been added to Bitcoin Core a year ago or so in various steps, which we've covered in earlier episodes.
+And the latest step is that you can now also use `Miniscript` with `Taproot`.
 
 Speaker 0: 00:27:45
 
@@ -871,12 +1038,13 @@ And what is the benefit?
 
 Speaker 1: 00:27:48
 
-So the benefit of Taproot in general…
+So the benefit of `Taproot` in general…
 
 Speaker 0: 00:27:50
 
-Maybe should I first, for those that didn't follow that, so yeah, Bitcoin transactions use scripts, so it's basically a programming language for Bitcoin, allows you to lock Bitcoins up in all sorts of creative ways, time locks, multi-stick, whatever.
-A mini script is a way to sort of simplify that.
+Maybe should I first, for those that didn't follow that, so yeah, Bitcoin transactions use scripts, so it's basically a programming language for Bitcoin
+Allows you to lock Bitcoins up in all sorts of creative ways, `timelocks`, `multisig`, whatever.
+A Miniscript is a way to sort of simplify that.
 And it's really for developers, right?
 Like I'm not going to use it.
 It's for people like you and.
@@ -889,11 +1057,17 @@ Speaker 0: 00:28:19
 
 Right.
 But with regular script, it's kind of easy to make mistakes and lose coins.
-And with mini scripts, kind of the most common ways to make these mistakes are just ejected.
+And with Minicripts, kind of the most common ways to make these mistakes are just ejected.
 Like you can't use this.
 Only the simple stuff is left.
 And because of that, you can actually make fairly complex things relatively simply and safely.
-Yeah.
+
+Speaker 1: 00:28:41
+
+Yeah
+
+Speaker 0: 00:28:42
+
 Okay.
 So this was already available in Bitcoin Core.
 So what this means specifically is I think you can connect wallets that use this to Bitcoin Core.
@@ -903,7 +1077,7 @@ Can you say that right?
 Speaker 1: 00:28:56
 
 That's true, yeah.
-So, well, the Bitcoin Core wallet supports Miniscript.
+So, well, the Bitcoin Core wallet supports `Miniscript`.
 
 Speaker 0: 00:29:00
 
@@ -912,18 +1086,18 @@ Right.
 Speaker 1: 00:29:00
 
 But there's no like graphical way or anything in the interface where you can do that.
-You'd have to manually type these pieces of mini script.
-But there are wallets out there that will connect to Bitcoin Core using the RBC, for example.
-And they might use the Bitcoin Core wallet for the key storage, et cetera.
-But they would have some graphical user interface and they would construct a mini script.
+You'd have to manually type these pieces of `Miniscript`.
+But there are wallets out there that will connect to Bitcoin Core using the RPC, for example.
+And they might use the Bitcoin Core wallet for the key storage, etc.
+But they would have some graphical user interface and they would construct a `Miniscript`.
 
 Speaker 0: 00:29:21
 
-So where, I think I'm skipping ahead.
+So where, I think I'm skipping, I'm I skipping ahead?
 
 Speaker 1: 00:29:25
 
-So where Taproot comes in.
+So where **Taproot** comes in.
 
 Speaker 0: 00:29:28
 
@@ -935,38 +1109,50 @@ So where do I find whatever we're talking about?
 
 Speaker 1: 00:29:40
 
-Well, the mini script lives in the Bitcoin Core wallet.
+Well, the `Miniscript` lives in the Bitcoin Core wallet.
 
 Speaker 0: 00:29:43
 
 Yes.
-So this, Okay, so we're talking about a Taproot upgrade.
+So this, okay, so we're talking about a Taproot upgrade.
 Let's go there then.
+
+Speaker 1: 00:29:47
+
 Yeah.
+
+Speaker 0: 00:29:48
+
 So now this has been made available in Taproot.
 So is this an upgrade in the Bitcoin Core wallet?
+
+Speaker 1: 00:29:55
+
 Yes.
+
+Speaker 0: 00:29:56
+
 Okay, got it.
 So what's the upgrade?
 
 Speaker 1: 00:29:58
 
-So the upgrade is that you can now use this mini script, so these safe pieces of script, not just in SegWit, in regular SegWit, which used to be the only thing, but you can now also use it in Taproot scripts.
-And remember what's nice about Taproot scripts is you can have all these multiple ways that you can spend a coin, you can now hide all the ways that you're not using by putting them in different leaves.
+So the upgrade is that you can now use this Miniscrip, so these safe pieces of script, not just in `SegWit`, in regular `SegWit`, which used to be the only thing, but you can now also use it in `Taproot scripts`.
+And remember what's nice about `Taproot scripts` is you can have all these multiple ways that you can spend a coin, you can now hide all the ways that you're not using by putting them in different leaves.
 So your wallet would basically know that, okay, there are five different subscripts, essentially, that are possible, and the user will tell me which one of these five to use when I want to spend this coin and will hide the other ones.
-And there were some like, there's some subtle changes between the scripts in Taproot and the scripts in SecWit before some limits were dropped, but that's not that important.
+And there were some like, there's some subtle changes between the scripts in `Taproot` and the scripts in `SegWit` before some limits were dropped, but that's not that important.
 
 Speaker 0: 00:30:42
 
 Right.
-It's just, It's basically just the benefits of Taproot are now available in combination with Miniscript in a Bitcoin Core wallet.
+It's just, it's basically just the benefits of `Taproot` are now available in combination with Miniscript in a Bitcoin Core wallet.
 
 Speaker 1: 00:30:50
 
 Yes, but either you will have to write your little Taproot Miniscript yourself and put it in the wallet.
 Once you've put it in the wallet, by the way, it just works, right?
 You just click on receive new, make new address, it'll show an address, looks like any other address, and you'll be able to spend from it and it'll just work.
-But you generally do not want to type mini script yourself, even though it's safer than regular script, you probably want to use some other tool that does that for you.
+But you generally do not want to type Miniscript yourself, even though it's safer than regular script, you probably want to use some other tool that does that for you.
 
 Speaker 0: 00:31:13
 
@@ -987,7 +1173,13 @@ Are there any Wallets that use this right now or that want to use this?
 Speaker 1: 00:31:32
 
 I think Liana Wallet wants to because they're trying all sorts of fancy multisig, yeah, multistage multisig things, right?
+
+Speaker 0: 00:31:40
+
 What's it called?
+
+Speaker 1: 00:31:41
+
 Multisig.
 
 Speaker 0: 00:31:42
@@ -1006,7 +1198,7 @@ I don't think so.
 
 Speaker 1: 00:31:46
 
-Wizard Sardine is the company.
+Wizardsardine is the company.
 
 Speaker 0: 00:31:48
 
