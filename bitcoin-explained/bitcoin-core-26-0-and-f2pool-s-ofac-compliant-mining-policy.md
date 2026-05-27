@@ -112,7 +112,7 @@ As far as we know they did not actually do any filtering but this triggered a de
 
 Aaron van Wirdum: 00:01:46
 
-Yeah, So just to reiterate what this all means, there is an OFAC list and this, and this means there are entities on there that you're not allowed to transact with.
+Yeah, so just to reiterate what this all means, there is an OFAC list and this, and this means there are entities on there that you're not allowed to transact with.
 And that's the US government sanctioned list.
 Is that the right way to think about it?
 
@@ -157,7 +157,7 @@ Because as far as I know, they didn't actually do any filtering.
 But it cost quite a lot of consternations and they backed out of that idea.
 I think they even replaced their CEO, though that may have been completely unrelated.
 But anyway, it was enough motivation for him to write this tool.
-And what this tool does is it basically runs a `Bitcoin Core full node` and a `Bitcoin Core full node` will propose a block.
+And what this tool does is it basically runs a Bitcoin Core full node and a Bitcoin Core full node will propose a block.
 Basically, it just every 10 seconds creates what it thinks would be a correct block.
 It doesn't do the proof of work, it just constructs the block.
 And then when a real block appears, it compares it.
@@ -437,9 +437,9 @@ First of all, I think everyone knows this by now.
 Actually, I'm not even going to ask you about this anymore.
 I'll just preface this.
 So the way it works, Bitcoin Core releases a new version of the software every six months.
-And that means that every new future that was done within the six months is in Bitcoin Core.
+And that means that every new feature that was done within the six months is in Bitcoin Core.
 And that's, that means that's a new release.
-There is not a new release because there is a new future.
+There is not a new release because there is a new feature.
 There's just a new release and whatever is new is new.
 
 Sjors Provoost: 00:10:42
@@ -885,7 +885,7 @@ And if you have a connection to another Tor node and you hang up on that one, or
 Aaron van Wirdum: 00:24:03
 
 Right, so what you're saying is I'm connected to eight nodes, one of them is a Tor node because I switched the thing on that allows me to connect to Tor nodes.
-Now this guy's internet Wi-Fi fails, whatever, I'm disconnected with him, so now I'm going to reconnect randomly to another node, which may or may not be a Tor node.
+Now this guy's internet Wi-Fi fails, whatever, I'm disconnected with him, so now I'm gonna reconnect randomly to another node, which may or may not be a Tor node.
 So it's possible that I'm connecting to not a Tor node, and now I'm not connecting to any Tor node.
 
 Sjors Provoost: 00:24:25
@@ -913,7 +913,7 @@ Aaron van Wirdum: 00:24:35
 
 Right
 
-Sjors Provoost: 00:21:35
+Sjors Provoost: 00:24:35
 
 It makes sure that at least, I don't know what the percentage is, but let's say at least one connection will go to Tor if you have Tor on.
 And it will basically, if that connection disappears it will make another one.
@@ -940,7 +940,7 @@ Aaron van Wirdum: 00:24:57
 
 Sure.
 Okay, so what's the...
-So this will basically guarantee that I'm going to connect to a Tor node if I want that.
+So this will basically guarantee that I'm gonna connect to a Tor node if I want that.
 
 Sjors Provoost: 00:25:04
 
@@ -1067,7 +1067,7 @@ Maybe should I first, for those that didn't follow that, so yeah, Bitcoin transa
 Allows you to lock Bitcoins up in all sorts of creative ways, `timelocks`, `multisig`, whatever.
 A Miniscript is a way to sort of simplify that.
 And it's really for developers, right?
-Like I'm not going to use it.
+Like I'm not gonna use it.
 It's for people like you and.
 
 Sjors Provoost: 00:28:13
@@ -1078,7 +1078,7 @@ Aaron van Wirdum: 00:28:19
 
 Right.
 But with regular script, it's kind of easy to make mistakes and lose coins.
-And with Minicripts, kind of the most common ways to make these mistakes are just ejected.
+And with Minicripts, kind of the most common ways to make these mistakes are just rejected.
 Like you can't use this.
 Only the simple stuff is left.
 And because of that, you can actually make fairly complex things relatively simply and safely.
@@ -1122,7 +1122,7 @@ So where SegWit comes in.
 
 Aaron van Wirdum: 00:29:28
 
-I don't want to go there yet.
+No I don't want to go there yet.
 Where is this?
 I don't know how else to ask it.
 Is this in the Bitcoin Core wallet or is this in the Bitcoin Core like node software?
@@ -1161,12 +1161,12 @@ Sjors Provoost: 00:29:58
 So the upgrade is that you can now use this Miniscrip, so these safe pieces of script, not just in `SegWit`, in regular `SegWit`, which used to be the only thing, but you can now also use it in `Taproot scripts`.
 And remember what's nice about `Taproot scripts` is you can have all these multiple ways that you can spend a coin, you can now hide all the ways that you're not using by putting them in different leaves.
 So your wallet would basically know that, okay, there are five different subscripts, essentially, that are possible, and the user will tell me which one of these five to use when I want to spend this coin and will hide the other ones.
-And there were some like, there's some subtle changes between the scripts in `Taproot` and the scripts in `SegWit` before some limits were dropped, but that's not that important.
+And there were some like, there's some subtle changes between the scripts in Taproot and the scripts in `SegWit` before some limits were dropped, but that's not that important.
 
 Aaron van Wirdum: 00:30:42
 
 Right.
-It's just, it's basically just the benefits of `Taproot` are now available in combination with Miniscript in a Bitcoin Core wallet.
+It's just, it's basically just the benefits of Taproot are now available in combination with Miniscript in a Bitcoin Core wallet.
 
 Sjors Provoost: 00:30:50
 
