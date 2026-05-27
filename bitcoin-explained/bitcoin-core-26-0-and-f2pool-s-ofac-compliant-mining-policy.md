@@ -1,5 +1,5 @@
 ---
-title: 'Bitcoin Core 26.0 (And F2Pool''s OFAC Compliant Mining Policy)'
+title: 'Bitcoin Core 26.0: What''s New, Plus F2Pool''s OFAC Transaction Filtering'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-85-bitcoin-core-26-0-and-f2pool-s-ofac-compliant-mining-policy-ainlt'
 date: '2023-11-23'
