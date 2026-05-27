@@ -9,6 +9,7 @@ tags:
   - 'regulation'
   - 'taproot'
   - 'tapscript'
+  - 'miniscript'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
