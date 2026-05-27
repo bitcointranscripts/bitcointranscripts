@@ -5,6 +5,7 @@ media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-85-bitcoin-co
 date: '2023-11-23'
 tags:
   - 'bitcoin-core'
+  - 'bitcoin-development'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
