@@ -340,7 +340,7 @@ This wouldn't work if you used XOR.
 **Tim Ruffing:** 00:27:15
 
 Now the big problem in DC-net is that they can be disrupted, which basically means if there's one malicious user, let's say your Bob is malicious, what Bob could do is instead of sending m2 and m2^2 and so on and following this nice algebraic structure that you're supposed to follow, Bob could just send bullshit in every slot, for example, like random values or anything else that he wants, right?
-And now the problem is if we now want to sum up in the slots, of course we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DC-net here, or a DC-net in every of the n slots.
+And now the problem is if we now want to sum up in the slots, of course we can sum up, we get some sums, but like those sums will be again bullshit, even worse, because we are doing like n DC-net here, or a DC-nets in every of the n slots.
 Bob here says fully anonymous, right?
 Because this was the core property of the DC-net that we can compute the sum of the messages and we can do this here in every slot, but we don't know who contributed what part to that sum.
 So we can't tell who contributed bullshit.
@@ -798,7 +798,7 @@ In the naive version, we run key exchange, then already DC-net, and then we need
 Then the DC-net round would be in the, the DC-net message would be in the second round.
 But here what we act, what we here do is to this commitments to the DC-net And then sending the DC-net only in the third round, we move the DC-net to the third round and we make this interleaving of two here possible.
 Yeah, and now if you count the number of rounds, if you have F malicious users, then we need 4 plus 2 F broadcast rounds.
-And this is better than previous work, which was the original CoinShuffle, which was just all of NF rounds.
+And this is better than previous work, which was the original CoinShuffle, which was just O(nf) rounds.
 So much slower.
 
 ## Practical evaluation of `CoinShuffle++`.
