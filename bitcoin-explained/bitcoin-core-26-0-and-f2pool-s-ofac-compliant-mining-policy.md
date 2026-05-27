@@ -1312,7 +1312,7 @@ Aaron van Wirdum: 00:34:14
 
 So yes, it would not fit in the block.
 Now that's fine because it usually goes into the `mempool` and then you can use the child pays for parent tricks that I explained.
-But in this case the transaction because of all these ordinals isn't even gonna fit into the `mempool` and therefore it's not gonna be seen by anyone and therefore the higher fee transaction is not going to be seen by anyone either because it's not spending funds from a transaction that anyone is seeing.
+But in this case the transaction because of all these ordinals isn't even gonna fit into the `mempool` and therefore it's not gonna be seen by anyone and therefore the higher fee transaction is not gonna be seen by anyone either because it's not spending funds from a transaction that anyone is seeing.
 
 Sjors Provoost: 00:34:39
 
@@ -1365,7 +1365,14 @@ Aaron van Wirdum: 00:36:17
 
 Right.
 So there's now something in Bitcoin Core, it's a baby step, it's a step towards packet relay, right?
-That's just a way to think about it.
+
+Sjors Provoost: 00:36:24
+
+Exactly
+
+Aaron van Wirdum: 00:36:25
+
+It's just a way to think about it.
 
 Sjors Provoost: 00:36:26
 
