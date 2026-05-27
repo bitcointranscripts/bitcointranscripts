@@ -7,6 +7,7 @@ tags:
   - 'bitcoin-core'
   - 'bitcoin-development'
   - 'regulation'
+  - 'taproot'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
