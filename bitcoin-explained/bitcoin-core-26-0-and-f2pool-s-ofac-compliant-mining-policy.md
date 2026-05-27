@@ -8,6 +8,7 @@ tags:
   - 'bitcoin-development'
   - 'regulation'
   - 'taproot'
+  - 'tapscript'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
