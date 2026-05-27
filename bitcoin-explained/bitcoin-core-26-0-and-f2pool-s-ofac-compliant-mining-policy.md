@@ -6,6 +6,7 @@ date: '2023-11-23'
 tags:
   - 'bitcoin-core'
   - 'bitcoin-development'
+  - 'regulation'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
