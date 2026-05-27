@@ -1207,7 +1207,7 @@ Okay, Kevin.
 
 Speaker 1: 00:31:51
 
-Yeah, and they do a lot of work on Miniscript in general to contribute back.
+Yeah, and they do a lot of work on `Miniscript` in general to contribute back.
 
 Speaker 0: 00:31:55
 
@@ -1215,23 +1215,18 @@ Yep, that's true.
 
 Speaker 1: 00:31:57
 
-But hopefully, and I know for example that there's other wallets that support Miniscript already, But the hard part is the setup part, I would say.
-So many wallets might be able to sign Miniscript, even hardware wallets, but they will not...
+But hopefully, and I know for example that there's other wallets that support `Miniscript` already
+But the hard part is the setup part, I would say.
+So many wallets might be able to sign `Miniscript`, even hardware wallets, but they will not...
 Like, once you've put it in there, it's not that easy to make these wallets in the first place.
 
 Speaker 0: 00:32:21
 
 Right.
-
-Speaker 1: 00:32:23
-
 Okay,
-
-Speaker 0: 00:32:24
-
 last point I think.
 We're going to the last point, the last mentionable upgrade in Bitcoin Core 26.
-Submit package RPC, you wrote down.
+`submitpackage RPC`, you wrote down.
 
 Speaker 1: 00:32:35
 
@@ -1239,21 +1234,27 @@ Yeah, I believe in previous episodes, we have talked about the idea of package r
 So then the simplest example is, I have a Lightning channel, I want to force close that Lightning Channel.
 My partner of the Lightning Channel, or no longer partner of the Lightning Channel, is offline.
 So all I have is the last time we co-signed a transaction, and this was before ordinals were invented, and fees were super low.
-And so I try to broadcast that transaction, but it simply does not even go into the mempool of my peers.
+And so I try to broadcast that transaction, but it simply does not even go into the `mempool` of my peers.
 
 Speaker 0: 00:33:06
 
 We have a solution for that though.
 You can use child pays for parent shorts.
+
+Speaker 1: 00:33:11
+
 That's right.
 The only problem is that the child...
+
+Speaker 0: 00:33:14
+
 Hang on, let me explain the solution.
-So the solution is I'm going to spend the money from this transaction to myself with a higher fee.
+So the solution is I'm gonna spend the money from this transaction to myself with a higher fee.
 So now the miner will see that if he wants to confirm the high fee transaction, he'll also have to confirm the low fee transaction and I'll get the money and the problem is solved.
-Correct.
 
 Speaker 1: 00:33:32
 
+Correct.
 Yes.
 And the miners already do this as far as I know.
 The problem is getting it to the miner.
@@ -1270,16 +1271,29 @@ Speaker 0: 00:34:01
 
 Yeah, hang on, you got to emphasize.
 So when they say this has not enough fee, the fee is too low.
-What they even mean is the fee is too low for the mempool.
-They're not even going to include it in the mempool.
+What they even mean is the fee is too low for the `mempool`.
+
+Speaker 1: 00:34:10
+
 Yes.
+
+Speaker 0: 00:34:11
+
+They're not even going to include it in the `mempool`.
+
+Speaker 1: 00:34:13
+
+Yes.
+
+Speaker 0: 00:34:14
+
 So yes, it would not fit in the block.
-Now that's fine because it usually goes into the mempool and then you can use the child pays for bear tricks that I explained.
-But in this case the transaction because of all these ordinals isn't even gonna fit into the mempool and therefore it's not gonna be seen by anyone and therefore the higher fee transaction is not going to be seen by anyone either because it's not spending funds from a transaction that anyone is seeing.
+Now that's fine because it usually goes into the `mempool` and then you can use the child pays for parent tricks that I explained.
+But in this case the transaction because of all these ordinals isn't even gonna fit into the `mempool` and therefore it's not gonna be seen by anyone and therefore the higher fee transaction is not going to be seen by anyone either because it's not spending funds from a transaction that anyone is seeing.
 
 Speaker 1: 00:34:39
 
-Yeah, because mempools only process transactions one by one and if the first one doesn't pay enough fee, it's not going in there.
+Yeah, because `mempools` only process transactions one by one and if the first one doesn't pay enough fee, it's not going in there.
 
 Speaker 0: 00:34:45
 
@@ -1288,29 +1302,35 @@ Right.
 Speaker 1: 00:34:46
 
 So, what is the solution?
-It is You need a way to send two transactions at the same time to your peers.
+It is you need a way to send two transactions at the same time to your peers.
 
 Speaker 0: 00:34:53
 
-So peers and miners will consider them in tandem right from the get-go, before it even goes in the main pool essentially.
+So peers and miners will consider them in tandem right from the get-go, before it even goes in the `mempool` essentially.
 
 Speaker 1: 00:34:58
 
-Yeah, and this thing is called Package Relay and work is in progress to do that.
+Yeah, and this thing is called package relay and work is in progress to do that.
 It's not easy and we've discussed some baby steps in that direction.
-One of the first baby steps was the RPC called Submit Package and the idea was to send transactions to your own mempool, so not to your peers just your own mempool.
+One of the first baby steps was the RPC called `submitpackage` and the idea was to send transactions to your own `mempool`, so not to your peers just your own `mempool`.
 And I think half a year ago or so we covered how that worked.
 You would give this RPC two transactions and it would just basically reject it because it would use the same logic as always, it would process them one by one.
 So why was that added?
 Well, because the next step makes it more useful.
-Now with the 26.0 release, it will actually consider both of them and therefore include it in its own mempool.
+Now with the 26.0 release, it will actually consider both of them and therefore include it in its own `mempool`.
+
+Speaker 0: 00:35:43
+
 Right.
+
+Speaker 1: 00:35:44
+
 But not really yet.
 
 Speaker 0: 00:35:47
 
 So this upgrade only applies to...
-So if I make two transactions, one of them is a Lofi, one of them is a Hyvi, I can now send this transaction over RPC to my own node?
+So if I make two transactions, one of them is a low fee, one of them is a high fee, I can now send this transaction over RPC to my own node?
 But that's it, right?
 
 Speaker 1: 00:36:03
@@ -1323,13 +1343,19 @@ Speaker 0: 00:36:17
 Right.
 So there's now something in Bitcoin Core, it's a baby step, it's a step towards packet relay, right?
 That's just a way to think about it.
+
+Speaker 1: 00:36:26
+
 Yeah.
+
+Speaker 0: 00:36:27
+
 It's not, it's actually kind of useless in itself.
 Or is there, you just speculated about a potential maybe use case of a miner?
 
 Speaker 1: 00:36:33
 
-Yeah, and the other is like at least it would be in your mempool and so maybe once the fees go down, you know, it's a bit easier to...
+Yeah, and the other is like at least it would be in your `mempool` and so maybe once the fees go down, you know, it's a bit easier to...
 
 Speaker 0: 00:36:38
 
@@ -1342,7 +1368,15 @@ So yeah, no, it's not there yet.
 
 Speaker 0: 00:36:44
 
-It's basically useless, but it is a step towards package relay which itself is a useful and important upgrade one day hopefully right yes okay great so these are we've now discussed six five of the most important upgrades in Bitcoin Core.
+It's basically useless, but it is a step towards package relay which itself is a useful and important upgrade one day hopefully right 
+
+Speaker 1: 00:36:54
+
+Yes 
+
+Speaker 0: 00:36:55
+
+Okay, great, so these are we've now discussed six five of the most important upgrades in Bitcoin Core.
 That's the episode actually, right?
 
 Speaker 1: 00:37:06
@@ -1350,4 +1384,8 @@ Speaker 1: 00:37:06
 That's right.
 That's a wrap.
 Okay.
-Thank you for listening to Bitcoin Explained.
+Thank you for listening to Bitcoin 
+
+Speaker 0: 00:37:09
+
+Explained.
