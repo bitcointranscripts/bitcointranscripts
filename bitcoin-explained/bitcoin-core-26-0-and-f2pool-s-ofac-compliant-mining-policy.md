@@ -151,10 +151,10 @@ Sjors Provoost: 00:02:49
 
 Yeah, but they didn't actually do that.
 I think they were thinking about doing that.
-And they put some operatory message in the block.
+And they put some operator message in the block.
 But we explained that back in that episode.
 Because as far as I know, they didn't actually do any filtering.
-But it cost quite a lot of consternations and they backed out of that idea.
+But it caused quite a lot of consternations and they backed out of that idea.
 I think they even replaced their CEO, though that may have been completely unrelated.
 But anyway, it was enough motivation for him to write this tool.
 And what this tool does is it basically runs a Bitcoin Core full node and a Bitcoin Core full node will propose a block.
@@ -520,7 +520,7 @@ Sure.
 Aaron van Wirdum: 00:12:16
 
 Okay, so the actual change.
-So what we did, well, mostly short to be honest, is you picked out a couple of features in this new release that are noteworthy.
+So what we did, well, mostly Sjors to be honest, is you picked out a couple of features in this new release that are noteworthy.
 Even more, like you picked out the most noteworthy of the most noteworthy changes.
 Right?
 
@@ -1007,14 +1007,14 @@ Sjors Provoost: 00:26:36
 Yeah, exactly.
 Okay, so...
 
-## Taproot Miniscript
-
 Aaron van Wirdum: 00:26:38
 
 So this is also new in Bitcoin Core.
 You'll…
 The network diversity is embedded more and more thoroughly.
 Then I'm seeing you selected, there's a `Taproot Miniscript` upgrade.
+
+## Taproot Miniscript
 
 Sjors Provoost: 00:26:52
 
@@ -1078,7 +1078,7 @@ Aaron van Wirdum: 00:28:19
 
 Right.
 But with regular script, it's kind of easy to make mistakes and lose coins.
-And with Minicripts, kind of the most common ways to make these mistakes are just rejected.
+And with Miniscripts, kind of the most common ways to make these mistakes are just rejected.
 Like you can't use this.
 Only the simple stuff is left.
 And because of that, you can actually make fairly complex things relatively simply and safely.
@@ -1114,7 +1114,7 @@ But they would have some graphical user interface and they would construct a `Mi
 
 Aaron van Wirdum: 00:29:21
 
-So where, I think I'm skipping, I'm I skipping ahead?
+So where, I think I'm skipping, am I skipping ahead?
 
 Sjors Provoost: 00:29:25
 
@@ -1158,7 +1158,7 @@ So what's the upgrade?
 
 Sjors Provoost: 00:29:58
 
-So the upgrade is that you can now use this Miniscrip, so these safe pieces of script, not just in `SegWit`, in regular `SegWit`, which used to be the only thing, but you can now also use it in `Taproot scripts`.
+So the upgrade is that you can now use this Miniscript, so these safe pieces of script, not just in `SegWit`, in regular `SegWit`, which used to be the only thing, but you can now also use it in `Taproot scripts`.
 And remember what's nice about `Taproot scripts` is you can have all these multiple ways that you can spend a coin, you can now hide all the ways that you're not using by putting them in different leaves.
 So your wallet would basically know that, okay, there are five different subscripts, essentially, that are possible, and the user will tell me which one of these five to use when I want to spend this coin and will hide the other ones.
 And there were some like, there's some subtle changes between the scripts in Taproot and the scripts in `SegWit` before some limits were dropped, but that's not that important.
@@ -1241,6 +1241,8 @@ But the hard part is the setup part, I would say.
 So many wallets might be able to sign `Miniscript`, even hardware wallets, but they will not...
 Like, once you've put it in there, it's not that easy to make these wallets in the first place.
 
+## submitpackage RPC
+
 Aaron van Wirdum: 00:32:21
 
 Right.
@@ -1248,8 +1250,6 @@ Okay,
 last point I think.
 We're going to the last point, the last mentionable upgrade in Bitcoin Core 26.
 `submitpackage RPC`, you wrote down.
-
-## submitpackage RPC
 
 Sjors Provoost: 00:32:35
 
@@ -1262,7 +1262,7 @@ And so I try to broadcast that transaction, but it simply does not even go into 
 Aaron van Wirdum: 00:33:06
 
 We have a solution for that though.
-You can use child pays for parent shorts.
+You can use child pays for parent, Sjors.
 
 Sjors Provoost: 00:33:11
 
@@ -1413,7 +1413,13 @@ Sjors Provoost: 00:37:06
 
 That's right.
 That's a wrap.
+
+Aaron van Wirdum: 00:37:07
+
 Okay.
+
+Sjors Provoost: 00:37:08
+
 Thank you for listening to Bitcoin 
 
 Aaron van Wirdum: 00:37:09
