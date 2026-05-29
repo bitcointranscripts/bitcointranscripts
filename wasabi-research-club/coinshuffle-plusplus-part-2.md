@@ -118,7 +118,7 @@ But as I said, like Bob and Carol still get an anonymity set of two in this exam
 Another property that we want to have next to anonymity is termination.
 This simply means the protocol terminates in the presence of malicious users, which means that there shouldn't be users that can stop honest users from finishing the protocol.
 The only thing we assume here is what I mentioned last week in the informal discussion about CoinShuffle++ already.
-For termination, we assume that there is a bonded board.
+For termination, we assume that there is a bulletin board.
 What do we mean by that?
 It's basically a server in the middle where we all connect to, and the server handles the broadcast for us and because we are in this peer-to-peer trust model, we don't really trust the server for anonymity, but we trust it for termination.
 In practice, this means that if the server is malicious or just broken, then the peers won't be able to finish the protocol, but nothing bad happens.
@@ -332,7 +332,7 @@ The thing is here is that if you have this list of the sums here, of those power
 And just in information, theoretically, this, I mean, this is not a proper explanation, but at least if you look at the number of bits here, that makes sense, right?
 We have n messages altogether because we have n users.
 And let's say every message has b bits.
-So, if you have the list of the power sums here, we have n times b bits and n times b bits is is the same amount of information and because we used to use a proper encoding like this or some thing is just one encoding of a list of messages you can decode it back and get the messages back but for this to work we need finite field arithmetic and that's why we do sums and finite fields instead of just XOR.
+So, if you have the list of the power sums here, we have n times b bits and n times b bits is is the same amount of information and because we used to use a proper encoding like this power sum thing is just one encoding of a list of messages you can decode it back and get the messages back but for this to work we need finite field arithmetic and that's why we do sums and finite fields instead of just XOR.
 This wouldn't work if you used XOR.
 
 ## Disruption.
@@ -357,7 +357,7 @@ And, well, this may sound like a bad idea, but let me explain why this actually 
 And to understand why this makes sense, we need to have a look at the flowchart of the coin shuffle run.
 So the first thing we do, like everybody generates the fresh Bitcoin address, this is gonna be the output in the coin transaction on the right side and it will be our message in the peer-to-peer mixing protocol.
 Then, peers do key exchanges.
-They run the Diffie-Hellman key exchanger.
+They run the Diffie-Hellman key exchange.
 I don't need to explain you how it works.
 Just it makes sure that every pair of users will have a shared key that they need for the DC-net.
 Okay, then we run the actual DC-net and then we would run it in slots as I've just shown you.
@@ -460,7 +460,7 @@ And then if no one signs a particular transaction, that's pretty trivial to find
 **Tim Ruffing:** 00:39:03
 
 Exactly, that's the case now.
-Then , if everybody decides great, success.
+Then , if everybody signs, great, success.
 Maybe actually that arrow could be wrong here and in that case, we don't need to discard the addresses.
 Now we better do, but the important thing is here like yeah if somebody refuses to sign here then we know that this guy is malicious or at least offline and we can exclude him.
 However, this is not okay, this is trivial to implement them, but we actually need to be careful for this case as well, because the protocol somehow needs to make sure that if we reach that point where we think that there was no disruption, then there was really no disruption.
