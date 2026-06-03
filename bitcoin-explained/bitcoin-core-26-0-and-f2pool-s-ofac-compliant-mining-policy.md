@@ -1364,7 +1364,7 @@ That's not the future obviously, but you could see some use even of this primiti
 Aaron van Wirdum: 00:36:17
 
 Right.
-So there's now something in Bitcoin Core, it's a baby step, it's a step towards packet relay, right?
+So there's now something in Bitcoin Core, it's a baby step, it's a step towards package relay, right?
 
 Sjors Provoost: 00:36:24
 
