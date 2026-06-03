@@ -144,7 +144,7 @@ Aaron van Wirdum: 00:02:31
 
 Right.
 So there are Bitcoin address on this list.
-And if you want to send Bitcoin to or from these addresses, then so what MarathonPool (MaraPool) was doing was they would essentially filter these transactions and not include these transactions into a block.
+And if you want to send Bitcoin to or from these addresses, then so what Marathon Pool (MaraPool) was doing was they would essentially filter these transactions and not include these transactions into a block.
 That's how they would comply with this list, right?
 
 Sjors Provoost: 00:02:49
