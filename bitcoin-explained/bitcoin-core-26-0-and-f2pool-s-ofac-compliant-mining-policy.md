@@ -151,7 +151,7 @@ Sjors Provoost: 00:02:49
 
 Yeah, but they didn't actually do that.
 I think they were thinking about doing that.
-And they put some operator message in the block.
+And they put some arbitrary message in the block.
 But we explained that back in that episode.
 Because as far as I know, they didn't actually do any filtering.
 But it caused quite a lot of consternations and they backed out of that idea.
