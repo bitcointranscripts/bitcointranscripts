@@ -1,11 +1,16 @@
 ---
-title: "Making Bitcoin More Private with CISA"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=HvI7NPI_Pk0
-tags: ['cisa']
-speakers: ['Fabian Jahr', 'Jameson Lopp', 'Craig Raw']
-date: 2024-08-29
-summary: "Delve into the world of Cross-Input Signature Aggregation (CISA) with our expert panel from Sparrow Wallet, Bitcoin Core, and Casa. This discussion illuminates how CISA could revolutionize Bitcoin transactions by enhancing privacy and reducing fees. Uncover the technical aspects of half and full signature aggregation and understand their potential impact on the Bitcoin network."
+title: 'Making Bitcoin More Private with CISA'
+transcript_by: 'Garvit-77 via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=HvI7NPI_Pk0'
+date: '2024-08-29'
+tags:
+  - 'cisa'
+speakers:
+  - 'Fabian Jahr'
+  - 'Jameson Lopp'
+  - 'Craig Raw'
+  - 'Nifty Nei'
+summary: 'Delve into the world of Cross-Input Signature Aggregation (CISA) with our expert panel from Sparrow Wallet, Bitcoin Core, and Casa. This discussion illuminates how CISA could revolutionize Bitcoin transactions by enhancing privacy and reducing fees. Uncover the technical aspects of half and full signature aggregation and understand their potential impact on the Bitcoin network.'
 ---
 Speaker 0: 00:00:01
 
