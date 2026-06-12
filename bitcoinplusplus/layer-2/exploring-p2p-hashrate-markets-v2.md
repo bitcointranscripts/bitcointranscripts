@@ -1,16 +1,19 @@
 ---
-title: "Exploring P2P Hashrate Markets V2"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=IvfmfcAX9wU
-tags: ['mining']
-speakers: ['Nico Preti']
-categories: ['conference']
-date: 2023-07-25
+title: 'Exploring P2P Hashrate Markets V2'
+transcript_by: '0tuedon via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=IvfmfcAX9wU'
+date: '2023-07-25'
+tags:
+  - 'mining'
+speakers:
+  - 'Nico Preti'
+categories:
+  - 'conference'
 ---
 Hi everybody, I'm Nico.
 I work, I'm one of the co-founders at Wrigley, and we are a peer-to-peer hashrate market.
 The way this talk is kind of broken up is the first part we're going to go through a little bit how hash rate, what is hash rate, how the protocol for mining works across the network, and then a little bit on how hash rate markets have come around, and then finally how we can potentially do hash rate with root layer two, which is obviously given the kind of subject matter of the conference, apropos.
-Okay, so hash rate.
+Okay, so hash rate
 What is hash rate?
 Well, it's the output of a hash function, right?
 A hash function you have a pre-image that gets passed into through a function that outputs an image, right?
