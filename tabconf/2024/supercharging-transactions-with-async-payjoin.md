@@ -1,5 +1,5 @@
 ---
-title: 'Supercharging Transactions with Asyncronous Payjoin'
+title: 'Supercharging Bitcoin Transactions with Asyncronous Payjoin'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://youtu.be/vPzvLxv0YfQ?si=yNhZFY9VTZkdBGuu'
 date: '2024-12-22'
