@@ -19,7 +19,7 @@ summary: "Brandon Lucas (frontend engineer at Voltage and open-source Payjoin co
 ---
 ## Introduction & talk overview
 
-Speaker 0: 00:00:05
+Brandon Lucas: 00:00:05
 
 Okay, thank you everybody.
 So my name is Brandon Lucas.
@@ -27,7 +27,7 @@ I'm here to talk about how you can supercharge transactions with Asynchronous Pa
 So just a little bit about me.
 I am a front-end developer at Voltage.
 I spend my days centering divs and coloring buttons at Voltage, and when I'm not doing that for my full-time job, I spend my days centering divs and coloring buttons for FOSS projects, mainly Payjoin.
-So I worked on the pagejoin.org website.
+So I worked on the payjoin.org website.
 And yeah, that's me.
 So just to give a little bit of an outline about what we're gonna go over, I want to start by talking about some false assumptions made about the way transactions in Bitcoin work very early on in Bitcoin that kind of set the course for the way wallet software worked.
 Then we're gonna talk a bit about the history that led to the creation of Payjoin, some recent improvements that the Payjoin team has been working on, and finally the fun stuff, use cases and some novel use cases that Payjoin implements that may be new to a lot of you.
@@ -179,7 +179,7 @@ So it's just a normal transaction, nothing special about that.
 The sender sends that over, the receiver takes that, adds their inputs, sends that back to the sender.
 This is the Payjoin proposal.
 And the sender checks to make sure that everything is okay with the transaction, that the receiver isn't trying to do any funny business by increasing the amount that the sender pays to them or something.
-If everything is okay, then the sender will finalize that PSPT and broadcast it to the network.
+If everything is okay, then the sender will finalize that PSBT and broadcast it to the network.
 So there are some drawbacks to this.
 The receiver is required to run a server, as we mentioned earlier.
 That led to a lot of wallets not wanting to implement Payjoin.
@@ -272,7 +272,7 @@ So the typical way Lightning nodes are created and funded is, let's say Alice ha
 So first she'll go into ThunderHub or whatever and send a funding transaction to the wallet, the Lightning nodes wallet, and then using that she can create a channel with Bob, or a channel with whoever, however many channels she wants, right?
 But with this transaction cut-through idea, why can't she just do this?
 Why can't, she knows in advance where the outputs are gonna go, why can't she just send them there directly, right?
-So if the Lightning server is page one enabled and her wallet is page one enabled, this is a possibility.
+So if the Lightning server is Payjoin enabled and her wallet is Payjoin enabled, this is a possibility.
 It actually gets better than this because you can combine it with batching.
 That's actually been done as a proof of concept via the nolooking project.
 So this is the result of a hackathon project a couple years ago.
@@ -390,7 +390,7 @@ So, yeah.
 [Audience]: 00:37:49
 
 I guess as a follow-up to that, it seems to me that just like running your own node gives you a certain amount of privacy, right, in what you're doing, If you're doing that, then you could probably do this as well, not only for yourself, but as a service to the broader community.
-If it was, say, plug here, start nine service that one click and it's running and you can expose it to the Internet such that other people could leverage it, then I guess your own alternative or altruistic motive benefits the community.
+If it was, say, plug here, start9 service that one click and it's running and you can expose it to the Internet such that other people could leverage it, then I guess your own alternative or altruistic motive benefits the community.
 So that's pretty then pretty good deal then for you.
 
 Brandon Lucas: 00:38:33
@@ -463,7 +463,7 @@ Which sender and receiver Payjoin at least does not suffer from.
 
 [Audience]: 00:44:23
 
-Speaking of distribution of Pagejoin, have you considered pitching or creating modules for like BTCPay Server so that if a business is basically saying, hey, I'm already doing these transactions, let me just turn this on, then every single instance of BTCPay Server might be able to interact with this and have maximally efficient transactions.
+Speaking of distribution of Payjoin, have you considered pitching or creating modules for like BTCPay Server so that if a business is basically saying, hey, I'm already doing these transactions, let me just turn this on, then every single instance of BTCPay Server might be able to interact with this and have maximally efficient transactions.
 Any thoughts about this?
 
 Brandon Lucas: 00:44:52
@@ -520,7 +520,7 @@ Brandon Lucas: 00:47:46
 
 Great question.
 
-[Audience]: 00:47:49
+[Host]: 00:47:49
 
 I think we're good.
 Thank you Brandon.
