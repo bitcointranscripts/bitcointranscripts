@@ -17,30 +17,31 @@ categories:
 source_file: 'https://youtu.be/vPzvLxv0YfQ?si=yNhZFY9VTZkdBGuu'
 summary: "Brandon Lucas (frontend engineer at Voltage and open-source Payjoin contributor) delivers a beginner-friendly introduction to Payjoin and its v2 async upgrade. The talk opens with a critique of the common-input-ownership heuristic (CIOH) first noted by Satoshi, which Greg Maxwell later showed to be a false assumption \\u2014 multiple parties can co-author a single transaction, the insight that spawned CoinJoin. Lucas traces the lineage from CoinJoin through Payjoin (BIP-78), explaining why CoinJoin's equal-output fingerprint, coordinator fees, and need for repeat usage are practical drawbacks, while Payjoin addresses these by making collaborative transactions indistinguishable from ordinary ones. He reframes Payjoin not merely as a privacy tool but as a peer-to-peer batch transaction protocol: a sender and receiver co-authoring the most efficient transaction possible using PSBTs and BIP-21 payment URIs. The core limitation of BIP-78 \\u2014 the receiver must run an always-online TLS/Tor server \\u2014 is what Draft BIP-77 (Async Payjoin) solves by delegating coordination to an untrusted lightweight directory. End-to-end encryption via HPKE prevents the directory from reading PSBT payloads, and Oblivious HTTP hides sender and receiver IP addresses from the directory operator. The talk then highlights two under-appreciated capabilities: transaction cut-through (redirecting incoming outputs to satisfy a pending outgoing payment, saving an entire on-chain transaction) and receiver-side batching (exchanges incorporating depositor inputs into withdrawal transactions to reduce chain footprint). A live demo with payjoin-cli illustrates the full async flow. The Q&A covers directory operator incentives, the unnecessary-input heuristic and waxwing's analysis work, multi-party Payjoin as a future direction, and why Oblivious HTTP polling is preferred over WebSockets for metadata protection and BIP-78 backwards compatibility.\n"
 ---
+## Introduction & talk overview
 
 Speaker 0: 00:00:05
 
 Okay, thank you everybody.
 So my name is Brandon Lucas.
-I'm here to talk about how you can supercharge transactions with asynchronous `Payjoin`.
+I'm here to talk about how you can supercharge transactions with Asynchronous Payjoin.
 So just a little bit about me.
 I am a front-end developer at Voltage.
-I spend my days centering divs and coloring buttons at Voltage, and when I'm not doing that for my full-time job, I spend my days centering divs and coloring buttons for FOSS projects, mainly Pagejoin.
+I spend my days centering divs and coloring buttons at Voltage, and when I'm not doing that for my full-time job, I spend my days centering divs and coloring buttons for FOSS projects, mainly Payjoin.
 So I worked on the pagejoin.org website.
 And yeah, that's me.
 So just to give a little bit of an outline about what we're gonna go over, I want to start by talking about some false assumptions made about the way transactions in Bitcoin work very early on in Bitcoin that kind of set the course for the way wallet software worked.
-Then we're going to talk a bit about the history that led to the creation of Pagejoin, some recent improvements that the Pagejoin team has been working on, and finally the fun stuff, use cases and some novel use cases that Pagejoin implements that may be new to a lot of you.
+Then we're gonna talk a bit about the history that led to the creation of Payjoin, some recent improvements that the Payjoin team has been working on, and finally the fun stuff, use cases and some novel use cases that Payjoin implements that may be new to a lot of you.
 And finally, the call to action, the call of duty.
 We need help, and so we'll talk about some ways that if you're excited about Payjoin, which you should be, you can help the project.
+
+## Satoshi's privacy assumption and the discovery of Coinjoin
+
 Right in the white paper itself, in the privacy section, Satoshi says the following, "As an additional firewall, a new key pair should be used for each transaction to keep them from being linked to a common owner." 
 So that first sentence, that's common, that's most wallet software does that today.
-He goes on to say, "Some linking", and he's talking about pub keys with identities, "is still unavoidable with multi-input transactions which necessarily reveal that their inputs were owned by the same owner.
-The risk is that if the owner of a key is revealed, linking could reveal other transactions that belonged to the same owner."
+He goes on to say, "Some linking", and he's talking about pub keys with identities, "is still unavoidable with multi-input transactions which necessarily reveal that their inputs were owned by the same owner. The risk is that if the owner of a key is revealed, linking could reveal other transactions that belonged to the same owner."
 So, Greg Maxwell, a couple years later, made a post to BitcoinTalk where he actually makes a different claim.
-So he says here, "A lot of People mistakenly assume that when a transaction spends from multiple addresses, all those addresses are owned by the same party.
-This is commonly the case, but it doesn't have to be so.
-People can cooperate to author a transaction in a secure and trustless manner.
-We can make it a lot easier for people making this mistake, this assumption, to discover their folly by making there be a single address that seems linked to everything." 
+So he says here, "A lot of People mistakenly assume that when a transaction spends from multiple addresses, all those addresses are owned by the same party. This is commonly the case, but it doesn't have to be so.
+People can cooperate to author a transaction in a secure and trustless manner. We can make it a lot easier for people making this mistake, this assumption, to discover their folly by making there be a single address that seems linked to everything." 
 And so he doesn't say it outright in this post, but he basically discovered Coinjoin.
 Later, he goes on to formalize this in another post and actually creates and coins it, Coinjoin, right?
 But essentially, what the idea is, is that you do not have to have all of the inputs in a transaction from the same person, right?
@@ -52,9 +53,13 @@ That clause which necessarily revealed that their inputs were owned by the same 
 That is an assumption and despite the fact that that's the way most wallets work today, that is just not true.
 So just to recap real quick, Satoshi assumed all transactions must belong to the same owner.
 This isn't true, and that discovery led to the creation of Coinjoin.
+
+## How transactions work: inputs, outputs, and the common-input heuristic
+
 So before we can go further and dive into how Coinjoin works and how Payjoin works, we have to understand how at a high level transactions work, right?
 So very simply there are inputs and outputs to every transaction.
-Coins that are consumed in a transaction are referred to as inputs, coins that are spent from a transaction are referred to as outputs, okay?
+Coins that are consumed in a transaction are referred to as inputs.
+Coins that are spent from a transaction are referred to as outputs, okay?
 So that's like the very basic way to think about it.
 So you can see here, let's say Alice has a set of UTXOs, maybe people paid to her in the past.
 And so these are unspent transaction outputs that she has not used as inputs to any other transaction.
@@ -73,10 +78,14 @@ This common input ownership problem though is still very much alive.
 Greg Maxwell in his discovery of Coinjoin, let's say, realized this.
 So what this implicates is that people who are trying to spy on you now have a very easy way to do so, right?
 A very trivial way to do so.
+
+## How Coinjoin works and its limitations
+
 So again, Coinjoin is a transaction in which multiple parties, let's say in this case Alice, Bob, and Carol, are collaborating or cooperating to contribute their inputs to a transaction such that the link of their UTXOs, their identities, become obfuscated.
 So as you can see here, one thing to note is the evenly split outputs, so they're all 0.1s, they all come out to be the same value.
 The reason that happens is because if you had, it would make sense if Bob had 0.3 and then sent himself back 0.3 out the other side, that would be trivial identifiable, so you need to create these equal-sized UTXOs for each person to maintain their privacy.
-So there's, this is great, This was a great discovery for Bitcoin.
+So there's, this is great,
+This was a great discovery for Bitcoin.
 This means that no changes are required to Bitcoin, right?
 So this kind of skirts the debate.
 This is something people can do right now.
@@ -91,12 +100,11 @@ That's because these are very large transactions, right?
 So a lot of people are contributing inputs, a lot of people, a lot of outputs are created, and they have to be created in this kind of special way where they're all evenly split.
 So maybe you're creating more outputs than you really need so that you preserve privacy.
 Coordinators take a cut for providing the service and most people who do Coinjoins use the services.
-And finally, they must be performed regularly.
-Right?
+And finally, they must be performed regularly, right?
 So if you just do one Coinjoin, okay great, you kind of broke the chain tracking you, but you're kind of just resetting the time, right?
 You're kind of just resetting things.
 So like In the future, people can still associate your transactions unless you keep kind of doing this process.
-So yeah, coin joins need to be performed regularly.
+So yeah, Coinjoins need to be performed regularly.
 And then the ugly, right?
 We have, this is a highly interactive process, which offends my front-end sensibilities, but this means that people essentially have to go out of their way to do a Coinjoin, right?
 And if we really want people to have privacy on Bitcoin we really need to make it something that people can do by default.
@@ -110,6 +118,9 @@ And you can see here in this picture that those are highlighted.
 If you were to dig into those, you'd see those equal size outputs in the transaction.
 And then just a note on the fact that trusted third parties are commonly used to do this.
 And a lot of them have disappeared from the US recently.
+
+## Recent coordinator shutdowns (Samourai, Wasabi, JoinMarket) 
+
 So as I'm sure many of you know, the Samourai developers who were a popular coordinator that provided this Coinjoin service, the Samourai developers were arrested a few months ago.
 As a result of the regulatory uncertainty, Wasabi, another popular Coinjoin coordinator, fled the US.
 And then JoinMarket, which is not a company.
@@ -117,6 +128,9 @@ It's a software that sort of tries to help create that market.
 It's like a decentralized way to create that Coinjoin market.
 That's kind of the last remaining option people have, and I believe it was like the least popular because it was more involved.
 So trusted third parties are a problem here.
+
+## Introducing Payjoin and reframing its definition
+
 So recap, common input ownership heuristic is used to track people.
 Coinjoin enables multiple parties to construct transactions which contribute all their inputs by which they gain privacy.
 And Coinjoin has financial and user interface barriers which lead to low usage.
@@ -142,6 +156,9 @@ How about we say Payjoin is a protocol for coordinating peer-to-peer batch trans
 Because that's really what it is.
 It's a sender and a receiver cooperating to form the ideal transaction, right?
 A transaction that would best work for whatever situation they're in.
+
+## How Payjoin v1 (BIP 78) works
+
 So how does BIP 78 work?
 Well, at a high level, a receiver adds their UTXOs to the sender's transaction.
 So this is the two-party Coinjoin part, right?
@@ -170,6 +187,9 @@ That's just a technical difficulty, right?
 It also led to transactions being synchronous, right?
 So that's why the receiver needs to run the server, is because both parties need to be online at the same time.
 So as a result, Payjoin hasn't seen very much adoption so far.
+
+## Asynchronous Payjoin (BIP 77 / v2) 
+
 And there's actually a really good message sent to the Bitcoin developer mailing list by Craig Raw, who is the lead developer behind Sparrow Wallet, which is a great wallet.
 It uses a lot of best practices, I would say, for creating Bitcoin transactions.
 And so he puts it perfectly.
@@ -185,7 +205,7 @@ So what is Async Payjoin?
 Basically, at the highest level, it outsources that pain point for the receiver to be required to have a server.
 It outsources that to an untrusted Payjoin directory server, okay?
 And the reason that Payjoin directory can be untrusted is that hybrid, something called Hybrid Public Key Encryption (HPKE) provides end-to-end encryption for the PSBTs. 
-So the page-join directory can't actually see the payload, the PSBT payloads that are being sent across to the Payjoin directory.
+So the Payjoin directory can't actually see the payload, the PSBT payloads that are being sent across to the Payjoin directory.
 And it also uses oblivious HTTP, which is, you can think of sort of as Tor Lite, to hide the IP address of the sender and the receiver from the Payjoin directory.
 So just to kind of show you how, like what what does this directory look like?
 It's stupid simple, very dumb, very, you know, there's not much to it.
@@ -210,6 +230,9 @@ And once the PSBT makes it to, makes it to the directory, and the sender polling
 The sender grabs it, decrypts it, checks that everything's okay just like before, and then broadcasts the Payjoin transaction.
 So really the only thing that's added here is the Payjoin directory, the untrusted third party, and these polling GET requests for each side.
 So now they can go offline in between steps and when they come back online, they can check if the PSBT, or the next PSBT in the step, has been created and communicated.
+
+## Payjoin's improvements over Coinjoin
+
 So, Immediately, Payjoin has some improvements over Coinjoin.
 There's no extra transaction required, right?
 So you don't need, basically with Coinjoin, you basically have to go out of your way to construct a transaction just to receive privacy.
@@ -217,10 +240,13 @@ There's no coordinator or extra fees.
 This is completely peer-to-peer between sender and receiver.
 And there is no or little interaction required.
 So what we're aiming for, especially from a UX perspective, would be privacy by default, right, because that's the only way we're gonna get people to achieve it.
+
+## New use case: transaction cut-through
+
 But there is more than just these improvements over Coinjoin.
 There's actually new things that we can do with Payjoins, right.
 So one that I want to talk to you about is transaction cut-through.
-And this was actually the idea that got me into pay join.
+And this was actually the idea that got me into Payjoin.
 And then batching.
 So what is transaction cut-through?
 This is actually another idea by Greg Maxwell.
@@ -236,6 +262,9 @@ Maybe for the privilege of doing that, Bob can offer to pay a little bit of the 
 But now, Bob has just turned two transactions into one, and one for which he probably doesn't have to pay the fee.
 So this is the transaction cut-through idea.
 It's the idea that if you have multiple transaction intents, if you have multiple transactions you know you need to make, it's possible to redirect the outputs of incoming transactions to serve those purposes instead of creating whole new transactions.
+
+## Use case: faster, cheaper Lightning channel opens
+
 So what's one use case of this?
 Well, Lightning.
 Faster, cheaper Lightning channels.
@@ -252,6 +281,9 @@ And the UI for this was really cool.
 Like you could just, if you knew the public keys of the nodes that you wanted to pay to in advance, you could just queue them up, generate a QR code, scan it, and then it would fund and open all of those at once.
 So very cool.
 So this is basically combining the ideas of batching, cut-through, and the ability to break the common input ownership heuristic to achieve privacy.
+
+## Use case: exchange withdrawal/deposit batching
+
 What else can we do?
 What about exchanges?
 How might this impact exchanges?
@@ -274,6 +306,9 @@ So here you have, let's say Dave, inputting or depositing three Bitcoin.
 The exchange can just say to Dave, like, hey, why don't you just use this as an input to this withdrawal transaction, right?
 That way, that's one less transaction on the receiving side, on the depositor side, and maybe the exchange can do something fun like let Dave, you know, I don't know, pay a part of his fee or something if it's sufficiently helpful to the exchange.
 So yeah, the idea here is that Payjoin opens up one side of the equation that was previously closed, just because now the sender and receiver can negotiate what to do in this transaction.
+
+## Privacy benefits beyond direct participants
+
 And then I just want to point out that there's a lot more use cases here.
 These are just two that we thought of.
 But really, at a high level, a protocol that utilizes transactions more effectively makes anything downstream of that better, right?
@@ -282,7 +317,7 @@ And, Payjoin helps people even if you aren't Payjoining.
 This is one key way that it's distinct from Coinjoin.
 In a Coinjoin, it's identifiable as a Coinjoin, so you can kind of just take that and say, okay, you know, these guys are doing their own thing, and maybe we can try to track the people that are doing Coinjoins.
 You kind of out yourself as a Coinjoiner, as a person who wants to protect your privacy, ooh, you know.
-But when you pay join, it's not obvious who is actually doing the Payjoins, right?
+But when you Payjoin, it's not obvious who is actually doing the Payjoins, right?
 Which transactions are Payjoins?
 Because they look like normal transactions.
 Which means that if you're an analysis company, you begin to not be able to trust the validity of your analysis.
@@ -292,6 +327,9 @@ How do you track people if you don't know which ones are the ones that you're tr
 So that's one way.
 And then another way is just the effective use of cut-through and batching.
 We can have more throughput on the chain and lower fees.
+
+## Future direction: multi-party Payjoin
+
 So where are we going?
 One way that the Payjoin protocol could potentially be improved is by having multi-party Payjoins.
 So right now, you don't gain too much privacy from a single interaction if you just have a sender and receiver.
@@ -299,6 +337,9 @@ If you do that over time, that really adds up.
 But you also have, if I'm doing a Payjoin with a receiver, that receiver knows which of the outputs are mine because they're just simply not his.
 So with multi-party Payjoins, we can solve this problem and have a lot of the benefits of both Coinjoins and Payjoins, right?
 And try to remove the negatives of either.
+
+## Wrap-up and call to action 
+
 So just to wrap up, put it in a nutshell, Payjoin is a peer-to-peer batching protocol.
 There's no changes to Bitcoin required.
 Version 1, Payjoin required a receiver to run a server, which limited the potential for adoption.
@@ -319,6 +360,8 @@ We'd love to have you.
 And that's it.
 Thank you for listening.
 So I'll take any questions.
+
+## Q&A session
 
 [Audience]: 00:36:25
 
@@ -358,7 +401,7 @@ Right, right, yeah, so and maybe that's just part of the motive, right, is well 
 
 Thanks so much for everything.
 You gave a great example in the Coinjoin case of the amounts being relevant in and out, specifically the outputs being equal, and I'm curious, I might have missed it but I don't think you provided one for the Payjoin example, and is that because it doesn't matter?
-For example, if Alice is sending Bob one Bitcoin and Bob wants to payjoin in one of Bob's UTXOs, does it matter whether it's equal to or less than or greater than that one Bitcoin?
+For example, if Alice is sending Bob one Bitcoin and Bob wants to Payjoin in one of Bob's UTXOs, does it matter whether it's equal to or less than or greater than that one Bitcoin?
 
 Brandon Lucas: 00:39:15
 
@@ -370,9 +413,9 @@ But there are examples online, specifically if you look up Waxwing, I believe he
 Waxwang, Waxwing, I guess Waxwing Payjoin, that's important.
 Come up to me after and I can try to find where he does this, because this is on Mastodon I think.
 He actually plays a game with people where he says, who can figure it out?
-He does a payjoin and he asks people, where are the outputs going?
+He does a Payjoin and he asks people, where are the outputs going?
 So he's done a lot of work kind of trying to figure out where the edges of this are.
-That is a really good question though because there are heuristics that can identify pay join as a Payjoin, and they're called the unnecessary input heuristic.
+That is a really good question though because there are heuristics that can identify Payjoin as a Payjoin, and they're called the unnecessary input heuristic.
 And again, this is Waxwing, where, and unfortunately I can't remember them off the top of my head, but there have been papers written about this.
 Let's see.
 If a transaction is formed in a way such that it contains seemingly unnecessary inputs.
