@@ -9,6 +9,7 @@ tags:
 speakers:
   - 'Satoshi '
   - 'Bitcoin '
+  - '1Myy4QCu9zWESRHrVZBusN6g9bS5G7L5UK'
 categories:
   - 'mining'
 source_file: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
