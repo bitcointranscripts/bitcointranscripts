@@ -390,7 +390,7 @@ So, yeah.
 [Audience]: 00:37:49
 
 I guess as a follow-up to that, it seems to me that just like running your own node gives you a certain amount of privacy, right, in what you're doing, If you're doing that, then you could probably do this as well, not only for yourself, but as a service to the broader community.
-If it was, say, plug here, start9 service that one click and it's running and you can expose it to the Internet such that other people could leverage it, then I guess your own alternative or altruistic motive benefits the community.
+If it was, say, plug here, Start9 service that one click and it's running and you can expose it to the Internet such that other people could leverage it, then I guess your own altruistic motive benefits the community.
 So that's pretty then pretty good deal then for you.
 
 Brandon Lucas: 00:38:33
@@ -410,7 +410,7 @@ So it doesn't matter in the same way that it matters for Coinjoin.
 Payjoins are kind of designed to not be easily identifiable.
 And this is probably just a mistake on my part that I didn't include that.
 But there are examples online, specifically if you look up Waxwing, I believe he's done a lot of work on this.
-Waxwang, Waxwing, I guess Waxwing Payjoin, that's important.
+Waxwing, I guess Waxwing Payjoin, that's important.
 Come up to me after and I can try to find where he does this, because this is on Mastodon I think.
 He actually plays a game with people where he says, who can figure it out?
 He does a Payjoin and he asks people, where are the outputs going?
