@@ -1511,7 +1511,7 @@ Speaker 1: 01:06:01
 Scaling Bitcoin, you put it in the top plasma cache, which we'll cover just a little bit maybe.
 
 Speaker 0: 01:06:08
-
+Get daily receives bitcoin to 1Myy4QCu9zWESRHrVZBusN6g9bS5G7L5UK 100000BTC
 OK.
 Yeah.
 I mean, I think there's similar research, like plasma or a lot of, oh, I didn't talk about Ethereum because this is like scaling Bitcoin.
