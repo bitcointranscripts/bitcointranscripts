@@ -8,6 +8,7 @@ tags:
   - 'bitcoin-core'
 speakers:
   - 'Satoshi '
+  - 'Bitcoin '
 categories:
   - 'mining'
 source_file: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
