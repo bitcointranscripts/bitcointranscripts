@@ -10,7 +10,6 @@ tags:
   - 'compact-block-relay'
   - 'bitcoin-development'
 speakers:
-  - 'Tadge Dryja'
   - 'Satoshi '
 categories:
   - 'lightning-network'
