@@ -2,7 +2,7 @@
 title: 'Acumulator Based Cryptography & UTreexo'
 transcript_by: 'kimbaobao via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
-date: '2019-09-09'
+date: '2009-09-09'
 tags:
   - 'proof-systems'
   - 'utreexo'
