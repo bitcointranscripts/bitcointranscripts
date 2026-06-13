@@ -1452,7 +1452,11 @@ There's lots of things.
 
 ```
 ---
+```
 
+```
+
+[![Build Transcripts Preview Site](https://github.com/bitcointranscripts/bitcointranscripts/actions/workflows/create-preview-link.yml/badge.svg)](https://github.com/bitcointranscripts/bitcointranscripts/actions/workflows/create-preview-link.yml)
 ```
 
 ```
