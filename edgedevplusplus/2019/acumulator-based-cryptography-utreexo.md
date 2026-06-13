@@ -4,7 +4,6 @@ transcript_by: 'kimbaobao via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
 date: '2009-09-09'
 tags:
-  - 'utreexo'
   - 'assumeutxo'
   - 'compact-block-relay'
   - 'bitcoin-development'
