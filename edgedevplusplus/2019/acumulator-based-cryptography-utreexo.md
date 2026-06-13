@@ -11,6 +11,7 @@ tags:
   - 'bitcoin-development'
 speakers:
   - 'Tadge Dryja'
+  - 'Satoshi '
 categories:
   - 'lightning-network'
 source_file: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
