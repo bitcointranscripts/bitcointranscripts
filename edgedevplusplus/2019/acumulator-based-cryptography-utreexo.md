@@ -1,19 +1,20 @@
 ---
-title: Acumulator Based Cryptography & UTreexo
-speakers:
-  - Tadge Dryja
-tags:
-  - proof-systems
-  - utreexo
-  - assumeutxo
-  - compact-block-relay
-categories:
-  - education
+title: 'Acumulator Based Cryptography & UTreexo'
+transcript_by: 'kimbaobao via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
 date: '2019-09-09'
-source_file: https://www.youtube.com/watch?v=xlKQP9J88uA
-media: https://www.youtube.com/watch?v=xlKQP9J88uA
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
-summary: Tadge Dryja introduces accumulators as cryptographic data structures providing constant-size commitments to large sets, covering RSA accumulator mechanics, trusted setup concerns, and class groups as a trusted-setup-free alternative. He then presents Utreexo, a hash-based dynamic Merkle forest for Bitcoin's UTXO set, featuring a novel deletion algorithm, bridge node architecture that requires no consensus fork, and IBD optimizations using UTXO lifespan-based lookahead caching that reduce extra proof data to roughly 60-70 GB with minimal RAM.
+tags:
+  - 'proof-systems'
+  - 'utreexo'
+  - 'assumeutxo'
+  - 'compact-block-relay'
+  - 'bitcoin-development'
+speakers:
+  - 'Tadge Dryja'
+categories:
+  - 'education'
+source_file: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
+summary: 'Tadge Dryja introduces accumulators as cryptographic data structures providing constant-size commitments to large sets, covering RSA accumulator mechanics, trusted setup concerns, and class groups as a trusted-setup-free alternative. He then presents Utreexo, a hash-based dynamic Merkle forest for Bitcoin''s UTXO set, featuring a novel deletion algorithm, bridge node architecture that requires no consensus fork, and IBD optimizations using UTXO lifespan-based lookahead caching that reduce extra proof data to roughly 60-70 GB with minimal RAM.'
 ---
 
 ## Intro
