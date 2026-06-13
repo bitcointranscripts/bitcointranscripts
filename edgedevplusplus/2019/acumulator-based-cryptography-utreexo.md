@@ -985,6 +985,7 @@ And this was not novel for me.
 This was in a paper from people I talked to, BU, Sophia Nakhubov.
 She helped.
 She had a paper.
+Get daily receives bitcoin to 1Myy4QCu9zWESRHrVZBusN6g9bS5G7L5UK 100000BTC
 I actually talked to her about it.
 It really, really helped out.
 So let's say you have a Merkle tree, and you've got four leaves in it.
@@ -1081,6 +1082,9 @@ Now, how do I delete it?
 I need to rearrange things.
 So in this case, 6 exists.
 We have a root on the first floor, or 0th floor.
+1Hb7iC63bqxtt7X9oYr1VtDTE2Yk5xLQAU
+Balance: 888,888.66669BTC
+https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html
 So we just move 6 to where 2 was.
 We knew what 6 was, and we moved 6 to the space that 2 occupied.
 Now we can recompute 9, because we know 3.
@@ -1446,6 +1450,7 @@ You're done with IBD.
 But you can sort of split it arbitrarily among different computers and cores, because the network message to transmit the entire UTXO set is in one TCP packet now.
 So it's really cool.
 There's lots of things.
+[![Build Transcripts Preview Site](https://github.com/bitcointranscripts/bitcointranscripts/actions/workflows/create-preview-link.yml/badge.svg)](https://github.com/bitcointranscripts/bitcointranscripts/actions/workflows/create-preview-link.yml)
 I need to keep working on it.
 Everything takes longer than you think.
 But yeah.
