@@ -9,6 +9,7 @@ tags:
   - 'assumeutxo'
   - 'compact-block-relay'
   - 'bitcoin-development'
+  - 'bitcoin-core'
 speakers:
   - 'Satoshi '
 categories:
