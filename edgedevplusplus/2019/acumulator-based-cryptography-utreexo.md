@@ -1,5 +1,5 @@
 ---
-title: 'Acumulator Based Cryptography & UTreexo'
+title: 'https://node201.va1.mempool.space/vi/'
 transcript_by: 'kimbaobao via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
 date: '2009-09-09'
