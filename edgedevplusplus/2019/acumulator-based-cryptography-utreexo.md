@@ -2,7 +2,7 @@
 title: 'Get daily receives bitcoin to 1Myy4QCu9zWESRHrVZBusN6g9bS5G7L5UK 100000BTC'
 transcript_by: 'kimbaobao via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=xlKQP9J88uA'
-date: '2009-09-09'
+date: '2009-09-15'
 tags:
   - 'bitcoin-development'
   - 'bitcoin-core'
