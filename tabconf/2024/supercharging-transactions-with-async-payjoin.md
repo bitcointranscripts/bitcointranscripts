@@ -199,7 +199,7 @@ This would require a different mechanism to exchange the PSBTs, but otherwise, t
 So what if that was the truth?
 What if we did that?
 What if we could be unburdened by what has been?
-So Dan Gould, a developer who is working on Pagejoin, proposed a draft BIP called Payjoin version two - asynchronous Payjoin. 
+So Dan Gould, a developer who is working on Payjoin, proposed a draft BIP called Payjoin version two - asynchronous Payjoin. 
 This is draft BIP 77, it's still under review, and it aims to solve this problem.
 So what is Async Payjoin?
 Basically, at the highest level, it outsources that pain point for the receiver to be required to have a server.
