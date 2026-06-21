@@ -2,7 +2,7 @@
 title: 'Spacechains – Permissionless Blockchains for Bitcoin'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=N2ow4Q34Jeg'
-date: '2020-12-12'
+date: '2020-12-13'
 tags:
   - 'sidechains'
   - 'covenants'
@@ -25,7 +25,7 @@ summary: "Ruben Somsen presents Spacechains, a design for permissionless, trustl
 Ruben Somsen: 00:00:01
 
 Hi, welcome to my presentation about spacechains.
-Spacechains are a combination of two ideas, one being the `Blind Merge Mining` and the other one being the `Perpetual One-way Peg`.
+Spacechains are a combination of two ideas, one being the `Blind Merged Mining` and the other one being the `Perpetual One-way Peg`.
 I'm going to go through both of them and the combined concept is what I call spacechains.
 
 ## Key Points
@@ -123,13 +123,13 @@ So the original idea, as far as I know, is from Paul Sztorc.
 And he basically, the way he had envisioned it, it requires a soft fork.
 And what I've come up with here is a way to kind of avoid having to do at least a specialized soft fork.
 So you don't need a soft fork that literally is only in order to enable Blind Merged mining.
-You can even do it without a software, but there are some sacrifices and we'll get into that later on.
+You can even do it without a soft fork, but there are some sacrifices and we'll get into that later on.
 But this kind of means essentially that now since there's no longer a specific software required, it's kind of inevitable.
 This is going to happen.
 So just to give you a better idea, let me show you with some pictures.
 Imagine the Bitcoin blockchain and this little pink blob is this unique location that people have to bid for.
 It's a hash and the hash refers to a spacechain block.
-The way consensus works is just the next Bitcoin block comes in and then there's also another spacechain hash in there and referring to a space chain block.
+The way consensus works is just the next Bitcoin block comes in and then there's also another spacechain hash in there and referring to a spacechain block.
 What's important to note here is that this blockchain can fork separately from the Bitcoin blockchain.
 So how that works is as follows.
 Here for instance another block 2 is found block 2b and it's mining on top of block 1a.
@@ -157,7 +157,7 @@ Because the Bitcoin blockchain ensures that can only be one unique hash every 10
 So this is essentially how the difficulty works out.
 And all the fees that go to the Bitcoin miners, they're also turned into proof-of-work.
 So they are part of the difficulty algorithm, essentially.
-So there is no difficulty in the Blind Merged mining side on the space chain, but there is an actual kind of difficulty that is inherited from the Bitcoin blockchain.
+So there is no difficulty in the Blind Merged mining side on the spacechain, but there is an actual kind of difficulty that is inherited from the Bitcoin blockchain.
 So the second thing is, well, the highest bidder always finds the block.
 And that is somewhat different.
 It's kind of like, how would I say it?
@@ -223,17 +223,17 @@ It's not a trivial problem to really ensure that the blockchain moves forward, b
 So at the very least, it's not a showstopper.
 Okay, so the burning Bitcoin part, which I call the perpetual one-way peg.
 One-way peg meaning as opposed to two-way peg, you can move your Bitcoins to this other chain, but one-way so you can never move back, which is why it's a burn, right?
-You destroy your coins and you get some space chain tokens.
+You destroy your coins and you get some spacechain tokens.
 And it's perpetual, meaning that you can always do this.
 
-## Perpetual One-Way Peg (PIWP)
+## Perpetual One-Way Peg (P1WP)
 
 Ruben Somsen: 00:17:19
 
 So for every Bitcoin you burn, get a spacecoin.
 This preserves the 21 million limit, essentially.
 So that's great.
-There's not, you know, seeing the whole space chain plus Bitcoin ecosystem still preserve the 21 million limits I think is a very important aspect of this right where there is literally no inflation.
+There's not, you know, seeing the whole spacechain plus Bitcoin ecosystem still preserve the 21 million limits I think is a very important aspect of this right where there is literally no inflation.
 So this is important to note as well which is that Bitcoin is always the superior asset it's absolutely not a competitor If you move from Bitcoin to some kind of spacechain, now you're stuck in a spacechain.
 You can't go back.
 But if you just hold your Bitcoin so you do nothing, you can always move to a spacechain later.
@@ -264,12 +264,17 @@ Fernando Nieto, or Nieto, I'm not sure how to pronounce it, he wrote an article 
 So if you're interested in kind of topic of how to maintain the peg stability at least somewhat you can you can find more information there 
 So and this is important to note.
 There's a real limitation here, right?
-Like this is not a Token where you're gonna store your value It literally cannot act as a store of value.
+Like this is not a token where you're gonna store your value It literally cannot act as a Store of Value.
 You'd be crazy to move in a million dollars into a spacechain and expect to get your value back somehow when you sell the token to a third party.
 That's never going to happen.
 Really, so that is the one limitation where the only use cases for these chains are things that do not require you to have a Store of Value on there, or decentralized Store of Value I should say.
 So that might raise the question, well what are these chains good for if you can't store value?
 Well, we're going to get into that.
+
+## Why Burning Bitcoin Is Not a Problem
+
+Ruben Somsen: 00:21:35
+
 But first, I want to mention that I think a lot of people have this feeling where, wait a second, you're asking me to burn my Bitcoins?
 That really feels bad, man.
 I don't want to burn my Bitcoins.
@@ -344,7 +349,7 @@ And you don't really want that, right?
 You just want to utilize the chain.
 You just want to tap DNS.
 So the existence of the speculative token, I think is complete negative.
-And we can get rid of that essentially and reissue something like Namecoin, take out the speculative assets and replace it with the perpetual one-way peg and use Bling Merged mining.
+And we can get rid of that essentially and reissue something like Namecoin, take out the speculative assets and replace it with the perpetual one-way peg and use Blind Merged mining.
 So even all the mining fees kind of go to the Bitcoin network as well, which also helps Bitcoin to become more resilient.
 So then the third use case, and I think this one is a bit of a stretch but it might be possible I'm yeah I'm not sure it's weird which is low value payments right 
 So essentially think of you know kind of the Bitcoin cash dream right where the idea was well we want our low value payments on the blockchain.
@@ -383,7 +388,7 @@ Under the hood, first a few technical things, and then I'll show some pictures, 
 Essentially, what we're creating is a sequence of transactions.
 They're enforced by a covenant and there's a relative lock time of one block.
 So you just have a bunch of transactions and one transaction per block can get into the blockchain.
-We use `sighash anyonecanpay` plus `sighash single`.
+We use `sighash_anyonecanpay` plus `sighash_single`.
 What this does is that we have this kind of input and outputs that marks the covenant and then we have other inputs and outputs that come from users that they can add.
 And they add them to pay for fees, and they add them to add their blockchain spacechain hash, basically attach it to this transaction.
 It's RBF enabled, and that means that anyone can pay for inclusion.
@@ -396,7 +401,7 @@ So that saves another 32 bytes.
 It's not absolutely necessary.
 You can also just use an OP_RETURN, but it's more efficient.
 
-## Covenant transaction (details later)
+## Covenant Transaction Structure
 
 Ruben Somsen: 00:31:18
 
@@ -430,7 +435,7 @@ So there are a couple of ways of doing it.
 So one way would be kind of a trusted setup and this would use Child Pays For Parent.
 The nice thing is that this trusted setup works today.
 I say trusted in quotes, because basically what it is, is where you have the covenant input and outputs.
-You could just have a private key and you could put a signature there and you could then after you created a bunch of signatures and all of these transactions like 10,000 or a million of these transactions you just throw away the private key with which you created this sequence of transactions, then assuming you really did throw away the key, it is as good as a governance.
+You could just have a private key and you could put a signature there and you could then after you created a bunch of signatures and all of these transactions like 10,000 or a million of these transactions you just throw away the private key with which you created this sequence of transactions, then assuming you really did throw away the key, it is as good as a covenant.
 But that's where the problem is.
 You don't know if the key was thrown away.
 Well, the nice thing is it doesn't matter a whole lot.
@@ -445,11 +450,11 @@ It's not terrible, preferably this doesn't happen, but nobody loses any money es
 So that's why I think it's acceptable to do it like kind of as a first step.
 But we can do better.
 So one of the better ways would be `op_checktemplateverify`.
-This would also require Child Pays For Parents, RBF as well by the way, both of these, but Child Pays For Parent as well.
+This would also require Child Pays For Parent, RBF as well by the way, both of these, but Child Pays For Parent as well.
 And while that is one way of doing it, and this is a Jeremy Rubin's idea.
-So this is a software that is kind of in the works that may or may not come to Bitcoin.
+So this is a soft fork that is kind of in the works that may or may not come to Bitcoin.
 I think this is absolutely a perfectly fine way of doing it, but my preference goes to using `sighash_anyprevout`.
-`sighash_anyprevout` is actually a software that is, I think, maybe slightly more likely to make it into Bitcoin or might come to Bitcoin sooner than `op_checktemplateverify`, but who knows.
+`sighash_anyprevout` is actually a soft fork that is, I think, maybe slightly more likely to make it into Bitcoin or might come to Bitcoin sooner than `op_checktemplateverify`, but who knows.
 And it's actually intended for kind of improving the Lightning Network through something called `eltoo`.
 And It actually turns out that for this specific covenant that I'm trying to create, it is slightly more flexible than `op_checktemplateverify`.
 So `op_checktemplateverify` and `sighash_anyprevout` turns out they can do roughly the same thing.
@@ -509,7 +514,7 @@ Ruben Somsen: 00:38:15
 We just create a sequence of transactions like this with the signature already in the outputs.
 That means that it's already determined what the next transaction is going to be, and that's how the sequence is created.
 
-## Users add their input/output (RBF bidding)
+## Users Add Input/Output via Anyprevout (RBF Bidding)
 
 Ruben Somsen: 00:38:30
 
@@ -564,7 +569,7 @@ The second one, Child Pays For Parent, the first one and the second one can be R
 That's roughly how it works.
 So it's the same thing, it's just more transactions.
 
-## USOT DEX Spacechain
+## USDT DEX Spacechain
 
 Ruben Somsen: 00:42:55
 
@@ -572,7 +577,7 @@ So that brings me to kind of a more, I guess, elaborate example, right?
 So I've given you an example here of a minimum viable chain, but that's sort of boring.
 So let me give you a little bit more of a spicy example.
 So this will be a USD Tether or whatever, whoever wants to issue USD, can be anyone, kind of a DEX Spacechain.
-So the first thing to note is that, and this is something kind of interesting that Sjors Provoost actually mentioned to me, and yeah, I hadn't really realized until he pointed it out, but if you have a spacechain that is specialized in existing for the use of one single token, like USD Tether, then you don't actually need to perpetual a one-way pack.
+So the first thing to note is that, and this is something kind of interesting that Sjors Provoost actually mentioned to me, and yeah, I hadn't really realized until he pointed it out, but if you have a spacechain that is specialized in existing for the use of one single token, like USD Tether, then you don't actually need to perpetual one-way peg.
 Right, it's not perfect in the sense that, okay, so you have this token that's not trustless, so the whole chain is kind of not entirely trustless, but you still have this...
 The way the blockchain moves forward is still completely...
 That part is trustless.
@@ -648,7 +653,7 @@ I may or may not be working on an idea like that, but that will be for another p
 And then maybe finally, you will have some kind of DNS chain where you may be like a .com or something where you store your URLs and you sell them onwards to other people.
 And what you can do is you can kind of like, you can chain these chains.
 And as I said earlier, what happens is that the children always have to validate the parents.
-So DNS number three is kind of, you have to validate DNS number two and DNS number one and the space in the middle and the Bitcoin blockchain, all of that.
+So DNS number three is kind of, you have to validate DNS number two and DNS number one and the spacechain in the middle and the Bitcoin blockchain, all of that.
 So it becomes kind of like a lower tier DNS, essentially.
 So you can think of maybe there's DNS all the way to the end that only Bitcoiners use or something.
 And then DNS number one is maybe like the .com of DNS, something like that.
