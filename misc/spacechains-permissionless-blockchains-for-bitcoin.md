@@ -22,7 +22,7 @@ summary: "Ruben Somsen presents Spacechains, a design for permissionless, trustl
 
 ## Intro
 
-Speaker 0: 00:00:01
+Ruben Somsen: 00:00:01
 
 Hi, welcome to my presentation about spacechains.
 Spacechains are a combination of two ideas, one being the `Blind Merge Mining` and the other one being the `Perpetual One-way Peg`.
@@ -30,7 +30,7 @@ I'm going to go through both of them and the combined concept is what I call spa
 
 ## Key Points
 
-Speaker 0: 00:00:18
+Ruben Somsen: 00:00:18
 
 So the key points are we're going to create some kind of blockchain, but we're going to do it by outsourcing mining to the Bitcoin blockchain with only a single transaction per block, meaning that there's not going to be a lot of overhead on the Bitcoin blockchain.
 It's going to be a trustless chain, multiple trustless chains, as many chains as you like, that can be created permissionlessly and they essentially serve the Bitcoin ecosystem.
@@ -53,7 +53,7 @@ And now, okay, you can't quite move your Bitcoins back and forth, but we still h
 
 ## What is a blockchain
 
-Speaker 0: 00:02:22
+Ruben Somsen: 00:02:22
 
 So to kind of go through what a spacechain is exactly, I want to start very simple, but with a deceptively simple question, which is what is a blockchain?
 And I think when you hear this question you might think it's simple but I think it's actually a difficult question to answer.
@@ -86,7 +86,7 @@ So these two features are basically what we're going to try and recreate.
 
 ## Creating blockchains - Blind Merged Mining (BMM)
 
-Speaker 0: 00:05:07
+Ruben Somsen: 00:05:07
 
 So first, creating a blockchain, how do you do that?
 Well, the mechanism I'm using here is called `Blind Merge Mining`.
@@ -110,7 +110,7 @@ Either way, you'll get your answers.
 
 ## Fee-bidding BMM
 
-Speaker 0: 00:07:20
+Ruben Somsen: 00:07:20
 
 Fee bidding, Blind Merged mining.
 What's that all about?
@@ -146,7 +146,7 @@ There are other ways in which this can be used as well, and I'll leave that to y
 
 ## Equivalent to PoW, except...
 
-Speaker 0: 00:10:42
+Ruben Somsen: 00:10:42
 
 Roughly speaking, this process of having this unique hash and having people bid for it is roughly analogous to proof-of-work, except there are a few changes, a few differences.
 And they're relatively minor.
@@ -194,7 +194,7 @@ So it works out exactly the same in that sense.
 
 ## Paying for Block Space
 
-Speaker 0: 00:14:36
+Ruben Somsen: 00:14:36
 
 So that brings me to paying for block space.
 Okay, so we've got this blockchain now and we have a mechanism, Blind Merged mining, to create these blocks.
@@ -228,7 +228,7 @@ And it's perpetual, meaning that you can always do this.
 
 ## Perpetual One-Way Peg (PIWP)
 
-Speaker 0: 00:17:19
+Ruben Somsen: 00:17:19
 
 So for every Bitcoin you burn, get a spacecoin.
 This preserves the 21 million limit, essentially.
@@ -315,7 +315,7 @@ More Bitcoins for me, basically, in terms of relative value.
 
 ## Use Cases
 
-Speaker 0: 00:24:48
+Ruben Somsen: 00:24:48
 
 So that brings me to the use cases, and that's not an unimportant thing, right?
 So, so far I've talked about this.
@@ -377,44 +377,44 @@ Please stick around for that.
 
 ## Under the hood
 
-Speaker 0: 00:29:57
+Ruben Somsen: 00:29:57
 
 Under the hood, first a few technical things, and then I'll show some pictures, so bear with me.
 Essentially, what we're creating is a sequence of transactions.
 They're enforced by a covenant and there's a relative lock time of one block.
 So you just have a bunch of transactions and one transaction per block can get into the blockchain.
-We use SIGASH anyone can pay plus SIGASH single.
+We use `sighash anyonecanpay` plus `sighash single`.
 What this does is that we have this kind of input and outputs that marks the covenant and then we have other inputs and outputs that come from users that they can add.
-And they add them to pay for fees, and they add them to add their blockchain, space chain hash, basically attach it to this transaction.
-It's RBF enabled, And that means that anyone can pay for inclusion.
+And they add them to pay for fees, and they add them to add their blockchain spacechain hash, basically attach it to this transaction.
+It's RBF enabled, and that means that anyone can pay for inclusion.
 So you have to basically outbid each other.
 And that's how we get the fee bidding.
-And yeah, so the SpaceChain block hash can be committed in the added output, but we can do this through basically the equivalent of the taproot commitment.
+And yeah, so the spacechain block hash can be committed in the added output, but we can do this through basically the equivalent of the taproot commitment.
 It doesn't have to be exactly the same, although it could be.
 And what that does is that basically even the hash doesn't appear on the Bitcoin blockchain.
 So that saves another 32 bytes.
 It's not absolutely necessary.
-You can also just use an up return, but it's more efficient.
+You can also just use an OP_RETURN, but it's more efficient.
 
 ## Covenant transaction (details later)
 
-Speaker 0: 00:31:18
+Ruben Somsen: 00:31:18
 
-So There will be even more details later, but here are some pictures.
+So there will be even more details later, but here are some pictures.
 Imagine a transaction here with a covenant input, a covenant output, and we'll get into the details of the covenant later.
 
 ## A user adds their input/output (RBF bidding)
 
-Speaker 0: 00:31:28
+Ruben Somsen: 00:31:28
 
-The user adds their inputs and outputs, And through RBF bidding, essentially, this determines who gets at their input and outputs.
+The user adds their inputs and outputs, and through RBF bidding, essentially, this determines who gets at their input and outputs.
 So let's say you put one Bitcoin as a user input and then 0.95 as a user output, that means you paid 0.05 Bitcoin as a fee.
 Then somebody else comes along and they pay 0.06, which is higher.
 Therefore, your transaction doesn't get in, but the other guy's transaction does get in.
 The highest one, let's say 0.06, gets mined into a block.
-Now, with the user output, they reveal their taproot commitments to the peer-to-peer network of the space chain, including the whole block itself, and that's basically how the space chain block comes into existence.
-In the space chain block, there is a user coinbase, which is where they aggregate their space chain fees so they get all the fees on the space chain and that that decides basically how much they're willing to pay on the Bitcoin side.
-So in this case, 0.06 Bitcoin means that on a space chain, they should have received roughly the equivalent of that.
+Now, with the user output, they reveal their taproot commitments to the peer-to-peer network of the spacechain, including the whole block itself, and that's basically how the spacechain block comes into existence.
+In the spacechain block, there is a user coinbase, which is where they aggregate their spacechain fees so they get all the fees on the spacechain and that that decides basically how much they're willing to pay on the Bitcoin side.
+So in this case, 0.06 Bitcoin means that on a spacechain, they should have received roughly the equivalent of that.
 So once the next block is created, it's exactly the same thing.
 Same covenant.
 The covenant is also connected.
@@ -423,14 +423,14 @@ So it just repeats over and over.
 
 ## How to do the covenant
 
-Speaker 0: 00:32:56
+Ruben Somsen: 00:32:56
 
 So that brings us to the question to how to do the covenant.
 So there are a couple of ways of doing it.
-So one way would be kind of a trusted setup and this would use child-based for parents.
+So one way would be kind of a trusted setup and this would use Child Pays For Parent.
 The nice thing is that this trusted setup works today.
 I say trusted in quotes, because basically what it is, is where you have the covenant input and outputs.
-You could just have a private key and you could put a signature there and you could then after you created a bunch of signatures and all of these transactions like 10, 000 or a million of these transactions you just throw away the private key with which you created this sequence of transactions, then assuming you really did throw away the key, it is as good as a governance.
+You could just have a private key and you could put a signature there and you could then after you created a bunch of signatures and all of these transactions like 10,000 or a million of these transactions you just throw away the private key with which you created this sequence of transactions, then assuming you really did throw away the key, it is as good as a governance.
 But that's where the problem is.
 You don't know if the key was thrown away.
 Well, the nice thing is it doesn't matter a whole lot.
@@ -444,34 +444,34 @@ The chain halts and then a hard fork has to occur to restart the chain.
 It's not terrible, preferably this doesn't happen, but nobody loses any money essentially.
 So that's why I think it's acceptable to do it like kind of as a first step.
 But we can do better.
-So one of the better ways would be op check template verify.
-This would also require child pays for parents, RBF as well by the way, both of these, but child pays for parent as well.
+So one of the better ways would be `op_checktemplateverify`.
+This would also require Child Pays For Parents, RBF as well by the way, both of these, but Child Pays For Parent as well.
 And while that is one way of doing it, and this is a Jeremy Rubin's idea.
 So this is a software that is kind of in the works that may or may not come to Bitcoin.
-I think this is absolutely a perfectly fine way of doing it, but my preference goes to using SIGASH Anyprevout.
-SIGASH Anyprevout is actually a software that is, I think, maybe slightly more likely to make it into Bitcoin or might come to Bitcoin sooner than object check template verify, but who knows.
-And it's actually intended for kind of improving the Lightning Network through something called L2ELTOO.
-And It actually turns out that for this specific covenant that I'm trying to create, it is slightly more flexible than OPCHECK template verify.
-So OPCHECK template verify and SIGS-AnimatedPrefout turns out they can do roughly the same thing.
-OPCHECK template verify is usually the cleaner way of doing it.
-But in this case, I think there's an argument to be made for SIGS AnyPrepOut because basically the transactions become a little smaller and things are a little bit more flexible and we'll see that in a minute.
-So I'm going to go and take you through the SIGS AnyPrepOut method of creating this countenance.
+I think this is absolutely a perfectly fine way of doing it, but my preference goes to using `sighash_anyprevout`.
+`sighash_anyprevout` is actually a software that is, I think, maybe slightly more likely to make it into Bitcoin or might come to Bitcoin sooner than `op_checktemplateverify`, but who knows.
+And it's actually intended for kind of improving the Lightning Network through something called `eltoo`.
+And It actually turns out that for this specific covenant that I'm trying to create, it is slightly more flexible than `op_checktemplateverify`.
+So `op_checktemplateverify` and `sighash_anyprevout` turns out they can do roughly the same thing.
+`op_checktemplateverify` is usually the cleaner way of doing it.
+But in this case, I think there's an argument to be made for `sighash_anyprevout` because basically the transactions become a little smaller and things are a little bit more flexible and we'll see that in a minute.
+So I'm going to go and take you through the `sighash_anyprevout` method of creating this countenant.
 
 ## Pubkey Spend Transaction (nothing special)
 
-Speaker 0: 00:35:49
+Ruben Somsen: 00:35:49
 
 So I'm starting really simple here.
-And I guess I should note this segues anyprevout was not intended to do the covenant, but it just turned out that it happens to enable this.
+And I guess I should note this `sighash_anyprevout` was not intended to do the covenant, but it just turned out that it happens to enable this.
 So it's actually kind of cool.
 And this is something that Anthony Towns taught me.
 So yeah, I'll take you through it, kind of how it works.
-So imagine just a regular output, a very simple one where there's a pop key and a check sig.
+So imagine just a regular output, a very simple one where there's a OP key and a CHECKSIG
 So the way to spend this would be with a signature, right?
 So when you spend it, you just put the signature in the input script and the signature signs the transaction signing and the transaction it's creating and the previous transaction is trying to spend, essentially.
 So what happens if we take the signature and we just move it, right?
 We just move it to the output script.
-So There is a problem here.
+So there is a problem here.
 This doesn't actually work if you just do this.
 And why doesn't it work?
 Well, there is a circular reference here, right?
@@ -479,13 +479,13 @@ As I told you, the signature is signing two things, and basically the red bars y
 So it signs a new transaction, but it also signs itself.
 That becomes a circular reference.
 The signature itself is signing the signature, and that doesn't work.
-The way to solve this is, well, that's exactly what CIGAS-AnyPrevout does.
+The way to solve this is, well, that's exactly what `sighash_anyprevout` does.
 
 ## Covenant Transaction with anyprevout
 
-Speaker 0: 00:37:16
+Ruben Somsen: 00:37:16
 
-What CIGAS-AnyPrevout does is it allows you to skip signing a transaction ID.
+What `sighash_anyprevout` does is it allows you to skip signing a transaction ID.
 You're not signing the actual transaction that you're spending, you're just assuming that they fit.
 With this, we've basically solved the issue, the circular reference.
 And now it actually works out, where you already have the signature of the next transaction in the previous transaction.
@@ -500,54 +500,54 @@ So the key is just private key one.
 Great.
 This makes creating the signature really easy because it's basically just a hash plus one.
 There's no calculation needed at all.
-Yes, this just works essentially.
+Yeah, this just works essentially.
 
 ## Sequence of transactions (pre-generated)
 
-Speaker 0: 00:38:15
+Ruben Somsen: 00:38:15
 
 We just create a sequence of transactions like this with the signature already in the outputs.
 That means that it's already determined what the next transaction is going to be, and that's how the sequence is created.
 
 ## Users add their input/output (RBF bidding)
 
-Speaker 0: 00:38:30
+Ruben Somsen: 00:38:30
 
 And from this point on, we add the user input and user output.
-And the nice thing is that the SIGS-AniPrevOut does two things.
+And the nice thing is that the `sighash_anyprevout` does two things.
 Because the TXID is not signed, it also means that the TXID doesn't change when a user adds their input and output, or rather it does change, but it doesn't matter.
 It doesn't invalidate the signature.
 That works out perfectly.
-Here, it's important to note that the user input does sign the entire transaction and doesn't do a SIGGYS any prep out or something like that.
+Here, it's important to note that the user input does sign the entire transaction and doesn't do a `sighash_anyprevout` or something like that.
 The reason for that is, well, yeah, I'm not sure if that matters specifically, but what you need is you need to make sure that the entire sequence of transactions can be replayed so that people who were bidding but didn't get into the blockchain then still get into the blockchain, but in a way that's not actually a valid block.
 So that's not possible because the entire transaction is signed.
-So the Txid at that point for at least the user input and output is basically determined and cannot change.
+So the TXID at that point for at least the user input and output is basically determined and cannot change.
 So this prevents further malleability.
-So the space chain hash is basically the change output so you can think of like a taproot output where instead of taproot commitments there's also a space chain hash that needs to be revealed at some at some point and this basically lowers the the burden or moves the burden of revealing a hash onto the space chain side and makes the impact on the Bitcoin blockchain as minimum as possible.
+So the spacechain hash is basically the change output so you can think of like a taproot output where instead of taproot commitment there's also a spacechain hash that needs to be revealed at some at some point and this basically lowers the the burden or moves the burden of revealing a hash onto the spacechain side and makes the impact on the Bitcoin blockchain as minimum as possible.
 
 ## Minimum Viable Spacechain
 
-Speaker 0: 00:39:58
+Ruben Somsen: 00:39:58
 
-So, that brings me to describing what essentially would be a minimum viable space chain.
-So if you wanted to create a space chain, what's the minimum amount of work you could do to get it to work today?
+So, that brings me to describing what essentially would be a minimum viable spacechain.
+So if you wanted to create a spacechain, what's the minimum amount of work you could do to get it to work today?
 So I would say you take the Bitcoin code base, and you introduce some minor changes, relatively minor.
-The first change you have to make is the proof of work.
-You take the proof of work and you just keep it, but you just make it so that any amount of proof of work is valid.
-Nobody actually has to do any proof of work to create a valid hash.
+The first change you have to make is the proof-of-work.
+You take the proof of work and you just keep it, but you just make it so that any amount of proof-of-work is valid.
+Nobody actually has to do any proof-of-work to create a valid hash.
 It's just difficulty set to zero.
 So then on the Coinbase reward side, you have to do two things.
-One is the regular thing you always do, which is you just take the space chain fees, which is fine, right?
-There's a token in this instead of Bitcoin, it's Spacecoin.
+One is the regular thing you always do, which is you just take the spacechain fees, which is fine, right?
+There's a token in this instead of Bitcoin, it's spacecoin.
 If there are fees, they go into the Coinbase.
 That's absolutely fine.
 But then the second thing you have to do is you have to take however many Bitcoins were burned on the Bitcoin blockchain.
-And the way this works is that you would just introduce that into this transaction structure here, where you add another output with an OP return.
-OP return doubles as a way of burning Bitcoins.
-And however many Bitcoins were burned inside of this transaction, yeah, they basically become a Coinbase reward on the side of the space chain.
-And then since we're using the OP return for burning anyway, and it's a little bit easier so you don't have to reveal the hash, although you might as well do the hash reveal thing, it just makes things more complicated.
-We're talking about an MVS, a minimum viable space chain here.
-You just use up return to put a 32-byte hash there.
+And the way this works is that you would just introduce that into this transaction structure here, where you add another output with an OP_RETURN.
+OP_RETURN doubles as a way of burning Bitcoins.
+And however many Bitcoins were burned inside of this transaction, yeah, they basically become a Coinbase reward on the side of the spacechain.
+And then since we're using the OP_RETURN for burning anyway, and it's a little bit easier so you don't have to reveal the hash, although you might as well do the hash reveal thing, it just makes things more complicated.
+We're talking about an MVS, a minimum viable spacechain here.
+You just use OP_RETURN to put a 32-byte hash there.
 Not the most efficient thing, but it's the simplest way of doing it, essentially.
 And then finally, since we don't really want to wait for soft forks, and that's something we've seen, right?
 Soft forks are taking quite a long time to activate.
@@ -560,42 +560,43 @@ It's not ideal, but if we want to get started today, that's how we have to do it
 So for this reason, I think it's good to show you what this kind of like trusted setup method looks like.
 So this is what it looks like.
 I'm not going to get into detail, but essentially, instead of having one transaction in the Bitcoin blockchain, you now need two transactions.
-The second one, child pays for parents, the first one and the second one can be RBFed.
+The second one, Child Pays For Parent, the first one and the second one can be RBF'd.
 That's roughly how it works.
 So it's the same thing, it's just more transactions.
 
 ## USOT DEX Spacechain
 
-Speaker 0: 00:42:55
+Ruben Somsen: 00:42:55
 
 So that brings me to kind of a more, I guess, elaborate example, right?
 So I've given you an example here of a minimum viable chain, but that's sort of boring.
 So let me give you a little bit more of a spicy example.
-So this will be a USD tether or whatever, whoever wants to issue USD, can be anyone, kind of a DEX space chain.
-So the first thing to note is that, and this is something kind of interesting that Shor's Provost actually mentioned to me, and yeah, I hadn't really realized until he pointed it out, but if you have a space chain that is specialized in existing for the use of one single token, like USD Tether, then you don't actually need to perpetual a one-way pack.
+So this will be a USD Tether or whatever, whoever wants to issue USD, can be anyone, kind of a DEX Spacechain.
+So the first thing to note is that, and this is something kind of interesting that Sjors Provoost actually mentioned to me, and yeah, I hadn't really realized until he pointed it out, but if you have a spacechain that is specialized in existing for the use of one single token, like USD Tether, then you don't actually need to perpetual a one-way pack.
 Right, it's not perfect in the sense that, okay, so you have this token that's not trustless, so the whole chain is kind of not entirely trustless, but you still have this...
 The way the blockchain moves forward is still completely...
 That part is trustless.
 So there's still a benefit to doing that.
-So in the case of having a USD tether chain, which is really exclusively for that purpose, you don't need the perpetual one-way peg, you just issue use the tether and you use that to pay for fees to to the miners of this chain.
-So then one thing you can do is you can create a Bitcoin derivatives covenants and this can be done trustlessly without an oracle And the reason for that is that, as I mentioned before, you, if you run the space chain, you also have to run the Bitcoin blockchain.
-And what that means is that you can have consensus in the space chain, be dependent on what happens in the Bitcoin blockchain.
+So in the case of having a USD Tether chain, which is really exclusively for that purpose, you don't need the perpetual one-way peg, you just issue USD Tether and you use that to pay for fees to to the miners of this chain.
+So then one thing you can do is you can create a Bitcoin derivatives covenant and this can be done trustlessly without an oracle and the reason for that is that, as I mentioned before, you, if you run the spacechain, you also have to run the Bitcoin blockchain.
+And what that means is that you can have consensus in the spacechain, be dependent on what happens in the Bitcoin blockchain.
 And that's really nice, because that allows us to kind of do something along the lines of a semi, like an atomic swap that is semi-native, but only halfway because it's only on the Bitcoin side.
-And this allows us to create sort of a, you know, it's not quite a two-way peg, but it's a way to have a something that is like the value of Bitcoin inside of this USD tether chain.
+And this allows us to create sort of a, you know, it's not quite a two-way peg, but it's a way to have a something that is like the value of Bitcoin inside of this USD Tether chain.
 So I'll get into the exact details in a second.
-So then once we have this usd tether and we have these Bitcoin derivatives, at that point you can swap them out, you can just trade with those, you can create special trading contracts like what they do in Ethereum or something like that.
+So then once we have this USD Tether and we have these Bitcoin derivatives, at that point you can swap them out, you can just trade with those, you can create special trading contracts like what they do in Ethereum or something like that.
 All that stuff.
-So the Bitcoin derivatives covenants, what does it look like?
+So the Bitcoin derivatives covenant, what does it look like?
 So here you can imagine a contract.
 So this is going to be a transaction, right?
 A contract representing, let's say one Bitcoin.
-And for the current example, let's say one Bitcoin equals $20, 000.
-So Alice, who is basically the contract facilitator, and normally should receive a fee for that, but we're leaving it out for simplicity, she puts in half a Bitcoin worth of USD tether, so 10k.
+And for the current example, let's say one Bitcoin equals $20,000.
+So Alice, who is basically the contract facilitator, and normally should receive a fee for that, but we're leaving it out for simplicity, she puts in half a Bitcoin worth of USD Tether, so 10k.
 And then Bob, who actually wants to have this contract, he wants to have the Bitcoin, so he's the one paying the fee, he puts in 20k.
 And 20k is exactly what one Bitcoin is worth.
 So on the output side, there's 30k in total, obviously.
 So the question is, who gets the 30k and when?
-So the first condition is if Bob receives one Bitcoin on the Bitcoin blockchain and remember like I said this can be verified right The space chain is aware of what happens on the Bitcoin blockchain.
+So the first condition is if Bob receives one Bitcoin on the Bitcoin blockchain and remember like I said this can be verified right 
+The space chain is aware of what happens on the Bitcoin blockchain.
 So if this actually happened and Bob received the Bitcoin, then Alice can claim the full 30K.
 So she gets her 10K back and the 20K that was originally the price of the Bitcoin.
 So the second way in which this can end up is there's a timeout.
@@ -623,26 +624,26 @@ So it gives you a glimpse into kind of what is possible, and there's probably fa
 
 ## Potential Future
 
-Speaker 0: 00:49:03
+Ruben Somsen: 00:49:03
 
 Just to give you a potential future idea of where this could potentially be headed, and obviously I don't know, but this is what I imagine would be good for Bitcoin.
 You have the Bitcoin blockchain, roughly two megabytes.
-I know it's like 4, 000 weight units or something like that, but roughly two megabytes worth of data.
-So then you have a space chain, which let's say utilizes the exact same code as Bitcoin does.
+I know it's like 4,000 weight units or something like that, but roughly two megabytes worth of data.
+So then you have a spacechain, which let's say utilizes the exact same code as Bitcoin does.
 Reason for that being that we want people to feel secure in using that chain.
 And then from that chain, you create your other chains.
 And this is essentially to minimize the amount of Bitcoin space you use.
 And maybe you create a big blockchain like we talked about with 32 megabytes worth of data or something like that.
 And what you have here is on the Bitcoin blockchain there is only one transaction per block, right?
-And that creates the space chain.
-And then from that space chain, we have the exact same construction creating the big block space chain.
+And that creates the spacechain.
+And then from that spacechain, we have the exact same construction creating the big block spacechain.
 So it's very efficient in terms of how much Bitcoin space you're utilizing here.
-So Then maybe you have a confidential assets space chain, which maybe make it a little bit bigger because, I don't know, we feel like that's good enough.
+So then maybe you have a confidential assets spacechain, which maybe make it a little bit bigger because, I don't know, we feel like that's good enough.
 In this chain, you can create your own assets.
 They can be confidential, so you don't really see the history of it.
-Somebody could issue a federated two way peg on there if they feel so inclined, et cetera.
-So then we maybe have to use the tether chain that I just described, where you have some sort of DEX thing, allowing people to basically use the tether to move in and out of fiat without using an exchange.
-Then we might have some kind of experimental sidechain technology that does something weird where there's actually one chain that connects to some other chain, a bunch of other chains maybe in a way that doesn't require you to validate all the chains, only the chains you're interested in, but still somehow you have some two-way path between them.
+Somebody could issue a federated two-way peg on there if they feel so inclined, et cetera.
+So then we maybe have to use the Tether chain that I just described, where you have some sort of DEX thing, allowing people to basically use the Tether to move in and out of fiat without using an exchange.
+Then we might have some kind of experimental sidechain technology that does something weird where there's actually one chain that connects to some other chain, a bunch of other chains maybe in a way that doesn't require you to validate all the chains, only the chains you're interested in, but still somehow you have some two-way peg between them.
 I may or may not be working on an idea like that, but that will be for another presentation.
 And then maybe finally, you will have some kind of DNS chain where you may be like a .com or something where you store your URLs and you sell them onwards to other people.
 And what you can do is you can kind of like, you can chain these chains.
@@ -653,10 +654,10 @@ So you can think of maybe there's DNS all the way to the end that only Bitcoiner
 And then DNS number one is maybe like the .com of DNS, something like that.
 Whether that makes sense to tier it like that, I don't know, but I just wanted to show it as an example.
 So that brings me to the end of the presentation.
-So in summary, space chains enable new blockchains that serve the Bitcoin ecosystem.
+So in summary, spacechains enable new blockchains that serve the Bitcoin ecosystem.
 Hopefully I've convinced you of that.
 And this is really something.
-So I guess maybe it's good to end on a note and say that The way I look at Bitcoin is that it's a resource that is really scarce.
+So I guess maybe it's good to end on a note and say that the way I look at Bitcoin is that it's a resource that is really scarce.
 We have one block coming in every 10 minutes, it's only a couple of megabytes, not a lot of data can get in there, and we have to find ways to do more with that space, without just putting everything in a single blockchain, or without just adding trust to third parties.
 So even though this kind of system with these blockchains, there are some limitations, I think it's a novel set of trade-offs where it is completely trustless, but it has some use limitations such as there not being a two-way peg and things like that.
 But I think it's really where we have to go as an ecosystem.
@@ -666,12 +667,14 @@ You know, take RGB, for example.
 I think it's a really cool project, but it still utilizes the Bitcoin blockchain directly.
 And as block space becomes more scarce, I think those kinds of use cases become priced out.
 Right?
-Where here you can create a, you know, let's say USD Tether blockchain, where you can still have cheap fees because you can even create 10 USD Tether blockchains if you want it.
-As opposed to doing USD tether as a color coin on the Bitcoin blockchain, where if you want to move your use the tether, you have to pay really high fees because the Bitcoin block space is so scarce.
+Where here you can create a, you know, let's say USD Tether blockchain, where you can still have cheap fees because you can even create 10 USD Tether blockchains if you wanted.
+As opposed to doing USD Tether as a color coin on the Bitcoin blockchain, where if you want to move your use the tether, you have to pay really high fees because the Bitcoin block space is so scarce.
 So that's roughly kind of my thinking.
 My feeling is that we have to move towards things like this.
 And that's also what motivates me to work on this.
 So yeah, that concludes my presentation.
 Thank you very much for listening.
-If you're interested in talking more about this or just discussing it with me or whatever, please join me on Telegram at a channel I created called t.me.spacejanes.
-So you can go there, you
+If you're interested in talking more about this or just discussing it with me or whatever, please join me on Telegram at a channel I created called t.me.spacechains.
+So you can go there, you can chat with me and other people who are interested in this on Telegram and maybe we can discuss kind of what this potential future for Bitcoin might look like.
+Thank you.
+
