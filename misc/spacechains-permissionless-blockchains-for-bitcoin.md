@@ -273,7 +273,7 @@ Well, we're going to get into that.
 
 ## Why Burning Bitcoin Is Not a Problem
 
-Ruben Somsen: 00:21:35
+Ruben Somsen: 00:21:34
 
 But first, I want to mention that I think a lot of people have this feeling where, wait a second, you're asking me to burn my Bitcoins?
 That really feels bad, man.
