@@ -1,5 +1,5 @@
 ---
-title: 2024
+title:  Btrust Developer Day 2024
 ---
 
 {{< childpages >}}
