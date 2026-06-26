@@ -2,18 +2,26 @@
 title: Acumulator Based Cryptography & UTreexo
 speakers:
   - Tadge Dryja
-tags:
-  - proof-systems
-  - utreexo
-  - assumeutxo
-  - compact-block-relay
-categories:
-  - education
 date: '2019-09-09'
+tags:
+  - utreexo
+  - proof-systems
+  - cryptography
+  - utxo-set
+  - scalability
+categories:
+  - conference
 source_file: https://www.youtube.com/watch?v=xlKQP9J88uA
 media: https://www.youtube.com/watch?v=xlKQP9J88uA
+summary: 'Tadge Dryja presents a two-part talk on cryptographic accumulators and their application to Bitcoin. The first half covers the fundamentals of accumulators — data structures that allow compact set membership proofs — focusing on RSA-based accumulators. He explains the mathematical basis (modular exponentiation over a group of unknown order), how inclusion proofs work, and the advantages of constant-size proofs that can batch-prove many elements at once. He also highlights the critical drawbacks: trusted setup for the RSA modulus, and the O(n²) cost of updating individual proofs as the accumulator evolves, making RSA accumulators impractical for maintaining proofs over Bitcoin''s 60 million UTXO set in real time.
+
+The second half introduces Utreexo, a hash-based dynamic accumulator optimized for Bitcoin''s UTXO set. Instead of RSA groups, Utreexo uses a forest of perfect Merkle trees whose roots form a compact accumulator representable in a few kilobytes regardless of UTXO set size. Dryja describes a novel deletion algorithm that rearranges leaves using inclusion proofs — which align naturally with UTXO spending — and discusses the bridge node architecture that allows gradual rollout without a consensus fork. He presents optimizations including within-block proof aggregation and IBD look-ahead hints that exploit the power-law distribution of UTXO lifespans, reducing the extra proof data for initial block download to tens of gigabytes with only a few hundred megabytes of RAM, making full node operation feasible on modest hardware.'
+additional_resources:
+  - title: 'Slides: Accumulator Based Cryptography'
+    url: 'https://docs.google.com/presentation/d/1OWhdB5P680FMHkoutd_YLP4hGFWI_aVaXRkkYdfoix8/edit?usp=sharing'
+  - title: 'Slides: UTreexo'
+    url: 'https://docs.google.com/presentation/d/1z_vAwA6hN-C1WEg89EFfZCwqfMRWDcYuW61aA7P84zM/edit?usp=sharing'
 transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
-summary: Tadge Dryja introduces accumulators as cryptographic data structures providing constant-size commitments to large sets, covering RSA accumulator mechanics, trusted setup concerns, and class groups as a trusted-setup-free alternative. He then presents Utreexo, a hash-based dynamic Merkle forest for Bitcoin's UTXO set, featuring a novel deletion algorithm, bridge node architecture that requires no consensus fork, and IBD optimizations using UTXO lifespan-based lookahead caching that reduce extra proof data to roughly 60-70 GB with minimal RAM.
 ---
 
 ## Intro
@@ -41,13 +49,11 @@ Okay.
 Speaker 0: 00:00:32
 
 There's some privacy leaks on this screen, aren't there?
-Different horizon.
-OK, hold on a second.
-OK,
+Different horizontal, OK, hold on.
 
-Speaker 1: 00:00:47
+Speaker 1: 00:00:45
 
-sorry.
+OK, sorry.
 
 Speaker 0: 00:00:49
 
@@ -489,13 +495,10 @@ I wonder how this will work out.
 
 Speaker 0: 00:21:38
 
-There is.
-I did.
-Yeah, I didn't put the slides in.
+There is, I did, yeah, I didn't put the slides in.
 There is a way.
-It's kind of complicated.
-And I didn't 100% understand it.
-Also, I was reading a couple papers, because I wanted to put a slide in about it.
+It's kind of complicated, and I didn't 100% understand it.
+Also I was reading a couple papers, because I wanted to put a slide in about it.
 You might need to know p and q to make the exclusion proofs.
 But then I think there's recent papers that say there's a way to do it without it that's pretty complex.
 If you know p and q, I'd have to look at the paper again.
@@ -738,10 +741,10 @@ Speaker 1: 00:32:22
 
 But you show how you remove an element of a finite element?
 Or do we use the same thing?
-
-Speaker 0: 00:32:32
-
 Oh. Right.
+
+Speaker 0: 00:32:35
+
 Well, we could dip it in.
 Yeah, there's a way.
 Yeah, I didn't put that.
@@ -982,10 +985,11 @@ And I think it's kind of fun because people are like, wait, I think I know how t
 A Merkle tree where you can Add leaves.
 And this was not novel for me.
 This was in a paper from people I talked to, BU, Sophia Nakhubov.
+I don't know.
 She helped.
 She had a paper.
 I actually talked to her about it.
-It really, really helped out.
+Really helped out.
 So let's say you have a Merkle tree, and you've got four leaves in it.
 And you only keep the root, right?
 So the only thing you know is this orange thing on the top.
@@ -1012,14 +1016,8 @@ When you have 5, that's 1, 0, 1.
 And then 8 is 1, 0, 0, 0.
 So it's kind of cool.
 If you know how many leaves you have, you know how many trees you need.
-
-Speaker 1: 00:44:52
-
 I know this concept under the name of mountain range.
 That's the same thing, right?
-
-Speaker 0: 00:45:00
-
 But the mountain range, didn't it have different lengths where you'd have different length paths to the bottom from the top?
 So I think in this one, it's not quite the same.
 So this is often work from a different paper.
@@ -1027,24 +1025,15 @@ But yeah, there's similar ideas where you're sort of adding things together.
 But in this case, the trees are always perfect.
 So all the trees are always powers of 2.
 And there's always same descent.
-
-Speaker 1: 00:45:33
-
 But you need to have a data proof.
 Yes.
-
-Speaker 0: 00:45:37
-
-So if you have a proof for, say, if one of your proofs is in here, and then if you're proving element, let's say element 0, the leftmost element on the bottom.
+So if you have a proof for, say, if one of your proofs is in here, and then if you're proving element, let's say, element 0, the leftmost element on the bottom.
 For all of this activity, you don't have to change anything.
 New trees get added, and your proof's the same.
 But when this happens, now your proof, which used to be this and this, now gets this.
 So your proof gets bigger.
 So yes, the proofs still do need to be added.
 But you sort of get the proof updates for free, in that if you are maintaining an accumulator root, when you perform the hashing operations to compute the new root, the intermediate hashes are, you can just save them instead of discarding them, and those go into your proof.
-
-Speaker 1: 00:46:22
-
 How would you remove them from the new element?
 
 ## Removing
@@ -1088,17 +1077,11 @@ And we can recompute 12, because we also know 8.
 And we can discard everything under there.
 So now we've sort of moved what was at 6 to where the thing that was at 2 got deleted.
 Easy right?
-
-Speaker 1: 00:48:16
-
 You have a lot of updates.
 Sorry?
 You have a lot of updates.
 Sorry?
 You have a lot of updates.
-
-Speaker 0: 00:48:19
-
 OK.
 So wait.
 I'll incrementally.
@@ -1161,14 +1144,8 @@ The downside is it does swap things around.
 Oh, why is that a downside?
 It's a downside because What you really do to make the proof smaller is you build all the new UTXOs in these little trees and all the old UTXOs you want in the big trees on the other side, because you've got really great locality with UTXO spending.
 Wait.
-
-Speaker 1: 00:51:49
-
 How deterministic is this?
 Because if I delete a group or a person, I delete one of the elements and then the other two elements, you're going to get the same result?
-
-Speaker 0: 00:51:57
-
 Yeah.
 So there's a lot of freedom in that you sometimes have a lot of choices.
 So in this case, I can swap things around.
@@ -1215,61 +1192,31 @@ There's a couple of transactions a second.
 It can maybe 20, 30 at most proofs added per second.
 Totally doable.
 Maybe you want to run on an SSD, but whatever.
-
-Speaker 1: 00:54:21
-
 So these mini nodes, let's say they already updated to the latest state.
-
-Speaker 0: 00:54:24
-
 Yes.
-
-Speaker 1: 00:54:25
-
 Do they still need the bridge node from the NR?
-
-Speaker 0: 00:54:27
-
 They still need it because some random wallet is just going to put a transaction in the mempool.
 And they're like, is this transaction, like is this input that it's spending, does it exist?
 The mini nodes did add that transact.
 They added that UTXO to their accumulator days ago, but they forgot about it.
 So now they need a proof again.
 And they can't provide it themselves.
-
-Speaker 1: 00:54:50
-
 You mean like when it gets spent?
-
-Speaker 0: 00:54:52
-
 Yeah, when it gets spent.
 So when a block comes out and all these new UTFs, all these new outputs get created, they add them to their accumulator.
 And then days later, those outputs get spent, and they forgot about them.
 So they need a proof.
 But the bridge node provides a proof.
-
-Speaker 1: 00:55:07
-
 What are the best assumptions about the bridge node?
-
-Speaker 0: 00:55:09
-
 So the bridge node, you are relying on for availability.
 The bridge node can't lie to you, because if the accumulator construction is correct and collision free, blah, blah, blah, then they can try to provide a false proof, but you'll immediately be like, the hashes don't line up.
 But if they disappear, you'll be stuck, because you're like, hey, here's this transaction.
 I don't know.
 Is it valid or not?
 Because no one's provided proofs for me.
-
-Speaker 1: 00:55:33
-
 Similar to pruning.
 Yeah.
 No, it's a pruning.
-
-Speaker 0: 00:55:37
-
 Yeah.
 You can think of this as like ultra pruned, where I didn't just prune out the history.
 I pruned out my UTXO set.
@@ -1309,20 +1256,14 @@ Anyway, yeah, so the idea is how many, and I can't put 0, so it starts at 1 beca
 If 0 was there, it would be even higher.
 But the most common lifespan of UTXO is 0 blocks, where it is created and then consumed in the same block, which is great because it never touches the UTXO accumulator because it only exists within a block itself.
 And then the next most common lifetime is 1.
-So there is something like 70, 80 million UTXOs that are created in block N and then spent in block N plus 1.
+So there is something like 70, 80 million UTXOs that are created in block n and then spent in block n plus 1.
 And then it goes down in sort of a power law from there.
 The fun part is these bumps.
 So there's a bump here, a bump there, and a bump there that are very distinct.
 This one is six, because everyone knows, Satoshi said that six blocks is how long you wait before you immediately spend your new coins.
 I don't know.
 So it's not that people are accepting payment after six blocks and sending the shoes they're selling, it's that.
-
-Speaker 1: 00:57:48
-
 AUDIENCE MEMBER 2.
-
-Speaker 0: 00:57:49
-
 They're doing it.
 Yeah, they've got program.
 Yeah, you've got a script.
@@ -1508,10 +1449,10 @@ So yeah, there's definitely overlap there.
 Speaker 2: 01:06:46
 
 Cool.
-
-Speaker 1: 01:06:48
-
 I have a question.
+
+Speaker 1: 01:06:49
+
 Yeah.
 The future prediction stuff, can that be compressed somehow and then put in the source code?
 Like as in, just int saying, oh, maybe catch this, don't catch that.
@@ -1543,15 +1484,8 @@ You want the full thing.
 You could just have a smaller, sparse set where you say, hey, I'm going to encode all of the outputs that live less than 10 blocks.
 And that might be pretty small.
 You might be able to get that into a couple of megs.
-
-Speaker 2: 01:07:53
-
 I don't know.
-But yeah,
-
-Speaker 0: 01:07:54
-
-I haven't.
+But yeah, I haven't.
 There's so many cool things to explore in set reconciliation, and how to compress these things, and how to send these things.
 It gets complicated.
 So right now, I'm doing a fairly straight, simple way.
@@ -1561,13 +1495,16 @@ I'm like, you can definitely do this better, but just get it working for now.
 Speaker 3: 01:08:12
 
 So it would be cryptographic security assumption or just hash resistance?
+
+Speaker 4: 01:08:17
+
 Like collision resistance?
 
 Speaker 0: 01:08:18
 
 Yeah.
 There's a sort of hand-wavy part at the end of the paper.
-I'm pretty sure you can not rely on collision resistance and only rely on pre-image resistance, in which case you can reduce the output sizes of the hashes.
+I'm pretty sure you can not rely on collision resistance, and only rely on pre-image resistance, in which case you can reduce the output sizes of the hashes.
 But people are like, no, come on, don't do that.
 That's scary.
 But I might want to try to really make a good argument slash proof, if I have a minute.
@@ -1579,7 +1516,7 @@ So here's the fake one, Here's the real one.
 If the real one is unknown before it's confirmed, you basically have to mine a block to find a real one to match against your fake ones.
 And it increases the difficulty of the collision attack enormously.
 Well, by like 2 to the, it ends up being 2 to the 35, not 2 to the 70 or so.
-But still enough, and you can make economic arguments that, well, any attacker that could perform this attack on the U3XO accumulator wouldn't be a 51% attacker.
+But still enough, and you can make economic arguments that, well, any attacker that could perform this attack on the Utrex O accumulator wouldn't be a 51% attacker.
 It would be like a 99.999999% attacker.
 They need more hash power.
 They need a billion times more hash power than the entire network has to do it.
@@ -1645,7 +1582,7 @@ Also, the main benefit is that it helps sort of lazy SPV people.
 I don't know.
 So I'm not pushing for that.
 
-Speaker 1: 01:11:49
+Speaker 1: 01:11:50
 
 You're saying it's so good that everyone's just going to stop doing full nodes, power clusters.
 
@@ -1658,7 +1595,7 @@ And that helps.
 Peter Wuil was saying that helps with some denial of service attacks.
 I don't think it's necessary, but it could prevent certain types of DOS attacks, I think.
 
-Speaker 1: 01:12:18
+Speaker 3: 01:12:18
 
 What's the specific problem that you solve in Bitcoin core or in the size of chain state?
 
@@ -1672,7 +1609,7 @@ But long term, it's really nice to say, hey, we've got now a log n representatio
 In practice, what I think it'll do is it'll speed things up, especially of a spinning hard drive.
 Because right now, if you have a spinning hard drive and you're doing IBD, your CPU is at like 5%, 10%, and you're just waiting on the disk.
 
-Speaker 1: 01:12:47
+Speaker 3: 01:12:47
 
 Do you want Bitcoin's consensus protocol, ultimately, to change?
 
@@ -1690,7 +1627,7 @@ Speaker 1: 01:13:15
 
 So this question is about the common articles generally, not the future EXO.
 
-Speaker 4: 01:13:22
+Speaker 5: 01:13:22
 
 Are there common articles that are not that the order doesn't matter, the order of insertion to the?
 
@@ -1735,6 +1672,6 @@ It gets better, But there's still limitations.
 OK, so thanks.
 And if there's more questions, let me know.
 
-Speaker 1: 01:16:18
+Speaker 2: 01:16:45
 
-Music Music Music Music Music Music you
+You you
