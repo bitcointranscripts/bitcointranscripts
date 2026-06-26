@@ -1,0 +1,5 @@
+---
+title: Sovereignty Edition
+---
+
+{{< childpages >}}
