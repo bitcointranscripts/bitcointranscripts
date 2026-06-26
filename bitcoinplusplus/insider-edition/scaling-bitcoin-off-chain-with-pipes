@@ -1,0 +1,649 @@
+---
+title: ' Scaling bitcoin off-chain with PIPEs'
+speakers: null
+tags: null
+source_file: https://youtu.be/IJl3z6ZhSVQ
+media: https://youtu.be/IJl3z6ZhSVQ
+categories: null
+date: '2026-03-20'
+youtube:
+  description: 'We talked to Misha Komarov about Bitcoin PIPEs, which enables covenants
+    and ZKP without a soft fork via off-chain computation. Filmed last year in Istanbul
+    at Bitcoin++ Scaling Edition.
+
+
+    Sign up for one of our upcoming dev conf at https://btcpp.dev
+
+
+    Website: https://btcpp.dev/
+
+    X: https://x.com/btcplusplus
+
+    NOSTR: https://iris.to/npub1dwah6u025f2yy9dgwlsndntlfy85vf0t2eze5rdg2mxg99k4mucqxz7c52
+
+
+    #btcplusplus #devconf #bitcoineducation #bitcoinconf #bitcoindev #bitcoinconference
+    #bitcoin #cypherpunks'
+  tags:
+    - btcplusplus
+    - devconf
+    - bitcoineducation
+    - bitcoinconf
+    - bitcoindev
+    - bitcoinconference
+    - bitcoin
+    - cypherpunks
+    - niftynei
+  categories:
+    - Science & Technology
+transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+---
+
+Speaker 0: 00:00:00
+
+How's it going Misha?
+
+Speaker 1: 00:00:01
+
+It's good.
+
+Speaker 0: 00:00:03
+
+We're in Istanbul today.
+I think it looks like Istanbul.
+
+Speaker 1: 00:00:08
+
+I'm not sure.
+It looks like it.
+
+Speaker 0: 00:00:12
+
+I know people in the camera can't see but we are sitting in front of what I like to think is the nicest view in Istanbul maybe.
+Yeah.
+Not bad.
+Is this your first time in Istanbul?
+
+Speaker 1: 00:00:24
+
+No, I mean been here several times.
+
+Speaker 0: 00:00:27
+
+Been here a few times, that's cool.
+We're here for Bitcoin++ and we were just talking about how you're here giving a research update on a project you've been working on for how long now?
+
+Speaker 1: 00:00:38
+
+I guess it's, I mean, officially since October last year, I would say.
+So it's like it's been a year and a half, I guess.
+
+Speaker 0: 00:00:45
+
+Okay.
+Yeah,
+
+Speaker 1: 00:00:46
+
+so it's kind of that.
+
+Speaker 0: 00:00:47
+
+So about a year.
+Yeah.
+What was the, what's the project that you're working on?
+
+Speaker 1: 00:00:52
+
+Yeah.
+So what's what's going on on our side is basically we're trying to figure out the way to define confidence and to verify the keys on Bitcoin without any software or without any changes.
+Yeah.
+No software.
+We're not getting it.
+Relax.
+It's like our arguing about the software is pointless.
+So we're trying to figure out the way, and we call this way Bitcoin pipes.
+
+Speaker 0: 00:01:16
+
+Pipes.
+
+Speaker 1: 00:01:16
+
+Yeah, effectively.
+And like it's, again, like it's an attempt to apply like a Fustopia level cryptography to induce conditional decryption of a key or of a signature to indicate to indicate the correct verification or the correct execution of certain computation off-chain from Bitcoin, non-interactively.
+
+Speaker 0: 00:01:39
+
+Okay, so you're moving the computation off-chain.
+
+Speaker 1: 00:01:42
+
+Yes.
+
+Speaker 0: 00:01:43
+
+What is, so right now, computation is kind of on-chain when you run a script, right?
+And every node that gets a transaction that has a script in it executes the script.
+Using Bitcoin pipes, you're going to try and add more opcodes, is my understanding.
+So expand the range of what's possible to compute using a Bitcoin script, but you're going to make the computation happen not on everyone's computers.
+Where is the computation happening then?
+
+Speaker 1: 00:02:07
+
+So basically, the computation can happen on anybody who's willing to prove that certain computation was done.
+So like it's probably going to be like on the user side or like on the specialized whatever like dedicated hardware a user can outsource the computation to or something.
+So I mean, yes, that's what it is basically.
+
+Speaker 0: 00:02:31
+
+Is this client-side validation?
+Is this in the realm of client-side validation?
+
+Speaker 1: 00:02:36
+
+No. Client-side validation mostly is about attesting that certain state happened on the user side.
+So after that you're submitting some merkle roots or something like hashes so a person can verify that and that they're working with the correct data and things like this.
+In here it's more about, and like also sure, it requires like everybody to have a consensus around the software you're validating the data with, so it's kind of implicit consensus you're having.
+And again, it's kind of the controller or the representer again decides everything, the fate of everything.
+So that's a little bit of a nuance.
+In here, we're not talking about like a client-side validation, we're talking about more like an attempt to...
+Okay, well, there is no specific requirement for this to be done on the client side or something.
+Probably will be done on a wallet side or a front-end application side or something.
+Bitcoin pipes also do not imply, do not require this implicit consensus of software which downloads the data and renders the state or something else.
+And it also doesn't require any interaction between who attests the correctness of a computation.
+It's kind of supposed to be non-interactive.
+So it's pretty far from client-side validation in terms of what does it get you and what does it imply.
+
+Speaker 0: 00:04:16
+
+That's cool.
+So you've been working on this for almost a year now and you just gave a research update which I'm really excited to go watch the recording for when we get back to Texas.
+But what can you give us maybe like a short version of like what the update is, if that makes sense.
+Okay.
+
+Speaker 1: 00:04:34
+
+So, like the initial idea, the initial kind of whatever construction and the endgame construction, I would say, of pipes themselves is that you can define a circuit, you can, you know, kind of encrypt some key, collectively probably, but with some MPC or something.
+You can give the ciphertext to a user or to an application, and you can make the user or like an application to perform some computation.
+For example, concatenation, or multiplication, or something else, you know, some missing opcode computation, or a missing piece of opcode computation.
+And then, basically, get a user or a frontend application to compute either a signature of a certain transaction which is supposed to continue with the execution of a certain application or to decrypt a key which will attest the successful application of this particular ZDP thing.
+Because this happens entirely on the application, on the user side or something else, it doesn't require anybody to talk with each other.
+It's kind of a non-interactive process.
+So that's the end game, how it should work.
+The current research update is like this kind of construction, non-interactivity, requires to have a functional primitive, which is kind of a post-opia level primitive, like functional encryption or witness encryption,
+which is still pretty, you know, kind of still an open problem.
+And sure, there are a lot of like special purpose witness encryption schemes, there are a lot of like special purpose functional encryption schemes, but like none of them fit this purpose.
+So the research update was primarily about how do we go after this functional encryption slash web encryption scheme, which would fit the purpose.
+And it's kind of a little bit of a dive into, it's kind of a little bit of a dive into the life of people who do obscure cryptography.
+Okay.
+
+Speaker 0: 00:06:35
+
+So your research work consists of reading the literature, talking to people, or are you actually like building like toy protocols or primitives?
+
+Speaker 1: 00:06:46
+
+Okay.
+Toy protocols, building, trying to understand what security properties they induce, which performance properties they induce, which properties from the user experience perspective they induce.
+For example, there was a prototype protocol on our side, which it's still an option.
+That's what we effectively called Pipe-C1, is when we tried to induce the conditional decryption, like witness encryption from QFE, from quadratic functional encryption, and then we're like, oh, it might be not really secure, but can we make it secure enough?
+And there was this whole idea that, it still kind of is, there was this whole idea that we could probably just, even the smallest gap between the honest evaluation of the scheme and the malicious evaluation of the scheme, we could amplify it with the size of a witness, like to the point where the malicious execution of the scheme becomes impractical.
+But like what is the evaluation is still practical.
+
+Speaker 0: 00:07:47
+
+Got it.
+That's interesting.
+Yeah.
+
+Speaker 1: 00:07:50
+
+So this kind of stuff.
+Like here we play with assumptions, we play with what the user needs.
+Like what's the cost people are ready to eat?
+
+Speaker 0: 00:07:59
+
+And like what's the- So are there any costs for clients?
+Like, so I know like for DLCs, are you familiar with DLCs?
+Absolutely.
+Okay, yeah.
+So one of the things is like the setup cost is quite high, right?
+They have to accept, there's like a certain amount of time it takes to compute all of the signatures that you have to sign or whatever, and then there's a space requirement of what you have to save in order to have a DLC contract.
+What are the costs, I guess, of using these pipe scripts?
+
+Speaker 1: 00:08:24
+
+Okay.
+
+Speaker 0: 00:08:24
+
+Is it a script or is that the right word?
+
+Speaker 1: 00:08:26
+
+Just pipe.
+Let's call it just pipes.
+Just pipes, okay.
+Like pipe script is a separate thing.
+We'll come to that.
+
+Speaker 0: 00:08:31
+
+Okay.
+
+Speaker 1: 00:08:33
+
+Maybe next year, I guess, but whatever.
+So pipes effectively induce costs, specifically pipes you want, induce quite large costs in terms of what it gets to decrypt the key or decrypt the signature.
+Again, basically because that's the assumption of the scheme itself, when you're inducing the security from this gap.
+So this kind of stuff.
+Basically, this computational complexity is why such a witness-encryption scheme is possible.
+At least theoretically it's possible.
+So that's what it is.
+In terms of like, can we make it cheaper?
+Can we make it more interesting?
+Can we make it like, like, it's beautiful on the client side, on the phone, on like laptop, you know?
+That's effectively why we started working on what we call pipes v2.
+
+Speaker 0: 00:09:31
+
+Okay.
+
+Speaker 1: 00:09:32
+
+Which is supposed to be a little bit less obscure.
+It's supposed to have more classic security definition with like hey the attack cost should be exponential ideally and like the execution should be as cheap as possible.
+
+Speaker 0: 00:09:47
+
+Got it.
+
+Speaker 1: 00:09:48
+
+It's kind of like a push towards two directions to make it more compliant with traditional, with what people traditionally assume when they talk about the product.
+
+Speaker 0: 00:09:56
+
+Got it, okay.
+And sorry if I missed it, but If a client is trying to use a pipe, are they going to have a CPU cost to do the decryption?
+
+Speaker 1: 00:10:06
+
+Yes.
+It's basically a CPU cost.
+
+Speaker 0: 00:10:09
+
+Got it.
+
+Speaker 1: 00:10:09
+
+We do not expect people to use it for a single opcode or something.
+You can for sure.
+You can do that, absolutely.
+But it's just a little bit too expensive.
+So we expect people in the majority of use cases to be induced from the usage, for example, of ZK roll-ups.
+This is how true ZK roll-ups become possible.
+You basically can do the state transition verification within the ZTP, a single transaction, a semestic state transition verification.
+No optimistic games, no whatever.
+Right.
+Yeah.
+No interactivity or something.
+Shut the transaction into the mempool, it's verified.
+That's it.
+You can't undo that.
+
+Speaker 0: 00:10:46
+
+That's cool.
+
+Speaker 1: 00:10:46
+
+That's what it is.
+
+Speaker 0: 00:10:48
+
+So it would solve all this security trade-off assumptions that they're having to make with the BitVM construction, right?
+
+Speaker 1: 00:10:55
+
+Basically.
+Basically.
+
+Speaker 0: 00:10:57
+
+That's cool.
+OK.
+At the cost of making the client have to do a lot of computation?
+
+Speaker 1: 00:11:04
+
+Yes.
+Yes.
+The CPU cost is the downside of this.
+But again, we're working on the V2.
+
+Speaker 0: 00:11:12
+
+Yeah, OK.
+Can you quantify what level the cost is?
+Is it something that someone with a phone could do, or is it like, you need like a GPU, does it have like a dollar value?
+
+Speaker 1: 00:11:23
+
+You'd need a bunch of commercially available servers.
+
+Speaker 0: 00:11:25
+
+Interesting, okay, so that is quite high.
+But you were saying it's not like client-side validation where each client is responsible for doing the validation themselves.
+This is like, you can almost like farm it out to someone else to do the verification for you.
+And once someone's done the verification, is it available, then it becomes widely available for everyone to use, if that makes sense.
+
+Speaker 1: 00:11:45
+
+Once somebody's done the verification, the key is basically decrypted, the key becomes available.
+So like this key, whatever the transaction is being done with this key or like with the signature can be effectively an attestation of the fact that the successful ZKB verification has happened.
+So basically anybody can sign it or anybody can do anything.
+And it's not harmful to even write this private key on the wall.
+Right.
+And sure, please do the transaction for me.
+I don't want to pay the fees.
+
+Speaker 0: 00:12:16
+
+Right, got it.
+Yeah, but basically you need someone to invest in doing the work to decrypt the private key.
+
+Speaker 1: 00:12:21
+
+A little bit, yes.
+
+Speaker 0: 00:12:22
+
+Yeah, but once that happens, the keys can be made widely available.
+It's not like a thing.
+Okay, cool.
+And anyone of course can invest in decrypting it.
+Got it, that's cool.
+Do you have like a, yeah, that is a question.
+So assuming you had access to like, I don't know, these servers, do you have any estimate of like what a cost would be for it?
+Abdel had a talk earlier where he was like, it was like $13 to sync the chain using ZK stuff.
+Do you have a similar number that you've computed?
+
+Speaker 1: 00:12:53
+
+Yeah, we've had some estimations of this for the witness encryption induced from PUC.
+Again, this is like security assumptions of that, again, disclaimer, are not the best ones.
+We're like, we're working on fixing them.
+But there was like an estimation of that.
+In the end of the day, we estimated effectively how much of Bitcoin can you store behind a single pipe, like behind a single pipe of a version 1.
+Okay.
+And we resulted in like that you can store maybe like, I don't know, one hundredth of a Bitcoin, like one percent, like whatever.
+
+Speaker 0: 00:13:26
+
+So it would be, I think, a hundred thousand SATs.
+
+Speaker 1: 00:13:30
+
+Basically.
+Yeah.
+Basically, like at most.
+With the current prices.
+
+Speaker 0: 00:13:33
+
+You said 1 one hundredth or...
+
+Speaker 1: 00:13:35
+
+One hundredth.
+
+Speaker 0: 00:13:36
+
+One hundredth?
+
+Speaker 1: 00:13:36
+
+One divided by a hundred.
+
+Speaker 0: 00:13:39
+
+I think that's one million sats.
+Because there's a hundred million Satoshis in a Bitcoin.
+
+Speaker 1: 00:13:43
+
+So like basically the assumption was made, Basically the assumption for that estimation was made from the fact that you've got to make it impractical for the attacker to try to even mess with this.
+And we've got to make it just cheaper to mine Bitcoin than this.
+Because I mean, again, imagine somebody tried to attack this.
+Will they succeed?
+Sure, they will.
+We know they will because their attack complexity for v1 was supposed to be polynomial.
+We know that they will succeed.
+Sure.
+What they will get?
+They will get something which is worth less, like thousand times, than they've spent on computing this.
+Got it.
+So like, what's the point?
+Right.
+And sure, maybe you can do that just for the sake of messing with the protocol.
+Absolutely.
+
+Speaker 0: 00:14:32
+
+It's economic security, so to speak.
+
+Speaker 1: 00:14:34
+
+Basically, that was supposed to be the thing for v1.
+For v2, it's going to be proper.
+
+Speaker 0: 00:14:41
+
+So economic security is basically, it's more expensive to do the computation than the amount of value you can expect if the computation is successful.
+What is proper security?
+If economic security is not proper, what is proper?
+Just that you're not even able to do the calculation?
+
+Speaker 1: 00:14:56
+
+Yeah, like proper security is exponential attack cost.
+You will not have enough of compute in the universe to like...
+
+Speaker 0: 00:15:03
+
+To do it, which is similar to Bitcoin private keys, right?
+Yeah.
+
+Speaker 1: 00:15:07
+
+So it's going to be basically the same.
+
+Speaker 0: 00:15:08
+
+Cool.
+That's very cool.
+So you just gave a research update on what's going on.
+What's new?
+What's next?
+So you're continuing work.
+Like you kind of mentioned that maybe there would be a script for it at some point in the future, but not currently.
+
+Speaker 1: 00:15:23
+
+Yeah, there is like, since pipes effectively induce, since pipes effectively can induce the extension of script with like necessary opcodes.
+This kind of extends the script itself.
+And this gets you to what you can call, like, you know, we had mini script, we had script, we had tab script, and you have pipe script.
+Pipe script.
+Like an extended set of opcodes you can use or like.
+
+Speaker 0: 00:15:46
+
+C++ almost, I'm sorry.
+
+Speaker 1: 00:15:47
+
+Kind of, kind of, kind of, kind of, kind of,
+kind of, kind of that.
+
+Speaker 0: 00:15:52
+
+For those of you who aren't aware what the difference is, C++ is supposed to be like an extended set of C, right?
+Like,
+
+Speaker 1: 00:15:59
+
+yeah.
+So it's kind of like that, like pipe script.
+So when you have jumps, when you have like where you have...
+
+Speaker 0: 00:16:04
+
+Script++, sorry.
+Yeah,
+
+Speaker 1: 00:16:06
+
+Script++.
+Like, well, where you have jumps, where you have like multiplications, where you have like count or anything else you want and it's not harmful.
+
+Speaker 0: 00:16:15
+
+Got it.
+Yeah.
+Cool.
+I'm trying to think if there's any, so if people are interested in learning more or maybe are you looking for contributors?
+Like, is there, is there ways people get involved in it or learn more about your research and what you're working on?
+Where would you send people, I guess?
+
+Speaker 1: 00:16:31
+
+Well, I mean, at this point, it's just we're publishing stuff for the website and like then it's just sitting there.
+So I mean, that's kind of that.
+Okay.
+We have a little chat like set up for like public involvement.
+But again, trying to be We're trying to be careful because it's easy to hype people up for witness encryption.
+But when you're like, you know, you got to actually do the thing before you hype people up.
+You got to provide people with like the actual security.
+
+Speaker 0: 00:17:00
+
+You said there's a chat.
+Is that on Discord?
+Is that on Telegram?
+
+Speaker 1: 00:17:03
+
+Just Telegram.
+
+Speaker 0: 00:17:04
+
+It's on Telegram.
+Yeah, I was talking to Robin earlier and he was joking that everyone thinks on Telegram these days.
+
+Speaker 1: 00:17:10
+
+Yeah.
+
+Speaker 0: 00:17:10
+
+It sounds like you guys are no exception to that.
+Cool.
+I'll see if I can find the link and put it in the show notes, so people who are interested.
+And then for witness encryption, that's a new term that I'm not familiar with.
+I'm sure many Bitcoiners probably aren't very familiar with it either.
+Is there a place that people can learn more about it?
+Or what's the best way to get into the witness encryption rabbit hole if someone's interested in learning more about that?
+
+Speaker 1: 00:17:38
+
+Honestly speaking, it all starts with GARC and Dan Bonet papers.
+Okay, all right.
+Is that?
+
+Speaker 0: 00:17:45
+
+Dan Bonet papers.
+Who is GARC?
+Is GARC a protocol?
+
+Speaker 1: 00:17:48
+
+No, GARC is one of the inventors.
+
+Speaker 0: 00:17:50
+
+One of the inventors.
+Okay.
+It sounds a lot like, you know, you could like see how that's like a GARC thing.
+
+Speaker 1: 00:17:54
+
+Or like Frank Waters and this kind of people.
+
+Speaker 0: 00:17:56
+
+No way.
+
+Speaker 1: 00:17:56
+
+They did a lot of good, they did a lot of good paper on that.
+They did a lot of good papers on that.
+
+Speaker 0: 00:18:00
+
+Cool.
+So. He didn't name something after himself?
+GARC?
+
+Speaker 1: 00:18:03
+
+No. No, they did not.
+They did not.
+I mean, Rachel Lynn or like recently, recently I saw people popping up here and there with like doing interviews with Rachel Lynn about I.O. And things.
+She's also one of the godfathers of this.
+
+Speaker 0: 00:18:17
+
+Okay, cool.
+Maybe we can get her to the next conference or event.
+So you're here in Istanbul this week.
+Are you going to go to any other events while you're here?
+What's next on your conference schedule?
+Is there somewhere people can see you talk next?
+
+Speaker 1: 00:18:32
+
+Honestly speaking, it's the primary thing I came by here.
+I mean, basically because that's the primary thing we're occupied with.
+Like this, though.
+Just give people a sense about what's going on.
+Because it's been some time.
+
+Speaker 0: 00:18:46
+
+Yeah, definitely.
+Cool.
+Well, we're really glad you're here and hope to see you at another event sometime soon or hear an update on Pipes or maybe a launch announcement.
+
+Speaker 1: 00:18:55
+
+Yeah.
+
+Speaker 0: 00:18:55
+
+Oh, what did you call it?
+A splash.
+Yeah, a splash.
+We got a splash to make.
+So cool.
+Thank you, Misha.
+Yeah, all right.
+
+Speaker 1: 00:19:00
+
+Yeah, right.
