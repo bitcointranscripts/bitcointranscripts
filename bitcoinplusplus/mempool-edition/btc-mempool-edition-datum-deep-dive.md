@@ -1,36 +1,20 @@
 ---
-title: ' BTC++ Mempool Edition: DATUM Deep Dive '
-speakers: null
-tags: null
+title: 'BTC++ Mempool Edition: DATUM Deep Dive'
+speakers:
+  - Jason Hughes
+date: '2025-07-03'
+tags:
+  - mining
+  - pooled-mining
+  - stratum-v2
+  - scalability
+  - security
+  - btcplusplus
+categories:
+  - conference
 source_file: https://youtu.be/FJ0Hye52Ib8
 media: https://youtu.be/FJ0Hye52Ib8
-categories: null
-date: '2025-07-03'
-youtube:
-  description: 'Sign up for one of our upcoming dev conf at https://btcpp.dev
-
-
-    Website: https://btcpp.dev/
-
-    X: https://x.com/btcplusplus
-
-    NOSTR: https://iris.to/npub1dwah6u025f2yy9dgwlsndntlfy85vf0t2eze5rdg2mxg99k4mucqxz7c52
-
-
-    #btcplusplus #devconf #bitcoineducation #bitcoinconf #bitcoindev #bitcoinconference
-    #bitcoin #cypherpunks'
-  tags:
-    - btcplusplus
-    - devconf
-    - bitcoineducation
-    - bitcoinconf
-    - bitcoindev
-    - bitcoinconference
-    - bitcoin
-    - cypherpunks
-    - niftynei
-  categories:
-    - Science & Technology
+summary: Jason Hughes (VP of Engineering at Motion Mining, creator of DATUM at Ocean) presents a deep dive into DATUM — Decentralized Alternative Templates for Universal Mining — an MIT-licensed, C-based protocol that lets individual miners build their own block templates and submit blocks directly to the network while still earning pooled rewards, built from scratch rather than on Stratum V2 due to SV2's decade of development with no decentralized adoption, its centralized design assumptions, and firmware-level coinbase size constraints that SV2 does not handle; the talk covers the Datum Gateway's Stratum V1 server, its encrypted handshake with Datum Prime via libsodium, the CoinBaser command for non-custodial payout list negotiation, backwards proof-of-work validation, spot-check template integrity, and the aggregation benefits that cut bandwidth from 200 GB/day for 8,000 direct connections to roughly 8 GB/day, with over 200 mainnet blocks already mined by the software as of the talk.
 transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
 ---
 
