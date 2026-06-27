@@ -679,7 +679,7 @@ My feeling is that we have to move towards things like this.
 And that's also what motivates me to work on this.
 So yeah, that concludes my presentation.
 Thank you very much for listening.
-If you're interested in talking more about this or just discussing it with me or whatever, please join me on Telegram at a channel I created called t.me.spacechains.
+If you're interested in talking more about this or just discussing it with me or whatever, please join me on Telegram at a channel I created called t.me/spacechains.
 So you can go there, you can chat with me and other people who are interested in this on Telegram and maybe we can discuss kind of what this potential future for Bitcoin might look like.
 Thank you.
 
