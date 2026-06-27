@@ -3,20 +3,20 @@ title: 'Inside the "Kernel Project" & the Bitcoin Core Development Process w/ Co
 speakers:
   - Stéphan
   - Shinobi
+date: '2026-02-03'
 tags:
+  - bitcoin-core
   - libbitcoinkernel
   - multiprocess
   - stratum-v2
   - fuzz-testing
   - build-system
 categories:
-  - Developer Tools
-  - Mining
-date: '2026-02-03'
+  - podcast
 source_file: https://youtu.be/lEK_cej4AjE?si=VN72CMseVf64wzr5
 media: https://youtu.be/lEK_cej4AjE?si=VN72CMseVf64wzr5
+summary: Shinobi (Bitcoin Magazine) interviews Stéphan, a Bitcoin Core developer at Brink, about two long-running infrastructure projects reshaping Bitcoin Core — libbitcoinkernel, which extracts consensus validation logic into a modular publicly-usable library, and multiprocess, which separates the node, wallet, and GUI into isolated processes communicating over IPC. Stéphan traces both projects' progress, highlighting how the Stratum V2 mining interface shipped in v29 gave multiprocess a concrete real-world use case, explains how cross-module complexity and unclear isolation boundaries slow PR review and stall contributors, and argues that foundational maintenance work — better build systems (CMake migration), fuzz testing infrastructure, and clean module boundaries — is essential prerequisite investment for safely shipping future protocol upgrades.
 transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
-summary: Stéphan (Core Developer at Brink) and Shinobi discuss two long-running Bitcoin Core architecture projects. The kernel project (libbitcoinkernel) extracts Bitcoin's consensus validation logic into a standalone library so external projects can use it without risking consensus divergence — moving this code is risky because any subtle behaviour change could cause a fork. The multiprocess project separates Bitcoin Core into distinct processes (node, wallet, GUI) with well-defined public interfaces, enabling safer development, better tooling and CI, and cleaner integrations like Stratum V2 mining interfaces. The conversation also covers fuzzing and testing infrastructure, cross-module complexity, and the case for long-term maintenance work over new features.
 ---
 
 ## Introduction to Bitcoin Core & Kernel Project
@@ -127,9 +127,8 @@ So Bitcoin Core is an application that does a lot of things at the same time.
 So I think the initial outline of that project was to have a separate process to run the wallet, to run the node, and to run the GUI.
 Those were the three main components, where for example, you could run your node on your remote server and run GUI locally.
 You could spin it up and down how you wanted to.
-So it enables certain new kinds of functionality and it also offers security and safety benefits that process isolation offer.
-It was a very ambitious project.
-And so it took a while to be developed and especially to be reviewed.
+So it enables certain new kinds of functionality, and it also offers security and safety benefits that process isolation offer.
+It was a very ambitious project, And so it took a while to be developed and especially to be reviewed.
 And so it kind of became inactive.
 Well, this is before my time, but quite a few years ago.
 Until we had a new use case pop up about a year ago or so, because there was, there's a lot of work happening on Stratum V2, the upgrade of the mining pool protocol to help mining pools communicate with hashers.
@@ -192,7 +191,7 @@ And that is also one of my personal goals for the future, is to make sure that e
 
 Speaker 0: 00:13:19
 
-Are there other big areas of the code base or projects you think are worth mentioning?
+And I guess, are there other big areas of the code base or projects you think are worth mentioning?
 
 Speaker 1: 00:13:25
 
@@ -208,7 +207,8 @@ We also have a lot of effort focusing on testing these years.
 We have our unit tests and our functional tests, but then also a rather recent focus has been the first testing, which has been getting a lot of attention in recent years to basically, in a smart way, hammer the system with all kinds of possible inputs and see what kind of output it creates and see if that can crash the application, which helps you catch a whole range of issues that are just very difficult to do with manual testing because we're humans and we don't see all the options all the time.
 The wallet is another big component of BigConcord.
 We also have a visual user interface, the GUI, that helps people that don't want to run BigConCore in their command line to give them a bit of an easier access into the software.
-And we have some other more utility like software, for example, some indexes that you can build with BigConCore for common stats, for addresses, And I think I'm probably forgetting something, but I think top of mind is roughly the main areas of work.
+And we have some other more utility like software for example, some indexes that you can build with BigConCore for common stats for addresses.
+And I think I'm probably forgetting something, but I think top of mind is roughly the main areas of work.
 
 ## Cross-Module Complexity in Core
 
