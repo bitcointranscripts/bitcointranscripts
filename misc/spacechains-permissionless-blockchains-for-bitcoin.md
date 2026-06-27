@@ -471,7 +471,7 @@ And I guess I should note this `sighash_anyprevout` was not intended to do the c
 So it's actually kind of cool.
 And this is something that Anthony Towns taught me.
 So yeah, I'll take you through it, kind of how it works.
-So imagine just a regular output, a very simple one where there's a OP key and a CHECKSIG
+So imagine just a regular output, a very simple one where there's a pubkey and a CHECKSIG
 So the way to spend this would be with a signature, right?
 So when you spend it, you just put the signature in the input script and the signature signs the transaction signing and the transaction it's creating and the previous transaction is trying to spend, essentially.
 So what happens if we take the signature and we just move it, right?
