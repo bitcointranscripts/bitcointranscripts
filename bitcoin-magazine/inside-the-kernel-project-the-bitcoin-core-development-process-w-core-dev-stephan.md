@@ -1,57 +1,21 @@
 ---
-title: " Inside the \"Kernel Project\" & the Bitcoin Core Development Process w/ Core\
-  \ Dev St\xE9phan"
-speakers: null
-tags: null
+title: 'Inside the "Kernel Project" & the Bitcoin Core Development Process w/ Core Dev Stéphan'
+speakers:
+  - Stéphan
+  - Shinobi
+date: '2026-02-03'
+tags:
+  - bitcoin-core
+  - libbitcoinkernel
+  - multiprocess
+  - stratum-v2
+  - fuzz-testing
+  - build-system
+categories:
+  - podcast
 source_file: https://youtu.be/lEK_cej4AjE?si=VN72CMseVf64wzr5
 media: https://youtu.be/lEK_cej4AjE?si=VN72CMseVf64wzr5
-categories: null
-date: '2026-02-03'
-youtube:
-  description: "Bitcoin Core doesn\u2019t stand still even if consensus rules don\u2019\
-    t change. In this episode, St\xE9phan (Core Developer at Brink) explains how the\
-    \ Kernel and multiprocess projects are reshaping Bitcoin Core for long-term reliability.\
-    \ From modular validation logic to safer development workflows, this conversation\
-    \ shows why maintenance work matters. Hosted by Shinobi of Bitcoin Magazine.\n\
-    \n#BitcoinCore #BitcoinDevelopment #BitcoinKernel \n\n\u2B50\uFE0F\u2694: SIGN\
-    \ UP WITH DUELBITS TODAY FOR A CHANCE TO WIN UP TO 2 BTC: \U0001F449 https://bm.b.tc/YT-Duelbits\
-    \ #ad \n\n\U0001F536 Shinobi - Technical Editor, Bitcoin Magazine\n\U0001F536\
-    \ St\xE9phan- Core Developer at Brink\n\nChapters: \n 00:00 \u2013 Introduction\
-    \ to Bitcoin Core & Kernel Project\n 02:05 \u2013 Why Moving Consensus Code Is\
-    \ So Risky\n 04:00 \u2013 Public Interfaces and Real-World Use Cases\n 06:00 \u2013\
-    \ Tooling, CI, and Developer Experience\n 07:20 \u2013 Multiprocess Architecture\
-    \ Explained\n 09:00 \u2013 Mining Interfaces and Stratum V2\n 11:00 \u2013 Why\
-    \ Bitcoin Core Must Evolve\n 13:00 \u2013 Validation, Testing, and Fuzzing\n 15:10\
-    \ \u2013 Cross-Module Complexity in Core\n 17:40 \u2013 Long-Term Maintenance\
-    \ vs New Features\n 20:10 \u2013 Building Bitcoin for the Next Decades\n 22:30\
-    \ \u2013 Closing Thoughts on Bitcoin Core\u2019s Future\n\n#BitcoinMining #StratumV2\
-    \ #BitcoinInfrastructure #BitcoinSoftware #OpenSourceBitcoin #BitcoinEngineering\
-    \ #BitcoinMagazine #BitcoinConference #BitcoinNodes #BitcoinSecurity\n\nDISCLAIMER:\
-    \ The views and opinions expressed in this show are those of the participants\
-    \ and do not necessarily reflect the official policy or position of BTC Inc.,\
-    \ Bitcoin Magazine, or any affiliated entities. This content is provided for informational\
-    \ and educational purposes only and should not be construed as investment, legal,\
-    \ tax, or accounting advice. Nothing contained in this show constitutes a solicitation,\
-    \ recommendation, endorsement, or offer to buy or sell any securities or financial\
-    \ instruments. Viewers should consult their own advisors before making financial\
-    \ or business decisions."
-  tags:
-    - Bitcoin Core
-    - Bitcoin Core development
-    - Bitcoin Kernel project
-    - Bitcoin multiprocess
-    - Bitcoin validation logic
-    - Bitcoin modularity
-    - Bitcoin software maintenance
-    - Bitcoin mining interface
-    - Stratum V2
-    - Bitcoin developer tooling
-    - Bitcoin Core architecture
-    - Bitcoin testing infrastructure
-    - Bitcoin consensus safety
-    - Brink Bitcoin
-  categories:
-    - News & Politics
+summary: Shinobi (Bitcoin Magazine) interviews Stéphan, a Bitcoin Core developer at Brink, about two long-running infrastructure projects reshaping Bitcoin Core — libbitcoinkernel, which extracts consensus validation logic into a modular publicly-usable library, and multiprocess, which separates the node, wallet, and GUI into isolated processes communicating over IPC. Stéphan traces both projects' progress, highlighting how the Stratum V2 mining interface shipped in v29 gave multiprocess a concrete real-world use case, explains how cross-module complexity and unclear isolation boundaries slow PR review and stall contributors, and argues that foundational maintenance work — better build systems (CMake migration), fuzz testing infrastructure, and clean module boundaries — is essential prerequisite investment for safely shipping future protocol upgrades.
 transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
 ---
 

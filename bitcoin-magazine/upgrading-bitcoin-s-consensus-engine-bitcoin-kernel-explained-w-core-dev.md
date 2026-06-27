@@ -1,57 +1,20 @@
 ---
-title: 'Upgrading Bitcoin''s Consensus Engine: Bitcoin Kernel Explained w/ Core Dev'
-speakers: null
-tags: null
+title: "Upgrading Bitcoin's Consensus Engine: Bitcoin Kernel Explained w/ Core Dev"
+speakers:
+  - Sedited
+  - Shinobi
+date: '2026-02-04'
+tags:
+  - bitcoin-core
+  - libbitcoinkernel
+  - multiprocess
+  - security
+  - refactoring
+categories:
+  - podcast
 source_file: https://youtu.be/HDJqsL-f9DA?si=18ZW4fdnojMHEj5Y
 media: https://youtu.be/HDJqsL-f9DA?si=18ZW4fdnojMHEj5Y
-categories: null
-date: '2026-02-04'
-youtube:
-  description: "The Bitcoin Kernel project is one of the most misunderstood developments\
-    \ in Bitcoin Core. In this conversation, Shinobi and Sedited explain how isolating\
-    \ validation logic increases flexibility, improves security, and enables alternative\
-    \ node implementations. From multi-process architecture to formal protocol specifications,\
-    \ this episode covers why kernel development matters now. \n\n#Bitcoin #BitcoinDevelopment\
-    \ #BitcoinCore\n\n\u2B50\uFE0F\u2694: SIGN UP WITH DUELBITS TODAY FOR A CHANCE\
-    \ TO WIN UP TO 2 BTC: \U0001F449 https://bm.b.tc/YT-Duelbits #ad \n\n\U0001F536\
-    \ Shinobi - Technical Editor, Bitcoin Magazine\n\U0001F536 Sedited \u2013 Bitcoin\
-    \ Core Developer\n\nChapters: \n 00:00 \u2013 Why Bitcoin Consensus Isolation\
-    \ Matters\n 04:58 \u2013 Why \"libconsensus\" Failed\n 08:01 \u2013 Kernel vs\
-    \ Multi-Process Bitcoin Core\n 10:55 \u2013 Can Developers Build Full Nodes With\
-    \ the Kernel Today?\n 12:25 \u2013 Real-World Kernel Adoption Outside Bitcoin\
-    \ Core\n 14:05 \u2013 How Bitcoin Kernel Validates Blocks\n 16:26 \u2013 Does\
-    \ the Kernel Centralize Power?\n 19:41 \u2013 Competition, Forking, and Consensus\
-    \ Safety\n 21:19 \u2013 Could Bitcoin Ever Have a Formal Specification?\n 24:29\
-    \ \u2013 The Future of Bitcoin Kernel Development\n\n#BitcoinKernel #ConsensusRules\
-    \ #BitcoinProtocol #NodeImplementations #BitcoinEngineering #BitcoinMagazine #OpenSourceBitcoin\
-    \ #DecentralizedSystems #BitcoinValidation #BitcoinInfrastructure #BitcoinBuilders\n\
-    \nDISCLAIMER: The views and opinions expressed in this show are those of the participants\
-    \ and do not necessarily reflect the official policy or position of BTC Inc.,\
-    \ Bitcoin Magazine, or any affiliated entities. This content is provided for informational\
-    \ and educational purposes only and should not be construed as investment, legal,\
-    \ tax, or accounting advice. Nothing contained in this show constitutes a solicitation,\
-    \ recommendation, endorsement, or offer to buy or sell any securities or financial\
-    \ instruments. Viewers should consult their own advisors before making financial\
-    \ or business decisions."
-  tags:
-    - Bitcoin Kernel
-    - Bitcoin Core development
-    - Bitcoin consensus
-    - libconsensus
-    - Bitcoin validation logic
-    - Bitcoin node implementations
-    - Bitcoin protocol
-    - Bitcoin decentralization
-    - Bitcoin multi process
-    - Bitcoin Core architecture
-    - consensus isolation
-    - Bitcoin developers
-    - Bitcoin Magazine
-    - Shinobi Bitcoin
-    - Sedited Bitcoin Core
-    - Bitcoin kernel library
-  categories:
-    - News & Politics
+summary: Shinobi (Bitcoin Magazine) interviews Sedited, a Bitcoin Core developer, about libbitcoinkernel — successor to the abandoned libconsensus library — which extracts Bitcoin's stateful consensus validation logic (block headers, UTXO database, script verification) into a modular library enabling alternative node implementations to build on Core's proven consensus code directly. Sedited explains why libconsensus failed (limited to script verification, unable to surface the stateful UTXO and disk logic without excessive workarounds), how kernel cleanly demarcates validation from wallet and GUI code to improve review safety, argues that kernel reduces rather than centralizes Core's influence by lowering the barrier for competing implementations (citing Floresta, an ARK test framework, and several full-node projects already integrating it), and closes with the hope that kernel's granular per-function validation interfaces could eventually serve as the foundation for a formal Bitcoin protocol specification.
 transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
 ---
 
