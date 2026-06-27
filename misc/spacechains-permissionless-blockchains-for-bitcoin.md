@@ -89,7 +89,7 @@ So these two features are basically what we're going to try and recreate.
 Ruben Somsen: 00:05:07
 
 So first, creating a blockchain, how do you do that?
-Well, the mechanism I'm using here is called `Blind Merge Mining`.
+Well, the mechanism I'm using here is called `Blind Merged Mining`.
 And essentially, you use BTC, you use the Bitcoin blockchain, or you use the Bitcoins to sort of simulate or emulate mining.
 And what you do, like with Bitcoin, you have proof-of-work, and that's a way to show that you sacrificed something, provably.
 But now that we have Bitcoin, we can do it in other ways, right?
@@ -124,7 +124,7 @@ And he basically, the way he had envisioned it, it requires a soft fork.
 And what I've come up with here is a way to kind of avoid having to do at least a specialized soft fork.
 So you don't need a soft fork that literally is only in order to enable Blind Merged mining.
 You can even do it without a soft fork, but there are some sacrifices and we'll get into that later on.
-But this kind of means essentially that now since there's no longer a specific software required, it's kind of inevitable.
+But this kind of means essentially that now since there's no longer a specific soft fork required, it's kind of inevitable.
 This is going to happen.
 So just to give you a better idea, let me show you with some pictures.
 Imagine the Bitcoin blockchain and this little pink blob is this unique location that people have to bid for.
@@ -185,7 +185,7 @@ It has to be a unique spot, but there can be multiple.
 And finally, this also needs to be pointed out, is that you have to validate the parents, right?
 Or the parents, even, if you have a spacechain inside of a spacechain.
 And the reason for this is that the parents is basically where the fees are being paid.
-And there's actually one more step that I'll get into later that makes a space in a spacechain, which is the perpetual one-way peg and that requires also the parents to be validated.
+And there's actually one more step that I'll get into later that makes a spacechain a spacechain, which is the perpetual one-way peg and that requires also the parents to be validated.
 So the main thing that is preserved here is the censorship resistance.
 Miners lose income if they try to censor anything.
 If they don't want to put your Blind Merged mine spacechain block into the blockchain, they can do so, but if you're the highest paying person, they are losing fees.
@@ -249,7 +249,7 @@ Why would you move over to this chain more than you actually need?
 So what's most likely going to happen is that you're just gonna see roughly how much block space demand there is.
 So let's say there's I don't know one Bitcoin worth of block space in terms of fees every couple of blocks or something like that, then there really will be only one Bitcoin burned in total and that will be sufficient to pay for all the fees for everyone essentially on this chain.
 And it's going to be kind of a loop, right?
-Where the Blind Merged mine, spacechain miners, they get the fees and they sell the fees again and you can use them again, et cetera.
+Where the Blind Merged mined, spacechain miners, they get the fees and they sell the fees again and you can use them again, et cetera.
 So that's kind of where you have your, you know, either through the Lightning network or whatever, when you need some spacecoins to pay for fees, you just buy them or you just hold a little amount, like $5 or $10 or whatever, depending on how popular the spacechain is and how high the fees are.
 So that actually, because it's so uninteresting to speculate on this token, it actually creates a lot of stability for the token.
 Where the only way the token kind of loses value is there's a lot of demand for block space, and then demand for block space goes down again.
@@ -388,7 +388,7 @@ Under the hood, first a few technical things, and then I'll show some pictures, 
 Essentially, what we're creating is a sequence of transactions.
 They're enforced by a covenant and there's a relative lock time of one block.
 So you just have a bunch of transactions and one transaction per block can get into the blockchain.
-We use `sighash_anyonecanpay` plus `sighash_single`.
+We use `SIGHASH_ANYONECANPAY` plus `SIGHASH_SINGLE`.
 What this does is that we have this kind of input and outputs that marks the covenant and then we have other inputs and outputs that come from users that they can add.
 And they add them to pay for fees, and they add them to add their blockchain spacechain hash, basically attach it to this transaction.
 It's RBF enabled, and that means that anyone can pay for inclusion.
@@ -449,25 +449,25 @@ The chain halts and then a hard fork has to occur to restart the chain.
 It's not terrible, preferably this doesn't happen, but nobody loses any money essentially.
 So that's why I think it's acceptable to do it like kind of as a first step.
 But we can do better.
-So one of the better ways would be `op_checktemplateverify`.
+So one of the better ways would be `OP_CHECKTEMPLATEVERIFY `.
 This would also require Child Pays For Parent, RBF as well by the way, both of these, but Child Pays For Parent as well.
 And while that is one way of doing it, and this is a Jeremy Rubin's idea.
 So this is a soft fork that is kind of in the works that may or may not come to Bitcoin.
-I think this is absolutely a perfectly fine way of doing it, but my preference goes to using `sighash_anyprevout`.
-`sighash_anyprevout` is actually a soft fork that is, I think, maybe slightly more likely to make it into Bitcoin or might come to Bitcoin sooner than `op_checktemplateverify`, but who knows.
+I think this is absolutely a perfectly fine way of doing it, but my preference goes to using `SIGHASH_ANYPREVOUT`.
+`SIGHASH_ANYPREVOUT` is actually a soft fork that is, I think, maybe slightly more likely to make it into Bitcoin or might come to Bitcoin sooner than `OP_CHECKTEMPLATEVERIFY`, but who knows.
 And it's actually intended for kind of improving the Lightning Network through something called `eltoo`.
-And It actually turns out that for this specific covenant that I'm trying to create, it is slightly more flexible than `op_checktemplateverify`.
-So `op_checktemplateverify` and `sighash_anyprevout` turns out they can do roughly the same thing.
-`op_checktemplateverify` is usually the cleaner way of doing it.
-But in this case, I think there's an argument to be made for `sighash_anyprevout` because basically the transactions become a little smaller and things are a little bit more flexible and we'll see that in a minute.
-So I'm going to go and take you through the `sighash_anyprevout` method of creating this countenant.
+And It actually turns out that for this specific covenant that I'm trying to create, it is slightly more flexible than `OP_CHECKTEMPLATEVERIFY`.
+So `OP_CHECKTEMPLATEVERIFY` and `SIGHASH_ANYPREVOUT` turns out they can do roughly the same thing.
+`OP_CHECKTEMPLATEVERIFY` is usually the cleaner way of doing it.
+But in this case, I think there's an argument to be made for `SIGHASH_ANYPREVOUT` because basically the transactions become a little smaller and things are a little bit more flexible and we'll see that in a minute.
+So I'm going to go and take you through the `SIGHASH_ANYPREVOUT` method of creating this covenant.
 
 ## Pubkey Spend Transaction (nothing special)
 
 Ruben Somsen: 00:35:49
 
 So I'm starting really simple here.
-And I guess I should note this `sighash_anyprevout` was not intended to do the covenant, but it just turned out that it happens to enable this.
+And I guess I should note this `SIGHASH_ANYPREVOUT` was not intended to do the covenant, but it just turned out that it happens to enable this.
 So it's actually kind of cool.
 And this is something that Anthony Towns taught me.
 So yeah, I'll take you through it, kind of how it works.
@@ -484,13 +484,13 @@ As I told you, the signature is signing two things, and basically the red bars y
 So it signs a new transaction, but it also signs itself.
 That becomes a circular reference.
 The signature itself is signing the signature, and that doesn't work.
-The way to solve this is, well, that's exactly what `sighash_anyprevout` does.
+The way to solve this is, well, that's exactly what `SIGHASH_ANYPREVOUT` does.
 
 ## Covenant Transaction with anyprevout
 
 Ruben Somsen: 00:37:16
 
-What `sighash_anyprevout` does is it allows you to skip signing a transaction ID.
+What `SIGHASH_ANYPREVOUT` does is it allows you to skip signing a transaction ID.
 You're not signing the actual transaction that you're spending, you're just assuming that they fit.
 With this, we've basically solved the issue, the circular reference.
 And now it actually works out, where you already have the signature of the next transaction in the previous transaction.
@@ -519,11 +519,11 @@ That means that it's already determined what the next transaction is going to be
 Ruben Somsen: 00:38:30
 
 And from this point on, we add the user input and user output.
-And the nice thing is that the `sighash_anyprevout` does two things.
+And the nice thing is that the `SIGHASH_ANYPREVOUT` does two things.
 Because the TXID is not signed, it also means that the TXID doesn't change when a user adds their input and output, or rather it does change, but it doesn't matter.
 It doesn't invalidate the signature.
 That works out perfectly.
-Here, it's important to note that the user input does sign the entire transaction and doesn't do a `sighash_anyprevout` or something like that.
+Here, it's important to note that the user input does sign the entire transaction and doesn't do a `SIGHASH_ANYPREVOUT` or something like that.
 The reason for that is, well, yeah, I'm not sure if that matters specifically, but what you need is you need to make sure that the entire sequence of transactions can be replayed so that people who were bidding but didn't get into the blockchain then still get into the blockchain, but in a way that's not actually a valid block.
 So that's not possible because the entire transaction is signed.
 So the TXID at that point for at least the user input and output is basically determined and cannot change.
@@ -600,7 +600,7 @@ And then Bob, who actually wants to have this contract, he wants to have the Bit
 And 20k is exactly what one Bitcoin is worth.
 So on the output side, there's 30k in total, obviously.
 So the question is, who gets the 30k and when?
-So the first condition is if Bob receives one Bitcoin on the Bitcoin blockchain and remember like I said this can be verified right 
+So the first condition is if Bob receives one Bitcoin on the Bitcoin blockchain and remember like I said this can be verified right.
 The space chain is aware of what happens on the Bitcoin blockchain.
 So if this actually happened and Bob received the Bitcoin, then Alice can claim the full 30K.
 So she gets her 10K back and the 20K that was originally the price of the Bitcoin.
@@ -650,7 +650,7 @@ Somebody could issue a federated two-way peg on there if they feel so inclined, 
 So then we maybe have to use the Tether chain that I just described, where you have some sort of DEX thing, allowing people to basically use the Tether to move in and out of fiat without using an exchange.
 Then we might have some kind of experimental sidechain technology that does something weird where there's actually one chain that connects to some other chain, a bunch of other chains maybe in a way that doesn't require you to validate all the chains, only the chains you're interested in, but still somehow you have some two-way peg between them.
 I may or may not be working on an idea like that, but that will be for another presentation.
-And then maybe finally, you will have some kind of DNS chain where you may be like a .com or something where you store your URLs and you sell them onwards to other people.
+And then maybe finally, you will have some kind of DNS chain where maybe it's like a .com or something where you store your URLs and you sell them onwards to other people.
 And what you can do is you can kind of like, you can chain these chains.
 And as I said earlier, what happens is that the children always have to validate the parents.
 So DNS number three is kind of, you have to validate DNS number two and DNS number one and the spacechain in the middle and the Bitcoin blockchain, all of that.
@@ -673,7 +673,7 @@ I think it's a really cool project, but it still utilizes the Bitcoin blockchain
 And as block space becomes more scarce, I think those kinds of use cases become priced out.
 Right?
 Where here you can create a, you know, let's say USD Tether blockchain, where you can still have cheap fees because you can even create 10 USD Tether blockchains if you wanted.
-As opposed to doing USD Tether as a color coin on the Bitcoin blockchain, where if you want to move your use the tether, you have to pay really high fees because the Bitcoin block space is so scarce.
+As opposed to doing USD Tether as a color coin on the Bitcoin blockchain, where if you want to move your USD Tether, you have to pay really high fees because the Bitcoin block space is so scarce.
 So that's roughly kind of my thinking.
 My feeling is that we have to move towards things like this.
 And that's also what motivates me to work on this.
