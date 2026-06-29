@@ -647,7 +647,7 @@ So then maybe you have a confidential assets spacechain, which maybe make it a l
 In this chain, you can create your own assets.
 They can be confidential, so you don't really see the history of it.
 Somebody could issue a federated two-way peg on there if they feel so inclined, et cetera.
-So then we maybe have to use the Tether chain that I just described, where you have some sort of DEX thing, allowing people to basically use the Tether to move in and out of fiat without using an exchange.
+So then we maybe have to use the Tether chain that I just described, where you have some sort of DEX thing, allowing people to basically use USDT Tether to move in and out of fiat without using an exchange.
 Then we might have some kind of experimental sidechain technology that does something weird where there's actually one chain that connects to some other chain, a bunch of other chains maybe in a way that doesn't require you to validate all the chains, only the chains you're interested in, but still somehow you have some two-way peg between them.
 I may or may not be working on an idea like that, but that will be for another presentation.
 And then maybe finally, you will have some kind of DNS chain where maybe it's like a .com or something where you store your URLs and you sell them onwards to other people.
