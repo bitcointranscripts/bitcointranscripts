@@ -673,7 +673,7 @@ I think it's a really cool project, but it still utilizes the Bitcoin blockchain
 And as block space becomes more scarce, I think those kinds of use cases become priced out.
 Right?
 Where here you can create a, you know, let's say USD Tether blockchain, where you can still have cheap fees because you can even create 10 USD Tether blockchains if you wanted.
-As opposed to doing USD Tether as a color coin on the Bitcoin blockchain, where if you want to move your USD Tether, you have to pay really high fees because the Bitcoin block space is so scarce.
+As opposed to doing USD Tether as a colored coin on the Bitcoin blockchain, where if you want to move your USD Tether, you have to pay really high fees because the Bitcoin block space is so scarce.
 So that's roughly kind of my thinking.
 My feeling is that we have to move towards things like this.
 And that's also what motivates me to work on this.
