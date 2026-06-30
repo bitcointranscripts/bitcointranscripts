@@ -13,7 +13,7 @@ speakers:
   - 'Super Testnet'
   - 'niftynei'
 categories:
-  - 'podcast'
+  - 'security-enhancements'
 source_file: 'https://youtu.be/hv9Ckgeal88'
 summary: "In this Bitcoin++ Insider Edition interview, niftynei sits down with developer Super Testnet at the Bitcoin++ Austin conference to discuss the ongoing debate around transaction filtering and arbitrary data on the Bitcoin blockchain. Super Testnet advocates for aggressive mempool filtering to raise the cost of spam — including reducing the OP_RETURN data carrier limit to zero bytes — arguing that Bitcoin's block space should be reserved for financial transactions and that sustained resistance can push spammers onto other networks, much as it did after the Counterparty era. He frames both the spam fight and the broader altcoin debate as part of the same effort to preserve Bitcoin as sound money, and draws a parallel to Satoshi's original restrictive mempool design as a model worth revisiting.\n\nThe second half shifts to privacy improvements on the Lightning Network, where Super Testnet describes his current project to increase the number of routing hops between sender and destination as a straightforward privacy gain, and explains the use of decoy public keys in BOLT 11 invoices to avoid leaking node identity. He also briefly recaps his CoinPool work from Bitcoin++ Florianopolis, noting its potential to improve both privacy and scalability for Lightning users, before previewing upcoming talks on coin pools and privacy at the Bitcoin Conference in Las Vegas."
 ---
