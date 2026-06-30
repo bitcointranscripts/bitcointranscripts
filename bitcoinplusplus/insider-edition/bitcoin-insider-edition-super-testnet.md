@@ -1,29 +1,75 @@
 ---
 title: 'Bitcoin++ Insider Edition: Super Testnet'
-speakers:
-  - Super Testnet
-  - niftynei
-date: '2025-05-22'
+transcript_by: 'mokayaj857 via review.btctranscripts.com'
+media: 'https://youtu.be/hv9Ckgeal88'
+date: '2025-05-21'
 tags:
-  - transaction-relay-policy
-  - mempool
-  - privacy
-  - lightning
-  - routing
-  - btcplusplus
+  - 'mempool'
+  - 'privacy'
+  - 'lightning'
+  - 'routing'
+  - 'btcplusplus'
+speakers:
+  - 'Super Testnet'
+  - 'niftynei'
 categories:
-  - podcast
-source_file: https://youtu.be/hv9Ckgeal88
-media: https://youtu.be/hv9Ckgeal88
-summary: |-
-  In this Bitcoin++ Insider Edition interview, niftynei sits down with developer Super Testnet at the Bitcoin++ Austin conference to discuss the ongoing debate around transaction filtering and arbitrary data on the Bitcoin blockchain. Super Testnet advocates for aggressive mempool filtering to raise the cost of spam — including reducing the OP_RETURN data carrier limit to zero bytes — arguing that Bitcoin's block space should be reserved for financial transactions and that sustained resistance can push spammers onto other networks, much as it did after the Counterparty era. He frames both the spam fight and the broader altcoin debate as part of the same effort to preserve Bitcoin as sound money, and draws a parallel to Satoshi's original restrictive mempool design as a model worth revisiting.
-
-  The second half shifts to privacy improvements on the Lightning Network, where Super Testnet describes his current project to increase the number of routing hops between sender and destination as a straightforward privacy gain, and explains the use of decoy public keys in BOLT 11 invoices to avoid leaking node identity. He also briefly recaps his CoinPool work from Bitcoin++ Florianopolis, noting its potential to improve both privacy and scalability for Lightning users, before previewing upcoming talks on coin pools and privacy at the Bitcoin Conference in Las Vegas.
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'podcast'
+source_file: 'https://youtu.be/hv9Ckgeal88'
+summary: "In this Bitcoin++ Insider Edition interview, niftynei sits down with developer Super Testnet at the Bitcoin++ Austin conference to discuss the ongoing debate around transaction filtering and arbitrary data on the Bitcoin blockchain. Super Testnet advocates for aggressive mempool filtering to raise the cost of spam — including reducing the OP_RETURN data carrier limit to zero bytes — arguing that Bitcoin's block space should be reserved for financial transactions and that sustained resistance can push spammers onto other networks, much as it did after the Counterparty era. He frames both the spam fight and the broader altcoin debate as part of the same effort to preserve Bitcoin as sound money, and draws a parallel to Satoshi's original restrictive mempool design as a model worth revisiting.\n\nThe second half shifts to privacy improvements on the Lightning Network, where Super Testnet describes his current project to increase the number of routing hops between sender and destination as a straightforward privacy gain, and explains the use of decoy public keys in BOLT 11 invoices to avoid leaking node identity. He also briefly recaps his CoinPool work from Bitcoin++ Florianopolis, noting its potential to improve both privacy and scalability for Lightning users, before previewing upcoming talks on coin pools and privacy at the Bitcoin Conference in Las Vegas."
 ---
-
+**
 ## Intro
+Review Guidelines
+To ensure a shared quality of transcripts, please follow the guidelines below
 
+Need help or have questions? Join us on Discord.
+
+Transcription Accuracy
+Correct AI transcription mistakes: Look out for and fix errors made by the AI, particularly with technical terms and Bitcoin-related language. The AI might not fully understand certain audio parts or might not know specific jargon, leading to mistakes.
+
+
+Use backticks for technical terms and equations: When you encounter code-related technical terms or math equations, make sure to put them `inside backticks` to highlight them.
+
+
+Transcription Style
+Use clean verbatim transcription style: Capture the recorded content precisely, removing all unnecessary distractions to improve clarity.
+
+
+Remove distractions and avoid paraphrasing: Focus on the speaker's exact words by removing distractions such as false starts, filler words, stammers, self-corrections, and non-verbal interruptions. Simultaneously, avoid paraphrasing to preserve the original speech's integrity and readability.
+
+
+Transcript Structure
+Maintain the original "one-sentence-per-line" formatting and timestamps.
+
+
+Ensure coherent paragraphing around chapter titles and speaker timestamps.
+
+
+Break text into paragraphs and ensure accurate punctuation for better readability.
+
+
+Chapters
+Break the transcript into manageable segments using your familiarity with the material.
+
+
+Utilize source materials (slides, video description, content) to derive and integrate chapters.
+
+
+Start chapters with H2 formatting, title is automatically rendered as H1.
+
+
+Speaker Attribution
+Accurately attribute speakers, preventing potential mix-ups or merging of dialogue caused by AI transcription errors.
+
+
+Use square brackets for infrequent speaker contributions (e.g. [Audience]: "Hello world").
+
+
+Final Review
+Upon completion, read through the entire transcript for coherence and readability.
+
+
+Leverage your familiarity with the material to identify appropriate tags and chapters.
 Speaker 0: 00:00:00
 
 Hey Super, how's it going?
