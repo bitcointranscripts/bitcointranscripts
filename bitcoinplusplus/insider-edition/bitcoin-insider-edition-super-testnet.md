@@ -2,7 +2,7 @@
 title: 'Bitcoin++ Insider Edition: Super Testnet'
 transcript_by: 'mokayaj857 via review.btctranscripts.com'
 media: 'https://youtu.be/hv9Ckgeal88'
-date: '2025-05-21'
+date: '2025-05-20'
 tags:
   - 'mempool'
   - 'privacy'
@@ -35,7 +35,7 @@ Welcome to Bitcoin++ Insider Edition. Do you want to explain to the crowd who yo
 
 **Speaker 1:** 00:00:09
 
-My name is Super Testnet. I'm a Bitcoin developer. I focus on Bitcoin, the Lightning Network. I do a lot of research into alternative Layer 2 solutions, and I'm in Austin this week for Bitcoin++, a Bitcoin conference that just took place, to present one of my projects.
+My name is Super Testnet, I'm a Bitcoin developer. I focus on Bitcoin, the Lightning Network. I do a lot of research into alternative Layer 2 solutions and I'm in Austin this week to come to Bitcoin++, which was a Bitcoin conference she just held, and present about one of my projects.
 
 **Speaker 0:** 00:00:27
 
@@ -43,7 +43,7 @@ What project were you talking about?
 
 **Speaker 1:** 00:00:29
 
-It's called `TestNet Generator`. It's a project where you can launch your own Bitcoin testnet and then have as many Bitcoins, or fake Bitcoins, as you like to test with.
+It's called `TestNet Generator`. It is a project where you can launch your own Bitcoin testnet and then have as many Bitcoins as you like, or fake Bitcoins, to test with.
 
 **Speaker 0:** 00:00:41
 
@@ -55,19 +55,19 @@ No, I don't think so. I was really excited that Luke Dashjr came to it.
 
 **Speaker 0:** 00:00:47
 
-That's fun.
+That was exciting. That's fun, yeah.
 
 **Speaker 1:** 00:00:48
 
-He's a longtime Bitcoin hero for me, and he chose to come to my talk.
+He's a long time Bitcoin hero for me and he chose to come to my talk.
 
 **Speaker 0:** 00:00:52
 
-That's really cool. Did you manage to spin up a testnet during your talk?
+That's really cool, yeah. Did you manage to spin up a test network during your talk?
 
 **Speaker 1:** 00:00:56
 
-Oh, yeah. We did that within the first five minutes.
+Oh, yeah. We did that within the first five minutes. Very cool.
 
 **Speaker 0:** 00:01:00
 
@@ -75,15 +75,15 @@ Then what did you do the rest of the time?
 
 **Speaker 1:** 00:01:02
 
-I added `CTV` to it. As an illustration of how I code, I had some `CTV` code and added it into the testnet so you can create `CTV` transactions.
+I added `CTV` to it. So I went through, as an illustration of how I code, I had some `CTV` code and I added it into the test net so you can create `CTV` transactions.
 
 **Speaker 0:** 00:01:14
 
-Very cool. So you talked about how Luke Dashjr came to your talk and you were excited he was there. What talks did you go to that you think he might have been excited you were in the audience for?
+Very cool. Cool. Very cool. So you talked about how Luke Dashjr came to your talk and you were excited that he was there. What talks did you go to that you think they might have been really excited that you were in the audience for?
 
 **Speaker 1:** 00:01:27
 
-Well, I went to his talk, but I don't think he knows me, so maybe not that one. It was also right before mine.
+Well, I went to his talks, but I don't think he... he probably doesn't know me, so maybe not that one. This was also right before mine. Let's see.
 
 **Speaker 0:** 00:01:38
 
@@ -91,7 +91,7 @@ What was he talking about in that one? Was that his policy changes?
 
 **Speaker 1:** 00:01:41
 
-Yeah, he was demonstrating how to make your own mempool policies. It was pretty cool, because we've been dealing a lot during the conference with new versions of spam on the blockchain. So he gave an illustration of how fast it is to update the mempool to filter out more spam.
+Yeah, he was doing how to make your own mempool policies. It was pretty cool, because we've been dealing a lot during the conference with new versions of spam on the blockchain. So he was just like, let's just do an illustration of how fast it is to update the mempool to filter out more spam.
 
 **Speaker 0:** 00:01:59
 
@@ -103,41 +103,41 @@ He did it within 30 minutes.
 
 **Speaker 0:** 00:02:03
 
-Let's go. When he was talking to me about the talk, because I really wanted him to do that one since I thought it was a cool demonstration of the process for making that kind of code change, he was telling me he wasn't sure he could get it to compile in 30 minutes.
+Let's go. Okay, yeah. When he was talking to me about the talk, because I really wanted him to do that one, because I thought it was a cool demonstration of what the process is for making that kind of code change, he was telling me that he wasn't sure he could get it to compile in 30 minutes.
 
 **Speaker 1:** 00:02:18
 
-It did. I remember back when Counterparty first launched, there were new types of spam going on in the network. The Counterparty people were saying things like, "you can't stop us, we can just add new things you can't detect." At the time, Luke made this cool poster. He updated his mempool policy and said, "Look, it took five minutes, I just added a line, and now I've filtered your new type of spam." It reminded me of that. It doesn't take much to actually fight this stuff.
+It did. Yeah, I remember back when Counterparty first launched, there was new types of spam going on in the network back then. And the Counterparty people were saying, like, you can't stop us, we can just add new things that you can't detect. And at the time, he made this cool post where he was like, he updated his mempool policy, and he was like, look, it took five minutes. I just added a line, and now I filtered your new type of spam. And it reminded me of that. It was like, it doesn't take much to actually fight this stuff.
 
 **Speaker 0:** 00:02:46
 
-Right, it just takes a little bit of proactivity. I had a tweet thread after listening to the talks about how, really, one side of the debate...
+Right, it just takes a little bit of proactivity. I mean, so when you say fight this stuff, I had a tweet thread after listening to the talks about how really one side of the debate...
 
 ## Filtering Bitcoin Transactions
 
 **Speaker 0:** 00:02:57
 
-A lot of what we talked about at the conference was this filtering stuff. It felt like more of a theme than I was intending it to be. But there are kind of two positions. One is that we can't fight it, we should let them do it — they're paying for block space. As long as people are paying for whatever data they want included in a transaction, and the transactions aren't spamming the network in terms of sheer number of transactions, that's arbitrarily fine. Then there's the position that Luke and the "Knots" organization hold —
+A lot of stuff that we talked about at the conference was this filtering stuff. I felt like that was more of a theme than I was intending it to be. But one of the things I feel like there's kind of two positions. One is that we can't fight it. We should let them do it. They're paying for block space. So it's, you know, in terms of letting people pay for whatever data they want to get into a transaction, that's arbitrarily fine as long as they're paying for it and the transactions aren't spamming the network necessarily with number of transactions, if that makes sense. And then there's, I think, the position that Luke and the Knots organization, for better or worse, I don't know if you call that.
 
 **Speaker 1:** 00:03:38
 
-We call them Nazis.
+We call them Knots.
 
 **Speaker 0:** 00:03:39
 
-The Knots — they're like, well, we should and we can fight it, and here's how we're going to do it. They're digging in and doing their best to prevent this type of data from being written into the blockchain by filtering out those transactions. Where would you say you fall on that spectrum? Are you for continually updating filters so this data doesn't arrive at your node, or should people be allowed to write arbitrary data into the blockchain as long as they're willing to pay for it?
+Knots. OK, yeah. The Knots, they're like, well, we should and we can fight it. And here's how we're going to do it. And we're digging in and going to do our best to prevent this type of data being written into the blockchain by filtering out transactions included. Where would you say that you fall on that spectrum? Are you like, we should continually update our filters and try to make it such that this data doesn't arrive at your node, or is it, you know, we should let people write arbitrary data into the blockchain as long as they're willing to pay for it?
 
 **Speaker 1:** 00:04:11
 
-I'm a fan of the first one. I like to fight the spam and try to eliminate as much of it as possible, increase the cost of producing spam, and generally make their lives harder so that Bitcoin is better money.
+I'm a fan of the first one. I like to fight the spam and try to eliminate as much of it as possible, increase the cost of production of spam and generally just make their — make their lives harder so that — so that Bitcoin is better money.
 
 **Speaker 0:** 00:04:27
 
-My understanding of this is similar to how things grow in a forest — something grows, a predator comes along and eats it, so it grows spines, and eventually you end up with flowers that are beautiful but you can't touch because they're too poisonous. My worry with constant evolution is that spammers will find new ways to put data into transactions. Is it worth fighting that endless fight, making them more sophisticated and incentivizing them to go around the mempool to get their transactions into blocks?
+You think that like. Like, yeah, do you think that filtering stuff out is a... I mean, okay, so my understanding of this, though, is you know how when things are growing in the forest, they grow one thing and then a little predator comes along and eats it, and so then it grows spines and then you end up with flowers that are beautiful but you can't touch them because they're too poisonous or something. Is there something, do you think, like my worry with like the constant evolution is that spammers are going to find new ways to put data into transactions. Is it worth fighting the endless fight to make them more sophisticated and incentivize them to go around the mempool to get their transactions into blocks?
 
 **Speaker 1:** 00:05:10
 
-I think so. If it's a never-ending battle, there's nothing wrong with having a never-ending resistance against it. Perhaps instead of us getting complacent and saying "we can't fight it," they'll be the ones to get complacent and say "none of our attacks are working."
+I think so. Yeah, I think if it's a never-ending battle, there's nothing wrong with having a never ending resistance against it. Perhaps instead of us being the ones to get complacent and just say, well, we can't fight it. Perhaps they will be the ones to get complicit and just say, well, none of our attacks are working.
 
 **Speaker 0:** 00:05:30
 
@@ -145,29 +145,29 @@ I see.
 
 **Speaker 1:** 00:05:31
 
-For a long time that kind of did happen. Back when Counterparty launched, they were doing spam on Bitcoin for a while, but it dropped off because Bitcoiners fought it and they moved to Ethereum. That lasted all the way up until around 2022. So maybe the same thing can happen. If we fight it hard, and succeed at stopping most of their efforts, perhaps they'll move somewhere more accepting and do it there.
+Yeah, I think for a long time that kind of did happen. Like they're back when Counterparty launched, they were doing spam on Bitcoin for a while, but it kind of dropped off because Bitcoiners fought it and they moved to Ethereum. And that lasted for, I don't know, all the way up until 2022 or so. So I think maybe the same thing can happen. If we fight it really hard, and if we succeed at stopping most of their efforts, then perhaps they will move to somewhere where it's more accepted and do it there.
 
 **Speaker 0:** 00:06:00
 
-The grass is greener somewhere else.
+Like, hey, the grass is greener somewhere else.
 
 **Speaker 1:** 00:06:02
 
-And then we get another eight years or so.
+And then we get another eight years or whatever of...
 
 **Speaker 0:** 00:06:05
 
-Or out of spite. A lot of these projects that launch spam or arbitrary data onto the network seem to have moments where a bunch of transactions get in — they're buying a lot of block space for a certain period — but then they really fall off. Writing into the blockchain isn't free, it costs money. They're going to run out of sats at some point, right? Why not just let them write it all in, and once they run out of sats, they go elsewhere?
+Or spite. Yeah. I mean, a lot of these projects that seem to launch like spam stuff on the network or putting arbitrary data in seem to like have moments where they have like a bunch of transactions that get in, like they're buying a bunch of block space at a certain period of time, but then after that it seems like they really fall off. I mean, you know, writing stuff into the blockchain isn't free, it costs money. They're gonna run out of sats at some point, right? Like why not just let them write it all in and then when they run out of sats go somewhere else?
 
 **Speaker 1:** 00:06:35
 
-That's a pretty good solution. I think you can improve it by making it cost them even more money so they run out faster. That's what filters do at the mempool level — they increase the cost of getting transactions to miners. Spammers have to go to private mempools, which typically charge more; they have to download, install, and run special software, and convince miners to do so, which increases costs on miners, who then pass those costs on. It jacks up their prices and makes value destroyers run out of money faster. To me, that's a very good thing.
+That's a pretty good solution. I think you can improve that solution by making it cost them even more money so that they run out faster. And that's what I think filters do at the mempool level. They increase the cost of getting this to miners. They have to go to private mempools which typically charge more, they have to download and install and run special software and convince miners to do so and that increases costs on miners and they have to pass on those costs. It makes it harder and jacks up their prices and makes the value destroyers run out of money faster. To me, that's a very good thing.
 
 ## OP_RETURN Data Limits
 
 **Speaker 0:** 00:07:10
 
-The `OP_RETURN` data-carrier size limit — should we keep it at 80 bytes, make it smaller, or get rid of it?
+So, the `OP_RETURN` data carrier size limit, should we keep it at 80 bytes, make it smaller, get rid of it.
 
 **Speaker 1:** 00:07:16
 
@@ -175,15 +175,15 @@ I'd like to reduce it to zero.
 
 **Speaker 0:** 00:07:18
 
-Reduce it to zero — so you want `OP_RETURN`s to basically not exist. Remove them entirely.
+Reduce it to zero. So you want it such that `OP_RETURN`s don't exist basically. Remove the `OP_RETURN`.
 
 **Speaker 1:** 00:07:24
 
-I think it should be possible to create an `OP_RETURN`, but only with zero value and zero data in the script.
+I think having it so that you can create an `OP_RETURN` but only if it has zero value. Zero data in the script.
 
 **Speaker 0:** 00:07:32
 
-Zero data in the script, no data. Super is a data minimalist, it sounds like. Would you say you're a minimalist in other aspects of your life?
+Zero data in the script. Zero data push. Okay. No data. Super is a data minimalist it sounds like. Would you say you're a minimalist in other aspects of your life?
 
 **Speaker 1:** 00:07:45
 
@@ -191,17 +191,17 @@ Some people say that. I'm not going to say that.
 
 **Speaker 0:** 00:07:47
 
-Never mind.
+Never mind. Sure.
 
 **Speaker 1:** 00:07:48
 
-Some people say that, sure.
+Some people say that. Sure.
 
 ## Eternal Battles on Bitcoin
 
 **Speaker 0:** 00:07:51
 
-This kind of war on arbitrary data in the blockchain that you're proposing Bitcoiners engage in — it sounds like an eternal struggle you're signing up for. Do you have any precedent for fights you've been involved in that have dragged on for years, like this one has?
+So I mean, this kind of like war on arbitrary data in the blockchain that you're proposing that the Bitcoiners engage in. Have you engaged in any other sort of like fight you feel like that's like — I mean that's like an internal eternal war that you're sort of signing up for. Isn't it easier to like, well I was going to say, do you have any precedents of fights that you feel like you've been involved in for a long time that have like dragged on for years like this one has.
 
 **Speaker 1:** 00:08:17
 
@@ -213,31 +213,31 @@ Sure, or in general.
 
 **Speaker 1:** 00:08:21
 
-The one that comes to mind is the fight against altcoins in general. Trying to persuade people that Bitcoin is better money than altcoins is a battle I've been in since before I even got into Bitcoin. That's a pretty comparable one.
+The one that comes to mind is the fight against altcoins in general. So like trying to persuade people that Bitcoin is a better money than altcoins is a battle that I've been in since pretty much since I actually — since before I got into Bitcoin. And yeah, that's — I think that's that's a pretty comparable one.
 
 **Speaker 0:** 00:08:45
 
-Do you think this battle against arbitrary data is related to that altcoin fight?
+Altcoins. So I mean, and do you think that this battle against arbitrary data is like related to the altcoin? Spam point? Altcoin? I'm sorry. I don't know what you call it.
 
 **Speaker 1:** 00:08:55
 
-Related, yeah. A lot of the spam is token data — people creating and launching altcoins, using Bitcoin's blockchain as the data carrier for those. So part of fighting altcoins is also fighting them on Bitcoin's blockchain, which is part of the spam.
+Related, yeah. A lot of the spam is token data. So it's people creating, launching, and then using altcoins with Bitcoin's blockchain as the data carrier for those. And so part of fighting altcoins is also fighting them on Bitcoin's blockchain, which is part of the spam.
 
 **Speaker 0:** 00:09:13
 
-It makes sense, but part of me thinks: if they want to send Bitcoin to Bitcoin miners — buy Bitcoin so they can run their scams on Bitcoin — isn't that good for Bitcoin? Blocks are getting filled up.
+Yeah, it makes sense. I know, part of me is like, but if they want to send Bitcoin to Bitcoin miners, like buy Bitcoin so they can run their scams on Bitcoin, isn't that good for Bitcoin? Blocks are getting filled up.
 
 **Speaker 1:** 00:09:26
 
-It has some good effects, but also negative ones. I could easily imagine someone synchronizing the blockchain, taking a look at what's on there, and thinking, "it's a bunch of JPEGs and altcoins, there's barely any Bitcoin happening on this network — why would I synchronize this?"
+It has some good effects, but it also has negative effects. I could easily imagine encouraging someone to synchronize the blockchain and then they, you know, take a look at what's on there and they're like, it's a bunch of JPEGs and old coins and like there's barely any Bitcoin happening on this network. Why would I synchronize this?
 
 **Speaker 0:** 00:09:44
 
-But those transactions are paying fees to Bitcoin miners. Isn't that Bitcoin?
+Well, you say there's barely any Bitcoin happening, but those transactions are paying fees to Bitcoin miners, right? Is that not Bitcoin?
 
 **Speaker 1:** 00:09:50
 
-The fees are Bitcoin, but —
+The fees are. The fees are paying Bitcoin, but it's...
 
 **Speaker 0:** 00:09:54
 
@@ -245,49 +245,53 @@ Bitcoin's changing hands.
 
 **Speaker 1:** 00:09:55
 
-Some is, yeah. They're paying miners to add data to the blockchain. If they were paying to move data around on some other network, that would be a better use of it. Say someone made an art house and sold art, with the art moved through normal means like email or physical delivery, but the payment happened on Bitcoin — that'd be a great use case, paying for art while moving the data off-chain. But when they do it on-chain, the network is used for something it's not designed for, it's not good at transferring that kind of data, it costs a lot of money, and it imposes a cost on everyone running the network, who just see a bunch of non-Bitcoin stuff on there.
+Some is, yeah. They're paying miners in order to add data to the blockchain. And I think if they were paying to move data around on some other network, that would be a better use of it. Like let's say that someone made some kind of art house and then they sold art and the art was moved through normal means like email or physical delivery, but just the payment happened on Bitcoin. I think that'd be a great use case of Bitcoin to just pay for art and say, let's move this off chain. But when they do it on chain, it makes it so that the network is being used for something it's not designed for, it's not good at transferring that kind of data, costs a lot of money, and it imposes a cost on all the people who are trying to run the network, and they just see a bunch of stuff that's not Bitcoin on there.
 
 **Speaker 0:** 00:10:48
 
-Where are they going to see it, though? Are they looking through the raw block data?
+Where are they going to see it though? Are they looking through the black data?
 
 **Speaker 1:** 00:10:51
 
-Yeah, I think even the fact that when you download it, you see it's 500 gigabytes or more —
+Yeah, I think even the fact that when you download it, you see it's 500 gigabytes or more.
 
 **Speaker 0:** 00:10:58
 
-But Bitcoin could easily be full of —
+But Bitcoin could be easily full of, I'm sorry.
 
 **Speaker 1:** 00:11:02
 
-No problem, I was just going to say it could easily lead someone to wonder what that data is, and if they take any cursory look, they'll see a lot of it is junk.
+No problem, I was just going to say it could easily lead someone to wonder what is that data and if they do any cursory look at it, they'll see that a lot of it is junk.
 
 **Speaker 0:** 00:11:15
 
-Do you think they'd feel differently if they looked and saw it was all people moving Bitcoin around?
+Do you think they would feel differently if they looked at it and saw it was all people moving Bitcoin around?
 
 **Speaker 1:** 00:11:19
 
-Yeah, I think so. I think that would lead someone to say, "wow, these people really care about this project."
+Yeah, I think so. I think that would be a good reason to say, wow, these people really care about this project.
+
+**Speaker 0:** 00:11:25
+
+I see.
 
 ## HODLing vs. Spending Bitcoin
 
 **Speaker 0:** 00:11:26
 
-But if we're all supposed to be HODLing Bitcoin, are we supposed to be sending it to each other?
+But if we're all supposed to be hodling Bitcoin, we're supposed to be sending Bitcoin to each other.
 
 **Speaker 1:** 00:11:31
 
-I'm a fan of sending Bitcoin to each other, not just hoarding it.
+I'm a fan of sending Bitcoin to each other and not just hodling it.
 
 **Speaker 0:** 00:11:34
 
-I don't know, it's like — we have this wonderful thing, a blockchain that permits anyone holding Bitcoin to transact at any point in ten-minute increments. If people who hold Bitcoin aren't sending enough transactions frequently enough, why not let spammers use the block space and send Bitcoin to miners, if no one else is willing to outbid them for it?
+Yeah, I don't know, it's like one of those, it's like, well, okay, we have this wonderful thing which is a blockchain which permits anyone who holds Bitcoin to transact at any point in time in ten minute increments, right? And if people who hold Bitcoin aren't sending enough transactions frequently enough, why not let the spammers use up the block space and send Bitcoin to miners if other people aren't willing to outbid them for the space?
 
 **Speaker 1:** 00:12:00
 
-It reminds me of a scene from the film *O Brother, Where Art Thou?* where they run into the guy who sold his soul to the devil so he could learn to play guitar really well.
+It reminds me of a scene from the film O Brother Where Art Thou? Where they run into the guy who sold his soul to the devil so that he could learn to play the guitar really good.
 
 **Speaker 0:** 00:12:07
 
@@ -295,33 +299,33 @@ Okay.
 
 **Speaker 1:** 00:12:07
 
-They ask him, "why did you sell your soul to the devil?" And he says, "well, I wasn't using it." I don't think "Bitcoiners aren't using it" is a good reason to give up block space to spammers.
+And they say, well, why did you sell your soul to the devil? And he says, well, I wasn't using it. It's like, I don't think there's a good reason to give up block space to spammers is because Bitcoiners aren't using it.
 
 **Speaker 0:** 00:12:22
 
-I think that's a perfect argument. I appreciate hearing your thoughts on that — it's an interesting perspective on the current topic.
+I think that's a perfect argument. Yeah. Great. Is there any other like, so I think that, I think that makes sense from a perspective of, yeah, okay. I like, I appreciate hearing your thoughts on that. I think that's an interesting perspective on the current topic.
 
 ## BTC++ Conference Recap
 
 **Speaker 0:** 00:12:44
 
-I was a little disappointed the conference didn't spend more time on mining decentralization on the main stages. We had a great talk on `Datum` from Jason Hughes at Ocean — I'm excited to watch the recording. Did you feel like we focused too much on this filtering debate? I kind of felt that way, or do you think it's an important conversation we needed to have as a group?
+I was a little disappointed at the conference that we didn't spend more time talking about mining decentralization on the main stages. I had a bunch of talks I think that kind of went around this. We had a great talk from `DATUM` about `DATUM` from Jason Hughes at OCEAN. I'm really excited about watching the recording on that one. Did you feel like we focused too much on this filtering debate? Because I kind of felt that way. Or do you think it's an important conversation that is one that maybe we needed to spend time on as a group?
 
 **Speaker 1:** 00:13:17
 
-I think too much time was spent on it. I would have preferred more focus on mining decentralization and the things you mentioned. Having some space dedicated to filtering would be fine — maybe one talk instead of nine.
+I think too much time was spent on it. I would have preferred to see more of a focus on mining decentralization and the things you mentioned. Also, I think having some space dedicated to it would be fine. Maybe one talk instead of nine.
 
 **Speaker 0:** 00:13:32
 
-Got it, I didn't realize we had that many talks.
+Okay, got it. I didn't realize we had that many talks.
 
 **Speaker 1:** 00:13:36
 
-I don't think it was literally nine, but it felt more prominent than I would have wished.
+I don't think you had nine talks, but it did seem more prominent than I would have wished.
 
 **Speaker 0:** 00:13:41
 
-Yeah, it definitely got a lot of airtime, but I think it's what people wanted to talk about.
+Yeah, I think it definitely got a lot more airtime. But I think it's kind of one of those things like, I think it's what people wanted to talk about.
 
 **Speaker 1:** 00:13:48
 
@@ -329,203 +333,197 @@ I agree.
 
 **Speaker 0:** 00:13:49
 
-So that's what we ended up talking about, because that's what it seemed like people wanted. Where are you headed next? What's next for Super Testnet? Will we see you in Riga for the Privacy Edition?
+And so that's what we ended up talking about because that was what it seemed like people wanted to talk about. Cool. Where are you headed next? What's next for Super Testnet? Are we going to see you in Riga for the Privacy Edition?
 
 **Speaker 1:** 00:14:00
 
-I'd love to. On the note of privacy, I'll be in Las Vegas later this month — May 5th or 6th, I think — talking on a privacy panel with Seth for Privacy and Andrew Van Weerdum at the Bitcoin Conference in Las Vegas. I'll also be presenting on the privacy advantages of using `CoinPools`. Lots of focus on privacy for me lately.
+I'd love to. On the note of privacy, I will be in Las Vegas later this month, May 26th I think, 5th or 6th. I will be talking on a privacy panel with Seth for Privacy and Aaron van Wirdum at the Bitcoin conference in Las Vegas. And then I will also be doing a presentation about the privacy advantages of using coin pools. So lots of focus on privacy for me lately.
 
 **Speaker 0:** 00:14:24
 
-Great. Hopefully we'll see you in Riga in August, the 7th and 8th, right ahead of the Baltic HoneyBadger. Sounds like people can catch you in Vegas. Are you participating in the Bitcoin++ Hackathon, the online virtual one this year?
+Okay, great. Well, hopefully we'll see you in Riga then in August, the 7th and 8th right ahead of the Baltic Honeybadger. Sounds like people can catch you in Vegas. Are you going to be participating in the Bitcoin++ Hackathon online virtual one for Bitcoin++ this year?
 
 **Speaker 1:** 00:14:42
 
-There's also one happening alongside the Las Vegas event — they do a lot of hackathons. Is that the one you're referring to?
+For Bitcoin++, there's also one happening with the Las Vegas thing. They do a lot of hackathons. Is that the one you're referring to?
 
 **Speaker 0:** 00:14:48
 
-Yeah, we're helping run it this year — Bitcoin++ is powering the Vegas hackathon.
+Yeah, we're helping run it this year. So Bitcoin++ is powering the Vegas hackathon this year.
 
 **Speaker 1:** 00:14:53
 
-I'm not a fan of the hybrid model, and to express that, I'm not participating.
+I'm not a fan of the chosen model and in order to express that I'm not participating.
 
 **Speaker 0:** 00:14:59
 
-That makes sense. The hybrid model includes an online component?
+Okay, that makes sense. And the chosen model that we're doing is the online?
 
 **Speaker 1:** 00:15:03
 
-Yeah, it's fine to have an online component, but when there's no in-person component, that's upsetting to me.
+Yeah, well, it's fine to have an online component, but when you have no in-person component, that seems... that's upsetting to me.
 
 **Speaker 0:** 00:15:11
 
-Makes sense. I also prefer in-person components.
+Makes sense. Yeah, I also prefer in-person components.
 
 **[Speaker 2]:** 00:15:15
 
-This episode is brought to you by BTC++, the premier technical conference series for Bitcoin developers. BTC++ is not your typical Bitcoin conference — it's a world-class gathering of engineers, hackers, and builders focused on the cutting edge of Bitcoin development. From protocol research to Lightning, smart contracts, covenants, privacy tools, and beyond, BTC++ dives deep into the work shaping the future of Bitcoin. Join us for our next event in Riga, Latvia on August 7th and 8th, focused on Bitcoin privacy, and see all upcoming events at btc++.dev.
+This episode is brought to you by BTC++, the premier technical conference series for Bitcoin developers. BTC++ is not your typical Bitcoin conference. It's a world-class gathering of engineers, hackers, and builders focused on the cutting edge of Bitcoin development. From protocol research to lightning, smart contracts, covenants, privacy tools and beyond, BTC++ dives deep into the work that's shaping the future of Bitcoin. Join us for our next event in Riga, Latvia on August 7th and 8th, focused on Bitcoin privacy, and see all our upcoming events across the globe at btc++.dev.
 
 **Speaker 0:** 00:15:55
 
-We're back for part two of interviewing Super. We had some questions from last time that we didn't get to, so I wanted to dig into those.
+We're back for part two of interviewing Super. Super, we had some questions from last time that we didn't get answered, so I wanted to get into it.
 
 ## Is Arbitrary Data/Spam Subjective?
 
 **Speaker 0:** 00:16:03
 
-We talked about spam filters and what spam is, and your position was that we should work as hard as possible to prevent spam from getting into blocks, because Bitcoin should be for financial transactions. A good question from our audience: is the idea of "arbitrary data as spam" subjective? Would people just look at Bitcoin and say, "oh, this is definitely spam"?
+We talked a little bit about spam filters and what spam is and you were very much we should work as hard as possible to prevent spam from getting into transactions because — or into blocks really — because Bitcoin should be for financial transactions. Good question though that came from our audience is that, is that idea of arbitrary data like spam subjective? Like if people look at Bitcoin, are people gonna be like, oh, this is definitely spam?
 
 **Speaker 1:** 00:16:37
 
-I think spam has both a subjective element and an objective element, and I want to talk about a couple of the objective elements for a moment. When Satoshi created Bitcoin, he built very early mempool filters that allowed certain types of transactions and prohibited the rest. The types he permitted were sending to a Bitcoin address, sending straight to a `scriptPubKey`, and sending to a multisig — a list of public keys. Everything else was banned: anything involving more advanced uses of script, anything involving data-carrier functionality. Part of the reason, I think, was that there was no consensus yet on what other transaction types should be allowed.
-
-I think it would be cool to return to a model with a very restricted default set of allowed transactions, where to get something else transmitted, you'd have to make a case for lifting that limit — for example, "this is a Lightning transaction, it uses script in a new way, so we should relax the limits; if it matches a Lightning template, we should allow it into the mempool." That's one objective factor: you can test a transaction against approved criteria, and if it doesn't match, it's prohibited.
-
-Another objective factor is the data-carrier element itself. If a transaction uses `OP_RETURN` to carry a certain number of bytes, or an inscription envelope to carry bytes, that's an objective way of identifying arbitrary data — it's not the minimum number of bytes necessary to send money to an address, since you could have done that without the `OP_RETURN` data or the inscription envelope.
+I think that spam has a subjective element and an objective element. And I want to talk about a couple of the objective elements for a moment. Walton, do you want to take the tablet? Yeah, I think spam has subjective and objective elements and I want to talk about the objective elements for just a moment. So when Satoshi created Bitcoin, he had very early mempool filters that he created allowed certain type of transactions and actually prohibited in the mempool the rest. So types of transactions he did permit were where you're just sending to a Bitcoin address, he allowed you to send just straight to a `scriptPubKey`, and he allowed you to send to a multisig which was a list of public keys, and he banned everything else. Anything that involved more advanced uses of script, anything that involved data carrier stuff, it was all prohibited. And I think part of the reason I think he did that was because there was no consensus yet on what other types of transactions should be allowed. I think it would be cool to go back to a model where there's a very restricted set of transactions that are allowed by default in the mempool, and if you want to get something else transmitted, you have to make a case for lifting that limit and saying, this type of transaction should also be done. Like for example, this is a Lightning transaction, it uses script in a new way, so we should relax the limits. If it meets a Lightning template, we should allow that into the mempool. So that's one objective factor is you can actually see whether it matches certain criteria that are approved. And then if it doesn't, then it's prohibited. Another one is just the data carrier elements themselves. If a transaction uses `OP_RETURN` to carry a certain amount of bytes, or if it uses an inscription envelope to carry a certain amount of bytes, that's an objective way of telling this is just arbitrary data. It's not the least amount of bytes necessary in order to accomplish the goal of sending money into an address because you could have done that without including an `OP_RETURN` that has data or without including an inscription envelope.
 
 ## Transaction Filtering Governance
 
 **Speaker 1:** 00:18:36
 
-So there are objective elements we can test against and filter for.
+So there are objective elements that I think we can test against and filter for.
 
 **Speaker 0:** 00:18:40
 
-There are a lot of directions I could take this, but one is: if you come up with a list of permitted and non-permitted transaction types, you now need a committee deciding what's allowed. That introduces a lot more politics into the process and bureaucracy, since someone has to maintain the allowable list, and when new types emerge, you'd need a patch/change-request process to get them added — Lightning transactions, for example. That seems different from the alternative, where everything is permissible as long as you can pay for it and it fits the protocol outline, minus a few fields where you can put anything you want. That seems more open, anarchic, and capitalist — whoever's willing to pay for block space can have it, regardless of content. How do you balance those two approaches when it comes to governing how strict the filters should be?
+I mean, yeah, there's a lot of different directions I think I could take this, but I think one of them is like, okay, so if you come up with a list of transactions of what's permissive and what isn't, now all of a sudden you need a committee that's saying, okay, this is allowed and this isn't allowed. And so all of a sudden you introduce, I think, a lot more politics into the process. You need a lot more bureaucracy because you need someone who's saying this is the list of allowable transactions and this is the not allowable and when new types come out you have to go through like a patch change request process to get it added to the allowable list like lightning transactions for example. Whereas that seems a little bit different from the other side, which is like everything and anything is permissible that you can pay for. It fits the protocol outline, minus these few fields where you can put anything you want in it. That seems more open and anarchic and capitalist in terms of whoever is willing to pay for the block data can have it, it doesn't matter what they want to put in it. How do you balance those two requirements in terms of governance of making the decision to make the filters more strict?
 
 **Speaker 1:** 00:19:54
 
-Before I answer, a rhetorical point: to me, sounding more capitalist or more anarchic isn't a good thing — I'd prefer things that sound less anarchic, less capitalist. That said, what you're describing as bureaucracy sounds a lot like the Bitcoin Core BIP review process. When we wanted to add the Lightning Network to Bitcoin, it needed a couple of soft forks. To get those activated, there was a BIP review process — people had to upgrade their nodes to a new software version if they wanted to opt in.
-
-I think it'd be great to have a similar process for expanding the set of transactions allowed at the mempool level. If you had to convince Bitcoin developers your idea is good, they released new software, and other people chose whether to run it, I think we'd see a lot less spam on the network today, because it'd be much harder to get it in. That sounds like a better world to me.
+Before I do that, I just make a rhetorical point. To me, sounding more capitalist and more anarchic are not good things. I would like things that sound less anarchic, less capitalist. That said, having a bureaucracy, I think that sounds a lot like the Bitcoin Core BIP review process. Like when we wanted to add Lightning Network to Bitcoin, it needed a couple of soft forks. And in order to get those activated, there was a BIP review process. People had to upgrade their nodes to a new software version if they wanted to do that, if they wanted to opt in to these soft forks. I think it'd be cool to have a similar process for expanding the set of transactions allowed at the mempool. If you had to convince people who develop Bitcoin that your idea is a good idea, and then they had to release new software, and then other people had to choose whether they want to run it or not, I think that we would see a lot less spam on the network today because it'd just be a lot more difficult to get it in. And that sounds like a better world to me.
 
 **Speaker 0:** 00:20:52
 
-Makes sense. A better world for everyone sounds like a great idea.
+Cool, makes sense. Better world for everyone sounds like a great idea.
 
 **Speaker 1:** 00:20:58
 
-Yeah, that's neat to me too. But when there are disagreements about which world is better, that's why platforms like this let us have a discussion and try to persuade one another.
+Yeah, that's neat to me too. But when there are disagreements about which world is better, I think that's why platforms like this allow us to have a discussion and persuade one another.
 
 **Speaker 0:** 00:21:10
 
-Do you think we necessarily need to agree on which way is better, or can the filtering camp coexist alongside the permissive camp?
+Do you think we necessarily need to all agree which way is better? Or can the filtering camp exist alongside the permissive camp?
 
 **Speaker 1:** 00:21:18
 
-I think they can coexist. I hope an increasing number of people agree with me, and we'll see what happens.
+I think they can coexist. I hope that an increasing number of people agree with me, and we'll see what happens.
 
 **Speaker 0:** 00:21:26
 
-So we kind of wrapped up the last chat saying we wished the conference had spent less time on filtering and `OP_RETURN`s and data carriers — and then we spent 20 minutes talking about it ourselves.
+Okay, yeah. So we kind of wrapped up the last chat, and at the end of it we said, man, we just talked about, like we wish that at the conference we would have talked about things other than filtering and `OP_RETURN`s and data carriers, and then we spent 20 minutes talking about it ourselves.
 
 **Speaker 1:** 00:21:42
 
-More like 30 minutes.
+Yeah, no, like 30 minutes.
 
 **Speaker 0:** 00:21:43
 
-30 minutes, going on, without talking about anything else. What should we be talking about instead? If we could change the conversation, what would it be?
+No, 30 minutes, going on 30 minutes without talking about it. What should we be talking about if not that? Like if we could change the conversation to something else, what should we change it to?
 
 **Speaker 1:** 00:21:53
 
-I'd like to talk a bit more about privacy, which is something we've mentioned a couple of times.
+I'd like to talk a little bit more about privacy, which is another thing we mentioned a couple times.
 
 ## Privacy on Bitcoin & Lightning
 
 **Speaker 0:** 00:21:57
 
-Okay, let's do it.
+Okay, yeah.
 
 **Speaker 1:** 00:21:58
 
-A lot of my recent projects have focused on improving privacy on Bitcoin. I actually released some code for one today, and I'll likely release more soon — a privacy tool for the Lightning Network. The project is designed to make it easier to increase the number of hops between you and your destination on the Lightning Network, because I think more hops means more privacy. So I'm building a tool for that.
+So a lot of my recent projects have focused on improving privacy on Bitcoin. And one of the things that I'm currently, well, I just released some code for it today and I'll be hopefully doing a little bit more later, is a privacy tool for the Lightning Network. So, my current project is designed to make it so that you can increase more easily the number of hops between you and your destination on the Lightning Network because I think that increasing the number of hops increases your level of privacy. So I'm making a tool for that.
 
 **Speaker 0:** 00:22:33
 
-Increasing the number of hops increases your privacy — that makes sense. I think Rusty had a project in `CoreLightning` adding configuration options to route pathfinding, so if you want more privacy it would favor more hops. There are trade-offs to adding more hops, though, right?
+Increasing the number of hops increases your privacy. That makes sense. I think Rusty had a project in Core Lightning and he's trying to add to some of the configurations in route pathfinding so that it would optimize — if you're trying to be more private, it would add more hops. There's trade-offs to adding more hops though, right?
 
 **Speaker 1:** 00:22:50
 
-Yeah, payment reliability falls, and that sucks.
+Yeah, payment reliability falls and that sucks.
 
 **Speaker 0:** 00:22:56
 
-It's also more expensive?
+It's also more expensive, right?
 
 **Speaker 1:** 00:22:58
 
-Typically, yeah.
+Yeah, typically.
 
 **Speaker 0:** 00:22:58
 
-From a cost perspective — is the cheapest way to send a Lightning transaction a direct, peered connection on the Lightning Network?
+From a cost perspective, is the cheapest way to send a Bitcoin transaction between someone you're directly peered to on the Lightning Network?
 
 **Speaker 1:** 00:23:09
 
-It depends. One nice thing about a direct connection is you don't have to pay routing fees.
+I think it depends. At least one nice thing about that is you don't have to pay routing fees if you have a direct connection to someone.
 
 **Speaker 0:** 00:23:15
 
-So it's basically free.
+Yeah, it's basically free.
 
 **Speaker 1:** 00:23:17
 
-It is basically free, but you also have to set up the connection. If you're not making repeated transactions to that peer, it's about 300 bytes to open the channel and maybe 400 bytes to close it.
+It is basically free, but you also have to set up the connection. And if you're not going to be making repeated transactions to them, then it's about 300 bytes to set it up, maybe 400 bytes to close the connection.
 
 **Speaker 0:** 00:23:28
 
-So it's more expensive.
+It's more expensive.
 
 **Speaker 1:** 00:23:28
 
-If you're only doing one transaction, you're actually losing money there.
+If you only do one transaction, you're actually losing money there.
 
 **Speaker 0:** 00:23:32
 
-You'd have been better off just doing an on-chain transaction.
+You would have been better just doing an on-chain transaction.
 
 **Speaker 1:** 00:23:34
 
-Or opening a channel with someone you'll more likely make repeat connections to and routing through them.
+Or opening up a channel with someone who you will more likely make repeat connections to and then routing through them.
 
 **Speaker 0:** 00:23:40
 
-Right, makes sense. So other than adding more hops, is there anything else you think improves privacy?
+Right, makes sense. Yeah, yeah, yeah. Cool, so other than adding more, so you said adding more hops, is there anything else you think improves privacy?
 
 **Speaker 1:** 00:23:50
 
-Decoy public keys. One feature of `BOLT 11` Lightning invoices is that you embed a public key in them. If you're running a routing node, that's enough to find you on the network. If you're not, you also have to specify a routing node you're connected to, or within a couple of hops of, which leaks information about your node. So it's possible to strip that public key from an invoice, replace it with a dummy public key, or replace it with someone else's. I like tools that help people do that so they don't leak data about their node on the Lightning Network.
+Decoy public keys. So one feature of the way Lightning invoice, `BOLT11` invoices work is that you put a public key in them and if you're running a routing node, then that's enough to find you on the network, to find your node. If you're not running a routing node, then you also have to specify a routing node that you're connected to, or it's within a couple of hops of you. And this leaks information about your node on the network. So getting that public key out of an invoice is possible. It's possible to replace it with a dummy public key. It's possible to replace it with someone else's public key. I like tools that assist people with doing that so they don't leak data about their node on the Lightning Network.
 
 **Speaker 0:** 00:24:31
 
-Dummy keys are one way to prevent leaking data, that makes sense. What else are you working on, Super?
+Dummy keys are one way to prevent leaking data. That makes sense. Yeah. Cool. What else are you working on, Super?
 
 **Speaker 1:** 00:24:38
 
-It depends on the week — it seems like every week I come up with another project. Last month, I was focused quite a bit on `CoinPools`. I presented my `CoinPool` software at Bitcoin++ in Brazil, and I've made a couple of updates since, but it's not in a great state right now, so I'll have to keep working on it at some point. I also tend to get sick of working on a single project, which is why I look for something else — hopefully I'll get inspired to return to it.
+Well, it kind of depends on the week. It seems like every week I come up with another project. Last month, one thing that I was focused on quite a bit was CoinPools. So I presented my CoinPool software at Bitcoin++ in Brazil. And I have done a couple of updates to it since then, but it's not in a better state right now. So I have to keep working on it at some point. But the other thing is I get sick of working on projects, and I got sick of working on the CoinPool thing, which is why I look for something else. So hopefully at some point I will get inspired to work on it again.
 
 **Speaker 0:** 00:25:12
 
-People can find out more about `CoinPools` by watching your Bitcoin++ talk from Florianópolis, and you'll be talking about it in Vegas in a few weeks too.
+And so people can find out more about CoinPools by watching your Bitcoin++ talk from Florianópolis. And you'll be talking about it in Vegas, it sounds like, in a few weeks. Very cool.
 
 **Speaker 1:** 00:25:23
 
-Yep — search "Super Testnet CoinPools" on YouTube and you should find a video. You can also search the Bitcoin++ YouTube channel, and possibly there will be a livestream at the Bitcoin Conference in Las Vegas, where you can find more information.
+Yep, so you can, if you go to YouTube and search for Super Testnet Coin Pools, you should find a video on there. And you can also search the Bitcoin++ YouTube channel and eventually possibly, I don't know if they'll be live streamed at the Bitcoin conference in Las Vegas, but if so, you can also find information there.
 
 **Speaker 0:** 00:25:40
 
-Great. Anything else we should cover, Super? What's next for Super Testnet — `CoinPools`, privacy on Lightning?
+Great. Anything else we should talk about, Super? What's next for Super Testnet? Coin pools, privacy on Lightning?
 
 **Speaker 1:** 00:25:47
 
-I mentioned my presentations in Las Vegas, and I may be in Riga for the privacy conference. We'll see what happens, but I'm looking forward to those, and to continuing work on whatever random projects occur to me.
+Yeah, I mentioned my presentations in Las Vegas. Perhaps I'll be in Riga for the privacy conference there, so we'll see what happens, but I'm looking forward to doing those things. Continuing to work on random projects that occur to me as they occur.
 
 **Speaker 0:** 00:26:03
 
-More Bitcoin development coming to you soon from Super Testnet. Thanks, Super.
+More Bitcoin development coming to you soon from Super Testnet to yours. All right. Thanks, Super.
 
 **Speaker 1:** 00:26:09
 
