@@ -633,7 +633,7 @@ Ruben Somsen: 00:49:03
 
 Just to give you a potential future idea of where this could potentially be headed, and obviously I don't know, but this is what I imagine would be good for Bitcoin.
 You have the Bitcoin blockchain, roughly two megabytes.
-I know it's like 4,000,000 weight units or something like that, but roughly two megabytes worth of data.
+I know it's like 4,000,000 weight units or something like that, but roughly two megabytes worth of data. (Note: 4,000 weight units is what was said originally but is not accurate) 
 So then you have a spacechain, which let's say utilizes the exact same code as Bitcoin does.
 Reason for that being that we want people to feel secure in using that chain.
 And then from that chain, you create your other chains.
