@@ -343,7 +343,7 @@ Some is, yeah.
 They're paying miners in order to add data to the blockchain.
 And I think if they were paying to move data around on some other network, that would be a better use of it.
 Like let's say that someone made some kind of art house and then they sold art and the art was moved through normal means like email or physical delivery, but just the payment happened on Bitcoin.
-I think that'd be a great use case of Bitcoin to just pay for art and say, let's move this off chain.
+I think that'd be a great use case of Bitcoin to just pay for art and say, let's move this off-chain.
 But when they do it on chain, it makes it so that the network is being used for something it's not designed for, it's not good at transferring that kind of data, costs a lot of money, and it imposes a cost on all the people who are trying to run the network, and they just see a bunch of stuff that's not Bitcoin on there.
 
 **niftynei:** 00:10:48
