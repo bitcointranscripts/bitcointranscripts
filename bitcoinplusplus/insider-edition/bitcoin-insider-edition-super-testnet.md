@@ -153,7 +153,7 @@ One is that we can't fight it.
 We should let them do it.
 They're paying for block space.
 So it's, you know, in terms of letting people pay for whatever data they want to get into a transaction, that's arbitrarily fine as long as they're paying for it and the transactions aren't spamming the network necessarily with number of transactions, if that makes sense.
-And then there's, I think, the position that Luke and the Knots organization, for better or worse, I don't know if you call that.
+And then there's, I think, the position that Luke and the Knots organization, for better or worse, I don't know if you call that Knots organization.
 
 **Super Testnet:** 00:03:38
 
