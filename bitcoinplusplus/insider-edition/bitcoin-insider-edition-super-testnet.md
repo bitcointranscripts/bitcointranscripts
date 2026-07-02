@@ -2,7 +2,7 @@
 title: 'Bitcoin++ Insider Edition: Super Testnet'
 transcript_by: 'mokayaj857 via review.btctranscripts.com'
 media: 'https://youtu.be/hv9Ckgeal88'
-date: '2025-05-17'
+date: '2025-05-16'
 tags:
   - 'mempool'
   - 'privacy'
