@@ -1,29 +1,29 @@
 ---
-title: "Upgrading Bitcoin's Consensus Engine: Bitcoin Kernel Explained w/ Core Dev"
-speakers:
-  - Sedited
-  - Shinobi
+title: 'Upgrading Bitcoin''s Consensus Engine: Bitcoin Kernel Explained w/ Core Dev'
+transcript_by: 'bartoli via review.btctranscripts.com'
+media: 'https://youtu.be/HDJqsL-f9DA?si=18ZW4fdnojMHEj5Y'
 date: '2026-02-04'
 tags:
-  - bitcoin-core
-  - libbitcoinkernel
-  - multiprocess
-  - security
-  - refactoring
+  - 'bitcoin-core'
+  - 'libbitcoinkernel'
+  - 'multiprocess'
+  - 'security'
+  - 'refactoring'
+speakers:
+  - 'Sedited'
+  - 'Shinobi'
 categories:
-  - podcast
-source_file: https://youtu.be/HDJqsL-f9DA?si=18ZW4fdnojMHEj5Y
-media: https://youtu.be/HDJqsL-f9DA?si=18ZW4fdnojMHEj5Y
-summary: Shinobi (Bitcoin Magazine) interviews Sedited, a Bitcoin Core developer, about libbitcoinkernel — successor to the abandoned libconsensus library — which extracts Bitcoin's stateful consensus validation logic (block headers, UTXO database, script verification) into a modular library enabling alternative node implementations to build on Core's proven consensus code directly. Sedited explains why libconsensus failed (limited to script verification, unable to surface the stateful UTXO and disk logic without excessive workarounds), how kernel cleanly demarcates validation from wallet and GUI code to improve review safety, argues that kernel reduces rather than centralizes Core's influence by lowering the barrier for competing implementations (citing Floresta, an ARK test framework, and several full-node projects already integrating it), and closes with the hope that kernel's granular per-function validation interfaces could eventually serve as the foundation for a formal Bitcoin protocol specification.
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'podcast'
+source_file: 'https://youtu.be/HDJqsL-f9DA?si=18ZW4fdnojMHEj5Y'
+summary: 'Shinobi (Bitcoin Magazine) interviews Sedited, a Bitcoin Core developer, about libbitcoinkernel — successor to the abandoned libconsensus library — which extracts Bitcoin''s stateful consensus validation logic (block headers, UTXO database, script verification) into a modular library enabling alternative node implementations to build on Core''s proven consensus code directly. Sedited explains why libconsensus failed (limited to script verification, unable to surface the stateful UTXO and disk logic without excessive workarounds), how kernel cleanly demarcates validation from wallet and GUI code to improve review safety, argues that kernel reduces rather than centralizes Core''s influence by lowering the barrier for competing implementations (citing Floresta, an ARK test framework, and several full-node projects already integrating it), and closes with the hope that kernel''s granular per-function validation interfaces could eventually serve as the foundation for a formal Bitcoin protocol specification.'
 ---
 
 ## Why Bitcoin Consensus Isolation Matters
 
 Speaker 0: 00:00:07
 
-Hello everybody, I am Shinobi, technical editor at Bitcoin Magazine, joined by Sedated, a Bitcoin core developer contributing to the Kernel Project.
-So Sedated, There's a little bit of a long tangled history to the kernel project.
+Hello everybody, I am Shinobi, technical editor at Bitcoin Magazine, joined by Sedited, a Bitcoin core developer contributing to the Kernel Project.
+So Sedited, There's a little bit of a long tangled history to the kernel project.
 Years ago, there was the lib consensus project.
 So, attempting to actually take all of the consensus rules and move them to a totally external library that could just be called, used independently on its own, like any other software library.
 And that project kind of got sunsetted in favor of the kernel project, which as opposed to trying to become a full library, is looking at just isolating kind of the consensus logic in the Bitcoin daemon so that you can call it independently or like granularly bit by bit from that program running rather than having to go through the whole validation flow as it's implemented in core.
@@ -67,7 +67,7 @@ Exactly.
 
 Speaker 1: 00:05:43
 
-The entire point is that you don't have to autismally interfere with the code every time you want to just verify a block, right?
+The entire point is that you don't have to artisanally interfere with the code every time you want to just verify a block, right?
 We just want to give this one function that does the logic correctly and everybody can just call it in exactly the same way and get a reproducible result.
 
 Speaker 0: 00:06:04
@@ -89,7 +89,7 @@ Yeah, so it gives us a whole lot more flexibility and also confidence with readi
 
 Speaker 0: 00:08:03
 
-So how is implemented kernel impacted or affected the work towards multi-process separation?
+So how has implemented kernel impacted or affected the work towards multi-process separation?
 Like, that's something for a similarly long time, Core as a project has kind of been trying to clean up the codebase so that things are nicely isolated, could potentially in future actually be separated into completely separate programs that talk to each other as opposed to one singular codebase.
 But it's been a long road, I think a lot longer than LibConsensus and the Kernel project, going from the giant file that Satoshi left everybody to like the much more modular, clean code base that we have today.
 
@@ -126,11 +126,11 @@ It has been used successfully by, I don't know, maybe 10, 20 other projects.
 No major bugs have been reported in like half a year.
 Because obviously we really can't mess this up once it hits production.
 So yeah, we definitely have to be very careful with that.
-So most recently, I think two weeks ago, Floresta, one of the Utrex O implementations, integrated the kernel or this upset of the kernel library.
+So most recently, I think two weeks ago, Floresta, one of the Utreexo implementations, integrated the kernel or this upset of the kernel library.
 
 Speaker 0: 00:12:00
 
-Yeah, that's the Project Vintium's funding in Brazil, right?
+Yeah, that's the Project Vinteum's funding in Brazil, right?
 
 Speaker 1: 00:12:05
 
@@ -171,7 +171,7 @@ So yeah, that's basically like the high level overview of what the logic actuall
 In terms of what was most challenging was probably the step between writing a block to disk and doing the actual validation.
 There were like a couple of callback hooks back into the GUI and some extra functions that called out to the wallet unnecessarily.
 It's not really too complicated stuff that I had to deal with personally, but also I have to say at that point that when I took the project over three years ago now, it already was in a fairly mature state and that preceded all the multi-process work before it that cleaned that up.
-Some of the work that Corey Fields did on the old LibBitcoin consensus originally, some of the work that Coldong did.
+Some of the work that Cory Fields did on the old LibBitcoin consensus originally, some of the work that Coldong did.
 Yeah, so it's really been this long process over probably more than a decade to get to this point.
 
 Speaker 0: 00:15:48
@@ -212,9 +212,9 @@ Speaker 0: 00:19:41
 And at that point, if it comes down to it, if something else using the kernel were to actually, you know, gain adoption, become a majority of the network, like at that point, it's just another repository.
 Like those other projects can simply fork it and do whatever they want with it.
 Like, Core has no power just because they originally implemented that codebase.
-Like, it just click fork.
+Like, just click fork.
 And if everybody's running some other thing built around it instead of Core itself, like, Core literally voluntarily obsoleted itself in that scenario.
-I don't get the argument that that's entrenching Koromor.
+I don't get the argument that that's entrenching Core more.
 
 Speaker 1: 00:20:25
 
@@ -249,7 +249,7 @@ And then you just let the interface for each of that validation function.
 And what it exactly does, be the specification for Bitcoin.
 I think that is probably the cleanest way to achieve any kind of formal description of Bitcoin.
 Just because you have this guarantee that you don't introduce a bug when you translate from the reference client to...
-The reference clients to?
+
 
 Speaker 0: 00:23:51
 
@@ -289,7 +289,7 @@ That's going to take a lot of work still, but I think it'll be very worthwhile.
 Speaker 0: 00:25:41
 
 I couldn't agree more.
-Thanks for sitting down and talking, Senator, and I hope you all enjoyed.
+Thanks for sitting down and talking, Sedited, and I hope you all enjoyed.
 
 Speaker 1: 00:25:49
 
