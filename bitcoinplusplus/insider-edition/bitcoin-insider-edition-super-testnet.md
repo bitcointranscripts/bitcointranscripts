@@ -320,7 +320,7 @@ Blocks are getting filled up.
 **Super Testnet:** 00:09:26
 
 It has some good effects, but it also has negative effects.
-I could easily imagine encouraging someone to synchronize the blockchain and then they, you know, take a look at what's on there and they're like, it's a bunch of JPEGs and old coins and like there's barely any Bitcoin happening on this network.
+I could easily imagine encouraging someone to synchronize the blockchain and then they, you know, take a look at what's on there and they're like, it's a bunch of JPEGs and altcoins and like there's barely any Bitcoin happening on this network.
 Why would I synchronize this?
 
 **niftynei:** 00:09:44
