@@ -171,7 +171,7 @@ So yeah, that's basically like the high level overview of what the logic actuall
 In terms of what was most challenging was probably the step between writing a block to disk and doing the actual validation.
 There were like a couple of callback hooks back into the GUI and some extra functions that called out to the wallet unnecessarily.
 It's not really too complicated stuff that I had to deal with personally, but also I have to say at that point that when I took the project over three years ago now, it already was in a fairly mature state and that preceded all the multi-process work before it that cleaned that up.
-Some of the work that Cory Fields did on the old LibBitcoin consensus originally, some of the work that Coldong did.
+Some of the work that Cory Fields did on the old LibBitcoin consensus originally, some of the work that Carl Dong did.
 Yeah, so it's really been this long process over probably more than a decade to get to this point.
 
 Speaker 0: 00:15:48
