@@ -11,7 +11,8 @@ tags:
   - 'privacy'
   - 'wallet'
   - 'btcplusplus'
-speakers: []
+speakers:
+  - 'niftynei'
 categories:
   - 'conference'
 source_file: 'https://youtu.be/QQO0pMQB-QU'
