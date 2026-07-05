@@ -13,6 +13,7 @@ tags:
   - 'btcplusplus'
 speakers:
   - 'niftynei'
+  - 'Lisa Neigut'
 categories:
   - 'conference'
 source_file: 'https://youtu.be/QQO0pMQB-QU'
@@ -245,7 +246,7 @@ If anyone has any questions, happy to hear them.
 Thanks Nifty.
 Might be out of scope, but do you know if there's any plan to be able to derive the scan private key from the spend private key, like deterministically?
 
-nifty: 00:18:19
+Nifty Nei: 00:18:19
 
 Yeah, that's a great question.
 I think they have to stay separate.
