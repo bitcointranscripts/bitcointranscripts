@@ -12,7 +12,6 @@ tags:
   - 'wallet'
   - 'btcplusplus'
 speakers:
-  - 'niftynei'
   - 'Lisa Neigut'
 categories:
   - 'conference'
