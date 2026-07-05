@@ -57,6 +57,8 @@ But I'll get into this a little more explicitly.
 
 ## What sp() Descriptors Represent
 
+niftynei: 00:02:03
+
 Okay, so let's just go back to like, okay, what are we talking about?
 We're talking about this sp() thing.
 So SP is short for silent payments.
@@ -69,6 +71,8 @@ So this one is sp(), so it's like, OK, for a silent payment, here's some informa
 So the first thing that we're going to put inside of this kind of set of information about a silent payment output is something called a key expression.
 
 ## Why Silent Payments Need New Key Expressions
+
+niftynei: 00:03:23
 
 How many of you have seen XPUBs before?
 So, XPUB is kind of a traditional or classic key expression.
@@ -94,6 +98,8 @@ And then there's a payload in each of them.
 I'm not going to look at the actual BIP, but I'm just going to kind of explain what's in them.
 
 ## The `spscan` Key Expression
+
+niftynei: 00:05:03
 
 So for `spscan`, the first kind of piece of information that you're going to have in this Bech32 string is a private key.
 This is going to be something called the scan key.
@@ -157,16 +163,16 @@ There's a lot of computation that goes into scanning every outpoint and doing EC
 So that's kind of work that's outside of the descriptor and you can use the information in the key expression.
 In order to cut down on the amount of work that your wallet has to do to identify silent payment outpoints that belong to your wallet, Craig is suggesting in the BIP for the descriptor that you can optionally annotate it with a block height from which to begin scanning.
 So basically by having a birth, that's why they call it a BIRTHDAY, you're like, okay, I know that I didn't generate the silent payment key set until block 840, 000.
-So whenever my wallet is going to start scanning for any potential outpoints that match the silent payment descriptor, I will only start at the BIRTHDAY that's included in the descriptor.
-So it's basically a way of cutting down on the amount of work that a wallet might need to do by including a birth date.
+So whenever my wallet is going to start scanning for any potential outpoints that match the silent payment descriptor, I will only start at the birthdate that's included in the descriptor.
+So it's basically a way of cutting down on the amount of work that a wallet might need to do by including a birthdate.
 I believe it's optional.
-You could just include a key expression, and That would be a valid output descriptor.
-Or you can add a birth date like that.
+You could just include a key expression, and that would be a valid output descriptor.
+Or you can add a birthdate like that.
 So just as an example, this would be a valid output descriptor according to the BIP that Craig is proposing.
 So you would have your key material that gives you all the information you need to find it.
-And then you would have a birth date.
+And then you would have a birthdate.
 So it's saying, don't start scanning for these outpoints until this block and after.
-So that's birth date.
+So that's birthdate.
 I have a lot of time.
 That's fine.
 I'm not going to use it all.
@@ -174,7 +180,7 @@ OK.
 
 ## Silent Payment Labels
 
-niftynei: 00:08:40
+niftynei: 00:11:13
 
 So then the last piece of this is another optional thing that you can add, and these are called LABEL(S).
 I didn't know what a LABEL is.
@@ -217,10 +223,12 @@ But that's not part of the specification.
 That would be something you'd have to add on top of it, if that makes sense.
 So whenever you're describing, okay, silent payments can be made to this key.
 Again, a key is a scan key and a spend key.
-Starting at this birth date, and then here's all the different labels that I've assigned to this particular set of silent payment addresses.
-So for me, it would be 11021.
+Starting at this birthdate, and then here's all the different labels that I've assigned to this particular set of silent payment addresses.
+So for me, it would be 1,10,21.
 
 ## Putting the Descriptor Together
+
+niftynei: 00:14:51
 
 So altogether, this is what a silent payment descriptor would look like as proposed by Craig.
 Again, this is not final.
@@ -276,7 +284,7 @@ If anyone has any questions, happy to hear them.
 Thanks nifty.
 Might be out of scope, but do you know if there's any plan to be able to derive the scan private key from the spend private key, like deterministically?
 
-Lisa Neigut: 00:18:19
+niftynei: 00:18:19
 
 Yeah, that's a great question.
 I think they have to stay separate.
@@ -346,9 +354,8 @@ That was a longer.
 
 [Audience]: 00:23:14
 
-Yes.
-Do you have a backup PD?
-So you can use backup for the scan and PD?
+Do you have a backup path?
+So you can use one backup for both the scan and spend keys?
 
 niftynei: 00:23:27
 
@@ -377,6 +384,8 @@ Any other questions?
 We've got like another minute and a half.
 
 ## Closing Remarks
+
+niftynei: 00:24:39
 
 This is the whole specification for silent payments.
 Fun fact, silent payments require Schnorr, so they wouldn't be possible without Taproot.
