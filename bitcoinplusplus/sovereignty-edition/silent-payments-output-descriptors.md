@@ -13,6 +13,7 @@ tags:
   - 'btcplusplus'
 speakers:
   - 'Lisa Neigut'
+  - 'niftynei'
 categories:
   - 'conference'
 source_file: 'https://youtu.be/QQO0pMQB-QU'
@@ -242,42 +243,30 @@ If anyone has any questions, happy to hear them.
 
 [Audience]: 00:18:08
 
-Thanks Nifty.
+Thanks nifty.
 Might be out of scope, but do you know if there's any plan to be able to derive the scan private key from the spend private key, like deterministically?
 
-Nifty Nei: 00:18:19
+Lisa Neigut: 00:18:19
 
 Yeah, that's a great question.
 I think they have to stay separate.
-And I can pull up, I mean, if you want to be, let me see if I can find the,
-
-Speaker 2: 00:18:26
-
+And I can pull up, I mean, if you want to be, let me see if I can find the...
 I don't have a link to the BIP, do I?
-BIP, that would be handy.
+That would be handy.
 BIP 352, there it is, that's this one.
-
-Speaker 0: 00:18:33
-
 Is there a way to full screen this?
-
-Speaker 2: 00:18:35
-
 There's gotta be a way to full screen this.
 There we go, does that work?
-
-Speaker 0: 00:18:38
-
 Ta-da, kind of.
 Okay, so.
-Okay, so this is the silent payments bit, which I have not completely read.
+Okay, so this is the silent payments BIP, which I have not completely read.
 I shouldn't admit that on camera.
 It's OK.
 So if you dig into the math of how these work, you want them to be separate.
 So you could use them.
 They could be the same thing.
 And in fact, the original proposal, if you look at the simple case, this integer A, I think, discovers, no, that's not it.
-Okay, so in the original, kind of the simplest case of private keyments.
+Okay, so in the original, kind of the simplest case of private key payments.
 There's this public key B.
 So this is kind of the piece that belongs to what you're defining in the silent payment descriptor is B.
 So here they say public key B.
@@ -314,7 +303,9 @@ I don't know why you need to know the private.
 I think, yeah, and they kind of have this thing in here where you can detect it by, you need the hash of the, oh, it's a multiplier, that's why.
 Basically, you need the private piece of the scan key in order to identify them, though.
 So you can send them to, so basically, you can send Bitcoin to this by knowing just the public key of the scan key and the public key of the spend key.
-You can identify them by knowing the private side of the scan key is why in the output descriptor definition, We had SP scan and SP spend.
+You can identify them by knowing the private side of the scan key and the public spend key.
+You can also identify them by knowing the private spend key and the private scan key.
+But this part of the equation where you can only identify them if you know the private side of the scan key is why in the output descriptor definition we had `spscan` and `spspend`.
 Both of those required the private side of the scan key.
 And that's because without that, you can't actually identify them.
 And this is why.
@@ -323,19 +314,18 @@ Cool.
 Sorry, does that answer your question?
 That was a longer.
 
-Speaker 3: 00:23:14
+[Audience]: 00:23:14
 
 Yes.
 Do you have a backup PD?
 So you can use backup for the scan and PD?
 
-Speaker 0: 00:23:27
+Lisa Neigut: 00:23:27
 
-Yes.
 Ideally, yeah, probably.
-But you wouldn't want to, if you have the spine key and you're deriving the scan key, yeah, this is beyond my pay grade at this point.
+But you wouldn't want to, if you have the spend key and you're deriving the scan key, yeah, this is beyond my pay grade at this point.
 But yeah, you're right.
-If you had a way of deriving the scan key from the spine key, then you wouldn't need to encode both of them in the descriptor, right?
+If you had a way of deriving the scan key from the spend key, then you wouldn't need to encode both of them in the descriptor, right?
 Because there would be, you would need to communicate that, it would be implicit.
 So maybe that's something to contribute back to the descriptors back, yeah.
 
