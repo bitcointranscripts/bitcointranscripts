@@ -18,14 +18,15 @@ categories:
 source_file: 'https://youtu.be/QQO0pMQB-QU'
 summary: 'niftynei presents a walkthrough of Craig Raw''s BIP 2047 proposal at bitcoin++ Sovereignty Edition in Taipei, which adds a new SP top-level output descriptor format to BIP 352 (silent payments), introducing two new key expression types — SP scan (private scan key plus public spend key, for watch-only wallets) and SP spend (both scan and spend private keys, for fully spending wallets) — along with two optional arguments — a birthday block height to limit how far back a wallet must scan the chain, and integer labels that allow a single silent payment key set to differentiate multiple payment sources (e.g., separate Twitter and GitHub addresses) without generating separate key sets; niftynei also explains why silent payments require Schnorr signatures and must therefore be taproot outputs, and notes that the descriptor format enables cross-wallet interoperability by giving implementations like Sparrow, BlueWallet, and Bitcoin Core a common language for importing and exporting silent payment key material.'
 ---
+## Introduction to Silent Payment Descriptors 
 
-Speaker 0: 00:00:00
+niftynei: 00:00:00
 
 Great.
 Okay, so silent payments are pretty cool.
 We're not going to talk about that.
 In fact, there's already a BIP, BIP352 for silent payments.
-What this talk is about is about the app output descriptor format.
+What this talk is about is about the add output descriptor format.
 Specifically, the BIP proposal for adding an output descriptor format.
 Okay, so this is the BIP.
 It's called Add sp() Output Descriptor Format for BIP 352, which is the BIP number for silent payments.
@@ -53,16 +54,22 @@ So basically if someone sends you,
 So the key idea with a key expression is that it's like, okay, here is key material.
 This will either let you identify coins that have been locked up to this particular information, or it will let you both identify them and also spend them.
 But I'll get into this a little more explicitly.
+
+## What sp() Descriptors Represent
+
 Okay, so let's just go back to like, okay, what are we talking about?
 We're talking about this sp() thing.
-So sp() is short for silent payments.
-So basically when you have a descriptor, what a descriptor, what the whole point of having an output descriptor is that it's like here's a description of what an out point in Bitcoin might look like on chain and it's a way that if you have this description of what an out point or output might look like you're then able to go and find them across all of the out points that exist in Bitcoin currently.
+So SP is short for silent payments.
+So basically when you have a descriptor, what a descriptor, what the whole point of having an output descriptor is that it's like here's a description of what an outpoint in Bitcoin might look like on chain and it's a way that if you have this description of what an outpoint or output might look like you're then able to go and find them across all of the outpoints that exist in Bitcoin currently.
 Both past ones that have been spent and ones that are eligible to be spent, to spend.
 And the whole goal of this is that your wallet will be able to identify coins that you're able, interested, they're either interested in keeping track of when they're spent versus not, or, and maybe additionally, able to spend those outputs, if that makes sense.
 So we basically need a way of writing down, these are outputs that I'm interested in, and here's information that you would need in order to be able to spend them in some cases.
 OK, so we're going to write this as kind of like it's very, for whatever reason, all output descriptors look like function definitions.
 So this one is sp(), so it's like, OK, for a silent payment, here's some information.
 So the first thing that we're going to put inside of this kind of set of information about a silent payment output is something called a key expression.
+
+## Why Silent Payments Need New Key Expressions
+
 How many of you have seen XPUBs before?
 So, XPUB is kind of a traditional or classic key expression.
 It gives you information to be able to find not only one output, but a series of outputs that have been spent to that particular output descriptor, to that particular XPUB, right?
@@ -75,19 +82,23 @@ One is this `spscan`, and the other is `spspend`.
 So these are actually gonna be long series of information, a lot like an XPUB is.
 XPUBs can be quite long.
 They're encoded in Bech32.
+(XPUBs are encoded using Base58Check. The new `spscan` and `spspend` key expressions are encoded in Bech32)
 I don't really care about the encoding.
 All I care about is what information is inside of them.
 So what exactly goes in this dot, dot, dot portion of a key expression for a silent payment?
 For, okay, so this is from the BIP proposal that Craig wrote.
-He's got `spscan` and `sppend`.
+He's got `spscan` and `spspend`.
 So actually, he kind of then defines the data part.
 It starts with the character "q", because that's V0.
 And then there's a payload in each of them.
 I'm not going to look at the actual BIP, but I'm just going to kind of explain what's in them.
+
+## The `spscan` Key Expression
+
 So for `spscan`, the first kind of piece of information that you're going to have in this Bech32 string is a private key.
 This is going to be something called the scan key.
 For silent payments, there's basically two keys involved in each one.
-One is a scan key that's what allows you to go through every single out point and figure out whether or not it belongs to your wallet 
+One is a scan key that's what allows you to go through every single outpoint and figure out whether or not it belongs to your wallet 
 You actually need two pieces of information though 
 You need the scan key and then you need oh and the scan key since it's a private key 
 All private key material in Bitcoin is 32 bytes of random data, so it's just a number, and this is no different, so you're going to have a 32 byte piece of information, which is a private key, and that's gonna be your scan key, and then there's gonna be a second key inside of this basically key expression, and for the scan type of it, it's actually gonna be a public key.
@@ -105,6 +116,11 @@ But yeah, so for `spscan`, you're gonna have, again, two kind of pieces of infor
 One of them is gonna be a private key, one of them's gonna be a public key.
 Again, this first private key lets you scan for information about silent payments.
 And the second one is whether or not I, the person who's holding this `spscan` thing, can spend it.
+
+## The `spspend` Key Expression
+
+niftynei: 00:07:14
+
 Again, so again, if you go back to the BIP that Craig Raw came out with, he had two kinds of key expression types that he defined.
 One was scan, which we just walked through.
 The second one was the spend, so `spspend`.
@@ -123,6 +139,11 @@ Okay, so we have scan, we have spend.
 That's the first part.
 Okay, so we're kind of defining a silent payment.
 The first part is like, here's all the data that you need in order to be identified, these outpoints on chain, and optionally spend them if I provide the secret key for it.
+
+## Birthdays and Efficient Wallet Scanning
+
+niftynei: 00:08:40
+
 Craig also defines two additional pieces of information that you can optionally add.
 This actually might be like one critique I have, but that's okay.
 One is he calls them the BIRTHDAY, and then he calls them a set of LABEL(S).
@@ -150,6 +171,11 @@ I have a lot of time.
 That's fine.
 I'm not going to use it all.
 OK.
+
+## Silent Payment Labels
+
+niftynei: 00:08:40
+
 So then the last piece of this is another optional thing that you can add, and these are called LABEL(S).
 I didn't know what a LABEL is.
 I have to be honest, I had not looked into what silent payments are, really, until I told Craig that I would present his descriptor BIP for him.
@@ -193,6 +219,9 @@ So whenever you're describing, okay, silent payments can be made to this key.
 Again, a key is a scan key and a spend key.
 Starting at this birth date, and then here's all the different labels that I've assigned to this particular set of silent payment addresses.
 So for me, it would be 11021.
+
+## Putting the Descriptor Together
+
 So altogether, this is what a silent payment descriptor would look like as proposed by Craig.
 Again, this is not final.
 This is just a proposal.
@@ -219,7 +248,7 @@ You can find it on the BIPs repo at #2047.
 So this is his whole thing.
 Again, thanks, Craig, for coming up with this.
 This is a, I think it's an important piece of being able to communicate about what silent payments you're expecting between different wallets.
-So having an output descriptor that defines a silent payment address or a silent payment type would let you port them between different wallets much more easily so you could import it into BlueWallet or Sparrow or Bitcoin core's descriptors, et cetera.
+So having an output descriptor that defines a silent payment address or a silent payment type would let you port them between different wallets much more easily so you could import it into BlueWallet or Sparrow or Bitcoin Core's descriptors, et cetera.
 So having a common language to talk about this information is really important.
 And again, all of this is kind of based on how silent payments work, which we did not go into.
 If you're interested in more information about what exactly is in a silent payment and how the ECDH works, how they're actually using the scan key and the spend key to be able to identify outpoints from some data that's on chain.
@@ -239,6 +268,8 @@ Yeah, I also run bitcoin++.
 Thanks for coming to our first ever sovereignty edition in Taipei.
 We have about eight more minutes.
 If anyone has any questions, happy to hear them.
+
+## Q&A
 
 [Audience]: 00:18:08
 
@@ -265,7 +296,7 @@ So if you dig into the math of how these work, you want them to be separate.
 So you could use them.
 They could be the same thing.
 And in fact, the original proposal, if you look at the simple case, this integer A, I think, discovers, no, that's not it.
-Okay, so in the original, kind of the simplest case of private key payments.
+Okay, so in the original, kind of the simplest case of single-key silent payments.
 There's this public key B.
 So this is kind of the piece that belongs to what you're defining in the silent payment descriptor is B.
 So here they say public key B.
@@ -319,7 +350,7 @@ Yes.
 Do you have a backup PD?
 So you can use backup for the scan and PD?
 
-Lisa Neigut: 00:23:27
+niftynei: 00:23:27
 
 Ideally, yeah, probably.
 But you wouldn't want to, if you have the spend key and you're deriving the scan key, yeah, this is beyond my pay grade at this point.
@@ -328,27 +359,29 @@ If you had a way of deriving the scan key from the spend key, then you wouldn't 
 Because there would be, you would need to communicate that, it would be implicit.
 So maybe that's something to contribute back to the descriptors back, yeah.
 
-Speaker 3: 00:23:58
+[Audience]: 00:23:58
 
-Yeah.
 So I just have a comment.
 You asked a question for Craig about optional birthday.
 So since labels are numbers, probably it can't be.
 There's no way to distinguish whether it's a label or a birthdate.
 
-Speaker 0: 00:24:15
+niftynei: 00:24:15
 
-You're saying with making, so basically my question was like, could we make the birth date optional and also include labels, right?
+You're saying with making, so basically my question was like, could we make the birthdate optional and also include labels, right?
 And I think you're right, because it's all the same type.
 I don't know, something to think about.
-I don't think leaving birth dates out is necessarily desirable.
+I don't think leaving birthdates out is necessarily desirable.
 But, cool.
 Any other questions?
 We've got like another minute and a half.
+
+## Closing Remarks
+
 This is the whole specification for silent payments.
 Fun fact, silent payments require Schnorr, so they wouldn't be possible without Taproot.
 For those of you who know much about the upgrade path on their cryptography stuff, we added Schnorr with Taproot.
-I don't think you can't do the math that they're doing to make and have this all work prior to Taproot outputs, so silent payments must be taproot outputs.
+I don't think you can't do the math that they're doing to make and have this all work prior to Taproot outputs, so silent payments must be Taproot outputs.
 It's kind of cool.
 Anything else?
 Any other questions?
@@ -356,7 +389,3 @@ Okay.
 I will leave the floor a minute early.
 Thank you for coming.
 Great.
-
-Speaker 3: 00:25:30
-
-You you you you
