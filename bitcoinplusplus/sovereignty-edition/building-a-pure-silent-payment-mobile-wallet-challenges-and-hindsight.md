@@ -1,54 +1,55 @@
 ---
 title: 'Building a Pure Silent Payment Mobile Wallet: Challenges and Hindsight'
-speakers:
-  - Cygnet
+transcript_by: 'muchai254 via review.btctranscripts.com'
+media: 'https://youtu.be/MgoPkXHUH0E'
 date: '2026-01-17'
 tags:
-  - silent-payments
-  - wallet
-  - privacy
-  - cryptography
-  - compact-block-filters
-  - btcplusplus
+  - 'silent-payments'
+  - 'wallet'
+  - 'privacy'
+  - 'cryptography'
+  - 'compact-block-filters'
+  - 'btcplusplus'
+speakers:
+  - 'Cygnet'
 categories:
-  - conference
-source_file: https://youtu.be/MgoPkXHUH0E
-media: https://youtu.be/MgoPkXHUH0E
-summary: Cygnet presents Dana Wallet, a pure silent payment mobile wallet built with co-developer Sofstein, covering BIP-352 fundamentals (ECDH-derived unique addresses via input-hash-summed-private-keys times recipient scan key), the two core receiver-side challenges for light clients (needing per-transaction tweak data and scanning every taproot output in every block), and two implementation iterations — an initial Electrum-Rust plus Nakamoto BIP-158 approach and a more mobile-friendly Blindbit Oracle over HTTP. Benchmark results show a budget Motorola phone scanning 16 months of chain history in 6 minutes, made feasible by the finding that 95% of UTXOs are spent within two months so old fully-spent transactions can be skipped, with the talk closing on BIP-353 human-readable addresses as a near-term UX improvement that could eliminate displaying raw Bitcoin addresses entirely.
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'conference'
+source_file: 'https://youtu.be/MgoPkXHUH0E'
+summary: 'Cygnet presents Dana Wallet, a pure silent payment mobile wallet built with co-developer Sofstein, covering BIP-352 fundamentals (ECDH-derived unique addresses via input-hash-summed-private-keys times recipient scan key), the two core receiver-side challenges for light clients (needing per-transaction tweak data and scanning every taproot output in every block), and two implementation iterations — an initial Electrum-Rust plus Nakamoto BIP-158 approach and a more mobile-friendly Blindbit Oracle over HTTP. Benchmark results show a budget Motorola phone scanning 16 months of chain history in 6 minutes, made feasible by the finding that 95% of UTXOs are spent within two months so old fully-spent transactions can be skipped, with the talk closing on BIP-353 human-readable addresses as a near-term UX improvement that could eliminate displaying raw Bitcoin addresses entirely.'
 ---
 
 Speaker 0: 00:00:16
 
 All right, yes, so hello everyone.
-My name is Cygnet and for the last two years or so I've been interested in sign-in payments.
+My name is Cygnet and for the last two years or so I've been interested in silent payments.
 I think it's going to sort of nerd slide me for like two years now.
-More specifically, me together with Sofstein, we have been working on a specific type of sign and payments wallet, which we call, I guess, a sovereign sign and payments wallet.
-So yeah, I'm going to talk about that, but before I'm talking about my wallet and to give you a good idea of why it's sovereign, I think it's first important to give a quick overview of what sign-on payments itself actually is.
-To understand sign-on payments, we first need to talk about the problem that sign-on payments is trying to solve, which is address reuse.
+More specifically, me together with Somsen, we have been working on a specific type of silent payments wallet, which we call, I guess, a sovereign silent payments wallet.
+So yeah, I'm going to talk about that, but before I'm talking about my wallet and to give you a good idea of why it's sovereign, I think it's first important to give a quick overview of what silent payments itself actually is.
+To understand silent payments, we first need to talk about the problem that silent payments is trying to solve, which is address reuse.
 So I'm sure I don't really need to tell the people in this audience that address reuse is something that you generally should be trying to avoid.
 This was known basically from day one, I think, technically even before day one, because it was in the white paper that you should not reuse keys.
 You know, for privacy concerns.
 But despite that, address reuse is actually super prevalent.
 So here are just two examples that I screenshotted.
-So the one on the left here is the donation space for GrapheneOS.
-Now GrapheneOS is obviously a very privacy-conscious project, so you would imagine that they care a lot about privacy, yet they even on their donation page, they use this single, you know, like just normal hard-coded Bitcoin address, And of course, if you can essentially everyone can just look this up and they can kind of see what, you know, how many people have sent funds to them.
+So the one on the left here is the donations page for GrapheneOS.
+Now GrapheneOS is obviously a very privacy-conscious project, so you would imagine that they care a lot about privacy, yet they even on their donation page, they use this single, you know, like just normal hard-coded Bitcoin address, 
+And of course, if you can essentially everyone can just look this up and they can kind of see what, you know, how many people have sent funds to them.
 So that's one example of, you know, like people using or people often like still doing address reuse.
 Another example is Bitcoin exchanges.
 So to the right is a screen shot of a Bitcoin exchange.
 For exchanges, it's generally just more user convenience.
 So if you want to withdraw, especially in Europe, it's sort of starting to become customary that you have to verify the addresses that you own, and that is because impartially it's for compliance reasons but it's also just more convenient.
 Like if I'm a user, I want to be like sort of good, have good privacy, you kind of just need to, like, verify an address like every time you want to withdraw, but nobody does this, so it's much more convenient to just use the same address.
-So, yeah, this is just a big problem, and this is something that sign-in payments is trying to tackle, basically.
+So, yeah, this is just a big problem, and this is something that silent payments is trying to tackle, basically.
 So the way that if I wanted to describe silent payments in a single sentence, I would say that silent payments is trying to counter address reuse with the use of ECDH.
 So ECDH, elliptic curve Diffie-Hellman, it is a cryptographic scheme that is pretty popular, and it is like a scheme that's two parties that have a public-private key, can sort of without really even interacting with each other, they can form a shared secret together.
 And this requires private and public key pairs, and as it happens, most Bitcoin transactions tend to use public private keys.
-So if you think of a normal Bitcoin, a common Bitcoin script is like sending to tap root or sending to like a witness public key hash, you're basically sending to a public key, and when you spend it, you are actually using the private key to spend it.
+So if you think of a normal Bitcoin, a common Bitcoin script is like sending to Taproot or sending to like a Witness public key hash, you're basically sending to a public key, and when you spend it, you are actually using the private key to spend it.
 So there's private public keys here.
 And so the idea of silent payments is that we can exploit this fact, the fact that a lot of transactions on chain are using private public keys to create a new address.
 So this function you can see here, that is kind of in a nutshell what silent payments is doing.
-So normally you would kind of send to a public key, which is I call P recipient, but now instead of sending it to that directly, what I'm going to do is I'm going to use Diffie-Hellman to calculate the shared secret, and I'm not going to send to the address directly, but I'm going to tweak the address with the shared secret, and I'm then going to send it to that address.
-And you know, so This is sort of unique per sender-recipient pair, so that is what creates a voice address we use.
+So normally you would kind of send to a public key, which is I call P_recipient, but now instead of sending it to that directly, what I'm going to do is I'm going to use Diffie-Hellman to calculate the shared secret, and I'm not going to send to the address directly, but I'm going to tweak the address with the shared secret, and I'm then going to send it to that address.
+And you know, so this is sort of unique per sender-recipient pair, so that is what creates a voice address we use.
 Before I continue on, I think I first want to quickly mention that in a silent payment address, we have two different keys, a scan key and a spend key, and these are separated out because we will get into this, but, you know, for a silent payment, you need to do a lot of scanning, and it's useful to have a separate key for this, because maybe you don't want to always have the spend key in memory when you do this.
 There's a bunch of other reasons for it, too.
 But that's short of it.
@@ -61,20 +62,20 @@ The reason you sum them up and not just take one at random is because this is sl
 So you sum up, you create this A, which is the sum of the private keys.
 Next you also need an input hash.
 So the reason here that we take an input hash is because just using the sum of the private keys, it's possible to create transactions reusing the same keys.
-So like you can imagine if you have if you already have like an address and you spend from that address twice, you can you're kind of reusing the keys, so just taking the creating a secret just from the private keys itself doesn't guarantee uniqueness, but we guarantee this by taking this input hash which is essentially just the out points and then hash, and because out points are related to UTXOs, and UTXOs can, of course, only be spent once.
+So like you can imagine if you have if you already have like an address and you spend from that address twice, you can you're kind of reusing the keys, so just taking the creating a secret just from the private keys itself doesn't guarantee uniqueness, but we guarantee this by taking this input hash which is essentially just the outpoints and then hash, and because outpoints are related to UTXOs, and UTXOs can, of course, only be spent once.
 If UTXOs could be spent multiple times, then that would be like a double spending problem.
 So that is essentially that kind of guarantees that this address that we create is unique.
 So next we create a shared secret.
-This is the input hash times the A sum times the B scan, which is the scan key for the recipient that you're trying to send to.
+This is the input hash times the A sum times the B_scan, which is the scan key for the recipient that you're trying to send to.
 And then finally, we calculate what the resulting on-chain output looks like with this formula.
-So P is you have the shared secret, so you send to the B spend, which in the previous slides would be what you would normally send to, but now we don't just send to the B spend, we also send to a B spend summed up with the hash of the shared secrets multiplied by the generator points and make it a public key.
+So P is you have the shared secret, so you send to the B_spend, which in the previous slides would be what you would normally send to, but now we don't just send to the B_spend, we also send to a B_spend summed up with the hash of the shared secrets multiplied by the generator points and make it a public key.
 So that is what makes it unique.
-Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital A, so capital A is the sum of the input public keys, and now we have this B scan which is like a small B, so that's the private key for the scan key.
+Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital A, so capital A is the sum of the input public keys, and now we have this B_scan which is like a small B, so that's the private key for the scan key.
 So however, the A is the same, the input hash is the same because it follows the same principle, and the shared secret is also essentially the same because this is the Diffie-Hellman scheme.
 That also means that in step five, the resulting on-chain is calculated, you basically arrive at the same result as the sender would.
 So that's how a receiver can derive the same address.
 However, only the receiver is able to spend this address, so you can see this function at the bottom.
-Of course, the right side, the hash of the two parties know the shared secrets, but only the receiver knows the private key, knows the spending key, so only the receiver is actually able to spend this output.
+Of course, the right side, the hash of the two parties know the shared secrets, but only the receiver knows the private key, knows the spending key, so only the receiver is actually able to spend this output.___
 So this is basically how you can do both sending and receiving.
 In a nutshell, or the way I've just described, it might sound to you like, okay, this seems pretty straightforward, so what is the catch here?
 Because if it was that easy to solve address reuse, then why haven't we done this like 10 years ago?
