@@ -1,5 +1,5 @@
 ---
-title: 'BTC++ Mempool Edition: DATUM Deep Dive'
+title: 'DATUM: Decentralizing Bitcoin Mining Through Sovereign Block Template Creation'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://youtu.be/FJ0Hye52Ib8'
 date: '2025-07-03'
@@ -18,24 +18,24 @@ source_file: 'https://youtu.be/FJ0Hye52Ib8'
 summary: 'Jason Hughes (VP of Engineering at Motion Mining, creator of DATUM at Ocean) presents a deep dive into DATUM — Decentralized Alternative Templates for Universal Mining — an MIT-licensed, C-based protocol that lets individual miners build their own block templates and submit blocks directly to the network while still earning pooled rewards, built from scratch rather than on Stratum V2 due to SV2''s decade of development with no decentralized adoption, its centralized design assumptions, and firmware-level coinbase size constraints that SV2 does not handle; the talk covers the Datum Gateway''s Stratum V1 server, its encrypted handshake with Datum Prime via libsodium, the CoinBaser command for non-custodial payout list negotiation, backwards proof-of-work validation, spot-check template integrity, and the aggregation benefits that cut bandwidth from 200 GB/day for 8,000 direct connections to roughly 8 GB/day, with over 200 mainnet blocks already mined by the software as of the talk.'
 ---
 
-Speaker 0: 00:00:00
+Jason Hughes: 00:00:00
 
 I will preface this with I do not usually do these things.
 We will see how this goes, and I will do my best to get through this and make sure everybody learns something in the process.
 I am Jason from OCEAN, like you said.
-I created Datum, and we are going to just kind of dive into what that is, why it is, and how it works.
+I created DATUM, and we are going to just kind of dive into what that is, why it is, and how it works.
 We will go from there.
 If anybody wants my PGP key, feel free to snap a shot of that.
 And that's the one I pretty much use for everything important.
 If you need to get a hold of me, you can use that email.
 That email works for whatever.
 I've got a little bit of an agenda.
-We'll go through some introductions of things and kind of what Datum is.
+We'll go through some introductions of things and kind of what DATUM is.
 Why not SV2?
-That's probably the biggest question that we get when we talk about Datum.
+That's probably the biggest question that we get when we talk about DATUM.
 And why C and not Rust or something else?
 I mean, those are kind of elephants in the room that we need to touch on.
-And then how did we start on Datum?
+And then how did we start on DATUM?
 Like, where did it begin and what did it start as?
 And then what did it become, and how did it evolve into what it is now?
 So there's our rough agenda.
@@ -66,7 +66,7 @@ I was awarded the single largest bug bounty by Tesla.
 Mechanic here tells the story way better than I do.
 So if you ever get bored, ask him to tell that for you.
 All right, so why am I here?
-We're talking about Datum, and I hope that everybody here knows what Datum is at least a little bit.
+We're talking about DATUM, and I hope that everybody here knows what DATUM is at least a little bit.
 It's a protocol that OCEAN  has developed and is pushing for decentralized template creation.
 I personally want to see decentralized mining and template creation back in Bitcoin.
 That used to be a bigger thing than it was.
@@ -74,10 +74,10 @@ Than it is now, it used to be a bigger thing, when you had more people actually 
 You had kind of a mix of pools.
 You had some protocols like GBT that came along that allowed it.
 And that's kind of gone by the wayside, as we have Foundry and Antpool and friends, if you've seen the other talk over there, well over 50% of the network.
-But I basically created Datum, the protocol, the gateway, and the server kind of from scratch over the last year.
+But I basically created DATUM, the protocol, the gateway, and the server kind of from scratch over the last year.
 And it's worked out pretty well.
-So what is a Datum?
-Datum is an acronym, because I love acronyms, for Decentralized Alternative Templates for Universal Mining.
+So what is a DATUM?
+DATUM is an acronym, because I love acronyms, for Decentralized Alternative Templates for Universal Mining.
 And the idea behind it is to make a protocol that is just for decentralized mining.
 It's not for just pointing your miners at a pool and calling it a day.
 You have to do the work.
@@ -94,34 +94,34 @@ You are a mercenary.
 Unless you are pure solo mining against your own node, you are not a miner.
 And we're trying to fix that.
 We're trying to make it so that everybody from the guy with one Bitaxe all the way up to the guy with 100 exahash farm can do their own mining and make their own blocks again.
-So Datum, in order to do that, has to be a pool server that the miners run themselves.
+So DATUM, in order to do that, has to be a pool server that the miners run themselves.
 Because you have to have somewhere to point your miners to be able to give them the work that you create to actually accomplish that.
 And you can't accomplish that without a pool server.
 And we have to work with what we got.
 We have thousands, tens of thousands, hundreds of thousands of miners that run the Stratum version 1 protocol.
 Those miners can be pointed at things, and we want to make that easy.
 You have to be able to point that at something to make your own block and reap the rewards of that.
-So the miners make the blocks with Datum.
+So the miners make the blocks with DATUM.
 The miners submit the blocks directly to the network.
 We don't have to be involved in that.
 Like, no pool has to be involved in it.
-You can run Datum and be a completely sovereign miner just by running the Datum gateway.
+You can run DATUM and be a completely sovereign miner just by running the DATUM gateway.
 It's pretty lightweight and pretty cool that it does that.
 So it is a pool server in itself.
 And the idea is we wanted it to be open source.
-We released the Datum gateway under the MIT license.
+We released the DATUM gateway under the MIT license.
 I don't think it can get much better than that.
 And the other thing is you want to make sure that the blocks that you make, you know what you're making too, because there's some coordination with the pool.
 You want to be able to make your own blocks, but you don't want to have to wait until you mine your own block to get paid.
 So you can see what your block is going to be paying in the Coinbase non-custodially to other miners and yourself.
-And you can see that in your own Datum gateway.
-So here's a little overview of how the Datum setup works.
-On the, I guess it's my right and your right, on the right-hand side, you have what you would run as a Datum miner.
-So your miners, your actual ASICs, the Bitaxe, the S21s, whatever you have, you would point them at your actual Datum gateway software.
+And you can see that in your own DATUM gateway.
+So here's a little overview of how the DATUM setup works.
+On the, I guess it's my right and your right, on the right-hand side, you have what you would run as a DATUM miner.
+So your miners, your actual ASICs, the Bitaxe, the S21s, whatever you have, you would point them at your actual DATUM gateway software.
 And we'll get into what that is in general.
 But you would point them
-at your actual Datum Gateway software and we'll get into kind of what that is in general but but you would point them at your Datum Gateway.
-The Datum Gateway then uses your node.
+at your actual DATUM Gateway software and we'll get into kind of what that is in general but but you would point them at your DATUM Gateway.
+The DATUM Gateway then uses your node.
 Bitcoin Knots, Bitcoin Core works with both.
 Obviously, I'm going to suggest Knots, but I'm not going to derail this conversation into that one.
 There seems like there's plenty of time for that later.
@@ -129,7 +129,7 @@ I'm just trying to get you to make your own templates.
 If you want to make them with Core, I can't stop you.
 And that's the cool part about this.
 But at the end of the day, you are an actual solo miner.
-When you run Datum and you use your own node, you are a solo miner.
+When you run DATUM and you use your own node, you are a solo miner.
 And that is, by definition, what solo is.
 If you point a miner at a solo pool, per se, you're still just a mercenary.
 You just happen to be getting all the reward when the block is found, maybe, depending on that pool.
@@ -145,21 +145,21 @@ Most people want to pool, because you can't go five years without finding a bloc
 And you wouldn't want to, because over difficulty changes and things, you would eventually kind of undercut yourself if you don't find blocks regularly.
 And most people can't if you don't have a huge operation.
 So you want to mine on a pool.
-So the Datum Gateway connects to the Datum pool, which we call the server side of that Datum Prime.
+So the DATUM Gateway connects to the DATUM pool, which we call the server side of that DATUM Prime.
 And that coordinates with the pool that you are working on work that will pay the miners of that pool.
-And that's an encrypted link between your Datum gateway and the pool.
-So as a benefit of that, your Datum gateway becomes an aggregator.
-The Datum gateway only has to communicate once with the pool for however many miners you have behind it.
-You can set your difficulty high enough so that your bandwidth usage from the Datum gateway to the pool for an entire mining farm, and we'll get into that a little bit more detail, is pretty low.
+And that's an encrypted link between your DATUM gateway and the pool.
+So as a benefit of that, your DATUM gateway becomes an aggregator.
+The DATUM gateway only has to communicate once with the pool for however many miners you have behind it.
+You can set your difficulty high enough so that your bandwidth usage from the DATUM gateway to the pool for an entire mining farm, and we'll get into that a little bit more detail, is pretty low.
 It's an aggregator that you can use right now.
 And there's not a whole lot of those.
 There's some for Stratum V1.
-But even aggregating on Stratum V1 is higher bandwidth than using Datum or even SV2, some kind of aggregation that uses a slightly more sane protocol.
+But even aggregating on Stratum V1 is higher bandwidth than using DATUM or even SV2, some kind of aggregation that uses a slightly more sane protocol.
 SV1 works.
 It's not the greatest.
 It's kind of slapped together to serve a purpose and really grew out of proportion, but we're stuck with it for now.
 So we had to work with it.
-So the Datum Gateway runs the Stratum V1 server, connects to that, makes sure that your shares are working for the pool.
+So the DATUM Gateway runs the Stratum V1 server, connects to that, makes sure that your shares are working for the pool.
 You're making valid blocks, and everybody's happy because now you're making your own blocks and getting rewarded by a pool.
 That's the best of both worlds there.
 So the elephant in the room, why didn't we do Stratum V2?
@@ -193,7 +193,7 @@ I think it's the worst thing that's ever happened to development.
 You can flame me for it, but it's terrible.
 That's a whole talk in itself.
 Maybe we'll do that one next time.
-But Datum's written in C.
+But DATUM's written in C.
 It's lightweight.
 The entire binary with a whole pool server coordination with the pool can handle tens of thousands of miners connect to it is like less than 500 kilobytes.
 It runs on a Raspberry Pi 3 at exahash levels.
@@ -213,19 +213,19 @@ Not super helpful for decentralizing.
 That was kind of bolted on.
 That was something that was bolted on to the protocol later, because everybody's like, well, why don't we make a decentralized protocol?
 OK.
-So Datum was the opposite.
+So DATUM was the opposite.
 The protocol doesn't support that at all.
-If you don't have your own node, you can't do anything with Datum.
+If you don't have your own node, you can't do anything with DATUM.
 That's kind of the framework of it.
 This is built on top of a node.
-If you don't have your own block to work on, like Datum won't even tell you, the server won't even tell you there's a new network block.
+If you don't have your own block to work on, like DATUM won't even tell you, the server won't even tell you there's a new network block.
 Your node has to do that.
-There's nothing that you can use from the actual pull side or anything to be able to make valid work with Datum without actually running a node.
+There's nothing that you can use from the actual pull side or anything to be able to make valid work with DATUM without actually running a node.
 So that was the ground up thing that didn't exist anywhere else.
 And kind of morphing Stratum V2 into that was more work than making this from scratch.
 And again, to date, there's no adoption.
-There's no adoption for SV2 in a decentralized way, whereas Datum, as of right now, and as of like 45 minutes ago, we just found another block mined by the software on mainnet.
-Over 200 mainnet blocks mined by the Datum software.
+There's no adoption for SV2 in a decentralized way, whereas DATUM, as of right now, and as of like 45 minutes ago, we just found another block mined by the software on mainnet.
+Over 200 mainnet blocks mined by the DATUM software.
 Over 100 of those mined by individual miners that were making their own templates.
 Like, this is today.
 This is happening now.
@@ -245,7 +245,7 @@ And actually, some of the push from OCEAN has accomplished that.
 The latest WhatsMiner's firmware supports like six kilobytes.
 The S21s are up to like 2.5 kilobytes.
 It's being fixed in a way that works, but we can't just throw that at everybody.
-So Datum is designed as much as possible to be able to cram the biggest Coinbase transaction possible.
+So DATUM is designed as much as possible to be able to cram the biggest Coinbase transaction possible.
 So it fingerprints the miners, it can give different work to different miners from the same server and give them the biggest possible work they can do.
 And I didn't see any way to accomplish that within the framework of Stratum V2.
 Those guys can correct me on that.
@@ -253,21 +253,21 @@ It seemed like a lot to pull that off.
 The Stratum V2 stuff needed a modified Bitcoin node, last I knew.
 That's a lift.
 You can only use the implementation that has those patches.
-And Datum doesn't.
+And DATUM doesn't.
 With the GetBlockTemplate has existed for over 10 years.
 It's the standard for mining and getting your template from your node.
 Just use that.
 Why not?
-So Datum just needs GBT.
+So DATUM just needs GBT.
 Any node that can make GBT, whether it be Knots, be it Core, whatever you can get, your modified core, Libre Relay, I don't care.
-Datum will take it.
+DATUM will take it.
 It'll work with what exists now.
 And part of Stratum v2, the core underpinning of it is that the miners have to get permission from the pool to mine their template.
 That's been the argument, like, oh, well, if that pool doesn't accept it, you can just go elsewhere.
 But why?
 Just have it so that the pool doesn't care.
 The pool's not supposed to care about what you're mining, as long as you're paying the miners on that pool.
-And so Datum was designed with that in mind from the beginning, so that eventually, and I cannot say that it is right this second, eventually Datum can be blind entirely to the templates, even though right now it is like 90 percent blind to the templates.
+And so DATUM was designed with that in mind from the beginning, so that eventually, and I cannot say that it is right this second, eventually DATUM can be blind entirely to the templates, even though right now it is like 90 percent blind to the templates.
 That is a ground-up change, where another reason just to kind of get away from something else that has the tech debt of Stratum V2.
 Stratum V2, one of the things it needs is adoption on the miners.
 It's a new protocol that's designed for centralized mining.
@@ -287,9 +287,9 @@ And I guess at that point, does anybody have any questions about that part of wh
 Just a question on something you said.
 You said you were going to pay later.
 Could it be aligned with the template?
-Are you still thinking about the Coinbase?
+Are you still thinking about the Coinbase
 
-Speaker 0: 00:17:02
+Jason Hughes: 00:17:02
 
 The Coinbase, I don't consider part of the template, because everybody knows who you're going to have to pay.
 And the question was that the Coinbase needs to be validated by the pool.
@@ -304,7 +304,7 @@ They're actually doing everything they're supposed to.
 They have validated that your template is good along with these other 20 miners.
 The pool has to accept that and never needs to see it.
 So that's the goal.
-Right now, the Datum pool server will spot check templates where the pool does get some visibility.
+Right now, the DATUM pool server will spot check templates where the pool does get some visibility.
 We wanted to get this out the door tomorrow, back six months ago.
 Rolling out an issue number one on the GitHub for the VNish gateway is to not do that anymore.
 So does that answer your question?
@@ -318,7 +318,7 @@ Oh, sorry.
 So how do you prevent miners from submitting templates that have no transactions in them?
 Just empty blocks?
 
-Speaker 0: 00:18:28
+Jason Hughes: 00:18:28
 
 We can't.
 That's valid work.
@@ -328,7 +328,7 @@ That's valid work.
 Right.
 It's valid, but then as a pool, doesn't that hurt you because you're getting less?
 
-Speaker 0: 00:18:35
+Jason Hughes: 00:18:35
 
 So that's a topic for a whole other talk, but in short, yes, there has to be a waiting mechanism for that.
 The idea is that if you are mining a block that is worth X and it would take you T amount of time to find that block.
@@ -350,7 +350,7 @@ So...
 
 So what stops me from...
 
-Speaker 0: 00:19:28
+Jason Hughes: 00:19:28
 
 Where we at?
 
@@ -358,7 +358,7 @@ Where we at?
 
 What stops me from mining a Coinbase that claims that there were high fees paid when there actually weren't.
 
-Speaker 0: 00:19:37
+Jason Hughes: 00:19:37
 
 So right now the spot checks kind of prevent that because we have to validate the blocks and if you fail a spot check at any time, your work up to the last spot check is no good.
 So that's the current thing about it.
@@ -370,7 +370,7 @@ Eventually, what will happen is your block that claims that it has 20 bitcoin wo
 
 So you mean I can 51% attack the pool's payout itself?
 
-Speaker 1: 00:20:12
+Jason Hughes: 00:20:12
 
 Sure.
 You could.
@@ -397,7 +397,7 @@ You just install the updated version of that library, restart the process, and y
 That doesn't exist in some other things.
 C is battle proven.
 It's insanely efficient.
-Like I said, the Datum Gateway binary is like 500 kilobytes.
+Like I said, the DATUM Gateway binary is like 500 kilobytes.
 In one of my tests, I asked one of our miners to point an exahash at a Raspberry Pi 3, and it was at like 12% CPU.
 You're not going to pull that off with many other languages and implementations.
 And it's just bulletproof.
@@ -462,7 +462,7 @@ No offense to the people making it.
 They're trying to do some cool stuff.
 And I like what they're doing with the Bitaxe community and all that.
 It's just it could be done way better.
-As of the time we were investigating this for Datum, there were no public pool blocks in the wild.
+As of the time we were investigating this for DATUM, there were no public pool blocks in the wild.
 I do believe there are two now.
 So congratulations to them on that.
 That's kind of a proven thing that kind of proves the software, which is cool.
@@ -502,12 +502,12 @@ I thought it would be fine.
 But we can do better.
 So let's do better.
 And it kind of just boiled down to, if you want something done right, you've got to do it yourself.
-I mean, that's the bottom line of the entire reason Datum exists.
+I mean, that's the bottom line of the entire reason DATUM exists.
 There just was nothing to build upon that would make it perfect.
 And that's what we were going for.
-So started out with a Datum pool server, MIT open source license.
-It's called the Datum Gateway.
-It started as a pool server, because we have to, the first thing that we talked about that the Datum system has to do is get connections from these existing miners so that they can do work with our new system.
+So started out with a DATUM pool server, MIT open source license.
+It's called the DATUM Gateway.
+It started as a pool server, because we have to, the first thing that we talked about that the DATUM system has to do is get connections from these existing miners so that they can do work with our new system.
 And to do that, we have to give them work, and we have to run Stratum V1.
 And that's where this started, as a written from scratch, from the ground up, Stratum V1 server.
 At the end of the day, Stratum V1 is terrible, but it's not complicated.
@@ -561,7 +561,7 @@ And that's a eureka moment for a lot of people in mining that I found.
 So maybe not so much here, but that's interesting.
 So that was done.
 We made that part of the software.
-And the real first Datum block that was ever mined was when parts of OCEAN were starting to move over to using the Datum gateway instead of Eloipool.
+And the real first DATUM block that was ever mined was when parts of OCEAN were starting to move over to using the DATUM gateway instead of Eloipool.
 And that was block 857812 back in August, just to show you how quickly this has progressed.
 That wasn't that long ago, less than a year, the very first block mined by the software.
 So we got there.
@@ -593,7 +593,7 @@ I can repeat it if you need.
 
 [Audience]: 00:32:11
 
-In Datum, the Coinbase is not just generated locally, right?
+In DATUM, the Coinbase is not just generated locally, right?
 So you have an API.
 You have an endpoint where it can receive Coinbase.
 
@@ -608,7 +608,7 @@ Okay.
 
 Jason Hughes: 00:32:22
 
-But yes, the question was does Datum generate the Coinbase?
+But yes, the question was does DATUM generate the Coinbase?
 It generates the transaction, but it uses something as the list of who to pay.
 And how that happens is either local, or it's either local in your configuration to pay you, or it comes from the pool.
 Like, I have a block that's worth this much.
@@ -616,12 +616,12 @@ The pool says, well, if you have a block that's worth this much, this is who we 
 So this is what we need to do.
 So that's part of the protocol.
 Obviously, if we're doing mining, we want to do encryption.
-We need encryption between the pool and the Datum gateway.
+We need encryption between the pool and the DATUM gateway.
 That's just a no-brainer at this stage in the game.
 We need to be able to validate the work with the server.
 We need to be able to support aggregation, which the gateway does.
 So we don't want a thousand connections to the pool for a thousand miners.
-We just want the Datum gateway to connect to the pool and deal with all those work.
+We just want the DATUM gateway to connect to the pool and deal with all those work.
 We don't want to care about what pool you're using.
 We don't want to care if you're lotto mining or if you're just using a pool.
 Any pool should be able to use this, and it shouldn't impact them in any negative way to do so.
@@ -638,13 +638,13 @@ We're not going to pay Foundry and then have Foundry pay us.
 That's just not the way to go about it to this day.
 It needs to be efficient on resources.
 So for example, one of our large miners on OCEAN runs this with an Exahash-ish.
-Their server that they run this on has, you can't even tell Datum is running on it.
+Their server that they run this on has, you can't even tell DATUM is running on it.
 It's the Bitcoin node is the lift.
 The Bitcoin node is the heavy part of this whole process.
-The Datum gateway serving the miners is just efficient and great.
-So the Datum Prime is the server side.
-It needs to serve the Datum gateways.
-So now we have the people running their own mining pools with the Datum gateway.
+The DATUM gateway serving the miners is just efficient and great.
+So the DATUM Prime is the server side.
+It needs to serve the DATUM gateways.
+So now we have the people running their own mining pools with the DATUM gateway.
 So they're making their own blocks, making their own work, using their own templates.
 I'm glossing over a lot of stuff as far as that goes.
 How you make the templates is how your node makes the templates.
@@ -652,13 +652,13 @@ So they're doing all that.
 They're sovereign miners again.
 Well, they want to get paid.
 So we have to pool this in some sane way.
-So we need Datum Prime.
-What serves the Datum gateways is to do pooled solo mining.
+So we need DATUM Prime.
+What serves the DATUM gateways is to do pooled solo mining.
 And this needs to validate the work that's coming in from those miners.
 Yes, they're making a valid block.
 Is this a valid proof of work in the first place?
 Did they include everybody who was supposed to be paid?
-We give the miners, the actual Datum gateway, a lot of leeway in this because of bugs in mining firmware.
+We give the miners, the actual DATUM gateway, a lot of leeway in this because of bugs in mining firmware.
 Like some miners, like you talked about in the P2Pool talk, you can only fit 15 outputs, give or take.
 Well, some miners can do 100.
 Some miners can do the entire block as the generation transaction without a problem.
@@ -666,14 +666,14 @@ The Bitaxe will do it up until it runs out of RAM, which isn't an entire block, 
 That's one of the most limiting ones at about 700 bytes or so.
 So we have to work with what we got.
 Again, back to one of the core premises we have to work with what we have, with what the clients have, what the miners have.
-So the Datum Prime doesn't know what kind of miners you have.
-Like, we don't even know what miners make work behind the Datum gateway.
-All we know is we have a Datum gateway submitting valid work.
-And part of that is those miners need to, those Datum gateways need to be able to split that work in a way that makes sense for their miners.
+So the DATUM Prime doesn't know what kind of miners you have.
+Like, we don't even know what miners make work behind the DATUM gateway.
+All we know is we have a DATUM gateway submitting valid work.
+And part of that is those miners need to, those DATUM gateways need to be able to split that work in a way that makes sense for their miners.
 It needs to give the smaller Coinbase data to an Antminer.
 It needs to give the larger one to a WhatsMiner.
 And we can't control how they do that.
-And as things expand and as we fingerprint more, that can be incorporated into the Datum gateway.
+And as things expand and as we fingerprint more, that can be incorporated into the DATUM gateway.
 But we need to give them everything.
 So we give them the entire list of everybody who's got to be paid in that block that they're trying to make of whatever value.
 And you can also use that to verify that we're being sane.
@@ -798,7 +798,7 @@ With the pool, when you connect to the pool, again, your template's going to be 
 
 [Audience]: 00:41:43
 
-Okay, so wait, it almost sounds like it's because the other people in the pool, through the datum protocol, I can be somewhat assured that the other miners in the pool are including my address in the Coinbase.
+Okay, so wait, it almost sounds like it's because the other people in the pool, through the DATUM protocol, I can be somewhat assured that the other miners in the pool are including my address in the Coinbase.
 So even if a miner, even if we're having some redundant work if somebody else manages to mine something with a block template, even though it's a different block template than the one I was working on, I still get paid.
 So it kind of balances out.
 
@@ -824,7 +824,7 @@ Got this guy here.
 [Audience]: 00:42:49
 
 You mentioned end-to-end encryption being another gain.
-You mentioned end-to-end encryption being another gain with Datum.
+You mentioned end-to-end encryption being another gain with DATUM.
 Can you highlight some attacks maybe that prevents...
 
 Jason Hughes: 00:43:00
@@ -832,7 +832,7 @@ Jason Hughes: 00:43:00
 Yes, I mean, right now, if you have your miners just mining to a generic Stratum v1 mining pool your ISP can intercept that point it wherever you want and you're mining for them now
 So you can't really do that with end-to-end encryption that's done properly and especially with the aggregation of it now now your ISP doesn't even know how many miners you have, because you've aggregated all of them into one connection that's so obfuscated that they can't even know.
 So the amount of information that your ISP or a man in the middle can glean from end-to-end encryption is less than to almost nothing.
-They know that you're connected to a datum pool at most, but they don't know what you're doing.
+They know that you're connected to a DATUM pool at most, but they don't know what you're doing.
 You could just be connecting to monitor things.
 I mean, that's, who knows?
 And then the other side of it, yes, the next part of this is somebody who's going to ask probably is, well, SV1's not encrypted.
@@ -847,7 +847,7 @@ Jason Hughes: 00:43:56
 
 Would it prevent BGP hijack attacks?
 To an extent, but no.
-I wouldn't say yes, but for example, if for whatever reason you lost your connection to the pool, your datum gateway did, you can still submit a block to the network and that time window is longer than it would be than if you were just mining on the pool, it's basically between network blocks.
+I wouldn't say yes, but for example, if for whatever reason you lost your connection to the pool, your DATUM gateway did, you can still submit a block to the network and that time window is longer than it would be than if you were just mining on the pool, it's basically between network blocks.
 Your work is valid at that point.
 So, I would say it's like 1% more helpful, but BGP attack is still a BGP attack.
 
@@ -860,7 +860,7 @@ Jason Hughes: 00:44:32
 Right, and Luke was saying that the BGP attack wouldn't allow them to get new information from the pool.
 It wouldn't be able to interrupt you doing the work.
 Like right now, a BGP attack could stop you from mining on a pool entirely.
-It could stop you from mining, whereas with Datum, it wouldn't really be able to do that as long as you have other peers outside of where that attack is happening.
+It could stop you from mining, whereas with DATUM, it wouldn't really be able to do that as long as you have other peers outside of where that attack is happening.
 
 [Audience]: 00:44:55
 
@@ -954,11 +954,11 @@ OK.
 So the protocol itself, I'm going to fly through a little bit of these because this is all open source and you can kind of look at it yourself.
 I honestly didn't know how low level I was supposed to make this talk, so I tried to keep a lot of it high level and conceptual because that resonates with the most amount of people.
 But we'll dive into some code stuff.
-The Datum protocol is pretty dang simple.
+The DATUM protocol is pretty dang simple.
 We have a 4-byte header that goes on everything that has a command.
 It has whether or not this is signed, whether or not this is encrypted to the pool's public key or the other end's public key, more specifically, or if it's encrypted to the currently open channel with those two endpoints.
 Because you need to have that kind of handshake to establish that and determine what should be sent.
-Because so part of the Datum protocol is you have to have the pool's public key in order to even connect.
+Because so part of the DATUM protocol is you have to have the pool's public key in order to even connect.
 You can't even send your first message to the pool without its public key.
 So you get that from some source that you assume is trusted, like the pool's website, or some other miner that's been using that pool.
 I'm not going to tell you how to do that, but that is part of the system is you need that key to initiate the handshake.
@@ -985,7 +985,7 @@ And then there is a block notify command that's not currently used and I think w
 Again, keeping the protocol as simple as it can possibly be without going off the rails.
 The job validation stuff is when the pool says, I would like to make sure that you're mining on a real template.
 Please send me the details on that.
-And it actually has to go back through and does effectively a compact block transfer between the pool and the Datum gateway to validate that.
+And it actually has to go back through and does effectively a compact block transfer between the pool and the DATUM gateway to validate that.
 Again, spot checks.
 Got to make sure people are being honest.
 We have to protect the other miners.
@@ -993,26 +993,26 @@ So the protocol initiates the connection with the gateway, says hello.
 That's encrypted with the server's public key.
 It contains the client's public key, which can either be static or randomly generated at runtime.
 That's currently the default.
-And then it sends metadata, like I'm running Datum Gateway version 0.3, et cetera.
+And then it sends metadata, like I'm running DATUM Gateway version 0.3, et cetera.
 The server comes back, like, OK, thank you for saying hello.
 Here is my new session key.
 It encrypts that with the session key that the client provided.
 It signs it with the server's public key so that you know that that came back from the server, and you're not man in the middle.
 It echoes the keys provided by the client so that somebody man in the middling can't just use the session key and say, I'm really the server.
 And the pool provides some other metadata, like the Coinbase tag.
-So it'll say, you need to include ocean.xyz in your block header, in your block Coinbase.
+So it'll say, you need to include OCEAN.xyz in your block header, in your block Coinbase.
 The unique ID that we talked about a minute ago to make sure that there was unique work amongst everybody, even if you're mining the exact same template, which does happen during empty blocks.
 So that's a thing.
 The minimum difficulty of the shares that the pool is willing to accept.
-Currently, I think Ocean does like 131k minimum difficulty just to keep things kind of sane.
+Currently, I think OCEAN does like 131k minimum difficulty just to keep things kind of sane.
 A fun little message of the day.
 It could be important, probably not.
 And it moves on.
 So that may or may not be legible on there.
 I don't know.
-But that's just the console of the Datum gateway running, just doing everything I just described.
+But that's just the console of the DATUM gateway running, just doing everything I just described.
 So we went over these a little bit.
-The datum protocol coinbaser fetch command, it asks the pool server for a list of payouts.
+The DATUM_protocol_coinbaser_fetch command, it asks the pool server for a list of payouts.
 So I have a block that's worth this much.
 Who do I pay?
 Excuse me.
@@ -1030,7 +1030,7 @@ You start with, I have work to submit to the pool.
 So I need to send a message to the pool with my personal job ID.
 I don't care what that is.
 The Coinbase ID that we negotiated a minute ago.
-Any flags that we want to communicate, Most of these are reserved for later.
+Any flags that we want to communicate, most of these are reserved for later.
 The time, the end time, same as Stratum V1.
 The nonce that you found, and the version, because ASIC boost is a thing that's not going away.
 You can set your own extra nonce size.
@@ -1051,7 +1051,7 @@ It's a speed up.
 It's just a speed up because now we know we don't need anything else other than this is the subsidy and whatnot.
 To be honest, I don't know why I included it in the flow chart, because it is a simpler thing.
 But it's an easy out why we ask for the subsidy, if it's a subsidy only block.
-So some challenges of the server side with actually being able to validate decentralized work is We need to track multiple jobs per client.
+So some challenges of the server side with actually being able to validate decentralized work is we need to track multiple jobs per client.
 We have to different generation transactions at different times.
 Miners aren't going to invalidate work immediately when the client thinks they do, because they could be generating templates every 10 seconds, but the miner might still have one from a minute ago.
 That's still valid work as far as I'm concerned.
@@ -1061,7 +1061,7 @@ We want you to be able to work on templates how you want to work on them.
 If your template's changing every five seconds, that's a little extreme, but we'll go with it.
 We need to validate the Coinbase split.
 So we basically have to deconstruct the transaction again, make sure that everybody's being paid again, make sure the block's not stale.
-It has to meet the target of the proof of work that you promised us you were trying to meet, Because another aspect of this is you can set your own share target.
+It has to meet the target of the proof of work that you promised us you were trying to meet, because another aspect of this is you can set your own share target.
 You, again, are running the entire pool.
 So if you want to set your minimum difficulty at a million for a share, you can do that.
 But we have to be able to prove that you said that that was where you started, and that's where you got.
@@ -1072,7 +1072,7 @@ We need to make reject duplicate work, because you could be working on the same 
 So all of that has to be tracked for the entire scope of the block for you, for that same previous block.
 It's heavy.
 It's a heavy thing that needs to be done.
-We have to validate all the basics, that the Time is within the realm of what the Bitcoin network will accept.
+We have to validate all the basics, that the time is within the realm of what the Bitcoin network will accept.
 The version is within the realm of what the network will accept.
 And then the server has to make determinations right now on whether or not we think we need to validate your entire block.
 If this man here said he sends a 50 Bitcoin Coinbase, yeah, you're going to trigger a validation.
@@ -1083,7 +1083,7 @@ And we will pick who those are.
 And maybe not.
 And then we provide the share actual proof of work to the back end of the pool for rewarding after all of that's done.
 It ends up being a little complicated, but It does work.
-At the end of the day, it's a pool server in reverse, because the client, the Datum gateway, is the pool server.
+At the end of the day, it's a pool server in reverse, because the client, the DATUM gateway, is the pool server.
 The target's a whole other thing that I kind of got into just then and got ahead of myself.
 So the target is, how often do you want your miners submitting shares to your pool server?
 Well, as often as it makes sense for you.
@@ -1101,31 +1101,31 @@ Your pool is on site.
 It's generating the work as quick as it can get it from the Bitcoin network itself.
 So your rejects are lower because you're not working on stale work.
 You can be working on a block that the pool doesn't even know about yet, as long as it's valid.
-And the bandwidth usage of that for like 40 miners on Datum is like 300 megabytes a day.
+And the bandwidth usage of that for like 40 miners on DATUM is like 300 megabytes a day.
 On Stratum v1, same thing, direct to the pool, you're at like 1.5 gigabytes a day on average.
 It depends on the pool.
 It depends on a lot of things.
 But that's a metric.
 So you're saving on that.
-You can actually deploy this somewhere as an aggregator to both be solid sovereign and get the benefits of not hammering your internet.
-And when we scale that out to something like 8, 000 workers, with Datum, 8, 000 workers is about 8 gigabytes a day at the current defaults, 8 gigs a day.
+You can actually deploy this somewhere as an aggregator to both be sovereign and get the benefits of not hammering your internet.
+And when we scale that out to something like 8,000 workers, with DATUM, 8,000 workers is about 8 gigabytes a day at the current defaults, 8 gigs a day.
 You don't get any bandwidth spikes.
-Every time the pool is like, hey, I need you to work on this new block, let me tell these 8, 000 miners that you need to work on this new block.
+Every time the pool is like, hey, I need you to work on this new block, let me tell these 8,000 miners that you need to work on this new block.
 Obviously, there's some proxies that exist for that to help it, but you're still within the bounds of the Stratum V1 protocol at that point.
 On your local network, you might have a gigabit or 10 gig to work with to talk to your miners.
 You can tell them very quickly, get on this new work, reducing stales, and all that.
-If you connected 8, 000 workers directly to Ocean, you would use 200 gigabytes a day in bandwidth to just provide those miners with work.
+If you connected 8,000 workers directly to OCEAN, you would use 200 gigabytes a day in bandwidth to just provide those miners with work.
 That's kind of outrageous.
 Let's aggregate that.
 Aggregation is the thing that was kind of a core concept of making this work.
 Again, you are your own pool server.
-Other things worth mentioning, yeah, so the Datum Gateway Stratum V1 server, it doesn't spike work.
+Other things worth mentioning, yeah, so the DATUM Gateway Stratum V1 server, it doesn't spike work.
 Like, every pool you connect to, for the most part, will, like, on an interval, just send you new work.
 And that's just a bandwidth spike, a bandwidth spike.
 That's dumb.
 You only need to do that when there's a new block and we need to get everybody on the same work right away.
-And so what the Datum Gateway will do, just the regular SV1, it'll do those spikes for new block changes, but then it will spread every other work notify across the entire time span of Notifies, which levels out that bandwidth and makes it tolerable to somebody who has a big farm, if they're hosting it remotely or something.
-Let's say you have your Datum gateway at your house, and you have 20 hosted miners.
+And so what the DATUM Gateway will do, just the regular SV1, it'll do those spikes for new block changes, but then it will spread every other work notify across the entire time span of notifies, which levels out that bandwidth and makes it tolerable to somebody who has a big farm, if they're hosting it remotely or something.
+Let's say you have your DATUM gateway at your house, and you have 20 hosted miners.
 Well, this helps you, because now you have just a really smooth bandwidth profile.
 The empty block speedup is still a thing.
 And yeah, empty blocks are not a bad thing.
@@ -1146,12 +1146,12 @@ That is issue number one.
 We don't want to know what you're mining.
 I don't care what you're mining.
 We want you to be the sovereign miner.
-That's the whole purpose of Datum.
+That's the whole purpose of DATUM.
 You make your templates.
 You can mine them for yourself or for a pool.
 That is one of the main things.
 We want to just make general features like that.
-Diatom Gateway has a web interface and stuff.
+DATUM Gateway has a web interface and stuff.
 I didn't get into any of that.
 There's a web interface.
 There's a small local API you can use.
@@ -1162,7 +1162,7 @@ Feel free to contribute.
 PR is welcome, basically.
 The overall user experience is already pretty good.
 Let's make it better.
-Right now, there's a few one-click installers that do work that will spin up a node and a Datum gateway, and you're off to the races.
+Right now, there's a few one-click installers that do work that will spin up a node and a DATUM gateway, and you're off to the races.
 Let's make that better.
 There's no reason not to.
 So the goal is decentralized mining as much as we possibly can.
@@ -1173,12 +1173,13 @@ We need more non-custodial payouts.
 We need support for spot-checking the templates with the miners.
 There's a lot of things to improve, and that's coming.
 But right now, this is available today.
-You can use Datum right now.
+You can use DATUM right now.
 And that's the important part.
 There's already blocks in the wild, this is already deployed in the real world.
 There's no reason you should be letting a pool make your templates for you.
 If you are, you're not a miner.
-And that's kind of the bottom line there Open it up to just questions.
+And that's kind of the bottom line there 
+Open it up to just questions.
 I don't know how much time I have left.
 I lost the clock What do I got?
 Am I done?
@@ -1188,17 +1189,16 @@ What do we got?
 Anything?
 Well, I'm going to take that as I did a good job for the most part, but yeah.
 
-Speaker 1: 01:03:08
+[Audience]: 01:03:08
 
 Okay.
-So there are a lot of different ways in your pool that miners are inequivalent, hashers are inequivalent,
+So there are a lot of different ways in your pool that miners are inequivalent, hashers are inequivalent, right?
 
-Speaker 0: 01:03:13
+Jason Hughes: 01:03:13
 
-right?
 Sure.
 
-Speaker 1: 01:03:14
+[Audience]: 01:03:14
 
 You could have one hasher who's mining empty blocks, another hasher who's mining, you know, profit maximizing, mining full blocks, and a third miner who's mining monkey JPEGs and taking payments on the side, right?
 And there's a social contract inherent in a pool that says, I will pay you if you pay me.
@@ -1208,7 +1208,7 @@ They're absolutely not the same.
 One of them is going to earn more rewards than another.
 And I don't expect, you know, if I'm profit maximizing, someone else is not, and someone else is taking fees out of band, it's not fair for me to pay them for my profit maximizing block while they are not paying me in a proportional manner.
 There are other ways that miners are inequivalent too.
-For instance, let's say one guy's mining with a bid axe on a Raspberry Pi and you have not spot checked the work yet.
+For instance, let's say one guy's mining with a Bitaxe on a Raspberry Pi and you have not spot checked the work yet.
 There's one node in the network that knows what this block is when he mines it, and it's a Raspberry Pi, and it's on a dial-up line.
 And maybe this guy's even screwing around.
 He's got a quadratic hashing bug in that block, right?
@@ -1218,7 +1218,7 @@ B, it's a block you wouldn't want to mine.
 You don't want to mine the quadratic hashing bug, right?
 And so because it takes him forever to upload it, forever to get it on the network, his orphan rate is wildly different than other nodes in the network, right?
 
-Speaker 0: 01:04:30
+Jason Hughes: 01:04:30
 
 Yeah.
 There's a lot to unpack there.
@@ -1231,12 +1231,12 @@ I mean, that's just something that has to be accepted within the network and it 
 It's already a risk in the Bitcoin P2P network.
 That's kind of a thing we have to accept to be decentralized.
 
-Speaker 1: 01:05:16
+[Audience]: 01:05:16
 
 We have solutions for all of this.
 Come see my talk tomorrow.
 
-Speaker 0: 01:05:19
+Jason Hughes: 01:05:19
 
 Let's do it.
 Let's do it.
@@ -1244,7 +1244,5 @@ Was there any more.
 I'm going to flash that up there one more time.
 And thank you very much for listening.
 I appreciate your time.
-I appreciate your time.
-Thank you.
-Thank you.
-Thank you.
+
+
