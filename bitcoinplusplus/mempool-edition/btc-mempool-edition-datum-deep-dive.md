@@ -17,6 +17,7 @@ categories:
 source_file: 'https://youtu.be/FJ0Hye52Ib8'
 summary: 'Jason Hughes (VP of Engineering at Motion Mining, creator of DATUM at Ocean) presents a deep dive into DATUM — Decentralized Alternative Templates for Universal Mining — an MIT-licensed, C-based protocol that lets individual miners build their own block templates and submit blocks directly to the network while still earning pooled rewards, built from scratch rather than on Stratum V2 due to SV2''s decade of development with no decentralized adoption, its centralized design assumptions, and firmware-level coinbase size constraints that SV2 does not handle; the talk covers the Datum Gateway''s Stratum V1 server, its encrypted handshake with Datum Prime via libsodium, the CoinBaser command for non-custodial payout list negotiation, backwards proof-of-work validation, spot-check template integrity, and the aggregation benefits that cut bandwidth from 200 GB/day for 8,000 direct connections to roughly 8 GB/day, with over 200 mainnet blocks already mined by the software as of the talk.'
 ---
+## Introduction & Agenda
 
 Jason Hughes: 00:00:00
 
@@ -48,12 +49,17 @@ We'll see what we can do.
 We'll save some time for like pure Q&A at the end, but obviously if there's something that you just want to touch on now, I'm not going to stop you.
 Oops.
 All right.
+
+## Jason Hughes' Background in Bitcoin Mining
+
+Jason Hughes: 00:01:28
+
 So who am I?
 I don't go to these conferences that often, so most people here don't recognize me.
 I'm Jason Hughes.
-I was known in the Bitcoin talk and whatnot as WizKid057.
+I was known in the BitcoinTalk and whatnot as WizKid057.
 I kind of dropped the kid part after a while.
-When I got into my 40s, I figured that was a little silly, So I'm just WK057 now, VP of engineering and development at Motion Mining.
+When I got into my 40s, I figured that was a little silly, So I'm just WK057 now, VP of engineering and development at MARA Mining.
 And I formerly operated the Eligius mining pool with Luke from like 2011 to 2017.
 We mined like 10,000 blocks, 300,000 somewhat Bitcoin.
 Cool stuff.
@@ -65,6 +71,11 @@ And one of the things you can find about me, I do a lot of security research stu
 I was awarded the single largest bug bounty by Tesla.
 Mechanic here tells the story way better than I do.
 So if you ever get bored, ask him to tell that for you.
+
+## Why DATUM Exists
+
+Jason Hughes: 00:02:46
+
 All right, so why am I here?
 We're talking about DATUM, and I hope that everybody here knows what DATUM is at least a little bit.
 It's a protocol that OCEAN  has developed and is pushing for decentralized template creation.
@@ -162,6 +173,11 @@ So we had to work with it.
 So the DATUM Gateway runs the Stratum V1 server, connects to that, makes sure that your shares are working for the pool.
 You're making valid blocks, and everybody's happy because now you're making your own blocks and getting rewarded by a pool.
 That's the best of both worlds there.
+
+## Why Not Stratum V2?
+
+Jason Hughes: 00:09:27
+
 So the elephant in the room, why didn't we do Stratum V2?
 There's a bunch of reasons for it.
 I don't want to dunk on the Stratum V2, guys.
@@ -220,7 +236,7 @@ That's kind of the framework of it.
 This is built on top of a node.
 If you don't have your own block to work on, like DATUM won't even tell you, the server won't even tell you there's a new network block.
 Your node has to do that.
-There's nothing that you can use from the actual pull side or anything to be able to make valid work with DATUM without actually running a node.
+There's nothing that you can use from the actual pool side or anything to be able to make valid work with DATUM without actually running a node.
 So that was the ground up thing that didn't exist anywhere else.
 And kind of morphing Stratum V2 into that was more work than making this from scratch.
 And again, to date, there's no adoption.
@@ -234,7 +250,7 @@ And you can make your own blocks.
 So there's no one else doing that, so we had to do it.
 I have a couple more slides of bullet points for this, but I'm going to try to skim through them.
 Stratum V2 wasn't designed for decentralized payouts.
-That's actually a problem with minor firmware.
+That's actually a problem with miner firmware.
 One of the other talks earlier, the P2Pool talk, touched on why that's a problem.
 Antpool, Bitmain, and whatnot, and some of the other miner creators just assumed that we would never need Coinbase payouts larger than 500 bytes, a kilobyte maybe.
 That's not enough to run a non-custodial pool fully, because you just can't cram everybody's payout in every block.
@@ -254,12 +270,12 @@ The Stratum V2 stuff needed a modified Bitcoin node, last I knew.
 That's a lift.
 You can only use the implementation that has those patches.
 And DATUM doesn't.
-With the GetBlockTemplate has existed for over 10 years.
+With the getblocktemplate (GBT) has existed for over 10 years.
 It's the standard for mining and getting your template from your node.
 Just use that.
 Why not?
 So DATUM just needs GBT.
-Any node that can make GBT, whether it be Knots, be it Core, whatever you can get, your modified core, Libre Relay, I don't care.
+Any node that can make GBT, whether it be Knots, be it Core, whatever you can get, your modified Core, Libre Relay, I don't care.
 DATUM will take it.
 It'll work with what exists now.
 And part of Stratum v2, the core underpinning of it is that the miners have to get permission from the pool to mine their template.
@@ -330,12 +346,12 @@ It's valid, but then as a pool, doesn't that hurt you because you're getting les
 
 Jason Hughes: 00:18:35
 
-So that's a topic for a whole other talk, but in short, yes, there has to be a waiting mechanism for that.
+So that's a topic for a whole other talk, but in short, yes, there has to be a weighting mechanism for that.
 The idea is that if you are mining a block that is worth X and it would take you T amount of time to find that block.
 Over that amount of time, you should get X from the pool.
 And nobody else should get anything different from their blocks.
 If you're mining X times two blocks, you should get X times two over time.
-And that's the goal of the waiting mechanism behind that.
+And that's the goal of the weighting mechanism behind that.
 And obviously there has to be some buffer in it.
 I'll get into some of that.
 But that's a whole other talk.
@@ -364,7 +380,7 @@ So right now the spot checks kind of prevent that because we have to validate th
 So that's the current thing about it.
 And there's obviously some protections that will trigger a spot check for stuff like that right now.
 Eventually, that won't be the case.
-Eventually, what will happen is your block that claims that it has 20 bitcoin worth of fees will need to be validated by some quorum of other miners on the pool before it's accepted fully by those miners.
+Eventually, what will happen is your block that claims that it has 20 Bitcoin worth of fees will need to be validated by some quorum of other miners on the pool before it's accepted fully by those miners.
 
 [Audience]: 00:20:08
 
@@ -381,17 +397,22 @@ So we could definitely get into that in more detail.
 I'm happy to talk to you about it.
 All right, we're good?
 Let's keep going.
+
+## Why DATUM Is Written in C
+
+Jason Hughes: 00:20:43
+
 So why C?
 And I'm spending more time on this little aspect of it than I wanted to.
 But C is just faster for these.
 I'm not afraid of memory management.
 I've written C for 20 plus years.
 And it's just one of those things where if you can get it done in C, you can get it done the best.
-And the only way you can do better on certain things without C would be to write it in Assembler, which I could do.
-And there's some Assembler stuff and some of the other things that I've written recently.
+And the only way you can do better on certain things without C would be to write it in Assembly, which I could do.
+And there's some Assembly stuff and some of the other things that I've written recently.
 There's a lot of reasons to use C.
 Dynamically linked libraries, if we need to upgrade like Libsodium or some of the thing that this links to in order to upgrade it.
-Let's say there's a vulnerability in C URL or something like that.
+Let's say there's a vulnerability in cURL or something like that.
 Well, we don't have to recompile the whole thing.
 You just install the updated version of that library, restart the process, and you're upgraded.
 That doesn't exist in some other things.
@@ -402,6 +423,11 @@ In one of my tests, I asked one of our miners to point an exahash at a Raspberry
 You're not going to pull that off with many other languages and implementations.
 And it's just bulletproof.
 I love it.
+
+## Designing DATUM Around Existing Mining Hardware
+
+Jason Hughes: 00:21:56
+
 So where did this all start?
 Obviously, we made a protocol out of thin air.
 This had to start somewhere.
@@ -435,6 +461,11 @@ And how do we do that?
 So we start planning.
 Where do we start with the pool server?
 And this is the thought process.
+
+## Evaluating Existing Open-Source Pool Servers
+
+Jason Hughes: 00:23:51
+
 Well, there's open source pool servers already.
 Can we use any of those?
 Do any of those work as a starting point for this project?
@@ -467,18 +498,18 @@ I do believe there are two now.
 So congratulations to them on that.
 That's kind of a proven thing that kind of proves the software, which is cool.
 I've seen inefficiencies with it.
-When the guys, when they were working on stratum.work, and I have my own internal version of that, I would very commonly see the public pool instances that I see people running blocks behind main net.
+When the guys, when they were working on stratum.work, and I have my own internal version of that, I would very commonly see the public pool instances that I see people running blocks behind mainnet.
 That means you're just wasting your work.
 So GPLv3 was a pro, but couldn't get over the hump of a lot of these other things.
 And then Eloipool was the old Eligius pool software that I ran that pool successfully on for years.
 It's battle proven.
-10,000 or more main net blocks that I know of.
+10,000 or more mainnet blocks that I know of.
 And we know other people ran Eloipool.
 So I mean, there was a Chinese pool that ran it at one point that I knew of.
 It definitely had adoption.
 And it works.
 It definitely works.
-The OCEAN launch was done on the EloIpool with some modifications for ASIC boost and things that I think we're in the process of trying to release at some point.
+The OCEAN launch was done on the Eloipool with some modifications for AsicBoost and things that I think we're in the process of trying to release at some point.
 But it's not scalable.
 It's written in Python.
 I think the thought process behind that was Python was pretty popular.
@@ -505,6 +536,11 @@ And it kind of just boiled down to, if you want something done right, you've got
 I mean, that's the bottom line of the entire reason DATUM exists.
 There just was nothing to build upon that would make it perfect.
 And that's what we were going for.
+
+## Building the DATUM Gateway From Scratch
+
+Jason Hughes: 00:27:37
+
 So started out with a DATUM pool server, MIT open source license.
 It's called the DATUM Gateway.
 It started as a pool server, because we have to, the first thing that we talked about that the DATUM system has to do is get connections from these existing miners so that they can do work with our new system.
@@ -517,7 +553,7 @@ It's not well-defined spec-wise, because nobody abides by any particular spec on
 And we'll get into the weeds of that a little bit.
 But it's definitely something that has been adopted weirdly.
 Like, for example, Bitmain has their own quirks about Stratum V1.
-What's Miners have their own quirks of Stratum V1.
+WhatsMiners have their own quirks of Stratum V1.
 Every pool implements Stratum V1 differently.
 So you kind of have to find the happy medium for what works for everything.
 And that's what we had to do.
@@ -549,13 +585,18 @@ And that's kind of the basics of what it needs to do.
 If you want to have a reward system underpinning this, you have to log those shares.
 And obviously, I glossed over, you have to submit any blocks that you find to the network.
 Because one thing that people in mining don't tend to realize, and I'd be curious what percentage of the room here even realizes.
+
+## Mining Shares and the First DATUM Mainnet Block
+
+Jason Hughes: 00:30:19
+
 When you when your miner submits a share to the pool what exactly is it doing.
 It's that is a block that just has not met the proof of work of the Bitcoin network.
 It's met the proof of work of the pool of the server but it's not valid to Bitcoin yet.
 It's just not something compelling to the Bitcoin network to accept.
 But it's still everything else about it is right.
 You can validate the generation transaction.
-You can validate the blocking, the transactions.
+You can validate the block and the transactions.
 Everything's there.
 And that's a eureka moment for a lot of people in mining that I found.
 So maybe not so much here, but that's interesting.
@@ -566,9 +607,9 @@ And that was block 857812 back in August, just to show you how quickly this has 
 That wasn't that long ago, less than a year, the very first block mined by the software.
 So we got there.
 We got to the pool server part.
-We were hosting miners efficiently, everything working perfectly fine, mining real main net blocks, obviously after thousands of test net blocks.
+We were hosting miners efficiently, everything working perfectly fine, mining real mainnet blocks, obviously after thousands of test net blocks.
 But those don't matter.
-You've got to get a main net block in there somewhere.
+You've got to get a mainnet block in there somewhere.
 So that was the easy part.
 We got the easy part out of the way.
 Pool servers exist.
@@ -989,6 +1030,11 @@ And it actually has to go back through and does effectively a compact block tran
 Again, spot checks.
 Got to make sure people are being honest.
 We have to protect the other miners.
+
+## Session Handshake and Authentication
+
+Jason Hughes: 00:50:35
+
 So the protocol initiates the connection with the gateway, says hello.
 That's encrypted with the server's public key.
 It contains the client's public key, which can either be static or randomly generated at runtime.
@@ -1000,7 +1046,7 @@ It encrypts that with the session key that the client provided.
 It signs it with the server's public key so that you know that that came back from the server, and you're not man in the middle.
 It echoes the keys provided by the client so that somebody man in the middling can't just use the session key and say, I'm really the server.
 And the pool provides some other metadata, like the Coinbase tag.
-So it'll say, you need to include OCEAN.xyz in your block header, in your block Coinbase.
+So it'll say, you need to include ocean.xyz in your block header, in your block Coinbase.
 The unique ID that we talked about a minute ago to make sure that there was unique work amongst everybody, even if you're mining the exact same template, which does happen during empty blocks.
 So that's a thing.
 The minimum difficulty of the shares that the pool is willing to accept.
@@ -1012,7 +1058,12 @@ So that may or may not be legible on there.
 I don't know.
 But that's just the console of the DATUM gateway running, just doing everything I just described.
 So we went over these a little bit.
-The DATUM_protocol_coinbaser_fetch command, it asks the pool server for a list of payouts.
+
+## Coinbase Fetch and Share Submission
+
+Jason Hughes: 00:52:11
+
+The datum_protocol_coinbaser_fetch command, it asks the pool server for a list of payouts.
 So I have a block that's worth this much.
 Who do I pay?
 Excuse me.
@@ -1031,8 +1082,8 @@ So I need to send a message to the pool with my personal job ID.
 I don't care what that is.
 The Coinbase ID that we negotiated a minute ago.
 Any flags that we want to communicate, most of these are reserved for later.
-The time, the end time, same as Stratum V1.
-The nonce that you found, and the version, because ASIC boost is a thing that's not going away.
+The time, the nTime, same as Stratum V1.
+The nonce that you found, and the version, because AsicBoost is a thing that's not going away.
 You can set your own extra nonce size.
 So you are in charge of the Stratum V1 server.
 Doesn't matter to us.
@@ -1051,6 +1102,11 @@ It's a speed up.
 It's just a speed up because now we know we don't need anything else other than this is the subsidy and whatnot.
 To be honest, I don't know why I included it in the flow chart, because it is a simpler thing.
 But it's an easy out why we ask for the subsidy, if it's a subsidy only block.
+
+## Server-Side Share Validation
+
+Jason Hughes: 00:55:08
+
 So some challenges of the server side with actually being able to validate decentralized work is we need to track multiple jobs per client.
 We have to different generation transactions at different times.
 Miners aren't going to invalidate work immediately when the client thinks they do, because they could be generating templates every 10 seconds, but the miner might still have one from a minute ago.
@@ -1068,7 +1124,7 @@ But we have to be able to prove that you said that that was where you started, a
 So that's included in the proof of work as well.
 And we have to, once again, go back, make sure you said the right thing.
 That's in the proof of work, and that's where you got to.
-We need to make reject duplicate work, because you could be working on the same thing and tell me that this is a share that's valid twice.
+We need to reject duplicate work, because you could be working on the same thing and tell me that this is a share that's valid twice.
 So all of that has to be tracked for the entire scope of the block for you, for that same previous block.
 It's heavy.
 It's a heavy thing that needs to be done.
@@ -1093,6 +1149,11 @@ We have to embed that in the proof of work.
 I'm running out of time, so I need to kind of speed through this.
 But that's the basics of it.
 We can prove that you met the target, that you promised us that you would prove.
+
+## Performance Benefits of DATUM
+
+Jason Hughes: 00:58:10
+
 And what does this get us?
 Like, what do we get after we're done with all of this on just the benefit side?
 Well, quick thing, let's say you have 40 miners.
@@ -1139,6 +1200,11 @@ And you can turn it off if you want to.
 But it does help.
 And an empty block is not necessarily a bad thing.
 Right now, maybe down the road, but not now.
+
+## Future Improvements
+
+Jason Hughes: 01:01:16
+
 What are we improving on?
 Again, I mentioned issue one was to no longer send the block templates to the pool.
 We want to do that.
