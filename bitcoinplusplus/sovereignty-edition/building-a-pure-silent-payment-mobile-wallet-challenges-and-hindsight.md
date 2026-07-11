@@ -2,7 +2,7 @@
 title: 'Building a Sovereign Silent Payments Mobile Wallet: Making Silent Payments Practical'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://youtu.be/MgoPkXHUH0E'
-date: '2026-01-17'
+date: '2025-12-15'
 tags:
   - 'silent-payments'
   - 'wallet'
@@ -23,7 +23,7 @@ Cygnet: 00:00:16
 
 All right, yes, so hello everyone.
 My name is Cygnet and for the last two years or so I've been interested in silent payments.
-I think it's going to sort of nerd slide me for like two years now.
+I think it's going to sort of nerd snipe me for like two years now.
 More specifically, me together with Sosthene, we have been working on a specific type of silent payments wallet, which we call, I guess, a sovereign silent payments wallet.
 So yeah, I'm going to talk about that, but before I'm talking about my wallet and to give you a good idea of why it's sovereign, I think it's first important to give a quick overview of what silent payments itself actually is.
 
@@ -75,7 +75,7 @@ So first of all, if you're a sender, you need to do use or spend from an output 
 So you need to have at least one of these in your spending transaction.
 Then using the private keys from the inputs that you're trying to spend, you sum up the private keys.
 The reason you sum them up and not just take one at random is because this is slightly more convenient or this is more convenient to do, like, collaborative transactions.
-So you sum up, you create this A, which is the sum of the private keys.
+So you sum up, you create this a, which is the sum of the private keys.
 Next you also need an input hash.
 So the reason here that we take an input hash is because just using the sum of the private keys, it's possible to create transactions reusing the same keys.
 So like you can imagine if you have if you already have like an address and you spend from that address twice, you can you're kind of reusing the keys, so just taking the creating a secret just from the private keys itself doesn't guarantee uniqueness, but we guarantee this by taking this input hash which is essentially just the outpoints and then hash, and because outpoints are related to UTXOs, and UTXOs can, of course, only be spent once.
@@ -86,12 +86,12 @@ This is the input hash times the A sum times the B_scan, which is the scan key f
 And then finally, we calculate what the resulting on chain output looks like with this formula.
 So P is you have the shared secret, so you send to the B_spend, which in the previous slides would be what you would normally send to, but now we don't just send to the B_spend, we also send to a B_spend summed up with the hash of the shared secret multiplied by the generator points and make it a public key.
 So that is what makes it unique.
-Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital A, so capital A is the sum of the input public keys, and now we have this B_scan which is like a small B, so that's the private key for the scan key.
+Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital A, so capital A is the sum of the input public keys, and now we have this b_scan which is like a small b, so that's the private key for the scan key.
 So however, the A is the same, the input hash is the same because it follows the same principle, and the shared secret is also essentially the same because this is the Diffie-Hellman scheme.
 That also means that in step five, the resulting on chain is calculated, you basically arrive at the same result as the sender would.
 So that's how a receiver can derive the same address.
 However, only the receiver is able to spend this address, so you can see this function at the bottom.
-Of course, the right side, the hash of the two parties know the shared secret, but only the receiver knows the private key, knows the spending key, so only the receiver is actually able to spend this output.
+Of course, the right side, the two parties know the shared secret, but only the receiver knows the private key, knows the spending key, so only the receiver is actually able to spend this output.
 So this is basically how you can do both sending and receiving.
 
 ## The Main Challenge: Efficient Wallet Scanning
@@ -114,7 +114,7 @@ But the point is they kind of know what scripts they're looking for.
 However, in our case, we don't know what those scripts look like.
 We have to calculate them.
 And we need on chain data for this, or we need this extra piece of data.
-So we need to be able to provide this to the clients.
+So we need to be able to provide this to the light clients.
 And also, another very big problem with silent payments is that, and this is kind of a good thing but also a bad thing, is that silent payments outputs, they look like just any other Taproot output.
 They are just sort of indistinguishable from normal Taproot payments, which is great for privacy, but it also means if I'm a receiver, I don't actually know if a certain transaction, if I look at it, I don't immediately know if it's a payment that is coming for me.
 The only way for me to figure that out is by assuming, OK, imagine if this was a payment that comes to me.
@@ -164,7 +164,7 @@ And eventually we realized pretty early on or pretty quickly, like, OK, this to 
 So now we kind of want to show it to other people, like, OK, this might actually be possible.
 And so we kind of came to the realization, like, let's turn it into a proper wallet.
 Because that's basically the best way to convince people, is to actually show an example of it.
-And so, yeah, that's how Dana or Dana kind of got formed.
+And so, yeah, that's how Dana or Donna kind of got formed.
 Our target use case that we imagined our users to be is to use it for is donations.
 So donations is a very typical example of every now and then you may receive payments to your address, you know, It's not a lot of data, so you don't want to be sophisticated and run a full node.
 You just want to check maybe every couple of weeks, maybe every month or two.
@@ -250,7 +250,7 @@ So yeah, I think, oh, yeah, finally, I just wanted to say, okay, now we have kin
 Because we now have sort of access to this reusable address, we can finally start to think about other things that we can do with, like, a reusable payment code.
 So yeah, one of the pretty obvious ones is BIP353.
 So BIP353 is like this email address-looking format.
-This is already In use, I think, for example, by Phoenix Wallet, this is pretty popular, but it's also possible, especially with something silent payment, it's possible now to also do this on chain.
+This is already in use, I think, for example, by Phoenix Wallet, this is pretty popular, but it's also possible, especially with something like silent payment, it's possible now to also do this on chain.
 So if you use this BIP353 approach, we can kind of basically create a wallet that just can completely drop showing Bitcoin addresses at all.
 We can basically create a user experience that is only built around this sort of email address like user experience.
 So I think that is pretty cool, and there's a bunch of other improvements that you can think of, but obviously that is for another time.
