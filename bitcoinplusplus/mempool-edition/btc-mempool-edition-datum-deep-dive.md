@@ -2,7 +2,7 @@
 title: 'DATUM: Decentralizing Bitcoin Mining Through Sovereign Block Template Creation'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://youtu.be/FJ0Hye52Ib8'
-date: '2025-07-03'
+date: '2025-05-07'
 tags:
   - 'mining'
   - 'pooled-mining'
@@ -59,7 +59,7 @@ I don't go to these conferences that often, so most people here don't recognize 
 I'm Jason Hughes.
 I was known in the BitcoinTalk and whatnot as WizKid057.
 I kind of dropped the kid part after a while.
-When I got into my 40s, I figured that was a little silly, So I'm just WK057 now, VP of engineering and development at MARA Mining.
+When I got into my 40s, I figured that was a little silly, So I'm just WK057 now, VP of engineering and development at OCEAN Mining.
 And I formerly operated the Eligius mining pool with Luke from like 2011 to 2017.
 We mined like 10,000 blocks, 300,000 somewhat Bitcoin.
 Cool stuff.
@@ -322,7 +322,7 @@ The pool has to accept that and never needs to see it.
 So that's the goal.
 Right now, the DATUM pool server will spot check templates where the pool does get some visibility.
 We wanted to get this out the door tomorrow, back six months ago.
-Rolling out an issue number one on the GitHub for the VNish gateway is to not do that anymore.
+Rolling out an issue number one on the GitHub for the DATUM gateway is to not do that anymore.
 So does that answer your question?
 Okay.
 Anybody else on that one?
@@ -1011,7 +1011,7 @@ And then the actual decentralized mining commands of I need to know who to pay.
 We call it the Coinbaser.
 I don't remember who coined that word, but when you get a list of miners to pay in Eloipool, it was called the Coinbaser.
 So I kind of adopted that as well.
-So I have a block that I think is worth, for Bitcoin, who do I pay?
+So I have a block that I think is worth, four Bitcoin, who do I pay?
 And that's that.
 And then the miner, the next thing it needs to do is submit a proof of work.
 So the pool side can respond to the Coinbase request with this is the list of miners.
