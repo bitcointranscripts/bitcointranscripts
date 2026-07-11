@@ -304,7 +304,7 @@ So if you dig into the math of how these work, you want them to be separate.
 So you could use them.
 They could be the same thing.
 And in fact, the original proposal, if you look at the simple case, this integer A, I think, discovers, no, that's not it.
-Okay, so in the original, kind of the simplest case of single-key silent payments.
+Okay, so in the original, kind of the simplest case of private payments.
 There's this public key B.
 So this is kind of the piece that belongs to what you're defining in the silent payment descriptor is B.
 So here they say public key B.
