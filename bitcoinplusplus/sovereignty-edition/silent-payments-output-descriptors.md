@@ -2,7 +2,7 @@
 title: 'Silent Payments: Output Descriptors'
 transcript_by: 'muchai254 via review.btctranscripts.com'
 media: 'https://youtu.be/QQO0pMQB-QU'
-date: '2026-01-17'
+date: '2025-12-16'
 tags:
   - 'silent-payments'
   - 'descriptors'
