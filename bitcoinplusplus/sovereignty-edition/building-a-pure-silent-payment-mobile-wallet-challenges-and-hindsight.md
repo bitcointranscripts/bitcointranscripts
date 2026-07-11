@@ -71,7 +71,8 @@ Cygnet: 00:05:21
 
 So yeah, that was silent payments in a nutshell.
 I'll just quickly go over how you can actually do a silent payment.
-So first of all, if you're a sender, you need to do use or spend from an output that is using public keys, or using public-private key pairs, so these are some script types which, again, this is not a very high requirement because these are very popular script types.
+So first of all, if you're a sender, you need to do use or spend from an output that is using public keys, or using public-private key pairs
+So these are some script types which, again, this is not a very high requirement because these are very popular script types.
 So you need to have at least one of these in your spending transaction.
 Then using the private keys from the inputs that you're trying to spend, you sum up the private keys.
 The reason you sum them up and not just take one at random is because this is slightly more convenient or this is more convenient to do, like, collaborative transactions.
