@@ -1190,7 +1190,7 @@ Let's say you have your DATUM gateway at your house, and you have 20 hosted mine
 Well, this helps you, because now you have just a really smooth bandwidth profile.
 The empty block speedup is still a thing.
 And yeah, empty blocks are not a bad thing.
-So in order to get SV, it's a limitation of SV1.
+So in order to get SV, it's a limitation of SV1
 You want to still get your miners on the work as fast as possible.
 And how do you get work to your miners as fast as possible?
 Make that work as small as possible.
