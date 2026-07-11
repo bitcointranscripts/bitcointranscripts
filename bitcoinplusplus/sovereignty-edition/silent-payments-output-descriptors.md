@@ -308,7 +308,7 @@ Okay, so in the original, kind of the simplest case of private payments.
 There's this public key B.
 So this is kind of the piece that belongs to what you're defining in the silent payment descriptor is B.
 So here they say public key B.
-Public key B would have little case B, which is the private key to the public key.
+Public key B would have little case b, which is the private key to the public key.
 You could, this is the absolute simplest description of these keys, you could just have a single key that would allow you both to scan, you would use it both for scanning and spending, if that makes sense.
 So it's the same.
 That is an undesirable property if you want to have a watch-only wallet.
