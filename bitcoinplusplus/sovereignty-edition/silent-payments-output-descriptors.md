@@ -205,7 +205,7 @@ But generally, let's say that I want to give one to my friend Janet, and I want 
 In the spec, they say you might just come up with two different ones, so your wallet might have two different silent payment things, but that becomes computationally intensive, is what they say.
 So the way to get around that is this concept of a label.
 I'm not gonna go into how the labels work, but basically, again, the idea is you wanna determine the source of an incoming payment.
-Because they deal with a silent payment address is that you could post it on your website, but you could have one on your website, maybe one on your GitHub, another one on your Twitter profile, and using the labels you could have give each of them a different label.
+Because the idea with a silent payment address is that you could post it on your website, but you could have one on your website, maybe one on your GitHub, another one on your Twitter profile, and using the labels you could have give each of them a different label.
 So your wallet would be able to pick up all of them, but any time a payment came in, you would know, oh, someone paid me from my Twitter, or oh, someone paid me from my GitHub.
 Like, you'd know where they found your silent payment address from because of the label that you gave it when you put it out there.
 I don't know how wide wallet's label support is across different silent payment wallets, but this is part of the specification.
