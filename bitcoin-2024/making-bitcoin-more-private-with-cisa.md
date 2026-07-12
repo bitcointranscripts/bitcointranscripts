@@ -266,10 +266,10 @@ Try and develop an understanding of what it is that it's trying to do, and see w
 
 I don't know do you wanna save money? it should be an easy question.
 
-**Fabian Jahr** 00:22:21
+**Fabian Jahr:** 00:22:21
 
 And have a privacy.
 
-**Nifty Nei** 00:22:24
+**Nifty Nei:** 00:22:24
 
 Thanks y'll.
