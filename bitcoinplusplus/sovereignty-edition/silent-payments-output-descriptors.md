@@ -29,7 +29,7 @@ In fact, there's already a BIP, BIP352 for silent payments.
 What this talk is about is about the add output descriptor format.
 Specifically, the BIP proposal for adding an output descriptor format.
 Okay, so this is the BIP.
-It's called Add sp() Output Descriptor Format for BIP 352, which is the BIP number for silent payments.
+It's called Add `sp()` Output Descriptor Format for BIP 352, which is the BIP number for silent payments.
 How many of you have heard about this proposal for output descriptors.
 This is new, right?
 This is new for most people.
@@ -37,7 +37,7 @@ Okay, cool.
 Great.
 So, okay.
 So, the specification is pretty short.
-It says we're going to add a new top level script expression as defined as sp().
+It says we're going to add a new top level script expression as defined as `sp()`.
 And then it also adds two new things called key expressions.
 We're going to learn about these in a second.
 They're new key expression types.
@@ -55,19 +55,19 @@ So the key idea with a key expression is that it's like, okay, here is key mater
 This will either let you identify coins that have been locked up to this particular information, or it will let you both identify them and also spend them.
 But I'll get into this a little more explicitly.
 
-## What sp() Descriptors Represent
+## What `sp()` Descriptors Represent
 
 niftynei: 00:02:03
 
 Okay, so let's just go back to like, okay, what are we talking about?
-We're talking about this sp() thing.
+We're talking about this `sp()` thing.
 So SP is short for silent payments.
 So basically when you have a descriptor, what a descriptor, what the whole point of having an output descriptor is that it's like here's a description of what an outpoint in Bitcoin might look like on chain and it's a way that if you have this description of what an outpoint or output might look like you're then able to go and find them across all of the outpoints that exist in Bitcoin currently.
 Both past ones that have been spent and ones that are eligible to be spent, to spend.
 And the whole goal of this is that your wallet will be able to identify coins that you're able, interested, they're either interested in keeping track of when they're spent versus not, or, and maybe additionally, able to spend those outputs, if that makes sense.
 So we basically need a way of writing down, these are outputs that I'm interested in, and here's information that you would need in order to be able to spend them in some cases.
 OK, so we're going to write this as kind of like it's very, for whatever reason, all output descriptors look like function definitions.
-So this one is sp(), so it's like, OK, for a silent payment, here's some information.
+So this one is `sp()`, so it's like, OK, for a silent payment, here's some information.
 So the first thing that we're going to put inside of this kind of set of information about a silent payment output is something called a key expression.
 
 ## Why Silent Payments Need New Key Expressions
@@ -78,9 +78,9 @@ How many of you have seen XPUBs before?
 So, XPUB is kind of a traditional or classic key expression.
 It gives you information to be able to find not only one output, but a series of outputs that have been spent to that particular output descriptor, to that particular XPUB, right?
 XPUBs have this property where you can spend multiple ones of them, and they have a chain code included in it, etc., etc.
-XPUBs are not valid key expressions for this sp() descriptor.
+XPUBs are not valid key expressions for this `sp()` descriptor.
 Instead, Craig invents two new ways of encoding information about keys.
-In order to put a key expression inside of this sp() thing, and this is part of the spec, which I could pull up to show you, but that's okay.
+In order to put a key expression inside of this `sp()` thing, and this is part of the spec, which I could pull up to show you, but that's okay.
 So it must be a silent payment key expression, which he defines two, which we kind of just looked at.
 One is this `spscan`, and the other is `spspend`.
 So these are actually gonna be long series of information, a lot like an XPUB is.
