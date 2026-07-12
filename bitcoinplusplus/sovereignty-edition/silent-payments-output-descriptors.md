@@ -85,8 +85,8 @@ So it must be a silent payment key expression, which he defines two, which we ki
 One is this `spscan`, and the other is `spspend`.
 So these are actually gonna be long series of information, a lot like an XPUB is.
 XPUBs can be quite long.
-They're encoded in Bech32.
-(XPUBs are encoded using Base58Check. The new `spscan` and `spspend` key expressions are encoded in Bech32)
+They're encoded in Bech32m.
+(XPUBs are encoded using Base58Check. The new `spscan` and `spspend` key expressions are encoded in Bech32m)
 I don't really care about the encoding.
 All I care about is what information is inside of them.
 So what exactly goes in this dot, dot, dot portion of a key expression for a silent payment?
@@ -101,7 +101,7 @@ I'm not going to look at the actual BIP, but I'm just going to kind of explain w
 
 niftynei: 00:05:03
 
-So for `spscan`, the first kind of piece of information that you're going to have in this Bech32 string is a private key.
+So for `spscan`, the first kind of piece of information that you're going to have in this Bech32m string is a private key.
 This is going to be something called the scan key.
 For silent payments, there's basically two keys involved in each one.
 One is a scan key that's what allows you to go through every single outpoint and figure out whether or not it belongs to your wallet 
@@ -118,7 +118,7 @@ So it's always 33 bytes long.
 That's because it's an X coordinate plus a parity description for which Y you pick.
 If you're not familiar with private and public keys, there's a great Base58 class all about cryptography up on Udemy.
 So I encourage you to go check that out where we explain exactly how private and public keys work for elliptic curves.
-But yeah, so for `spscan`, you're gonna have, again, two kind of pieces of information encoded into a Bech32 description.
+But yeah, so for `spscan`, you're gonna have, again, two kind of pieces of information encoded into a Bech32m description.
 One of them is gonna be a private key, one of them's gonna be a public key.
 Again, this first private key lets you scan for information about silent payments.
 And the second one is whether or not I, the person who's holding this `spscan` thing, can spend it.
