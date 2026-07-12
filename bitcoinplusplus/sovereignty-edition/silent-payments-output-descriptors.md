@@ -395,6 +395,6 @@ It's kind of cool.
 Anything else?
 Any other questions?
 Okay.
-I will leave the floor a minute early.
+I will cede the floor a minute early.
 Thank you for coming.
 Great.
