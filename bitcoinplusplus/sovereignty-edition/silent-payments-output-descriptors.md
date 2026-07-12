@@ -364,7 +364,7 @@ But you wouldn't want to, if you have the spend key and you're deriving the scan
 But yeah, you're right.
 If you had a way of deriving the scan key from the spend key, then you wouldn't need to encode both of them in the descriptor, right?
 Because there would be, you would need to communicate that, it would be implicit.
-So maybe that's something to contribute back to the descriptors back, yeah.
+So maybe that's something to contribute back to the descriptors spec, yeah.
 
 [Audience]: 00:23:58
 
