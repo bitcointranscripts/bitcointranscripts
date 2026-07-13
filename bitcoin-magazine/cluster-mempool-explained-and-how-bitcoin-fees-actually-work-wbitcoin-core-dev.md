@@ -22,22 +22,6 @@ categories:
 source_file: 'https://youtu.be/jSkTsPquAPE?si=La7KLwM1JNht8bOv'
 summary: 'Pieter Wuille and Shinobi discuss cluster mempool, now merged into Bitcoin Core for the 31.0 release. The conversation covers why the original mempool had conflicting orderings for mining vs eviction, how cluster mempool solves this by partitioning related transactions into clusters of at most 64 transactions and running an optimal ordering algorithm on those small groups, and how this enables a globally consistent pre-computed total ordering that improves replace-by-fee incentive compatibility, fee estimation, multi-child CPFP, and transaction relay rate limiting. The talk also covers the historical progression of mempool improvements and how optimal ordering within bounded clusters future-proofs the mempool for arbitrary layer 2 use cases like Lightning and Ark.'
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 **Host:** Shinobi (`Bitcoin Magazine`)
 
 **Guest:** Peter Wuille (`Chaincode Labs`)
