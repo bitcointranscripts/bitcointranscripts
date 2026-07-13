@@ -10,6 +10,7 @@ tags:
   - 'fee-estimation'
   - 'transaction-pinning'
   - 'bitcoin-core'
+  - 'package-relay'
 speakers:
   - 'Pieter Wuille'
   - 'Shinobi'
