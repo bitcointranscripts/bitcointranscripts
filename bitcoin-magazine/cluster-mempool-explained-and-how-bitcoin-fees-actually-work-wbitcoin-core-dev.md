@@ -11,6 +11,7 @@ tags:
   - 'transaction-pinning'
   - 'bitcoin-core'
   - 'package-relay'
+  - 'mempool'
 speakers:
   - 'Pieter Wuille'
   - 'Shinobi'
