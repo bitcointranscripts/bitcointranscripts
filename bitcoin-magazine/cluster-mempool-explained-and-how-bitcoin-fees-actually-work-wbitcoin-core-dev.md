@@ -9,6 +9,7 @@ tags:
   - 'cpfp'
   - 'fee-estimation'
   - 'transaction-pinning'
+  - 'bitcoin-core'
 speakers:
   - 'Pieter Wuille'
   - 'Shinobi'
@@ -19,10 +20,9 @@ categories:
 source_file: 'https://youtu.be/jSkTsPquAPE?si=La7KLwM1JNht8bOv'
 summary: 'Pieter Wuille and Shinobi discuss cluster mempool, now merged into Bitcoin Core for the 31.0 release. The conversation covers why the original mempool had conflicting orderings for mining vs eviction, how cluster mempool solves this by partitioning related transactions into clusters of at most 64 transactions and running an optimal ordering algorithm on those small groups, and how this enables a globally consistent pre-computed total ordering that improves replace-by-fee incentive compatibility, fee estimation, multi-child CPFP, and transaction relay rate limiting. The talk also covers the historical progression of mempool improvements and how optimal ordering within bounded clusters future-proofs the mempool for arbitrary layer 2 use cases like Lightning and Ark.'
 ---
+# Cluster Mempool Explained & How Bitcoin Fees Actually Work
 
 ## Why Bitcoin’s Mempool Has Been Broken
-
-# Cluster Mempool Explained & How Bitcoin Fees Actually Work
 
 **Guest:** Peter Wuille (`Chaincode Labs`)
 
@@ -110,9 +110,7 @@ The first thing you evict should be the very last thing you would want to mine.
 
 **Peter Wuille (00:04:05)**
 
-That makes sense.
-
-And that's true in most cases.
+That makes sense and that's true in most cases.
 
 However, you can construct pathological transaction constellations inside the `mempool` where it isn't true.
 
