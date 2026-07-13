@@ -24,8 +24,6 @@ summary: 'Pieter Wuille and Shinobi discuss cluster mempool, now merged into Bit
 ---
 # Cluster Mempool Explained & How Bitcoin Fees Actually Work
 
-## Why Bitcoin’s Mempool Has Been Broken
-
 **Guest:** Peter Wuille (`Chaincode Labs`)
 
 **Host:** Shinobi (`Bitcoin Magazine`)
