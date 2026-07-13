@@ -690,5 +690,3 @@ See you next time.
 **Peter Wuille** *(00:28:37)*
 
 Bye.
-
----
