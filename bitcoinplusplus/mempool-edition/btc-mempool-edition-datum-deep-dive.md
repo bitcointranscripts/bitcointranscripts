@@ -124,7 +124,7 @@ We released the DATUM gateway under the MIT license.
 I don't think it can get much better than that.
 And the other thing is you want to make sure that the blocks that you make, you know what you're making too, because there's some coordination with the pool.
 You want to be able to make your own blocks, but you don't want to have to wait until you mine your own block to get paid.
-So you can see what your block is going to be paying in the Coinbase non-custodially to other miners and yourself.
+So you can see what your block is going to be paying in the coinbase non-custodially to other miners and yourself.
 And you can see that in your own DATUM gateway.
 So here's a little overview of how the DATUM setup works.
 On the, I guess it's my right and your right, on the right-hand side, you have what you would run as a DATUM miner.
@@ -252,7 +252,7 @@ I have a couple more slides of bullet points for this, but I'm going to try to s
 Stratum V2 wasn't designed for decentralized payouts.
 That's actually a problem with miner firmware.
 One of the other talks earlier, the P2Pool talk, touched on why that's a problem.
-Antpool, Bitmain, and whatnot, and some of the other miner creators just assumed that we would never need Coinbase payouts larger than 500 bytes, a kilobyte maybe.
+Antpool, Bitmain, and whatnot, and some of the other miner creators just assumed that we would never need coinbase payouts larger than 500 bytes, a kilobyte maybe.
 That's not enough to run a non-custodial pool fully, because you just can't cram everybody's payout in every block.
 Well, we want to do that.
 And that's the best.
@@ -261,7 +261,7 @@ And actually, some of the push from OCEAN has accomplished that.
 The latest WhatsMiner's firmware supports like six kilobytes.
 The S21s are up to like 2.5 kilobytes.
 It's being fixed in a way that works, but we can't just throw that at everybody.
-So DATUM is designed as much as possible to be able to cram the biggest Coinbase transaction possible.
+So DATUM is designed as much as possible to be able to cram the biggest coinbase transaction possible.
 So it fingerprints the miners, it can give different work to different miners from the same server and give them the biggest possible work they can do.
 And I didn't see any way to accomplish that within the framework of Stratum V2.
 Those guys can correct me on that.
@@ -303,12 +303,12 @@ And I guess at that point, does anybody have any questions about that part of wh
 Just a question on something you said.
 You said you were going to pay later.
 Could it be aligned with the template?
-Are you still thinking about the Coinbase
+Are you still thinking about the coinbase
 
 Jason Hughes: 00:17:02
 
-The Coinbase, I don't consider part of the template, because everybody knows who you're going to have to pay.
-And the question was that the Coinbase needs to be validated by the pool.
+The coinbase, I don't consider part of the template, because everybody knows who you're going to have to pay.
+And the question was that the coinbase needs to be validated by the pool.
 And yes, you're correct.
 That we want to know that you're paying the correct miners.
 If you're not, then that's not valid pool work.
@@ -372,7 +372,7 @@ Where we at?
 
 [Audience]: 00:19:29
 
-What stops me from mining a Coinbase that claims that there were high fees paid when there actually weren't.
+What stops me from mining a coinbase that claims that there were high fees paid when there actually weren't.
 
 Jason Hughes: 00:19:37
 
@@ -560,7 +560,7 @@ And that's what we had to do.
 We needed it to be super efficient, because we don't know what people are going to run this on.
 This isn't going to be run in data centers.
 This is going to be run on a server next to your Bitaxe.
-This is going to be run on a server that's somewhere near the routing equipment of 100 Petahash Mining Farm.
+This is going to be run on a server that's somewhere near the routing equipment of 100 Petahash mining farm.
 We don't know what people are going to do.
 So it needs to be efficient.
 It needs to be usable.
@@ -624,7 +624,7 @@ I don't want to leave people hanging.
 [Audience]: 00:32:05
 
 I just have one more question.
-The Coinbase, sorry.
+The coinbase, sorry.
 Thank you.
 
 Jason Hughes: 00:32:10
@@ -634,9 +634,9 @@ I can repeat it if you need.
 
 [Audience]: 00:32:11
 
-In DATUM, the Coinbase is not just generated locally, right?
+In DATUM, the coinbase is not just generated locally, right?
 So you have an API.
-You have an endpoint where it can receive Coinbase.
+You have an endpoint where it can receive coinbase.
 
 Jason Hughes: 00:32:18
 
@@ -649,7 +649,7 @@ Okay.
 
 Jason Hughes: 00:32:22
 
-But yes, the question was does DATUM generate the Coinbase?
+But yes, the question was does DATUM generate the coinbase?
 It generates the transaction, but it uses something as the list of who to pay.
 And how that happens is either local, or it's either local in your configuration to pay you, or it comes from the pool.
 Like, I have a block that's worth this much.
@@ -673,12 +673,12 @@ We needed to get this out the door because this is something that's needed in th
 The actual centralization of mining is a real threat.
 And there's been panels on it here that have just kind of outlined that.
 And I feel like that threat hasn't been made real to a lot of people yet.
-Importantly, non-custodial Coinbase payouts.
+Importantly, non-custodial coinbase payouts.
 So when the block is found, as much of that needs to go directly to the people that contributed to the pool as possible immediately, not going through the pool.
 We're not going to pay Foundry and then have Foundry pay us.
 That's just not the way to go about it to this day.
 It needs to be efficient on resources.
-So for example, one of our large miners on OCEAN runs this with an Exahash-ish.
+So for example, one of our large miners on OCEAN runs this with an exahash-ish.
 Their server that they run this on has, you can't even tell DATUM is running on it.
 It's the Bitcoin node is the lift.
 The Bitcoin node is the heavy part of this whole process.
@@ -711,7 +711,7 @@ So the DATUM Prime doesn't know what kind of miners you have.
 Like, we don't even know what miners make work behind the DATUM gateway.
 All we know is we have a DATUM gateway submitting valid work.
 And part of that is those miners need to, those DATUM gateways need to be able to split that work in a way that makes sense for their miners.
-It needs to give the smaller Coinbase data to an Antminer.
+It needs to give the smaller coinbase data to an Antminer.
 It needs to give the larger one to a WhatsMiner.
 And we can't control how they do that.
 And as things expand and as we fingerprint more, that can be incorporated into the DATUM gateway.
@@ -721,11 +721,11 @@ And you can also use that to verify that we're being sane.
 Because you can tell me that you're making a block of 500 Bitcoin.
 OK, well, here's the list of everybody who needs to get paid when you mine a block of 500 Bitcoin.
 You don't have to try to submit work for that, but that's a cool way to verify that the pool is doing what it's saying it's doing.
-But yeah, we have to track the variations of those jobs because those Coinbase transactions, we don't know.
+But yeah, we have to track the variations of those jobs because those coinbase transactions, we don't know.
 So we need to know them, we need to know what the miner is actually doing so that we can validate and rebuild the proof of work, kind of in reverse of the way Stratum V1 does.
 Because they're giving the Stratum V1 work to the miners, we need to untangle that back to a proof of work based on what they gave their miners so that we can prove it again.
 And that's a little more complicated than just kind of trusting what they tell us.
-So again, there's multiple Coinbase transactions per job.
+So again, there's multiple coinbase transactions per job.
 That complicates a lot of that.
 If you generate one template, one job, then that might have, I think right now, up to six different variations of the generation transaction in it.
 So we need to know how you did that.
@@ -835,11 +835,11 @@ Jason Hughes: 00:41:18
 So if you're working on lotto solo work, not with the pool
 Let's just start there, you're going to be mining to your own Address for one.
 You can add a unique ID to your config if you're running ten of these, and that makes sure your work is unique.
-With the pool, when you connect to the pool, again, your template's going to be different, so that helps, but the pool also assigns you a unique ID that you have to include in the actual Coinbase input script.
+With the pool, when you connect to the pool, again, your template's going to be different, so that helps, but the pool also assigns you a unique ID that you have to include in the actual coinbase input script.
 
 [Audience]: 00:41:43
 
-Okay, so wait, it almost sounds like it's because the other people in the pool, through the DATUM protocol, I can be somewhat assured that the other miners in the pool are including my address in the Coinbase.
+Okay, so wait, it almost sounds like it's because the other people in the pool, through the DATUM protocol, I can be somewhat assured that the other miners in the pool are including my address in the coinbase.
 So even if a miner, even if we're having some redundant work if somebody else manages to mine something with a block template, even though it's a different block template than the one I was working on, I still get paid.
 So it kind of balances out.
 
@@ -1008,13 +1008,13 @@ The actual commands are the hello and handshake.
 Those are just a back and forth that establish the session with the mining pool for the encrypted channel.
 That's pretty basic stuff, uses Libsodium, some creative license there on making that useful and lightweight.
 And then the actual decentralized mining commands of I need to know who to pay.
-We call it the Coinbaser.
-I don't remember who coined that word, but when you get a list of miners to pay in Eloipool, it was called the Coinbaser.
+We call it the coinbaser.
+I don't remember who coined that word, but when you get a list of miners to pay in Eloipool, it was called the coinbaser.
 So I kind of adopted that as well.
 So I have a block that I think is worth, four Bitcoin, who do I pay?
 And that's that.
 And then the miner, the next thing it needs to do is submit a proof of work.
-So the pool side can respond to the Coinbase request with this is the list of miners.
+So the pool side can respond to the coinbase request with this is the list of miners.
 It can respond to the shares like, yes, this was a good share.
 And if it's not, this was why, and this is what you need to fix about it.
 Generally, that's just, well, you're not mining on the right block anymore.
@@ -1045,8 +1045,8 @@ Here is my new session key.
 It encrypts that with the session key that the client provided.
 It signs it with the server's public key so that you know that that came back from the server, and you're not man in the middle.
 It echoes the keys provided by the client so that somebody man in the middling can't just use the session key and say, I'm really the server.
-And the pool provides some other metadata, like the Coinbase tag.
-So it'll say, you need to include ocean.xyz in your block header, in your block Coinbase.
+And the pool provides some other metadata, like the coinbase tag.
+So it'll say, you need to include ocean.xyz in your block header, in your block coinbase.
 The unique ID that we talked about a minute ago to make sure that there was unique work amongst everybody, even if you're mining the exact same template, which does happen during empty blocks.
 So that's a thing.
 The minimum difficulty of the shares that the pool is willing to accept.
@@ -1063,7 +1063,7 @@ So we went over these a little bit.
 
 Jason Hughes: 00:52:11
 
-The datum_protocol_coinbaser_fetch command, it asks the pool server for a list of payouts.
+The `datum_protocol_coinbaser_fetch command`, it asks the pool server for a list of payouts.
 So I have a block that's worth this much.
 Who do I pay?
 Excuse me.
@@ -1071,7 +1071,7 @@ And the server responds back, here's the entire list of everybody who could poss
 Obviously, the gateway is not going to be able to do that with all miners, and it has the leeway to do that.
 So the client stores that with a unique identifier with the job so it can use that across multiple jobs if it needs to if they're the same amount.
 That generally doesn't happen, but it can do it.
-So when it submits that back to the pool, we have to know what Coinbase response it's working with so that we can reconstruct that on the pool side because this is all deterministic stuff.
+So when it submits that back to the pool, we have to know what coinbase response it's working with so that we can reconstruct that on the pool side because this is all deterministic stuff.
 If I have this much Bitcoin to pay at this moment in time, then these are the people who are supposed to be paid at that moment in time.
 That won't change anymore, at least not with the TIDES reward system.
 So go from there.
@@ -1080,9 +1080,9 @@ And I'll just rattle it off just to make sure.
 You start with, I have work to submit to the pool.
 So I need to send a message to the pool with my personal job ID.
 I don't care what that is.
-The Coinbase ID that we negotiated a minute ago.
+The coinbase ID that we negotiated a minute ago.
 Any flags that we want to communicate, most of these are reserved for later.
-The time, the nTime, same as Stratum V1.
+The time, the `nTime`, same as Stratum V1.
 The nonce that you found, and the version, because AsicBoost is a thing that's not going away.
 You can set your own extra nonce size.
 So you are in charge of the Stratum V1 server.
@@ -1115,7 +1115,7 @@ So we need to keep track of all that.
 There are some guardrails on how many of these we will keep track of, but it's pretty liberal.
 We want you to be able to work on templates how you want to work on them.
 If your template's changing every five seconds, that's a little extreme, but we'll go with it.
-We need to validate the Coinbase split.
+We need to validate the coinbase split.
 So we basically have to deconstruct the transaction again, make sure that everybody's being paid again, make sure the block's not stale.
 It has to meet the target of the proof of work that you promised us you were trying to meet, because another aspect of this is you can set your own share target.
 You, again, are running the entire pool.
@@ -1131,7 +1131,7 @@ It's a heavy thing that needs to be done.
 We have to validate all the basics, that the time is within the realm of what the Bitcoin network will accept.
 The version is within the realm of what the network will accept.
 And then the server has to make determinations right now on whether or not we think we need to validate your entire block.
-If this man here said he sends a 50 Bitcoin Coinbase, yeah, you're going to trigger a validation.
+If this man here said he sends a 50 Bitcoin coinbase, yeah, you're going to trigger a validation.
 We're going to want to see that.
 Again, later on, that'll be like, OK, yeah, we want to see it, but we don't want to see it.
 We want these other miners to tell us that you're not cheating us.
@@ -1194,7 +1194,7 @@ So in order to get SV, it's a limitation of SV1
 You want to still get your miners on the work as fast as possible.
 And how do you get work to your miners as fast as possible?
 Make that work as small as possible.
-And even on your land, that kind of matters.
+And even on your LAN, that kind of matters.
 Not as much.
 And you can turn it off if you want to.
 But it does help.
