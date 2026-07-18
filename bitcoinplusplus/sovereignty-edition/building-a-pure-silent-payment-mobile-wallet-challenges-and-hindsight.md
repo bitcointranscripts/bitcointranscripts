@@ -83,9 +83,9 @@ So like you can imagine if you have if you already have like an address and you 
 If UTXOs could be spent multiple times, then that would be like a double spending problem.
 So that is essentially that kind of guarantees that this address that we create is unique.
 So next we create a shared secret.
-This is the input hash times the A sum times the B_scan, which is the scan key for the recipient that you're trying to send to.
+This is the input hash times the `a` sum times the `B_scan`, which is the scan key for the recipient that you're trying to send to.
 And then finally, we calculate what the resulting on-chain output looks like with this formula.
-So P is you have the shared secret, so you send to the B_spend, which in the previous slides would be what you would normally send to, but now we don't just send to the B_spend, we also send to a B_spend summed up with the hash of the shared secret multiplied by the generator points and make it a public key.
+So `P` is you have the shared secret, so you send to the `B_spend`, which in the previous slides would be what you would normally send to, but now we don't just send to the `B_spend`, we also send to a `B_spend` summed up with the hash of the shared secret multiplied by the generator point and make it a public key.
 So that is what makes it unique.
 Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital `A`, so capital `A` is the sum of the input public keys, and now we have this `b_scan` which is like a small `b`, so that's the private key for the scan key.
 So however, the A is the same, the input hash is the same because it follows the same principle, and the shared secret is also essentially the same because this is the Diffie-Hellman scheme.
