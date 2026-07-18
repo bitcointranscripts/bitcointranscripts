@@ -57,7 +57,7 @@ So ECDH, elliptic curve Diffie-Hellman, it is a cryptographic scheme that is pre
 And this requires private and public key pairs, and as it happens, most Bitcoin transactions tend to use public-private keys.
 So if you think of a normal Bitcoin, a common Bitcoin script is like sending to Taproot or sending to like a Witness Public Key Hash (P2WPKH), you're basically sending to a public key, and when you spend it, you are actually using the private key to spend it.
 So there's private-public keys here.
-And so the idea of silent payments is that we can exploit this fact, the fact that a lot of transactions on chain are using private-public keys to create a new address.
+And so the idea of silent payments is that we can exploit this fact, the fact that a lot of transactions on-chain are using private-public keys to create a new address.
 So this function you can see here, that is kind of in a nutshell what silent payments is doing.
 So normally you would kind of send to a public key, which is I call `P_recipient`, but now instead of sending it to that directly, what I'm going to do is I'm going to use Diffie-Hellman to calculate the shared secret, and I'm not going to send to the address directly, but I'm going to tweak the address with the shared secret, and I'm then going to send it to that address.
 And you know, so this is sort of unique per sender-recipient pair, so that is what avoids address reuse.
@@ -84,12 +84,12 @@ If UTXOs could be spent multiple times, then that would be like a double spendin
 So that is essentially that kind of guarantees that this address that we create is unique.
 So next we create a shared secret.
 This is the input hash times the A sum times the B_scan, which is the scan key for the recipient that you're trying to send to.
-And then finally, we calculate what the resulting on chain output looks like with this formula.
+And then finally, we calculate what the resulting on-chain output looks like with this formula.
 So P is you have the shared secret, so you send to the B_spend, which in the previous slides would be what you would normally send to, but now we don't just send to the B_spend, we also send to a B_spend summed up with the hash of the shared secret multiplied by the generator points and make it a public key.
 So that is what makes it unique.
 Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital A, so capital A is the sum of the input public keys, and now we have this b_scan which is like a small b, so that's the private key for the scan key.
 So however, the A is the same, the input hash is the same because it follows the same principle, and the shared secret is also essentially the same because this is the Diffie-Hellman scheme.
-That also means that in step five, the resulting on chain is calculated, you basically arrive at the same result as the sender would.
+That also means that in step five, the resulting on-chain is calculated, you basically arrive at the same result as the sender would.
 So that's how a receiver can derive the same address.
 However, only the receiver is able to spend this address, so you can see this function at the bottom.
 Of course, the right side, the two parties know the shared secret, but only the receiver knows the private key, knows the spending key, so only the receiver is actually able to spend this output.
@@ -106,7 +106,7 @@ So on the sending side, it is relatively straightforward.
 All of the extra data that you need is, it's already part of the transaction.
 You need to do this extra, like, calculate the shared secret, but other than that, it's basically not that much extra unique stuff.
 However, on the receiving side, there are two problems that you need to solve before you can, you know, find these addresses.
-So one of them is that you need extra on chain data.
+So one of them is that you need extra on-chain data.
 So we have both this input hash, and we have the sum of public keys.
 This is part of a transaction.
 Normally, light clients, they basically just have a list of addresses that they're interested in, and they have their own ways of finding, like, if there are any funds on those addresses.
@@ -114,7 +114,7 @@ So maybe they query an Electrum server, or maybe they use a compact block filter
 But the point is they kind of know what scripts they're looking for.
 However, in our case, we don't know what those scripts look like.
 We have to calculate them.
-And we need on chain data for this, or we need this extra piece of data.
+And we need on-chain data for this, or we need this extra piece of data.
 So we need to be able to provide this to the light clients.
 And also, another very big problem with silent payments is that, and this is kind of a good thing but also a bad thing, is that silent payments outputs, they look like just any other Taproot output.
 They are just sort of indistinguishable from normal Taproot payments, which is great for privacy, but it also means if I'm a receiver, I don't actually know if a certain transaction, if I look at it, I don't immediately know if it's a payment that is coming for me.
@@ -133,13 +133,13 @@ Cygnet: 00:12:40
 
 However, I think for both of these problems, there are some mitigations.
 So the first one is actually not that big of a deal.
-We need some extra bit of on chain data.
+We need some extra bit of on-chain data.
 We need two things.
 We need the input hash, and we need the public key, or the sum of the public keys.
 So this is something that is essentially all public information, which means that if you want, you can have like some sort of a server that can, for a given block or whatever, can create like an end point that gives this data to you.
 So this is called a tweak data, or a tweak.
 This is something that is unique for every transaction, and using this tweak, a recipient is able to calculate the shared secret, because, you know, the shared secret was the tweak and the public key sum and the input hash.
-So this is just enough for any silent payment receiver to create or calculate the actual resulting on chain address.
+So this is just enough for any silent payment receiver to create or calculate the actual resulting on-chain address.
 So that's great.
 That solves the first problem.
 Next is the second problem, which is the huge amount of data you have to process, so this is by itself seems insurmountable, but one important aspect that is of relevance here is that, you know, if you're a light client, A lot of UTXOs in Bitcoin, they tend to get spent pretty quickly.
@@ -251,7 +251,7 @@ So yeah, I think, oh, yeah, finally, I just wanted to say, okay, now we have kin
 Because we now have sort of access to this reusable address, we can finally start to think about other things that we can do with, like, a reusable payment code.
 So yeah, one of the pretty obvious ones is BIP353.
 So BIP353 is like this email address-looking format.
-This is already in use, I think, for example, by Phoenix Wallet, this is pretty popular, but it's also possible, especially with something like silent payment, it's possible now to also do this on chain.
+This is already in use, I think, for example, by Phoenix Wallet, this is pretty popular, but it's also possible, especially with something like silent payment, it's possible now to also do this on-chain.
 So if you use this BIP353 approach, we can kind of basically create a wallet that just can completely drop showing Bitcoin addresses at all.
 We can basically create a user experience that is only built around this sort of email address like user experience.
 So I think that is pretty cool, and there's a bunch of other improvements that you can think of, but obviously that is for another time.
