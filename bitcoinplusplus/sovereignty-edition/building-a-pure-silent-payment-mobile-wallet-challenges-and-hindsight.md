@@ -59,7 +59,7 @@ So if you think of a normal Bitcoin, a common Bitcoin script is like sending to 
 So there's private-public keys here.
 And so the idea of silent payments is that we can exploit this fact, the fact that a lot of transactions on chain are using private-public keys to create a new address.
 So this function you can see here, that is kind of in a nutshell what silent payments is doing.
-So normally you would kind of send to a public key, which is I call P_recipient, but now instead of sending it to that directly, what I'm going to do is I'm going to use Diffie-Hellman to calculate the shared secret, and I'm not going to send to the address directly, but I'm going to tweak the address with the shared secret, and I'm then going to send it to that address.
+So normally you would kind of send to a public key, which is I call `P_recipient`, but now instead of sending it to that directly, what I'm going to do is I'm going to use Diffie-Hellman to calculate the shared secret, and I'm not going to send to the address directly, but I'm going to tweak the address with the shared secret, and I'm then going to send it to that address.
 And you know, so this is sort of unique per sender-recipient pair, so that is what avoids address reuse.
 Before I continue on, I think I first want to quickly mention that in a silent payment address, we have two different keys, a scan key and a spend key, and these are separated out because we will get into this, but, you know, for a silent payment, you need to do a lot of scanning, and it's useful to have a separate key for this, because maybe you don't want to always have the spend key in memory when you do this.
 There's a bunch of other reasons for it, too.
@@ -76,7 +76,7 @@ So these are some script types which, again, this is not a very high requirement
 So you need to have at least one of these in your spending transaction.
 Then using the private keys from the inputs that you're trying to spend, you sum up the private keys.
 The reason you sum them up and not just take one at random is because this is slightly more convenient or this is more convenient to do, like, collaborative transactions.
-So you sum up, you create this a, which is the sum of the private keys.
+So you sum up, you create this `a`, which is the sum of the private keys.
 Next you also need an input hash.
 So the reason here that we take an input hash is because just using the sum of the private keys, it's possible to create transactions reusing the same keys.
 So like you can imagine if you have if you already have like an address and you spend from that address twice, you can you're kind of reusing the keys, so just taking the creating a secret just from the private keys itself doesn't guarantee uniqueness, but we guarantee this by taking this input hash which is essentially just the outpoints and then hash, and because outpoints are related to UTXOs, and UTXOs can, of course, only be spent once.
@@ -87,7 +87,7 @@ This is the input hash times the A sum times the B_scan, which is the scan key f
 And then finally, we calculate what the resulting on chain output looks like with this formula.
 So P is you have the shared secret, so you send to the B_spend, which in the previous slides would be what you would normally send to, but now we don't just send to the B_spend, we also send to a B_spend summed up with the hash of the shared secret multiplied by the generator points and make it a public key.
 So that is what makes it unique.
-Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital `A`, so capital `A` is the sum of the input public keys, and now we have this `b_scan` which is like a small `b`, so that's the private key for the scan key.
+Then on the receiving side, this is this looks actually very similar to the sending side, that is because, you know, it is actually following the same steps, but now instead of taking you're sort of doing it from the perspective of the receiver, so on the input side you're actually looking at the public keys which is shown with a capital A, so capital A is the sum of the input public keys, and now we have this b_scan which is like a small b, so that's the private key for the scan key.
 So however, the A is the same, the input hash is the same because it follows the same principle, and the shared secret is also essentially the same because this is the Diffie-Hellman scheme.
 That also means that in step five, the resulting on chain is calculated, you basically arrive at the same result as the sender would.
 So that's how a receiver can derive the same address.
