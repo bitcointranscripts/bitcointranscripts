@@ -560,7 +560,7 @@ And that's what we had to do.
 We needed it to be super efficient, because we don't know what people are going to run this on.
 This isn't going to be run in data centers.
 This is going to be run on a server next to your Bitaxe.
-This is going to be run on a server that's somewhere near the routing equipment of 100 Petahash mining farm.
+This is going to be run on a server that's somewhere near the routing equipment of 100 petahash mining farm.
 We don't know what people are going to do.
 So it needs to be efficient.
 It needs to be usable.
