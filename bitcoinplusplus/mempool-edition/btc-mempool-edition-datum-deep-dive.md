@@ -1082,7 +1082,7 @@ So I need to send a message to the pool with my personal job ID.
 I don't care what that is.
 The coinbase ID that we negotiated a minute ago.
 Any flags that we want to communicate, most of these are reserved for later.
-The time, the `nTime`, same as Stratum V1.
+The time, the `ntime`, same as Stratum V1.
 The nonce that you found, and the version, because AsicBoost is a thing that's not going away.
 You can set your own extra nonce size.
 So you are in charge of the Stratum V1 server.
