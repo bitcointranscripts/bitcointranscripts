@@ -259,7 +259,8 @@ Would you say you're a minimalist in other aspects of your life?
 **Super Testnet:** 00:07:45
 
 Some people say that.
-niftynei: 00:07:47
+
+**Super Testnet:** 00:07:47
 I'm not going to say that.
 
 
