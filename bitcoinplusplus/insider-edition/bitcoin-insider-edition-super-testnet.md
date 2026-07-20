@@ -28,7 +28,7 @@ Hey Super, how's it going?
 
 So good.
 
-**niftynei:** 00:00:02
+niftynei: 00:00:02
 
 Welcome to Bitcoin++ Insider Edition.
 Do you want to explain to the crowd who you are and what you're doing in Austin this week?
@@ -39,7 +39,7 @@ My name is Super Testnet, I'm a Bitcoin developer.
 I focus on Bitcoin, the Lightning Network.
 I do a lot of research into alternative Layer 2 solutions and I'm in Austin this week to come to Bitcoin++, which was a Bitcoin conference she just held, and present about one of my projects.
 
-**niftynei:** 00:00:27
+niftynei: 00:00:27
 
 What project were you talking about?
 
@@ -48,7 +48,7 @@ What project were you talking about?
 It's called `Testnet Generator`.
 It is a project where you can launch your own Bitcoin testnet and then have as many Bitcoins as you like, or fake Bitcoins, to test with.
 
-**niftynei:** 00:00:41
+niftynei: 00:00:41
 
 Did anyone get testy during the workshop?
 
@@ -57,7 +57,7 @@ Did anyone get testy during the workshop?
 No, I don't think so.
 I was really excited that Luke Dashjr came to it.
 
-**niftynei:** 00:00:47
+niftynei: 00:00:47
 
 That was exciting.
 That's fun, yeah.
@@ -66,7 +66,7 @@ That's fun, yeah.
 
 He's a long time Bitcoin hero for me and he chose to come to my talk.
 
-**niftynei:** 00:00:52
+niftynei: 00:00:52
 
 That's really cool, yeah.
 Did you manage to spin up a test network during your talk?
@@ -77,7 +77,7 @@ Oh, yeah.
 We did that within the first five minutes.
 Very cool.
 
-**niftynei:** 00:01:00
+niftynei: 00:01:00
 
 Then what did you do the rest of the time?
 
@@ -86,7 +86,7 @@ Then what did you do the rest of the time?
 I added `CTV` to it.
 So I went through how I, as an illustration of how I code, I had some `CTV` code and I added it into the testnet so you can create `CTV` transactions.
 
-**niftynei:** 00:01:14
+niftynei: 00:01:14
 
 Very cool.
 Cool.
@@ -101,7 +101,7 @@ He probably doesn't know me, so maybe not that one.
 This was also right before mine.
 Let's see.
 
-**niftynei:** 00:01:38
+niftynei: 00:01:38
 
 What was he talking about in that one?
 Was that his policy changes?
@@ -112,7 +112,7 @@ Yeah, he was doing how to make your own mempool policies.
 It was pretty cool, because we've been dealing a lot during the conference with new versions of spam on the blockchain.
 So he was just like, let's just do an illustration of how fast it is to update the mempool to filter out more spam.
 
-**niftynei:** 00:01:59
+niftynei: 00:01:59
 
 How fast was it?
 
@@ -120,7 +120,7 @@ How fast was it?
 
 He did it within 30 minutes.
 
-**niftynei:** 00:02:03
+niftynei: 00:02:03
 
 Let's go.
 Okay, yeah.
@@ -136,14 +136,14 @@ I just added a line, and now I filtered your new type of spam.
 And it reminded me of that.
 It was like, it doesn't take much to actually fight this stuff.
 
-**niftynei:** 00:02:46
+niftynei: 00:02:46
 
 Right, it just takes a little bit of proactivity.
 I mean, so when you say fight this stuff, I had a tweet thread after listening to the talks about how really one side of the debate...
 
 ## Filtering Bitcoin Transactions
 
-**niftynei:** 00:02:57
+niftynei:00:02:57
 
 A lot of stuff that we talked about at the conference was this filtering stuff.
 I felt like that was more of a theme than I was intending it to be.
@@ -158,7 +158,7 @@ And then there's, I think, the position that Luke and the Knots organization, fo
 
 We call them Nazis.
 
-**niftynei:** 00:03:39
+niftynei: 00:03:39
 
 Nazis.
 OK, yeah.
@@ -188,7 +188,7 @@ Yeah, I think if it's a never-ending battle, there's nothing wrong with having a
 Perhaps instead of us being the ones to get complacent and just say, well, we can't fight it.
 Perhaps they will be the ones to get complicit and just say, well, none of our attacks are working.
 
-**niftynei:** 00:05:30
+niftynei: 00:05:30
 
 I see.
 
