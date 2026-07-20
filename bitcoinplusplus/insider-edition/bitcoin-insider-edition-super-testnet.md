@@ -268,10 +268,6 @@ I'm not going to say that.
 Never mind.
 Sure.
 
-**Super Testnet:** 00:07:48
-
-Some people say that.
-Sure.
 
 ## Eternal Battles on Bitcoin
 
