@@ -259,7 +259,6 @@ Would you say you're a minimalist in other aspects of your life?
 **Super Testnet:** 00:07:45
 
 Some people say that.
-
 niftynei: 00:07:47
 I'm not going to say that.
 
@@ -375,7 +374,7 @@ I see.
 
 niftynei: 00:11:26
 
-But if we're all supposed to be hodling Bitcoin, we're supposed to be sending Bitcoin to each other.
+But if we're all supposed to be hodling Bitcoin, who's supposed to be sending Bitcoin to each other.
 
 **Super Testnet:** 00:11:31
 
