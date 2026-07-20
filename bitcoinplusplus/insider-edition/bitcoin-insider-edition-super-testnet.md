@@ -265,7 +265,7 @@ I'm not going to say that.
 
 
 Never mind.
-Sure.
+uhm Sure.
 
 
 ## Eternal Battles on Bitcoin
