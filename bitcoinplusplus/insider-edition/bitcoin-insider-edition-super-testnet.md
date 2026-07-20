@@ -262,7 +262,6 @@ Would you say you're a minimalist in other aspects of your life?
 Some people say that.
 I'm not going to say that.
 
-**niftynei:** 00:07:47
 
 Never mind.
 Sure.
