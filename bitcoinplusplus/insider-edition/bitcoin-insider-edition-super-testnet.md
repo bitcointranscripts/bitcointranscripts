@@ -2,7 +2,7 @@
 title: 'Bitcoin++ Insider Edition: Super Testnet'
 transcript_by: 'mokayaj857 via review.btctranscripts.com'
 media: 'https://youtu.be/hv9Ckgeal88'
-date: '2025-05-16'
+date: '2025-05-15'
 tags:
   - 'mempool'
   - 'privacy'
@@ -20,7 +20,7 @@ summary: "In this Bitcoin++ Insider Edition interview, niftynei sits down with d
 
 ## Intro
 
-**niftynei:** 00:00:00
+niftynei:00:00:00
 
 Hey Super, how's it going?
 
@@ -173,7 +173,7 @@ Are you like, we should continually update our filters and try to make it such t
 I'm a fan of the first one.
 I like to fight the spam and try to eliminate as much of it as possible, increase the cost of production of spam and generally just make their lives harder so that Bitcoin is better money.
 
-**niftynei:** 00:04:27
+niftynei: 00:04:27
 
 You think that like.
 Like, yeah, do you think that filtering stuff out is a...
@@ -200,7 +200,7 @@ And that lasted for, I don't know, all the way up until 2022 or so.
 So I think maybe the same thing can happen.
 If we fight it really hard, and if we succeed at stopping most of their efforts, then perhaps they will move to somewhere where it's more accepted and do it there.
 
-**niftynei:** 00:06:00
+niftynei: 00:06:00
 
 Like, hey, the grass is greener somewhere else.
 
@@ -208,7 +208,7 @@ Like, hey, the grass is greener somewhere else.
 
 And then we get another eight years or whatever of...
 
-**niftynei:** 00:06:05
+niftynei: 00:06:05
 
 Or spite.
 Yeah.
@@ -229,7 +229,7 @@ To me, that's a very good thing.
 
 ## OP_RETURN Data Limits
 
-**niftynei:** 00:07:10
+niftynei: 00:07:10
 
 So, the `OP_RETURN` data carrier size limit, should we keep it at 80 bytes, make it smaller, get rid of it.
 
@@ -237,7 +237,7 @@ So, the `OP_RETURN` data carrier size limit, should we keep it at 80 bytes, make
 
 I'd like to reduce it to zero.
 
-**niftynei:** 00:07:18
+niftynei: 00:07:18
 
 Reduce it to zero.
 So you want it such that `OP_RETURN`s don't exist basically.
@@ -248,7 +248,7 @@ Remove the `OP_RETURN`.
 I think having it so that you can create an `OP_RETURN` but only if it has zero value.
 Zero data in the script.
 
-**niftynei:** 00:07:32
+niftynei:*00:07:32
 
 Zero data push.
 Okay.
@@ -268,7 +268,7 @@ Sure.
 
 ## Eternal Battles on Bitcoin
 
-**niftynei:** 00:07:51
+niftynei: 00:07:51
 
 So I mean, this kind of like war on arbitrary data in the blockchain that you're proposing that the Bitcoiners engage in.
 Have you engaged in any other sort of like fight you feel like that's like — I mean that's like an internal eternal war that you're sort of signing up for.
@@ -278,7 +278,7 @@ Isn't it easier to like, well I was going to say, do you have any precedents of 
 
 In the Bitcoin space?
 
-**niftynei:** 00:08:19
+niftynei: 00:08:19
 
 Sure, or in general.
 
@@ -288,7 +288,7 @@ The one that comes to mind is the fight against altcoins in general.
 So like trying to persuade people that Bitcoin is a better money than altcoins is a battle that I've been in since pretty much since I actually since before I got into Bitcoin.
 And yeah, that's — I think that's that's a pretty comparable one.
 
-**niftynei:** 00:08:45
+niftynei: 00:08:45
 
 Altcoins.
 So I mean, and do you think that this battle against arbitrary data is like related to the altcoin?
@@ -304,7 +304,7 @@ A lot of the spam is token data.
 So it's people creating, launching, and then using altcoins with Bitcoin's blockchain as the data carrier for those.
 And so part of fighting altcoins is also fighting them on Bitcoin's blockchain, which is part of the spam.
 
-**niftynei:** 00:09:13
+niftynei: 00:09:13
 
 Yeah, it makes sense.
 I know, part of me is like, but if they want to send Bitcoin to Bitcoin miners, like buy Bitcoin so they can run their scams on Bitcoin, isn't that good for Bitcoin?
@@ -316,7 +316,7 @@ It has some good effects, but it also has negative effects.
 I could easily imagine encouraging someone to synchronize the blockchain and then they, you know, take a look at what's on there and they're like, it's a bunch of JPEGs and altcoins and like there's barely any Bitcoin happening on this network.
 Why would I synchronize this?
 
-**niftynei:** 00:09:44
+niftynei: 00:09:44
 
 Well, you say there's barely any Bitcoin happening, but those transactions are paying fees to Bitcoin miners, right?
 Is that not Bitcoin?
@@ -326,7 +326,7 @@ Is that not Bitcoin?
 The fees are.
 The fees are paying Bitcoin, but it's...
 
-**niftynei:** 00:09:54
+niftynei: 00:09:54
 
 Bitcoin's changing hands.
 
@@ -339,7 +339,7 @@ Like let's say that someone made some kind of art house and then they sold art a
 I think that'd be a great use case of Bitcoin to just pay for art and say, let's move this off-chain.
 But when they do it on-chain, it makes it so that the network is being used for something it's not designed for, it's not good at transferring that kind of data, costs a lot of money, and it imposes a cost on all the people who are trying to run the network, and they just see a bunch of stuff that's not Bitcoin on there.
 
-**niftynei:** 00:10:48
+niftynei: 00:10:48
 
 Where are they going to see it though?
 Are they looking through the block data?
@@ -348,7 +348,7 @@ Are they looking through the block data?
 
 Yeah, I think even the fact that when you download it, you see it's 500 gigabytes or more.
 
-**niftynei:** 00:10:58
+niftynei: 00:10:58
 
 But Bitcoin could be easily full of, I'm sorry.
 
@@ -356,7 +356,7 @@ But Bitcoin could be easily full of, I'm sorry.
 
 No problem, I was just going to say it could easily lead someone to wonder what is that data and if they do any cursory look at it, they'll see that a lot of it is junk.
 
-**niftynei:** 00:11:15
+niftynei:00:11:15
 
 Do you think they would feel differently if they looked at it and saw it was all people moving Bitcoin around?
 
@@ -365,13 +365,13 @@ Do you think they would feel differently if they looked at it and saw it was all
 Yeah, I think so.
 I think that would be a good reason to say, wow, these people really care about this project.
 
-**niftynei:** 00:11:25
+niftynei: 00:11:25
 
 I see.
 
 ## HODLing vs. Spending Bitcoin
 
-**niftynei:** 00:11:26
+niftynei: 00:11:26
 
 But if we're all supposed to be hodling Bitcoin, we're supposed to be sending Bitcoin to each other.
 
@@ -379,7 +379,7 @@ But if we're all supposed to be hodling Bitcoin, we're supposed to be sending Bi
 
 I'm a fan of sending Bitcoin to each other and not just hodling it.
 
-**niftynei:** 00:11:34
+niftynei: 00:11:34
 
 Yeah, I don't know, it's like one of those, it's like, well, okay, we have this wonderful thing which is a blockchain which permits anyone who holds Bitcoin to transact at any point in time in ten minute increments, right?
 And if people who hold Bitcoin aren't sending enough transactions frequently enough, why not let the spammers use up the block space and send Bitcoin to miners if other people aren't willing to outbid them for the space?
@@ -389,7 +389,7 @@ And if people who hold Bitcoin aren't sending enough transactions frequently eno
 It reminds me of a scene from the film O Brother Where Art Thou?
 Where they run into the guy who sold his soul to the devil so that he could learn to play the guitar really good.
 
-**niftynei:** 00:12:07
+niftynei: 00:12:07
 
 Okay.
 
@@ -399,7 +399,7 @@ And they say, well, why did you sell your soul to the devil?
 And he says, well, I wasn't using it.
 It's like, I don't think there's a good reason to give up block space to spammers is because Bitcoiners aren't using it.
 
-**niftynei:** 00:12:22
+niftynei: 00:12:22
 
 I think that's a perfect argument.
 Yeah.
@@ -410,7 +410,7 @@ I think that's an interesting perspective on the current topic.
 
 ## BTC++ Conference Recap
 
-**niftynei:** 00:12:44
+niftynei: 00:12:44
 
 I was a little disappointed at the conference that we didn't spend more time talking about mining decentralization on the main stages.
 I had a bunch of talks I think that kind of went around this.
@@ -427,7 +427,7 @@ I would have preferred to see more of a focus on mining decentralization and the
 Also, I think having some space dedicated to it would be fine.
 Maybe one talk instead of nine.
 
-**niftynei:** 00:13:32
+niftynei: 00:13:32
 
 Okay, got it.
 I didn't realize we had that many talks.
@@ -436,7 +436,7 @@ I didn't realize we had that many talks.
 
 I don't think you had nine talks, but it did seem more prominent than I would have wished.
 
-**niftynei:** 00:13:41
+niftynei: 00:13:41
 
 Yeah, I think it definitely got a lot more airtime.
 But I think it's kind of one of those things like, I think it's what people wanted to talk about.
@@ -445,7 +445,7 @@ But I think it's kind of one of those things like, I think it's what people want
 
 I agree.
 
-**niftynei:** 00:13:49
+niftynei: 00:13:49
 
 And so that's what we ended up talking about because that was what it seemed like people wanted to talk about.
 Cool.
@@ -461,7 +461,7 @@ I will be talking on a privacy panel with Seth for Privacy and Aaron van Wirdum 
 And then I will also be doing a presentation about the privacy advantages of using coin pools.
 So lots of focus on privacy for me lately.
 
-**niftynei:** 00:14:24
+niftynei:00:14:24
 
 Okay, great.
 Well, hopefully we'll see you in Riga then in August, the 7th and 8th right ahead of the Baltic Honeybadger.
@@ -474,7 +474,7 @@ For Bitcoin++, there's also one happening with the Las Vegas thing.
 They do a lot of hackathons.
 Is that the one you're referring to?
 
-**niftynei:** 00:14:48
+niftynei: 00:14:48
 
 Yeah, we're helping run it this year.
 So Bitcoin++ is powering the Vegas hackathon this year.
@@ -483,7 +483,7 @@ So Bitcoin++ is powering the Vegas hackathon this year.
 
 I'm not a fan of the chosen model and in order to express that I'm not participating.
 
-**niftynei:** 00:14:59
+niftynei: 00:14:59
 
 Okay, that makes sense.
 And the chosen model that we're doing is the online?
@@ -493,7 +493,7 @@ And the chosen model that we're doing is the online?
 Yeah, well, it's fine to have an online component, but when you have no in-person component, that seems...
 That's upsetting to me.
 
-**niftynei:** 00:15:11
+niftynei: 00:15:11
 
 Makes sense.
 Yeah, I also prefer in-person components.
@@ -506,14 +506,14 @@ It's a world-class gathering of engineers, hackers, and builders focused on the 
 From protocol research to lightning, smart contracts, covenants, privacy tools and beyond, BTC++ dives deep into the work that's shaping the future of Bitcoin.
 Join us for our next event in Riga, Latvia on August 7th and 8th, focused on Bitcoin privacy, and see all our upcoming events across the globe at btc++.dev.
 
-**niftynei:** 00:15:55
+niftynei:00:15:55
 
 We're back for part two of interviewing Super.
 Super, we had some questions from last time that we didn't get answered, so I wanted to get into it.
 
 ## Is Arbitrary Data/Spam Subjective?
 
-**niftynei:** 00:16:03
+niftynei:00:16:03
 
 We talked a little bit about spam filters and what spam is and you were very much we should work as hard as possible to prevent spam from getting into transactions because — or into blocks really — because Bitcoin should be for financial transactions.
 Good question though that came from our audience is that, is that idea of arbitrary data like spam subjective?
@@ -544,7 +544,7 @@ It's not the least amount of bytes necessary in order to accomplish the goal of 
 
 So there are objective elements that I think we can test against and filter for.
 
-**niftynei:** 00:18:40
+niftynei: 00:18:40
 
 I mean, yeah, there's a lot of different directions I think I could take this, but I think one of them is like, okay, so if you come up with a list of transactions of what's permissive and what isn't, now all of a sudden you need a committee that's saying, okay, this is allowed and this isn't allowed.
 And so all of a sudden you introduce, I think, a lot more politics into the process.
@@ -567,7 +567,7 @@ I think it'd be cool to have a similar process for expanding the set of transact
 If you had to convince people who develop Bitcoin that your idea is a good idea, and then they had to release new software, and then other people had to choose whether they want to run it or not, I think that we would see a lot less spam on the network today because it'd just be a lot more difficult to get it in.
 And that sounds like a better world to me.
 
-**niftynei:** 00:20:52
+niftynei: 00:20:52
 
 Cool, makes sense.
 Better world for everyone sounds like a great idea.
@@ -577,7 +577,7 @@ Better world for everyone sounds like a great idea.
 Yeah, that's neat to me too.
 But when there are disagreements about which world is better, I think that's why platforms like this allow us to have a discussion and persuade one another.
 
-**niftynei:** 00:21:10
+niftynei: 00:21:10
 
 Do you think we necessarily need to all agree which way is better?
 Or can the filtering camp exist alongside the permissive camp?
@@ -587,7 +587,7 @@ Or can the filtering camp exist alongside the permissive camp?
 I think they can coexist.
 I hope that an increasing number of people agree with me, and we'll see what happens.
 
-**niftynei:** 00:21:26
+niftynei: 00:21:26
 
 Okay, yeah.
 So we kind of wrapped up the last chat, and at the end of it we said, man, we just talked about, like we wish that at the conference we would have talked about things other than filtering and `OP_RETURN`s and data carriers, and then we spent 20 minutes talking about it ourselves.
@@ -596,7 +596,7 @@ So we kind of wrapped up the last chat, and at the end of it we said, man, we ju
 
 Yeah, no, like 30 minutes.
 
-**niftynei:** 00:21:43
+niftynei: 00:21:43
 
 No, 30 minutes, going on 30 minutes without talking about it.
 What should we be talking about if not that?
@@ -608,7 +608,7 @@ I'd like to talk a little bit more about privacy, which is another thing we ment
 
 ## Privacy on Bitcoin & Lightning
 
-**niftynei:** 00:21:57
+niftynei: 00:21:57
 
 Okay, yeah.
 
@@ -619,7 +619,7 @@ And one of the things that I'm currently, well, I just released some code for it
 So, my current project is designed to make it so that you can increase more easily the number of hops between you and your destination on the Lightning Network because I think that increasing the number of hops increases your level of privacy.
 So I'm making a tool for that.
 
-**niftynei:** 00:22:33
+niftynei:00:22:33
 
 Increasing the number of hops increases your privacy.
 That makes sense.
@@ -630,7 +630,7 @@ There's trade-offs to adding more hops though, right?
 
 Yeah, payment reliability falls and that sucks.
 
-**niftynei:** 00:22:56
+niftynei: 00:22:56
 
 It's also more expensive, right?
 
@@ -638,7 +638,7 @@ It's also more expensive, right?
 
 Yeah, typically.
 
-**niftynei:** 00:22:58
+niftynei: 00:22:58
 
 From a cost perspective,
 is the cheapest way to send a Bitcoin a Lightning transaction?
@@ -649,7 +649,7 @@ Wait... is it that the cheapest way to send a Bitcoin transaction is between som
 I think it depends.
 At least one nice thing about that is you don't have to pay routing fees if you have a direct connection to someone.
 
-**niftynei:** 00:23:15
+niftynei: 00:23:15
 
 Yeah, it's basically free.
 
@@ -658,7 +658,7 @@ Yeah, it's basically free.
 It is basically free, but you also have to set up the connection.
 And if you're not going to be making repeated transactions to them, then it's about 300 bytes to set it up, maybe 400 bytes to close the connection.
 
-**niftynei:** 00:23:28
+niftynei:00:23:28
 
 It's more expensive.
 
@@ -666,7 +666,7 @@ It's more expensive.
 
 If you only do one transaction, you're actually losing money there.
 
-**niftynei:** 00:23:32
+niftynei: 00:23:32
 
 You would have been better just doing an on-chain transaction.
 
@@ -674,7 +674,7 @@ You would have been better just doing an on-chain transaction.
 
 Or opening up a channel with someone who you will more likely make repeat connections to and then routing through them.
 
-**niftynei:** 00:23:40
+niftynei: 00:23:40
 
 Right, makes sense.
 Yeah, yeah, yeah.
@@ -691,7 +691,7 @@ It's possible to replace it with a dummy public key.
 It's possible to replace it with someone else's public key.
 I like tools that assist people with doing that so they don't leak data about their node on the Lightning Network.
 
-**niftynei:** 00:24:31
+niftynei: 00:24:31
 
 Dummy keys are one way to prevent leaking data.
 That makes sense.
