@@ -250,7 +250,6 @@ Zero data in the script.
 
 **niftynei:** 00:07:32
 
-Zero data in the script.
 Zero data push.
 Okay.
 No data.
