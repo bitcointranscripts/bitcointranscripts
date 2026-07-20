@@ -2,7 +2,7 @@
 title: 'Bitcoin++ Insider Edition: Super Testnet'
 transcript_by: 'mokayaj857 via review.btctranscripts.com'
 media: 'https://youtu.be/hv9Ckgeal88'
-date: '2025-05-15'
+date: '2025-05-22'
 tags:
   - transaction-relay-policy
   - 'mempool'
