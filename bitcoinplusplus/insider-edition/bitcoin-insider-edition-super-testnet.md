@@ -248,7 +248,7 @@ Remove the `OP_RETURN`.
 I think having it so that you can create an `OP_RETURN` but only if it has zero value.
 Zero data in the script.
 
-niftynei:*00:07:32
+niftynei:00:07:32
 
 Zero data push.
 Okay.
@@ -259,6 +259,8 @@ Would you say you're a minimalist in other aspects of your life?
 **Super Testnet:** 00:07:45
 
 Some people say that.
+
+niftynei: 00:07:47
 I'm not going to say that.
 
 
