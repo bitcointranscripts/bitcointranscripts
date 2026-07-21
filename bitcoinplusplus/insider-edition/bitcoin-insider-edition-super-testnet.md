@@ -21,11 +21,11 @@ summary: "In this Bitcoin++ Insider Edition interview, niftynei sits down with d
 
 ## Intro
 
-niftynei:00:00:00
+niftynei: 00:00:00
 
 Hey Super, how's it going?
 
-Super Testnet:00:00:01
+Super Testnet: 00:00:01
 
 So good.
 
@@ -63,7 +63,7 @@ niftynei: 00:00:47
 That was exciting.
 That's fun, yeah.
 
-Super Testnet:00:00:48
+Super Testnet: 00:00:48
 
 He's a long time Bitcoin hero for me and he chose to come to my talk.
 
@@ -144,7 +144,7 @@ I mean, so when you say fight this stuff, I had a tweet thread after listening t
 
 ## Filtering Bitcoin Transactions
 
-niftynei:00:02:57
+niftynei: 00:02:57
 
 A lot of stuff that we talked about at the conference was this filtering stuff.
 I felt like that was more of a theme than I was intending it to be.
@@ -234,7 +234,7 @@ niftynei: 00:07:10
 
 So, the `OP_RETURN` data carrier size limit, should we keep it at 80 bytes, make it smaller, get rid of it.
 
-**Super Testnet:** 00:07:16
+Super Testnet: 00:07:16
 
 I'd like to reduce it to zero.
 
@@ -244,12 +244,12 @@ Reduce it to zero.
 So you want it such that `OP_RETURN`s don't exist basically.
 Remove the `OP_RETURN`.
 
-Super Testnet:00:07:24
+Super Testnet: 00:07:24
 
 I think having it so that you can create an `OP_RETURN` but only if it has zero value.
 Zero data in the script.
 
-niftynei:00:07:32
+niftynei: 00:07:32
 
 Zero data push.
 Okay.
@@ -261,7 +261,7 @@ Super Testnet: 00:07:45
 
 Some people say that.
 
-**Super Testnet:** 00:07:47
+Super Testnet: 00:07:47
 I'm not going to say that.
 
 
