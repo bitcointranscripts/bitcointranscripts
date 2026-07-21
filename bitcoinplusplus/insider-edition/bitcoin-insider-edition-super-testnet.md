@@ -2,9 +2,9 @@
 title: 'Bitcoin++ Insider Edition: Super Testnet'
 transcript_by: 'mokayaj857 via review.btctranscripts.com'
 media: 'https://youtu.be/hv9Ckgeal88'
-date: '2025-05-22'
+date: '2025-05-21'
 tags:
-  - transaction-relay-policy
+  - 'transaction-relay-policy'
   - 'mempool'
   - 'privacy'
   - 'lightning'
@@ -25,7 +25,7 @@ niftynei:00:00:00
 
 Hey Super, how's it going?
 
-**Super Testnet:** 00:00:01
+Super Testnet:00:00:01
 
 So good.
 
@@ -34,7 +34,7 @@ niftynei: 00:00:02
 Welcome to Bitcoin++ Insider Edition.
 Do you want to explain to the crowd who you are and what you're doing in Austin this week?
 
-**Super Testnet:** 00:00:09
+Super Testnet: 00:00:09
 
 My name is Super Testnet, I'm a Bitcoin developer.
 I focus on Bitcoin, the Lightning Network.
@@ -44,7 +44,7 @@ niftynei: 00:00:27
 
 What project were you talking about?
 
-**Super Testnet:** 00:00:29
+Super Testnet: 00:00:29
 
 It's called `Testnet Generator`.
 It is a project where you can launch your own Bitcoin testnet and then have as many Bitcoins as you like, or fake Bitcoins, to test with.
@@ -53,7 +53,7 @@ niftynei: 00:00:41
 
 Did anyone get testy during the workshop?
 
-**Super Testnet:** 00:00:43
+Super Testnet: 00:00:43
 
 No, I don't think so.
 I was really excited that Luke Dashjr came to it.
@@ -63,7 +63,7 @@ niftynei: 00:00:47
 That was exciting.
 That's fun, yeah.
 
-**Super Testnet:** 00:00:48
+Super Testnet:00:00:48
 
 He's a long time Bitcoin hero for me and he chose to come to my talk.
 
@@ -72,7 +72,7 @@ niftynei: 00:00:52
 That's really cool, yeah.
 Did you manage to spin up a test network during your talk?
 
-**Super Testnet:** 00:00:56
+Super Testnet: 00:00:56
 
 Oh, yeah.
 We did that within the first five minutes.
@@ -82,7 +82,7 @@ niftynei: 00:01:00
 
 Then what did you do the rest of the time?
 
-**Super Testnet:** 00:01:02
+Super Testnet: 00:01:02
 
 I added `CTV` to it.
 So I went through how I, as an illustration of how I code, I had some `CTV` code and I added it into the testnet so you can create `CTV` transactions.
@@ -95,7 +95,7 @@ Very cool.
 So you talked about how Luke Dashjr came to your talk and you were excited that he was there.
 What talks did you go to that you think they might have been really excited that you were in the audience for?
 
-**Super Testnet:** 00:01:27
+Super Testnet: 00:01:27
 
 Well, I went to his talks, but I don't think he...
 He probably doesn't know me, so maybe not that one.
@@ -107,7 +107,7 @@ niftynei: 00:01:38
 What was he talking about in that one?
 Was that his policy changes?
 
-**Super Testnet:** 00:01:41
+Super Testnet: 00:01:41
 
 Yeah, he was doing how to make your own mempool policies.
 It was pretty cool, because we've been dealing a lot during the conference with new versions of spam on the blockchain.
@@ -117,7 +117,7 @@ niftynei: 00:01:59
 
 How fast was it?
 
-**Super Testnet:** 00:02:01
+Super Testnet: 00:02:01
 
 He did it within 30 minutes.
 
@@ -127,7 +127,7 @@ Let's go.
 Okay, yeah.
 When he was talking to me about the talk, because I really wanted him to do that one, because I thought it was a cool demonstration of what the process is for making that kind of code change, he was telling me that he wasn't sure he could get it to compile in 30 minutes.
 
-**Super Testnet:** 00:02:18
+Super Testnet: 00:02:18
 
 It did.
 Yeah, I remember back when Counterparty first launched, there was new types of spam going on in the network back then.
@@ -155,7 +155,7 @@ They're paying for block space.
 So it's, you know, in terms of letting people pay for whatever data they want to get into a transaction, that's arbitrarily fine as long as they're paying for it and the transactions aren't spamming the network necessarily with number of transactions, if that makes sense.
 And then there's, I think, the position that Luke and the Knots organization, for better or worse, I don't know if you call that Knots organization.
 
-**Super Testnet:** 00:03:38
+Super Testnet: 00:03:38
 
 We call them Nazis.
 
@@ -169,7 +169,7 @@ And we're digging in and going to do our best to prevent this type of data being
 Where would you say that you fall on that spectrum?
 Are you like, we should continually update our filters and try to make it such that this data doesn't arrive at your node or is it, you know, we should let people write arbitrary data into the blockchain as long as they're willing to pay for it?
 
-**Super Testnet:** 00:04:11
+Super Testnet: 00:04:11
 
 I'm a fan of the first one.
 I like to fight the spam and try to eliminate as much of it as possible, increase the cost of production of spam and generally just make their lives harder so that Bitcoin is better money.
@@ -182,7 +182,7 @@ I mean, okay, so my understanding of this, though, is you know how when things a
 Is there something, do you think, like my worry with like the constant evolution is that spammers are going to find new ways to put data into transactions.
 Is it worth fighting the endless fight to make them more sophisticated and incentivize them to go around the mempool to get their transactions into blocks?
 
-**Super Testnet:** 00:05:10
+Super Testnet: 00:05:10
 
 I think so.
 Yeah, I think if it's a never-ending battle, there's nothing wrong with having a never ending resistance against it.
@@ -193,7 +193,7 @@ niftynei: 00:05:30
 
 I see.
 
-**Super Testnet:** 00:05:31
+Super Testnet: 00:05:31
 
 Yeah, I think for a long time that kind of did happen.
 Like they're back when Counterparty launched, they were doing spam on Bitcoin for a while, but it kind of dropped off because Bitcoiners fought it and they moved to Ethereum.
@@ -205,7 +205,7 @@ niftynei: 00:06:00
 
 Like, hey, the grass is greener somewhere else.
 
-**Super Testnet:** 00:06:02
+Super Testnet: 00:06:02
 
 And then we get another eight years or whatever of...
 
@@ -218,7 +218,7 @@ I mean, you know, writing stuff into the blockchain isn't free, it costs money.
 They're gonna run out of sats at some point, right?
 Like why not just let them write it all in and then when they run out of sats go somewhere else?
 
-**Super Testnet:** 00:06:35
+Super Testnet: 00:06:35
 
 That's a pretty good solution.
 I think you can improve that solution by making it cost them even more money so that they run out faster.
@@ -244,7 +244,7 @@ Reduce it to zero.
 So you want it such that `OP_RETURN`s don't exist basically.
 Remove the `OP_RETURN`.
 
-**Super Testnet:** 00:07:24
+Super Testnet:00:07:24
 
 I think having it so that you can create an `OP_RETURN` but only if it has zero value.
 Zero data in the script.
@@ -257,7 +257,7 @@ No data.
 Super is a data minimalist it sounds like.
 Would you say you're a minimalist in other aspects of your life?
 
-**Super Testnet:** 00:07:45
+Super Testnet: 00:07:45
 
 Some people say that.
 
@@ -266,7 +266,7 @@ I'm not going to say that.
 
 
 Never mind.
-uhm Sure.
+UhmSure.
 
 
 ## Eternal Battles on Bitcoin
@@ -277,7 +277,7 @@ So I mean, this kind of like war on arbitrary data in the blockchain that you're
 Have you engaged in any other sort of like fight you feel like that's like — I mean that's like an internal eternal war that you're sort of signing up for.
 Isn't it easier to like, well I was going to say, do you have any precedents of fights that you feel like you've been involved in for a long time that have like dragged on for years like this one has.
 
-**Super Testnet:** 00:08:17
+Super Testnet: 00:08:17
 
 In the Bitcoin space?
 
@@ -285,7 +285,7 @@ niftynei: 00:08:19
 
 Sure, or in general.
 
-**Super Testnet:** 00:08:21
+Super Testnet: 00:08:21
 
 The one that comes to mind is the fight against altcoins in general.
 So like trying to persuade people that Bitcoin is a better money than altcoins is a battle that I've been in since pretty much since I actually since before I got into Bitcoin.
@@ -300,7 +300,7 @@ Altcoin?
 I'm sorry.
 I don't know what you call it.
 
-**Super Testnet:** 00:08:55
+Super Testnet: 00:08:55
 
 Related, yeah.
 A lot of the spam is token data.
@@ -313,7 +313,7 @@ Yeah, it makes sense.
 I know, part of me is like, but if they want to send Bitcoin to Bitcoin miners, like buy Bitcoin so they can run their scams on Bitcoin, isn't that good for Bitcoin?
 Blocks are getting filled up.
 
-**Super Testnet:** 00:09:26
+Super Testnet: 00:09:26
 
 It has some good effects, but it also has negative effects.
 I could easily imagine encouraging someone to synchronize the blockchain and then they, you know, take a look at what's on there and they're like, it's a bunch of JPEGs and altcoins and like there's barely any Bitcoin happening on this network.
@@ -324,7 +324,7 @@ niftynei: 00:09:44
 Well, you say there's barely any Bitcoin happening, but those transactions are paying fees to Bitcoin miners, right?
 Is that not Bitcoin?
 
-**Super Testnet:** 00:09:50
+Super Testnet: 00:09:50
 
 The fees are.
 The fees are paying Bitcoin, but it's...
@@ -333,7 +333,7 @@ niftynei: 00:09:54
 
 Bitcoin's changing hands.
 
-**Super Testnet:** 00:09:55
+Super Testnet: 00:09:55
 
 Some is, yeah.
 They're paying miners in order to add data to the blockchain.
@@ -347,7 +347,7 @@ niftynei: 00:10:48
 Where are they going to see it though?
 Are they looking through the block data?
 
-**Super Testnet:** 00:10:51
+Super Testnet: 00:10:51
 
 Yeah, I think even the fact that when you download it, you see it's 500 gigabytes or more.
 
@@ -355,7 +355,7 @@ niftynei: 00:10:58
 
 But Bitcoin could be easily full of, I'm sorry.
 
-**Super Testnet:** 00:11:02
+Super Testnet: 00:11:02
 
 No problem, I was just going to say it could easily lead someone to wonder what is that data and if they do any cursory look at it, they'll see that a lot of it is junk.
 
@@ -363,7 +363,7 @@ niftynei:00:11:15
 
 Do you think they would feel differently if they looked at it and saw it was all people moving Bitcoin around?
 
-**Super Testnet:** 00:11:19
+Super Testnet: 00:11:19
 
 Yeah, I think so.
 I think that would be a good reason to say, wow, these people really care about this project.
@@ -378,7 +378,7 @@ niftynei: 00:11:26
 
 But if we're all supposed to be hodling Bitcoin, who's supposed to be sending Bitcoin to each other.
 
-**Super Testnet:** 00:11:31
+Super Testnet: 00:11:31
 
 I'm a fan of sending Bitcoin to each other and not just hodling it.
 
@@ -387,7 +387,7 @@ niftynei: 00:11:34
 Yeah, I don't know, it's like one of those, it's like, well, okay, we have this wonderful thing which is a blockchain which permits anyone who holds Bitcoin to transact at any point in time in ten minute increments, right?
 And if people who hold Bitcoin aren't sending enough transactions frequently enough, why not let the spammers use up the block space and send Bitcoin to miners if other people aren't willing to outbid them for the space?
 
-**Super Testnet:** 00:12:00
+Super Testnet: 00:12:00
 
 It reminds me of a scene from the film O Brother Where Art Thou?
 Where they run into the guy who sold his soul to the devil so that he could learn to play the guitar really good.
@@ -396,7 +396,7 @@ niftynei: 00:12:07
 
 Okay.
 
-**Super Testnet:** 00:12:07
+Super Testnet: 00:12:07
 
 And they say, well, why did you sell your soul to the devil?
 And he says, well, I wasn't using it.
@@ -423,7 +423,7 @@ Did you feel like we focused too much on this filtering debate?
 Because I kind of felt that way.
 Or do you think it's an important conversation that is one that maybe we needed to spend time on as a group?
 
-**Super Testnet:** 00:13:17
+Super Testnet: 00:13:17
 
 I think too much time was spent on it.
 I would have preferred to see more of a focus on mining decentralization and the things you mentioned.
@@ -435,7 +435,7 @@ niftynei: 00:13:32
 Okay, got it.
 I didn't realize we had that many talks.
 
-**Super Testnet:** 00:13:36
+Super Testnet: 00:13:36
 
 I don't think you had nine talks, but it did seem more prominent than I would have wished.
 
@@ -444,7 +444,7 @@ niftynei: 00:13:41
 Yeah, I think it definitely got a lot more airtime.
 But I think it's kind of one of those things like, I think it's what people wanted to talk about.
 
-**Super Testnet:** 00:13:48
+Super Testnet: 00:13:48
 
 I agree.
 
@@ -456,7 +456,7 @@ Where are you headed next?
 What's next for Super Testnet?
 Are we going to see you in Riga for the Privacy Edition?
 
-**Super Testnet:** 00:14:00
+Super Testnet: 00:14:00
 
 I'd love to.
 On the note of privacy, I will be in Las Vegas later this month, May 26th I think, 5th or 6th.
@@ -471,7 +471,7 @@ Well, hopefully we'll see you in Riga then in August, the 7th and 8th right ahea
 Sounds like people can catch you in Vegas.
 Are you going to be participating in the Bitcoin++ Hackathon online virtual one for Bitcoin++ this year?
 
-**Super Testnet:** 00:14:42
+Super Testnet: 00:14:42
 
 For Bitcoin++, there's also one happening with the Las Vegas thing.
 They do a lot of hackathons.
@@ -482,7 +482,7 @@ niftynei: 00:14:48
 Yeah, we're helping run it this year.
 So Bitcoin++ is powering the Vegas hackathon this year.
 
-**Super Testnet:** 00:14:53
+Super Testnet: 00:14:53
 
 I'm not a fan of the chosen model and in order to express that I'm not participating.
 
@@ -491,7 +491,7 @@ niftynei: 00:14:59
 Okay, that makes sense.
 And the chosen model that we're doing is the online?
 
-**Super Testnet:** 00:15:03
+Super Testnet: 00:15:03
 
 Yeah, well, it's fine to have an online component, but when you have no in-person component, that seems...
 That's upsetting to me.
@@ -522,7 +522,7 @@ We talked a little bit about spam filters and what spam is and you were very muc
 Good question though that came from our audience is that, is that idea of arbitrary data like spam subjective?
 Like if people look at Bitcoin, are people gonna be like, oh, this is definitely spam?
 
-**Super Testnet:** 00:16:37
+Super Testnet: 00:16:37
 
 I think that spam has a subjective element and an objective element.
 And I want to talk about a couple of the objective elements for a moment.
@@ -543,7 +543,7 @@ It's not the least amount of bytes necessary in order to accomplish the goal of 
 
 ## Transaction Filtering Governance
 
-**Super Testnet:** 00:18:36
+Super Testnet: 00:18:36
 
 So there are objective elements that I think we can test against and filter for.
 
@@ -557,7 +557,7 @@ It fits the protocol outline, minus these few fields where you can put anything 
 That seems more open and anarchic and capitalist in terms of whoever is willing to pay for the block data can have it, it doesn't matter what they want to put in it.
 How do you balance those kind of two requirements in terms of governance of making the decision to make the filters more strict?
 
-**Super Testnet:** 00:19:54
+Super Testnet: 00:19:54
 
 Before I do that, I just make a rhetorical point.
 To me, sounding more capitalist and more anarchic are not good things.
@@ -575,7 +575,7 @@ niftynei: 00:20:52
 Cool, makes sense.
 Better world for everyone sounds like a great idea.
 
-**Super Testnet:** 00:20:58
+Super Testnet: 00:20:58
 
 Yeah, that's neat to me too.
 But when there are disagreements about which world is better, I think that's why platforms like this allow us to have a discussion and persuade one another.
@@ -585,7 +585,7 @@ niftynei: 00:21:10
 Do you think we necessarily need to all agree which way is better?
 Or can the filtering camp exist alongside the permissive camp?
 
-**Super Testnet:** 00:21:18
+Super Testnet: 00:21:18
 
 I think they can coexist.
 I hope that an increasing number of people agree with me, and we'll see what happens.
@@ -595,7 +595,7 @@ niftynei: 00:21:26
 Okay, yeah.
 So we kind of wrapped up the last chat, and at the end of it we said, man, we just talked about, like we wish that at the conference we would have talked about things other than filtering and `OP_RETURN`s and data carriers, and then we spent 20 minutes talking about it ourselves.
 
-**Super Testnet:** 00:21:42
+Super Testnet: 00:21:42
 
 Yeah, no, like 30 minutes.
 
@@ -605,7 +605,7 @@ No, 30 minutes, going on 30 minutes without talking about it.
 What should we be talking about if not that?
 Like if we could change the conversation to something else, what should we change it to?
 
-**Super Testnet:** 00:21:53
+Super Testnet: 00:21:53
 
 I'd like to talk a little bit more about privacy, which is another thing we mentioned a couple times.
 
@@ -615,21 +615,21 @@ niftynei: 00:21:57
 
 Okay, yeah.
 
-**Super Testnet:** 00:21:58
+Super Testnet: 00:21:58
 
 So a lot of my recent projects have focused on improving privacy on Bitcoin.
 And one of the things that I'm currently, well, I just released some code for it today and I'll be hopefully doing a little bit more later, is a privacy tool for the Lightning Network.
 So, my current project is designed to make it so that you can increase more easily the number of hops between you and your destination on the Lightning Network because I think that increasing the number of hops increases your level of privacy.
 So I'm making a tool for that.
 
-niftynei:00:22:33
+niftynei: 00:22:33
 
 Increasing the number of hops increases your privacy.
 That makes sense.
 I think Rusty had a project in Core Lightning and he's trying to add to some of the configurations in route pathfinding so that it would optimize — if you're trying to be more private, it would add more hops.
 There's trade-offs to adding more hops though, right?
 
-**Super Testnet:** 00:22:50
+Super Testnet: 00:22:50
 
 Yeah, payment reliability falls and that sucks.
 
@@ -637,7 +637,7 @@ niftynei: 00:22:56
 
 It's also more expensive, right?
 
-**Super Testnet:** 00:22:58
+Super Testnet: 00:22:58
 
 Yeah, typically.
 
@@ -647,7 +647,7 @@ From a cost perspective,
 is the cheapest way to send a Bitcoin a Lightning transaction?
 Wait... is it that the cheapest way to send a Bitcoin transaction is between someone you're directly peered to on the Lightning Network?
 
-**Super Testnet:** 00:23:09
+Super Testnet: 00:23:09
 
 I think it depends.
 At least one nice thing about that is you don't have to pay routing fees if you have a direct connection to someone.
@@ -656,7 +656,7 @@ niftynei: 00:23:15
 
 Yeah, it's basically free.
 
-**Super Testnet:** 00:23:17
+Super Testnet: 00:23:17
 
 It is basically free, but you also have to set up the connection.
 And if you're not going to be making repeated transactions to them, then it's about 300 bytes to set it up, maybe 400 bytes to close the connection.
@@ -673,7 +673,7 @@ niftynei: 00:23:32
 
 You would have been better just doing an on-chain transaction.
 
-**Super Testnet:** 00:23:34
+Super Testnet: 00:23:34
 
 Or opening up a channel with someone who you will more likely make repeat connections to and then routing through them.
 
@@ -683,7 +683,7 @@ Right, makes sense.
 Yeah, yeah, yeah.
 Cool, so other than adding more, so you said adding more hops, is there anything else you think improves privacy?
 
-**Super Testnet:** 00:23:50
+Super Testnet: 00:23:50
 
 Decoy public keys.
 So one feature of the way Lightning invoice, `BOLT11` invoices work is that you put a public key in them and if you're running a routing node, then that's enough to find you on the network, to find your node.
@@ -702,7 +702,7 @@ Yeah.
 Cool.
 What else are you working on, Super?
 
-**Super Testnet:** 00:24:38
+Super Testnet: 00:24:38
 
 Well, it kind of depends on the week.
 It seems like every week I come up with another project.
@@ -713,36 +713,36 @@ So I have to keep working on it at some point.
 But the other thing is I get sick of working on projects, and I got sick of working on the CoinPool thing, which is why I look for something else.
 So hopefully at some point I will get inspired to work on it again.
 
-**niftynei:** 00:25:12
+niftynei: 00:25:12
 
 And so people can find out more about CoinPools by watching your Bitcoin++ talk from Florianópolis.
 And you'll be talking about it in Vegas, it sounds like, in a few weeks.
 Very cool.
 
-**Super Testnet:** 00:25:23
+Super Testnet: 00:25:23
 
 Yep, so you can, if you go to YouTube and search for Super Testnet Coin Pools, you should find a video on there.
 And you can also search the Bitcoin++ YouTube channel and eventually possibly, I don't know if they'll be live streamed at the Bitcoin conference in Las Vegas, but if so, you can also find information there.
 
-**niftynei:** 00:25:40
+niftynei: 00:25:40
 
 Great.
 Anything else we should talk about, Super?
 What's next for Super Testnet?
 Coin pools, privacy on Lightning?
 
-**Super Testnet:** 00:25:47
+Super Testnet: 00:25:47
 
 Yeah, I mentioned my presentations in Las Vegas.
 Perhaps I'll be in Riga for the privacy conference there, so we'll see what happens, but I'm looking forward to doing those things.
 Continuing to work on random projects that occur to me as they occur.
 
-**niftynei:** 00:26:03
+niftynei: 00:26:03
 
 More Bitcoin development coming to you soon from Super Testnet to yours.
 All right.
 Thanks, Super.
 
-**Super Testnet:** 00:26:09
+Super Testnet: 00:26:09
 
 Thank you, everyone.
