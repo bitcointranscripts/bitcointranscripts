@@ -21,7 +21,7 @@ different set of functionality that is performance-critical.
   author/reviewers think they're relevant (e.g., not for doc typo fixes). This
   would require integration with CoreCheck.
 
-### Other suggested macro benchmarks by the participants
+## Other suggested macro benchmarks by the participants
 
 * Compact block reconstruction: Set up a node by syncing to e.g. 840k blocks,
   loading transactions from the following blocks into the mempool, and benchmark

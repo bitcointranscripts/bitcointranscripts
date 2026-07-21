@@ -49,13 +49,13 @@ Post-quantum cryptography (PQ):
   - Opinion: It will completely destroy Bitcoin, so it’s not worth worrying about.
   - We should present a technical solution to signatures at least.
 
-### QROM and Bitcoin Mining
+## QROM and Bitcoin Mining
 
 - ROM works well with quantum computers, but instantiation with a hash function isn’t satisfactory anymore.
 - In QROM, you can query a hash function on a superposition of states.
 - Can prove knowledge of BIP39 keys if QC becomes relevant.
 
-### Post-Quantum Solutions
+## Post-Quantum Solutions
 
 - Best to have a scheme ready now.
 - Hash-based signatures should be easy to implement.
@@ -92,7 +92,7 @@ Other notes:
 - The timewarp attack still exists.
 - QC attacks on signatures wouldn’t necessarily break Bitcoin’s social contract.
 
-### Outcomes
+## Outcomes
 
 - Shared understanding of what could and should be done.
   - Commit to a public key in the taproot tree and an opcode:

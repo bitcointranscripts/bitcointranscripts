@@ -23,7 +23,7 @@ A layer, what I call layer 0.5, that governs the rules of the blockchain, such a
 `Shielded CSV` inherits the double spending security from the underlying blockchain, the amount of Data embedded into the blockchain approaches 64 bytes per shielded payment. Coins and coin proofs which prove validity of the coin are sent directly to the receiver through some one-way communication channel and coin proofs are succinct. In particular, that means that they are constant size regardless of the number of the overall transactions.
 `Shielded CSV` is fully private, which means that coin and coin proof reveal nothing except that the coin is valid.
 
-### Motivation for Shielded csv
+## Motivation for Shielded csv
 
 Our motivation for this is twofold.
 First, we believe that Shielded is a more efficient design for private cryptocurrencies because zero knowledge proofs do not end up on the blockchain and they are not verified by all full nodes of the system. Also Shielded can use an existing blockchain and does not need to create its own. Our primary motivation is **improving Bitcoin's privacy**, in that case Shielded would use Bitcoin's blockchain.
@@ -32,7 +32,7 @@ Since Shielded is still a separate L1, it requires a bridging mechanism between 
 So in order to get a better understanding of the client-side validation paradigm, we start by building a toy `CSV protocol`.
 We have Ivy, the issuer, who wants to issue froge coins. On the Bitcoin chain, Ivy has an unspent transaction output with two sats and she signs a message, *"I issue 10 froge coins in transaction 1, output 1, redeemable for physical frogs"*. This creates an additional meaning to Ivy's on-chain UTXO, not only does it represent two sats, but also 10 Frogecoins to everyone who's interested in the Frogecoin system. Now Ivy wants to send Frogecoins to Roy the receiver. So she creates an off-chain transaction that sends some Frogecoins to Roy and To prevent double spending, she creates a corresponding on-chain transaction that commits to the Frogecoin transaction and sends some arbitrary number of sats to Roy. Roy sees the Bitcoin transaction, but he wants Frogecoins. So, Ivy sends the entire Frogecoin transaction graph as a proof to Roy, Roy checks that all transactions are valid, connect to an issuance transaction, and have corresponding on-chain transactions.
 
-### Client-side Validation and System Comparison
+## Client-side Validation and System Comparison
 
 <!-- needs a image for comparison  -->
 While this toy protocol is simplistic, it demonstrates some key aspects of client-side validation protocols. This table from the white paper compares `RGB`, `Taproot Assets`, ``intmax2``, and `Shielded CSV` across three dimensions: blockchain space per CSV transaction, proof size sent to the receiver, and system privacy.
@@ -42,7 +42,7 @@ In `Shielded CSV`, the space requirement is 64 bytes per transaction, regardless
 The size of `RGB` and `Taproot-Assets` `coin proofs` is similar to the toy ``CSV protocol``. It is proportional to the transaction history, meaning the set of ancestor transactions of the transaction paying the recipient. In `intmax2` and `Shielded CSV`, the proof size is constant. In `RGB`, `Taproot-Assets`, and `intmax2`, the receiver sees the entire transaction history graph, revealing essentially the same information as Bitcoin transactions. 
 `RGB` encrypts amounts and asset types using Confidential Transactions, which makes transaction graph analysis significantly more difficult. `RGB-issued` assets are compatible with the Lightning Network, which can improve user privacy. `Shielded CSV`, on the other hand, is fully private. A coin proof leaks nothing to the receiver except the validity of the coin. 
 
-### From Toy CSV to `Shielded CSV` 
+## From Toy CSV to `Shielded CSV` 
 
 We have built the toy `CSV protocol`.
 How do we get from that to `Shielded CSV`?
@@ -51,20 +51,20 @@ We first need to better understand what client-side validation actually is. The 
 Suppose Bitcoin allowed blocks to contain invalid transactions. Transactions would then be validated client-side and ignored if invalid. If there is no transaction validation in consensus, we do not need to post full transactions to the blockchain instead, we derive a short piece of data from the CSV transaction called the nullifier. We post this nullifier to the blockchain solely to prevent double spending. It is called a nullifier because it nullifies a coin and prevents reuse. In the toy `CSV protocol`, the nullifier was essentially a full Bitcoin transaction, which is not short and has significant overhead.
 In `Shielded CSV`, the nullifier is 64 bytes interpreted entirely client-side. If we take client-side validation seriously, we uncover a much deeper paradigm. For the remainder, we focus on what is above the surface. In particular, we explain how we arrive at 64-byte nullifiers and how we achieve constant and private coin proofs.
 
-### Client-Side Validated Transactions
+## Client-Side Validated Transactions
 
 A client-side validated transaction is similar to a Bitcoin transaction. It consists of inputs and outputs. We call transaction outputs coins to distinguish them from other output types.
 A coin consists of an amount and a public key. We define a coin ID as the transaction hash concatenated with the output index.
 Transaction inputs contain coin IDs referencing the coins being spent. A coin proof is the history of transactions connecting a coin to one or more issuance transactions.
 When Sally pays Roy, she sends him the coin and its coin proof. Roy verifies that all transactions in the coin proof are valid, for example, he checks that they do not create more value than they consume and that they connect to issuance transactions. 
 
-### Preventing Double Spending with Nullifiers 
+## Preventing Double Spending with Nullifiers 
 
 To prevent double spending, we define the nullifier as a tuple of the coin ID and the hash of the transaction spending the coin. Sally writes this nullifier to the blockchain. Roy reads the blockchain and processes all nullifiers. He maintains a key-value store mapping coin IDs to transaction hashes. 
 If Roy encounters a coin ID already in the store, he ignores the new nullifier. If Alice attempts to double spend by posting a nullifier with an existing coin ID, Roy ignores it.
 In addition to the ignore rule, we add another rule. Sally sends the coin and coin proof directly to Roy after posting the nullifier. Roy verifies the coin proof. Every spent coin in the coin proof must be present in the key-value store. The transaction hashes in the coin proof must match the stored hashes.This prevents double spending using a nullifier smaller than a full Bitcoin transaction.
 
-### Securing and Compressing Nullifiers
+## Securing and Compressing Nullifiers
 
 The initial nullifier design is insecure. Anyone who knows a `coin ID` can post a nullifier. We fix this by adding a `Schnorr signature`. Another issue is requiring one nullifier per spent coin. We introduce accounts, which are special transaction outputs. We now nullify an account state instead of individual coins. This allows one nullifier per account state update.
 Another issue is the need for a dedicated on-chain transaction to post each nullifier. We introduce a publisher role.

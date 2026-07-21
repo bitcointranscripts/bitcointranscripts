@@ -14,7 +14,11 @@ on:
 jobs:
   build-preview:
     runs-on: ubuntu-latest
-    
+    if: |
+      github.event_name == 'pull_request_target' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '/preview'))
+
     environment: ${{ (github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository) && 'external-fork-preview' || '' }}
 
     steps:
@@ -164,10 +168,24 @@ jobs:
               }
               
               const prNumber = context.issue?.number || context.payload.pull_request?.number;
-       
-              github.rest.issues.createComment({          
+              const { data: comments } = await github.rest.issues.listComments({
                 issue_number: prNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: commentBody
               });
+              const existing = comments.find(c => c.body.startsWith('Your Transcript Preview is ready'));
+              if (existing) {
+                await github.rest.issues.updateComment({
+                  comment_id: existing.id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: commentBody
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  issue_number: prNumber,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: commentBody
+                });
+              }

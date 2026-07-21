@@ -7,7 +7,9 @@ date: 2025-10-22
 ---
 
 - Kartograf - is a tool that gets data from resources and builds the map (it’s a
-  deterministic process and depends on RPKI)
+  deterministic process and depends on RPKI repositories, RIR IRR DBs and BGP
+  announcements from Routeviews as inputs). RPKI data is fetched using
+  `rpki-client`.
 - Asmap-data is a repository where the maps are stored (we usually do
   collaborative launches) - a timestamp is specified to do the launch. It’s
   required everyone to start at the same exact time. People post the results
