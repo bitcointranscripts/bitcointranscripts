@@ -669,7 +669,7 @@ Super Testnet: 00:23:28
 
 If you only do one transaction, you're actually losing money there.
 
-niftynei:  00:23:32
+niftynei: 00:23:32
 
 You would have been better just doing an on-chain transaction.
 
