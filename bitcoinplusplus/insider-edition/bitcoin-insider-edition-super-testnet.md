@@ -260,14 +260,12 @@ Would you say you're a minimalist in other aspects of your life?
 Super Testnet: 00:07:45
 
 Some people say that.
-
-Super Testnet: 00:07:47
 I'm not going to say that.
 
+Super Testnet: 00:07:47
 
 Never mind.
 Sure.
-
 
 ## Eternal Battles on Bitcoin
 
