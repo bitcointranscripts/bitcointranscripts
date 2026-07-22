@@ -2,7 +2,7 @@
 title: 'Bitcoin++ Insider Edition: Super Testnet'
 transcript_by: 'mokayaj857 via review.btctranscripts.com'
 media: 'https://youtu.be/hv9Ckgeal88'
-date: '2025-05-20'
+date: '2025-05-19'
 tags:
   - 'transaction-relay-policy'
   - 'mempool'
@@ -501,7 +501,7 @@ niftynei: 00:15:11
 Makes sense.
 Yeah, I also prefer in-person components.
 
-**[Ad Read]:** 00:15:15
+[Ad Read]: 00:15:15
 
 This episode is brought to you by BTC++, the premier technical conference series for Bitcoin developers.
 BTC++ is not your typical Bitcoin conference.
