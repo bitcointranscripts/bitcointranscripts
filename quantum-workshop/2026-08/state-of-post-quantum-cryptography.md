@@ -7,7 +7,12 @@ tags:
   - cryptography
 speakers:
   - Dan Boneh
+additional_resources:
+  - title: Slides
+    url: https://btctranscripts.com/bitcoin-transcript/quantum-workshop/2026-08/state-of-post-quantum-cryptography.pdf
 ---
+
+_For slides, please see the 'Extra Info' tab_
 
 ### Setting the Stage: "When is Q-Day?"
 

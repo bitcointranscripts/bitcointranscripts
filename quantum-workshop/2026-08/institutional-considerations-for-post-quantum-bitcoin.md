@@ -8,7 +8,12 @@ tags:
   - custody
 speakers:
   - Yehuda Lindell
+additional_resources:
+  - title: Slides
+    url: https://btctranscripts.com/bitcoin-transcript/quantum-workshop/2026-08/institutional-considerations-for-post-quantum-bitcoin-slides.pdf
 ---
+
+_For slides, please see the 'Extra Info' tab_
 
 *(Background: started in pure theoretical cryptography, then moved into industry and applied work. This talk covers concerns at Coinbase and institutionally in general.)*
 

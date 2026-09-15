@@ -8,7 +8,12 @@ tags:
   - cryptography
 speakers:
   - Antonio Sanso
+additional_resources:
+  - title: Slides
+    url: https://btctranscripts.com/bitcoin-transcript/quantum-workshop/2026-08/ethereum-perspective-on-pq-cryptography-slides.pdf
 ---
+
+_For slides, please see the 'Extra Info' tab_
 
 ### Ethereum's Three Layers — All Depend on Elliptic Curves
 

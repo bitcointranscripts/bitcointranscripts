@@ -7,7 +7,12 @@ tags:
   - hardware-wallet
 speakers:
   - Charles Guillemet
+additional_resources:
+  - title: Slides
+    url: https://btctranscripts.com/bitcoin-transcript/quantum-workshop/2026-08/breakout-session-post-quantum-cryptography-for-hardware-wallets-slides.html
 ---
+
+_For slides, please see the 'Extra Info' tab_
 
 **Why act now**
 - The Bitcoin community's perspective on PQ has clearly evolved — not because a quantum computer is coming tomorrow, but because a **non-zero probability creates fear**, and if trust erodes, that must be addressed.
