@@ -2,6 +2,7 @@
 title: 'Breakout Session: DropKick'
 transcript_by: Localhost Research
 date: 2026-08-28
+weight: 7
 tags:
   - quantum
   - lifeboat

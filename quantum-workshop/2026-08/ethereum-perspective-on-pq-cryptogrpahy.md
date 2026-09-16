@@ -2,6 +2,7 @@
 title: The Ethereum Perspective on Post-Quantum Cryptography
 transcript_by: Localhost Research
 date: 2026-08-28
+weight: 2
 tags:
   - quantum
   - ethereum

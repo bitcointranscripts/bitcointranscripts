@@ -2,6 +2,7 @@
 title: 'Breakout Session: Post Quantum Cryptography for Hardware Wallets'
 transcript_by: Localhost Research
 date: 2026-08-28
+weight: 6
 tags:
   - quantum
   - hardware-wallet

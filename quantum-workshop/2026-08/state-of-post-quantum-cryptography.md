@@ -2,6 +2,7 @@
 title: State of Post-Quantum Cryptography
 transcript_by: Localhost Research
 date: 2026-08-28
+weight: 1
 tags:
   - quantum
   - cryptography

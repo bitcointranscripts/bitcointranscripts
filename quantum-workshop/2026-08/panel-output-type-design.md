@@ -2,6 +2,7 @@
 title: Output Type Design Considerations
 transcript_by: Mike Schmidt
 date: 2026-08-28
+weight: 4
 tags:
   - quantum
   - output-script-design
