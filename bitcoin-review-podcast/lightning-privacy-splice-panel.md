@@ -20,7 +20,7 @@ categories:
 ---
 ## Housekeeping
 
-**NVK:** 00:01:17
+NVK: 00:01:17
 
 Today we're going to be talking about `Lightning` privacy, splicing and other very cool things with an absolute amazing panel here.
 <!-- Just before that, I have a couple of things that I want to set out some updates.
@@ -34,110 +34,110 @@ So expect a separate edge release. -->
 
 ## Guest introductions
 
-**NVK:** 00:02:14
+NVK: 00:02:14
 
 So without further ado, guys, I have some awesome guests here.
 Let's start with some intros.
 Jeff, welcome back.
 
-**Jeff Czyz:** 00:02:25
+Jeff Czyz: 00:02:25
 
 Hey, how's it going?
 So yeah, my name is Jeff.
 I am a developer at Spiral.
 I've been working in the Bitcoin space for about four years now and my current project is the `Lightning` Development Kit implementation of `Lightning`, it's more like a SDK.
 
-**NVK:** 00:02:41
+NVK: 00:02:41
 
 Awesome.
 Tony, pickle Tony.
 
-**Tony Giorgio:** 00:02:45
+Tony Giorgio: 00:02:45
 
 Hey guys, this is Tony.
 `Lightning` dev, one of the co-founders of Mutiny with Ben and Paul Miller.
 Yeah, I've been talking about lightning privacy for a while, so looking forward to this.
 
-**NVK:** 00:02:55
+NVK: 00:02:55
 
 Very cool.
 Tbast.
 
-**Bastien Teinturier:** 00:02:58
+Bastien Teinturier: 00:02:58
 
 Hey, I'm Tbast.
 I've been working at Async on the lightning specification and our implementation Eclair and also our Phoenix wallet.
 And I've done a lot of things around lightning privacy as well, like blinded paths.
 So excited to be talking about that here.
 
-**NVK:** 00:03:14
+NVK: 00:03:14
 
 Yeah, we did an episode, the `Lightning` panel, episode 15.
 So for people interested on this, they should definitely go check out that episode.
 Dusty Damon.
 
-**Dusty Dettmer:** 00:03:24
+Dusty Dettmer: 00:03:24
 
 Hey, what's up?
 <!-- Dusty Damon.
 Not that it matters.
 
-**NVK:** 00:03:30
+NVK: 00:03:30
 
 I know.
 I, you know, it's people haven't settled if it's like demon or Daemon for, for the demons.
 
-**Dusty Dettmer:** 00:03:37
+Dusty Dettmer: 00:03:37
 
 It's like proven work.
 If you can like, you know, pronounce Daemon, then you can find me on Twitter and also spell it.
 So good luck with that.
 
-**NVK:** 00:03:47
+NVK: 00:03:47
 
 And so Dusty, what do you do? -->
 
-**Dusty Dettmer:** 00:03:49
+Dusty Dettmer: 00:03:49
 
 I'm an independent `Lightning` Protocol Engineer.
 I've been working on splicing for the last two years now.
 
-**NVK:** 00:03:55
+NVK: 00:03:55
 
 So does that mean we ship?
 
-**Dusty Dettmer:** 00:03:57
+Dusty Dettmer: 00:03:57
 
 Shipping, like right now.
 Me and Tbast, we got to get Interop going soon.
 Soon.
 
-**NVK:** 00:04:04
+NVK: 00:04:04
 
 Two weeks?
 
-**Dusty Dettmer:** 00:04:05
+Dusty Dettmer: 00:04:05
 
 Two weeks.
 
-**NVK:** 00:04:06
+NVK: 00:04:06
 
 OK.
 And Vivek, Seared Salmon, welcome back.
 
-**Vivek:** 00:04:12
+Vivek: 00:04:12
 
 Thank you.
 Just, you know, VP of BD at CoinKite and recovering Greenlight and CLN shill.
 
-**NVK:** 00:04:22
+NVK: 00:04:22
 
 Nice to have you, sir.
 So props to Vivek for putting this panel episode together. It's kind of cool.
 
 ## Current state of LN privacy
 
-**NVK:** 00:04:29
+NVK: 00:04:29
 
 So guys, where do we start here?
 This is a hairy long, big topic.
@@ -148,7 +148,7 @@ Like what's going on right now?
 Who wants to take that?
 Go ahead, Tbast,.
 
-**Bastien Teinturier:** 00:05:05
+Bastien Teinturier: 00:05:05
 
 So I'd say that why once you are inside `Lightning`, sender privacy is good, receiver privacy is not.
 When you are interacting with the chain, like opening channels or everything you do `on chain`, privacy is not great.
@@ -158,12 +158,12 @@ Some of them are coming sooner than others, but there's still a lot to do if we 
 
 ## Receiver privacy
 
-**NVK:** 00:05:41
+NVK: 00:05:41
 
 Okay.
 if you want to get a little bit more like, like detailed on this, why is it that receiver privacy is bad right now?
 
-**Bastien Teinturier:** 00:05:51
+Bastien Teinturier: 00:05:51
 
 Receiver privacy is bad for many reasons.
 First of all, if you when you receive a payment at the cryptographic level, because of onion routing, the guy just before you shouldn't be able to infer that you are the final recipient.
@@ -175,11 +175,11 @@ With Blinded Path, you're finally getting good privacy with some trade-offs on p
 
 ## Blinded paths
 
-**NVK:** 00:06:59
+NVK: 00:06:59
 
 How do Blinded Paths work?
 
-**Bastien Teinturier:** 00:07:01
+Bastien Teinturier: 00:07:01
 
 Okay, so Blinded Paths are if you, I guess everyone has a vague idea of how rendezvous routing works in Onion networks, where the receiver, when you want to receive a message, instead of directly giving your address or your Node ID, you find paths to yourself that take a few hops to reach you.
 You encrypt those and you just tell people get to that introduction point and they will know how to reach me with this encrypted blob that I'm giving you.
@@ -191,7 +191,7 @@ And there's a lot of cool stuff to do to make sure that this doesn't impact usab
 But in theory, once you're able to choose routes that still allow you to have enough income and liquidity, you're able to make people enter a route towards you far away from you or at least in different places in the network so that they just have no way of figuring out what node ID you are and it's even better if you are a wallet user that doesn't have any public announced channel because then no one should see your node ID anywhere.
 You have no reason to advertise anything.
 
-**Tony Giorgio:** 00:08:32
+Tony Giorgio: 00:08:32
 
 With rendezvous routing, you hinted at it, but who you select as your introductory nodes is important too.
 Like, if you're the only person that keeps selecting the same introductory nodes, you can do some analysis there and guess that's the same person.
@@ -200,7 +200,7 @@ Like I never touch protocol code.
 I'm just like right above it, fine grain analyzing it.
 But are you guys like taking into consideration like how you actually select which introductory node for the users to maintain their privacy?
 
-**Bastien Teinturier:** 00:09:18
+Bastien Teinturier: 00:09:18
 
 Yeah, sure.
 That's something we are working on.
@@ -218,14 +218,14 @@ And since your node ID is completely private, there's a, this is a good way of g
 But in the general case for normal public nodes that have a lot of channels on the network, this is much harder.
 And this is this is where we have a lot of fun things to do algorithmically speaking in graph analysis to make sure we are able to score the privacy of a blinded path and it's really non-trivial but it's going to be a lot of fun to explore.
 
-**Tony Giorgio:** 00:10:58
+Tony Giorgio: 00:10:58
 
 One of the things there though is at least the blinded paths are supposed to go over the Onion messaging protocol, right?
 The `BOLT 12` Onion spec.
 So at least it's only being leaked to the sender and not the whole world.
 I believe, I could be wrong, even if you post a `BOLT 12` invoice on the internet, sure, other people can try to query it at least, but once that invoice is expired, some may not expire, but once the invoice is expired, no one will see your routes again, right?
 
-**Bastien Teinturier:** 00:11:31
+Bastien Teinturier: 00:11:31
 
 Yeah, but there are potentially issues as well, because someone's sending you an invoice request of an unknown message to get an invoice with blinded paths.
 If you refresh and change your blinded paths too often to change the introduction points you select, that guy can just make it look like they just failed to use the previous blinded path because of a liquidity issue somewhere in the network.
@@ -234,13 +234,13 @@ But every time you give them a new blinded path with a new introduction point, p
 So you need to protect from that and make sure you don't give out too many different blinded paths to users but you don't really have a very easy way to throttle those.
 So those are open questions which honestly we haven't had time to completely thoroughly look at, but we know there are potentially a lot of issues there and we need to spend a lot of time researching them and figuring out how to best protect against that.
 
-**NVK:** 00:12:29
+NVK: 00:12:29
 
 Dusty, Do you want to jump in?
 
 ## Obscurity of `Lightning`
 
-**Dusty Dettmer:** 00:12:31
+Dusty Dettmer: 00:12:31
 
 Yeah, I mean, like the privacy on `Lightning` is a big, complex subject.
 I think like there's a lot of details you can get into talking about, but at a high level like today, I think maybe a part of this is just the obscurity of `Lightning`.
@@ -259,7 +259,7 @@ Like, don't be scared.
 
 ## Onchain privacy compared to `Lightning` privacy
 
-**NVK:** 00:13:47
+NVK: 00:13:47
 
 So if you had to sort of like do a comparison, right, between like base layer transactions that we have right now to `Lightning`, I mean, especially if you're running on `Lightning` Node you can't, it's incomparable the kind of privacy you'll get for free just by using `Lightning`.
 Like, as is, in the worst possible sort of like solution out there.
@@ -267,20 +267,20 @@ Unless you're using like a custodial sort of like KYC `Lightning` solution, righ
 But you still get more privacy.
 It's just that they know your stuff, but the other side doesn't know your stuff.
 
-**Bastien Teinturier:** 00:14:21
+Bastien Teinturier: 00:14:21
 
 100%.
 
-**Vivek:** 00:14:21
+Vivek: 00:14:21
 
 It's information asymmetry, exactly.
 It's not on-chain forever, but now specifically your wallet of Satoshi knows exactly those details.
 
-**NVK:** 00:14:31
+NVK: 00:14:31
 
 That's right.
 
-**Dusty Dettmer:** 00:14:32
+Dusty Dettmer: 00:14:32
 
 It's like a fundamentally different privacy question, right?
 Like `on chain`, it's like, everyone can see the ledger.
@@ -289,13 +289,13 @@ How do you hide yourself in plain sight?
 So like if those peers are the government, okay, yeah, they're gonna be able to track you.
 But at its current state, knock on wood, the government's not running a lot of `Lightning` nodes, right?
 
-**Tony Giorgio:** 00:14:56
+Tony Giorgio: 00:14:56
 
 Well, so I think the concern, I agree with all that, the history and everything, but if there are big aggregators on the network already collecting this information forever and then selling it to third parties, then like that, You could say that doesn't last forever, but I mean it lasts as long as that company is, you know, lasts or that organization lasts.
 So, I wouldn't say like, you know, we're safe yet.
 I mean, there are chain analysis companies looking at `Lightning`.
 
-**NVK:** 00:15:29
+NVK: 00:15:29
 
 But personally, just I'll say just assume it's being captured.
 I mean, like that's the best way of looking at this.
@@ -308,7 +308,7 @@ And I'm paying for a beer at the Bitcoin park.
 And they're using their whatever, like BTC pay server there.
 You know, unless somebody is really, really trying to get me, the chances of anybody seeing that that's what happened are pretty much lower than if I was using on-chain transactions, right?
 
-**Vivek:** 00:16:21
+Vivek: 00:16:21
 
 I don't know if it's much lower, but I'd say it's lower and there's definitely aggregators like Tony was saying, and that's always been the concern.
 I remember when LNBIG showed up, everyone was like, oh, these guys are the feds or there's some other agency.
@@ -319,7 +319,7 @@ Tbast has an amazing chapter in the Mastering `Lightning` book, which I recommen
 And then Tony just sprung onto the scene, I think in 2021 with a massive privacy article describing issues with payment hashes, hash correlation, long paths.
 So from a high level approach, Tbast, can you explain how, is it Bolt1 or something, the init messages with `Noise_XK`, basically how the sender is always unknown and the receiver used to be known and the challenges with that in regards to `unannounced channels` which were mistakenly called private channels back in the day.
 
-**Bastien Teinturier:** 00:17:51
+Bastien Teinturier: 00:17:51
 
 Okay, so I'm not sure I'm going to be exactly answering your question, but I think it will encompass what you'd like.
 Our goal with `Lightning`, once you are inside `Lightning` and sending `Lightning` payments, our goal is that any node that is in the route can only infer who a previous node was and who the next node was, and nothing more than that.
@@ -339,27 +339,27 @@ Does that answer what you wanted or is there still something that I missed?
 
 ## `Lightning` privacy challenges
 
-**Vivek:** 00:19:57
+Vivek: 00:19:57
 
 No, that's pretty good.
 I just mainly wanted to touch on exactly what you said, how we're kind of piggybacking off of all the on-chain activity, with the SCIDs. And maybe I can ask Tony about, the alias change that happened for ZeroConf and Maybe some goodness there.
 
-**Tony Giorgio:** 00:20:16
+Tony Giorgio: 00:20:16
 
 Yeah, I mean, that was huge.
 I know my article, abytesjourney.com slash `Lightning` privacy, I can put it in the show notes.
 I wrote that in like 2011.
 
-**Vivek:** 00:20:29
+Vivek: 00:20:29
 
  2021
 
-**Tony Giorgio:** 00:20:30
+Tony Giorgio: 00:20:30
 
 Or sorry, 2021.
 Yeah.
 
-**Tony Giorgio:** 00:20:38
+Tony Giorgio: 00:20:38
 
 I wrote that and people sometimes ask me, okay, well, it's 2023 now.
 Can we get an update?
@@ -378,7 +378,7 @@ So the LSP does see that.
 
 ## PTLCs
 
-**Bastien Teinturier:** 00:21:57
+Bastien Teinturier: 00:21:57
 
 With PTLC that changes though, because with PTLC the sender can force the payment to go outside before coming back to the LSP and getting to the final destination.
 And that's something that the recipient can do.
@@ -388,12 +388,12 @@ But I think there are ways to make it better, to at least make it not completely
 
 ## Routing and LSPs
 
-**Jeff Czyz:** 00:22:49
+Jeff Czyz: 00:22:49
 
 Tbast, would you say then that like for that scenario, the LSP wouldn't be the introduction point on the blinded route?
 And if so, how would a mobile user choose a different introductory point?
 
-**Bastien Teinturier:** 00:23:02
+Bastien Teinturier: 00:23:02
 
 Either the mobile user just syncs a local neighborhood, for example, every node that is two hops away from them, if they're only connected to one LSP, they cannot just sync it from that LSP if they don't trust that LSP because the LSP will just filter out everything else.
 But if they are connecting to a few LSPs, they could just sync their local neighborhood and make sure that they make payment bounce between LSPs because in your blinded path, you can force the payment to bounce from one LSP to the other if you're using PTLCs from a list of LSPs. Or you can just even assume that without even knowledge of a graph, you can assume that some big nodes have good connectivity and benefit from their user base.
@@ -404,31 +404,31 @@ But I think there are things that we can explore here that can make it potential
 
 ## Gossip filters
 
-**Jeff Czyz:** 00:24:20
+Jeff Czyz: 00:24:20
 
 Would that mobile client then, in order to do this sort of local sync of the gossip, which is maybe, it's preferable for a mobile user, Gossip is pretty expensive as far as network bandwidth and downloading it all.
 Does that require then like a sort of custom implementation for the mobile wallet to do that sort of local sync?
 Now in the `LDK` side we have like this rapid gossip sync which makes it pretty quick.
 
-**Bastien Teinturier:** 00:24:46
+Bastien Teinturier: 00:24:46
 
 And the other idea is in the very old trampoline PRs I had like three years ago, there was a proposal to do gossip filters that would be applied that you ask your peers to apply some gossip filters so that they forward to you only a subset of the gossip that interests you, so that mobile wallets can get a fraction of the gossip that they're interested in without wasting too much bandwidth.
 But this is still waiting for people to play with Trampoline before we do something like that.
 And this will have to be reevaluated to see if it really makes sense compared to something like rapid gossip syncs or other ways of syncing subparts of the graph.
 But I think that there's a large design space here to do it in a lot of different ways that could help your practice.
 
-**Dusty Dettmer:** 00:25:30
+Dusty Dettmer: 00:25:30
 
 Oh man, it sounds like you're bringing Bloom filters back.
 I love it.
 
 ## Gossip and BOLT7 summary
 
-**Vivek:** 00:25:36
+Vivek: 00:25:36
 
 Jeff, can you summarize what is Bolt 7 and Gossip and this graph that we always talk about?
 
-**Jeff Czyz:** 00:25:43
+Jeff Czyz: 00:25:43
 
 Yeah, so this kind of actually touches on privacy a bit too.
 So, and others here probably could do a better explanation, but I'll try my best here.
@@ -440,20 +440,20 @@ Now I think there are some proposals out there, one for zero knowledge proofs to
 So you kind of say, I have some on-chain balance.
 I'm not going to say how much exactly it is, but I can at least prove to you that I do.
 
-**NVK:** 00:26:51
+NVK: 00:26:51
 
 It's like a range proof kind of thing?
 
-**Jeff Czyz:** 00:26:53
+Jeff Czyz: 00:26:53
 
 I believe so.
 I don't know the exact details honestly, but that's essentially the idea.
 
-**Vivek:** 00:26:59
+Vivek: 00:26:59
 
 This is a Rusty's idea for the ownership proof or something like that?
 
-**Jeff Czyz:** 00:27:04
+Jeff Czyz: 00:27:04
 
 I'm not sure if it's the same, but there are a few proposals out there.
 There's like Gossip 1.5, which I believe that might be you're referring to.
@@ -463,11 +463,11 @@ I don't know if anyone else wants to jump in on that, probably a little more det
 
 ## Speed of development
 
-**NVK:** 00:27:27
+NVK: 00:27:27
 
 Tbast, you wanted to bring up something about the features that are sort of slow to?
 
-**Bastien Teinturier:** 00:27:33
+Bastien Teinturier: 00:27:33
 
 Yeah, just quickly and I think it's a general comment about how things are added to `Lightning` nowadays.
 A lot of the features that we are finally shipping now have been discussed for years.
@@ -485,7 +485,7 @@ We're creating more flexibility, growing the design space for people who are bui
 
 ## `Lightning` implementations and compatability
 
-**NVK:** 00:29:22
+NVK: 00:29:22
 
 Yeah, so like, but what's like the dynamic on Bitcoin base layer, it's always been, the issue is we always need backwards compatibility but you know, realistically speaking, we have one client
 Like for Bitcoin, there's reference client.
@@ -513,50 +513,50 @@ Because, you know, I have Jeff here who does `LDK`, which is a very fast-growing
 And then we have Async, right, which is Eclair, I always get confused with like all the names.
 And then we have, LND is not represented here.
 
-**Vivek:** 00:31:18
+Vivek: 00:31:18
 
 So Tony's a fair representation of LND and `LDK` because of his experience as an app dev.
 And Dusty is like a stand in CLN contributor.
 So there
 
-**NVK:** 00:31:26
+NVK: 00:31:26
 
 you go.
 
-**Vivek:** 00:31:27
+Vivek: 00:31:27
 
 It's a fair, fair representation.
 
-**NVK:** 00:31:30
+NVK: 00:31:30
 
 So should I just give a knife to everyone and see whoever comes out of the room gets to pick the next feature?
 
-**Vivek:** 00:31:35
+Vivek: 00:31:35
 
 No, no knives, Moonrakers.
 
 ## BOLT12
 
-**Jeff Czyz:** 00:31:38
+Jeff Czyz: 00:31:38
 
 There's definitely a temptation to sort of move fast like that.
 And it's, You have to resist in some respects.
 So like for `BOLT 12`, for instance, people have wanted `BOLT 12` for a long time.
 
-**NVK:** 00:31:50
+NVK: 00:31:50
 
 Oh, I've been hearing as a unicorn feature that one day is going to happen.
 
-**Jeff Czyz:** 00:31:54
+Jeff Czyz: 00:31:54
 
 So we are really close actually now.
 But the point I wanted to make...
 
-**NVK:** 00:32:02
+NVK: 00:32:02
 
 Two weeks?
 
-**Jeff Czyz:** 00:32:03
+Jeff Czyz: 00:32:03
 
 Two months maybe.
 The point I wanted to make around that is that, `C Lightning` or `core Lightning`, I guess, had an implementation of `BOLT 12` pretty early since Rusty was the proposer of `BOLT 12`, But the spec changed quite a bit over the year plus it was when he first offered the proposal.
@@ -566,7 +566,7 @@ And the information from those, that chain of messages is sort of important if y
 So having that data inside of like, so say having the offer fields inside invoice requests and those fields as well inside the invoice was a change that was made that made this very easy for us to do and it allowed for scaling a node that uses `BOLT 12`.
 That's just one example.
 
-**Dusty Dettmer:** 00:33:16
+Dusty Dettmer: 00:33:16
 
 So basically I think what you're saying, I agree with, is that you almost want to interact with the other implementers early.
 Like last year, I was working on splicing kind of all alone and I was like, hey, guys, I have these ideas for the spec, any thoughts?
@@ -574,22 +574,22 @@ And there was a whole lot of crickets, right?
 And now everybody's doing splicing and they have opinions on how to change the spec, right?
 So I'm literally in the process of rewriting things for those new changes, just like Jeff was talking about.
 
-**NVK:** 00:33:43
+NVK: 00:33:43
 
 That's when the bike shedding begins.
 
-**Dusty Dettmer:** 00:33:45
+Dusty Dettmer: 00:33:45
 
 Yes, exactly.
 
-**Jeff Czyz:** 00:33:48
+Jeff Czyz: 00:33:48
 
 I remember listening to your talk at Bitcoin++ last year on splicing and now a year later, it's getting a lot of traction now, but there's a lot of movement too.
 And what is the final specification?
 
 ## Why an additional node implementation? (`LDK`)
 
-**NVK:** 00:34:00
+NVK: 00:34:00
 
 So Jeff, here's a related question, a bit, I would say a bit tangent, but so if we already had say three node implementations, why create a fourth and add one more to the sort of like the dynamic of getting features out.
 Right, because you know, every time you add one more player that has enough market share, it adds more complication.
@@ -599,24 +599,24 @@ I'm just curious, what was the rationale for that?
 Aside from just like, we wanna do things in a certain different way.
 So it's worth adding one more implementation to the market.
 
-**Jeff Czyz:** 00:34:39
+Jeff Czyz: 00:34:39
 
 Well, the more the merrier, right?
 
-**Vivek:** 00:34:42
+Vivek: 00:34:42
 
 Jeff, don't let the C programmer bully the rest community like that.
 
-**Jeff Czyz:** 00:34:45
+Jeff Czyz: 00:34:45
 
 Yeah.
 
-**NVK:** 00:34:47
+NVK: 00:34:47
 
 No, it's crust now because rust is a trademark.
 So I'm calling it crust.
 
-**Jeff Czyz:** 00:34:53
+Jeff Czyz: 00:34:53
 
 I think that's been resolved, but yeah.
 So, we had a different approach, right?
@@ -629,11 +629,11 @@ Yeah, so Rust is a very secure language too.
 So having that aspect and allowing for language findings on top of that.
 So developers that are, I think, sort of mobile first and can work in their language of preference was another draw for `LDK`.
 
-**NVK:** 00:35:48
+NVK: 00:35:48
 
 Okay.
 
-**Dusty Dettmer:** 00:35:48
+Dusty Dettmer: 00:35:48
 
 I just want to say it, all the implementations that I'm not working on are stupid.
 Just kidding.
@@ -641,7 +641,7 @@ I think in reality, like the implementations, they're finding their own niches o
 And I think that's one of the advantages of multiple implementations and that's just kind of, it's kind of good.
 I think everyone's sort of like, as the years go by, getting more and more into their own specific niches.
 
-**NVK:** 00:36:10
+NVK: 00:36:10
 
 That's fantastic because, you know, it's an honest question, right?
 Like it's like more things, more complexity, right?
@@ -651,7 +651,7 @@ So it's kind of cool to see that like the implementations are getting less fight
 So they're not sort of like so much on top of each other because there's only so many customers too for now.
 Sorry, Tbast.
 
-**Bastien Teinturier:** 00:36:38
+Bastien Teinturier: 00:36:38
 
 From the spec point of view, I'm really happy that there's a fourth implementation because the way, the best, the ideal thing when you start working on a new big spec feature is to have another implementation, start working on it almost at the same time as you, because doing it on your own means that whenever someone will come one year later, they will want to change everything potentially for good reason, but you're wasting a bit of time.
 But when we only had three implementations and since people have different short term focus and everything we're doing takes a lot of time, so people cannot be working on all the things at the same time, we have a better chance at finding two implementations that work on the same stuff for almost each big feature that we are working on.
@@ -662,11 +662,11 @@ So I think four implementations that are really committed to working on `Lightni
 Maybe five would be okay, but maybe it would be too much.
 I don't know.
 
-**Jeff Czyz:** 00:38:09
+Jeff Czyz: 00:38:09
 
 I don't want to speak for LND necessarily, but having Arik and Wilmer from `LDK` kind of pushing forward on the Taproot specification, I think it's been a boom for that work, I guess.
 
-**NVK:** 00:38:20
+NVK: 00:38:20
 
 Adding a new crypto primitive is a ginormous amount of work, it seems simple, but it's not.
 There's all the bindings, there's everything else and it is all money handling code now, right?
@@ -677,12 +677,12 @@ It's ginormous, but it does allow for a bunch of new cool shit that it can do.
 Now, the question always is the new cool shit actually useful to the users, like, soon?
 Or is it just like catnip, you know, developer make work because, you know, every developer wants to work on the new cool shit.
 
-**Bastien Teinturier:** 00:39:06
+Bastien Teinturier: 00:39:06
 
 Depends on what you mean by soon.
 Is soon 5 years?
 
-**Vivek:** 00:39:12
+Vivek: 00:39:12
 
 I'd want to say that it's good that we have four implementations now.
 I think there was more of a stagnation or stalemate when it was three.
@@ -692,18 +692,18 @@ It almost causes an externality if they're not doing something, for example, lik
 And I think because there were three before, the app developers also grew frustrated.
 And then there's been things that bloomed out of that, such as `LNURL`.
 
-**NVK:** 00:39:56
+NVK: 00:39:56
 
 Yeah.
 
-**Vivek:** 00:39:57
+Vivek: 00:39:57
 
 You know, they were very frustrated with the, the stagnation or the disagreeability.
 So they kind of took things into their own hands.
 
 ## Feature experimentation and market validation
 
-**NVK:** 00:40:04
+NVK: 00:40:04
 
 In a good way, it's sort of like when the practical people that may not have the best sort of technical solution put it out, the market starts to take, often puts a fire in the ass of the people who can ship the better sort of implementation of something.
 So, that was one of the things that I liked the most about `LNURL`, like it fucking works.
@@ -718,7 +718,7 @@ When you ask something like, of course, we're going to say yes, But do you know 
 Like the `LNURL` to me just proved that there is like this massive market demand for something like that.
 I think it's sort of like a nice indicator there.
 
-**Tony Giorgio:** 00:41:13
+Tony Giorgio: 00:41:13
 
 Yeah, I think the skill too is being able to be, and I say this from the application developer side because this is where I really shine.
 But knowing when you can do things at the application level and when you shouldn't, and them doing `LNURL` doesn't break interoperability with `Lightning`.
@@ -733,7 +733,7 @@ It just looks like it's voltages pubkey on one of their nodes.
 This is another case where we can add some application logic until we get the protocol features that we need to get, but it doesn't break anything else.
 So it's like a way to add and innovate on top of it.
 
-**NVK:** 00:42:41
+NVK: 00:42:41
 
 So like one super important thing that you get from Bitcoin is this like extreme backwards compatibility.
 Like the I guess like the slightly like variation for that on `Lightning` is like graceful degradation and I think like that's like so far it's been good that way.
@@ -745,11 +745,11 @@ Like the payment still gets made.
 
 ## Communicating feature sets
 
-**Vivek:** 00:43:29
+Vivek: 00:43:29
 
 I think this is a great chance for Jeff or Dusty to touch on the, I think it's Bolt 9, the OK to be odd, like the feature bit stuff.
 
-**Dusty Dettmer:** 00:43:37
+Dusty Dettmer: 00:43:37
 
 Right, like every feature gets like a, you get to register your numbers.
 Like your feature needs to have a feature number.
@@ -760,16 +760,16 @@ That's the technique that allows the reverse compatibility to happen.
 I don't know.
 You want to talk about more, Jeff?
 
-**Jeff Czyz:** 00:44:05
+Jeff Czyz: 00:44:05
 
 Yeah, the feature bits, just to clarify, come in pairs too.
 So typically a feature will have both an even and odd bit and such that if you are odd, it's okay to be odd as this expression goes, then it's sort of an optional feature for you where if it's even it's required and you could, I guess, because required, that means you probably disconnect from your peer if they don't support it.
 
-**NVK:** 00:44:26
+NVK: 00:44:26
 
 That's pretty cool.
 
-**Jeff Czyz:** 00:44:27
+Jeff Czyz: 00:44:27
 
 Yeah.
 And I think kind of going back to the conversation too, about like application layer versus protocol layer.
@@ -780,13 +780,13 @@ So while there are privacy shortcomings of `LNURL`, it's a spotlight on what we 
 
 ## Payment descriptions
 
-**Vivek:** 00:45:05
+Vivek: 00:45:05
 
 Tony, you also fixed something, I think, for one of your applications that you were hacking on last year regarding I think the payment descriptions, right?
 Because those are also shared.
 I think you started encouraging the practice of hashing it, something like that?
 
-**Tony Giorgio:** 00:45:22
+Tony Giorgio: 00:45:22
 
 Yeah.
 Putting descriptions in memos, I think, was a bad decision for `Lightning`.
@@ -798,7 +798,7 @@ And that gets if that's getting shared and aggregated around, you can now start 
 And that's not good.
 In my opinion.
 
-**NVK:** 00:46:21
+NVK: 00:46:21
 
 Also, it's pretty annoying, to be honest, as a user, like, stop asking me, forcing me to put a note.
 Like, I don't want to put a note.
@@ -809,54 +809,54 @@ Cause like, you know, I'm a base layer boomer.
 When I come sometimes to `Lightning`, It's like, there's all this weird, different dynamics that like annoy me.
 I get that there's limitations and stuff, but it's nice to see that like people starting to see that way too.
 
-**Tony Giorgio:** 00:46:54
+Tony Giorgio: 00:46:54
 
 Yeah.
 And so when an invoice is created for Mutiny, like we, there, there is a optional tag field you can put in there, but that's only saved internally.
 We are specifically never going to create an invoice with a description and we kind of refuse to because I think it's a privacy leak that, I'm trying to be out here like expressing, hey, don't put descriptions in your invoices, like this leaks metadata and everyone does it anyway.
 So I'm just going to build a wallet that doesn't do that.
 
-**Jeff Czyz:** 00:47:22
+Jeff Czyz: 00:47:22
 
 And.
 How does `BOLT 12` fix this?
 ## <HERE>
-**Tony Giorgio:** 00:47:24
+Tony Giorgio: 00:47:24
 
 Does it not require descriptions?
 
-**Jeff Czyz:** 00:47:27
+Jeff Czyz: 00:47:27
 
 It doesn't require.
 They're in the offer, but not in the invoices.
 
-**Dusty Dettmer:** 00:47:30
+Dusty Dettmer: 00:47:30
 
 Oh,
 
-**Tony Giorgio:** 00:47:31
+Tony Giorgio: 00:47:31
 
 cool.
 Good.
 
 ## `Nostr` and zaps
 
-**Tony Giorgio:** 00:47:31
+Tony Giorgio: 00:47:31
 
 Nice.
 
-**NVK:** 00:47:32
+NVK: 00:47:32
 
 Are you guys following all the zapping on `Nostr`?
 Because there's a lot of very interesting things that are coming up on like, for example, like private zaps where like I think you are essentially putting the `Nostr` node inside of the `Lightning` comms network and it's encrypted with the `Lightning` transaction itself if I remember right.
 I haven't followed that NIP too much but so There is the NIP 57 for the zapping and sort of like being extended for more things.
 And now there is also the `Lightning` like wallet connect thing.
 
-**Jeff Czyz:** 00:48:14
+Jeff Czyz: 00:48:14
 
 Oh yeah.
 
-**NVK:** 00:48:15
+NVK: 00:48:15
 
 Yeah, that's like super cool.
 I mean like you're not going to need to have a `Lightning` wallet inside an app.
@@ -866,7 +866,7 @@ So like, are you guys like, as people who work on the protocol and on nodes a lo
 Is this on your radars?
 How are you guys like sort of going about it?
 
-**Vivek:** 00:48:43
+Vivek: 00:48:43
 
 That's probably a question for Tbast, Tony, and maybe Jeff.
 I'd say Tbast is also extremely well-rounded because Eclair ships Phoenix as well as their implementation and everything.
@@ -875,11 +875,11 @@ So he probably has great insight.
 Yeah, to be honest, I haven't had time to follow everything that's happening around `Nostr`.
 So yeah, I don't know,
 
-**Bastien Teinturier:** 00:49:07
+Bastien Teinturier: 00:49:07
 
 to be honest.
 
-**Tony Giorgio:** 00:49:08
+Tony Giorgio: 00:49:08
 
 Yeah, I'm very concerned about `Lightning` usage on `Nostr` for both the Zaps aspect and also the custodial integrations like Wallet Connect.
 You know, there's a side of it where it's like, we can be up here preaching about lightning privacy all day long and then someone connects their node up with AMBOSS and shares the balance.
@@ -887,31 +887,31 @@ Like, we can't stop that on a protocol level.
 And all we can do is educate and tell people why it's dumb, why you why you shouldn't do that, why you shouldn't use custodians.
 We can preach this all day long, but then someone goes and
 
-**NVK:** 00:49:44
+NVK: 00:49:44
 
 do it.
 I mean, we can't say anything like saying won't change behavior, offering tools that fix the behavior that are easier to use will fix the problem.
 Right.
 Like and this is why I'm bringing this up because you know like when you actually look at like the transaction graph I mean like it looks like `Nostr`'s like what like 70% of all the `Lightning` transactions at least was the peak.
 
-**Vivek:** 00:50:08
+Vivek: 00:50:08
 
 Yeah, I think Ben Carman did some research.
 Yeah, it's 70% of all `Nostr`'s apps were Wallet of Satoshi or something like that, right, Tony?
 
-**Tony Giorgio:** 00:50:17
+Tony Giorgio: 00:50:17
 
 No, it was around 40 or 50 percent, but in total, 92 percent were custodians.
 
 ## Custodial `Lightning` and censorship resistance
 
-**Jeff Czyz:** 00:50:25
+Jeff Czyz: 00:50:25
 
 Yeah, I think you have to be also very careful about custodians with this because there's a censorship resistant aspect, not just the privacy aspect.
 So if you have someone who wants to receive Zaps and there are dissidents in the country, say like in Iran, there could be a problem with censorship from, I guess, different regulators.
 And so you have to be very careful about the services you use.
 
-**NVK:** 00:50:49
+NVK: 00:50:49
 
 Or I mean, you could be you could be going to jail because you're sending money to a country.
 You're not allowed to send money from your country.
@@ -921,30 +921,30 @@ Like nobody really cares.
 But, you know, technically you're breaking some serious fucking laws.
 And, you know, if there was interest taking on this, it would be a big deal.
 
-**Tony Giorgio:** 00:51:09
+Tony Giorgio: 00:51:09
 
 Well, but then the aggregation amount, too, right?
 Like, yeah, everyone everyone says, oh, I just put, you know, five five dollars worth of Bitcoin on wall of satoshi.
 But if that, you know, five dollars adds up, you know, hundreds of thousands of users, then, you know, you start to you start to get a lot of money that could be rug pulled all at once or or seized, to be fair.
 Like that's probably more what's going to happen than anything else.
 
-**Vivek:** 00:51:34
+Vivek: 00:51:34
 
 Or price appreciation, right?
 In 2031, you get a knock on the door, why'd you give this Iranian $20,000?
 
-**Tony Giorgio:** 00:51:43
+Tony Giorgio: 00:51:43
 
 Right, like wasn't it a lot of the Silk Road data was collected and used for chain analysis data too.
 So it's like, yeah, this is a custodian, you know, that data wasn't on chain, you know, not all of it, but you know, you have a seizure observers.
 And then now that data is basically set in stone because it was collected and is going to be and has been used to prosecute people.
 
-**NVK:** 00:52:06
+NVK: 00:52:06
 
 Okay.
 Is that, Dusty, so like the `Nostr` stuff is not something you're paying attention right now?
 
-**Dusty Dettmer:** 00:52:13
+Dusty Dettmer: 00:52:13
 
 I think, Bitcoin has reached this point where there are so many things happening that no one person can cope with all of it, right?
 Like, I feel like just keeping up with all of everything happening in `Lightning` is like a full-time, you know, job on the side of my existing job, right?
@@ -963,12 +963,12 @@ The way we solve this problem, or whatever it is that we can't set it, the way w
 We gotta remove the barriers, make it easy to do it correctly.
 And then we can evangelize doing it correctly to people and like actually have that movement get some team.
 
-**Jeff Czyz:** 00:53:13
+Jeff Czyz: 00:53:13
 
 Yes, it's important just to provide that option.
 People will use custodial services, but they need to have the opportunity to self-custody.
 
-**NVK:** 00:53:20
+NVK: 00:53:20
 
 Well, I mean, being very realistic, I mean, like `Lightning` doesn't scale past a certain amount too, right?
 So base layer takes us from like, you know, having cuck money, right?
@@ -990,14 +990,14 @@ So like, you know, there is a scale here that, that we're going to slowly get in
 
 ## Splicing
 
-**NVK:** 00:54:39
+NVK: 00:54:39
 
 So it sounds like, splicing has both like this amazing privacy aspects to it.
 And then he has very cool scaling things too.
 And also incredible like economic advances too.
 So who wants to explain splicing?
 
-**Dusty Dettmer:** 00:54:57
+Dusty Dettmer: 00:54:57
 
 I could try.
 I think like, it's, It's just like you said, there's like three different things there.
@@ -1010,39 +1010,39 @@ But then literally everything changes about it, including there are some theoret
 So like literally everything's changing.
 There's sort of like a laundry list and depending on like which part you wanna talk about first we can go into the individual one.
 
-**NVK:** 00:55:43
+NVK: 00:55:43
 
 So first question is how long to his ships?
 
-**Dusty Dettmer:** 00:55:48
+Dusty Dettmer: 00:55:48
 
 Two weeks.
 
-**NVK:** 00:55:50
+NVK: 00:55:50
 
 Before we get into this, two weeks.
 
-**Vivek:** 00:55:54
+Vivek: 00:55:54
 
 Dusty shipped it for himself, right?
 I don't know if he's revealed like any of the script, but he did point to a mainnet transaction.
 And I believe Tbast also has done that.
 
-**Bastien Teinturier:** 00:56:04
+Bastien Teinturier: 00:56:04
 
 And we are we are actually going to ship it in at least not the final spec version.
 And it's a simplified one because in Phoenix, since we don't have public channels, It's it makes it seem like it removes the aspect of the gossip part.
 But we are going to ship a prototype version of Splicing in Phoenix on mainnet real soon in the next few months so that we can get real world data about the issues with that, feed that back into the spec and put the finalizing touch on the token.
 
-**NVK:** 00:56:33
+NVK: 00:56:33
 
 You heard here first one hour into the show that we're going to get splicing this year.
 
-**Dusty Dettmer:** 00:56:38
+Dusty Dettmer: 00:56:38
 
 If I could just add.
 
-**NVK:** 00:56:39
+NVK: 00:56:39
 
 Go ahead, Dusty.
 Let's explore the three major aspects
@@ -1051,14 +1051,14 @@ Speaker 2: 00:56:42
 
 of this.
 
-**Dusty Dettmer:** 00:56:42
+Dusty Dettmer: 00:56:42
 
 Yes, let's plant my flag.
 I did the first splice on Chain last year in May and I finished my Splicing implementation around October.
 But like things in `Lightning` aren't normally considered done until two implementations do it, sort of like the way that things do it, call it interop.
 And so I'm working on interop with TBast and once we get two implementations that have it done, then it's officially like, you know, considered launched or whatever.
 
-**Vivek:** 00:57:04
+Vivek: 00:57:04
 
 I want to, I want to take a quick tangent about like how proud I am to NerdSnipeDusty via Nifty who like onboarded him to CLN to do this specific thing.
 Poor guy has been banging his head for splicing since CLN had only one channel per peer.
@@ -1067,7 +1067,7 @@ And then now his work on Interop.
 Kudos, man.
 You've really like you've stuck to it.
 
-**NVK:** 00:57:29
+NVK: 00:57:29
 
 Well, I mean, you know, like subtle masochism is known also as core developers of Bitcoin or `Lightning`.
 Anybody who's a protocol developer really likes pain and rebasing.
@@ -1076,20 +1076,20 @@ I mean, like some people like pain, you know, like, you know, I'm not judging he
 
 ## Scaling
 
-**NVK:** 00:57:50
+NVK: 00:57:50
 
 So anyways, so let's explore scalability first, because, you know, without that, like privacy and everything else, kind of like who cares, right?
 I mean, Are we scaling here?
 Are we reaching capacity to really on board our next billion people?
 
-**Dusty Dettmer:** 00:58:05
+Dusty Dettmer: 00:58:05
 
 I think spicing gets us closer, but it's not the slam dunk that's gonna be like, yay, now we get all the billion.
 But maybe today we get a billion, so we only need to 8X, right?
 Just pull one trick out of our hat to get 8x that and we're good forever, right?
 Population will never grow.
 
-**Bastien Teinturier:** 00:58:41
+Bastien Teinturier: 00:58:41
 
 You just update that UTXO, but right now we need multiple UTXOs per users.
 With splicing, you only need one, but it's still one UTXO per user.
@@ -1097,12 +1097,12 @@ So it's not going to scale to 8 billion users.
 We still need to add sharing that UTXO between users on top of that.
 And that's something we don't know how to do yet.
 
-**NVK:** 00:58:47
+NVK: 00:58:47
 
 So tell me what we know now.
 Like what can we do now and how does splicing works with a single UTXO?
 
-**Bastien Teinturier:** 00:58:54
+Bastien Teinturier: 00:58:54
 
 Yeah, this part is really simple.
 Right now, that means you have a lot of channels.
@@ -1116,19 +1116,19 @@ You may want to have one public channel and `unannounced channels` on top of tha
 There are reasons to keep multiple channels between pairs of users, pairs of nodes, but you're going to need fewer of them than today.
 Today you end up having too many channels with those peers because you don't want to close them and then make another transaction to open a new one because it costs you two transactions whereas with pricing, updating a channel costs only one transaction and you can also batch it with other things that you want it to do to make it more efficient.
 
-**Jeff Czyz:** 01:00:06
+Jeff Czyz: 01:00:06
 
 Yeah, I think the blocks-based argument there is what you guys are getting at too.
 What we see today with high fees, if you have to close a channel then reopen it, you know, that's gonna cost basically twice as much.
 So splicing is going to help with that.
 
-**Vivek:** 01:00:20
+Vivek: 01:00:20
 
 And the beauty of all of this is the `Lightning` node itself experiences no downtime, right?
 You can still be paying each other.
 For all the nodes that understand the new form of gossip, but even like the old form of gossip, I guess, like they'll see it as like that SCID, the original one closed and there's a new one, right?
 
-**Dusty Dettmer:** 01:00:41
+Dusty Dettmer: 01:00:41
 
 Yeah, I think the way to think of it is like when you want to use `Lightning`, you have to basically plant your stake or your flag on the blockchain.
 And there's only so much space in the blockchain.
@@ -1145,23 +1145,23 @@ And we're kind of inching closer to maybe the world scalable, but I don't know w
 
 ## Bitcoin core changes that would advance `Lightning`
 
-**Dusty Dettmer:** 01:01:32
+Dusty Dettmer: 01:01:32
 
 We'll see.
 
-**NVK:** 01:01:32
+NVK: 01:01:32
 
 So what changes to Bitcoin Core do you need?
 
-**Vivek:** 01:01:34
+Vivek: 01:01:34
 
 APOs.
 
-**NVK:** 01:01:35
+NVK: 01:01:35
 
 Let's just put them all out here because then people will definitely make the changes.
 
-**Dusty Dettmer:** 01:01:39
+Dusty Dettmer: 01:01:39
 
 APOs is a big one.
 Signature input aggregation would be another big one.
@@ -1174,27 +1174,27 @@ Speaker 2: 01:01:50
 
 a lot
 
-**Dusty Dettmer:** 01:01:50
+Dusty Dettmer: 01:01:50
 
 of space with these anchors, that could all go away with those.
 Those are the three that come to mind.
 You guys got any other core projects you guys are favoring?
 
-**Tony Giorgio:** 01:01:57
+Tony Giorgio: 01:01:57
 
 Some of the transaction v3 stuff to kind of help against paying tax on `Lightning`.
 
-**Bastien Teinturier:** 01:02:03
+Bastien Teinturier: 01:02:03
 
 In the short term, I would really like to see package relay and ephemeral anchors, because that's something that's only a policy change.
 So in theory-
 
-**NVK:** 01:02:11
+NVK: 01:02:11
 
 Package relay shouldn't be hard to change.
 It's not consensus.
 
-**Bastien Teinturier:** 01:02:15
+Bastien Teinturier: 01:02:15
 
 Yeah, so it should be easier to train.
 It's actually, people are working on that.
@@ -1210,7 +1210,7 @@ It's easy.
 We just make the commit transaction, pay zero fees.
 But it needs that package relay and ephemeral anchors change in the Bitcoin policy logic.
 
-**NVK:** 01:03:32
+NVK: 01:03:32
 
 I mean, technically, you could just fork and start doing that.
 I mean, like, you know, it's just a policy.
@@ -1226,7 +1226,7 @@ So here's a question.
 How does it leverage APO?
 Like the change you were mentioning?
 
-**Dusty Dettmer:** 01:04:17
+Dusty Dettmer: 01:04:17
 
 Oh, APO is so exciting.
 Well, I mean, the big thing about APO is that the `Lightning` database is going to go a smaller, which isn't necessarily an on-chain thing, but like currently, whenever you do a `Lightning` transaction, What we're really doing behind the scenes is we're making a whole bunch of Bitcoin transactions that we sign and just never actually publish.
@@ -1241,11 +1241,11 @@ And to me, I don't think it's I think it's not a controversial change, which is 
 It's just there's nothing wrong with it.
 It's sort of an obvious like next of improvement for Bitcoin in my eyes, I haven't seen a good critique of it.
 
-**NVK:** 01:05:34
+NVK: 01:05:34
 
 Famous last words.
 
-**Vivek:** 01:05:36
+Vivek: 01:05:36
 
 Yeah, I was just about to say like what Dusty is referring to, is LN symmetry, previously known as Eltoo, and it has a channel factory benefits and things of that nature.
 I do disagree that APO soft fork is not controversial.
@@ -1254,13 +1254,13 @@ But Nevertheless, it is very exciting to see if it does come to fruition because
 So I don't know.
 We'll see where that ends up, perhaps.
 
-**NVK:** 01:06:16
+NVK: 01:06:16
 
 I don't know.
 Like I'm partial to CTV and OpVault sort of path there because I really want to see that stuff happen.
 I think you can do some of that stuff with CTV instead of APO.
 
-**Vivek:** 01:06:27
+Vivek: 01:06:27
 
 You cannot, you need another soft fork for a check
 
@@ -1268,47 +1268,47 @@ Speaker 2: 01:06:30
 
 to
 
-**Vivek:** 01:06:30
+Vivek: 01:06:30
 
 sig from stack.
 
-**NVK:** 01:06:31
+NVK: 01:06:31
 
 That's right.
 
-**Vivek:** 01:06:32
+Vivek: 01:06:32
 
 So it gets very hairy about like, who wants which soft fork for which purpose?
 Cause the covenants, yeah.
 
-**NVK:** 01:06:37
+NVK: 01:06:37
 
 Oh, it's going to be like, first it's going to be very hard to get any soft fork done in the next few years.
 Like realistically speaking, we can't even agree on how to activate it, which is even more contentious than the actual content.
 
-**Jeff Czyz:** 01:06:49
+Jeff Czyz: 01:06:49
 
 Yeah.
 And when we build on those, Eltoo is the name I was familiar with.
 Is there a new name for Eltoo right now?
 
-**Vivek:** 01:06:56
+Vivek: 01:06:56
 
 Yeah, I believe Instagibbs has taken the mantle and He's calling it LN Symmetry now.
 
-**Jeff Czyz:** 01:07:02
+Jeff Czyz: 01:07:02
 
 OK.
 Are there changes to the original Eltoo because of that or is it just a rebranding?
 
-**Vivek:** 01:07:07
+Vivek: 01:07:07
 
 I think there are some changes.
 He's just kind of putting it all together with the new package relay stuff and ephemeral Anchors, all the new innovations recent to Bitcoin.
 I think he's taken a lot of Anthony Towns' feedbacks and previous like Christian Decker's work and he's like put it all together in one comprehensive thing.
 There's a Chaincode Labs podcast episode where he discusses it in deeper detail.
 
-**Jeff Czyz:** 01:07:33
+Jeff Czyz: 01:07:33
 
 Yeah, I'll take a look at that.
 As we add new support at the base layer for these enhancements to `Lightning`, new challenges are going to arise, of course, with Eltoo.
@@ -1317,17 +1317,17 @@ Speaker 2: 01:07:46
 
 Symmetry.
 
-**Jeff Czyz:** 01:07:46
+Jeff Czyz: 01:07:46
 
 From what I remember, there was, you know, it's a different punishing...
 Yeah, symmetry, right?
 There is a...
 
-**Vivek:** 01:07:51
+Vivek: 01:07:51
 
 There'd be
 
-**Jeff Czyz:** 01:07:51
+Jeff Czyz: 01:07:51
 
 a different punishment mechanism.
 Exactly.
@@ -1336,15 +1336,15 @@ And then I think channel factories were mentioned at one point and how that is p
 
 ## Testing, breaking and adversarial actions
 
-**NVK:** 01:08:06
+NVK: 01:08:06
 
 And I'm pretty sure Burak is going to be
 
-**Dusty Dettmer:** 01:08:08
+Dusty Dettmer: 01:08:08
 
 the only person who tested.
 
-**NVK:** 01:08:12
+NVK: 01:08:12
 
 What an amazing event that was.
 The fact that nobody had tested.
@@ -1353,11 +1353,11 @@ But it also shows how many, like not a lot of adversarial work being done.
 Right.
 Like, I mean, practical for real, like there is no real adversaries right now trying to break it and trying to steal that money.
 
-**Vivek:** 01:08:30
+Vivek: 01:08:30
 
 That's why we have people like Gleb, Antoine, Tony, Paul, and Ben, Clara.
 
-**Tony Giorgio:** 01:08:39
+Tony Giorgio: 01:08:39
 
 I wouldn't say that there's nobody testing.
 I think that's very unfair.
@@ -1374,7 +1374,7 @@ Speaker 2: 01:09:16
 
 We got
 
-**Vivek:** 01:09:16
+Vivek: 01:09:16
 
 to talk about that for sure, how you probed all of Tbast's private channels
 
@@ -1382,11 +1382,11 @@ Speaker 2: 01:09:24
 
 because he
 
-**Dusty Dettmer:** 01:09:24
+Dusty Dettmer: 01:09:24
 
 was the biggest node.
 
-**Tony Giorgio:** 01:09:25
+Tony Giorgio: 01:09:25
 
 Yeah, well yeah, and there are attacks, but there's a lot of attacks that are just privacy level because security level is pretty good and has been tested and is being tested.
 But yeah, going back to that, if you go to hiddenlightningnetwork.com, there's a list of I think almost 10,000 different private channels that I probed out and found the original UTXO for it and which node it is that opened that private channel.
@@ -1405,32 +1405,32 @@ It's like the ethical, It's an ethical way to go about it.
 They're very well capable of doing it.
 You know, Eclair and Antoine, especially on the channel jamming research, but you know, it's one of those cases where like-
 
-**NVK:** 01:11:09
+NVK: 01:11:09
 
 Just do it guys.
 Just do it.
 It's the only way to get the devs to move their ass on it.
 
-**Vivek:** 01:11:15
+Vivek: 01:11:15
 
 Yeah.
 Burak, if you're listening, don't listen to him.
 
-**NVK:** 01:11:20
+NVK: 01:11:20
 
 Hey, Burak, I'll buy you a beer if you jam the entire `Lightning` Network.
 
-**Tony Giorgio:** 01:11:25
+Tony Giorgio: 01:11:25
 
 See, like probing is one thing, but like jamming, like there's actual damages that come across from that.
 So that's, I think, the ethical dilemma there.
 
-**Jeff Czyz:** 01:11:33
+Jeff Czyz: 01:11:33
 
 Yeah.
 And Tony, just to plug it, I think you had used `LDK` to implement your probing tool.
 
-**Tony Giorgio:** 01:11:41
+Tony Giorgio: 01:11:41
 
 Yeah, that was my first `LDK` project.
 I did the proof of concept in LND in one hour and then it took many months to do my first `LDK` project and do that jamming.
@@ -1446,7 +1446,7 @@ So I appreciate all the efforts there.
 
 ## Shadow channels
 
-**Vivek:** 01:12:48
+Vivek: 01:12:48
 
 So that was another fascinating thing to me.
 You know, just naturally being at Blockstream previously, I approached things more from the spec angle.
@@ -1455,7 +1455,7 @@ So Tony, can you touch on some of those shadow channel theses you had, basically
 And then when you try to probe, it automatically leeches onto like the public one.
 Like you knew all the works.
 
-**Tony Giorgio:** 01:13:27
+Tony Giorgio: 01:13:27
 
 Yeah, I don't know if there's there is an actual term for I've just been calling them shadow channels, the idea of having one smaller public channel and that's what people see on the graph and then you have bigger channels behind that and those are all private channels.
 And one of the things that would have helped is some of the SCID alias stuff, which has been fixed anyway, so that doesn't help that one as much anymore.
@@ -1467,33 +1467,33 @@ They can only really guess what side one million of that channel is on either si
 So I think, you know, it's been a long time since I've even thought about that concept.
 So you guys correct me if I'm wrong there, but the whole idea is about obfuscating how much funds you actually have on your `Lightning` Node, but then also going further and obfuscating how much funds you actually have on a particular channel too.
 
-**Jeff Czyz:** 01:14:51
+Jeff Czyz: 01:14:51
 
 Yeah, I guess there's probably publications for probing then.
 So if a node is relying on any sort of probing to determine if their payment could be made through that channel, if they're probing through, I guess the public channel that's smaller, they might have like a incorrect sort of assumption of what your balance may be, and thus may avoid your channel entirely, if you're a routing device.
 But If you're a recipient, then you would definitely need to at least, like I said, if you're a recipient, you might just use a routing hint for that.
 
-**Tony Giorgio:** 01:15:24
+Tony Giorgio: 01:15:24
 
 Yeah, you're exactly right.
 You just prove that you could route a payment, which before that would imply, okay, there's this much balance at least on this side.
 And that's still the case here, but by reason of subtraction, you can't do that anymore now, if you have shadow channels, you know, multiple private channels underneath the public channel.
 So that kind of, you can't do the same subtraction method you could before.
 
-**Jeff Czyz:** 01:15:48
+Jeff Czyz: 01:15:48
 
 Yeah, there's like this give and take between reliability and privacy.
 
 ## Splicing (cont.)
 
-**NVK:** 01:15:52
+NVK: 01:15:52
 
 Going back to splicing, we kind of only started exploring it.
 So we get the benefits of scalability, right?
 Because we're making the transaction small.
 What are the benefits and how do the privacy benefits work of splicing?
 
-**Dusty Dettmer:** 01:16:06
+Dusty Dettmer: 01:16:06
 
 So like the privacy benefits mostly all just go on chain, right?
 I think like when a couple other `Lightning` features come together, you're going to get this crazy level of privacy.
@@ -1515,11 +1515,11 @@ It could be any number of peers down the road and all of their splicing activity
 And this is all being done without a central coordinator, which I think is quite a big deal for the privacy on-chain.
 Anyone else want to add anything to that?
 
-**NVK:** 01:18:07
+NVK: 01:18:07
 
 Tony, is this part of the Mutiny's solution?
 
-**Tony Giorgio:** 01:18:12
+Tony Giorgio: 01:18:12
 
 Well, not immediately, but it is something that we even written about.
 `Lightning`privacy.com, me, Ben Carman, Paul Miller, a few other people, Evan Kaloudis, we worked on this.
@@ -1535,7 +1535,7 @@ You now just basically created a way to coin join and make fees at the same time
 That's huge.
 Let's go.
 
-**NVK:** 01:19:38
+NVK: 01:19:38
 
 So like here's the thing, right.
 So, for example, JoinMarket, unfortunately, like kind of like it has volume that kind of comes and goes.
@@ -1552,14 +1552,14 @@ Because you don't have a central coordinator who may or may not have extra visib
 So anyways, like this to me seems to be going in the right direction.
 And it feels like you'll be kind of like just integrated into things because why wouldn't it?
 
-**Tony Giorgio:** 01:20:43
+Tony Giorgio: 01:20:43
 
 And also like the last point on that, like the fees collected, they're not even necessarily the fees from the coinjoining recording services itself, because you're just being around collecting fees.
 You're just participating in zero downtime splices collaboratively with other people as well.
 So it's like both a privacy enhancer, it's almost like you're doing, you have two different business models almost, but you're still routing off of fees, so it doesn't provide perverse incentives like you kind of described with being the coordinator and collecting fees and controlling all of that.
 You're just doing one thing over here, collecting fees from it, but you're able to participate in another system as well.
 
-**Dusty Dettmer:** 01:21:25
+Dusty Dettmer: 01:21:25
 
 I think one of the big things that separates splicing from some existing coinjoin stuff is you have to pay money to do coinjoins.
 If you're doing splicing, you're literally saving money.
@@ -1568,18 +1568,18 @@ And I think what that means is it's going to encourage a lot of people that wann
 I could wait a week, put it in a queue, wait for someone else to start a splice, someone to make that market, and then just automatically join it.
 And I think if you look in the long run, this should create a lot more sustainable activity in the splice network compared to something like, I don't know, join market, you know?
 
-**NVK:** 01:22:02
+NVK: 01:22:02
 
 Yeah.
 
 ## Payjoins and keysend
 
-**NVK:** 01:22:02
+NVK: 01:22:02
 
 Could you, like expanding on this, like, could we do a pay join, for example, also with something like this?
 Because I don't know, like, I can't see why you wouldn't be able to just like do the pay join and get even one more privacy set.
 
-**Dusty Dettmer:** 01:22:18
+Dusty Dettmer: 01:22:18
 
 100%, yeah.
 You can put whatever you want in these things and pay joins are a great idea that I think it'd be.
@@ -1589,7 +1589,7 @@ There's nothing stopping it from happening other than just basically evangelizin
 And I probably give them on like a specs, they're all doing it the same way kind of thing.
 But that's probably the future.
 
-**NVK:** 01:22:45
+NVK: 01:22:45
 
 Yeah, cause like the problem with pay join is that like it requires like coordination and and Bitcoin one of the most beautiful things about like base layer Bitcoin is that it doesn't have to be interactive, right?
 Somebody posts a Bitcoin address an invoice, right?
@@ -1606,11 +1606,11 @@ You know, like, And you can add like quite a few more things there.
 It's like, why not?
 So like.
 
-**Vivek:** 01:23:35
+Vivek: 01:23:35
 
 Yeah, you're not crying about the interactivity about three rounds of going to two rounds when you're having like 20 hops.
 
-**NVK:** 01:23:42
+NVK: 01:23:42
 
 That's right.
 Right.
@@ -1625,29 +1625,29 @@ A third party there.
 And I don't know, like this, this feels perfect.
 I mean, I could finally buy a latte and nobody's going to know about it.
 
-**Vivek:** 01:24:30
+Vivek: 01:24:30
 
 I guess like the hacky way people are doing that today would probably be with like Key sends and AMP right Tony.
 That's probably the closest tool that people are using
 
-**Tony Giorgio:** 01:24:43
+Tony Giorgio: 01:24:43
 
 For what specifically
 
-**Vivek:** 01:24:44
+Vivek: 01:24:44
 
 buying coffees on `Lightning` like with privacy or whatever
 
-**Tony Giorgio:** 01:24:49
+Tony Giorgio: 01:24:49
 
 Yeah, I mean, I mean just a normal so normal invoice would would work there.
 I mean,
 
-**Dusty Dettmer:** 01:24:54
+Dusty Dettmer: 01:24:54
 
 yes
 
-**Tony Giorgio:** 01:24:55
+Tony Giorgio: 01:24:55
 
 Yeah, I don't think people key send for actual payments.
 I think that's mostly for donations as the selling point.
@@ -1657,24 +1657,24 @@ Not even `Nostr` uses a key send based approach.
 Yeah.
 I haven't thought I haven't thought about key send in a while, to be honest.
 
-**Dusty Dettmer:** 01:25:12
+Dusty Dettmer: 01:25:12
 
 Whenever I buy a coffee, I always pay ten dollars in on chain fees alongside
 
-**NVK:** 01:25:15
+NVK: 01:25:15
 
 of it.
 That's right.
 
-**Tony Giorgio:** 01:25:17
+Tony Giorgio: 01:25:17
 
 I just use cash.
 
-**NVK:** 01:25:18
+NVK: 01:25:18
 
 I don't know.
 
-**Vivek:** 01:25:20
+Vivek: 01:25:20
 
 Dusty, I need to give you some of our Sats cards.
 You know, they're perfect for this use case.
@@ -1682,7 +1682,7 @@ You put $10 on here.
 It's also off chain scalings.
 We're doing our best.
 
-**NVK:** 01:25:33
+NVK: 01:25:33
 
 You know, we do it mountain man style, right?
 Like here's private key, take private key.
@@ -1692,7 +1692,7 @@ Just fucking take it.
 
 ## Blockspace concerns
 
-**Vivek:** 01:25:52
+Vivek: 01:25:52
 
 So for like all of this privacy benefits, it sounds fantastic to me.
 How is the transition to it on a heuristic change approach?
@@ -1703,13 +1703,13 @@ Like we're in an odd place now.
 How do you guys feel about it?
 What's going on with the heuristics?
 
-**Dusty Dettmer:** 01:26:20
+Dusty Dettmer: 01:26:20
 
 Oh man, splicing is more important than ever with all the spam going on.
 Right.
 Like I think I think
 
-**NVK:** 01:26:25
+NVK: 01:26:25
 
 they're valid.
 Shitcoin transactions.
@@ -1717,11 +1717,11 @@ There is no such thing as spam in Bitcoin.
 I will repeat this 50 times.
 If it's a valid transaction is a valid transaction.
 
-**Dusty Dettmer:** 01:26:38
+Dusty Dettmer: 01:26:38
 
 I think it's a weird it's a weird match for for Spicing where it's like I think people are paying more attention to Spicing now because of all the legitimate on-chain activity.
 
-**NVK:** 01:26:49
+NVK: 01:26:49
 
 `Degens` complete retard activity.
 Sure.
@@ -1730,11 +1730,11 @@ Speaker 2: 01:26:53
 
 But
 
-**NVK:** 01:26:53
+NVK: 01:26:53
 
 it's still valid transactions.
 
-**Dusty Dettmer:** 01:26:57
+Dusty Dettmer: 01:26:57
 
 Oh man.
 But it's kind of funny that the bedfellow of getting splice and getting more attention is these `Degens`. Doing whatever they're doing on-chain, which the more I look into it, the more I'm like, what am I looking at?
@@ -1744,7 +1744,7 @@ And I think you just go back like six months ago, that was like, oh, theoretical
 Now it's like, oh shit, I should have been thinking about this a long time ago.
 And hopefully that kind of like wakes people up a little bit and gets them gets them geared towards the future.
 
-**NVK:** 01:27:25
+NVK: 01:27:25
 
 Yeah.
 I mean, like, you know, it's kind of weird that like people are.
@@ -1764,7 +1764,7 @@ And, you know, `Lightning` has to get its shit together.
 Right.
 Because `Lightning` was never in scale around a high fee market.
 
-**Dusty Dettmer:** 01:28:54
+Dusty Dettmer: 01:28:54
 
 I think this brings up a great point of if you look at there's some apps like the Muun Wallet, maybe people will try it.
 M U U and Muun Wallet, where they're they're trying to be this wallet where you can pay to an on-chain destination and also to a `Lightning` destination, right?
@@ -1783,7 +1783,7 @@ And Eclair, obviously, with the Phoenix wall is the first one that's going to be
 But eventually, I think all of them are gonna have to switch over to it.
 And this is gonna be a big UX improvement for new users.
 
-**NVK:** 01:30:10
+NVK: 01:30:10
 
 I still remember on `Breez` where I didn't read the fine print, I never read the fine print.
 I always just pressed the button.
@@ -1793,12 +1793,12 @@ So they had to do this whole like, you know, first, second, whatever transaction
 And you know, I didn't really bother reading to understand what the fuck was going on, but like essentially took like two days or three days for me to get my money in and also pay fees.
 And this is was in the low fee environment.
 
-**Vivek:** 01:30:44
+Vivek: 01:30:44
 
 Really?
 Yeah.
 
-**NVK:** 01:30:46
+NVK: 01:30:46
 
 So Roy explained to me on a DM, I kind of forgot.
 It's been like, what, a year now since that happened.
@@ -1811,7 +1811,7 @@ You know, with all the self-custody solutions or semi-self-custody solutions, yo
 Like you're kind of having to handle all the scenarios.
 Like I can see like splicing should probably help if you receive too much coin in your, because you can now break them apart, right?
 
-**Bastien Teinturier:** 01:31:33
+Bastien Teinturier: 01:31:33
 
 Yeah, it's just that whenever you were using splicing and you're going to receive too much, we're going to splice those in.
 And we can do that zero-conf because we know we're not going to double spend ourselves.
@@ -1824,7 +1824,7 @@ Speaker 2: 01:32:05
 
 They
 
-**Bastien Teinturier:** 01:32:05
+Bastien Teinturier: 01:32:05
 
 have to wait a bit when things are confirming but with splicing it makes it much easier to tell users how much fees they need to pay on chain for things to be confirmed soon.
 They will have better control on the on-chain fees of all their swaps, all their splice basically.
@@ -1833,31 +1833,31 @@ So I'm really excited about this.
 This is gonna be a very big upgrade for usability for mobile wallets and I think for notes as well.
 So I hope everyone will follow in and also implement splicing and start leveraging it.
 
-**NVK:** 01:32:41
+NVK: 01:32:41
 
 So when do I get my update?
 Like two weeks for splicing on my Phoenix wallet?
 
-**Bastien Teinturier:** 01:32:47
+Bastien Teinturier: 01:32:47
 
 If you want it on the testnet, I can give that to you in two weeks.
 If you want it on the phoenix, it's going to be definitely this year, hopefully before the end of the summer.
 
-**NVK:** 01:32:55
+NVK: 01:32:55
 
 Because my phoenix right now has a Bitcoin mempool is full and fees are high.
 See how phoenix is affected.
 
-**Bastien Teinturier:** 01:33:02
+Bastien Teinturier: 01:33:02
 
 You're going to pay a lot.
 
-**Vivek:** 01:33:04
+Vivek: 01:33:04
 
 It's still operational, though.
 Some other wallets had to completely shut off because, you know, they weren't so keen on full RBF and the DeGens definitely solved that debate.
 
-**NVK:** 01:33:19
+NVK: 01:33:19
 
 Yeah, I know.
 I don't know why we still have in this debate comes back.
@@ -1874,7 +1874,7 @@ So like what else should we should we bring up?
 
 ## Taproot channels and gossip
 
-**Vivek:** 01:34:04
+Vivek: 01:34:04
 
 I wanted you guys to finish up the heuristics because we are switching to taproot channels, right?
 I know LND and `LDK` have championed that.
@@ -1882,7 +1882,7 @@ How does that change with like P2WSH on-chain for unilateral versus P2TR or what
 And then, you know, because `Lightning` implementations are first other than the `Degens`, are the `Degens` actually giving more cover to `Lightning` users now?
 Like How did the heuristics adapt and change?
 
-**Tony Giorgio:** 01:34:35
+Tony Giorgio: 01:34:35
 
 I can chime in a little bit on some of that.
 And Jeff, you were talking about gossip earlier.
@@ -1899,7 +1899,7 @@ If you're opening `unannounced channels`, that's one thing.
 You can make it look like it's just a normal Taproot transaction.
 But when you get into Gossip and you publish your transaction, you publish your channel, you're automatically contributing, I am one of the owners of this multi-sig Taproot `Lightning` channel And you just broadcasted everyone that can listen to `Lightning` gossip, which you should assume is you know viewable by the whole world I'm really curious of like some of the Concepts there Jeff you if you know more on some of the gossip V2 stuff in regards to like Taproot channels, you'd be better to be able to explain it.
 
-**Jeff Czyz:** 01:36:24
+Jeff Czyz: 01:36:24
 
 Yeah, I don't know a ton, but yeah, you're correct in that you're essentially doxing yourself by saying, you know, this is my UTXO in the Gossip process.
 With the V2, which again is a long way off, and it might be a step between the 1.5. Instead, you're sort of saying, I have at least this much, or I think there's a range of sort of value you have tied into UTXO.
@@ -1908,47 +1908,47 @@ So if you're freely able to gossip without having to actually lock Bitcoin into 
 So we still want that property.
 And so with Gossip 2, there needs to be a way, it looks like zero knowledge proofs would be the idea to still say that you have Bitcoin locked up, but not saying exactly where it is and how much.
 
-**Bastien Teinturier:** 01:37:30
+Bastien Teinturier: 01:37:30
 
 Yeah.
 I'd say that the state of that proposal is basically zero knowledge proofs, magic maths, details left as an exercise to the reader, but we'll see.
 
-**Vivek:** 01:37:40
+Vivek: 01:37:40
 
 So I've kind of declined in my LN whatever, keeping up with it.
 Gossip V2, correct me if I'm wrong, is Alex Meyer's proposal that has incorporated mini-sketch or is that 1.5? Okay.
 
-**Bastien Teinturier:** 01:37:56
+Bastien Teinturier: 01:37:56
 
 Yeah, there are a lot of things about gossip that we need to fix because gossip is Basically the simplest form of gossip we could get away with that was easy to implement.
 Nobody is ever satisfied with it, but it's really hard to make it good, to do something that's really good.
 So there are a lot of things we'd like to change, but some of these things conflict.
 Some of these things don't have a really nice solution for, for example, the ZKP stuff would really need a production grade ZKP library that would be available for everyone.
 
-**NVK:** 01:38:25
+NVK: 01:38:25
 
 And
 
-**Bastien Teinturier:** 01:38:26
+Bastien Teinturier: 01:38:26
 
 people still don't know what the system is gonna be the one that people will still care about in two years.
 So it's really-
 
-**Jeff Czyz:** 01:38:33
+Jeff Czyz: 01:38:33
 
 Yeah, we did an exploration a while back about that.
 And we just, you know, like you said, there just wasn't anything that was, I guess, thoroughly sort of gone through the wringer and tested enough that you'll be, I guess, happy with choosing.
 So still a lot of work.
 
-**NVK:** 01:38:51
+NVK: 01:38:51
 
 Well, I mean, anytime you hear anything that requires a new implementation of a novel cryptographic primitive that is production grade, you add five years.
 
-**Dusty Dettmer:** 01:39:07
+Dusty Dettmer: 01:39:07
 
 It's a good rule.
 
-**Tony Giorgio:** 01:39:08
+Tony Giorgio: 01:39:08
 
 Yeah.
 Even Taproot channels themselves, they in order to broadcast them, you need a gossip chain.
@@ -1958,7 +1958,7 @@ You can't have public Taproot channels yet without a gossip chain.
 So that in and of itself, I don't know, could take five years.
 Who knows?
 
-**Bastien Teinturier:** 01:39:31
+Bastien Teinturier: 01:39:31
 
 Yeah, but one of the interesting things with Gossip is that it's not a critical system of lightning, it's something that we can evolve.
 If there's a flaw in the cryptography here, it's not the end of the world.
@@ -1968,39 +1968,39 @@ But we can take more dangerous approaches to play with cryptography for the goss
 And it's okay if we have to change it entirely afterwards because it's broken.
 So it's a good ground for experimentation, but we don't want to waste too much time either on experimenting with too many things that we know won't work in the long run.
 
-**NVK:** 01:40:16
+NVK: 01:40:16
 
 There you go.
 So see if you are a researcher who can make a production grade cryptographic library apply for a grant, you know, that's what OpenSats is for.
 
-**Vivek:** 01:40:27
+Vivek: 01:40:27
 
 Just please focus on MuSig2.
 Forget about all this ZKP stuff.
 
-**NVK:** 01:40:31
+NVK: 01:40:31
 
 I am done in MuSig2.
 I am a Frost evangelist now.
 A fully Frost sold Frost maximalist.
 
-**Dusty Dettmer:** 01:40:38
+Dusty Dettmer: 01:40:38
 
 Are you Roast sold though?
 
-**NVK:** 01:40:39
+NVK: 01:40:39
 
 I mean, the Roast can get interested.
 Yeah.
 No, but the Frost stuff is just amazing.
 We won't get into this on this episode, but.
 
-**Vivek:** 01:40:47
+Vivek: 01:40:47
 
 We'll have to call Jesse on, I guess.
 Jesse Posner.
 
-**NVK:** 01:40:50
+NVK: 01:40:50
 
 That's right.
 I have a strong feeling now that the Frost Fix is everything.
@@ -2009,7 +2009,7 @@ So is there, Is there anything that part of this conversation, like you really t
 
 ## Splicing (cont.)
 
-**Dusty Dettmer:** 01:41:09
+Dusty Dettmer: 01:41:09
 
 Yeah.
 The one thing I might just add is that I know that I think one thing about splicing is it has so many benefits.
@@ -2017,11 +2017,11 @@ You could probably talk for many, many hours about it.
 So I was gonna touch on that.
 Like one of the things I wanted to get to just briefly is-
 
-**NVK:** 01:41:21
+NVK: 01:41:21
 
 Please do.
 
-**Dusty Dettmer:** 01:41:22
+Dusty Dettmer: 01:41:22
 
 The big `Lightning` routing nodes, I think they're actually most excited about splicing.
 And a couple of reasons, like we were talking about how, if you as a consumer have an app that wants to pay for `Lightning` and on-chain, currently they store the funds on-chain, move it to `Lightning` on-demand, that's gonna reverse, you can start on `Lightning`.
@@ -2034,20 +2034,20 @@ So like there's this dead capital problem that is just eliminated by splicing, w
 
 ## Signing, UTXOs and pre-signed splices
 
-**NVK:** 01:42:13
+NVK: 01:42:13
 
 So like Could I keep some pre-made UTXOs code for this somehow?
 
-**Dusty Dettmer:** 01:42:24
+Dusty Dettmer: 01:42:24
 
 Oh, that's an interesting question.
 You would need your peer to be on it too, right?
 
-**Jeff Czyz:** 01:42:28
+Jeff Czyz: 01:42:28
 
 But-
 
-**NVK:** 01:42:29
+NVK: 01:42:29
 
 It's like, Let's say we're both like big liquidity providers, right.
 Or whatever.
@@ -2061,7 +2061,7 @@ So they're kind of like ready to go to leave the HSM and go somewhere else.
 Is there anything interesting that can be done here?
 Yeah, there's a couple of
 
-**Dusty Dettmer:** 01:43:08
+Dusty Dettmer: 01:43:08
 
 things like you could pre-sign, people talk about pre-signing splices, which is a little wild.
 And in theory, you can pre-sign a splice to close when that spec exists.
@@ -2073,11 +2073,11 @@ I want like five, it's a lot of money, 10 of those in very different locations.
 And they would auto sign for certain things that I pre-approve and then not for other things in a multi-sig quorum.
 But you can, you can kind of do both.
 
-**NVK:** 01:43:45
+NVK: 01:43:45
 
 I mean, technically you could do that with CKBunker right now.
 
-**Dusty Dettmer:** 01:43:49
+Dusty Dettmer: 01:43:49
 
 I'm pre signing stuff out of a channel.
 So that Tbast was talking about, God, I think like two years ago.
@@ -2086,7 +2086,7 @@ And then they had to force close those channels, which was expensive.
 And if they had a had done a pre-signed splice that they just held on to at a lower fee, that would allow them to get, like, you know, the bulk of the money back at a lower fee.
 And maybe that could solve the use case you're talking about, NVK.
 
-**NVK:** 01:44:21
+NVK: 01:44:21
 
 Oh, that's cool.
 Because it is a challenge, right?
@@ -2100,19 +2100,19 @@ Like safe enough.
 But the `Lightning` solutions don't take advantage of that in any sort of sane way.
 So I don't see any point.
 
-**Dusty Dettmer:** 01:45:22
+Dusty Dettmer: 01:45:22
 
 I think that the big challenge is the transaction you publish might end up being justice.
 If it's stale, you're going to get screwed, lose all your money.
 So like the, you end up needing to have an awareness of the whole blockchain and network to use a transaction safely Which you can do too, right?
 It's just it gets it gets complicated.
 
-**Vivek:** 01:45:38
+Vivek: 01:45:38
 
 Well, yeah, exactly I was just about to touch on like the VLS project and this is like the ambitions that they have essentially right But when you are adding all this complexity to that external remote signer, it has like all these other checks about like velocity, whitelisting, blacklisting, other specific peer instances, maybe like time, maybe thresholds.
 So it does quickly become, at what point are you just running another like light client or full node?
 
-**NVK:** 01:46:11
+NVK: 01:46:11
 
 Exactly.
 It's just like, I'm still failing to see a sweet spot for the, let's call it like the, the warm, cold available liquidity, right.
@@ -2123,17 +2123,17 @@ It's not like actually hot, hot, But it's like kind of like ready to go in a sli
 But anyways, that's a part that I'm curious.
 I just don't don't know yet where to go.
 
-**Vivek:** 01:46:46
+Vivek: 01:46:46
 
 It'd be cool to see CKBunker added to maybe even one of the six base points or if you guys were to hack it together.
 I've been trying to nerd snipe some people for
 
-**Tony Giorgio:** 01:46:56
+Tony Giorgio: 01:46:56
 
 a while.
 Yeah, I think it just goes back to just like if you're blind signing anyways, then you're at almost the same trust model.
 
-**NVK:** 01:47:03
+NVK: 01:47:03
 
 That's right.
 
@@ -2141,7 +2141,7 @@ Speaker 2: 01:47:03
 
 So
 
-**Tony Giorgio:** 01:47:04
+Tony Giorgio: 01:47:04
 
 it's like you have to do all the policy stuff.
 And maybe you can still do that.
@@ -2149,15 +2149,15 @@ You know, you can have, I don't know, some secure channel that that it talks to 
 
 ## FROST
 
-**NVK:** 01:47:15
+NVK: 01:47:15
 
 I mean,
 
-**Tony Giorgio:** 01:47:15
+Tony Giorgio: 01:47:15
 
 it's hard
 
-**NVK:** 01:47:16
+NVK: 01:47:16
 
 once we have frost that it changes a bit.
 Right.
@@ -2167,18 +2167,18 @@ And those signatures can actually move probably through the `Lightning` Message 
 I don't know.
 It's like this is all like sort of like moon brain for later.
 
-**Jeff Czyz:** 01:47:38
+Jeff Czyz: 01:47:38
 
 Yes.
 Let's
 
-**NVK:** 01:47:41
+NVK: 01:47:41
 
 add Frost to splicing.
 Let's go.
 That's right.
 
-**Tony Giorgio:** 01:47:45
+Tony Giorgio: 01:47:45
 
 Let's go.
 Let's do `Lightning` communication.
@@ -2188,18 +2188,18 @@ Speaker 2: 01:47:48
 
 Let's switch.
 
-**Vivek:** 01:47:48
+Vivek: 01:47:48
 
 Frost splices on `Nostr` in two weeks.
 You heard it here first.
 That's right.
 
-**NVK:** 01:47:52
+NVK: 01:47:52
 
 That's right.
 Okay, guys, any other things that should be part of this conversation that we missed?
 
-**Jeff Czyz:** 01:47:59
+Jeff Czyz: 01:47:59
 
 Well, I don't know if we touched on this, but there is that swap-in-potentiam proposal.
 Oh, yeah.
@@ -2209,7 +2209,7 @@ I read it a little while back.
 But I think it's a way to essentially go from on-chain to off-chain and serve that, I guess, like not quite hot manner, if you will.
 Is anyone else here familiar with that proposal?
 
-**Vivek:** 01:48:26
+Vivek: 01:48:26
 
 I've talked to Jesse Posner, I think Nadav Cohen, and maybe Matt and Steve about it.
 That's about it.
@@ -2218,12 +2218,12 @@ Rijndael explains everything so well to me.
 
 ## `eCash`
 
-**NVK:** 01:48:41
+NVK: 01:48:41
 
 You know, like when the Galaxy brain gets a little too far, I go, I go, I slide into Rijndael's DMs. So, okay, so I think there's one more topic that I'd love to address is the e-cash stuff on top of `Lightning` that like, to me, it fixes pretty much most of the scalability problems and it makes the custodials to be 10 times better, even though there's two custodials.
 You know, how is this affecting like your thoughts around like `Lightning`, if it is at all?
 
-**Tony Giorgio:** 01:49:12
+Tony Giorgio: 01:49:12
 
 It's a really interesting thing because as someone that's been trying to push as much education and application side `Lightning` privacy for a long time, FediMints just kind of come in and almost solve `Lightning` privacy from a lot of aspects of like, the custodian doesn't know anything about the user or where they're spending or the original source of funds in any way.
 So you give up the custodial aspects of it, at least temporarily.
@@ -2238,7 +2238,7 @@ And then being able to send that out at any time, at least waiting like a day or
 They don't even know where the source of funds came from, first of all, but then they can't correlate this incoming payment is now correlated to this outgoing payments on `Lightning`.
 It's just a huge step up in privacy.
 
-**NVK:** 01:50:41
+NVK: 01:50:41
 
 You know, one of the reasons why I bring this up is not because it's just the next new shiny thing.
 It's, It's because like, at least to me, like, I really believe that between `Nostr` and `eCash` is like where most of the `Lightning` demand is going to come in the next couple of years.
@@ -2249,7 +2249,7 @@ So like they're Fedi Mint pools for mining.
 It's going to be, you know, this kind of like very specific thing that requires the e-cash solution in a way that they're developing.
 And it's gonna bring like huge demand for `Lightning`.
 
-**Jeff Czyz:** 01:51:31
+Jeff Czyz: 01:51:31
 
 It also really touches on the scalability aspect of Bitcoin.
 And like you mentioned earlier, not everyone will have a UTXO.
@@ -2259,7 +2259,7 @@ Like if everyone's not going to have a UTXO, well, they're going to have to earn
 And I really think that's a pretty elegant solution.
 Hopefully you see this.
 
-**NVK:** 01:52:04
+NVK: 01:52:04
 
 I mean, like I was, you know, I always found `eCash` to be sort of like, kind of like idiotic at like how it was sort of like, like presented and available back in the day, because you never had like an anchor of truth in it.
 So, you know, it was kind of like, you know, might as well just use like Fiat.
@@ -2273,11 +2273,11 @@ All right, guys, you know, after my e-cash rant there, I think we've reached a g
 
 ## Final thoughts
 
-**NVK:** 01:53:18
+NVK: 01:53:18
 
 So any final thoughts, Jeff?
 
-**Jeff Czyz:** 01:53:21
+Jeff Czyz: 01:53:21
 
 Yeah.
 So I think this, a common theme I guess has been on-chain versus off-chain.
@@ -2287,22 +2287,22 @@ And there's things we need to do in `Lightning` to improve that, but we're worki
 I think We didn't really touch on much, but like, oh yes, we did talk about like building on `Lightning` and there's a talk about like coin joining of `Lightning`, but we didn't talk about onion messages and how that may be sort of a building block in some of these protocols in the future.
 So it'd be pretty interesting to see where that goes.
 
-**NVK:** 01:54:02
+NVK: 01:54:02
 
 Tony.
 
-**Tony Giorgio:** 01:54:02
+Tony Giorgio: 01:54:02
 
 Yeah, yeah, thanks for the conversation guys.
 Yeah, I feel like everything has been said already.
 So I don't know if I have final thoughts, but I do think, you know, privacy on `Lightning` is improving, it's getting better.
 And I'm really excited about some of the scalable solutions that could very well end up being a very privacy enhancing feature as well.
 
-**NVK:** 01:54:22
+NVK: 01:54:22
 
 Tbast.
 
-**Bastien Teinturier:** 01:54:23
+Bastien Teinturier: 01:54:23
 
 Yeah, thanks everyone.
 That was fun.
@@ -2314,12 +2314,12 @@ We've discovered a lot of things, improved a lot of things, and truly there's no
 Basically, we know how to do everything and do everything correctly.
 So it's coming and it's gonna be very useful and it's gonna be a very nice building block for everyone.
 
-**NVK:** 01:54:54
+NVK: 01:54:54
 
 Thanks man.
 Dusty.
 
-**Dusty Dettmer:** 01:54:55
+Dusty Dettmer: 01:54:55
 
 Yeah, I'm just excited for the future.
 I think that splicing is here, `Lightning` is getting better and better And there's endless challenges, but we're tackling them all.
@@ -2327,63 +2327,63 @@ I put together a little site if you were looking for more information on splicin
 I got `Lightning`splice.com and the goal is to put all the resources that help try to explain things to people there in one spot.
 So check that out `Lightning`splice.com.
 
-**NVK:** 01:55:17
+NVK: 01:55:17
 
 Very cool.
 By the way, guys, if anybody has any resources, links or whatever, feel free to just put on the on the chat and we're going to add to the show notes.
 Vivek, any final thoughts?
 
-**Vivek:** 01:55:29
+Vivek: 01:55:29
 
 Yeah, I just want to say thank you to all of our guests and everyone that's implementing splices.
 I think full credit to Dusty on the CLN side.
 I think Lisa as well on the `LDK` side, I believe that's Jeff and maybe someone else.
 Jeff, you can chime in on who.
 
-**Jeff Czyz:** 01:55:46
+Jeff Czyz: 01:55:46
 
 Yeah.
 So Dodkin's doing some of the preliminary work, also dual funding.
 And then Jervis and myself will be our sort of working on splicing, but early stages.
 
-**Vivek:** 01:55:56
+Vivek: 01:55:56
 
 Awesome.
 
-**Dusty Dettmer:** 01:55:56
+Dusty Dettmer: 01:55:56
 
 So you're the splicing guy over there.
 Awesome.
 Yeah.
 
-**Jeff Czyz:** 01:55:59
+Jeff Czyz: 01:55:59
 
 Yeah.
 So next next quarter, Q3 is the goal for sometime Q3 to have it done.
 Let's go.
 
-**NVK:** 01:56:04
+NVK: 01:56:04
 
 Look at that.
 
-**Vivek:** 01:56:05
+Vivek: 01:56:05
 
 And then thank you to Tbast as well, who's tested the early interop for these sort of things with like V2 opens and whatnot.
 Really grateful for that.
 And I believe on the LND side that someone named Eugene correct me if I'm mistaken but yeah I want to say thank you because there's just too much crap now like we talked about APO, LN symmetry with splices and with MuSig2 and then incorporating that into payjoins and then how does that tie in with like other routing pathfinding stuff for mobile with async payments and trampoline, you know?
 So there's just-
 
-**NVK:** 01:56:45
+NVK: 01:56:45
 
 There's a lot of words there, man.
 
-**Vivek:** 01:56:47
+Vivek: 01:56:47
 
 Yeah, exactly.
 Buzzwords, buzzwords on buzzwords in an ever changing landscape.
 So I don't know how you guys do it, but really appreciate your efforts, whether on the app dev side or protocol side.
 
-**NVK:** 01:57:00
+NVK: 01:57:00
 
 Listen, guys, thank you so much for coming and giving two hours of your time.
 I find that these conversations are super important and we need to get the information from the people who actually write the code out to the world.
@@ -2396,11 +2396,11 @@ It's always an education for me.
 I am not as versed on the `Lightning` things.
 So, thank you.
 
-**Vivek:** 01:57:37
+Vivek: 01:57:37
 
 Hey, when `Lightning` at a coin kite store?
 
-**NVK:** 01:57:41
+NVK: 01:57:41
 
 So in a good fashion, like a good enterprise, we are seeking a fully managed solution because there is real customers trying to give us real money and I do not wanna deal with that.
 So we, and it's only inbound liquidity which is a nightmare to manage too.
@@ -2415,16 +2415,16 @@ So yeah, I do deserve to be called out.
 I mean, our store still uses legacy addresses.
 But anyway.
 
-**Vivek:** 01:58:39
+Vivek: 01:58:39
 
 That's more of like a pitch for people to win our business.
 So you can reach out to me or NVK to convince us to use `Lightning`.
 
-**Dusty Dettmer:** 01:58:47
+Dusty Dettmer: 01:58:47
 
 You should just get the SegWit address and just go straight to Taproot addresses.
 
-**NVK:** 01:58:50
+NVK: 01:58:50
 
 Yeah, I mean, we do legacy addresses.
 We have never changed the store.
