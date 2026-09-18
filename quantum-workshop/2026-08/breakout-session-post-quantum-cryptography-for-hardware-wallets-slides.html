@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PQ Migration Breakout — Slides</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #12121a;
+    --bg3: #1a1a26;
+    --text: #e8e8ef;
+    --text2: #a0a0b4;
+    --text3: #6a6a80;
+    --accent: #6366f1;
+    --accent2: #818cf8;
+    --green: #34d399;
+    --red: #f87171;
+    --yellow: #fbbf24;
+    --blue: #60a5fa;
+    --stroke: #2a2a3a;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ── Slide deck ── */
+  .deck { width: 100vw; height: 100vh; position: relative; }
+
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 56px 72px;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .slide.active { display: flex; }
+
+  /* ── Speaker notes (toggle with N key) ── */
+  .notes-panel {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    max-height: 40vh;
+    overflow-y: auto;
+    background: rgba(18,18,26,0.97);
+    border-top: 2px solid var(--accent);
+    padding: 20px 72px 24px;
+    z-index: 300;
+  }
+  .notes-panel.visible { display: block; }
+  .notes-panel h4 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 10px;
+  }
+  .notes-panel li {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.6;
+    margin-bottom: 4px;
+    padding-left: 4px;
+  }
+  .notes-panel li strong { color: var(--text); }
+
+  /* ── Chrome ── */
+  .slide-number {
+    position: fixed;
+    bottom: 16px;
+    right: 24px;
+    font-size: 13px;
+    color: var(--text3);
+    font-family: var(--mono);
+    z-index: 100;
+  }
+  .nav-hint {
+    position: fixed;
+    bottom: 16px;
+    left: 24px;
+    font-size: 12px;
+    color: var(--text3);
+    z-index: 100;
+  }
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    z-index: 200;
+  }
+
+  /* ── Typography ── */
+  h1 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 16px; }
+  h2 { font-size: 34px; font-weight: 700; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 14px; }
+  h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  p, li { font-size: 17px; line-height: 1.65; color: var(--text2); }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 12px;
+  }
+
+  .green { color: var(--green); }
+  .red { color: var(--red); }
+  .yellow { color: var(--yellow); }
+  .blue { color: var(--blue); }
+  .accent { color: var(--accent2); }
+  .bold { font-weight: 600; }
+  code { font-family: var(--mono); font-size: 0.88em; background: var(--bg3); padding: 2px 6px; border-radius: 4px; }
+
+  /* ── Layout ── */
+  .cols { display: flex; gap: 32px; flex: 1; }
+  .col { flex: 1; display: flex; flex-direction: column; }
+  .mt-auto { margin-top: auto; }
+
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--stroke);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .card h3 { margin-bottom: 6px; }
+
+  ul.points { list-style: none; padding: 0; }
+  ul.points > li {
+    padding: 10px 0 10px 32px;
+    position: relative;
+    font-size: 18px;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(42,42,58,0.4);
+  }
+  ul.points > li:last-child { border-bottom: none; }
+  ul.points > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 19px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent2);
+  }
+  ul.points > li.green-dot::before { background: var(--green); }
+  ul.points > li.red-dot::before { background: var(--red); }
+  ul.points > li.yellow-dot::before { background: var(--yellow); }
+
+  ul.sub { list-style: none; padding: 0; margin-top: 6px; }
+  ul.sub li {
+    font-size: 14px;
+    color: var(--text3);
+    padding: 2px 0 2px 16px;
+    position: relative;
+  }
+  ul.sub li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--text3);
+  }
+
+  /* ── Tables ── */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; padding: 8px 12px; font-weight: 600; color: var(--text3); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; border-bottom: 1px solid var(--stroke); }
+  td { padding: 8px 12px; border-bottom: 1px solid rgba(42,42,58,0.5); color: var(--text2); }
+  tr:last-child td { border-bottom: none; }
+  td.r { text-align: right; font-family: var(--mono); font-size: 13px; }
+
+  /* ── Bars ── */
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+  .bar-label { width: 130px; font-size: 12px; text-align: right; color: var(--text2); flex-shrink: 0; }
+  .bar-track { flex: 1; height: 22px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 7px; font-size: 11px; font-family: var(--mono); color: var(--bg); font-weight: 600; }
+  .bar-val { width: 80px; font-size: 12px; font-family: var(--mono); color: var(--text3); flex-shrink: 0; }
+
+  .signature { font-style: italic; color: var(--text3); margin-top: auto; padding-top: 16px; font-size: 15px; }
+  svg text { font-family: var(--sans); }
+
+  .notes { display: none; }
+
+  /* Question slides */
+  .question-slide {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .question-slide .question-mark {
+    font-size: 120px;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: -40px;
+  }
+  .question-slide h2 {
+    font-size: 38px;
+    max-width: 750px;
+    line-height: 1.3;
+  }
+  .question-slide .context {
+    font-size: 18px;
+    color: var(--text3);
+    max-width: 600px;
+    margin-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+<div class="slide-number" id="slideNum"></div>
+<div class="nav-hint">← → navigate · <strong>N</strong> toggle speaker notes</div>
+
+<div class="deck" id="deck">
+
+<!-- ============================================================ -->
+<!-- SLIDE 1: INTRO — FRAMING THE DEBATE -->
+<!-- ============================================================ -->
+<div class="slide" id="s0">
+  <div class="section-label">Breakout Session</div>
+  <h1>Post-Quantum Cryptography<br>for Hardware Wallets</h1>
+
+  <h3 style="margin-top:36px;margin-bottom:16px;color:var(--accent2);">Questions we need to address as an ecosystem</h3>
+  <ul class="points" style="max-width:750px;">
+    <li><strong style="color:var(--text);">Which algorithms?</strong>
+      <ul class="sub"><li>What's the impact for HWW, and Ledger in particular?</li></ul>
+    </li>
+    <li><strong style="color:var(--text);">What does it mean for blockchains?</strong>
+      <ul class="sub"><li>In particular block size, fees, throughput</li></ul>
+    </li>
+    <li class="red-dot"><strong style="color:var(--text);">What's the timeline? And what do we do for non-migrated coins?</strong>
+      <ul class="sub"><li>Coins sitting on exposed public keys today</li></ul>
+    </li>
+  </ul>
+
+  <p class="signature">Charles Guillemet / CTO Ledger / @P3b7_ / 2026</p>
+</div>
+<div class="notes" data-for="s0">
+  <li><strong>Open with:</strong> "The debate around PQ is often: when will we have a CRQC? I think it's the wrong framing. We use cryptography to create trust. When that trust erodes, it's time to upgrade. And the trust is eroding now."</li>
+  <li>"As an ecosystem, we need to address three questions together." Read the three on screen.</li>
+  <li>"This is a conversation, not a lecture. Jump in at any time. Let's start with algorithms."</li>
+  <li>Spend ~3 minutes. Set the tone, then move on.</li>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 2: QUESTION — HWW SECURITY PROPERTIES -->
+<!-- ============================================================ -->
+<div class="slide question-slide" id="s1">
+  <div class="question-mark">?</div>
+  <h2>Main security properties<br>of a hardware wallet?</h2>
+</div>
+<div class="notes" data-for="s1">
+  <li>"Let's start with algorithms. Signature algorithms are implemented inside Ledger devices. Before we talk about which PQ algorithm, let's talk about where they run."</li>
+  <li><strong>Ask the group:</strong> "Do you know what the main security properties of a hardware wallet are?"</li>
+  <li>Let participants answer. They'll likely mention key storage, maybe signing. Wait for answers, acknowledge them.</li>
+  <li>Then advance to the next slide to complete and confirm.</li>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 3: ANSWER — HWW SECURITY PROPERTIES -->
+<!-- ============================================================ -->
+<div class="slide" id="s2">
+  <div class="section-label">Algorithms</div>
+  <h2>Security Properties of a Hardware Wallet</h2>
+
+  <div style="display:flex;gap:24px;align-items:flex-start;">
+    <ul class="points" style="flex:0 0 340px;margin:0;">
+      <li class="green-dot"><strong style="color:var(--text);">Seed & key confidentiality</strong>
+        <ul class="sub">
+          <li>Seed is generated inside the SE with a high quality randomness source</li>
+          <li>Cryptography is implemented inside the SE so that keys don't have to leave the Secure Element</li>
+        </ul>
+      </li>
+      <li class="green-dot"><strong style="color:var(--text);">WYSIWYS</strong>
+        <ul class="sub">
+          <li>Strong link between the Display and what's happening inside the SE</li>
+          <li>Transaction parsing – clear signing</li>
+        </ul>
+      </li>
+      <li class="green-dot"><strong style="color:var(--text);">Attestation</strong>
+        <ul class="sub">
+          <li>The device is able to prove genuineness</li>
+          <li>It's possible to mount a Secure Channel with Ledger's HSM</li>
+        </ul>
+      </li>
+      <li class="green-dot"><strong style="color:var(--text);">Firmware protection & physical resistance</strong>
+        <ul class="sub">
+          <li>SCA, fault injection, glitching resistance</li>
+          <li>Code execution integrity</li>
+        </ul>
+      </li>
+    </ul>
+    <div style="flex:1;min-width:0;">
+      <svg viewBox="0 0 900 400" style="width:100%;max-width:900px;">
+        <defs>
+          <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/>
+          </marker>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a2a3a"/>
+          </marker>
+          <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399"/>
+          </marker>
+        </defs>
+        <!-- SE Box -->
+        <rect x="30" y="10" width="420" height="370" rx="14" fill="#12121a" stroke="#34d399" stroke-width="2"/>
+        <text x="240" y="36" fill="#34d399" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="2">SECURE ELEMENT (ST33)</text>
+        <text x="240" y="52" fill="#065f46" text-anchor="middle" font-size="11">CC EAL5+/EAL6+ Certified</text>
+
+        <!-- Layer 1 (top): Isolated Apps -->
+        <rect x="55" y="65" width="370" height="38" rx="6" fill="rgba(96,165,250,0.08)" stroke="#60a5fa" stroke-width="1.5"/>
+        <text x="130" y="89" fill="#60a5fa" text-anchor="middle" font-size="11" font-weight="600">Bitcoin App</text>
+        <line x1="190" y1="72" x2="190" y2="96" stroke="#60a5fa" stroke-width="0.5" stroke-dasharray="3"/>
+        <text x="255" y="89" fill="#60a5fa" text-anchor="middle" font-size="11" font-weight="600">Ethereum App</text>
+        <line x1="320" y1="72" x2="320" y2="96" stroke="#60a5fa" stroke-width="0.5" stroke-dasharray="3"/>
+        <text x="380" y="89" fill="#60a5fa" text-anchor="middle" font-size="11">...</text>
+
+        <!-- MPU Isolation -->
+        <rect x="55" y="108" width="370" height="18" rx="3" fill="rgba(251,191,36,0.1)" stroke="#fbbf24" stroke-width="1"/>
+        <text x="240" y="121" fill="#fbbf24" text-anchor="middle" font-size="9" font-weight="600">MPU ISOLATION</text>
+
+        <!-- Layer 2: Ledger OS -->
+        <rect x="55" y="131" width="370" height="60" rx="6" fill="rgba(99,102,241,0.1)" stroke="#6366f1" stroke-width="1.5"/>
+        <text x="240" y="157" fill="#818cf8" text-anchor="middle" font-size="14" font-weight="700">Ledger OS</text>
+        <text x="240" y="175" fill="#6a6a80" text-anchor="middle" font-size="10">Crypto API (cx_*), Key Storage, Drivers, Secure Channel</text>
+
+        <!-- Layer 3: Hardware -->
+        <text x="240" y="205" fill="#fbbf24" text-anchor="middle" font-size="11" font-weight="600" letter-spacing="1">HARDWARE</text>
+
+        <rect x="55" y="215" width="90" height="55" rx="6" fill="#1a1a26" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="100" y="238" fill="#fbbf24" text-anchor="middle" font-size="11" font-weight="600">RAM</text>
+        <text x="100" y="254" fill="#6a6a80" text-anchor="middle" font-size="9">General purpose</text>
+
+        <rect x="155" y="215" width="90" height="55" rx="6" fill="#1a1a26" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="200" y="238" fill="#fbbf24" text-anchor="middle" font-size="11" font-weight="600">Flash</text>
+        <text x="200" y="254" fill="#6a6a80" text-anchor="middle" font-size="9">OS + Apps + Data</text>
+
+        <rect x="255" y="215" width="90" height="55" rx="6" fill="#1a1a26" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="300" y="238" fill="#fbbf24" text-anchor="middle" font-size="11" font-weight="600">Crypto RAM</text>
+        <text x="300" y="254" fill="#6a6a80" text-anchor="middle" font-size="9">Protected memory</text>
+
+        <rect x="55" y="280" width="290" height="45" rx="6" fill="#1a1a26" stroke="#fbbf24" stroke-width="1"/>
+        <text x="200" y="300" fill="#fbbf24" text-anchor="middle" font-size="11" font-weight="600">HW Accelerators</text>
+        <text x="200" y="316" fill="#6a6a80" text-anchor="middle" font-size="10">AES  |  DES  |  RSA  |  ECC</text>
+
+        <!-- TRNG -->
+        <rect x="355" y="215" width="70" height="110" rx="6" fill="#1a1a26" stroke="#fbbf24" stroke-width="1"/>
+        <text x="390" y="265" fill="#fbbf24" text-anchor="middle" font-size="11" font-weight="600">TRNG</text>
+        <text x="390" y="280" fill="#6a6a80" text-anchor="middle" font-size="9">HW</text>
+        <text x="390" y="292" fill="#6a6a80" text-anchor="middle" font-size="9">Random</text>
+
+        <!-- MPU -->
+        <rect x="55" y="338" width="370" height="28" rx="4" fill="rgba(251,191,36,0.06)" stroke="#fbbf24" stroke-width="0.5"/>
+        <text x="240" y="357" fill="#fbbf24" text-anchor="middle" font-size="10" font-weight="500">Memory Protection Unit (MPU)</text>
+
+        <!-- Secure Screen (connected to SE) -->
+        <rect x="510" y="10" width="180" height="80" rx="10" fill="#12121a" stroke="#34d399" stroke-width="2"/>
+        <text x="600" y="42" fill="#34d399" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="1">SECURE SCREEN</text>
+        <text x="600" y="58" fill="#065f46" text-anchor="middle" font-size="9">Trusted Display</text>
+        <text x="600" y="72" fill="#065f46" text-anchor="middle" font-size="9">Driven by SE</text>
+        <line x1="450" y1="50" x2="510" y2="50" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+        <!-- Buttons (connected to SE) -->
+        <rect x="710" y="10" width="170" height="80" rx="10" fill="#12121a" stroke="#34d399" stroke-width="2"/>
+        <text x="795" y="42" fill="#34d399" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="1">BUTTONS</text>
+        <text x="795" y="58" fill="#065f46" text-anchor="middle" font-size="9">User Consent</text>
+        <text x="795" y="72" fill="#065f46" text-anchor="middle" font-size="9">Direct to SE</text>
+        <line x1="450" y1="70" x2="490" y2="70" stroke="#34d399" stroke-width="1.5"/>
+        <line x1="490" y1="70" x2="490" y2="50" stroke="#34d399" stroke-width="1.5"/>
+        <line x1="490" y1="50" x2="490" y2="50" stroke="#34d399" stroke-width="1.5"/>
+        <line x1="880" y1="50" x2="880" y2="50" stroke="#34d399" stroke-width="1.5"/>
+        <line x1="710" y1="50" x2="695" y2="50" stroke="#34d399" stroke-width="2" marker-start="url(#arrow-green)"/>
+
+        <!-- MCU Box -->
+        <rect x="510" y="120" width="370" height="110" rx="14" fill="#12121a" stroke="#f87171" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="695" y="146" fill="#f87171" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="2">MCU (STM32)</text>
+        <text x="695" y="162" fill="#7f1d1d" text-anchor="middle" font-size="11">UNTRUSTED I/O Controller</text>
+
+        <rect x="535" y="175" width="150" height="35" rx="6" fill="#1a1a26" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="610" y="197" fill="#a0a0b4" text-anchor="middle" font-size="12">USB / BLE</text>
+
+        <rect x="705" y="175" width="150" height="35" rx="6" fill="#1a1a26" stroke="#2a2a3a" stroke-width="1"/>
+        <text x="780" y="197" fill="#a0a0b4" text-anchor="middle" font-size="12">Power Mgmt</text>
+
+        <!-- Connection SE <-> MCU -->
+        <line x1="450" y1="175" x2="510" y2="175" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow-accent)"/>
+
+        <!-- Host -->
+        <rect x="510" y="270" width="370" height="65" rx="14" fill="rgba(248,113,113,0.04)" stroke="#f87171" stroke-width="1" stroke-dasharray="4"/>
+        <text x="695" y="298" fill="#f87171" text-anchor="middle" font-size="13" font-weight="600">HOST COMPUTER</text>
+        <text x="695" y="318" fill="#6a6a80" text-anchor="middle" font-size="11">Untrusted. Everything from here is adversarial input.</text>
+
+        <line x1="695" y1="230" x2="695" y2="270" stroke="#2a2a3a" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#arrow)"/>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="notes" data-for="s2">
+  <li>Complete with what participants missed. Make sure these land:</li>
+  <li><strong>Key confidentiality:</strong> keys never leave the SE. Not encrypted, not wrapped. Confined.</li>
+  <li><strong>WYSIWYS:</strong> the SE drives the trusted display. A compromised host can't alter what you see.</li>
+  <li><strong>Genuineness:</strong> cryptographic attestation. Not a sticker. A signature.</li>
+  <li><strong>Physical resistance:</strong> SCA, FI, glitching. Secure channel for firmware.</li>
+  <li>"All of these rely on cryptography running inside the Secure Element. PQ algorithms must run in the same place, under the same constraints."</li>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 4: CONSTRAINTS & PQ IMPLICATIONS -->
+<!-- ============================================================ -->
+<div class="slide" id="s3">
+  <div class="section-label">Constraints</div>
+  <h2>Hardware Constraints & PQ Implications</h2>
+
+  <div class="cols">
+    <div class="col">
+      <table style="margin-bottom:16px;">
+        <thead>
+          <tr><th>SE Chip</th><th style="text-align:right">RAM</th><th style="text-align:right">Flash</th><th style="text-align:right">CPU</th><th>PQC Accel.</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="bold">ST31H320</td><td class="r">10 KB</td><td class="r">320 KB</td><td class="r">28 MHz</td><td><span class="red">None</span></td></tr>
+          <tr><td class="bold">ST33J2M0</td><td class="r">50 KB</td><td class="r">2 MB</td><td class="r">60 MHz</td><td><span class="red">None</span></td></tr>
+          <tr><td class="bold">ST33K1M5</td><td class="r">64 KB</td><td class="r">1.5 MB</td><td class="r">70 MHz</td><td><span class="red">None</span></td></tr>
+          <tr><td class="bold accent">Next-gen</td><td class="r">150 KB</td><td class="r">4.5 MB</td><td class="r">200 MHz</td><td><span class="green bold">ML-DSA, Keccak</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size:16px;margin-bottom:8px;">Signing performance (vs ECDSA = 1x)</h3>
+      <div>
+        <div class="bar-row">
+          <div class="bar-label">ECDSA (HW)</div>
+          <div class="bar-track"><div class="bar-fill" style="width:1%;background:var(--green);min-width:35px;">1x</div></div>
+          <div class="bar-val green">Baseline</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">ML-DSA (HW)</div>
+          <div class="bar-track"><div class="bar-fill" style="width:3%;background:var(--accent);min-width:35px;">~3x</div></div>
+          <div class="bar-val accent">Next-gen</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Falcon-512 (SW)</div>
+          <div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--yellow);">~20x</div></div>
+          <div class="bar-val yellow">Current SE</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">ML-DSA (SW)</div>
+          <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--red);">~50x</div></div>
+          <div class="bar-val red">Current SE</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">SPHINCS+-128s (HW)</div>
+          <div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--yellow);">~60x</div></div>
+          <div class="bar-val yellow">Next-gen</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">SPHINCS+-128s (SW)</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--red);">~300x+</div></div>
+          <div class="bar-val red">Current SE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col" style="gap:10px;">
+      <h3 style="font-size:16px;margin-bottom:4px;">What does this mean for PQ?</h3>
+      <div class="card" style="border-color:var(--yellow);padding:14px 18px;">
+        <h3 style="font-size:14px;"><span class="yellow">Falcon</span></h3>
+        <p style="font-size:13px;">Smallest sigs (666 B). But requires FP arithmetic. No FPU on SE. FP rounding exploitable for SCA/FI.</p>
+      </div>
+      <div class="card" style="border-color:var(--accent);padding:14px 18px;">
+        <h3 style="font-size:14px;"><span class="accent">ML-DSA</span></h3>
+        <p style="font-size:13px;">NIST primary. 3.3 KB sigs. ~50x slower in SW, ~3x in HW. Pragmatic, not conservative. Module-LWE is young.</p>
+      </div>
+      <div class="card" style="border-color:var(--green);padding:14px 18px;">
+        <h3 style="font-size:14px;"><span class="green">SPHINCS+</span></h3>
+        <p style="font-size:13px;">Hash-only security. Most conservative. 7.8 KB+ sigs. ~60x in HW, ~300x in SW. Slow and large.</p>
+      </div>
+      <div class="card" style="border-color:var(--red);padding:14px 18px;">
+        <h3 style="font-size:14px;"><span class="red">Stateful (XMSS/LMS)</span></h3>
+        <p style="font-size:13px;">Conservative. But each sig burns a one-time key. Lose the state = stop signing forever. Another secret to back up. UX dead end.</p>
+      </div>
+
+      <h3 style="font-size:16px;margin-top:8px;margin-bottom:4px;">Signature sizes (bytes)</h3>
+      <div>
+        <div class="bar-row">
+          <div class="bar-label">ECDSA</div>
+          <div class="bar-track"><div class="bar-fill" style="width:1%;background:var(--green);min-width:35px;">72</div></div>
+          <div class="bar-val">72 B</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Falcon-512</div>
+          <div class="bar-track"><div class="bar-fill" style="width:8.5%;background:var(--blue);min-width:35px;">666</div></div>
+          <div class="bar-val">666 B</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">ML-DSA-65</div>
+          <div class="bar-track"><div class="bar-fill" style="width:42%;background:var(--accent);">3,309</div></div>
+          <div class="bar-val">3,309 B</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">SPHINCS+-128s</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--red);">7,856</div></div>
+          <div class="bar-val red">7,856 B</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="notes" data-for="s3">
+  <li><strong>Your turn to explain.</strong> "Let me walk you through the main constraints of a hardware wallet and what it means for PQ."</li>
+  <li>Point to the SE specs table: "This is what we work with. 64 KB of RAM. 70 MHz. No PQ hardware acceleration on current chips."</li>
+  <li>"SW-only crypto means no hardware countermeasures against side-channel or fault injection. Every branch depending on secret data leaks. Masking, blinding must be reimplemented from scratch for each new primitive."</li>
+  <li>Walk through the performance chart: "ECDSA is our baseline. ML-DSA in SW: 50x slower. With HW accel on next-gen silicon: 3x. That's the difference."</li>
+  <li>Walk through the four scheme cards and signature sizes. For each: what's good, what's the catch.</li>
+  <li><strong>Ask:</strong> "What does this mean for PQ implementation? Which of these can realistically run on a Secure Element?"</li>
+  <li><strong>Ask:</strong> "Questions on the constraints or the algorithms?"</li>
+  <li>Spend ~10 minutes. Let the discussion breathe.</li>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 5: SECURE CHANNEL PROTOCOL -->
+<!-- ============================================================ -->
+<div class="slide" id="s4">
+  <div class="section-label">What we built</div>
+  <h2>PQ-SCP: Post-Quantum Secure Channel</h2>
+  <p style="font-size:17px;margin-bottom:16px;">The secure channel protects firmware updates. If an adversary breaks it, they own every future firmware update. This is target #1 for PQ migration.</p>
+
+  <div class="cols">
+    <div class="col" style="flex:1.2;">
+      <ul class="points">
+        <li class="green-dot"><strong style="color:var(--text);">KEMTLS-inspired: KEM-only at runtime</strong>
+          <ul class="sub">
+            <li>3 KEM encapsulations, 0 signatures during handshake</li>
+            <li>Signatures only offline for certificate creation</li>
+          </ul>
+        </li>
+        <li class="green-dot"><strong style="color:var(--text);">X-Wing hybrid KEM</strong>
+          <ul class="sub">
+            <li>ML-KEM-768 + X25519</li>
+            <li>Forward secrecy if either component survives</li>
+          </ul>
+        </li>
+        <li class="green-dot"><strong style="color:var(--text);">Hybrid certificates</strong>
+          <ul class="sub">
+            <li>ML-DSA-65 + Ed25519</li>
+            <li>Signed once, verified once, offline</li>
+          </ul>
+        </li>
+        <li class="green-dot"><strong style="color:var(--text);">Proven security</strong>
+          <ul class="sub">
+            <li>Key indistinguishability, forward secrecy</li>
+            <li>Explicit authentication, attestation confidentiality</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="card" style="border-color:var(--green);background:rgba(52,211,153,0.04);">
+        <h3 style="font-size:14px;color:var(--green);">Primitives</h3>
+        <table style="font-size:13px;">
+          <tbody>
+            <tr><td class="bold">KEM</td><td>X-Wing (ML-KEM-768 + X25519)</td></tr>
+            <tr><td class="bold">Signature</td><td>ML-DSA-65 + Ed25519</td></tr>
+            <tr><td class="bold">Hash</td><td>SHA3-256</td></tr>
+            <tr><td class="bold">MAC / KDF</td><td>KMAC128</td></tr>
+            <tr><td class="bold">AEAD</td><td>AES-256-GCM</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="margin-top:0;">
+        <h3 style="font-size:14px;">Handshake at a glance</h3>
+        <p style="font-size:14px;margin-bottom:6px;">Device &rarr; HSM: ephemeral KEM pubkey</p>
+        <p style="font-size:14px;margin-bottom:6px;">HSM &rarr; Device: encapsulated secret + cert</p>
+        <p style="font-size:14px;margin-bottom:6px;">Device &rarr; HSM: encaps to server key + cert</p>
+        <p style="font-size:14px;margin-bottom:6px;">HSM &rarr; Device: encaps to client key</p>
+        <p style="font-size:14px;margin-bottom:6px;">Both: derive session keys, MAC finish</p>
+        <p style="font-size:13px;color:var(--text3);margin-top:10px;">Total: ~13,882 bytes, 8 messages, 0 runtime signatures</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="notes" data-for="s4">
+  <li>"Now let me talk about what we actually built. The secure channel is the most urgent target. Harvest-now-decrypt-later makes this a real threat today, not when quantum arrives."</li>
+  <li>"Why KEM-only at runtime? In classical TLS, ECDH + ECDSA use the same ECC arithmetic. Cheap. In PQ, signatures and KEMs are different beasts. KEMTLS says: use KEMs for both key exchange and authentication. One primitive at runtime. Much cheaper on a Secure Element."</li>
+  <li>"X-Wing is our hybrid KEM: ML-KEM-768 + X25519. Belt and suspenders. Forward secrecy holds if either component survives."</li>
+  <li>"This is done. Running on current hardware. In software."</li>
+  <li><strong>Ask:</strong> "How do you think about the transition? Devices in the field run classical SCP. What's the upgrade path?"</li>
+  <li>Spend ~5 minutes.</li>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 6: STATEFUL SIGNATURES -->
+<!-- ============================================================ -->
+<div class="slide" id="s5">
+  <div class="section-label">Challenges</div>
+  <h2>Stateful Signatures: The SHRINCS Example</h2>
+  <p style="font-size:17px;margin-bottom:20px;">SHRINCS (Blockstream Research) is a clever hybrid: a compact stateful path for daily use, with a stateless SPHINCS+ fallback if state is lost. Let's look at how it works — and why statefulness remains a hard problem.</p>
+
+  <div class="cols">
+    <div class="col" style="flex:1.2;">
+      <h3 style="font-size:15px;color:var(--green);margin-bottom:12px;">How SHRINCS works</h3>
+      <ul class="points">
+        <li class="green-dot"><strong style="color:var(--text);">Single public key, two signing paths</strong>
+          <ul class="sub">
+            <li>Compact path: unbalanced XMSS tree — 324 bytes for the 1st sig, +16 bytes each</li>
+            <li>Fallback path: stateless SPHINCS+ variant — ~5.7 kB signatures</li>
+          </ul>
+        </li>
+        <li class="green-dot"><strong style="color:var(--text);">SHA-256 only</strong>
+          <ul class="sub">
+            <li>The most conservative crypto assumption available</li>
+            <li>Same hash function Bitcoin PoW relies on</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3 style="font-size:15px;color:var(--red);margin-top:20px;margin-bottom:12px;">But the hard problems remain</h3>
+      <ul class="points">
+        <li class="red-dot"><strong style="color:var(--text);">State reuse = broken security</strong>
+          <ul class="sub">
+            <li>Parallel signing, device cloning, firmware bugs — any of these can cause leaf reuse</li>
+            <li>Software wallet can check for reuse before broadcasting, but it's a mitigation, not a fix</li>
+          </ul>
+        </li>
+        <li class="red-dot"><strong style="color:var(--text);">Scale: one state per UTXO, address, account</strong>
+          <ul class="sub">
+            <li>Users have 100s of UTXOs, addresses, accounts — that's as many states to maintain</li>
+            <li>They won't fit into the device — requires Merkle trees of monotonic counters</li>
+            <li>Breaks device portability and independent recovery</li>
+          </ul>
+        </li>
+        <li class="red-dot"><strong style="color:var(--text);">The fallback path is expensive</strong>
+          <ul class="sub">
+            <li>SPHINCS+ signatures are ~5.7 kB — 90x larger than today's Schnorr</li>
+            <li>Signing on a SE: minutes in software, seconds even with HW acceleration</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col" style="gap:12px;">
+      <div class="card" style="border-color:var(--green);background:rgba(52,211,153,0.04);">
+        <h3 style="font-size:15px;"><span class="green">Compact path signature size</span></h3>
+        <div style="margin-top:8px;">
+          <div class="bar-row">
+            <div class="bar-label">Schnorr (today)</div>
+            <div class="bar-track"><div class="bar-fill" style="width:4%;background:var(--accent);min-width:45px;">64 B</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">SHRINCS (1st sig)</div>
+            <div class="bar-track"><div class="bar-fill" style="width:19%;background:var(--green);min-width:50px;">324 B</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">SHRINCS (16th sig)</div>
+            <div class="bar-track"><div class="bar-fill" style="width:33%;background:var(--yellow);min-width:50px;">580 B</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">SHRINCS fallback</div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--red);">~5.7 kB</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border-color:var(--red);background:rgba(248,113,113,0.04);">
+        <h3 style="font-size:15px;"><span class="red">The Bitcoin vs Ledger gap</span></h3>
+        <p style="font-size:14px;">SHRINCS is designed for Bitcoin's "don't reuse addresses" culture. One key, one or a few signatures. That's a great fit.</p>
+        <p style="font-size:14px;margin-top:8px;">Users have hundreds of UTXOs, addresses, accounts — each needs its own monotonic counter. They won't fit on the device, so you need Merkle trees of counters. This breaks device portability and independent recovery.</p>
+      </div>
+      <div class="card" style="border-color:var(--accent);">
+        <h3 style="font-size:15px;"><span class="accent">Bottom line</span></h3>
+        <p style="font-size:14px;">SHRINCS is a smart design for its target use case. But for a multi-chain hardware wallet, stateful signatures turn every backup, every restore, every firmware update into a potential security incident. The operational complexity doesn't match the user model.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="notes" data-for="s5">
+  <li>"Let me talk about stateful signatures using SHRINCS as an example. It's a very clever design from Blockstream Research."</li>
+  <li>"The idea: one public key, two signing paths. A compact stateful path — 324 bytes for the first signature, growing 16 bytes each time — and a stateless SPHINCS+ fallback if you lose the device."</li>
+  <li>"It's built on SHA-256 only. The most conservative assumption you can make. And it's designed for dedicated signing devices where state never leaves the hardware."</li>
+  <li>"For Bitcoin, where you don't reuse addresses and a key signs once or twice, this is elegant. The state problem is manageable."</li>
+  <li>"But in practice? Users have hundreds of UTXOs, addresses, accounts. Each one needs its own monotonic counter. They won't fit on the device — you end up needing Merkle trees of counters. And that breaks device portability and independent recovery."</li>
+  <li>"And the failure mode: parallel signing, device cloning, stale backup restore — any of these causes leaf reuse, which breaks the security. The fallback exists, but it's ~5.7 kB signatures and minutes of compute on a SE."</li>
+  <li>"SHRINCS is a great design for its target. But stateful signatures don't match the operational model of a universal hardware wallet."</li>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 7: QUESTION — NON-MIGRATED COINS -->
+<!-- ============================================================ -->
+<div class="slide question-slide" id="s6">
+  <div class="question-mark">?</div>
+  <h2>Chains will migrate at some point.<br><br>What's your take on coins<br>that are not migrated?</h2>
+  <p class="context">Coins sitting on exposed public keys. Lost wallets. Satoshi's coins. What happens to them?</p>
+</div>
+<div class="notes" data-for="s6">
+  <li>"Chains will migrate at some point. New address types, new opcodes. But what about the coins that don't move?"</li>
+  <li><strong>Open the floor.</strong> Let the group discuss freely. Wait for answers.</li>
+  <li>Then advance to the next slide to show the full picture and discussion points.</li>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 8: ANSWER — BLOCKCHAINS & NON-MIGRATED COINS -->
+<!-- ============================================================ -->
+<div class="slide" id="s7">
+  <div class="section-label">Open discussion</div>
+  <h2>Blockchains, Migration & Non-Migrated Coins</h2>
+
+  <div class="cols" style="margin-top:8px;">
+    <div class="col" style="flex:1.2;">
+      <ul class="points">
+        <li><strong style="color:var(--text);">Block size impact</strong>
+          <ul class="sub">
+            <li>ML-DSA-65: 3,309 B vs ECDSA 72 B = 46x per signature</li>
+            <li>Bitcoin: ~2,500 sigs per block today. With ML-DSA?</li>
+            <li>L1 fees multiply. Throughput drops.</li>
+          </ul>
+        </li>
+        <li><strong style="color:var(--text);">Which scheme will chains pick?</strong>
+          <ul class="sub">
+            <li>Ethereum has started exploring PQ migration paths</li>
+            <li>Bitcoin: no consensus mechanism yet for PQ sig type</li>
+            <li>New address formats, new opcodes, soft fork or hard fork?</li>
+          </ul>
+        </li>
+        <li class="red-dot"><strong style="color:var(--text);">Non-migrated coins</strong>
+          <ul class="sub">
+            <li>Coins on reused addresses: public key is exposed on-chain</li>
+            <li>P2PKH with exposed pubkey: quantum-vulnerable today (HNDL)</li>
+            <li>Satoshi's coins: ~1M BTC on exposed keys</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col" style="gap:12px;">
+      <div class="card" style="border-color:var(--yellow);">
+        <h3 style="font-size:15px;"><span class="yellow">The migration dilemma</span></h3>
+        <p style="font-size:14px;">Users must actively move funds to a new PQ address format. But many won't. Lost keys, dead wallets, forgotten coins. What happens to the coins that don't move?</p>
+      </div>
+      <div class="card" style="border-color:var(--red);">
+        <h3 style="font-size:15px;"><span class="red">Exposed public keys</span></h3>
+        <p style="font-size:14px;">Any address that has sent a transaction has its public key on-chain. A CRQC can derive the private key from the public key. No transaction needed from the victim.</p>
+      </div>
+      <div class="card" style="border-color:var(--accent);">
+        <h3 style="font-size:15px;"><span class="accent">Possible approaches</span></h3>
+        <p style="font-size:14px;">Soft-fork new PQ address type (like SegWit). Freeze exposed keys after deadline? Require proof-of-knowledge to spend? Each has trade-offs. None are clean.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="signature">Stay safe. Stay honest about your trust assumptions.</p>
+</div>
+<div class="notes" data-for="s7">
+  <li>Complete the discussion with what participants may have missed.</li>
+  <li>"ML-DSA-65 is 46x larger than ECDSA. Think about what that does to Bitcoin blocks. Fees. Throughput. This isn't theoretical, it's economic."</li>
+  <li>Points to surface: exposed public keys (any address that ever sent a TX), Satoshi's coins (~1M BTC), possible approaches (freeze? deadline? proof-of-knowledge?).</li>
+  <li>"There is no consensus on this. The ecosystem needs to start having this conversation."</li>
+  <li><strong>Wrap-up (last 1-2 min):</strong> "Three things to take away. One: PQ on constrained hardware is fundamentally different from PQ on a server. Two: the secure channel is done. Three: blockchain PQ signatures and non-migrated coins are open problems the ecosystem must solve together."</li>
+  <li><strong>Wrap up promptly when the rotation is called.</strong> Let the group go immediately.</li>
+</div>
+
+</div><!-- /deck -->
+
+<!-- ── Notes panel ── -->
+<div class="notes-panel" id="notesPanel">
+  <h4>Speaker Notes</h4>
+  <ul id="notesList"></ul>
+</div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const noteBlocks = document.querySelectorAll('.notes');
+  const notesPanel = document.getElementById('notesPanel');
+  const notesList = document.getElementById('notesList');
+  let current = 0;
+  let notesVisible = false;
+
+  function show(n) {
+    if (n < 0 || n >= slides.length) return;
+    slides[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    document.getElementById('slideNum').textContent = (current + 1) + ' / ' + slides.length;
+    document.getElementById('progress').style.width = ((current + 1) / slides.length * 100) + '%';
+    updateNotes();
+  }
+
+  function updateNotes() {
+    var slideId = slides[current].id;
+    var nb = document.querySelector('.notes[data-for="' + slideId + '"]');
+    notesList.innerHTML = nb ? nb.innerHTML : '<li style="color:var(--text3)">No notes for this slide.</li>';
+  }
+
+  function toggleNotes() {
+    notesVisible = !notesVisible;
+    notesPanel.classList.toggle('visible', notesVisible);
+  }
+
+  show(0);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'n' || e.key === 'N') {
+      e.preventDefault();
+      toggleNotes();
+    } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      show(current + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      show(current - 1);
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      show(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      show(slides.length - 1);
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (notesPanel.contains(e.target)) return;
+    if (e.clientX > window.innerWidth * 0.5) show(current + 1);
+    else show(current - 1);
+  });
+
+  var touchStartX = 0;
+  document.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; });
+  document.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) { if (dx < 0) show(current + 1); else show(current - 1); }
+  });
+})();
+</script>
+
+</body>
+</html>
