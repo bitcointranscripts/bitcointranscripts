@@ -1,38 +1,36 @@
 ---
-title: "Crashing Bitcoin Core with Niklas Gögge's Fuzzamoto"
-speakers:
-  - Niklas Gögge
-  - niftynei
+title: 'Crashing Bitcoin Core with Niklas Gögge''s Fuzzamoto'
+transcript_by: 'liz831 via review.btctranscripts.com'
+media: 'https://youtu.be/_TsK_3bYpu8'
 date: '2026-02-10'
 tags:
-  - fuzz-testing
-  - bitcoin-core
-  - security
-  - testing
-  - btcplusplus
+  - 'fuzz-testing'
+  - 'bitcoin-core'
+  - 'security'
+  - 'testing'
+  - 'btcplusplus'
+speakers:
+  - 'Niklas Gögge'
+  - 'niftynei'
 categories:
-  - podcast
-source_file: https://youtu.be/_TsK_3bYpu8
-media: https://youtu.be/_TsK_3bYpu8
-summary: In this Bitcoin++ Insider Edition interview, niftynei sits down with Niklas Gögge (developer at Brink) to discuss Fuzzamoto, a coverage-guided fuzzing framework built to test Bitcoin full node implementations — currently Bitcoin Core, BTCD, and Libitcoin — by running the actual production daemon and exercising it through its external P2P and RPC interfaces rather than individual functions. The interview covers fuzzing fundamentals (coverage maps, corpus mutation, dictionary hints) and includes a live demo where Fuzzamoto, running across 32 parallel VMs, rediscovers a historic divide-by-zero bug in Bitcoin Core's Bloom filter code triggered by a specific filterload/filteradd message sequence, showcasing how automated fuzzing removes human bias and surfaces multi-step edge cases that unit tests typically miss.
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'podcast'
+source_file: 'https://youtu.be/_TsK_3bYpu8'
+summary: 'In this Bitcoin++ Insider Edition interview, niftynei sits down with Niklas Gögge (developer at Brink) to discuss Fuzzamoto, a coverage-guided fuzzing framework built to test Bitcoin full node implementations — currently Bitcoin Core, BTCD, and Libitcoin — by running the actual production daemon and exercising it through its external P2P and RPC interfaces rather than individual functions. The interview covers fuzzing fundamentals (coverage maps, corpus mutation, dictionary hints) and includes a live demo where Fuzzamoto, running across 32 parallel VMs, rediscovers a historic divide-by-zero bug in Bitcoin Core''s Bloom filter code triggered by a specific filterload/filteradd message sequence, showcasing how automated fuzzing removes human bias and surfaces multi-step edge cases that unit tests typically miss.'
 ---
 
 Speaker 0: 00:00:00
 
-I mean, I can just like start blabbing about the tool and like...
+Speaker 1 (00:00:04):
 
-Speaker 1: 00:00:04
+"I mean, I can just start talking about the tool.
 
-I mean, I think the first one is like, so I mean, it's like, Hey, I'm Nifty.
-You're Niklas.
-You work at Brink.
-What are you working on these days at Brink, Niklas?
+So, let's begin. Hey, I'm Nifty. You're Niklas, and you work at Brink. What are you working on these days at Brink, Niklas?"
+
 
 Speaker 0: 00:00:18
 
 Yeah.
-So I currently mostly work on Fuzzer Moto, which is a fuzzing framework and also a fuzzing engine that I've built to specifically fuzz Bitcoin full nodes.
+So, I currently mostly work on Fuzzer Moto, which is a fuzzing framework and also a fuzzing engine that I've built to specifically fuzz Bitcoin full nodes.
 So currently mainly Bitcoin Core, but I have and do plan on supporting other implementations as well.
 Like I have done some BTCD fuzzing and Libitcoin as well.
 And the main point of supporting all of the different ones is eventually to have differential testing between all of these implementations, because the more implementations you sort of add to the mix, the better your Oracle power in like finding bugs gets.
