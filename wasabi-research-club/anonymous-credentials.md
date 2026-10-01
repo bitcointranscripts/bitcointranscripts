@@ -2,7 +2,7 @@
 title: 'Anonymous Credentials'
 transcript_by: 'testies1234321-afk via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=pgErjQSQQsg'
-date: '2020-04-13'
+date: '2020-04-12'
 tags:
   - 'research'
   - 'privacy-enhancements'
@@ -368,9 +368,8 @@ I think this is exactly the magic of these anonymous credentials that you can do
 
 **Speaker 1** (00:23:03):
 
-Uh-huh, okay.
-I, uh-huh, okay.
-That's, yeah, that's really similar with what we came up with, indeed.
+Okay.
+That's really similar to what we came up with, indeed.
 But I'm not sure in this paper.
 Maybe I just didn't go into it.
 
@@ -534,7 +533,7 @@ I haven't really looked into the library ever.
 
 And what else there is?
 How about the merging of the coins?
-I think that could be a problem there that you cannot merge two attributes together in a way that it both prevents double spending and you don't expose the attribute, you know, the values, only the sum of them.
+I think that could be a problem there that you cannot merge two attributes together in a way that it both prevents double spending and you don't expose the attribute, the values, only the sum of them.
 I'm not sure that's possible.
 
 
@@ -622,7 +621,7 @@ ACL, this paper is anonymous credentials light ACL.
 **Speaker 0** (00:32:09):
 
 Yeah, I think that's easy because one of the attributes would just be the serial number that the server stores.
-I mean the server stores the serial numbers of course that have been used right so okay that wouldn't I guess yeah you would need the reassurance again right you know it's all your serial number and then you get a new token.
+I mean the server stores the serial numbers of course that have been used right so okay that wouldn't I guess yeah you would need the reassurance again, it's all your serial number and then you get a new token.
 
 
 
@@ -641,7 +640,7 @@ No. Why?
 **Speaker 1** (00:32:43):
 
 If you put a serial number into the attribute, then you cannot prove the sum.
-I mean, the serial number is there, you know.
+I mean, the serial number is there.
 
 
 
