@@ -2,7 +2,7 @@
 title: 'Anonymous Credentials'
 transcript_by: 'testies1234321-afk via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=pgErjQSQQsg'
-date: '2020-04-12'
+date: '2020-04-11'
 tags:
   - 'research'
   - 'privacy-enhancements'
@@ -181,7 +181,7 @@ Just so I understand, instead of registering all inputs at once, you would be ab
 **Speaker 1** (00:13:47):
 
 Yes, we can come with different identities with any number of inputs and we can come with different identities to register any output.
-That's what we kind of figured out.
+That's what we figured out.
 
 
 
@@ -310,7 +310,7 @@ So your first suggestion was to take two blind signature of 0.1 and 0.9 and regi
 
 **Speaker 0** (00:20:24):
 
-Perhaps I wouldn't call this registering, I would just call this like, perhaps like just a reissuance, We've used that term before.
+Perhaps I wouldn't call this registering, I would just call this perhaps like just a reissuance, We've used that term before.
 You have a token and you just want to get a new one with a new serial number and these tokens are unlinkable and the same would work if you show two tokens and a new token where the new token is the sum of the former tokens and you don't have to show the actual values to the server you just have to show that the sum matches to the new value
 
 
@@ -578,7 +578,7 @@ But for unknown
 
 **Speaker 0** (00:29:22):
 
-credentials like, but okay, so I actually.
+credentials, but okay, so I actually.
 That sounds like something that BLS or pairings could do, like merging different credentials together without communication with the server.
 So at least to me that sounds plausible.
 
