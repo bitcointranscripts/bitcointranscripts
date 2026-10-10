@@ -2,7 +2,7 @@
 title: 'Receiving BOLT12 Payments in LND'
 transcript_by: 'startupcompliancekit via review.btctranscripts.com'
 media: 'https://youtu.be/GMrpXKyfsWY?si=F8sUoT-HAEXUYB3N'
-date: '2026-01-20'
+date: '2025-10-04'
 tags:
   - 'offers'
   - 'lnd'
