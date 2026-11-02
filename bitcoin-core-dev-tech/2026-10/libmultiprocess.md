@@ -1,5 +1,5 @@
 ---
-title: Libmultiprocess: Windows support and client integration
+title: "Libmultiprocess: Windows support and client integration"
 tags:
   - bitcoin-core
 date: 2026-10-12

@@ -1,5 +1,5 @@
 ---
-title: LLM-assisted review: preparing PRs and managing findings
+title: "LLM-assisted review: preparing PRs and managing findings"
 tags:
   - bitcoin-core
 date: 2026-10-16

@@ -7,7 +7,7 @@ date: 2026-10-12
 
 Below is a thematic summary of both sessions, consolidating arguments while preserving the substantive disagreements. 
 
----
+***
 
 ## Scope of the discussion
 

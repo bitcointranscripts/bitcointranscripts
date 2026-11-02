@@ -158,6 +158,6 @@ No final implementation option or adoption decision was recorded in these notes.
 - Potential benefits include inbound capacity, resilience, infrastructure diversity, censorship resistance, and reduced port-scanning exposure.
 - The discussion was exploratory; whether these benefits justify the complexity remained unresolved.
 
----
+***
 
 *Editorial note: Notes have been reorganized and spelling standardized. Tentative proposals, estimates, and uncertainties are retained as such. No external technical verification was performed.*
