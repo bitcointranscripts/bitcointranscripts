@@ -62,6 +62,19 @@ For your contributions, please use an "edited transcription" style, which can al
 
 Oftentimes, audience questions and comments will be inaudible. Feel free to only indicate when an audience member is speaking if their audio is not clear.
 
+## Linting
+
+Every push and pull request runs a check on the front matter that is in each transcript file in GitHub Actions. You can run the same check locally before opening a pull request:
+
+```
+scripts/lint-frontmatter.sh
+```
+
+It lints the front matter of every transcript with `yamllint` and checks that each file has a `title` and uses only supported fields. The script requires `yamllint` and `pyyaml`:
+
+- Debian/Ubuntu: `sudo apt install yamllint python3-yaml`
+- Elsewhere, or inside a virtual environment: `pip install yamllint pyyaml`
+
 ## i18n
 
 Spanish and Portuguese are [configured by default](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml#L11) for [btctranscripts.com](https://btctranscripts.com).
