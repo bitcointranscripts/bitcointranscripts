@@ -1,658 +1,811 @@
 ---
-title: Anchors & Shackles (Ark)
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=OBt1nS14Ac4
+title: 'Anchors & Shackles (Ark)'
+transcript_by: 'mazubukuntalo8-collab via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=OBt1nS14Ac4'
+date: '2023-06-24'
 tags:
-  - ark
+  - 'ark'
+  - 'c-lightning'
+  - 'acc'
 speakers:
-  - Burak Keceli
-date: 2023-06-24
+  - 'Burak Keceli'
+categories:
+  - 'security-problems'
 ---
-So hey guys, my name is Borat.
-Today I'll be talking about something that I've been working on for the past, let's say, six months or so.
-To give a bit of a background, I started first in a big block sort of camp and then got introduced later to Liquid.
-And I did some covenant R&D on Liquid for about two years, and now I'm recently exploring the Lightning space for about a year.
-And as someone who initially comes sort of from that sort of big block camp, I've always had objections towards lightning, mainly around the UX, from backups to interactivity to liquidity problems.
-I've had severe objections.
-A few months ago, I tried to sort of working on a new light and more to address these problems.
-And I've come to realization that these objections, the objections that I had in the past, they're all addressable in the long run.
-I, you know, page DLCs can sold in, same receiving initiative plus proof of payment, but there is still one big problem, the inbound liquidity.
-To me, it's like a non-starter.
-If you're orange billing someone for the first time and you cannot receive, what happens is you get a swap, some ring swap in, and it doesn't scale.
-And to me, if something works 90% of the time, it doesn't work 10%, to me it doesn't work.
-It has to be zero friction.
-So I sort of try to come up with solutions to address these problems.
-And then today I'll be presenting a new sort of alternative Layer 2 protocol.
-It all started as a wallet idea, a Lightning idea based on channel factories and all that.
-And it later evolved into a layer two on its own.
-At some point I realized, okay, what I'm building is lightning, but it really is like a new layer two in its core.
-At its core, it's like internally, it's like a new off-chain protocol.
-So the protocol is, it requires APO or CTV, a new covenant primitive to work.
-That's not something we can do on Bitcoin today.
-We can do it in Bitcoin Inquisition's Signet, and I think that's how we're gonna start.
-But to give a high-level overview, first of all, we haven't set a name yet for the protocol.
-So to give a high-level overview, the protocol has no liquidity constraints.
-It's a simple protocol.
-It mimics the on-chain UX.
-Just like you do on-chain wallets, you have an address you can receive, send, hold, simple.
-You don't have any interactivity requirements.
-And you don't have to acquire inbound liquidity to onboard to the system in the first place.
-You don't have to run a server, you can use your smartphone, don't have much interactivity requirements.
-And every payment takes place in a coin join route, so you don't leave your, especially receivers, they do not leave their identity.
-You know, in Lightning, if hubs call it or they comply with OFAC, you know, two hubs can sort of extract the payment route.
-If I'm using IE and LSB XIZ and you're connected to ABC and they have direct channel each other so the receipt is 12A, then they can call you to extract the payment because it's linked through the same HDLC, the Bolt 11 hash identifier.
-So in this protocol, it's not a state channel design.
-It's not a roll-up design of any sort, it's really its own category.
-So, here is a comparison table, comparing this protocol with Lightning on-chain, also Ecache, obviously Ecache, Charm and Ecache, FedEvent stuff, it's called Studio, so, you know, it's controversial what, you know, what Layer 2 is and not.
-To me, E-cash doesn't fall into Layer 2 category, but it's good to compare.
-So, you know, on-chain Bitcoin, you know, to me Lightning is the only layer 1, as related to Bitcoin.
-To me, the layer 2 definition is really like a sort of separate piece of software where you transact Bitcoin without polluting on-chain, But yet you can revert your coins back to one chain without asking for a corporation.
-So by that definition, the protocol falls into a layer two category.
-So it's self-constitutional.
-You can unilaterally revert your coins back on chain, but you transact off the chain.
-So interactivity, well, PHTLCs solve the receiving issue.
-And you can generate print.
-And they don't have a generic pre-image ready offline but you still have to sign or monitor the network for channel breaches if you're not trusting a watchtower.
-And just like on-chain, you don't have to be online like that.
-Scalability-wise, I think this is the number one, the biggest property we have.
-Lightning, you cannot onboard the whole planet to lightning, it doesn't scale.
-Channel openings and some might swap ins, so out, they do not scale.
-It's not only the on-chain footprint, right?
-The non-liquidity doesn't scale.
-I have this utopic idea to onboard the whole planet to Bitcoin in a non-custodial way.
-I know in reality it's probably never going to happen, but I'm super obsessed with it.
-So I think my goal is to be able to at least give people an option the whole planet to onboard Bitcoin and not custodially so in theory with this primitive you can onboard the whole planet in theory on chain footprint wise there are probably other challenges but the point is you don't consume any pretty much, you don't consume any pretty much footprint, On-chain footprint.
-Everything is off-chain, pretty much.
-Unlike in Lightning, you have to touch on-chain sometimes.
-Of course, on-chain is the worst.
-Nothing touches on-chain, doesn't scale, anything that touches.
-And Privacy, again, guys, it's also controversial, right?
-Lightning versus on-chain privacy.
-To me, lightning is worse than on-chain, but to many people, they argue on-chain is worse than lightning.
-But with this primitive, whenever you make a payment, the payment takes place in a coin-join route, sort of like an off-chain coin-join protocol.
-So, and you know, coin-joins today, they're mostly used for, you know, data market use cases maybe, but here, anonymity set is everyone.
-Anyone who involves in a payment, that payment is in a coin join, in a blended mixing route maybe, that's pretty correct.
-So onboarding, again, you don't have any onboarding setup.
-You onboard someone, you want to tip someone, you just onboard Orangefield someone, and you can receive payment like on-chain, but it scales.
-So it's a simple protocol.
-I mean, it's not a state channel design.
-I think it's conceptually simple, it's simple to reason about.
-So there are two parties, users and the operators.
-And operators are akin to service providers in Lightning, LSPs. And in fact, factory operators are also LSPs in this protocol.
-They can run Lightning Rogers, too.
-You can pay with this protocol Lightning invoice as it's interoperable with Lightning.
-It's not a competitor by any means.
-It's in fact much, you know, it's a compliment Lightning bar.
-So users, they're not interactive entities, they hold and receive coins just like they do on chain, but they do it entirely off chain.
-And factory operators, just like LSPs, they provide liquidity to the protocol, But it's slightly different.
-In fact, Lightning uses liquidity more efficiently because channels are bidirectional.
-Here, it's more like a one-directional design.
-The factory operator has to constantly provide liquidity to the protocol.
-So the protocol, again, the idea requires a common primitive.
-We need a common primitive to constrain transaction outputs of a spending transaction.
-And you can use CTV for that, which is a bit controversial.
-And We can use an APO to emulate CTV.
-We can emulate it by hard coding of the signature 65, signature and 33, but unknown pop key type.
-And script to emulate the CTV use case.
-There are other alternatives, TI-cache and some other combinations in even syntheticity.
-But it requires a common and primitive constraint outputs in advance of creating a Bitcoin output.
-So it's just like a coin join.
-You have a set of coins.
-Coins are Bitcoin transaction outputs, but they live off the chain.
-They ideally never touch on chain, but you can of course, you know, literally revert, but the coins live off the chain.
-Think of like a UTXO set that lives entirely off the chain.
-So you have a set of coins in your wallet, software, from one set to a million, just forget about the dust limit, just keep things simple, from one to a million sets.
-So the design is, the design starts with a factory.
-So factory, it's like a channel factory, I name it factory, could be something else, the naming, but because it's similar to channel factories, I name it factory.
-The factories are, is a shared UTXO model.
-So factory is a Bitcoin transaction output.
-It's a shared UTXO.
-And it has a bunch of nested coins in it.
-The coins I mentioned earlier, they live in this factory, under this factory.
-They nest in these factories.
-And the factory operator is the one who creates factory, say, in every five seconds to put things simple.
-But contrary to CoinJoin, CoinJoin can take from hours to days, a CoinJoin session.
-This one, think of a CoinJoin round that takes place in a regular basis in every say five seconds.
-So every single one of these factories are a coin join.
-They're like a blinded mixing round.
-And it's operated by, the factory outputs are funded by the factory operator.
-And here is what a factory looks like.
-This is the factory that the factory operator sort of creates, crops in every five seconds.
-So you have one or more inputs to fund.
-And the coins output and connectors output and a factory change.
-So coins output has a bunch of coins.
-Coins that you have, coins live in this output.
-And each coin is a 12-2, just like lightning.
-Like the initial idea was to have lightning channels instead of coins that nest in the coins output.
-But the things have evolved over time.
-So instead of having lightning channels in one UTXO, just like coin pools, factories, we have coins.
-And coin is like a one-time use only channel.
-You spend it and you create new coins, just like one chain.
-And the idea is that you have a bunch of coins that are coming to a single transaction called output12coins.
-You can unilaterally reveal the coins content, the factory content.
-Sort of the coins have like a script path forger, and anyone who knows the sort of the template hash, the coins content, can reveal the content.
-And the connectors output, the second output in a factory, has a bunch of connectors similarly.
-But this one is more like a withdrawal tree, update, top-leaf, update, verify style, withdrawal tree.
-The difference is you, you know, we have connectors.
-Connectors are also Bitcoin transaction outputs that connects to this output, connectors output.
-They're commitments just like coins, but the difference is that you have to reveal one by one.
-You have to reveal connectors one by one.
-In coins, you have to reveal them all at once.
-So the primitive, I mean the protocol is at its core, realized at the time of contract, this is a new buzzword I made up.
-It's ATLC, so this is a comparison table.
-You know, HDLCs are the absolute worst.
-You know, as soon as you're receiving, you can't create a preimage when you're offline.
-HTLC solves that.
-Also, you know, proof of payment is a bit of a gray area in HTLCs. But ATLCs check all the boxes, HTLCs do, but differently we have, you know, ATLCs has no liquidity constraints.
-So you don't have anything about liquidity requirement you receive it's like a magic button you push a button and you receive whatever you deserve like on like on one chain.
-So to illustrate things simpler, so we have a coin, we have a bunch of coins.
-Each one of these coins are 12-2.
-12-2 between the coin owner and the factory operator, just like lightning.
-Like 12-2 between me and my channel partner.
-Think of channel partner as the factory operator, like a central hub.
-I have a 12-2, I'm a co-signer, a bunch of coins.
-And I join, if I want to spend these coins, right?
-Like my UTXOs, I want to spend them.
-And I join a factory session, just like joining a CoinJoin session.
-And the factory operator is a blinded coordinator.
-And I register my coins first on the left.
-In a CoinJoin, you register inputs and outputs in the same phase.
-You register the coins, and these coins are from the previous factories, right?
-You get paid from coins from someone else in the past, and you create, you now register for new coins, payout coins or plus change in the round.
-And you know, in this round, there are many participants, like you can have like thousands of transactions, you know, coins in a coin joint.
-Here, you know, you still have the same limit, but with Tableau, if they verify, it can be millions.
-But the idea is to have, it's like a coin, join or retain UX, you have coin on the left, you're spending, and you're creating new coins.
-You're destroying coins, and you're creating new coins.
-So on the right.
-So these coins are, you know, again, these coins are commitments.
-So the factory operator here, right?
-We have a session, a factory session, And the factory operator is trying to create a new factory.
-The factory operator and his factory template, I mean the factory he's crafting, is placing these coins, coins that we registered, among many other participants.
-And then the factory operator places a set of additional outputs in the factory template called ATLC connectors.
-So ATLC connectors are added to factory, the number of spending coin times on the left.
-So we are spending N coins, and the factory operator adds N ATLC connectors.
-And we are creating M new coins.
-And what happens next?
-You know, we did the input registration port, the audit registration port, and it's the signing phase.
-So, of course, connectors and coins are mixed, it's a mixing round.
-So when I register a coin on the left, operator gives me a blinded credential so that I can register for the new coins.
-And then in the signing phase, I attach ATLC and ATLC to my coin in order to sign, to really lock my coins in for the factory.
-So, this is similar to Lightning, right?
-You have, think of Coin as a tool to one time use channel, Lightning channel, and you attach an ATLC instead of HDLC.
-And from there, you sign the ATLC with the 12.2 to connect to an ATLC connector.
-So with that ATLC, you're signing an off-chain transaction, like one state update, simple.
-One state update only.
-You're signing an ATLC from the 12.2 from the ATLC to connect to an ATLC connector.
-And you do the same for all other coins.
-So you sign, you know, all participants in a round, they add ATLC to their coin and connect that ATLC to its connector.
-And if someone hesitates to, you know, add an ATLC, you know, you get back, you know, the factotrupid bends, you know, bends you from the session.
-So this is what the on-chain transaction looks like.
-It's pretty simple.
-The ATLC is a two of two.
-I'm the call signer.
-I'm spending this coin, and I'm paying out to Bob, someone, under a new factory, and I'm signing this off-chain transaction to do so, to connect my ATLC to your connector.
-I'm signing the ATLC, the first input itself.
-The first input of the ATLC I'm signing, a call signing from the 12.2. Again, the other call signer is the factory operator.
-And the second input I place, on the ATLC connector from the new factory.
-The ATLC in the first input I'm spending is from a previous factory.
-The connector, ATLC connector, the second input is from the new factory.
-And ATLC connectors, they carry dust.
-And they are single-sig spendable by the factory operator.
-ATLC is a tool of two, connectors are single-sig factory operators.
-So in the outputs, we place one output for the factory operator to sleep, to claim his funds, to claim these funds.
-So by doing that, as you remember, we have coins in a factory, and by doing that, we, you know, the factory operator created a set of new coins.
-It's an on-chain transaction.
-You provide liquidity for these coins.
-And the factory operator now has to claim my coin, should be able to claim my coin, my previous coins in here, right?
-And in order to do so, the factory has to exist.
-The factory operator should not double spend this factory.
-If the factory operator double spends, the Factory operator is not able to claim my ATLC, my first input, because I signed the off-chain transaction with SIGHASHALL and it commits to the second input, ARTPOINT, and it is the transaction ID of the factory.
-So in order for an ATLC to be claimed by the factory operator, the factory operator should not double spend the factory.
-If there is a double spend, it's not atomic, it's an atomic construction.
-My ATLC is no longer redeemable.
-I can do an unlegitimate closure for my ATLC with the script path.
-So it provides an atomic layout construction of an aggregate transfer schedule here.
-So here's a bit of a logical overview.
-So, you know, you remember we have coins, commutative coins that are put in a factory.
-And here's what it looks like logic-wise.
-So we have, you know, operator, like the circle ones are the UTXOs and the rectangle ones are the transactions.
-So the operator funds a factory, in this case the coins output.
-And It has two possible spans, two secret paths.
-The first secret path, after four weeks, the factory operator can claim, solely can claim this output.
-He funded that output in the first place.
-After four weeks, he can claim it.
-The factory, so to speak, expires after four weeks, which means that coins can only be refactored, can only be revealed and claimed within that timeframe, for a big timeframe.
-You should spend your coins in that timeframe.
-If you have coins that are about to expire, you do a self swap.
-You send your coins back to yourself to reset that timer.
-So there is a little interactivity requirement.
-You have to be online every two weeks to speak.
-It's not as harsh as lightning.
-The second script path, with no delay, anyone can reveal the factory content, the coins that nest in that factory.
-And this happens in a non-collaborative case, i.e. The factory operator is not responding anymore for a long period or not collaborating with me, I can do an analytical closure.
-I can reveal the coins in a given factory in the past and I can from there, from there, from the coin here, I can claim my coins.
-But a coin has, again, a lifetime of four weeks, right?
-After four weeks, your coin is claimable by the operator who funded the coin in the first place.
-Within the first two weeks, the coin is claimable by the recipient, the owner of the coin.
-And just like HDLC timeouts, which is by default set to 24 hours, the CLTV delta, just think of it as two weeks in HDLC, in-flight HDLC with a two-week timeout, the sender can get a refund.
-After two weeks, the sender who sent the coin, funded the coin, can get a refund in that time frame, just like claiming an in-flight HDLC in Lightning.
-And of course, after four weeks, it's claimable by the factory operator.
-The reason why we have this second sort of closure, sort of time window period, because after four weeks, factory operator can claim it, but the recipient cannot be online, may not be able to claim it So it's going to go to factory operator.
-So as a sender, I should be able to claim it if recipient is not responding.
-And from the coin output, the coin itself, each coin has three closures, three script path closures.
-The first one is within four weeks, any time.
-The recipient himself can claim the coin.
-And the second closure is after two weeks, in the last two weeks, With a relative delay, the sender of the coin can get a refund, like an HDLC timeout.
-The control of the coin is now in the sender's hand.
-And of course, after four weeks, if this coin is revealed, right, the factory operator can sweep it.
-The first two closures are literally the same, except the first one is claimable by the recipient, the second closure is redeemable by the sender.
-So from here, you know, you can, so if your factory operator is non-collaborative, you reveal your coin in a factory, in a non-collaborative case, or non-responsive case, and then you do a SPATH from the first script path closure, from the first tap leaf, to create this transition.
-A, you create an ATLC, so you attach an ATLC from the first TELP leaf.
-And you can immediately do it within 4 weeks.
-And this state transition is called recipient claim.
-And this is very similar to L2.
-And after doing that, after 24 hours delay, you can get a refund.
-But if you have attached an ATLC, like connected an ATLC to your connector before, and you're no longer owner of this one, you already spent it.
-So if you try to double spend an ATLC, the factory operator can claim it because you already attached an ATLC to an ATLC connector.
-The factory operator can immediately sort of sleep points back to himself, O.
-Or if you haven't spent it already and the operator is not responding, not collaborating, you can do from C to A and we'll wait for this delay period, and then reading your coins.
-And in the second enclosure, it is the same, but for the sender.
-The sender can spend his coins in that two-week time frame in the last two weeks.
-So the protocol, it looks like, doesn't look like Lightning, it's like a new unique protocol primitive, but it's interoperable with Lightning.
-It has Lightning interoperability at its core.
-Just like adding coins and connectors to a factory, the factory operator can add HDLCs and PHDLCs to a factory template.
-So a user, in this case, Alias won a PayBub 21 sets with Lightning, right?
-Alias is this protocol user and Abub is a Lightning user.
-Alias can buy PayBub and Alias have a bunch of like six coins in here and you know in the protocol you can have multiple factories you know factory operators and you can have your UTXO, you know, your coins can be distributed among other operators.
-So you have 2 of 2 between Alice and X here and in the other factory, your two other coins are 2 of 2 between U and Yai and the other two coins are between U and Z.
-And you can sort of do an MPP-style payout.
-You join three factory sessions, you have six coins.
-You register for T coins each in each factory session.
-And the factory operators add HDLCs to their factories and then they forward HDLCs to Bob from there.
-So you can do MPP, you can pay Lightning invoice by destroying your coins just like how you create new coins.
-And similarly, you can also get paid from mining with HDLC nested ATLCs or page DLC nested ATLCs. So the protocol is as in receiving by design, I mean, it's similar to silent payments.
-So if you know, if-out is the factory out point, the funding input, it's a unique ID, and we can come, you know, whenever you want to make a payment the idea is to tweak the recipients you know recipient has a dedicated well-known public key like an Nthop and you tweak that public key with a unique commitment just like what you do in silent payments.
-And you first create a shared secret between the sender and the recipient.
-And you calculate a payment commitment.
-You put FL in this unique random data plus the shared secret plus the senders and the recipient public key.
-This also provides proof of payment when the recipient claims this payment as ATLC, you know, this coin.
-And you tweet at the recipient public key, we are on a public key with the payment commitment times generator.
-And you send this commitment out of band, i.e. We are in Australian, to the recipient.
-So the recipient can look up the factory, that particular factory, and you can, okay, I see, okay.
-I have coins, payout coins in this factory, and I can, and recipient can claim it, claim these coins from there.
-So it prevents address reuse.
-Each coin has a unique sort of script pub key, different sort of public keys, co-signer keys, plus it solves the async receiving issue.
-So the protocol can have also a penalty design similar to Lightning.
-So you might wonder, okay, everything is launching commitments, So if I'm receiving a coin, I need to wait for a confirmation for a settlement.
-But we can have a penalty design, but it's like lightning so that we can have an instant settlement assurances in here also.
-So, you know, in a factory, the first input, right, the funding input, I mean, it records a new software goal, so XOR or OPCAT, we can constrain the signature first, half, and nonce to a particular field in the script so that if the factory operator double spans the factory, as a user, I can forge the operator's private key and so that I can, as a user, redeem my previously spent coins.
-It provides invalidity instant settlement trade-off also here without compromising on a protocol design.
-There is another thing.
-You know, we thought we thought this sort of penalty design.
-When you have a coin, unconfirmed zero-conf coins, You can of course spend them to pay someone, to create new coins for someone.
-I mean, you can hand over zero-conf coins because coin is a two of two, and the new coin is also a two of two, and the operator is a cosigner of both coins.
-But you can also pay a lightning invoice with a coin if it's zero cough.
-Even if it's zero cough, you can spend a coin to pay a lightning invoice because it's a two of two.
-You're spending from a two of two coin where the factory operator is a cosigner.
-And the factory operator is also a Lightning router.
-The same guy is also a router and can forward HTLCs to any recipient.
-So you can have an unconfirmed coin and the protocol yet be able to pay a lightning invoice instantly.
-So it pretty much sums it up.
-Thank you guys for listening.
-I'm pretty much sure you guys have a bunch of questions.
-Happy to have you shoot it over.
-Thank you.
-Thank you.
-Thank you.
-Thank you.
-Thank you.
-Thank you.
-Thank you.
-Thank you.
-Thank you.
-I'm gonna start the question.
-Sure.
-And I'm gonna break the ice because I'm gonna ask a question that might not make sense to make everyone else feel comfortable, so I'm doing this for you all.
-But one thing that, some of this was a little bit over my head, but one thing I'm curious about is, is the nature of the privacy necessary for this to work, or is that something that is an added feature?
-That wasn't clear to me.
-It's like, I mean, The protocol can perfectly work without coin join.
-I thought it's a bit, in fact, and this idea has evolved over time.
-The initial design was a lightning sort of channel factory design, and this evolved into a coin join design.
-This protocol is totally doable, the idea without the coin join components, but I thought it's a nice addition to have.
-I think I missed an important step because it seemed like all the owner has to do, the factory person just has to wait four weeks and then they can just take everyone's money.
-And it was starting to make more sense at the end where that was like intended as the penalty, but I must have missed why would they not just set up shop, take the, Didn't you say that the person just waits four weeks and then they become spendable by the owner?
-The factory?
-Yes.
-So, you guys think, how does the penalty mechanism work for like a sender or a sender?
-Yeah, the penalty mechanism is for instance settlement assurances, right?
-If you want, if you're a vendor, i.e., if you demand instance settlement, I mean, you better use Lightning.
-Lightning is great for that use case.
-But I mean, if you demand instance settlement for some reason, that's what the penalty mechanism is a nice addition here.
-But the protocol works perfectly without it.
-I mean, because you can pay line invoices with zero call points.
-You have like this four week timeout because in channel factory design IE, yeah, you can open a bunch of channels, bundle together in one, but you at some point have to reveal them, and it pollutes on-chain.
-By having a one-directional design, the liquidity of the coins excels at some point, right?
-It's like a one directional channel.
-So that when all coins in a factory are spent, sort of liquidity is on the factory operator's side, right?
-In a four week time frame, assuming all coins are spent in a four week time frame, so that factory operator can sleep his coin, I mean the factory.
-When you say spent, you mean within the factory?
-Sleeping is on-chain, sleeping involves an on-chain mechanism.
-What do you mean spend?
-Just normal spend?
-Like spending in the protocol, they are on-chain.
-Are they off-chain coins?
-They are too.
-It's off-chain.
-Spending coins, they're entirely off-chain.
-The only on-chain footprint is the factory.
-You have this factory, if you have one or more inputs, and like four or three outputs in every five seconds, and when you spend a coin, and you create new coins, so you spend coins from the previous factory, and that spending is off-chain.
-It doesn't have- Why is that big off-chain coin join?
-I guess I don't- Yeah, it's an off-chain coin join.
-If I may, I think what you're asking is how do you prevent your coins from getting sweeped in the factory?
-I believe the answer is you have to keep moving.
-You've got to keep jumping from one factory to the next.
-If your coins are about to expire, right, you send coins back to your cell phone.
-Yeah, but what if someone just says they didn't get my message or whatever?
-Oh yeah, it's atomic.
-So I'm DMing you a message, right?
-I send you a coin if you don't get the message after two weeks I get a timeout refund I mean then I'm able to as a sender I can redeem the coins I've sent You put The whole thing you pull on to layer one?
-The whole thing is on off-chain.
-The closures are on the chain.
-I mean, the closures, you have the ability.
-You know, here, the first two weeks, the recipient can only add an ATLC.
-In the last two weeks, the center gets its, you know, I've been saying this all, I've been saying this for 15 days and nothing's happening.
-I just want to get my money back out of this factory.
-I want to go to a different factory.
-No, no, no, the same factory.
-Because the TILF, you know, has unchanged.
-You're still on the same client.
-How many people do you think would be in each factory?
-A thousand.
-I mean, if it's an update, template, update, verify design, it's millions.
-Yeah, but don't you think, like, I thought the factory design was really flawed in that if any single person in the factory stops responding, the whole thing has to be drawn.
-Yeah, exactly Disaster scenario.
-Yeah, I mean, it's crazy that more than like 20 right that would be like already pushing yeah yeah I mean the disaster scenario also goes for a lightning if someone you know miners broadcast all states I mean it's a disastrous scenario I get it but you easily join the factory with like zero coins or like five dollars and then what it would take to bring the factory on chain.
-So a factory transaction is like 20, 40 times the size of a normal transaction.
-Yeah.
-So ideally, in the end, we should have a top-level update verifier designed for the coins, so that you're only redeeming the coins you're interested in.
-But yeah, I mean the coin is below dust, like one satin, worthless coin.
-In theory you can claim it, but economically it doesn't make sense.
-But what the protocol does is it sets the incentives right so that the factory operator doesn't cheat.
-I think that also goes for Lightning.
-But you have the ability to claim that one Satoshi, although it's not economically...
-But I was just trying to make sure that I understand, because I think I don't understand it, right?
-So it's like a bunch of off-chain coin joins, and then on layer one you spend in, you join the factory.
-So you have coins, right?
-I mean, you're assuming you have coins, but I mean the first place...
-I said that I have Bitcoin on layer one.
-Okay, so the first step, how do you onboard to the protocol, right?
-You have one machine, you take so on Bitcoin chain and you want to onboard.
-You were using, it could be, you know, you can withdraw from Bitfinex or something, an exchange that supports the protocol, right?
-So that the exchange has points already in the protocol.
-You can get paid from it, but if you have Bitcoin.
-Because someone already onboarded to Layer 2.
-Yeah, you onboarded to Layer 2.
-You have a Bitcoin on chain.
-But the first person opens the channel.
-There are no channels here.
-Maybe the factory is there.
-No, like They have a wallet.
-I tell you, hey, do you know what is Bitcoin?
-You say no.
-Okay, you go to the wallet, I go to the wallet and I send you some stocks.
-That means I have to marry Satoshi.
-That's the first step.
-Like, you could fool and try to orange peel kids, but I think doing that is really hard.
-Like, I think this is what he's saying, is no nodes, no channels, it's just wallets.
-Right, okay.
-I'll count on that as what you're saying.
-You said?
-All right.
-Yeah, so if anyone has one, that's the question.
-The first, if Biffin X is already onboarded into the factory, like they already have the coins.
-Yeah, we have to call them some days.
-We call them a Barack coin They're the next has these layer two coins I can get them I can get them and I send my public keys Yeah and then I have a wall that supports this.
-When they refresh it every five seconds, they refresh it into something where it swaps out the, there's a new Merkle root or whatever that has, instead of something that never contained my key, it's now something that contains my key.
-So now I'm on-boarded into this scheme.
-So the flow is like you have Bitfinex, and Bitfinex assuming has already collected a protocol, and you want to withdraw from Bitfinex to your business protocol wallet.
-You have like a dedicated public key.
-You paste the public key to Bitfinex interface and they make you a payout.
-And Bitfinex offers coins, two of the coins between the factory operator and Bitfinex joins the factory operator next session and creates new coins, spends his coins and creates new coins for you, the payout coins for you.
-And you're a cosigner on this, you know, you're a cosigner of your coins, but you can do a refund.
-It has a script that refund closure.
-If you get a coin, yes, under a new factory, Bitfinex can prove it.
-It's a launching commitment.
-Can prove it to you.
-Okay, I paid you.
-You have a new coin, you have a bunch of coins under a new factory, or Bitfinex can also DM you, okay?
-And- Bitfinex also, every block rolling over, like an output or something?
-It must be because my public key is making it into something.
-So when Bitfinex joins, I mean, if they're payout, constant payouts into Bitfinex, Bitfinex joins the factory session in every five seconds, yes.
-Yeah, but isn't there something that's at least 32 bytes long on layer one, has to change when I onboard, right?
-So, are you asking about the first onboarding step?
-Like...
-Yeah, I have on-chain layer one Bitcoin now joined.
-And how do you join, how do you have a coin?
-Okay, so the first initial onboarding protocol step.
-So you have a layer one UTXO, and you have hardware bullet, and you want to convert that Bitcoin into the protocol coins.
-So you deposit your single set, you have created a type of coins and you deposit into a two of two, on a chain of Bitcoin you take so, two of two, just like coins, but coins are...
-Yeah, a channel.
-It doesn't have to be, it could just be...
-It's like a channel, yeah, like a channel, but one time use only channel.
-Two of two, and from there, you can even pay away any money.
-So if it's a real channel, or you can, because you can get paid from a HDLC Nested coin in the protocol, or you can, you know, coins are off-chain but you created an on-chain coin, right, 12 tokens, and you can join a coin join with that on-chain coin.
-You can register that coin, on-chain coin, for the next coin join session, the fact check session.
-Did you want to answer?
-Go for it.
-Yeah.
-So I just wanted to like really quickly recap it in my mind to make sure I understand it and then ask my question.
-So the factory is putting money into this transaction to create coins.
-And then if I have money, I want to buy into this contract and we're going to have some secret that we share out of band where I can control where you spend those coins.
-So you're using the connectors to do it in an atomic way?
-Yeah, you use connectors in an atomic way, someone pays you and in factory you're not aware of it.
-I mean the factory is there, whether it's confirmed or not, factory is there, you're in the way, but you realize, okay, I have a DM, okay, someone says, okay, I paid you, in this factory, go check it out, and you go check it out, okay, real, I know the factory content, because he sent me, the center sent me the factory content and the factory ID, the transaction ID, and go check it out, okay, there is a factory, there are coins, you know, you'll do the, you know, you verify the content and all that, and okay, I see there are a bunch of coins, and then with each coin, I mean, the sender can tell you the index, you know, in what index your coins are in the factory, and then you check it out, okay, calculate the script tab key, okay, and my cosigner key is this, with this tweak at, and the cosigner key is null, publicly null, the LSB, I mean the factor of it is publicly null, you calculate the tap script, and okay, this is coin, this is the script pubkey, this coin is mine.
-Okay, so are the connectors also their own outputs as well?
-Connectors are also transaction outputs.
-Yes, just like coins.
-They're commitments.
-Yes, just like coins The difference is connectors are not told to their single thing and they carry dust value Okay, I sort of understood that.
-One thing that you brought up that I didn't understand is the XOR operation, as a penalty.
-Yeah.
-Can you explain that a little bit?
-That's the right of way.
-Sure.
-So you're receiving a coin.
-You have this coin, i.e. Coin number one.
-Let's say it carries 1,000 sets.
-You have this coin.
-The factory is not confirmed.
-It's in the memory.
-But you demand its own settlement.
-What happens is the factory, you can accept it as Zeroconf as it is.
-You can say, okay, I consider this payment, payout, instant, settled.
-Although it's not confirmed because the factory operator is to double spend this, you know, this factory transaction, you forge the factory operators private key.
-And if you have, you know, previously spent coins in the protocol, you know, you have coins in the past, you spent them already, but because you can forge the factory operators with 202, the private key, you can forge with 202, and you can claim your previously spent points.
-Okay, so because you've already done business, and so, Are you using data from an existing transaction and this new transaction to try and forge the factory operators?
-If you've already on board, assuming you already have, just like Lightning, when you're on board, but if you have previous points and you already spent, then you can penalize your partner from there.
-But it also sets the incentives right.
-But other than that, you can pay Lightning invoice.
-If you just got on board, you cannot have instant settlement, yes, because you don't have any previously spent point.
-What you can do is you can still consider it an instance because, I don't know, you can pay a Lightning invoice for it.
-And Lightning invoice involves an instance settlement by nature.
-Do you run into issues with fees for the transaction clearing?
-So this is a liquidity network just like Lightning.
-So they're launching fees, but I mean, it's a factory commitment.
-So, you know, this is like 250 bytes, like one transaction, right?
-It's a launching transaction and they'll like say, 1,000 participants and the fees are divided by that number of participants, that's like 25,000 subs, divided by that number of participants, there was plus liquidity fees.
-It's lightning and there's all liquidity networks.
-In fact, this liquidity is used less efficiently here.
-Thank you.
-Sure.
-All right, Cool.
-Can I ask one question?
-So, in this diagram, like, the stuff on the left is confirmed.
-So you can see three outputs, and then that coin's output is sort of an Opsy TV kind of thing that you can expand out to 100.
-And so when everyone's using this, they see, okay, my share is coming out of that.
-Okay, so then there's this four week delay.
-Let's say there's a scenario where everyone's aware, like okay, this operator, this factory guy, he's offline, he's dead.
-So we know, why wait four weeks?
-We need to close.
-What is the process that any let's say that large and there is a hundred is it the case that any of the?
-100 can then close at the current state or do you need?
-Like what is the process?
-Oh, yeah sure so So you're doing coins, but that's not enough to claim.
-So from each real coin, you also have to do a claim, a sort of closure, from each coin, and then you wait for 24 hours to then finally settle, just like an auto.
-Okay, and so that, is that a multi-stage fan art, or is that like, okay, you spend coins, you get like 100 different outputs, and then each one of those, people have to sweep on their own or?
-Yeah So I mean this is a bit of a less slightly less efficient design because if you want to claim just one one coin You have to reveal all coins That's what update you know tablet update verify solves or CTV.
-You can you can you can emulate it with CTV, but Ideally with TX hash we can emulate it perfectly But in the current design you have to reveal all the coins to spend, to redeem your own or your owns, and from there you do another spend from the coin and wait and then you redeem it.
-You just feed your funds.
-Yeah, so the trade-off is sort of, if you think it's unlikely, well, yeah.
-And yeah, so there's trade-offs of like, okay, if you make it a tree, then worst case is worse, but if it's all at once, then you have this sort of frivolous problem where there's too many people, one person posts it and then it sort of ruins it for everyone.
-Yeah.
-Yeah so it was, okay got it.
-Cool.
-Sure.
-Sure.
-I have a question about you know, you said before that I need to connect as a receiver, right?
-I need to connect to a factory, right?
-You don't have to connect.
-You don't know who the factory is.
-You just got an orange pill and you don't know who, you just download a wallet.
-I mean, you know what a factory is, because it's like a factory wallet, a wallet operated by a factory.
-And I send you a coin.
-I could send you a coin from a different factory, too.
-Like, it can be two different wallets.
-I use factory ABC, use factory XIZ, but it's an interoperable design, right?
-I can send you coins, but the coins I'm sending you is 12-2 between, you know, say I'm using factory XIZ.
-You have to make some coins with ABC.
-I'm sending you coins and the coins are between you and XSS, my factory.
-Your vault is compatible with other factories too, so you can recognize your coins with other factories.
-So actually my question was like okay, basically when you DM me, hey, go look it up, you have a payment coming to you, I will recognize the pubkey the well-known pubkey or factory that way so I know where to look it up.
-Yeah exactly In the DM I also tell you who the factory is, how it is.
-So this factory transaction, is it sitting on chain or in the mempool?
-Is it confirmed?
-Some of them are confirmed, the new ones are in the mempool.
-Okay, so if they're sitting in the mempool, you can push things out of the mempool.
-If the mempool overflows and things like that.
-Yeah, fee bumping doesn't work here because if you add a fee, increase the fee, the transaction ID changes, so it breaks the autonomy of the name.
-So ideally you should do a CPIP style bumping.
-So we should either have another output, spendable by the fact, and we have a change, yeah.
-So you can do CPF style bumping that way, without affecting the TXID.
-So theoretically I could use this factory transaction, it's sitting in the mempool, I use it to pay somebody, I get the goods, and then I do some shenanigans in the mempool, it gets thrown out of a various mempool and the payment never happens.
-Yeah, that's the thing, right?
-Factory operator should make sure that, yeah, this is going to be confirmed.
-You should have a factory operator because otherwise factory operator is not able to claim coins that he sent.
-Yeah, but then the incentive of factory operator, making sure it's confirmed is quite expensive process, especially if people are trying to fix it right now, but under the current rules and the map rule, you can get evicted with people doing weird things.
-Sure.
-So there has to be a lot of workarounds on that, yeah?
-Yeah, yeah.
-And making sure that that's discussed.
-So the factory, like if I want to use it for payments, I can start using it, I don't know, will not use the six block rules, but something like that.
-So this is in many ways like slow.
-Yeah, I mean, if you have previously spent coins, it can penalize factory operator that way or you can, I mean I think that Lightning is better suited for vendors who demand instant settlements?
-I think like I have this analogy Lightning is UTP, this is CTP, WCP like you you know this protocol is more like users really, user protocol, but Lightning is more like a vendor protocol.
-If you're a vendor you know your cash inflows are predictable, You can go acquire some liquidity from someone and you demand instant settlement.
-And this is more like you have a user, your cash inflows, you know, it's not predictable and you can use the protocol to straight on board and send and receive coins without liquidity constraints and pay by the invoice.
-Okay, so you're making a choice between doing things immediately versus like liquidity use or something like that, if I understand correctly?
-That's right.
-So, so there are like in Lightning, there is the instantaneous part And here you're choosing not to have the instantaneous part, but to make it cheaper or...
-What's the trade-off?
-It's all about the liquidity problem.
-Okay, yes.
-So it's like the...
-Okay.
-Cool.
-Yes, I mean, they're all because of the networks, yeah.
-Okay.
-And if I have another sec, I have another question.
-So, you said that if I have one of the coins and then I try to double spend or something like that, the factory operator gets the money.
-Because I said so too, you cannot double spend.
-No, so did I hear, I thought that you mentioned… Double spending the factory, the factory operator if double spends the factory.
-Oh, If the factory operator tries to double spend...
-The factory that he created.
-Okay, yeah.
-So if I'm trying to move...
-Can you give a quick explanation?
-I have coins in the factory and now I want to give these coins to somebody.
-What happens if it's inside the factory, what happens if it's outside the factory?
-So in an on-chain payout, if you're paying someone on chain transaction, you can double spend it.
-And then if I deliver you good products or services, yeah, I can get it right.
-Here, if I as a vendor, if I have this penalty assurance, I previously spent coins, I can't do my next-term settlement here, if factory operator double spends it.
-And of course, as a vendor, I make sure the factory, the coins I'm getting, the factory pays enough fees.
-I see the mempool, okay, this is going to be confirmed, I'm sure it's going to be confirmed, and if, you know, at some point it will be confirmed, right?
-If there is a double spend in the mempool, well, then I'm penalized as a vendor, the factory operator, so I'll claim my previously spent coins anyway.
-So I'm asking, I own coin zero.
-Now I want to give you some three Satoshis, which are five Satoshis, what's exactly in coin zero?
-How do we do that?
-So you have CoinZero in this factory, right?
-This is like a confirmed factory, deep in the blockchain.
-You want to spend a zero coin and say it holds 100 sets.
-And then with that coin, you join a new factory, and you register for that coin.
-And because it's a tool too, the factory operator knows, factory operator funded this coin in the first place one time ago and can, you know, authorize this coin whether it's banned, expired, OFAC, whatever.
-And you can join a new factory session and register for this coin.
-With the same operator?
-Huh?
-With the same operator?
-With the same operator, yeah.
-Okay, I cannot do this with a different operator.
-Oh, yeah, exactly.
-You have to use the same operator, the 12-2 between you and the coin, the factory operator, and you join the same factory operator.
-You ask to join his new session, like three minutes ahead, and you join it.
-You register it in the registration phase, you register for coin zero, and then you register for the payouts, plus change coins.
-Destroy coin zero and create new coins.
-I mean, you register for the payout coins, you know, based on the blanket credentials you received from the coin registration part.
-And then you, from this coin, it's a TOV2.
-From this coin, actually it's not a TOV2, the coin is not a TOV2.
-The coin is, this is the scheme, from a coin you have, from the first closure A, A to C, So this is a pre-computed sort of closure.
-From C to A, we can use CTV to constrain A to be the transaction output.
-And from here, ATLC is a 2 of 2.
-And from A, you are a cosigner of A.
-The other cosigner of A, this A is the operator.
-And you sign a transaction, off-chain transaction, this transaction, ATLC connect, by adding this connector, ATLC connector, UTXO to the second input.
-And this UTXO lives in the NIF factory, commits to the NIF factory.
-Because you're signing with Ccash all, this transaction ID is the factory's transaction ID, commits to the factory, sort of forms a TX lock.
-Hash lock can look like a code TX lock.
-So that you sign it, so that you exchange signatures with the operator and okay operator, you know, you know, says okay, I've got a signature.
-I'm good to go.
-I will release this factory.
-If you don't sign, you get banned from that session.
-Well, where in all of this are you getting the coin?
-I'm trying to, I'm trying to send to you.
-Oh, you're sending me?
-Yeah, so you added in the Bitcoin registration phase, you added my coin, you did a tweet, you know my public key, Nostra public key, you tweet at the tweet, you send me a DM, then you added that coin, you registered that coin in the session, and then it's now, it commits to the transaction ID of the factory template.
-And then it forms a TX block for the template and then the factory operator broadcasts it to mempool.
-So I see, okay, I see an unconfirmed incoming factory and I have some coins under that factory.
-I see the payment, I see the factory pays enough fees.
-I can spend a coin, you hand to me over a Zeroconf coin, right, and I can spend a coin to someone else or pay a lightning invoice with it instantly, and, or I can even, you know, just hold it.
-Okay, so it's up to the factory operator to see that I'm not doing it twice.
-I'm not paying you and for example If you try to do it twice I mean factory operator won't let you in because the two of two the coin of 80s is a 12 to Oh, yeah, I do a second spent But what if I'm the factory operator?
-Like, what's in it for me to lose by allowing this?
-For the factory operator?
-Yeah.
-Because if you do try to do it, you double spend.
-If you try to double spend, you get a penalty from anyone.
-It's going to be made public to the whole network.
-Anyone can forge my private key, in that case, any participants, pre-private participants.
-And if not, you can just not demand it as a settlement.
-Like you may not be interested in demanding it as a settlement, you can just receive coins and wait for it to convert.
-If you don't want to make it, to consider it as settled.
-If not, with XOR or CAT, you can do it in penalty mechanism.
-Let's take it offline, because I think we're killing everyone.
-But yeah.
-Sure.
-So my understanding is that in each factory, the confirmed factory has coins connectors and the factory output factory chain, yes, so My is the connector basically is that a part of the pinning mechanism that I'm able as a person who has a coin, like so I submit an on-chain UTXO to a vector operator, I receive a coin, is the connector part of the mechanism, the pinning mechanism, like because basically in the connector, if we have the data, I would need to be able to, like if you try to double spin a vector operator, I can take the data from the previous connector and now get the funds back to myself?
-Is that like what the purpose of the connector is?
-Your question is if you're sending an on-chain UTXO, right?
-To pay someone?
-So I'm already in a confirmed factory, I'm in a confirmed factory.
-In a confirmed, okay, you're coins in a confirmed factory.
-I have coins in a confirmed factory.
-Is the connector a part of the pivot mechanism if the factory operator tries to double spin?
-Is that the purpose of the connector?
-The connector is to commit to the transaction ID, so that if there is a double spin, it breaks your coin.
-The operator can no longer redeem your coin, Because the connector is part of the factory, it commits to the transaction ID of the factory, so that if the factory already double spends...
-So the connector is the operative part of the bidding mechanism.
-Without the connector, as somebody that has a coin in the factory I would be able to spend to spin I wouldn't be able to penalize the operator not penalize you know what penalizing is a different sort of mechanism you won't be able to factory It's for factory operator to have an assurance, because factory operator pays someone with his liquidity and should be able to claim your coins.
-And in order for a factory operator to claim your coins, factory operator needs that assurance that connects to the connector.
-Shall we continue with the rest?
-Give it a round of applause.
+
+# Proposed Bitcoin Layer 2 Protocol: Full Edited Transcript
+
+## Part 1: Presentation
+
+### 1. Introduction and background
+
+So, hey everyone. My name is Borat.
+
+Today, I’ll be talking about something I’ve been working on for approximately six months.
+
+To give you some background, I initially came from the big-block camp. Later, I was introduced to Liquid, where I spent about two years doing covenant research and development. More recently, I’ve been exploring the Lightning Network space for approximately a year.
+
+Coming from a big-block background, I’ve always had objections to Lightning, particularly around the user experience. These concerns include backup mechanisms, interactivity requirements, and liquidity problems. I’ve had some pretty serious objections in these areas.
+
+A few months ago, I started working on a new Lightning-related idea to address these problems. Over time, I came to realize that most of my earlier objections are potentially solvable in the long run.
+
+For example, point time-locked contracts, or PTLCs, can address some of the limitations associated with HTLCs. Asynchronous receiving initiatives and proof-of-payment mechanisms can also help address existing shortcomings.
+
+However, one major problem remains: inbound liquidity.
+
+For me, this is a fundamental obstacle.
+
+Imagine orange-pilling someone for the first time. They download a wallet, but they cannot receive a payment because they have no inbound liquidity. They may need a swap-in service or some other mechanism to receive funds. That introduces friction and does not scale well.
+
+My view is that if a payment system works 90% of the time but fails 10% of the time, it is not good enough for a truly seamless user experience. The goal should be zero friction.
+
+I therefore started exploring solutions to these problems. Today, I’ll present an alternative Layer 2 protocol designed to address them.
+
+### 2. From a wallet concept to a new Layer 2 protocol
+
+The project originally began as a wallet idea based on Lightning and channel factories.
+
+As the design evolved, I realized that what I was building was no longer simply a Lightning wallet. At its core, it had become a new Layer 2 protocol with its own off-chain transaction model.
+
+The protocol requires a new covenant primitive, such as `APO` or `CTV`, to function as intended. These capabilities are not currently available on Bitcoin mainnet in the form required by this design.
+
+However, we can experiment with them on Bitcoin Inquisition's Signet. I believe that is where development and testing would begin.
+
+We have not settled on a name for the protocol yet.
+
+At a high level, the protocol has several important properties:
+
+- No inbound-liquidity constraints: Users do not need to acquire inbound liquidity before receiving payments.
+- A familiar wallet experience: Users can receive, send, and hold Bitcoin in a way that resembles using an on-chain wallet.
+- Minimal interactivity requirements: Users do not need to remain continuously connected to a server. The goal is to support ordinary smartphone wallets.
+- Non-custodial exit: Users can unilaterally recover their funds on-chain without requiring a cooperative organization to authorize the withdrawal.
+- Privacy through transaction mixing: Payments are designed to pass through a CoinJoin-like off-chain mixing process.
+
+The protocol is not intended to be a state-channel construction or a conventional rollup. It is intended to represent a distinct category of Bitcoin Layer 2 architecture.
+
+### 3. Privacy and the motivation for CoinJoin
+
+Every payment in the proposed protocol takes place through a CoinJoin-like process. The goal is to avoid unnecessarily revealing payment relationships, particularly the identity of the receiver.
+
+Consider Lightning. If routing hubs collaborate or comply with a surveillance request, they may be able to correlate payment information.
+
+For example, suppose I use one Lightning service provider and a receiver uses another. If both providers have a direct channel with the same intermediary, they may be able to correlate information about the payment route.
+
+Depending on the implementation, they might use information associated with the same HTLC, including its BOLT 11 payment-hash identifier, to help establish a relationship between the sender and receiver.
+
+The proposed protocol attempts to reduce this kind of correlation by placing payments inside an off-chain CoinJoin-like mixing process.
+
+The objective is to make the payment participants part of a shared anonymity set rather than expose a clearly traceable payment route.
+
+This privacy component is not strictly necessary for the protocol to function. The underlying construction could work without CoinJoin. However, I consider privacy a valuable addition.
+
+### 4. Comparing the protocol with existing Bitcoin systems
+
+I want to compare the proposed protocol with several existing systems:
+
+- On-chain Bitcoin.
+- The Lightning Network.
+- Ecash systems, including Cashu and related approaches.
+- Fedimint and other federation-based systems.
+
+There is some controversy over what qualifies as a Layer 2, so the comparison depends partly on the definition being used.
+
+My definition is that a Layer 2 is a separate software system that allows users to transact in Bitcoin without placing every transaction on the Bitcoin blockchain, while still permitting users to recover their Bitcoin on-chain without requiring a corporation to authorize the recovery.
+
+Under this definition, the proposed protocol qualifies as a Layer 2 because transactions occur off-chain while users retain a unilateral recovery path.
+
+Ecash is useful to include in the comparison, even though I would not classify it as a Layer 2 under this particular definition.
+
+#### Interactivity and receiving payments
+
+Lightning's HTLC and PTLC designs have different properties, but they still involve operational requirements associated with channel management and monitoring.
+
+Asynchronous receiving mechanisms can improve the receiving experience. However, users may still need to monitor the network for channel breaches unless they rely on a watchtower or another monitoring service.
+
+The proposed protocol is intended to reduce these requirements and provide an experience closer to that of an on-chain wallet.
+
+#### Scalability
+
+I believe scalability is one of the protocol's most important potential advantages.
+
+I do not believe the current Lightning architecture can onboard the entire planet without encountering significant constraints. Channel openings, on-chain swaps, liquidity acquisition, and other operations can become bottlenecks.
+
+The problem is not limited to the on-chain footprint. Liquidity itself is a constraint.
+
+I have an ambitious goal: to give as many people as possible the option to use Bitcoin in a non-custodial way.
+
+I realize that onboarding the entire planet may never be practical, but it is a goal I care deeply about.
+
+In theory, the proposed covenant primitive could enable a very large number of users to participate without requiring a separate on-chain transaction for every payment. There would still be other engineering, economic, and operational challenges, but the intention is to minimize the on-chain footprint.
+
+Most activity would occur off-chain. On-chain transactions would primarily support the underlying factory construction and recovery mechanisms.
+
+#### Privacy
+
+Privacy comparisons between Lightning and on-chain Bitcoin are controversial.
+
+Some people argue that Lightning provides better privacy than on-chain transactions. Others argue the opposite.
+
+The proposed protocol introduces an additional privacy mechanism: payments are processed through a CoinJoin-like mixing round.
+
+In conventional CoinJoin implementations, a mixing session may take considerable time to coordinate. In this protocol, factory sessions would occur regularly, potentially every five seconds.
+
+The intended anonymity set would consist of the participants whose payments are included in the relevant mixing process. The actual privacy guarantees would depend on the implementation, participation levels, timing information, and the ability of observers to correlate activity.
+
+#### Onboarding
+
+The intended onboarding experience is simple.
+
+If I want to orange-pill someone, I should be able to send them Bitcoin without requiring them to obtain inbound liquidity first. They should be able to download a compatible wallet and receive a payment.
+
+The aim is to make receiving Bitcoin as straightforward as receiving it with an on-chain address, while keeping most activity off-chain.
+
+### 5. The participants: users and factory operators
+
+Conceptually, the protocol has two main participants:
+
+1. Users.
+2. Factory operators.
+
+Factory operators are similar to Lightning service providers, or LSPs. In fact, a factory operator could also operate Lightning infrastructure.
+
+The protocol is intended to interoperate with Lightning rather than compete with it.
+
+For example, users should be able to pay Lightning invoices from the protocol. A factory operator could route Lightning payments and provide liquidity for the protocol at the same time.
+
+The two systems would serve somewhat different purposes.
+
+Lightning is well suited to use cases where immediate payment settlement is important and liquidity can be managed efficiently.
+
+The proposed protocol is intended to offer a simpler user experience for receiving and holding Bitcoin without first acquiring inbound liquidity.
+
+There is, however, a liquidity trade-off. Lightning channels are bidirectional, allowing liquidity to be used in both directions. The proposed protocol uses a more one-directional design, which means factory operators may need to provide liquidity continuously.
+
+### 6. The covenant primitive
+
+The protocol requires a covenant-like primitive that can constrain the outputs of a spending transaction.
+
+`CTV` is one possible approach, although its use is controversial. `APO` may provide another route, potentially emulating the required behavior through a combination of signature and script mechanisms.
+
+The original discussion also mentions alternatives involving `OP_CAT`, synthetic constructions, and other covenant proposals. The exact feasibility of each approach depends on the precise script construction and the Bitcoin consensus rules available in the target environment.
+
+The essential requirement is to commit to the relevant transaction structure in advance, so that outputs can be constrained when a Bitcoin output is created or spent.
+
+The rest of the design builds on that capability.
+
+### 7. Coins and factories: the basic architecture
+
+The protocol uses a concept called a factory.
+
+A factory resembles a channel factory, which is why the speaker uses that name, although the design has evolved beyond a conventional channel-factory model.
+
+A factory is a Bitcoin transaction output that acts as a shared UTXO. Nested within that output are commitments representing multiple off-chain coins.
+
+These coins are not ordinary independent Bitcoin UTXOs. They are off-chain objects whose ownership and spending conditions are represented through the factory's transaction structure and associated scripts.
+
+You can think of the design as a UTXO set that exists almost entirely off-chain.
+
+A wallet might contain anywhere from one coin to a million coins, ignoring dust limits for the purposes of the conceptual explanation.
+
+Each coin is designed as a one-time-use spending object. Instead of repeatedly updating the state of a persistent Lightning channel, a user spends an existing coin and creates new coins representing the resulting balances.
+
+#### The factory transaction
+
+The factory operator periodically creates a factory. For simplicity, imagine that a new factory is created every five seconds.
+
+Unlike a conventional CoinJoin, which may take hours or days to coordinate, this design aims to establish mixing rounds on a regular schedule.
+
+A factory transaction contains several outputs:
+
+- Coins output: Contains commitments to the coins participating in the factory.
+- Connectors output: Contains commitments to connector outputs used by the spending protocol.
+- Factory change: Returns any remaining value to the factory operator or the relevant change destination.
+
+The factory operator funds the factory transaction and coordinates the creation of the new factory.
+
+The coins output contains a collection of coin commitments. Each coin is associated with a two-of-two arrangement between the coin owner and the factory operator, similar in concept to a Lightning channel.
+
+However, rather than maintaining a persistent channel state, each coin is intended to be spent once before being replaced by new coins.
+
+The initial concept involved placing Lightning channels inside a shared UTXO, as in channel factories or coin-pool designs. The current design instead uses individual coin objects.
+
+The factory's coin commitments can be revealed through a suitable script path by someone who knows the relevant template information. In the proposed construction, the commitments are intended to make it possible to recover the coin contents when necessary.
+
+#### Connector outputs
+
+The connectors output contains commitments to a set of connector outputs.
+
+Connectors are also Bitcoin transaction outputs. They serve as commitments linking the spending of coins from a previous factory to the existence of a new factory.
+
+They differ from the coin commitments in an important way:
+
+- The coin commitments are intended to be revealed as a group in the current construction.
+- Connectors are intended to be revealed individually.
+
+The connector structure resembles a withdrawal tree, with update-and-verify behavior. The speaker suggests that a more efficient tree-based construction could improve the design in the future.
+
+Connectors also carry a small amount of Bitcoin value, described in the presentation as dust. The factory operator can spend them through a single-signature path.
+
+Their purpose is to help establish an atomic relationship between the old coins being spent and the new factory being created.
+
+### 8. ATLCs: the protocol's core spending primitive
+
+The speaker introduces a new term: ATLC, described as an alternative to the HTLC and PTLC constructions used in Lightning.
+
+The proposed primitive is intended to support the same broad goals as Lightning's conditional payment mechanisms while addressing the liquidity limitations of receiving payments.
+
+The speaker argues that conventional HTLCs have significant limitations for asynchronous receiving, particularly when the receiver cannot provide the required preimage while offline.
+
+PTLCs and asynchronous receiving initiatives may address some of these shortcomings, but the proposed ATLC construction aims to remove the inbound-liquidity requirement.
+
+In the speaker's description, receiving should work almost like pressing a button: a user can receive the funds they are owed without first arranging incoming liquidity.
+
+The protocol is designed around one-time-use coins, each associated with a two-of-two relationship between the coin owner and a factory operator.
+
+When a user wants to spend a coin, they participate in a new factory session. The old coin is consumed in the off-chain state transition, and new coins are created to represent the payout and any remaining change.
+
+The ATLC construction connects the coin being spent to a connector associated with the new factory.
+
+This relationship is intended to make the transfer atomic: the factory operator should not be able to claim the old coin unless the relevant new factory exists in the required form.
+
+### 9. How a factory session works
+
+The protocol's factory session resembles a CoinJoin round, with additional commitments and spending conditions.
+
+Suppose a user has several coins from previous factories and wants to spend them.
+
+The user joins a new factory session and registers the coins they intend to spend. These coins were created in earlier factories and are now being consumed.
+
+The user also registers for the new payout coins and any change coins they want to receive.
+
+The factory operator acts as a blinded coordinator.
+
+#### Phase 1: Coin registration
+
+The user registers the existing coins they want to spend.
+
+The factory operator provides blinded credentials that allow the user to register for new coins without directly linking the old coins to the new payout coins.
+
+In a conventional CoinJoin, inputs and outputs are generally registered within the same coordination process. Here, the protocol aims to use blinded credentials to separate those registrations and improve privacy.
+
+A session could contain many participants. The speaker describes a design that could accommodate thousands of coins and potentially millions if a more efficient update-and-verify construction becomes available.
+
+#### Phase 2: Payout registration
+
+After registering the coins being spent, the user registers for new payout coins and any change.
+
+The factory operator combines these commitments with those of other participants when constructing the new factory.
+
+The new factory contains the relevant payout coins and a corresponding set of ATLC connectors.
+
+If \\(N\\) coins are being spent, the operator adds \\(N\\) ATLC connectors. The session can create \\(M\\) new coins, where \\(M\\) depends on the number of payouts and change outputs required.
+
+#### Phase 3: Signing
+
+Once the registrations are complete, participants sign the relevant off-chain transactions.
+
+The user attaches an ATLC to each coin being spent. That ATLC is connected to a connector associated with the new factory.
+
+The user and the factory operator exchange the necessary signatures for the ATLC spending construction.
+
+The ATLC is intended to represent a single state transition: the old coin is spent and the new payout is created.
+
+The user signs the ATLC using the two-of-two arrangement associated with the old coin. The connector from the new factory supplies the commitment needed to link the spending transaction to the new factory.
+
+All participating users perform the corresponding operation.
+
+If a participant refuses to complete the required signing steps, the factory operator can exclude that participant from the session, according to the proposed coordination rules.
+
+#### Phase 4: Factory creation
+
+After the signing process, the factory operator broadcasts the factory transaction.
+
+The new factory contains the new coin commitments and connectors. The operator has funded the transaction and provided the liquidity required to create the coins.
+
+The ATLC construction is intended to ensure that the operator cannot simply claim the old coins while failing to establish the corresponding new factory.
+
+The speaker describes this as an atomic construction.
+
+### 10. The on-chain ATLC transaction
+
+The speaker describes an ATLC transaction as having two inputs.
+
+The first input is the coin being spent from a previous factory. It is controlled by a two-of-two arrangement involving the user and the factory operator.
+
+The second input is an ATLC connector associated with the new factory.
+
+The first input commits to the relevant spending transaction, while the second input references the connector from the new factory.
+
+The proposed construction uses `SIGHASH_ALL` so that the signature commits to the transaction's inputs and outputs, including the relevant outpoint associated with the new factory.
+
+The intent is to create a relationship between the old coin and the new factory.
+
+If the factory operator double-spends or otherwise invalidates the factory transaction, the connector commitment no longer satisfies the intended spending construction. Consequently, the operator should not be able to claim the old coin through the normal path.
+
+The user can then use the appropriate script path to recover the funds.
+
+The operator's ability to claim the old coin is therefore conditional on the new factory existing as required.
+
+This is central to the proposed atomic transfer mechanism.
+
+The transaction also includes an output that allows the factory operator to reclaim the relevant funds under the appropriate conditions.
+
+### 11. Factory expiry and recovery
+
+Factories and their coins have time-limited spending conditions.
+
+The example presented uses a four-week factory lifetime.
+
+The factory operator funds the factory and has a delayed script path that permits the operator to reclaim the relevant output after four weeks.
+
+During that period, users can spend their coins and move their balances into new factories.
+
+If a coin is approaching expiry, a user can perform a self-transfer: the user sends the funds to themselves through a new factory, effectively refreshing the coin's lifetime.
+
+The speaker suggests that users might need to perform this operation approximately every two weeks, although the exact schedule depends on the coin's spending conditions.
+
+#### Two recovery scenarios
+
+The design includes two important scenarios.
+
+1\. Normal operation
+
+The user spends coins before they expire. The old coins are consumed, and new coins are created in a subsequent factory.
+
+The four-week timer therefore does not necessarily mean that a user must withdraw on-chain every four weeks. The user can continue using the protocol by moving coins between factories.
+
+2\. Non-cooperative factory operator
+
+If a factory operator stops responding or refuses to cooperate, the user can reveal the relevant factory contents and use the available recovery paths.
+
+The speaker calls this an unilateral closure or non-cooperative closure.
+
+In the current construction, revealing the factory may require revealing all of its coin commitments, even if the user is interested in only one coin. The speaker acknowledges that this is inefficient.
+
+A more advanced update-and-verify tree could allow a user to reveal and recover only the relevant coin, avoiding the need to expose the entire factory.
+
+The proposed recovery design includes several script paths:
+
+- The recipient can claim the coin during the permitted claim window.
+- The sender can recover funds after a relative time delay if the recipient does not claim them.
+- The factory operator can reclaim funds after the relevant expiry period, subject to the construction's conditions.
+
+The speaker uses a two-week period to illustrate the sender's refund window and a four-week period to illustrate the operator's expiry path.
+
+These are example parameters rather than universal requirements of the protocol.
+
+#### Why the sender needs a refund path
+
+Suppose Alice sends a coin to Bob, but Bob does not receive or claim it.
+
+The sender should not lose access to the funds indefinitely.
+
+After the specified timeout, Alice should be able to recover the funds, much like a sender recovering an unclaimed Lightning HTLC.
+
+If Bob has already claimed or spent the coin, the relevant conditional spending mechanism prevents Alice from simply reclaiming funds that have already been transferred successfully.
+
+The precise safety of this arrangement depends on the interaction between the claim paths, connector commitments, timeouts, and signatures.
+
+### 12. Lightning interoperability
+
+The protocol is intended to interoperate with Lightning.
+
+Factory operators could add HTLCs or PTLCs to a factory template alongside the coins and connectors.
+
+This allows protocol users to pay Lightning invoices and potentially receive payments from Lightning users.
+
+Consider Alice, who uses the proposed protocol, and Bob, who uses a conventional Lightning wallet.
+
+Alice wants to pay Bob a Lightning invoice worth 21 satoshis.
+
+Suppose Alice has six coins distributed across three factories:
+
+- Two coins associated with factory operator X.
+- Two coins associated with factory operator Y.
+- Two coins associated with factory operator Z.
+
+Alice can use a multi-part payment approach similar to Lightning's multipath payments, or MPP.
+
+She joins sessions with the relevant factory operators, registers the coins she wants to spend, and arranges for the operators to forward the payment through Lightning.
+
+The factory operators create the necessary conditional payments and forward the funds to Bob.
+
+The protocol can therefore destroy old coins and create new payout coins, or use the coins to pay a Lightning invoice.
+
+The speaker also describes the possibility of receiving Lightning payments into the protocol through nested conditional-payment constructions.
+
+The exact implementation would need to establish how the conditional payments, factory commitments, timeouts, and settlement conditions interact.
+
+### 13. Receiving payments and proof of payment
+
+The proposed receiving mechanism is designed to support asynchronous payments without requiring the receiver to be online when the sender initiates the payment.
+
+The speaker compares the approach to Silent Payments.
+
+A recipient has a known public key. The sender derives a payment-specific key or commitment by combining the recipient's public key with a shared secret and unique information about the payment.
+
+The relevant information includes:
+
+- The factory outpoint or another unique factory identifier.
+- A shared secret between the sender and receiver.
+- The sender's public key.
+- The recipient's public key.
+- A unique payment commitment.
+
+The sender uses this information to derive a payment-specific output key or script commitment.
+
+The sender then communicates the relevant commitment to the recipient out of band, for example through a direct message.
+
+The recipient can use that information to locate the appropriate factory and identify the coin that belongs to them.
+
+They can then verify the factory contents and determine the corresponding script or public key.
+
+The construction is intended to provide several benefits:
+
+- Avoiding address reuse.
+- Generating unique payment-specific coin identifiers.
+- Supporting asynchronous receiving.
+- Providing evidence associated with the payment.
+- Allowing the receiver to identify their funds without requiring a conventional incoming channel.
+
+The speaker argues that the commitment can also support proof of payment when the recipient claims the relevant coin.
+
+The exact cryptographic details of the key derivation and proof-of-payment construction would need to be specified formally before implementation.
+
+### 14. Optional penalty mechanism for instant settlement
+
+The protocol may also include a penalty mechanism inspired by Lightning.
+
+This is intended to provide stronger settlement assurances for users who want to accept an unconfirmed factory or coin as immediately settled.
+
+Suppose a factory transaction is in the mempool but has not yet been confirmed.
+
+A recipient may wish to accept a payment represented by a coin in that factory.
+
+However, until confirmation, the factory operator could potentially attempt to double-spend the factory transaction.
+
+The proposed penalty mechanism aims to make that behavior costly.
+
+The speaker discusses using a construction involving `XOR` or `OP_CAT` to constrain parts of a signature or nonce to a particular script field. Under the proposed idea, a factory operator who double-spends a factory could expose information that allows affected users to recover funds from previously spent coins.
+
+The intended result is an economic disincentive against double-spending.
+
+The speaker also notes an important limitation: a newly onboarded user may not yet have previously spent coins that could be used for such a penalty.
+
+Therefore, this mechanism would not necessarily provide the same assurances in every situation.
+
+The protocol can still function without this optional mechanism. Users who require immediate settlement may prefer Lightning, while other users may accept a confirmation delay in exchange for a different liquidity model.
+
+The exact feasibility of the penalty construction depends on the cryptographic mechanism and the Bitcoin script capabilities available. The presentation describes it as a design proposal rather than a fully implemented feature.
+
+### 15. Unconfirmed coins and Lightning payments
+
+The speaker also proposes that unconfirmed coins could potentially be used to pay Lightning invoices.
+
+The reasoning is that both the existing coin and the new coin are associated with a two-of-two arrangement involving the factory operator.
+
+If the operator also operates a Lightning node, the same operator could potentially route the Lightning payment.
+
+Under the proposed design, a user might receive an unconfirmed coin and use it to pay a Lightning invoice without waiting for the factory to confirm, provided the operator and payment route accept the relevant settlement conditions.
+
+This does not eliminate the risks associated with unconfirmed transactions. It depends on the factory operator's incentives, the possibility of double-spending, and any penalty or risk-management mechanisms used by the protocol.
+
+### 16. Summary of the proposal
+
+To summarize, the protocol is an attempt to build a Bitcoin Layer 2 with the following characteristics:
+
+- Users can receive Bitcoin without first acquiring inbound liquidity.
+- Coins are represented by off-chain commitments nested within shared factory outputs.
+- Users spend old coins and create new coins through regularly scheduled factory sessions.
+- CoinJoin-like coordination is intended to improve privacy.
+- ATLCs and connector outputs link the spending of old coins to the creation of new factories.
+- Time-locked script paths provide recovery mechanisms if a recipient or factory operator becomes unresponsive.
+- Factory operators provide liquidity and coordinate the system.
+- Lightning interoperability allows users to pay Lightning invoices.
+- An optional penalty mechanism may improve assurances for accepting unconfirmed payments.
+- The design requires covenant-like capabilities that are not currently available on Bitcoin mainnet in the required form.
+
+The proposed architecture introduces trade-offs. Liquidity is less efficiently reused than in bidirectional Lightning channels. Recovery can be expensive if an entire factory must be revealed. Factory transactions must be reliably propagated and confirmed. The privacy, settlement, and recovery mechanisms also require rigorous analysis.
+
+The ultimate objective is to give users a straightforward way to hold, send, and receive Bitcoin non-custodially without the friction associated with inbound liquidity.
+
+Thank you for listening. I’m sure you have plenty of questions, and I’m happy to discuss them.
+
+Thank you. Thank you. Thank you.
+
+## Part 2: Audience Questions and Answers
+
+### Question 1: Is privacy necessary for the protocol to work?
+
+Audience member: Some of the technical details were a little over my head, but I’m curious about one thing. Is privacy necessary for the protocol to work, or is it an additional feature?
+
+Borat: The protocol can work perfectly well without CoinJoin. In fact, the idea evolved over time.
+
+The initial design was more like a Lightning channel-factory construction. Later, it evolved into a CoinJoin-based design.
+
+The underlying protocol could be implemented without the CoinJoin components. I simply thought that adding them would be beneficial.
+
+### Question 2: Why doesn't the factory operator take everyone's money after four weeks?
+
+Audience member: I think I missed an important step. It sounds as though the factory operator can simply wait four weeks and then take everyone's money. Why wouldn't the operator just set up a factory and take the funds?
+
+Borat: Are you asking how the penalty mechanism works for the sender or receiver?
+
+The penalty mechanism is intended to provide assurances for instant settlement. If you're a vendor who requires immediate settlement, you may be better off using Lightning. Lightning is well suited to that use case.
+
+The penalty mechanism is an additional feature for situations where instant settlement is required, but the protocol can work without it.
+
+The four-week timeout exists because the factory design allows multiple channels or coins to be grouped into a shared on-chain structure. Eventually, that structure may need to be revealed or reclaimed, which would create an on-chain footprint.
+
+The proposed one-directional coin design is intended to make liquidity available for subsequent transfers. Assuming the coins in a factory are spent within the four-week period, the factory operator can eventually reclaim the relevant factory output.
+
+Audience member: When you say that the coins are spent, do you mean spent within the factory?
+
+Borat: Yes. Spending the coins within the protocol is an off-chain operation. The factory itself is represented by an on-chain transaction, but the individual coin transfers take place off-chain.
+
+Audience member: So it's essentially a large off-chain CoinJoin?
+
+Borat: Yes, it's an off-chain CoinJoin-like construction.
+
+### Question 3: What happens if the recipient does not respond?
+
+Audience member: What happens if someone claims they didn't receive my message, or simply doesn't respond?
+
+Borat: The construction is intended to be atomic. Suppose I send you a coin through a payment message. If you don't claim it within the specified period, I should eventually be able to recover the funds.
+
+The sender has a refund path, similar to an HTLC timeout in Lightning.
+
+The first two weeks are the recipient's opportunity to claim the coin. During the subsequent period, the sender can recover it if the recipient has not completed the claim.
+
+The exact behavior depends on the coin's script paths and whether the relevant transfer has already been completed.
+
+### Question 4: How many participants can a factory support?
+
+Audience member: How many people do you expect to be in each factory?
+
+Borat: Potentially thousands. If we can implement a more efficient update-and-verify construction, the number could potentially reach millions.
+
+The current design has a significant limitation: revealing the factory may require revealing all its coins. Ideally, we'd use a tree-based construction so that users could recover only the coins they need.
+
+Audience member: Isn't that a major weakness? If a single participant stops responding, wouldn't the whole factory have to be closed on-chain?
+
+Borat: That's a disaster scenario, and I understand the concern. There are similar catastrophic scenarios in other systems, including Lightning, where a channel breach or the publication of an old state can require an on-chain response.
+
+The protocol should provide incentives that discourage the operator from cheating. Even if a coin has a very small value, the owner should theoretically have a recovery path, although claiming a tiny amount may not be economically worthwhile.
+
+Ideally, the protocol would use a more efficient tree construction to avoid forcing everyone to reveal their coins just because one participant needs to recover funds.
+
+### Question 5: How does someone onboard to the protocol for the first time?
+
+Audience member: Let's go back to the beginning. Suppose I have Bitcoin on Layer 1. How do I onboard to the protocol?
+
+Borat: One possibility is to withdraw from an exchange that already supports the protocol.
+
+For example, suppose Bitfinex has already onboarded funds and holds coins within the protocol. A user could withdraw to a compatible wallet by providing the appropriate public key.
+
+The exchange would participate in a factory session and create payout coins for the user. The user would become a co-signer of the new coins, with the corresponding recovery conditions.
+
+The user could then receive, hold, and spend coins without needing to open a conventional Lightning channel.
+
+Audience member: But what if I'm the first person? I have Bitcoin on-chain, and I want to join the protocol. How does that work?
+
+Borat: In that case, you'd need an initial onboarding mechanism.
+
+You could start with an on-chain UTXO and use it to establish the necessary two-of-two arrangement. From there, the funds could participate in the protocol's factory sessions.
+
+The initial construction might resemble a one-time-use channel, although the exact onboarding mechanism remains an implementation detail.
+
+The key point is that someone must initially bring Bitcoin into the system. Once the protocol has users and factory operators, those users can transfer coins within it without requiring a new on-chain transaction for every payment.
+
+Audience member: So someone has to onboard first. The protocol doesn't create Bitcoin out of nothing.
+
+Borat: Correct. The protocol relies on Bitcoin being introduced into the system. The goal is to make subsequent transactions more scalable and convenient.
+
+### Question 6: How does the recipient identify their coin?
+
+Audience member: Let me recap what I understand. The factory creates the coins, and if I want to pay someone, we share some information out of band that lets the recipient identify the coin. The connectors then make the transfer atomic. Is that right?
+
+Borat: Yes, that's the general idea.
+
+The sender communicates the relevant factory information and payment commitment to the recipient. The recipient checks the factory transaction and verifies the coin's contents.
+
+They can calculate the appropriate script or public key and establish that the coin belongs to them.
+
+Audience member: Are the connectors also separate transaction outputs?
+
+Borat: Yes. Connectors are Bitcoin transaction outputs, just like the coin commitments. They are commitments that connect the old and new factory structures.
+
+The difference is that the connectors are intended to be revealed individually, while the current coin construction requires the coins to be revealed together.
+
+### Question 7: How does the XOR penalty mechanism work?
+
+Audience member: You mentioned XOR as part of the penalty mechanism. Could you explain that?
+
+Borat: Imagine that you're receiving a coin worth 1,000 satoshis, but the factory transaction has not yet confirmed.
+
+You might decide to accept the coin as immediately settled. However, the factory operator could potentially double-spend the factory transaction.
+
+The proposed penalty mechanism attempts to make that behavior costly. If the operator double-spends a factory, information exposed through the construction could allow a user to recover funds from previously spent coins.
+
+The idea is to make cheating economically unattractive.
+
+Audience member: So you're using information from an existing transaction and a new transaction to derive the operator's private key or otherwise penalize them?
+
+Borat: That's the intended direction of the construction. It relies on the cryptographic details of the penalty mechanism, including the proposed use of XOR or related script capabilities.
+
+It also depends on the user having previously spent coins that can be used in the penalty arrangement. A newly onboarded user may not have that history yet.
+
+The protocol can still work without this mechanism. It is an additional feature for users who want stronger instant-settlement assurances.
+
+### Question 8: How do transaction fees affect the design?
+
+Audience member: Do transaction fees create problems for this construction?
+
+Borat: Factory transactions have an on-chain cost, but that cost is shared across the participants.
+
+For example, if a factory transaction costs approximately 25,000 satoshis in fees and serves 1,000 participants, the fee contribution averages approximately 25 satoshis per participant, before accounting for liquidity fees and other costs.
+
+The exact figures depend on transaction size, fee rates, and the number of participants.
+
+The protocol is intended to operate as a liquidity network, much like Lightning, although liquidity may be used less efficiently because of the one-directional design.
+
+### Question 9: What happens if the factory operator disappears?
+
+Audience member: Suppose the factory operator disappears and everyone knows the operator is offline. Imagine there are 100 participants. Can any of them close the factory at the current state, or does the entire factory have to be closed?
+
+Borat: Under the current design, you first reveal the relevant factory contents. Then you use the recovery path associated with your coin.
+
+You cannot necessarily claim the funds immediately. The coin's spending conditions may require an additional transaction and a delay before final recovery.
+
+Audience member: Is that a multi-stage process? Does every participant need to sweep their own output?
+
+Borat: Yes, there may be multiple stages.
+
+The current design is less efficient than an ideal tree-based construction. If you want to claim one coin, you may need to reveal all the coins in the factory, then perform the necessary spending operation for your own coin.
+
+A more efficient update-and-verify tree could allow a participant to reveal only the coin they need.
+
+That is one of the design improvements we would like to make.
+
+### Question 10: Does the receiver need to connect to a factory?
+
+Audience member: You said that a receiver needs to connect to a factory. Is that right?
+
+Borat: No, the receiver doesn't necessarily need to connect directly to a particular factory in advance.
+
+Imagine that someone orange-pills you. You download a compatible wallet, and they send you a payment. You don't need to know the factory operator beforehand.
+
+The payment might come from one factory operator while your other coins are associated with different operators. The wallet should be compatible with multiple factories.
+
+The sender tells you which factory contains the payment and provides the information needed to identify your coin. Your wallet then verifies the relevant transaction and coin commitment.
+
+Audience member: So the payment message identifies the factory and the public key I need to recognize?
+
+Borat: Exactly. The message provides the relevant information so the wallet can find and verify the payment.
+
+### Question 11: What happens if the factory transaction is still in the mempool?
+
+Audience member: Is the factory transaction already confirmed on-chain, or is it still in the mempool?
+
+Borat: Some factory transactions would be confirmed, while newer ones might still be in the mempool.
+
+Audience member: If a factory transaction is in the mempool, it could be evicted if the mempool fills up. What happens then?
+
+Also, fee bumping could be a problem. If you change the transaction in a way that changes its transaction ID, you could break the commitments that depend on that ID.
+
+Borat: Correct. Ordinary fee bumping can be problematic if the construction relies on a transaction ID that changes when the transaction is modified.
+
+One possibility is to use a child-pays-for-parent, or CPFP, strategy. The factory could include an additional output that the operator can spend to increase the effective fee rate without modifying the original factory transaction.
+
+That would need to be designed carefully so that the transaction's commitments remain valid.
+
+Audience member: Suppose I receive an unconfirmed coin, use it to pay someone, receive the goods, and then the factory transaction is evicted from the mempool. The payment might never confirm. Isn't that a serious problem?
+
+Borat: Yes. The factory operator must ensure that the transaction has a reasonable chance of being confirmed.
+
+If a user requires strong assurances of immediate settlement, they need a mechanism that addresses the risk of a double-spend or an unconfirmed transaction being dropped.
+
+The optional penalty mechanism is intended to help in certain cases. However, the protocol would also need robust mempool-management strategies and clear rules for accepting unconfirmed coins.
+
+Audience member: So there are still operational challenges around fee management and transaction propagation?
+
+Borat: Yes. Those are important issues that would need to be addressed.
+
+### Question 12: Is this protocol intended for immediate payments or cheaper transfers?
+
+Audience member: It sounds as though the protocol is making a choice between immediate settlement and more efficient liquidity usage. Is that the trade-off?
+
+Borat: The primary motivation is the liquidity problem.
+
+I think of Lightning as a protocol particularly suited to vendors who need immediate settlement and have relatively predictable cash flows. A vendor can acquire liquidity and use it to accept payments.
+
+The proposed protocol is more focused on ordinary users whose incoming payments may be unpredictable. They should be able to receive Bitcoin without first arranging inbound liquidity.
+
+The two protocols have different strengths. The proposed protocol is intended to complement Lightning, not replace it.
+
+Audience member: So Lightning prioritizes instant settlement, while this protocol prioritizes receiving payments without liquidity constraints?
+
+Borat: That's a reasonable way to describe the distinction. The precise trade-offs depend on the implementation, especially the settlement guarantees and liquidity arrangements.
+
+### Question 13: What happens if a user double-spends a coin?
+
+Audience member: If a user tries to double-spend a coin, does the factory operator get the money?
+
+Borat: The distinction is important. The scenario I described earlier concerns the factory operator double-spending a factory transaction, not the user simply trying to spend a coin twice.
+
+Audience member: Could you explain how a normal payment works, starting with a coin in an existing factory?
+
+Borat: Suppose you own Coin 0 in a confirmed factory, and it contains 100 satoshis.
+
+You want to pay someone.
+
+You join a new factory session with the same factory operator, because the coin is associated with that operator through a two-of-two arrangement.
+
+You register Coin 0 as an input. You then register for the new payout coins and any change you need.
+
+The old coin is consumed, and the new coins are created through the factory process.
+
+The ATLC connects the old coin to a connector in the new factory. The user and operator exchange the necessary signatures, and the factory operator broadcasts the new factory transaction.
+
+The new factory represents the payment and any change.
+
+Audience member: Does the user have to use the same operator?
+
+Borat: In the design as presented, yes. The existing coin is associated with a particular factory operator, and that operator participates in authorizing its spending.
+
+The user would join a session with that operator to spend the coin. A different operator could be involved in subsequent arrangements, depending on how the protocol supports transfers between operators, but the initial spending relationship is with the operator associated with the existing coin.
+
+Audience member: So the operator checks that I'm not spending the same coin twice?
+
+Borat: The two-of-two authorization is intended to prevent a user from independently authorizing conflicting spends through the normal protocol path.
+
+The factory operator also needs assurance that the old coin can be claimed under the required conditions after the new factory is created.
+
+### Question 14: What incentive does the factory operator have not to cheat?
+
+Audience member: Suppose I'm the factory operator. What's stopping me from allowing a double-spend if I stand to gain from it?
+
+Borat: The construction is intended to provide a penalty mechanism. If the operator double-spends a factory, users who have the relevant prior spending history may be able to penalize the operator by recovering funds through the proposed cryptographic construction.
+
+However, the penalty mechanism is optional in the broader design, and the precise guarantees depend on its implementation.
+
+Without such a mechanism, users should not automatically treat an unconfirmed factory as fully settled. They need to consider confirmation status and the associated risks.
+
+For example, a vendor can inspect the mempool and assess whether the factory transaction is likely to confirm. If the vendor requires stronger assurances, they can use Lightning or wait for the relevant confirmation conditions to be satisfied.
+
+### Question 15: What exactly do connectors contribute to the penalty and atomicity mechanisms?
+
+Audience member: I already have coins in a confirmed factory. If the factory operator tries to double-spend the factory, is the connector part of the mechanism that lets me recover my funds?
+
+Borat: The connector commits to the transaction ID of the new factory. It links the spending of the old coin to the new factory.
+
+If the factory operator double-spends the factory transaction, the connector commitment should no longer satisfy the required spending construction. That prevents the operator from claiming the old coin through the normal path.
+
+The user can then use the appropriate script path to recover the funds.
+
+The connector is therefore an important part of the atomicity mechanism. It gives the factory operator an assurance that the old coin can be claimed only when the new factory exists in the required form.
+
+Audience member: So, without the connector, the operator could potentially spend the coin without having the required commitment to the new factory?
+
+Borat: The connector is intended to prevent that problem. It links the two sides of the transfer and establishes the conditions under which the operator can claim the old coin.
+
+The connector should not be confused with the optional penalty mechanism, though. They serve related but distinct purposes: the connector supports the atomic transfer construction, while the penalty mechanism is intended to provide additional assurances against certain forms of cheating.
+
+### Closing
+
+Moderator: Shall we continue with the remaining discussion?
+
+Audience: Let's give the speaker a round of applause.
+
+Borat: Thank you, everyone.
+
+ Editorial notes on technical terminology
+
+A few terms in the original speech-to-text transcript require verification against the recording or the speaker's slides before publication:
+
+-ATLC: Retained as the speaker's proposed protocol primitive. Its exact expansion was not clearly established in the source transcript.
+- APO, CTV and OP_CAT: Retained as Bitcoin script or covenant-related terminology. Their precise roles in the proposed construction need technical verification.
+- PTLC, HTLC, MPP, CPFP and SIGHASH_ALL: Standard Bitcoin and Lightning terminology, retained and normalized where the intended meaning was clear.
+- Factory expiry and recovery windows: The four-week factory lifetime and two-week sender-refund window are presented as design examples, not independently verified protocol specifications.
+- Cryptographic security claims: The proposed penalty, atomicity, privacy and recovery mechanisms have been described as the speaker's intended design. This transcript should not be interpreted as an independent security audit or proof that those mechanisms work as claimed.
+
