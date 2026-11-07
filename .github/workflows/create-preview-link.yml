@@ -86,6 +86,7 @@ jobs:
       - name: Run Next.js build only
         working-directory: registry
         env:
+            GITHUB_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
             API_KEY: ${{ secrets.API_KEY }}
             CLOUD_ID: ${{ secrets.CLOUD_ID }}
             INDEX: ${{ secrets.INDEX }}
