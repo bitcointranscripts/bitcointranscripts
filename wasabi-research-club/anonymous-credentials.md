@@ -22,9 +22,13 @@ aliases:
 ##  Wasabi Research
 **
 
-Speaker 0: 00:00:00
+*Jonas Nick
 
-To approach this is to look from the point of view of blind signatures, right? I guess blind signatures are mostly familiar to this audience, right? Or should be. Should be familiar for every Wasabi user, For every Wasabi power user, I guess.
+To approach this is to look from the point of view of blind signatures, right? I guess blind signatures are mostly familiar to this audience, right? 
+
+***Anthony Towns:***  Yes
+Or should be. Should be familiar for every Wasabi user, For every Wasabi power user, I guess.
+
 
 So, the idea of credentials is similar in the sense that you get some blinded token that was signed by some server and the server does not see the message that was being signed.
 Now the additional idea to a credential is that it's not only a message that it's being signed, but instead it's multiple attributes that can be signed.
@@ -39,7 +43,7 @@ You can, for example, besides range proofs, you can show that if you have two bl
 
 ## Pedersen multi-commitments.
 
-Speaker 0: 00:02:17
+Jonas Nick: 00:02:17
 
 Yeah, so mathematically, I think the best way to think about this is as Peterson multi-commitments.
 So in normal Peterson commitments, right, you have some randomness and you use that to commit to a value.
@@ -56,7 +60,7 @@ Speaker 1: 00:03:20
 Stefano, I think, not Peter or something like that.
 Okay.
 
-Speaker 0: 00:03:24
+Jonas Nick: 00:03:24
 
 He wrote his PhD thesis.
 Okay, Branz is his last name.
@@ -100,7 +104,7 @@ Unlike the brand credentials because there they are linkable so you can only use
 So that's actually something that we would desire if we would want to build on top of this.
 Anyway.
 
-Speaker 0: 00:07:28
+Jonas Nick: 00:07:28
 
 If I may add to that, I would say that brands credentials are also unlinkable.
 If you can talk to the server, right?
@@ -121,7 +125,7 @@ And the trick is that you could actually delegate the ownership of the credentia
 So in our case, that would be, I think, giving money to someone and I wouldn't be able to redeem it, but you would, which is actually pretty nice.
 Oh my God, I wasn't talking.
 
-Speaker 0: 00:09:26
+Jonas Nick: 00:09:26
 
 Last thing you said was in our case, that would be.
 
@@ -145,7 +149,7 @@ The user could create the signatures, the blind signatures for their credentials
 However, we actually came up with a solution based on homomorphic cryptographic commitments, range proofs, and a blind signature scheme that works with this homomorphic cryptographic commitments in a way that we can actually come with an anonymity network identity, register input, get back something, come with another anonymity network identity, register another input, get back something, and we could combine the two something in zero knowledge that in a way that we could prove the server that we could make any kind of outputs out of those and we could have done it with these anonymous credentials in some way or form, but we would still have to have denominations in order to achieve some kind of privacy.
 That was the thought of line there, right?
 
-Speaker 0: 00:13:34
+Jonas Nick: 00:13:34
 
 Just so I understand, instead of registering all inputs at once, you would be able to register them with different identities, right?
 
@@ -154,7 +158,7 @@ Speaker 1: 00:13:47
 Yes, we can come with different identities with any number of inputs and we can come with different identities to register any output.
 That's what we kind of figured out.
 
-Speaker 0: 00:14:06
+Jonas Nick: 00:14:06
 
 So you would provide a, let's say one Bitcoin input and another one Bitcoin input later and then you would get two one input one Bitcoin tokens and that could be used to add a two Bitcoin output or something like that and you don't have to show that your inputs were one Bitcoin you just show that the sum is equal to two bitcoins.
 Yes,
@@ -179,7 +183,7 @@ Yep.
 So, and then you register that two Pedersen commitment and Pedersen commitment for your 1Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my patterns and commitments.
 By the way, we create more patterns and commitments with zeros, but it doesn't matter for now.
 
-Speaker 0: 00:16:31
+Jonas Nick: 00:16:31
 
 Yeah, that makes sense.
 
@@ -196,7 +200,7 @@ Yeah, so it's pretty cool.
 Yeah.
 Any question on that or we can get back to this paper.
 
-Speaker 0: 00:18:10
+Jonas Nick: 00:18:10
 
 Yeah, I don't quite understand why that wouldn't work if you if you let's say have a point one and a point nine.
 Talk Bitcoin token, right?
@@ -205,7 +209,7 @@ Speaker 1: 00:18:22
 
 Yes.
 
-Speaker 0: 00:18:24
+Jonas Nick: 00:18:24
 
 Don't you just have to show to the server that both tokens sum up or maybe even better, you create a new token with a one Bitcoin value, you don't show the server your, or the value of the new token and but you show the server that the sum of the old tokens is the value of the new token.
 Wouldn't that work for merging?
@@ -215,7 +219,7 @@ Speaker 1: 00:18:52
 Your first suggestion, yes, that works.
 It just, there is some probably negligible privacy loss, right, Like you expose the server that you have a 0.1 Bitcoin and a 0.9 Bitcoin pedders and commitments on the server.
 
-Speaker 0: 00:19:13
+Jonas Nick: 00:19:13
 
 I don't think, at least with anonymous credential slide, I don't think you have to do that necessarily.
 I think you can show that the sum is the value of your new token and you don't have to show anything more to the server, I think.
@@ -224,7 +228,7 @@ Speaker 1: 00:19:32
 
 With your first suggestion, I was talking about that, right?
 
-Speaker 0: 00:19:37
+Jonas Nick: 00:19:37
 
 Okay.
 
@@ -235,7 +239,7 @@ But we figured out how to do it even without that.
 So your second suggestion, could you repeat it maybe?
 I'm not sure I understood.
 
-Speaker 0: 00:19:57
+Jonas Nick: 00:19:57
 
 I thought I was only making one suggestion.
 So perhaps it was that.
@@ -247,7 +251,7 @@ Speaker 1: 00:20:05
 
 So your first suggestion was to take two blind signature of 0.1 and 0.9 and register them together to the server, to the coordinator, is that correct?
 
-Speaker 0: 00:20:24
+Jonas Nick: 00:20:24
 
 Perhaps I wouldn't call this registering, I would just call this like, perhaps like just a reissuance, We've used that term before.
 You have a token and you just want to get a new one with a new serial number and these tokens are unlinkable and the same would work if you show two tokens and a new token where the new token is the sum of the former tokens and you don't have to show the actual values to the server you just have to show that the sum matches to the new value
@@ -256,7 +260,7 @@ Speaker 1: 00:21:03
 
 and so
 
-Speaker 0: 00:21:04
+Jonas Nick: 00:21:04
 
 then you wouldn't have that privacy loss of having to show the individual values of the old tokens.
 
@@ -265,7 +269,7 @@ Speaker 1: 00:21:11
 Yes, so the thing is we get the signature, the blind signature on the data itself.
 Which means if we want a reassurance phase there, then we would have to expose the values.
 
-Speaker 0: 00:21:33
+Jonas Nick: 00:21:33
 
 Okay.
 
@@ -284,7 +288,7 @@ Speaker 1: 00:22:28
 So with anonymous credentials, I think you would have to, you would have to, to create a bunch of bunch of denominations.
 Right?
 
-Speaker 0: 00:22:46
+Jonas Nick: 00:22:46
 
 I don't think so.
 I think this is exactly the magic of these anonymous credentials that you can do these sum proofs similar to what you just described with BLS signatures.
@@ -297,7 +301,7 @@ That's, yeah, that's really similar with what we came up with, indeed.
 But I'm not sure in this paper.
 Maybe I just didn't go into it.
 
-Speaker 0: 00:23:21
+Jonas Nick: 00:23:21
 
 Yeah, no, I if I remember correctly, perhaps they're not showing this in this paper.
 But this is something that is like a central concept in the Brant's PhD thesis and I believe you can do the same thing with anonymous credentials because both types of credentials look actually very similar.
@@ -306,7 +310,7 @@ Speaker 2: 00:23:45
 
 Look actually
 
-Speaker 0: 00:23:45
+Jonas Nick: 00:23:45
 
 very similar.
 
@@ -320,7 +324,7 @@ Speaker 1: 00:23:55
 
 I'm not sure if it, would it make sense to start investigating this instead of doing it with BLS signatures?
 
-Speaker 0: 00:24:08
+Jonas Nick: 00:24:08
 
 Actually I think I don't know I would do whatever is easiest actually Because I guess for your application or in general, it doesn't make too big of a difference if you use BLS.
 I mean, if you think that parents are secure and BLS signatures are secure and this whole bunch of crypto assumptions, then I think you can just use that if that's easier.
@@ -330,7 +334,7 @@ Speaker 1: 00:24:45
 
 Is the RnBLS signatures work on the discrete logarithm paradigm?
 
-Speaker 0: 00:24:51
+Jonas Nick: 00:24:51
 
 No, they use pairings.
 So it's different curves and different cryptic assumptions.
@@ -341,7 +345,7 @@ Okay, All right.
 So yeah, I'm not sure it is easier for us because the implementation, I think still looking behind of the BLS signature implementations.
 So On the other hand, it's such a simple scheme that they could even explain it to me who doesn't understand crypto that much.
 
-Speaker 0: 00:25:30
+Jonas Nick: 00:25:30
 
 Okay, the BLS thing, does it have an implementation?
 And if so, how is it called?
@@ -353,7 +357,7 @@ I think it does not have implementation in C Sharp.
 It has for a couple of languages.
 I think the main implementation is C++ and there is bindings for that.
 
-Speaker 0: 00:25:54
+Jonas Nick: 00:25:54
 
 Okay.
 I think there's an implementation of Brian's credentials in C sharp, right?
@@ -368,7 +372,7 @@ So I would have loved to go with U-Proof.
 
 ## Problem's with proof. / Brands' credentials.
 
-Speaker 0: 00:26:21
+Jonas Nick: 00:26:21
 
 What's the problem with U-Proof?
 
@@ -378,7 +382,7 @@ Well, that doesn't solve our problem as far as I understand.
 You still need a bunch of stuff to do with that.
 Also people are talking about that it's not very secure and things like that.
 
-Speaker 0: 00:26:47
+Jonas Nick: 00:26:47
 
 No one's found a vulnerability yet, Brant's credentials, so as far as I know.
 
@@ -386,7 +390,7 @@ Speaker 2: 00:26:59
 
 I don't
 
-Speaker 0: 00:26:59
+Jonas Nick: 00:26:59
 
 know, it's a difficult question, but I think the sum proof that I mentioned earlier should work just as well with brands credentials you don't need multiple denominations.
 
@@ -402,7 +406,7 @@ Speaker 1: 00:27:25
 
 And does it have also, how would the range proofs apply to that?
 
-Speaker 0: 00:27:34
+Jonas Nick: 00:27:34
 
 Yeah, you probably still have to do these range proofs to show that the values don't overflow but I I'm not sure if the U-Proof library does that already for you.
 I haven't really looked into the library ever.
@@ -414,7 +418,7 @@ How about the merging of the coins?
 I think that could be a problem there that you cannot merge two attributes together in a way that it both prevents double spending and you don't expose the attribute, you know, the values, only the sum of them.
 I'm not sure that's possible.
 
-Speaker 0: 00:28:30
+Jonas Nick: 00:28:30
 
 I think it is.
 I think that's the point of Brands Credential.
@@ -426,7 +430,7 @@ Speaker 1: 00:29:00
 
 You don't need the reissuance there?
 
-Speaker 0: 00:29:04
+Jonas Nick: 00:29:04
 
 Yeah you would need the reissuance.
 
@@ -442,7 +446,7 @@ In there.
 Okay.
 But for unknown
 
-Speaker 0: 00:29:22
+Jonas Nick: 00:29:22
 
 credentials like, but okay, so I actually.
 That sounds like something that BLS or pairings could do, like merging different credentials together without communication with the server.
@@ -466,7 +470,7 @@ Ah, yes, This is what I'm talking about here.
 We actually want the opposite.
 In order to avoid the worst spending, we want a use to be linked to previous uses of the same credential which brands provide and this scheme does not, I'm not sure how hard would it be to implement it, Would it be only a simplification or this would be a major headache to implement linkable credentials on top of ACL construct?
 
-Speaker 0: 00:32:00
+Jonas Nick: 00:32:00
 
 On top of what construct?
 
@@ -483,7 +487,7 @@ Speaker 1: 00:32:35
 
 That would also ruin the sum stuff that we talked about.
 
-Speaker 0: 00:32:41
+Jonas Nick: 00:32:41
 
 No. Why?
 
@@ -492,7 +496,7 @@ Speaker 1: 00:32:43
 If you put a serial number into the attribute, then you cannot prove the sum.
 I mean, the serial number is there, you know.
 
-Speaker 0: 00:33:00
+Jonas Nick: 00:33:00
 
 So what you do is you show your old credentials, can be multiple, you show the serial numbers for each of those credentials, you prove that the serial numbers are actually the ones contained in your credentials, the server checks that these serial numbers have not been used, you show the new token that you created with a fresh serial number that you chose randomly and then you do the sum proof and that way you don't have to show anything to the server but the serial numbers.
 
@@ -502,7 +506,7 @@ That's smart.
 Isn't it just like if we would create blind signatures to as many attributes we...
 I don't know.
 
-Speaker 0: 00:33:57
+Jonas Nick: 00:33:57
 
 Yeah, the problem is with blind signatures, right, is blind signatures are unstructured.
 You just have this message and then you can put different things into the message but then you cannot efficiently prove anything about these individual attributes in your message and this is why these credential schemes are superior to the normal blind signatures.
@@ -513,7 +517,7 @@ Yeah, yeah.
 All right.
 So there may be something here to...
 
-Speaker 0: 00:34:35
+Jonas Nick: 00:34:35
 
 Yeah, I'd also like to look into this BLS stuff.
 Definitely, that seems interesting.
@@ -522,7 +526,7 @@ Speaker 1: 00:34:42
 
 Sure, I'm going to link the repository in the comment here, but don't share it yet because we did not figure out the name and we have a stupid name for the repo for now.
 
-Speaker 0: 00:35:07
+Jonas Nick: 00:35:07
 
 Okay.
 Okay, I see.
@@ -538,7 +542,7 @@ Speaker 2: 00:35:38
 No, I have no question because I'm not, I don't know these primitives yet.
 So, I have to study a bit more.
 
-Speaker 0: 00:35:55
+Jonas Nick: 00:35:55
 
 Yeah I learned most of that from, so Adam Beck he once gave a presentation about Brian's credentials at Blockstream So I learned a lot from him, but that wasn't public, unfortunately.
 I think I have the slides, but I don't think they're very helpful.
@@ -547,7 +551,7 @@ It's very long, but just have to check out some parts of it, I think.
 
 ## E-cash.
 
-Speaker 0: 00:36:24
+Jonas Nick: 00:36:24
 
 Because especially the things like this anonymous credential slide, there seems to be the difficult thing about or to grasp about it is not I mean this scheme exists but the question is how do you use it and how do you use it with serial numbers and to get e-cash tokens with multiple denominations right That's not in the anonymous credentials light paper.
 That's something that Bruns talks a little bit more about.
@@ -560,7 +564,7 @@ If someone doesn't see their outputs, then it's not going to sign.
 And that's a huge help here.
 So our job is basically to simplify what they have.
 
-Speaker 0: 00:37:54
+Jonas Nick: 00:37:54
 
 Right.
 There's also the concept of offline e-cash, which also doesn't seem to be very practical in the Bitcoin world, because in offline e-cash, if you double spend, you reveal your secret key, which perhaps as if you're an attacker that's not a big problem to you because you already have your Bitcoin so you don't care about the secret keys in your token.
@@ -577,7 +581,7 @@ But this
 
 ## Next steps.
 
-Speaker 0: 00:38:39
+Jonas Nick: 00:38:39
 
 idea of merging inputs and so on, that's really interesting, I think.
 
@@ -590,7 +594,7 @@ And that's what I would like to propose for the next Wassabi Research Club, beca
 Max asked what about server decided equal value outputs?
 Anyone understands the question?
 
-Speaker 0: 00:40:11
+Jonas Nick: 00:40:11
 
 No.
 
@@ -618,7 +622,7 @@ Speaker 2: 00:41:21
 Not yet really.
 I mean, I'm just fascinated about the things that you guys talk about.
 
-Speaker 0: 00:41:30
+Jonas Nick: 00:41:30
 
 Yeah, I think I talked about almost everything I know about it, so let me know how this progresses and what you find out.
 
@@ -680,7 +684,7 @@ Speaker 1: 00:46:00
 
 Yes, thank you, Nick and thank you for being the special guest of this episode.
 
-Speaker 0: 00:46:08
+Jonas Nick: 00:46:08
 
 What an honor.
 
@@ -689,7 +693,7 @@ Speaker 1: 00:46:12
 All right, then I guess that's it.
 Like, share and subscribe bye bye
 
-Speaker 0: 00:46:23
+Jonas Nick: 00:46:23
 
 bye everyone
 
