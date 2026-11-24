@@ -17,16 +17,15 @@ aliases:
   - '/wasabi/research-club/anonymous-credentials/'
 ---
 ## Introduction to credentials. / Selective signing of attributes. / Range proof. / "Rethinking Public Key Infrastructures and Digital Certificates" (Stefan Brands, 1999)
+**
+##**
+##  Wasabi Research
+**
 
 Speaker 0: 00:00:00
 
-To approach this is to look from the point of view of blind signatures.
-Right?
-I guess blind signatures are mostly familiar to this audience, right?
-Yes.
-Or should be.
-Should be familiar for every Wasabi user.
-For every Wasabi power user, I guess.
+To approach this is to look from the point of view of blind signatures, right? I guess blind signatures are mostly familiar to this audience, right? Or should be. Should be familiar for every Wasabi user, For every Wasabi power user, I guess.
+
 So, the idea of credentials is similar in the sense that you get some blinded token that was signed by some server and the server does not see the message that was being signed.
 Now the additional idea to a credential is that it's not only a message that it's being signed, but instead it's multiple attributes that can be signed.
 And these attributes can be anything.
