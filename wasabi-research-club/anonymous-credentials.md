@@ -26,29 +26,25 @@ aliases:
 # ## Anonymous Credentials
 
 
-
-*Jonas Nick
+****Jonas Nick***
 
 To approach this is to look from the point of view of blind signatures, right? I guess blind signatures are mostly familiar to this audience, right? 
 
-***Anthony Towns:***  Yes
-Or should be. Should be familiar for every Wasabi user, for every Wasabi power user, I guess.
+**Anthony Towns:***  
+Yes. Or should be familiar for every Wasabi user, for every Wasabi power user, I guess.
 
-So, the idea of credentials is similar in the sense that you get some blinded token that was signed by some server and the server does not see the message that was being signed.
+The idea of credentials is similar in the sense that you get some blinded token that was signed by some server and the server does not see the message that was being signed.
 Now, the additional idea to a credential is that it's not only a message that it's being signed, but instead it's multiple attributes that can be signed.
 
 These attributes can be anything, the interesting thing is that you can selectively reveal these attributes.
 You can say here I have a token and in this token there is this attribute and it has this value.
-So the standard example is you have a token from your government, let's say, and it says your birth date is one attribute, and that is signed.
-Now, what you can do with that, you can not only show your attribute,  you can also show that it's in a certain range you can do a range proof.
+So the standard example is you have a token from your government, let's say, and it says your birth date is one attribute, and that is signed. What you can do with that, you can not only show your attribute,  you can also show that it's in a certain range you can do a range proof.
 
 What you would do is if you go to the cinema you don't have to reveal your age, you don't have to reveal anything else that is included in your credentials.  You only have to show that you are older than 18 years and that works with such a credential. These attributes are pretty flexible. You can, for example, (besides range proofs), show that if you have two blinded tokens, that attributes are the same.
 
-
 ## ## Pedersen Multi-commitments
 
-
-**Jonas Nick: 00:02:17**
+*****Jonas Nick: 00:02:17*****
 Yeah, so mathematically, I think the best way to think about this is as Pedersen multi-commitments.
 In normal Pedersen commitments, you have some randomness and you use that to commit to a value and you basically have two different group generators.
 
@@ -57,15 +53,14 @@ I think historically one of the first notions of these credentials was by Brands
 I think Peter Brands, not quite sure.
 He wrote his PhD.
 
-**Anthony Towns**: Yeah.
+*****Anthony Towns*****
+ Yeah.
 
-**Anthony Towns**: 00:03:20**
+*****Anthony Towns**: 00:03:20*****
 
 Stefan Brands, I think, not Peter or something like that.
 
-Jonas Nick: Okay.
-
-Jonas Nick: 00:03:24
+***Jonas Nick: 00:03:24***
 
 He wrote his PhD thesis. Okay, Brands is his last name and he wrote a PhD thesis about his idea of doing credentials, it's actually quite interesting. I can recommend it. It's not too technical. Brands has a lot more ideas than just credentials.
 One problem with it was that so far, every attempt at proving it secure in the random Oracle model failed, and this is where this anonymous credentials light paper comes in because they have a construction that is provably secure and you can do basically the same things or very similar things as with brands credentials.
@@ -75,25 +70,25 @@ It's often the case that due to the proof, these groups need to be much larger t
 Even for Schnorr signatures, our SecP group would actually be too small for 128-bit security.
 Mostly people say, yeah, that's just an artifact of the proof, it doesn't really matter that much, but in order to verify that, we would need to look into the proof more closely.
 
-Anthony Towns: 00:05:24
+***Anthony Towns: 00:05:24***
 Yeah.
 Thank you.
 Did you finish?
 
-Jonas Nick: 00:05:31
+***Jonas Nick: 00:05:31***
 Yeah, that's almost everything I wanted to say.
 The other thing I wanted to say is that these tokens are pretty flexible compared to just Schnorr signatures.
 At the Building on Bitcoin Conference 2018, I talked about how to use this to basically swap a token that is in or that was created with an anonymous credential with an on-chain or off-chain Bitcoin on Lightning, without the server knowing that this happened and without having to trust the other party.
 
 ## Improvement on Brands' Credentials.
 
-Anthony Towns: 00:06:12
+***Anthony Towns: 00:06:12***
 Yeah, thank you.
 I'd like to point out, so we are reviewing right now a paper called Anonymous Credentials Lite and as Jonas pointed out this is an improvement on the brand's credentials. In fact, it has one difference between the brand's credentials, well this is more secure of course because the brand's credentials couldn't be proven. Actually, these tokens are unlinkable with each other.
 So if you have a credential you can create as many blind signatures for it and you can prove that credential as many times as you want unlike the brand credentials because there they are linkable so you can only use up to as much signatures as much as the designer allows you, in our case would be the coordinator. That's actually something that we would desire if we would want to build on top of this.
 Anyway.
 
-Jonas Nick: 00:07:28
+***Jonas Nick: 00:07:28***
 If I may add to that, I would say that brands credentials are also unlinkable if you can talk to the server, right?
 That's what you also usually do in e-cash. You basically show the serial number of your old token, you create a new token. You show that the tokens are the same in zero knowledge, and then you get a signature on the new token and that way you get an unlinkable token.
 
