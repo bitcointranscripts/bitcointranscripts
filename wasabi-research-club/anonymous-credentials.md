@@ -42,18 +42,18 @@ You can say here I have a token and in this token there is this attribute and it
 So the standard example is you have a token from your government, let's say, and it says your birth date is one attribute, and that is signed.
 Now, what you can do with that, you can not only show your attribute,  you can also show that it's in a certain range you can do a range proof.
 
-What you would do is if you go to the cinema you don't have to reveal your age, you don't have to reveal anything else that is included in your credential, you only have to show that you are older than 18 years and that works with such a credential. These attributes are pretty flexible. You can, for example, besides range proofs, show that if you have two blinded tokens, that attributes are the same.
+What you would do is if you go to the cinema you don't have to reveal your age, you don't have to reveal anything else that is included in your credentials.  You only have to show that you are older than 18 years and that works with such a credential. These attributes are pretty flexible. You can, for example, (besides range proofs), show that if you have two blinded tokens, that attributes are the same.
 
 
-## ## Pedersen multi-commitments
+## ## Pedersen Multi-commitments
 
 
 **Jonas Nick: 00:02:17**
 Yeah, so mathematically, I think the best way to think about this is as Pedersen multi-commitments.
-In normal Pedersen commitments, you have some randomness and you use that to commit to a value and you basically have two different generators, group generators.
+In normal Pedersen commitments, you have some randomness and you use that to commit to a value and you basically have two different group generators.
 
 With these multi-commitments used in some of these credential approaches, you have randomness and now you commit to multiple attributes, not only a single one. Usually,  you have as many generators as you have attributes.
-So I think historically one of the first notions of these credentials was by Brands.
+I think historically one of the first notions of these credentials was by Brands.
 I think Peter Brands, not quite sure.
 He wrote his PhD.
 
@@ -85,7 +85,7 @@ Yeah, that's almost everything I wanted to say.
 The other thing I wanted to say is that these tokens are pretty flexible compared to just Schnorr signatures.
 At the Building on Bitcoin Conference 2018, I talked about how to use this to basically swap a token that is in or that was created with an anonymous credential with an on-chain or off-chain Bitcoin on Lightning, without the server knowing that this happened and without having to trust the other party.
 
-## Improvement on Brands' credentials.
+## Improvement on Brands' Credentials.
 
 Anthony Towns: 00:06:12
 Yeah, thank you.
@@ -99,9 +99,7 @@ That's what you also usually do in e-cash. You basically show the serial number 
 
 I think the advantage with anonymous credentials is that you can do that without having to talk to the server.
 
-
-## Mercurial signatures (Crites, Lysyanskaya, 2020). / Delegatable Anonymous Credentials.
-
+## Mercurial Signatures (Crites, Lysyanskaya, 2020). / Delegatable Anonymous Credentials.
 
 **Anthony Towns: 00:08:04**
 Yes, it's called I think Ray Schwentz or that's what usually comes up.
@@ -120,7 +118,7 @@ What I said is, in our case it would be that we could  pay someone in a coin joi
 I just wanted to point out that the authors were actually working on this line of research for a long time and they think they came up with much better constructions and easier ones too. If someone would like to look into these anonymous credentials, then definitely look into the newer stuff there.
 Okay, so far any comment here?
 
-## Rationale for using blind signatures for Coinjoin.
+## Rationale for Using Blind Signatures for Coinjoin.
 
 Anthony Towns: 00:10:36
 Because I want to approach it also from a coin joining point of view, why did we want to use it and why we don't want to use it anymore?  The problem that we are trying to solve is to be able to have some kind of divisible e-cash system actually that allows us to come with any input in an anonymity network identity and then we get back some credit for that input. If we come with another input later, then we get back some credit and then somehow we can combine those credits and came with only one output, or we could also break those credits down and with a stupid blind signature scheme we would have to create a bunch of denominations and a bunch of signatures.
@@ -145,7 +143,7 @@ Anthony Towns: 00:14:35
 
 Yes, in fact even more we can merge them and break them down in any way or shape or form.
 
-## Explanation of breaking inputs, merging commitments.
+## Explanation of Breaking Inputs, Merging Commitments.
 
 Anthony Towns: 00:14:44
 I'm not sure, okay, I will risk because this session is about anonymous credentials and I will bring up some topics, but yeah, I will risk it to explain it to you, because it's really interesting, and I think it's really know-well.
@@ -159,7 +157,7 @@ Yep.
 So far it's clear?
 Yep.
 
-Anthony
+Anthony Towns
 Then you register that two Pedersen commitment and Pedersen commitment for your 1 Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my patterns and commitments.
 By the way, we create more patterns and commitments with zeros, but it doesn't matter for now.
 
@@ -215,7 +213,7 @@ Jonas Nick: 00:19:57
 I thought I was only making one suggestion. Perhaps it was that.
 I'm not sure what the second one would be.
 
-## Reissuance of tokens.
+## Reissuance of Tokens.
 
 Anthony Towns: 00:20:05
 
@@ -245,7 +243,9 @@ So there might be some scheme that works with the BLS signature we actually figu
 Something like that you can give the two blinded BLS signature to the coordinator and prove that their sum is this value.
 Because of the blind BLS signatures are the unique tokens, this way we won't have problems.
 
-## Are denominations required by anonymous credentials?
+
+### Are Denominations Required by Anonymous Credentials?
+
 
 Anthony Towns: 00:22:28
 With anonymous credentials, I think you would have to create a bunch of denominations.
@@ -284,7 +284,7 @@ Anthony Towns: 00:23:55
 I'm not sure if it, would it make sense to start investigating this instead of doing it with BLS signatures?
 
 Jonas Nick: 00:24:08
-Actually I think I don't know I would do whatever is easiest actually Because I guess for your application or in general, it doesn't make too big of a difference if you use BLS.
+Actually I think I don't know I would do whatever is easiest actually because I guess for your application or in general, it doesn't make too big of a difference if you use BLS.
 I mean, if you think that parents are secure and BLS signatures are secure and this whole bunch of crypto assumptions, then I think you can just use that if that's easier.
 I don't think you have to restrict yourself to something that works in the discrete logarithm paradigm.
 
@@ -292,8 +292,7 @@ Anthony Towns: 00:24:45
 Is the RnBLS signatures work on the discrete logarithm paradigm?
 
 Jonas Nick: 00:24:51
-No, they use pairings.
-So it's different curves and different cryptic assumptions.
+No, they use pairings. It's different curves and different cryptic assumptions.
 
 Anthony Towns: 00:24:59
 
@@ -336,11 +335,7 @@ Jonas Nick: 00:26:47
 No one's found a vulnerability yet, Brant's credentials, so as far as I know.
 
 Speaker 2: 00:26:59
-I don't
-
-Jonas Nick: 00:26:59
-
-know, it's a difficult question, but I think the sum proof that I mentioned earlier should work just as well with brands credentials you don't need multiple denominations.
+I don't know, it's a difficult question, but I think the sum proof that I mentioned earlier should work just as well with brands credentials you don't need multiple denominations.
 
 Anthony Towns: 00:27:15
 Because brands credentials would be able to prove the sum.
@@ -394,7 +389,7 @@ So at least to me that sounds plausible.
 Anthony Towns: 00:29:40
 Yeah, actually, I'm just going to read a few things about here is that you prove about you prove from the article that to be for everyone knows what we are talking about.
 
-## Unlinkable re-use of credentials.
+## Unlinkable Re-use of Credentials.
 
 Anthony Towns: 00:29:58
 From the efficiency point of view, therefore, the YouProve credential system based on Brand's work acquired and implemented by Microsoft, seems attractive.
@@ -507,7 +502,7 @@ Yeah, we are going to work on that and either look into that issue, that's where
 And also for the next Wasabi Research Club, István is going to...
 
 Actually, yeah, he is going to write down exactly this scheme, the cryptography part of it.
-And that's what I would like to propose for the next Wassabi Research Club, because as we looked through e-cash papers and anonymous credential papers and every kind of papers, it looks like this is the simplest and most straightforward solution for really arbitrary coin joins, which we are not going to do but we would like to have that flexibility and that's what lets us improve upon it in the future.
+That's what I would like to propose for the next Wassabi Research Club, because as we looked through e-cash papers and anonymous credential papers and every kind of papers, it looks like this is the simplest and most straightforward solution for really arbitrary coin joins, which we are not going to do but we would like to have that flexibility and that's what lets us improve upon it in the future.
 Max asked what about server decided equal value outputs?
 Anyone understands the question?
 
@@ -553,7 +548,7 @@ What do you guys think?
 
 ## Equal value denominations.
 
- István Speaker 3: 00:42:59
+Max  Speaker 3: 00:42:59
 Yeah, I think It's good.
 But there was a question from Max, that is there a difference of users who want to be a part of the equal value denomination and those who want only specific amounts?
 
