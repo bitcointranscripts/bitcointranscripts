@@ -29,7 +29,6 @@ aliases:
 
 
 ****Jonas Nick***
-
 To approach this is to look from the point of view of blind signatures, right? I guess blind signatures are mostly familiar to this audience, right? 
 
 **Anthony Towns:***  
@@ -59,11 +58,9 @@ He wrote his PhD.
  Yeah.
 
 *****Anthony Towns**: 00:03:20*****
-
 Stefan Brands, I think, not Peter or something like that.
 
 ***Jonas Nick: 00:03:24***
-
 He wrote his PhD thesis. Okay, Brands is his last name and he wrote a PhD thesis about his idea of doing credentials, it's actually quite interesting. I can recommend it. It's not too technical. Brands has a lot more ideas than just credentials.
 One problem with it was that so far, every attempt at proving it secure in the random Oracle model failed, and this is where this anonymous credentials light paper comes in because they have a construction that is provably secure and you can do basically the same things or very similar things as with brands credentials.
 
@@ -106,7 +103,6 @@ In our case, that would be, I think, giving money to someone and I wouldn't be a
 Oh my God, I wasn't talking.
 
 ***Jonas Nick: 00:09:26***
-
 Last thing you said was in our case, that would be.
 
 ***Anthony Towns: 00:09:31***
@@ -137,7 +133,6 @@ So you would provide , let's say one Bitcoin input and another one Bitcoin input
 Yes.
 
 ***Anthony Towns: 00:14:35***
-
 Yes, in fact even more we can merge them and break them down in any way or shape or form.
 
 ## Explanation of Breaking Inputs, Merging Commitments.
@@ -246,7 +241,6 @@ I think this is exactly the magic of these anonymous credentials that you can do
 
 ***Anthony Towns: 00:23:03***
 Uh-huh, okay.
-
 That's, yeah, that's really similar with what we came up with, indeed.
 But I'm not sure in this paper.
 Maybe I just didn't go into it.
@@ -263,8 +257,7 @@ All right.
 
 ## Anonymous Credentials vs BLS Signatures.
 
-***Anthony Towns: 00:23:55
-***
+***Anthony Towns: 00:23:55***
 I'm not sure if it, would it make sense to start investigating this instead of doing it with BLS signatures?
 
 ***Jonas Nick: 00:24:08***
@@ -319,8 +312,8 @@ No one's found a vulnerability yet, Brant's credentials, so as far as I know.
 
 ***Max: 00:26:59***
 I don't know, it's a difficult question, but I think the sum proof that I mentioned earlier should work just as well with brands credentials you don't need multiple denominations.
-***
-Anthony Towns: 00:27:15***
+
+***Anthony Towns: 00:27:15***
 Because brands credentials would be able to prove the sum.
 
 ***Max: 00:27:21***
@@ -432,7 +425,6 @@ Everyone is really silent.
 Go ahead, Lucas.
 
 ***Lucas: 00:35:38***
-
 No, I have no question because I'm not, I don't know these primitives yet.
 So, I have to study a bit more.
 
