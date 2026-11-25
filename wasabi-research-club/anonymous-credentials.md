@@ -277,7 +277,7 @@ Anthony Towns: 00:23:52
 
 All right.
 
-## Anonymous credentials vs BLS signatures.
+## Anonymous Credentials vs BLS Signatures.
 
 Anthony Towns: 00:23:55
 
@@ -321,7 +321,7 @@ Yes, I was playing around with that.
 In fact, I ported it to .NET Core and it's not that obvious how to use that but the code is very, very clean and very nice.
 So I would have loved to go with U-Proof.
 
-## Problem's with proof. / Brands' credentials.
+## Problem's With Proof. / Brands' Credentials.
 
 Jonas Nick: 00:26:21
 What's the problem with U-Proof?
@@ -373,7 +373,7 @@ Anthony Towns: 00:29:07
 Okay so now finally there is an argument why our scheme is better because we don't need reissuance scheme there.
 But for a non-credentialed slide.
 
-Speaker 2: 00:29:22
+Max Speaker 2: 00:29:22
 
 So I actually.
 In there.
@@ -518,11 +518,10 @@ Max figured out that Foteini, one of the authors of this paper we are talking ab
 Not sure exactly what, but yes, she was doing something in Tumblr a bit.
 
 Lucas: 00:40:45
-Something in
+Something in time a bit.
 
 Anthony Towns: 00:40:46
 
-time a bit.
 And I think if no one would like to say anything because this was quite a difficult paper, was quite a difficult paper, then we can cut this short unlike other conversations and we can go.
 So Do you guys have anything else you would like to talk about?
 
@@ -546,7 +545,7 @@ We really reviewed a lot of things last week.
 So Should the next generation wasabi mixing technology be the topic of the next wasabi research club?
 What do you guys think?
 
-## Equal value denominations.
+## Equal Value Denominations.
 
 Max  Speaker 3: 00:42:59
 Yeah, I think It's good.
@@ -559,7 +558,7 @@ But I think that could be something that the users create by themselves.
 So if I participate in a mix, then I'm going to ask for outputs of some standard denominations that I guess I estimate other users, I suspect other users are going to do too.
 So that would be it, but I could create outputs in any way, shape, or form, up to the maximum limits, of course, As I would like to even do a pay to end point transaction in a coin join which would be neat.
 
- IstvánSpeaker 3: 00:44:15
+ MaxSpeaker 3: 00:44:15
 Yeah, that sounds good.
 Damn, that sounds good.
 
@@ -576,7 +575,7 @@ And I'm sorry for this unconventional Wasabi Research Club now.
 Usually Aviv does a very good job at explaining the concept at the beginning, but he couldn't make it last minute.
 So no one could really prepare, but Nick gave a great summary of the paper.
 
- IstvánSpeaker 3: 00:45:54
+Max Speaker 3: 00:45:54
 Absolutely.
 I mean, you guys did a good job.
 And thanks for that.
@@ -589,15 +588,15 @@ What an honor.
 
 Anthony Towns: 00:46:12
 All right, then I guess that's it.
-Like, share and subscribe bye bye
+Like, share and subscribe bye bye.
 
 Jonas Nick: 00:46:23
-bye everyone
+Bye everyone
 
 Lucas: 00:46:24
 
 bye guys
 
-S Istvánpeaker 3: 00:46:25
+Max 3: 00:46:25
 
-bye
+Bye.
