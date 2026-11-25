@@ -94,23 +94,20 @@ So if you have a credential you can create as many blind signatures for it and y
 Anyway.
 
 Jonas Nick: 00:07:28
-If I may add to that, I would say that brands credentials are also unlinkable.
-If you can talk to the server, right?
-Because that's what you also usually do in e-cash.
-You basically show the serial number of your old token.
-You create a new token.
-You show that the tokens are the same in zero knowledge, and then you get a signature on the new token and that way you get an unlinkable token.
+If I may add to that, I would say that brands credentials are also unlinkable if you can talk to the server, right?
+That's what you also usually do in e-cash. You basically show the serial number of your old token, you create a new token. You show that the tokens are the same in zero knowledge, and then you get a signature on the new token and that way you get an unlinkable token.
+
 I think the advantage with anonymous credentials is that you can do that without having to talk to the server.
+
 
 ## Mercurial signatures (Crites, Lysyanskaya, 2020). / Delegatable Anonymous Credentials.
 
-**Anthony Towns: 00:08:04**
 
+**Anthony Towns: 00:08:04**
 Yes, it's called I think Ray Schwentz or that's what usually comes up.
-Anyway, so a bit more there because the same authors were working on this for probably a decade after this paper and they actually came up with something called Mercurial Signatures where they don't need so much crypto as much as in this paper, but in a very straightforward way they could achieve the exact same thing with these mercurial signatures.
-And even more, they were working on something called delegatable anonymous credentials.
-And the trick is that you could actually delegate the ownership of the credential to someone else.
-So in our case, that would be, I think, giving money to someone and I wouldn't be able to redeem it, but you would, which is actually pretty nice.
+Anyway, so a bit more there because the same authors were working on this for probably a decade after this paper and they actually came up with something called Mercurial Signatures where they don't need so much crypto as much as in this paper, but in a very straightforward way they could achieve the exact same thing with these Mercurial Signatures.
+Even more, they were working on something called delegatable anonymous credentials. The trick is that you could actually delegate the ownership of the credential to someone else.
+In our case, that would be, I think, giving money to someone and I wouldn't be able to redeem it, but you would, which is actually pretty nice.
 Oh my God, I wasn't talking.
 
 **Jonas Nick: 00:09:26**
@@ -119,32 +116,30 @@ Last thing you said was in our case, that would be.
 
 Anthony Towns: 00:09:31
 Yeah, it's interesting because I think it's recording everything that I'm saying, but you didn't hear.
-So I think what I said is, in our case it would be that we could  pay someone in a coin join round without us being able to redeem it, but that someone would be able to redeem it as an output of the coin join.
-So I just wanted to point out that the authors were actually working on this line of research for a long time and they think they came up with much better constructions and easier ones too.
-So, if someone would like to look into these anonymous credentials, then definitely look into the newer stuff there.
+What I said is, in our case it would be that we could  pay someone in a coin join round without us being able to redeem it, but that someone would be able to redeem it as an output of the coin join.
+I just wanted to point out that the authors were actually working on this line of research for a long time and they think they came up with much better constructions and easier ones too. If someone would like to look into these anonymous credentials, then definitely look into the newer stuff there.
 Okay, so far any comment here?
 
 ## Rationale for using blind signatures for Coinjoin.
 
 Anthony Towns: 00:10:36
-Because I want to approach it also from a coin joining point of view, that why did we, why did we want to use it and why we don't want to use it anymore?
-So, the problem that we are trying to solve is to be able to have some kind of divisible e-cash system actually that allows us to come with any input in an anonymity network identity and then we get back some credit for that input and if we come with another input later, then we get back some credit and then somehow we can combine those credits and came with only one output or we could also break those credits down and with a stupid blind signature scheme we would have to create a bunch of denominations and a bunch of signatures.
+Because I want to approach it also from a coin joining point of view, why did we want to use it and why we don't want to use it anymore?  The problem that we are trying to solve is to be able to have some kind of divisible e-cash system actually that allows us to come with any input in an anonymity network identity and then we get back some credit for that input. If we come with another input later, then we get back some credit and then somehow we can combine those credits and came with only one output, or we could also break those credits down and with a stupid blind signature scheme we would have to create a bunch of denominations and a bunch of signatures.
+
 So why this paper would be handy here?
-Because We still need to create a bunch of denominations, but we wouldn't need to create a bunch of signatures.
+We still need to create a bunch of denominations, but we wouldn't need to create a bunch of signatures.
 The user could create the signatures, the blind signatures for their credentials later.
-However, we actually came up with a solution based on homomorphic cryptographic commitments, range proofs, and a blind signature scheme that works with this homomorphic cryptographic commitments in a way that we can actually come with an anonymity network identity, register input, get back something, come with another anonymity network identity, register another input, get back something, and we could combine the two something in zero knowledge that in a way that we could prove the server that we could make any kind of outputs out of those and we could have done it with these anonymous credentials in some way or form, but we would still have to have denominations in order to achieve some kind of privacy.
+However, we actually came up with a solution based on homomorphic cryptographic commitments, range proofs, and a blind signature scheme that works with this homomorphic cryptographic commitments in a way that we can actually come with an anonymity network identity, register another input, get back something and we could combine the two something in zero knowledge in a way that we could prove the server that we could make any kind of outputs out of those and we could have done it with these anonymous credentials in some way or form. We would still have to have denominations in order to achieve some kind of privacy.
 That was the thought of line there, right?
 
 Jonas Nick: 00:13:34
 Just so I understand, instead of registering all inputs at once, you would be able to register them with different identities, right?
 
 Anthony Towns: 00:13:47
-Yes, we can come with different identities with any number of inputs and we can come with different identities to register any output.
-That's what we kind of figured out.
+Yes, we can come with different identities with any number of inputs and we can come with different identities to register any output. That's what we kind of figured out.
 
 Jonas Nick: 00:14:06
-So you would provide a, let's say one Bitcoin input and another one Bitcoin input later and then you would get two one input one Bitcoin tokens and that could be used to add a two Bitcoin output or something like that and you don't have to show that your inputs were one Bitcoin you just show that the sum is equal to two bitcoins.
-Yes,
+So you would provide , let's say one Bitcoin input and another one Bitcoin input later and then you would get two one input one Bitcoin tokens and that could be used to add a two Bitcoin output or something like that and you don't have to show that your inputs were one Bitcoin you just show that the sum is equal to two bitcoins.
+Yes.
 
 Anthony Towns: 00:14:35
 
@@ -153,11 +148,10 @@ Yes, in fact even more we can merge them and break them down in any way or shape
 ## Explanation of breaking inputs, merging commitments.
 
 Anthony Towns: 00:14:44
-I'm not sure, okay, I will risk because this this session is about anonymous credentials and I will bring up some topics, but yeah, I will risk it to explain it to you, because it's really interesting, and I think it's really know-well.
+I'm not sure, okay, I will risk because this session is about anonymous credentials and I will bring up some topics, but yeah, I will risk it to explain it to you, because it's really interesting, and I think it's really know-well.
 You can think about it, the breaking part is easy and I think that you understand it easily and I can explain it to you.
-Because if you have one Bitcoin and you want to pay 0.1 Bitcoin to someone, then it would be like this.
-You create two Pedersen commitments to 0.1 Bitcoin and to 0.9 Bitcoin.
-Those will be your outputs in the coin join, right?
+If you have one Bitcoin and you want to pay 0.1 Bitcoin to someone, then it would be like this.
+You create two Pedersen commitments to 0.1 Bitcoin and to 0.9 Bitcoin. Those will be your outputs in the coin join, right?
 So far it's clear?
 
 Jonas Nick
@@ -166,7 +160,7 @@ So far it's clear?
 Yep.
 
 Anthony
-So, and then you register that two Pedersen commitment and Pedersen commitment for your 1Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my patterns and commitments.
+Then you register that two Pedersen commitment and Pedersen commitment for your 1 Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my patterns and commitments.
 By the way, we create more patterns and commitments with zeros, but it doesn't matter for now.
 
 Jonas Nick: 00:16:31
@@ -174,20 +168,19 @@ Jonas Nick: 00:16:31
 Yeah, that makes sense.
 
 Anthony Towns: 00:16:32
-Yeah, And then we also found a blind signature scheme that works with feathers and commitments.
-So the coordinator can give us something from what we can create a signature on our values, which is cool because then we can just come at output registration that, hey, I'm registering this 0.1 Bitcoin output and I have a signature on it.
-And with another anonymity network identity, hey I'm registering this 0.9 Bitcoin output and I have a signature on it.
+Yeah, then we also found a blind signature scheme that works with feathers and commitments.
+The coordinator can give us something from what we can create a signature on our values, which is cool because then we can just come at output registration, hey, I'm registering this 0.1 Bitcoin output and I have a signature on it.
+With another anonymity network identity, hey I'm registering this 0.9 Bitcoin output and I have a signature on it.
 So this is the breaking part.
 
-And the merging part is different because we couldn't figure out with the, with Pedersen commitments, range proofs and, yeah, of course, there needs to be a range proof along with the patterns and commitments, but I think that's obvious.
-Anyway, we couldn't figure it out with the blind signature scheme on patterns and commitment, but we actually had to use BLS signatures.
-And with that, we could figure out how to merge together more than one commitment.
+The merging part is different because we couldn't figure out with the Pedersen commitments, range proofs and, yeah, of course, there needs to be a range proof along with the patterns and commitments, but I think that's obvious.
+Anyway, we couldn't figure it out with the blind signature scheme on patterns and commitment, but we actually had to use BLS signatures. With that, we could figure out how to merge together more than one commitment.
 Yeah, so it's pretty cool.
 Yeah.
 Any question on that or we can get back to this paper.
 
 Jonas Nick: 00:18:10
-Yeah, I don't quite understand why that wouldn't work if you if you let's say have a point one and a point nine.
+Yeah, I don't quite understand why that wouldn't work if you have a point one and a point nine.
 Talk Bitcoin token, right?
 
 Anthony Towns: 00:18:22
@@ -196,15 +189,15 @@ Yes.
 
 Jonas Nick: 00:18:24
 
-Don't you just have to show to the server that both tokens sum up or maybe even better, you create a new token with a one Bitcoin value, you don't show the server your, or the value of the new token and but you show the server that the sum of the old tokens is the value of the new token.
+Don't you just have to show to the server that both tokens sum up or maybe even better, you create a new token with a one Bitcoin value, you don't show the server your, or the value of the new token, but you show the server that the sum of the old tokens is the value of the new token.
 Wouldn't that work for merging?
 
 Anthony Towns: 00:18:52
 Your first suggestion, yes, that works.
-It just, there is some probably negligible privacy loss, right, Like you expose the server that you have a 0.1 Bitcoin and a 0.9 Bitcoin pedders and commitments on the server.
+It just, there is some probably negligible privacy loss, right? Like you expose the server that you have a 0.1 Bitcoin and a 0.9 Bitcoin Pedersen and commitments on the server.
 
 Jonas Nick: 00:19:13
-I don't think, at least with anonymous credential slide, I don't think you have to do that necessarily.
+At least with anonymous credential slide, I don't think you have to do that necessarily.
 I think you can show that the sum is the value of your new token and you don't have to show anything more to the server, I think.
 
 Anthony Towns: 00:19:32
@@ -214,14 +207,12 @@ Jonas Nick: 00:19:37
 Okay.
 
 Anthony Towns: 00:19:40
-That's not a huge privacy thing, so it can work.
-But we figured out how to do it even without that.
+That's not a huge privacy thing, so it can work, but we figured out how to do it even without that.
 So your second suggestion, could you repeat it maybe?
 I'm not sure I understood.
 
 Jonas Nick: 00:19:57
-I thought I was only making one suggestion.
-So perhaps it was that.
+I thought I was only making one suggestion. Perhaps it was that.
 I'm not sure what the second one would be.
 
 ## Reissuance of tokens.
@@ -231,8 +222,8 @@ Anthony Towns: 00:20:05
 So your first suggestion was to take two blind signature of 0.1 and 0.9 and register them together to the server, to the coordinator, is that correct?
 
 Jonas Nick: 00:20:24
-Perhaps I wouldn't call this registering, I would just call this  just a reissuance, We've used that term before.
-You have a token and you just want to get a new one with a new serial number and these tokens are unlinkable and the same would work if you show two tokens and a new token where the new token is the sum of the former tokens and you don't have to show the actual values to the server you just have to show that the sum matches to the new value.
+Perhaps I wouldn't call this registering, I would just call this a reissuance, we've used that term before.
+You have a token and you just want to get a new one with a new serial number. These tokens are unlinkable and the same would work if you show two tokens and a new token where the new token is the sum of the former tokens. You don't have to show the actual values to the server, you just have to show that the sum matches to the new value.
 
 Anthony Towns: 00:21:03
 
@@ -240,10 +231,9 @@ and so
 
 Jonas Nick: 00:21:04
 
-then you wouldn't have that privacy loss of having to show the individual values of the old tokens.
+Then you wouldn't have that privacy loss of having to show the individual values of the old tokens.
 
 Anthony Towns: 00:21:11
-
 Yes, so the thing is we get the signature, the blind signature on the data itself.
 Which means if we want a reassurance phase there, then we would have to expose the values.
 
@@ -251,16 +241,14 @@ Jonas Nick: 00:21:33
 Okay.
 
 Anthony Towns: 00:21:34
-So there might be some some scheme that works with the, well with BLS signature we actually figured it out how to how to do that because there the signatures actually has the message itself.
-So it's really fresh.
-I just learned about it today.
-And something like that, that you can give the two blinded BLS signature to the coordinator and prove that their sum is this value.
-And because of the blind BLS signatures are the unique tokens, this way we won't have problems.
+So there might be some scheme that works with the BLS signature we actually figured it out how to do that because there the signatures actually has the message itself. So it's really fresh. I just learned about it today.
+Something like that you can give the two blinded BLS signature to the coordinator and prove that their sum is this value.
+Because of the blind BLS signatures are the unique tokens, this way we won't have problems.
 
 ## Are denominations required by anonymous credentials?
 
 Anthony Towns: 00:22:28
-So with anonymous credentials, I think you would have to create a bunch of bunch of denominations.
+With anonymous credentials, I think you would have to create a bunch of denominations.
 Right?
 
 Jonas Nick: 00:22:46
